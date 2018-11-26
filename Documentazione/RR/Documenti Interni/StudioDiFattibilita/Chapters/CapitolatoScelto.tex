@@ -1,20 +1,40 @@
 \section{Capitolato scelto: C3}
 
 \subsection{Descrizione generale}
+\begin{itemize}
+	\item Nome: G$\&$B: monitoraggio intelligente di processi DevOps;
+	\item Proponente: Zucchetti S.p.A.
+\end{itemize}
+
+\subsection{Descrizione Capitolato e Obiettivo Finale}
 Il terzo capitolato propone di sviluppare un \textit{plugin} per la piattaforma, preesistente, \textit{Grafana} per la gestione dinamica di alert in situazioni di potenziale rischio all'interno di un contesto d'uso di macchine virtuali, e segnalazioni tra gli operatori del servizio Cloud e gli operatori della linea di produzione software.
+In particolare, il plugin  utilizzerà dati in input forniti ad intervalli regolari o con continuità, ad una \textit{rete bayesiana} per stimare la probabilità di alcuni eventi, segnalandone quindi il rischio in modo dinamico, prevenendo situazioni di stallo.
 
-\subsection{Finalità del progetto}
-In particolare si chiede di sviluppare un plugin per Grafana, che utilizzerà dati in input forniti, ad intervalli regolari o con continuità, ad una \textit{rete bayesiana} per stimare la probabilità di alcuni eventi, segnalandone quindi il rischio in modo dinamico, prevenendo situazioni di stallo.
-
-\subsection{Tecnologie interessate}
+\subsection{Dominio Tecnologico}
 \begin{itemize}
 	\item \textbf{JavaScript}: linguaggio di scripting indicato per lo sviluppo del plugin;
 	\item \textbf{JSON}: formato dati utilizzato per l'acquisizione dei dati;
 	\item \textbf{Rete Bayesiana}: modello probabilistico utilizzato per stimare la probabilità degli eventi di interesse;
-	\item \textbf{jsbayes\footnote{\hyperref[Link al repository GitHub]{''https://github.com/vangj/jsbayes''}}}: libreria open-source consigliata dal fornitore per la gestione dei calcoli della rete Bayesiana;
+	\item \textbf{jsbayes\footnote{\hyperref[Link al repository GitHub]{\texttt{https://github.com/vangj/jsbayes}}}}: libreria open-source consigliata dal fornitore per la gestione dei calcoli della rete Bayesiana;
 	\item \textbf{HTML \& CSS}: linguaggi utilizzati per lo sviluppo del front-end del plugin.
 \end{itemize}
 
-\subsection{Conclusioni}
-Grazie alla tematica interessante, la possibilità di contribuire con un plugin ad una piattaforma preesistente ampiamente utilizzata e la tematica relativa alle reti bayesiane, tema innovativo ed attuale, il team è portato a preferire il capitolato in oggetto. A favorire, inoltre, la scelta hanno contribuito la disponibilità dell'azienda proponente e la chiarezza dei temi e dei requisiti esposti.\\
-Le tecnologie coinvolte devono essere necessariamente approfondite dall'intero team, ciononostante sembrano  ampiamente affrontabili.
+\subsection{Valutazione del Capitolato}
+\subsubsection{Aspetti Positivi}
+\begin{itemize}
+	\item Chiarezza espositiva del problema da affrontare;
+	\item Contesto moderno ed interessante;
+	\item Piattaforma preesistente;
+	\item Utilizzo di Reti Bayesiane;
+	\item Dominio tecnologico ben definito, limitato e ben documentato.
+\end{itemize}
+
+\subsubsection{Aspetti Negativi}
+\begin{itemize}
+	\item Conoscenze di JavaScript, linguaggio principale da utilizzare, da perfezionare da parte del team.
+\end{itemize}
+
+\subsubsection{Conclusioni e Motivazioni della scelta}
+Grazie alla tematica interessante, la possibilità di contribuire con un plugin ad una piattaforma preesistente ampiamente utilizzata e la tematica relativa alle reti bayesiane, tema innovativo ed attuale, il team è portato a preferire il capitolato in oggetto. A dare ulteriore sostegno a tale preferenza, un dominio tecnologico ben definito e non eccessivamente ampio, inoltre \textit{Grafana Labs}, azienda che fornisce \textit{Grafana}, mette a disposizione degli sviluppatori un'ampia documentazione.\\
+ Nella scelta ha contribuito la disponibilità dell'azienda proponente e la chiarezza dei temi e dei requisiti esposti.\\
+Le tecnologie coinvolte devono essere necessariamente approfondite dall'intero team, ciononostante sembrano  ampiamente affrontabili e gestibili.
