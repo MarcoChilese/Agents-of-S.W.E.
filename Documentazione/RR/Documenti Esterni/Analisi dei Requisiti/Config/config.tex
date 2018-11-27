@@ -10,35 +10,13 @@
 
 \usepackage[hyperfootnotes=false]{hyperref}	%Pacchetto per coll. ipertestuali
 
+\usepackage{tabularx}
+\usepackage{longtable} %Per Tabelle potenzialmente multipagina
 \usepackage{fancyhdr}  % per gli header e footer
 \usepackage{graphicx}  %per le immagini
 \usepackage{flafter}
-\usepackage[font=small,labelfont=bf]{caption}
-
 \usepackage{listings} %per i listati di codice
-\usepackage{color}
-\definecolor{mygray}{rgb}{0.95,0.95,0.95}
-\definecolor{mygreen}{rgb}{0,0.6,0}
-\definecolor{frame}{rgb}{0.55,0.55,0.55}
-\definecolor{orange}{rgb}{0.8,0.4,0}
-\lstset{
-	basicstyle=\footnotesize,
-	backgroundcolor=\color{mygray},
-	commentstyle=\color{mygreen},
-	breaklines=true,
-	frame=single,
-	rulecolor=\color{frame},
-	keepspaces=true,
-	keywordstyle=\color{blue},
-	language=Python,
-	numbers=left,
-	numbersep=5pt,
-	numberstyle=\tiny ,
-	showspaces=false,
-	showstringspaces=false,
-	stringstyle=\color{orange},
-	tabsize=4
-}
+\usepackage[font=small,labelfont=bf]{caption}
 
 \usepackage{framed}
 
@@ -49,5 +27,12 @@
 \hypersetup{linkcolor= blue}
 
 \renewcommand{\footrulewidth}{0.4pt}
+\newcommand{\glossario}{\textsubscript{G} }
 
 \pagestyle{fancy}
+
+\makeindex
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{4}
+
+% \lhead{\includegraphics[scale=]{}} TODO LOGO ripetuto angolo Top SX
