@@ -17,22 +17,29 @@
 \usepackage{flafter}
 \usepackage{listings} %per i listati di codice
 \usepackage[font=small,labelfont=bf]{caption}
+\usepackage{makeidx}
+\usepackage{imakeidx}
 
 \usepackage{framed}
 
-\usepackage[a4paper, margin=3cm]{geometry}
+\usepackage[headheight=2cm, headsep=0.5cm, a4paper, margin=3cm]{geometry}
 \usepackage[bottom]{footmisc}
 
 \hypersetup{colorlinks=true}		%Configurazione colore link documento
 \hypersetup{linkcolor= blue}
 
+\lhead{\includegraphics[scale=0.08]{./images/logo.png}}
+\rhead{Glossario}
+%\setlength{\headsep}{1cm}
+
 \renewcommand{\footrulewidth}{0.4pt}
+\renewcommand{\indexname}{Indice Analitico}
 \newcommand{\glossario}{\textsubscript{G} }
 
 \pagestyle{fancy}
 
-\makeindex
-\setcounter{secnumdepth}{4}
-\setcounter{tocdepth}{4}
+\setcounter{secnumdepth}{1}
+\setcounter{tocdepth}{1}
 
-% \lhead{\includegraphics[scale=]{}} TODO LOGO ripetuto angolo Top SX
+\makeindex
+
