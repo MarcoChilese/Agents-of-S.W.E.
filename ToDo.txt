@@ -12,4 +12,4 @@ Norme di progetto:
 	Strumentazione -> Luca [4.4, ]
 	Stile di codifica -> Marco C. [2 tutto] 
 	Analisi dei requisiti -> Marco F. [2.2.1]
-	Configurazione -> Bogdan [3.3]
+	Processi di supporto -> Bogdan & Favaro [3 all ]
