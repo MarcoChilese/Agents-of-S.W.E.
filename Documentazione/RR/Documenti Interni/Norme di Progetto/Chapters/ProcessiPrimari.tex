@@ -37,10 +37,10 @@ INSERIRE INTESTAZIONE FILE
 Seguendo le indicazioni presenti nella documentazione\footnote{\texttt{http://docs.grafana.org/plugins/developing/development/}} dell'azienda fornitrice di \textit{Grafana}, la piattaforma  per cui si intende sviluppare il plugin, il team ha deciso di adottare come linguaggio di programmazione principale ECMAScript 6\footnote{Linguaggio divenuto standard ISO: ISO/IEC 16262:2011, e relativo aggiornamento ISO/IEC 22275:2018.}.\\
 ECMAScript 6 viene stardardizzato da \textbf{ECMA}\glossario\footnote{\texttt{http://www.ecma-international.org/}} nel giugno 2015 con la sigla \textbf{ECMA-262\footnote{\texttt{https://www.ecma-international.org/ecma-262/6.0/}}}.\\
 Come stile di codifica si adottano le line guida proposte da \textbf{Airbnb JavaScript Style Guide}\footnote{\texttt{https://github.com/airbnb/javascript}}. Per la verifica dell'adesione a tali norme, i Programmatori devono utilizzare, come suggerito dalla documentazione proposta da \textit{Grafana}, \textbf{ESLint}\glossario\footnote{\texttt{https://eslint.org/}}.\\
-In particolare i Programmatori devono rispettare 5 linee guida proposte dalla documentazione ufficiale di \textit{Grafana}:
+In particolare i Programmatori devono rispettare \underline{5 linee guida} proposte dalla documentazione ufficiale di \textit{Grafana}:
 \begin{enumerate}
 	\item Se una variabile non viene riutilizzata, deve essere dichiarata come \texttt{\textbf{const}};
-	\item Utilizzare preferibilmente, per la definizione di variabili, la keyword  \texttt{\textbf{let}}, anzichà©  \texttt{\textbf{var}};
+	\item Utilizzare preferibilmente, per la definizione di variabili, la keyword  \texttt{\textbf{let}}, anziché  \texttt{\textbf{var}};
 	\item Utilizzare il marcatore freccia (\texttt{\textbf{=>}}), in quanto non oscura il \texttt{\textbf{this}}:
 	\begin{lstlisting}[language=JavaScript]
 testDatasource() {
@@ -161,5 +161,72 @@ if (condtion) {
   return true;
 }
 \end{lstlisting}
+
+\subparagraph{Commenti al codice}\-\\
+Il codice va commentato nel seguente modo:
+\begin{itemize}
+	\item "\texttt{//}" se il commento occupa una sola riga;
+	\item "\texttt{/** ... */} " se il commento occupa più righe.
+\end{itemize}
+Nel seguente modo:
+\begin{lstlisting}[language=JavaScript]
+// single line comment
+if (condition) return true;
+
+/**
+* multi line comment, line 1
+* multi line comment, line 2
+*/
+if (condtion) {
+  return true;
+}
+\end{lstlisting}
+
+\subparagraph{Variabili}\-\\
+\textbf{Norma 1}
+Fare riferimento alle norme 1 e 2, delle \underline{5 linee guida enunciate sopra}.\\
+
+\textbf{Norma 2}
+Non utilizzare dichiarazioni multiple di variabili, dichiarare una variabile per riga.\\
+Nel seguente modo:
+\begin{lstlisting}[language=JavaScript]
+// OK
+var x = 1;
+var y = 0;
+
+// NO
+var x = 1, y = 0;
+\end{lstlisting}
+
+\subparagraph{Nomi}\-\\
+\textbf{Norma 1} Oltre a quanto enunciato nel secondo punto del paragrafo §2.2.3.1, tutti i nomi di funzioni o variabili composti da una singola lettera, o che indichino temporaneità della variabile sono \textit{vietati}: ogni nome deve essere significativo.\\
+\-\\
+\textbf{Norma 2} 
+\begin{enumerate}
+	\item I nomi delle variabili, funzioni ed istanze devono utilizzare il \texttt{CamelCase};
+	\item I nomi delle classi deve lo stile \texttt{capWords}.
+\end{enumerate}
+Nel seguente modo:
+\begin{lstlisting}[language=JavaScript]
+// OK
+var thisIsAVariable;
+
+function thisIsAFunction() { ... }
+
+class ThisIsAClass() {
+  ...
+}
+
+// NO
+var Variable;
+
+function Function() { ... }
+
+class myClass() {
+  ...
+}
+\end{lstlisting}
+
+\paragraph{HTML}
 
 
