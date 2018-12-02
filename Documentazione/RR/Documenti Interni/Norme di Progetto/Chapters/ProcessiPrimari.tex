@@ -9,9 +9,9 @@
 
 \subsubsection{Progettazione}
 \subsubsection{Codifica}
-Di seguito vengono definite delle norme che devono essere adottate dai Programmatori per garantire una buona leggibilità e manutenibilità del codice. Le prime norme che seguiranno sono le più generali, da adottarsi per ogni linguaggio di programmazione adottato all'interno del progetto, in seguito quelle più specifiche per i linguaggi JavaScript\glossario, HTML\glossario e CSS\glossario.\\
+Di seguito vengono definite delle norme che devono essere adottate dai Programmatori per garantire una buona leggibilità  e manutenibilità  del codice. Le prime norme che seguiranno sono le più generali, da adottarsi per ogni linguaggio di programmazione adottato all'interno del progetto, in seguito quelle più specifiche per i linguaggi JavaScript\glossario, HTML\glossario e CSS\glossario.\\
 Ogni norma è caratterizzata da un paragrafo di appartenenza, da un titolo, una breve descrizione, e se il caso lo richiede, un esempio.\\
-Il rispetto delle seguenti norme è fondamentale per garantire uno stile di codifica uniforme all'interno del progetto, oltre che per massimizzare la leggibilità e agevolare la manutenzione, la verifica\glossario e la validazione\glossario.
+Il rispetto delle seguenti norme è fondamentale per garantire uno stile di codifica uniforme all'interno del progetto, oltre che per massimizzare la leggibilità  e agevolare la manutenzione, la verifica\glossario e la validazione\glossario.
 
 \paragraph{Convenzioni per i nomi:}
 \begin{itemize}	
@@ -23,7 +23,7 @@ Il rispetto delle seguenti norme è fondamentale per garantire uno stile di codi
 		\end{center}
 	\end{tcolorbox}
 
-	\item Tutti i nomi devono essere \textbf{unici} ed \textbf{autoesplicativi}, ciò per evitare ambiguità e limitare la complessità.
+	\item Tutti i nomi devono essere \textbf{unici} ed \textbf{autoesplicativi}, ciò per evitare ambiguità  e limitare la complessità .
 \end{itemize}
 \paragraph{Convenzioni per la documentazione:}
 \begin{itemize}	
@@ -35,8 +35,54 @@ Il rispetto delle seguenti norme è fondamentale per garantire uno stile di codi
 			INSERIRE INTESTAZIONE FILE 
 		\end{center}
 	\end{tcolorbox}
-	\item La versione del file nell'intestazione, deve rispettare la seguente formulazione: $Y.K$, dove Y rappresenta la versione principale, K la versione parziale della relativa versione principale.\\ I numeri di versione del tipo $Y.0$, dalla $1.0$, vengono considerate versioni stabili, e quindi versioni da testare per saggiarne la qualità.
+	\item La versione del file nell'intestazione, deve rispettare la seguente formulazione: $Y.K$, dove Y rappresenta la versione principale, K la versione parziale della relativa versione principale.\\ I numeri di versione del tipo $Y.0$, dalla $1.0$, vengono considerate versioni stabili, e quindi versioni da testare per saggiarne la qualità .
 	
-\paragraph{JavaScript:}
+\paragraph{ECMAScript 6:}
+Seguendo le indicazioni presenti nella documentazione\footnote{\texttt{http://docs.grafana.org/plugins/developing/development/}} dell'azienda fornitrice di \textit{Grafana}, la piattaforma  per cui si intende sviluppare il plugin, il team ha deciso di adottare come linguaggio di programmazione principale ECMAScript 6\footnote{Linguaggio divenuto standard ISO: ISO/IEC 16262:2011, e relativo aggiornamento ISO/IEC 22275:2018.}.\\
+ECMAScript 6 viene stardardizzato da \textbf{ECMA}\glossario\footnote{\texttt{http://www.ecma-international.org/}} nel giugno 2015 con la sigla \textbf{ECMA-262\footnote{\texttt{https://www.ecma-international.org/ecma-262/6.0/}}}.\\
+Come stile di codifica si adottano le line guida proposte da \textbf{Airbnb JavaScript Style Guide}\footnote{\texttt{https://github.com/airbnb/javascript}}. Per la verifica dell'adesione a tali norme, i Programmatori devono utilizzare, come suggerito dalla documentazione proposta da \textit{Grafana}, \textbf{ESLint}\glossario\footnote{\texttt{https://eslint.org/}}.\\
+In particolare i Programmatori devono rispettare 5 linee guida proposte dalla documentazione ufficiale di \textit{Grafana}:
+\begin{enumerate}
+	\item Se una variabile non viene riutilizzata, deve essere dichiarata come \texttt{\textbf{const}};
+	\item Utilizzare preferibilmente, per la definizione di variabili, la keyword  \texttt{\textbf{let}}, anzichà©  \texttt{\textbf{var}};
+	\item Utilizzare il marcatore freccia (\texttt{\textbf{=>}}), in quanto non oscura il \texttt{\textbf{this}}:
+	\begin{lstlisting}[language=JavaScript]
+testDatasource() {
+	return this.getServerStatus()
+	.then(status => {
+    		return this.doSomething(status);
+  	})
+}	
+	\end{lstlisting}
+	Invece che:
+	\begin{lstlisting}[language=JavaScript]
+testDatasource() {
+	var self = this;
+	return this.getServerStatus()
+		.then(function(status) {
+	return self.doSomething(status);
+	})
+}
+	\end{lstlisting}
+	\item Utilizzare l'oggetto \textit{Promise}:
+	\begin{lstlisting}[language=JavaScript]
+metricFindQuery(query) {
+  if (!query) {
+    return Promise.resolve([]);
+  }
+}	
+	\end{lstlisting}
+	Invece che:
+	\begin{lstlisting}[language=JavaScript]
+metricFindQuery(query) {
+  if (!query) {
+    return this.$q.when([]);
+  }
+}
+	\end{lstlisting}
+	\item Se si utilizza \textit{Lodash} è meglio essere conseguenti, e preferire in ogni caso le funzioni per gli array native di ES6.
+\end{enumerate}
+
 \end{itemize}
+
 
