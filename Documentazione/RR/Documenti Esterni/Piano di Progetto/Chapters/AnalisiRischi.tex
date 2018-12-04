@@ -4,15 +4,15 @@ L'analisi dei rischi prevede la valutazione preventiva dei possibili problemi ch
 I rischi sono catalogati in base a tipologie stabilite a priori all'interno del gruppo. 
 Ogni rischio sarà inserito in una particolare categoria:
 \begin{itemize}
-\item \textbf{CG}: rischi relativi ai componenti del gruppo \texttt{Agents of S.W.E.};
-\item \textbf{Tech}: rischi relativi alle tecnologie da utilizzare;
-\item \textbf{OL}: rischi relativi alla gestione del lavoro;
-\item \textbf{Req}: rischi relativi ai requisiti richiesti.  
+\item Rischi relativi ai componenti del gruppo \texttt{Agents of S.W.E.};
+\item Rischi relativi alle tecnologie da utilizzare;
+\item Rischi relativi alla gestione del lavoro;
+\item Rischi relativi ai requisiti richiesti.  
 \end{itemize}
 
-I rischi saranno identificati da un numero progressivo e la suddivisione in categorie non influirà sull'incremento del numero. 
+L'utilizzo dei numeri è incrementale e la suddivisione dei rischi in sottocategorie non interferisce con l'incremento numerico in modo tale da avere una visione complessiva del numero di possibili rischi che possono intercorre durante lo svolgimento del progetto.
 
-\subsection{CG}
+\subsection{Componenti del gruppo}
 
 \begin{longtable}{ m{1.5cm} m{4.6cm} m{4.6cm} p{2.3cm} }
 \hline
@@ -28,5 +28,73 @@ I rischi saranno identificati da un numero progressivo e la suddivisione in cate
 
 \rowcolor{beigechiaro} \color{black} \centering 003 & Quasi nessuno dei membri del gruppo ha avuto precedenti esperienze lavorative in team. Questo potrebbe implicare problemi nello svolgimento delle attività e conseguenti ritardi. & Mancato rispetto delle milestones\glossario prestabilite. &  \makecell{ Occorrenza: \\ \textbf{Alta} \\ Pericolosità: \\ \textbf{Alta}} \\
 \rowcolor{beigescuro}\color{black} \makecell{Ris.\\ rischio} & \multicolumn{3}{l}{\parbox[c][2.5cm]{12.0cm}{ Analisi della milestone non rispettata al fine di migliorare la gestione del tempo per le milestones successive. }} \\
+
+\hline
+
+
+\end{longtable}
+
+\subsection{Tecnologie}
+
+\begin{longtable}{ m{1.5cm} m{4.6cm} m{4.6cm} p{2.3cm} }
+\hline
+\rowcolor{bluelogo}\color{white}\textbf{Num.} & \color{white}\textbf{Descrizione} & \color{white}\textbf{Rilevamento} & \color{white} \textbf{\makecell{Grado di \\ Rischio}} \\
+
+\hline
+
+\rowcolor{beigechiaro} \color{black} \centering 004 & Certe tecnologie da usare sono sconosciute a tutti i membri del gruppo, mentre altre solo a certi membri. Ciò potrebbe causare ritardi nell'avanzamento del progetto. & Il responsabile avrà il compito di raccogliere le conoscenze dei singoli membri e monitorare la preparazione dei singoli membri del gruppo. &  \makecell{ Occorrenza: \\ \textbf{Media} \\ Pericolosità: \\ \textbf{Alta}} \\
+\rowcolor{beigescuro}\color{black} \makecell{Ris.\\ rischio} & \multicolumn{3}{l}{\parbox[c][3.5cm]{12.0cm}{ Coloro che conoscono determinate tecnologie sconosciute ad altri, potranno aiutare chi non le conosce, mentre per quelle sconosciute a tutti lo studio verrà suddiviso in maniera equa e successivamente ogni membro condividerà ciò che ha appreso con gli altri autonomamente. }} \\
+
+\hline
+
+\rowcolor{beigechiaro} \color{black} \centering 005 & L'utilizzo da parte del gruppo di strumentazione software di terzi per la gestione del progetto, comporta,che in caso di malfunzionamenti, potrebbero verificarsi ritardi o eventuali perdite di dati. & Il problema non sarà facilmente riscontrabile in quanto dipende da fattori esterni ed eventuali guasti non sono identificabili prima che si verifichino. &  \makecell{ Occorrenza: \\ \textbf{Bassa} \\ Pericolosità: \\ \textbf{Alta}} \\ \rowcolor{beigescuro}\color{black} \makecell{Ris.\\ rischio} & \multicolumn{3}{l}{\parbox[c][3cm]{12.0cm}{ Per far fronte ad eventuali malfunzionamenti di Github\glossario et simila, ogni membro del gruppo provvederà ad effettuare dei backup ad 
+intervalli regolari dei dati, in modo da poterli recuperare in caso di bisogno. }} \\
+
+\hline
+
+\rowcolor{beigechiaro} \color{black} \centering 006 & I PC dei singoli membri del gruppo potrebbero guastarsi ed eventuali guasti hardware potrebbero causare la perdita di dati e possibili ritardi nel ripristinare lo stato ottimale dei mezzi di lavoro. & In caso di problemi, l'interessato provvederà ad avvisare gli altri componenti del gruppo.
+ &  \makecell{ Occorrenza: \\ \textbf{Bassa} \\ Pericolosità: \\ \textbf{Media}} \\ \rowcolor{beigescuro}\color{black} \makecell{Ris.\\ rischio} & \multicolumn{3}{l}{\parbox[c][2.5cm]{12.0cm}{ Ogni membro del gruppo effettuerà dei backup settimanali dei dati, in modo da poter recuperare la maggior parte del lavoro in caso di guasti. }} \\
+
+\hline
+
+\rowcolor{beigechiaro} \color{black} \centering 007 & I membri del gruppo utilizzano PC con sistemi operativi diversi,il che comporta l'utilizzo di software di sviluppo compatibili con il sistema utilizzato. & I membri forniranno all'amministratore il sistema operativo in uso. &  \makecell{ Occorrenza: \\ \textbf{Bassa} \\ Pericolosità: \\ \textbf{Bassa}} \\ \rowcolor{beigescuro}\color{black} \makecell{Ris.\\ rischio} & \multicolumn{3}{l}{\parbox[c][2.5cm]{12.0cm}{ Prima dell'effettivo inizio del progetto,l'amministratore provvederà a ricercare software disponibili in ognuno di questi sistemi. }} \\
+
+\hline
+\rowcolor{beigechiaro} \color{black} \centering 008 & Per l'apprendimento di certe tecnologie non conosciute al gruppo, potrebbe essere richiesto più tempo rispetto al programmato. & Sarà compito del responsabile valutare la complessità di tali tecnologie. &  \makecell{ Occorrenza: \\ \textbf{Media} \\ Pericolosità: \\ \textbf{Media}} \\ \rowcolor{beigescuro}\color{black} \makecell{Ris.\\ rischio} & \multicolumn{3}{l}{\parbox[c][2.5cm]{12.0cm}{ Per far fronte a ciò, qualora sia possibile, saranno richiesti incontri con la proponente se in grado di trasmettere al gruppo la conoscenza di determinate tecnologie.}} \\
+\hline
+
+\end{longtable}
+
+\subsection{Organizzazione del lavoro}
+
+\begin{longtable}{ m{1.5cm} m{4.6cm} m{4.6cm} p{2.3cm} }
+\hline
+\rowcolor{bluelogo}\color{white}\textbf{Num.} & \color{white}\textbf{Descrizione} & \color{white}\textbf{Rilevamento} & \color{white} \textbf{\makecell{Grado di \\ Rischio}} \\
+
+\rowcolor{beigechiaro} \color{black} \centering 009 & Nessun membro del gruppo ha precedenti esperienze nella pianificazione delle attività. & Il responsabile terrà traccia degli effettivi tempi di sviluppo. &\makecell{ Occorrenza: \\ \textbf{Alta} \\ Pericolosità: \\ \textbf{Alta}} \\ \rowcolor{beigescuro}\color{black} \makecell{Ris.\\ rischio} & \multicolumn{3}{l}{\parbox[c][3.5cm]{12.0cm}{ Verranno stabilite delle milestones, in modo che ad ognuna di esse possa essere valutato l'effettivo adempimento o meno dei compiti prestabiliti. In caso negativo, il lavoro arretrato verrà ridistribuito tra i membri del gruppo. Inoltre, sarò possibile ripianificare le attività fino alla prossima milestone con maggior precisione. }} \\
+
+\hline 
+
+
+\rowcolor{beigechiaro} \color{black} \centering 010 & La pianificazione prevede un costo per le attività. Tutti membri del gruppo sono alla prima esperienza su un progetto simile, questo potrebbe portare a delle valutazioni errate sui costi complessivi del progetto. & Il responsabile avrà il compito di monitorare costantemente lo stato delle attività. & \makecell{ Occorrenza: \\ \textbf{Media} \\ Pericolosità: \\ \textbf{Media}} \\ \rowcolor{beigescuro}\color{black} \makecell{Ris.\\ rischio} & \multicolumn{3}{l}{\parbox[c][3.5cm]{12.0cm}{ Il responsabile valuterà di volta in volta le attività in modo tale da far quadrare i costi prestabiliti nel preventivo. }} \\
+
+\hline
+
+\end{longtable}
+
+\subsection{Requisiti richiesti}
+
+\begin{longtable}{ m{1.5cm} m{4.6cm} m{4.6cm} p{2.3cm} }
+
+\hline 
+\rowcolor{bluelogo}\color{white}\textbf{Num.} & \color{white}\textbf{Descrizione} & \color{white}\textbf{Rilevamento} & \color{white} \textbf{\makecell{Grado di \\ Rischio}} \\
+
+\rowcolor{beigechiaro} \color{black} \centering 011 & Potrebbero venir rivalutati i requisiti da parte della proponente \textit{Zucchetti S.p.A.}\glossario o anche da parte del gruppo in caso di necessità. Ciò richiederebbe una revisione parziale o completa dell'Analisi dei requisiti, portando così ritardi sulle consegne.& Già dalle prime fasi il gruppo cercherà di comunicare il più possibile con la proponente in modo da far emergere ogni possibile necessità nella modifica dei requisiti. &\makecell{ Occorrenza: \\ \textbf{Bassa} \\ Pericolosità: \\ \textbf{Alta}} \\ \rowcolor{beigescuro}\color{black} \makecell{Ris.\\ rischio} & \multicolumn{3}{l}{\parbox[c][2.5cm]{12.0cm}{ Il gruppo cercherà di discutere apertamente con la proponente le modifiche sui requisiti, cercando di trovare un punto comune che soddisfi entrambe le parti. }} \\
+
+\hline 
+
+\rowcolor{beigechiaro} \color{black} \centering 012 & L'analisi del capitolato scelto e la valutazione dei suoi requisiti possono essere fraintesi, questo può creare delle divergenze tra le aspettative della proponente e la visione del gruppo sul progetto. & Durante l'attività di Analisi dei requisiti verranno effettuati degli incontri con la proponente per ridurre al minimo possibili incomprensioni ed errori. & \makecell{ Occorrenza: \\ \textbf{Bassa} \\ Pericolosità: \\ \textbf{Bassa}} \\ \rowcolor{beigescuro}\color{black} \makecell{Ris.\\ rischio} & \multicolumn{3}{l}{\parbox[c][2.5cm]{12.0cm}{ Il gruppo esporrà negli incontri con la proponente, eventuali dubbi in modo da chiarire ogni requisito richiesto per il corretto sviluppo del progetto. Possibili errori dovranno essere corretti in seguito all'esito di ogni revisione. }} \\
+
+\hline
 
 \end{longtable}
