@@ -1,11 +1,58 @@
 \subsection{Versionamento}
-	
+La necessità di più componenti del \texttt{gruppo} di cooperare su uno stesso documento, porta alla soluzione di utilizzare un sistema di versionamento distribuito. 
+
+%Per le parti in cui più componenti del \texttt{gruppo} devono cooperare sugli stessi file, 
+%Per le parti in cui più componenti del \texttt{gruppo} devono operare contemporaneamente su gli stessi file, in questa fase di \textit{RR}, si è scelto un sistema di 
+%versionamento distribuito come, \textbf{git} e col supporto hosting di \textbf{GitHub}. 
+
 \subsubsection{Controllo di versione}
-	
+Il sistema di versionamento, utilizzato in questa fase di \textbf{RR}, è \textbf{git}, con il supporto hosting di \textbf{GitHub}.
+
 \paragraph{Struttura del repository}
+La struttura del repository segue il workflow \textbf{gitflow} di \textbf{Driessen at nvie}, idealizzato attorno il concetto di \textbf{release} del prodotto. Questo produce
+un framework robusto attorno al quale si possono gestire progetti di grandi dimensioni. I due branch principali sono il \textbf{master} e in parallelo ad esso il \textbf{develop}. 
+Il \textbf{master} viene considerato il branch \textit{main}, dove il codice sorgente della \textit{testa} riflette sempre lo stato di \textit{"production-ready"},
+mentre il ramo di \textbf{develop} è considerato il branch principale dove vengono effettuate le ultime modifiche per il prossimo rilascio del prodotto. 
+
 %\paragraph{Configurazione sistema}
+
 \paragraph{Processo di implementazione}
+L'implementazione dei documenti avviene tramite gli strumenti utilizzati nel paragrafo --INSERIRE PARAGRAFO PARTE DI FAVARO--\\
+% L'implementazione dei documenti in \textbf{RR} avviene tramite editor quali: 
+
+%\begin{itemize}
+	%\item \textbf{TexMaker};
+	%\item \textbf{TexStudio}.
+%\end{itemize} 
+%
+
+Quest'ultimi, in fase di compilazione producono dei file di poca rilevanza con estensioni come: \textit{.log, .out, .idx, .aux, .gz, .aux, .toc},
+i quali verranno ignorati come da configurazione, ma soprattutto file di più rilevanza
+come \textit{.pdf, .tex}, i quali verranno versionati dal sistema di git preinstallato.  
+Una volta creati/modificati i documenti, si procede con il \glossario{commit} di essi. Il commit riporta un \textit{cambiamento} al file,con un messaggio allegato ad esso che ne 
+descrive le modifiche apportate o un commando apposito per chiudere alcune task con tale commit. Dopo di che, il commit viene \glossario{pushato} nel branch appropriato, 
+a seconda dei criteri descritti nel prossimo paragrafo. 
+
 \paragraph{Ciclo di vita dei branch}
+\begin{enumerate}
+	
+	\item \textbf{Master}: branch \textit{main} del repository, esso rappresenta lo stato di \textit{"production-ready"} del prodotto. Questo branch ha una durata di vita quanto il repository stesso o infinita;
+	\item \textbf{Develop}: branch di sviluppo parallelo al \textbf{master} sul quale vengono aggiunte le feature provenienti appunto dai branch \textbf{feature},
+	 e dal quale inizia il branch di \textbf{realse}. Ha una durata di vita quanto il branch master;
+	 
+	\item \textbf{Release}: branch di preparazione per un nuovo rilascio o aggiornamento del prodotto. 
+	Utilizzato per risolvere piccoli errori e configurare le impostazioni di rilascio. Una volta rilasciato il 
+	prodotto, esso si riversa sul branch \textbf{master} e \textbf{develop}. Ha una durata breve in quanto il rilascio deve essere effettuato il prima possibile;
+
+	\item \textbf{Feature}: branch usato per sviluppare nuove feature per il prossimo rilascio a breve o lungo tempo. Il suo tempo di vita dura quanto lo sviluppo della nuova feature
+	fintanto che non avviene il \glossario{merge} sul branch di \textbf{develop};
+
+	\item \textbf{Hotfix}: branch molto simili a quelli di release, con l'obbiettivo di risolvere immediatamente un bug del prodotto in produzione o release. Una volta risolto il bug, 
+	esso si riversa sui branch \textbf{master} e \textbf{develop}, aggiornandoli nel minor tempo possibile. Ha un tempo di vita breve, in quanto viene creato per la necessità di risolvere 
+	un problema sul prodotto rilasciato. 
+	
+\end{enumerate}
+
 \paragraph{Rilascio di versione}
 
 \subsubsection{Configurazione versionamento}
@@ -26,11 +73,36 @@
 	\paragraph{Apertura}
 	\paragraph{Completamento}
 	\paragraph{Richiesta di revisione}
-	\paragraph{Completamento}
-
-\subsubsection
+	\paragraph{Chiusura}
+	
+\subsubsection{Strumenti}
 
 \subsection{Verifica}
+	\subsubsection{Descrizione}
+	\subsubsection{Analisti Statica}
+	\subsubsection{Verifica Diagrammi UML}
+	\subsubsection{Strumenti}
 	
 \subsection{Validazione}
+	\subsubsection{Descrizione}
+	\subsubsection{Procedure}
+
+
+\subsection{Risoluzione problematiche}
+
+	\subsubsection{Descrizione}
+	
+	\subsubsection{Ciclo di vita}
+		\paragraph{Individuazione}
+		\paragraph{Analisi problematiche}
+		\paragraph{Scelta soluzione migliore}
+		\paragraph{Reinserimento nella gestione di processo}
+	
+
+
+
+
+
+
+
 
