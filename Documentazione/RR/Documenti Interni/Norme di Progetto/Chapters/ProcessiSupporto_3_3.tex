@@ -8,7 +8,7 @@ La necessità di più componenti del \texttt{gruppo} di cooperare su uno stesso 
 \subsubsection{Controllo di versione}
 Il sistema di versionamento, utilizzato in questa fase di \textbf{RR}, è \textbf{git}, con il supporto hosting di \textbf{GitHub}.
 
-\paragraph{Struttura del repository} 
+	\paragraph{Struttura del repository} 
 La struttura del repository segue il workflow \textbf{gitflow} di \textbf{Driessen at nvie}, idealizzato attorno il concetto di \textbf{release} del prodotto. Questo produce
 un framework robusto attorno al quale si possono gestire progetti di grandi dimensioni. I due branch principali sono il \textbf{master} e in parallelo ad esso il \textbf{develop}. 
 Il \textbf{master} viene considerato il branch \textit{main}, dove il codice sorgente della \textit{testa} riflette sempre lo stato di \textit{"production-ready"},
@@ -16,16 +16,8 @@ mentre il ramo di \textbf{develop} è considerato il branch principale dove veng
 
 %\paragraph{Configurazione sistema}
 
-\paragraph{Processo di implementazione}
-L'implementazione dei documenti avviene tramite gli strumenti utilizzati nel paragrafo --INSERIRE PARAGRAFO PARTE DI FAVARO--\\
-% L'implementazione dei documenti in \textbf{RR} avviene tramite editor quali: 
-
-%\begin{itemize}
-	%\item \textbf{TexMaker};
-	%\item \textbf{TexStudio}.
-%\end{itemize} 
-%
-
+	\paragraph{Processo di implementazione}
+L'implementazione dei documenti avviene tramite gli strumenti utilizzati nel paragrafo §3.1\\
 Quest'ultimi, in fase di compilazione producono dei file di poca rilevanza con estensioni come: \textit{.log, .out, .idx, .aux, .gz, .aux, .toc},
 i quali verranno ignorati come da configurazione, ma soprattutto file di più rilevanza
 come \textit{.pdf, .tex}, i quali verranno versionati dal sistema di git preinstallato.  
@@ -61,12 +53,10 @@ rilascia la nuova versione sul branch master e applica le modifiche effettuate n
 \subsubsection{Configurazione versionamento}
 
 \paragraph{Remoto}
-
 	La configurazione di \textbf{GitHub} avviene nel portale: \textit{www.github.com}, dove si inseriscono le chiavi \glossario{\textbf{SSH}} per ciascun collaboratore del nuovo repository. 
 	Una volta creato il repository nel server remoto ed inserite le chiavi \textbf{SSH}, si procedere con la configurazione in locale.
 	
 \paragraph{Locale}
-
 	In locale, si devono generare le chiavei \textbf{SSH}, le quali permettono il collegamento con li server remoto dove viene gestito il repository. 
 	Una volta generate le chiavi, seguendo le varie procedure specifiche per ogni sistema operativo, vengono caricate sul portare apposito del gestore \textbf{GitHub}.
 	L'ultima fase prevede la clonazione con il programma apposito tra i seguenti: 
@@ -105,26 +95,22 @@ aumentando cosi l'automazione di tutto il processo.
 \subsubsection{Ciclo di vita delle tasks}
 
 	\paragraph{Apertura}
-
 	Da una specifica project board si possono creare le task o le \glossario{issue}, le quali possono essere assegnate a uno o più individui che collaborano al repository, inoltre ogni task
 	può far parte di una \glossario{milestone}, che raggruppa un insieme di task o issue per il raggiungimento di un obbiettivo in comune. 
 	Inoltre ad ognuna di essere può essere assegnato un colore che ne identifica il tipo come per esempio: \textit{bug, ToDo, miglioramenti, ecc...}. 
 	Si può creare una nuova task senza l'obbligo di assegnarla a una project board, mantenendo comunque tutte le funzionalità descritte prima. 
 
 	\paragraph{Completamento}
-
 	Il completamento di una task avviene in diversi modi, a seconda delle impostazioni di project board. 
 	Se la project board e automatizzata, il completamento di una task può avvenire tramite commit utilizzando il codice di chiusura. 
 	Questo metodo collega direttamente l'implementazione richiesta alla task. 
 	Se la project board non è automatizzata, il completamento dalla task deve essere manuale spostandola nello stato di \textit{Concluso}. 
 	
 	\paragraph{Richiesta di revisione}
-
 	Accumulate un certo numero di task o di milestones, si avvia la procedura di revisione da parte del verificatore. Questa può essere notificata e pianificata in modo automatico
 	a seconda del livello di automatizzazione della project board, oppure può essere totalmente gestita dal verificatore. 
 	
 	\paragraph{Chiusura}
-
 	Una volta che le task o le milestones sono state approvate dal verificatore, esse concludono il loro ciclo di vita nello stato di chiusura, le quali verranno spostate manualmente dal 
 	verificatore o automaticamente dalla project board se il merge è avvenuto con successo. 
 	
@@ -132,38 +118,3 @@ aumentando cosi l'automazione di tutto il processo.
 	Le task in stato di \textit{"Chiusura"} possono essere riaperte e spostate nello stato di \textit{"Apertura"} se esse in un lungo periodo non soddisfanno certi parametri di qualità
 	richiesti. 
 	
-%\subsubsection
-
-
-
-
-
-
-
-
-
-
-\begin{comment}
-
-\subsubsection{Verifica}
-	\paragraph{Descrizione}
-	\paragraph{Analisti Statica}
-	\paragraph{Verifica Diagrammi UML}
-	\paragraph{Strumenti}
-	
-\subsubsection{Validazione}
-	\paragraph{Descrizione}
-	\paragraph{Procedure}
-
-
-\subsection{Risoluzione problematiche}
-
-	\subsubsection{Descrizione}
-	
-	\subsubsection{Ciclo di vita}
-		\paragraph{Individuazione}
-		\paragraph{Analisi problematiche}
-		\paragraph{Scelta soluzione migliore}
-		\paragraph{Reinserimento nella gestione di processo}
-
-\end{comment}
