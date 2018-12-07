@@ -11,7 +11,7 @@
 \usepackage[hyperfootnotes=false]{hyperref}	%Pacchetto per coll. ipertestuali
 
 \usepackage{tabularx}
-\usepackage{longtable} %Per Tabelle potenzialmente multipagina
+\usepackage{longtable,array} %Per Tabelle potenzialmente multipagina
 \usepackage{fancyhdr}  % per gli header e footer
 \usepackage{graphicx}  %per le immagini
 \usepackage{flafter}
@@ -42,3 +42,7 @@
 \setcounter{tocdepth}{4}
 
 % \lhead{\includegraphics[scale=]{}} TODO LOGO ripetuto angolo Top SX
+
+
+\newcolumntype{C}[1]{>{\centering\arraybackslash}m{#1}}
+
