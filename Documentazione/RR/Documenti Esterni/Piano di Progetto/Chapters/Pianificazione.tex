@@ -8,19 +8,28 @@ Basandosi sulle scadenze esposte nel capitolo §1.5 si è deciso di sviluppare i
 	\item Validazione e collaudo.
 \end{itemize}
 
-\begin{longtable}{ m{8cm} m{3cm} p{3cm} }
+\begin{longtable}{|C{.46\textwidth}|C{.20\textwidth}|C{.20\textwidth}|}
 \hline
-
-\rowcolor{bluelogo}\color{white}\textbf{Fase} & \color{white}\textbf{Inizio} & \color{white}\textbf{Fine} \\
+\textbf{Fase} & \textbf{Inizio} & \textbf{Fine}\\
+\hline \hline
+\endfirsthead
 \hline
-\rowcolor{beigechiaro} \color{black} Avvio ed analisi requisiti & 15/11/2018 & 14/01/2019 \\
-\rowcolor{beigescuro} \color{black} Risanamento criticità & 22/01/2019 & 28/01/2019 \\
-\rowcolor{beigechiaro} \color{black} Progettazione architetturale & 29/01/2019 & 08/03/2019 \\
-\rowcolor{beigescuro} \color{black} Risanamento criticità & 16/03/2019 & 19/03/2019 \\
-\rowcolor{beigechiaro} \color{black} Progettazione di dettaglio e codifica & 20/03/2019 & 12/04/2019 \\
-\rowcolor{beigescuro} \color{black} Validazione e collaudo & 20/04/2019 & 10/05/2019 \\
-
+Avvio ed analisi requisiti & 15/11/2018 & 14/01/2019 \\
 \hline
+\textit{Risanamento criticità} & 22/01/2019 & 25/01/2019 \\
+\hline
+Progettazione architetturale & 26/01/2019 & 08/03/2019 \\
+\hline
+\textit{Risanamento criticità} & 16/03/2019 & 18/03/2019 \\
+\hline
+Progettazione di dettaglio e codifica & 19/03/2019 & 12/04/2019 \\
+\hline
+\textit{Risanamento criticità} & 20/04/2019 & 22/04/2019 \\
+\hline
+Validazione e collaudo & 23/04/2019 & 10/05/2019 \\
+\hline
+\caption{Principali Fasi di Sviluppo}
+\label{Tabella Fasi di Sviluppo}
 \end{longtable}
 
 La prima fase sarà a carico del gruppo \texttt{Agents of S.W.E.} mentre le ulteriori tre fasi saranno a carico del committente. \\
@@ -42,15 +51,33 @@ Il primo periodo prevede 6 incrementi e le principali operazioni svolte sono:
 	\item \textbf{Piano di Qualifica}: i Progettisti avranno il compito di cercare un elenco di attività e metodi utili al fine di garantire una buona qualità di prodotto. Questi verranno racchiusi all'interno del documento \textit{Piano di Qualifica};
 	\item \textbf{Studio di fattibilità}: consiste nell'analisi preliminare dei vari capitolati proposti ed è essenziale alla fine della scelta del capitolato da svolgere. L'analisi verrà inserita all'interno del documento \textit{Studio di fattibilità}; questa risulta essere un'attività bloccante per l'inizio dell'attività di Analisi dei Requisiti.  
 \end{itemize}
+\newpage
+
+\begin{landscape}
+\begin{figure}[h]
+	\centering
+  		\includegraphics[width=1.0\linewidth]{./images/AvvioAnalisi.png}
+  		\caption{Diagramma di Gantt per Attività di Avvio ed Analisi}
+  		\label{fig:Gantt Avvio ed Analisi}
+\end{figure}
+\end{landscape}
 
 \subsection{Risanamento criticità}
 
-Con \textit{Risanamento delle criticità}, fase all'infuori dello standard ISO, intendiamo una periodo da noi programmato in cui andremo ad analizzare le varie criticità che sono emerse alla fine del primo incremento, dopo la sua analisi sia da parte della proponente che da parte del gruppo. \\
+Con \textit{Risanamento delle criticità}, fase all'infuori dello standard ISO, intendiamo una periodo da noi programmato in cui andremo ad analizzare le varie criticità che sono emerse alla fine dei vari incrementi, dopo la loro analisi sia da parte della proponente che da parte del gruppo. \\
 La scelta di inserire questo tra la prima e la seconda fase è guidata dal fatto che per procedere è necessario aver risolto tutti i problemi riscontrati nelle produzioni precedenti, in particolar modo la seconda fase, individuata dallo standard, prevede la \textit{Progettazione architetturale} ed è quindi fondamentale sanare i problemi sorti nel primo periodo. 
+Il primo periodo di \textit{Risanamento delle Criticità} si svolgerà dal 22/01/2019 al 25/01/2019.
+
+\begin{figure}[h]
+	\centering
+  		\includegraphics[width=1.0\linewidth]{./images/RisanamentoCriticita1.png}
+  		\caption{Diagramma di Gantt per Attività Risanamento delle Criticità Parte 1}
+  		\label{fig:Gantt Risananmento Criticità 1}
+\end{figure}
 
 \subsection{Progettazione architetturale}
 
-Il periodo di \textit{Progettazione architetturale} inizia dalla fine del periodo di \textit{Risanamento criticità} e termina con la consegna del nuovo incremento (quindi dal 29/01/2018 al 08/03/2018), il quale prevede le operazioni riportate nella sottosezione seguente.
+Il periodo di \textit{Progettazione architetturale} inizia dalla fine del periodo di \textit{Risanamento criticità} e termina con la consegna del nuovo incremento (quindi dal 26/01/2019 al 08/03/2019), il quale prevede le operazioni riportate nella sottosezione seguente.
 
 \subsubsection{Incrementi}
 \begin{itemize}
@@ -60,12 +87,32 @@ Il periodo di \textit{Progettazione architetturale} inizia dalla fine del period
 	\item \textbf{Glossario}: aggiunta e modifica dei termini in itinere;  
 	\item \textbf{Verifica}: cinque giorni prima della fine del periodo sarà compito dei Verificatori analizzare i risultati della seconda fase segnalando, a chi di dovere, gli errori o le imprecisioni riscontrate.
 \end{itemize}
+\newpage
+
+\begin{landscape}
+\begin{figure}[h]
+	\centering
+  		\includegraphics[width=1.0\linewidth]{./images/ProgettazioneArchitetturale.png}
+  		\caption{Diagramma di Gantt per Attività di Progettazione Architetturale}
+  		\label{fig:Gantt Progettazione Architetturale}
+\end{figure}
+\end{landscape}
 
 \subsection{Risanamento criticità}
-Con \textit{Risanamento delle criticità}, fase all'infuori dello standard ISO, intendiamo una periodo da noi programmato in cui andremo ad analizzare le varie criticità che sono emerse alla fine del primo incremento, dopo la sua analisi sia da parte della proponente che da parte del gruppo. \\
+%Con \textit{Risanamento delle criticità}, fase all'infuori dello standard ISO, intendiamo una periodo da noi programmato in cui andremo ad analizzare le varie criticità che sono emerse alla fine del primo incremento, dopo la sua analisi sia da parte della proponente che da parte del gruppo. \\
+In questo periodo di risanamento delle criticità, andremo a risolvere i restanti problemi dalla prima fase(qualora ve ne siano ancora). Inoltre, aggiusteremo i problemi riscontrati nella fase di \textit{Progettazione Architetturale} relativi a \textit{Technology Baseline} e \textit{Proof of Concept} in vista dei prossimi incrementi.
+Il secondo periodo di \textit{Risanamento delle Criticità} andrà dal 16/03/2019 al 18/03/2019.
+
+
+\begin{figure}[h]
+	\centering
+  		\includegraphics[width=1.0\linewidth]{./images/RisanamentoCriticita2.png}
+  		\caption{Diagramma di Gantt per Attività Risanamento delle Criticità Parte21}
+  		\label{fig:Gantt Risananmento Criticità 2}
+\end{figure}
 
 \subsection{Progettazione di dettaglio e codifica}
-Il periodo di \textit{Progettazione di dettaglio e codifica} va dal giorno dopo la fine del periodo di \textit{Risanamento delle criticità}, cioè il 20/03/2019, e termina con la consegna dei documenti per la RQ, cioè il 12/04/2019.\\
+Il periodo di \textit{Progettazione di dettaglio e codifica} va dal giorno dopo la fine del periodo di \textit{Risanamento delle criticità}, cioè il 19/03/2019, e termina con la consegna dei documenti per la RQ, cioè il 12/04/2019.\\
 
 \subsubsection{Incrementi}
 Gli incrementi che si andranno ad attuare durante questo periodo sono:
@@ -78,8 +125,30 @@ Gli incrementi che si andranno ad attuare durante questo periodo sono:
 	\item \textbf{Lettera di Presentazione}: prevede la stesura della \textit{Lettera di presentazione} per la partecipazione alla RQ.
 \end{itemize}
 
+\newpage
+
+\begin{landscape}
+\begin{figure}[h]
+	\centering
+  		\includegraphics[width=1.0\linewidth]{./images/DettaglioeCodifica.png}
+  		\caption{Diagramma di Gantt per Attività di Progettazione di Dettaglio e Codifica}
+  		\label{fig:Gantt Progettazione di dettaglio e codifica}
+\end{figure}
+\end{landscape}
+
+\subsection{Risanamento criticità}
+In questo periodo di risanamento delle criticità, andremo a risolvere i restanti problemi dalla seconda fase. Inoltre, aggiusteremo i problemi riscontrati nella fase di \textit{Progettazione di Dettaglio e Codifica} relativi a \textit{Product Baseline} e \textit{Manuale Utente} in vista dei prossimi incrementi.
+Il terzo periodo di \textit{Risanamento delle Criticità} andrà dal 20/04/2019 al 22/04/2019.
+
+\begin{figure}[h]
+	\centering
+  		\includegraphics[width=1.0\linewidth]{./images/RisanamentoCriticita3.png}
+  		\caption{Diagramma di Gantt per Attività Risanamento delle Criticità Parte 3}
+  		\label{fig:Gantt Risananmento Criticità 3}
+\end{figure}
+
 \subsection{Validazione e collaudo}
-Il periodi di \textit{Validazione e collaudo} inizia il 20/04/2018 e termina il 10/05/2018 con la consegna dei documenti per la RA. 
+Il periodi di \textit{Validazione e collaudo} inizia il 23/04/2018 e termina il 10/05/2018 con la consegna dei documenti per la RA. 
 
 \subsubsection{Incrementi}
 Durante questo periodo saranno svolti i seguenti incrementi:
@@ -90,4 +159,13 @@ Durante questo periodo saranno svolti i seguenti incrementi:
 	\item \textbf{Manuale utente}: prevede il miglioramento e completamento del \textit{Manuale utente}, contente le indicazioni di utilizzo del prodotto.
 \end{itemize}
 
+\newpage
 
+\begin{landscape}
+\begin{figure}[h]
+	\centering
+  		\includegraphics[width=1.0\linewidth]{./images/ValidazioneeCollaudo.png}
+  		\caption{Diagramma di Gantt per Attività di Validazione e Collaudo}
+  		\label{fig:Gantt Validazione e Collaudo}
+\end{figure}
+\end{landscape}

@@ -1,6 +1,11 @@
 \input{Config/config.tex}
 
+
 \usepackage{graphicx}
+
+% Ridefinizione dei nomi degli indici
+\renewcommand{\listtablename}{Indice delle Tabelle}
+\renewcommand{\listfigurename}{Indice di Figure e Grafici}
 
 
 \begin{document}
@@ -37,6 +42,10 @@
 
 \pagenumbering{Roman}
 \tableofcontents
+
+% Inclusione degli indici di tabelle e immagini
+\listoftables
+\listoffigures
 
 \pagebreak
 
