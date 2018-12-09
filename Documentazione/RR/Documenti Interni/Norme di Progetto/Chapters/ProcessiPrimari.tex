@@ -13,7 +13,7 @@ In questa sezione del documento vengono trattate le norme che il team \texttt{Ag
 
 \subsubsection{Progettazione}
 \subsubsection{Codifica}
-Di seguito vengono definite delle norme che devono essere adottate dai Programmatori per garantire una buona leggibilità  e manutenibilità  del codice. Le prime norme che seguiranno sono le più generali, da adottarsi per ogni linguaggio di programmazione adottato all'interno del progetto, in seguito quelle più specifiche per i linguaggi JavaScript\glossario, HTML\glossario e CSS\glossario.\\
+Di seguito vengono definite delle norme che devono essere adottate dai Programmatori per garantire una buona leggibilità  e manutenibilità  del codice. Le prime norme che seguiranno sono le più generali, da adottarsi per ogni linguaggio di programmazione adottato all'interno del progetto, in seguito quelle più specifiche per i linguaggi ECMAScript 6\glossario, HTML\glossario e CSS\glossario.\\
 Ogni norma è caratterizzata da un paragrafo di appartenenza, da un titolo, una breve descrizione, e se il caso lo richiede, un esempio.\\
 Il rispetto delle seguenti norme è fondamentale per garantire uno stile di codifica uniforme all'interno del progetto, oltre che per massimizzare la leggibilità  e agevolare la manutenzione, la verifica\glossario e la validazione\glossario.
 
@@ -55,7 +55,7 @@ MyFunction() { ... } //NO
 * #entry || Author || Date || Description
 */
 	\end{lstlisting}
-	\item La versione del file nell'intestazione, deve rispettare la seguente formulazione: $Y.K$, dove Y rappresenta la versione principale, K la versione parziale della relativa versione principale.\\ I numeri di versione del tipo $Y.0$, dalla $1.0$, vengono considerate versioni stabili, e quindi versioni da testare per saggiarne la qualità .
+	\item La versione del file nell'intestazione, deve rispettare la seguente formulazione: $X.Y.Z$, dove X rappresenta la versione principale, Y la versione parziale della relativa versione principale, e Z l'avanzamento rispetto ad Y.\\ I numeri di versione del tipo $X.0.0$, dalla $1.0.0$, vengono considerate versioni stabili, e quindi versioni da testare per saggiarne la qualità .
 \end{itemize}
 \paragraph{ECMAScript 6:}
 Seguendo le indicazioni presenti nella documentazione\footnote{\texttt{http://docs.grafana.org/plugins/developing/development/}} dell'azienda fornitrice di \textit{Grafana}, la piattaforma  per cui si intende sviluppare il plugin, il team ha deciso di adottare come linguaggio di programmazione principale ECMAScript 6\footnote{Linguaggio divenuto standard ISO: ISO/IEC 16262:2011, e relativo aggiornamento ISO/IEC 22275:2018.}.\\
@@ -250,7 +250,4 @@ class myClass() {
   ...
 }
 \end{lstlisting}
-
-\paragraph{HTML}
-
 
