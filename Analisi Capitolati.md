@@ -1,8 +1,8 @@
-# Analisi dei Capitolati 
+# Analisi dei Capitolati
 
 ### [C3] Grafana - Zucchetti
 *Priorità*: 1 <br>
-**Pro**: interesse, poche tecnologie da apprendere, reti Bayesiane, tecnologia di partenza preesistente, disponibilità/vicinanza azienda<br>
+**Pro**: interesse,  poche tecnologie da apprendere, reti Bayesiane, tecnologia di partenza preesistente, disponibilità/vicinanza azienda<br>
 **Contro**: JS da apprendere, poche tecnologie<br>
 **Tecnologie da usare**: Grafana, JS, reti Bayesiane, HTML & CSS, SQL<br>
 **Conoscenze pregresse**: reti Bayesiane, SQL<br>
@@ -41,7 +41,7 @@
 **Valutazione difficoltà**: 6.5/10<br>
 **Domande**:
 
-### [C5] P2PCS - GaiaGo 
+### [C5] P2PCS - GaiaGo
 **Pro**: chiarezza aspettative del prodotto finito, fornisce molto materiale<br>
 **Contro**: poca chiarezza dell’ambito applicativo <br>
 **Tecnologie da usare**: Kotlin/Java, Google Cloud, NodeJS, Octatlysis, <br>
