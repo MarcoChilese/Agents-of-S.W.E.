@@ -1,0 +1,86 @@
+\subsection{Documentazione}
+
+\subsubsection{Descrizione}
+Questo capitolo descrive i dettagli su come deve essere redatta e verificata la documentazione durante il ciclo di vita del software. Le norme sono tassativamente valide per tutti i documenti formali.
+\subsubsection{Ciclo di vita documentazione}
+Il ciclo di vita previsto della documentazione si può suddividere principalmente in tre processi: 
+\begin{itemize}
+	\item \textbf{Sviluppo}: è il processo di stesura, eseguita dal redattore, dove descrive il tasks\glossario assegnato dal responsabile. Una volta terminata la fase di scrittura del documento, il redattore lo segnala al responsabile, che assegnerà a un verificatore il compito di	analizzare il lavoro svolto;
+ 	\item \textbf{Verifica}: è il processo eseguito dai verificatori designati dal responsabile, il loro compito è controllare che il redattore abbia scritto il documento nella norma e in maniera corretta grammaticalmente e strutturalmente;
+ 	\item \textbf{Approvato}: è il processo conclusivo, in cui il verificatore ha terminato il suo compito di controllo e comunica al responsabile il termine del lavoro. Il responsabile procederà a confermare il documento e ad eseguire il rilascio.
+\end{itemize} 
+
+\subsubsection{Template}
+Il \texttt{gruppo} ha deciso di strutturare un template \LaTeX per dare uniformità a tutti i documenti. Il template facilita e velocizza la stesura, poiché i redattori devono concentrarsi solo ed esclusivamente al contenuto e non alla layout.  
+
+\subsubsection{Struttura documenti}
+Ogni documento segue una determinata struttura, predefinita e accordata dal \texttt{gruppo}:
+
+\paragraph{Prima pagina\\} 
+La prima pagina di ogni documento ha la stessa struttura: il logo del \texttt{gruppo} centrato in alto, con sotto, sempre centrato, il nome del \texttt{gruppo} e il capitolato scelto. Appena sotto è posizionato il titolo del documento e una tabella contenente informazioni relative al documento, ovvero, la versione, i nome dei redattori e dei verificatori, lo stato (che può essere "confermato" o "work in progress"), l'utilizzo che avrà nel progetto (interno o esterno) e i destinatari.
+
+\paragraph{Nomenclatura\\}
+Le seguenti regole valgono per tutti i documenti eccetto per la lettera di presentazione. La nomenclatura è un aspetto fondamentale che abbiamo deciso di struttura nel seguente modo: 
+\begin{itemize}
+	\item \textbf{vX.Y.Z }: rappresenta la versione del documento con X , Y e Z numeri non negativi:
+	\begin{itemize}
+		\item \textbf{X}: rappresenta il numero di pubblicazioni ufficiali del documento in passato; se il valore è 0 significa che il documento non è mai stato pubblicato. Ogni qualvolta viene pubblicato Y e Z vengono azzerati e X viene incrementato di una unità;
+		\item \textbf{Y}: identifica il numero di verifiche avvenute con successo, ogni qualvolta viene effettuata una verifica il valore di Z viene azzerato;
+		\item \textbf{Z}: identifica il numero di volte che il documento è stato modificato prima di una pubblicazione e/o verifica.
+	\end{itemize}
+	\item Il formato dei file è .tex durante la fase di sviluppo, mentre dopo l'approvazione da parte del responsabile verrà creato un file con formato .pdf che rappresenta la pubblicazione in via ufficiosa.
+\end{itemize}
+
+\paragraph{Struttura indice\\}
+In tutta la documentazione, fatta eccezione per i verbali, dopo la pagina di presentazione è presente l'indice del documento. La struttura è standard: numero e titolo del capitolo, eventuali sottosezioni e paragrafi con indicato a fianco la pagina del contenuto. Ogni titolo è un link alla pagina del contenuto. 
+
+\paragraph{Elenco tabelle\\}
+In tutti i documenti è presente un elenco delle tabelle utilizzate, ove presenti. \'E posizionato appena dopo l'indice.  
+
+\paragraph{Elenco figure\\}
+In tutti i documenti è presente un elenco delle figure utilizzate, ove presenti. \'E posizionato appena dopo l'elenco delle tabelle.
+
+\paragraph{Piè di pagina}: le pagine con indice e presentazione del documento contengono dei numeri progressivi romani, mentre le pagine con il contenuto il numero della pagina; possono essere presenti riferimenti bibliografici;
+
+\paragraph{Registro Modifiche\\}
+Ogni documento, eccezion fatta per verbali e lettera di presentazione, presenta un registro delle modifiche chiamato "Changelog". \'E strutturato sotto forma di tabella, che contiene in ordine cronologico tutte le modifiche identificabili dalla versione.  Ogni riga contiene la data, il nome di chi ha effettuato la modifica e il relativo ruolo, e infine una breve descrizione della modifica effettuata.
+
+\subsubsection{Norme tipografiche}
+\begin{itemize}
+	\item \textbf{Glossario}: i termini contenuti nel glossario si possono identificare dal carattere G maiuscolo e corsivo a pedice della parola interessata, per esempio Norme\textsubscript{G};	 		
+	\item \textbf{Nome gruppo}: in qualsiasi documento, quando si fa riferimento al gruppo si è deciso di adottare il seguente font: \texttt{gruppo};
+	\item \textbf{Elenchi puntati}: ogni elemento di un elenco puntato deve essere seguito da un punto e virgola eccezion fatta per l'ultimo che sarà seguito dal punto;
+	\item \textbf{Stile testo}:
+	\begin{itemize}
+		\item \textbf{Corsivo}: è utilizzato per citare tecnologie esterne, e per riferimenti a documentazione;	
+		\item \textbf{Grassetto}: le parole in grassetto identificano il titolo di una sezione, sottosezione, paragrafo e un elemento di un elenco puntato;
+		\item \textbf{URI}:	i link esterni sono evidenti per il colore blu.
+	\end{itemize}
+	\item \textbf{Formati}:
+	\begin{itemize}
+		\item \textbf{Date}: sono scritte seguendo il formato YYYY-MM-DD, dove YYYY rappresenta l'anno, MM il mese e DD il giorno;
+		\item \textbf{Valuta}: si è adottato il formato XXX.YY con Y, le cifre dopo la virgola, e il "punto" come delimitatore tra decimale e parte intera.
+	\end{itemize}
+\end{itemize}
+
+
+\subsubsection{Documenti Correnti}
+Sono descritti brevemente i documenti formali da consegnare:
+\begin{itemize}
+	\item \textbf{Analisi dei Requisiti}: ha un utilizzo prettamente esterno, e ha l'obiettivo di esporre e scomporre i requisiti\glossario del progetto. Contiene i casi d'uso e i diagrammi di interazione con l'utente. Viene scritto dagli analisti dopo una profonda analisi del capitolato e vari colloqui con il proponente; 
+	\item \textbf{Glossario}: ha un utilizzo prettamente esterno e ha lo scopo di dare una definizione ai termini più specifici usati nei documenti formali;
+	\item \textbf{Norme di Progetto}: è utilizzato internamente, ed espone gli standard e le direttive utilizzate dal \texttt{gruppo} per sviluppare il progetto in tutta la sua interezza;
+	\item \textbf{Piano di Progetto}: ha un utilizzo esterno, ed espone come il gruppo ha deciso di impiegare le risorse di tempo e umane;
+	\item \textbf{Piano di Qualifica}: utilizzo esterno, descrive gli standard e gli obiettivi che il \texttt{gruppo} dovrà raggiungere per garantire la qualità di prodotto e processo;
+	\item \textbf{Studio di Fattibilità}: documento interno, espone pregi e difetti di tutti i capitolati in esame. Descrive i motivi per cui il \texttt{gruppo} ha scelto il capitolato corrente.
+\end{itemize}
+
+\subsubsection{Ambiente}
+Per uniformare e strutturare al meglio la scrittura dei documenti il \texttt{gruppo} ha adottato il formato \LaTeX. 
+\textit{TexMaker\footnote{\texttt{http://www.xm1math.net/texmaker/}}} è utilizzato per la stesura, il \texttt{gruppo} ha optato per questo editor perchè open-source e integra un controllo ortografico della lingua italiana. 
+Per la costruzione dei diagrammi è stato optato per l'utilizzo di script in python, scritti e testati dal \texttt{gruppo}, per uniformare la procedura in tutta la documentazione.
+
+
+
+
+

@@ -1,0 +1,37 @@
+\section{Resoconto}
+
+\subsection{Punto 1}
+Al committente è stata richiesta la presentazione di alcuni plugin-in sviluppati o utilizzati dall'azienda. 
+
+Al committente è stata richiesta la presentazione di alcuni plug-in  per grafana -TODO CHECK GRAFANA- sviluppati dall'azienda stessa, ma negativo poiché il committente utilizza solo plug-in da terze parti usando una politica di \textit{"riutilizzo del software"}. Dunque, l'azienda, ci ha presentato alcuni plug-in che utilizzano come indicatori di stato e soglie di allertamento, mettendo
+in risalto la complessità di estrapolare informazioni mirate ed efficienti per capire il problema all'origine di tali indicatori, 
+da cui è nata la necessità di un sistema più avanzato è \textit{"intelligente"} come quello richiesto nel capitolato. \\
+Inoltre, oltre a mettere in risalto le varie difficoltà, ci sono stati mostrati i casi d'uso in cui il plug-in andrebbe adottato, evidenziato i principali punti di forza e le difficoltà di implementazione
+richieste.\\ 
+Per compensare le mancate conoscenze di grafana e delle reti bayesiane, ci sono state consigliate delle dispense a cui fare riferimento per aumentare le nostre conoscenze sull'argomento. 
+
+\subsection{Punto 2}
+Si sono concordati gli standard da utilizzare nell'implementazione del plug-in, quali:
+\begin{itemize}
+	\item La versione di \textbf{JavaScript} da utilizzare; 
+	\item Lo standard \textbf{HTML} necessario; 
+	\item La versione di \textbf{CSS} da rispettare; 
+\end{itemize}
+Tutti gli standard ci sono stati indicati nella documentazione di \textbf{Grafana}.
+
+\subsection{Punto 3}
+Abbiamo chiesto un campione di dati da analizzare e da utilizzare come \glossario{\textbf{mock}} per 
+futuri test interni. Sfortunatamente l'azienda non poteva darci alcun tipo di campione, ma ci ha fornito 
+una esaustiva presentazione del flusso di dati che deve essere analizzato dal plug-in.
+Ciò è bastato per analizzare il carico da sopportare nel processo di elaborazione dei dati. 
+
+\subsection{Punto 4}
+L'azienda non ci fornice alcun tipo di ambiente di sviluppo, testing o deploy. Tutto questo deve essere 
+gestito dal gruppo. Per i test ci è stato consigliato di creare dei \textbf{mock} appositi adibiti a tale scopo. 
+
+\subsection{Punto 5}
+Si sono inoltre discusse altre tecniche di implementazione, quali l'utilizzo di reti neurali come \textit{RNN}, 
+le quali potrebbero offrire prestazioni migliori delle attuali reti bayesiane, ma poiché la complessità di 
+strutturazione di tali reti neurali è molto elevata, tenendo conto del fatto che un minimo errore potrebbe 
+portare alla perdita di dati sensibili, si e deciso di accantonare l'idea delle RNN, poiché l'utilizzo delle reti 
+bayesiane era più che sufficiente per svolgere il lavoro richiesto con degli standard di qualità elevati. 

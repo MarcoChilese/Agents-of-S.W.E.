@@ -1,0 +1,72 @@
+\subsubsection{Gestione degli Strumenti di Versionamento}
+	Come strumento per la gestione del versionamento dei files si è scelto di utilizzare una \textit{Repository}\glossario su \textit{GitHub}\glossario. La gestione di tale \textit{Repository}\glossario è compito dell'\textit{Amministratore di Progetto}.
+
+\paragraph{Struttura Repository} ~\\
+	La Repository\glossario \textit{"Agents-of-S.W.E."} è caratterizzata da una cartella principale "Documentazione", la cui sottocartella "RR" rappresenta la principlae struttura in cui sono organizzati i files su cui il gruppo \textit{Agents of S.W.E.} ha lavorato in vista della RR.\\
+	Nello specifico la sottocartella \textbf{"RR"} è caratterizzata dalla seguente struttura di folders:
+	\begin{itemize}
+	\item \textbf{Documenti Esterni}:
+		\begin{itemize}
+		\item \textbf{Analisi dei Requisiti};
+		\item \textbf{Glossario};
+		\item \textbf{Piano di Progetto};
+		\item \textbf{Piano di Qualifica};
+		\item \textbf{Verbali Esterni}.
+		\end{itemize}
+	\item \textbf{Documenti Interni}:
+		\begin{itemize}
+		\item \textbf{Norme di Progetto};
+		\item \textbf{Studio di Fattibilità};
+		\item \textbf{Verbali Interni}.
+		\end{itemize}
+	\end{itemize}
+	Ciascuna cartella contiene a sua volta un file LaTeX ".tex" che assume il nome del corrispondente documento e il corrispettivo file ".pdf" ottenuto attraverso la compilazione.
+
+\paragraph{Uso dei Branch} ~\\
+	Al fine di agevolare il più possibile il parallelismo, evitando al contempo quanto più possibile eventuali problematiche in fase di \textit{merge}\glossario, sono stati creati i seguenti branch\glossario:
+	\begin{itemize}
+	\item \textbf{master}: Questo branch contiene solamente i documenti che si trovano in stato \textbf{"Approvato"}, i quali formano dunque la \textit{baseline}\glossario;
+	\item \textbf{develop}: Questo è il branch di "sviluppo". Esso contiene tutti i documenti che, sebbene siano considerati ultimati per quanto riguarda la loro stesura, sono in attesa di approvazione o in fase di verifica;
+	\item \textbf{feature/"nomeDocumento"}: Vi sono quattro branch\glossario distinti questo tipo, nello specifico: "feature/analisiRequisiti", "feature/normeProgetto, "feature/pianoProgetto" e "feature/pianoQualifica". Ciascuno di questi è specializzato nell'avanzamento della stesura del documento a cui si riferisce.
+	\end{itemize}
+
+\paragraph{Tipi di files} ~\\
+	All'interno della repository\glossario sono presenti solamente i seguenti formati di files:
+	\begin{itemize}
+	\item \textit{.tex}: files sorgenti LaTeX\glossario;
+	\item \textit{.pdf}: files compilati dai sorgenti;
+	\item \textit{.jpg} o \textit{.png}: immagini.
+	\end{itemize}
+	I files temporanei prodotti dalla compilazione LaTeX\glossario sono stati introdotti in un file \textit{.gitignore}, vendono dunque ignorati da Git in sede di \textit{push}\glossario.
+
+\paragraph{Norme delle Commit} ~\\
+	Ogni \textit{commit}\glossario, ovvero ciascuna modifica alla repository\glossario \textit{Agents-of-S.W.E.} deve essere caratterizzata da una descrizione sensata, eventualmente accompagnata ad un riferimento esplicito ad una \textit{issue}\glossario aperta, al fine di agevolare una piena, e non onerosa, comprensione da parte di ogni membro del gruppo.
+
+\paragraph{Norme dei Merge tra Branch} ~\\
+	Al fine di rispettare la caratterizzazione che si è deciso di dare al branch \textbf{master}, e per agevolare un lavoro sistematico ed organizzato del lavoro si sono stabilite le seguenti norme in sede di \textit{merge}\glossario tra diversi branch\glossario:
+	\begin{itemize}
+	\item \textbf{Merge develop-feature/"nomeDocumento"}: Questo merge avviene solo quando gli incaricati alla stesura del documento a cui si riferisce il branch: feature/"nomeDocumento" ritengono ultimata questa prima attività. Il documento in questione, dunque, si considera completo di ogni sua parte essenziale, eccezzion fatta per eventuali modifiche, anche cospicue, da apportare a seguito di un'attività di verifica e/o approvazione;
+	\item \textbf{Merge master-develop}: Questo merge avviene solo quando ogni documento contenuto nel branch: "develop" è stato verificato ed approvato, e si considera duenque pronto per il rilascio.
+	\end{itemize}
+
+
+\subsubsection{Gestione degli Strumenti di Coordinamento}
+
+\paragraph{Tasks} ~\\
+	La suddivisione del lavoro in \textit{tasks}\glossario è compito del \textit{Responsabile di Progetto}. Lo strumento scelto per la creazione e gestione di questi \textit{tasks}\glossario è lo stesso Git\glossario, il quale mette a disposizione l'utile strumento delle \textit{issue}\glossario.\\
+	La creazione di un \textit{task}\glossario da parte del \textit{Responsabile di Progetto}, risulterà dunque essere l'istanziazione di una \textit{issue}\glossario caratterizzata dalle seguenti proprietà:
+	\begin{itemize}
+	\item \textit{Titolo} significativo;
+	\item \textit{Descrizione} concisa ma caratteristica ed esplicativa del problema da affrontare;
+	\item \textit{Uno o più tags} associati a particolarità del \textit{task} in questione, e/o al/ai documento/i a cui si riferiscono. Tali etichette consentono una rapida catalogazione delle \textit{issue} stesse;
+	\item \textit{Data di scadenza} che rappresenta il termine ultimo entro cui tale \textit{issue} deve essere chiusa.
+	\end{itemize}
+	E' importante far notare che, sebbene l'onere della suddivisione del lavoro, e dunque la creazione e gestione dei \textit{tasks}\glossario e dei conseguenti \textit{tickets}\glossario, ricada sul \textit{Responsabile di progetto}, ciascun membro del gruppo ha la facoltà di creare \textit{tasks}\glossario, a patto che tale compito veda lui come unico assegnatario. Tali \textit{tasks}\glossario dovranno inoltre essere approvati dal \textit{Responsabile} per essere validi.
+
+\paragraph{Tickets} ~\\
+	I \textit{tickets}\glossario rappresentano l'operazione di assegnazione dei \textit{tasks}\glossario, e quindi in questo caso delle \textit{issue}\glossario, ad uno o più specifici membri del gruppo. Tale operazione è responsabilità unica del \textit{Responsabile di Progetto} a meno che non si tratti di \textit{tasks}\glossario (approvati dal Responsabile) creati da un membro del gruppo, ed assegnati autonomamente a sè stesso.\\
+	Questa operazione di \textit{ticketing} può avvenire in due modalità distinte:
+	\begin{itemize}
+	\item \textbf{Proattivamente}: Nel caso in cui l'assegnatario del task in questione sia già noto, ed indicato come tale, alla creazione della issue da parte del Responsabile. E' importante notare come questa sia l'unica modalità di ticketing possibile nel caso in cui il creatore del task sia un membro diverso dal \textit{Responsabile di Progetto};
+	\item \textbf{Retroattivamente}: Nel caso in cui uno o più membri del gruppo vengano designati, in un secondo momento, come assegnatari di una issue già precedentemente esistente. Questa modalità di ticketing consente di gestire situazioni in cui non è utile individuare subito un assegnatario, come nel caso di task di importanza manginale e/o scandeze molto permissive, oppure invece si tratti di un compito le cui complessità sono emerse solo in seconda battuta, e necessiti dunque di un maggior apporto lavorativo per rispettarne le scadenze.
+	\end{itemize}
