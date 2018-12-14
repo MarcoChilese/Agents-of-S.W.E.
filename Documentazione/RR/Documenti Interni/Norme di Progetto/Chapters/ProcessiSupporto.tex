@@ -102,7 +102,29 @@ Il sistema di versionamento, utilizzato in questa fase di \textbf{RR}, è \textb
 \paragraph{Struttura del repository} \-\\ 
 La struttura del repository segue il workflow \textbf{gitflow} di \textbf{Driessen at nvie}, idealizzato attorno il concetto di \textbf{release} del prodotto. Questo produce un framework robusto attorno al quale si possono gestire progetti di grandi dimensioni. I due branch principali sono il \textbf{master} ed in parallelo ad esso il \textbf{develop}. 
 Il \textbf{master} viene considerato il branch \textit{main}, dove il codice sorgente della \textit{testa} riflette sempre lo stato di \textit{"production-ready"},
-mentre il ramo di \textbf{develop} è considerato il branch principale dove vengono effettuate le ultime modifiche per il prossimo incremento del prodotto. 
+mentre il ramo di \textbf{develop} è considerato il branch principale dove vengono effettuate le ultime modifiche per il prossimo incremento del prodotto. ~\\
+Più precisamente il Repository\glossario \textit{"Agents-of-S.W.E."} è caratterizzata da una cartella principale "Documentazione", la cui sottocartella "RR" rappresenta la principlae struttura in cui sono organizzati i files su cui il gruppo \textit{Agents of S.W.E.} ha lavorato in vista della RR.\\
+	Nello specifico la sottocartella \textbf{"RR"} è caratterizzata dalla seguente struttura di folders:
+	\begin{itemize}
+	\item \textbf{Documenti Esterni}:
+		\begin{itemize}
+		\item \textbf{Analisi dei Requisiti};
+		\item \textbf{Glossario};
+		\item \textbf{Piano di Progetto};
+		\item \textbf{Piano di Qualifica};
+		\item \textbf{Verbali Esterni}.
+		\end{itemize}
+	\item \textbf{Documenti Interni}:
+		\begin{itemize}
+		\item \textbf{Norme di Progetto};
+		\item \textbf{Studio di Fattibilità};
+		\item \textbf{Verbali Interni}.
+		\end{itemize}
+	\item \textbf{Corrispondenza};
+	\item \textbf{Utility}.
+	\end{itemize}
+	Ciascuna sottocartella corrispondente ad un documento contiene a sua volta un file LaTeX ".tex" che assume il nome del documento e il corrispettivo file ".pdf" ottenuto attraverso la compilazione.\\
+	La cartella "Corrispondenza" contiene una copia delle mail inviate all'azienda proponente attraverso l'indirizzo \texttt{agentsofswe@gmail.com}, la cartella "Utility" invece contiene gli \textit{Script}\glossario realizzati dal gruppo.
 
 %\paragraph{Configurazione sistema}
 
