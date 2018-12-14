@@ -11,3 +11,88 @@ Norme di progetto:
 	Stile di codifica -> Marco C. [2 tutto] 
 	Analisi dei requisiti -> Marco F. [2.2.1]
 	Processi di supporto -> Bogdan & Favaro [3 all ]
+	
+	
+	MARCO C. --> Verbale 13/12
+
+============================================
+RUOLI Da 13/12/2018 
+- Amministratore MATTEO
+- Responsabile CARLOTTA
+- Analista LUCA, MARCO C., BOGDAN
+- Verificatore MARCO F, DIEGO
+
+============================================
+NUOVI DOCUMENTI
+- Piano di qualifica —>  MARCO F, DIEGO, CARLOTTA
+- Analisi dei requisiti —>  LUCA, MARCO C., BOGDAN, MATTEO
+
+============================================
+PDP —> DIEGO —> FEATURE
+- riformulazione nomenclatura rischi 
+- rivedere 006 pag 5 PdP
+- rivedere ore dopo AR
+- pag 18 punto 3 errore battitura 
+
+GLOSSARIO —> MATTEO
+- aggiungere definizioni 
+- rivedere documenti per aggiunta termini
+
+GENERALE —> CARLOTTA  —> FEATURE
+- intestazione tabelle colore “grigio” logo RGB(67,91,	100) 415A66;
+- righe striped
+
+NDP —> LUCA —> FEATURE
+- struttura repo da spostare
+- aggiunta norme branch feature/revisioneNomeDocumento
+- istanziazione nuovi documenti
+
+NDP —> BOGDAN, MARCO F. —> FEATURE
+- rinominare “plug-in per Grafana” con G&B
+- denominare plugin come plug-in
+- punto 5 direttive Grafana da riscrivere
+- linking dei riferimenti
+- sistemare riferimenti al glossario con \glossario
+- 4.1.1.1 stile elenchi minuscolo
+- controllo di versione 3.2.1 mettere “nella fase di RR“ anziché “in questa fase”
+- 3.3.2.4 aggiungere dove vengono messe le issue chiuse (“done”)
+
+4.1.1.1 prime 3 frasi
+
+un gruppo telegram,presso il quale vengono discusse le tematiche riguardanti gli aspetti pi˘ 
+generali o collettivi riguardanti il progetto
+
+4.1.2
+manca il punto
+
+4.1.2.1
+rileggere
+
+4.1.2.2
+fissare incontri qualora sia necessario
+
+presentatagli
+
+4.1.2.3
+membri e non mambri
+resoconto virgole
+
+4.2.4
+gestione egli aspetti tecnici
+	punto 1: e prestanzdo attenzione
+		Best Practice?
+4.2.5
+	punto 1: Norme di Qualifica maisucole a ecorsivo
+4.3.1.1
+cartella utility
+
+4.3.2.1
+	Reaposnabile di Progetto
+4.3.2.2
+resposnabile in corsivo
+	punto 1:ticketing corsivo
+4.4.1
+manjaro
+
+4.4.5 
+rileggere
