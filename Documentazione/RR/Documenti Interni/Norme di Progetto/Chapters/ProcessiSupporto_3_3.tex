@@ -6,7 +6,7 @@ La necessità di più componenti del \texttt{gruppo} di cooperare su uno stesso 
 %versionamento distribuito come, \textbf{git} e col supporto hosting di \textbf{GitHub}. 
 
 \subsubsection{Controllo di versione}
-Il sistema di versionamento, utilizzato in questa fase di \textbf{RR}, è \textbf{git}, con il supporto hosting di \textbf{GitHub}.
+Il sistema di versionamento, utilizzato nella fase di \textbf{RR}, è \textbf{git}, con il supporto hosting di \textbf{GitHub}.
 
 	\paragraph{Struttura del repository} 
 La struttura del repository segue il workflow \textbf{gitflow} di \textbf{Driessen at nvie}, idealizzato attorno il concetto di \textbf{release} del prodotto. Questo produce
@@ -21,8 +21,8 @@ L'implementazione dei documenti avviene tramite gli strumenti utilizzati nel par
 Quest'ultimi, in fase di compilazione producono dei file di poca rilevanza con estensioni come: \textit{.log, .out, .idx, .aux, .gz, .aux, .toc},
 i quali verranno ignorati come da configurazione, ma soprattutto file di più rilevanza
 come \textit{.pdf, .tex}, i quali verranno versionati dal sistema di git preinstallato.  
-Una volta creati/modificati i documenti, si procede con il \glossario{commit} di essi. Il commit riporta un \textit{cambiamento} al file,con un messaggio allegato ad esso che ne 
-descrive le modifiche apportate o un commando apposito per chiudere alcune task con tale commit. Dopo di che, il commit viene \glossario{pushato} nel branch appropriato, 
+Una volta creati/modificati i documenti, si procede con il commit\glossario di essi. Il commit riporta un \textit{cambiamento} al file,con un messaggio allegato ad esso che ne 
+descrive le modifiche apportate o un commando apposito per chiudere alcune task con tale commit. Dopo di che, il commit viene pushato\glossario nel branch appropriato, 
 a seconda dei criteri descritti nel prossimo paragrafo. 
 
 \paragraph{Ciclo di vita dei branch}
@@ -37,7 +37,7 @@ a seconda dei criteri descritti nel prossimo paragrafo.
 	prodotto, esso si riversa sul branch \textbf{master} e \textbf{develop}. Ha una durata breve in quanto il rilascio deve essere effettuato il prima possibile;
 
 	\item \textbf{Feature}: branch usato per sviluppare nuove feature per il prossimo rilascio a breve o lungo tempo. Il suo tempo di vita dura quanto lo sviluppo della nuova feature
-	fintanto che non avviene il \glossario{merge} sul branch di \textbf{develop};
+	fintanto che non avviene il merge\glossario sul branch di \textbf{develop};
 
 	\item \textbf{Hotfix}: branch molto simili a quelli di release, con l'obbiettivo di risolvere immediatamente un bug del prodotto in produzione o release. Una volta risolto il bug, 
 	esso si riversa sui branch \textbf{master} e \textbf{develop}, aggiornandoli nel minor tempo possibile. Ha un tempo di vita breve, in quanto viene creato per la necessità di risolvere 
@@ -53,7 +53,7 @@ rilascia la nuova versione sul branch master e applica le modifiche effettuate n
 \subsubsection{Configurazione versionamento}
 
 \paragraph{Remoto}
-	La configurazione di \textbf{GitHub} avviene nel portale: \textit{www.github.com}, dove si inseriscono le chiavi \glossario{\textbf{SSH}} per ciascun collaboratore del nuovo repository. 
+	La configurazione di \textbf{GitHub} avviene nel portale: \textit{www.github.com}, dove si inseriscono le chiavi \textbf{SSH}\glossario per ciascun collaboratore del nuovo repository. 
 	Una volta creato il repository nel server remoto ed inserite le chiavi \textbf{SSH}, si procedere con la configurazione in locale.
 	
 \paragraph{Locale}
@@ -69,7 +69,7 @@ rilascia la nuova versione sul branch master e applica le modifiche effettuate n
 		
 \subsection{Gestione di progetto}
 La gestione di progetto avviene tramite un sistema di task integrato nel servizio di hosting \textbf{GitHub}. 
-Esso permette l'integrazione delle task con il repository stesso, dando la possibilità ai vari \glossario{commit} di chiudere con comandi appositi determinate task, 
+Esso permette l'integrazione delle task con il repository stesso, dando la possibilità ai vari commit di chiudere con comandi appositi determinate task, 
 aumentando cosi l'automazione di tutto il processo. 
 
 \subsubsection{Configurazione strumenti di organizzazione}
@@ -81,7 +81,7 @@ aumentando cosi l'automazione di tutto il processo.
 
 	\begin{itemize}
 		\item \textbf{Basic Kanban}: presenta le fasi di \textit{ToDo, In Progress, e Done}; 
-		\item \textbf{Automated Kanban}: presenta \glossario{trigger} predefiniti che permettono lo spostamento di task automatici nei vari cicli di vita, utilizzando il meccanismo di chiusura 
+		\item \textbf{Automated Kanban}: presenta trigger\glossario predefiniti che permettono lo spostamento di task automatici nei vari cicli di vita, utilizzando il meccanismo di chiusura 
 		dei commit;
 		\item \textbf{Automated Kanban with Reviews}: tutto cioè che viene incluso nel template \textit{"Automated Kanban"} con l'aggiunta di trigger 
 		aggiuntivi per la revisione di nuove componenti; 
@@ -95,8 +95,8 @@ aumentando cosi l'automazione di tutto il processo.
 \subsubsection{Ciclo di vita delle tasks}
 
 	\paragraph{Apertura}
-	Da una specifica project board si possono creare le task o le \glossario{issue}, le quali possono essere assegnate a uno o più individui che collaborano al repository, inoltre ogni task
-	può far parte di una \glossario{milestone}, che raggruppa un insieme di task o issue per il raggiungimento di un obbiettivo in comune. 
+	Da una specifica project board si possono creare le task o le issue\glossario, le quali possono essere assegnate a uno o più individui che collaborano al repository, inoltre ogni task
+	può far parte di una milestone\glossario, che raggruppa un insieme di task o issue per il raggiungimento di un obbiettivo in comune. 
 	Inoltre ad ognuna di essere può essere assegnato un colore che ne identifica il tipo come per esempio: \textit{bug, ToDo, miglioramenti, ecc...}. 
 	Si può creare una nuova task senza l'obbligo di assegnarla a una project board, mantenendo comunque tutte le funzionalità descritte prima. 
 
