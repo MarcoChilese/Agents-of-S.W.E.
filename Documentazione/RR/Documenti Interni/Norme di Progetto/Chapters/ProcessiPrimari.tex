@@ -56,7 +56,7 @@ Di seguito vengono definite delle norme che devono essere adottate dai Programma
 Ogni norma è caratterizzata da un paragrafo di appartenenza, da un titolo, una breve descrizione e, se il caso lo richiede, un esempio.\\
 Il rispetto delle seguenti norme è fondamentale per garantire uno stile di codifica uniforme all'interno del progetto, oltre che per massimizzare la leggibilità  e agevolare la manutenzione, la verifica\glossario e la validazione\glossario.
 
-\paragraph{Convenzioni per i nomi:}
+\paragraph{Convenzioni per i nomi:} \label{Nomi}
 \begin{itemize}	
 	\item I Programmatori devono adottare come notazione per la definizione di cartelle, file, metodi, funzioni e variabili il CamelCase\glossario.\\
 	Di seguito un esempio di corretta nomenclatura:
@@ -96,11 +96,11 @@ MyFunction() { ... } //NO
 	\end{lstlisting}
 	\item La versione del file nell'intestazione deve rispettare la seguente formulazione: $X.Y.Z$, dove X rappresenta la versione principale, Y la versione parziale della relativa versione principale e Z l'avanzamento rispetto ad Y.\\ I numeri di versione del tipo $X.0.0$, dalla $1.0.0$, vengono considerate versioni stabili e quindi versioni da testare per saggiarne la qualità .
 \end{itemize}
-\paragraph{ECMAScript 6} \-\\
+\paragraph{ECMAScript 6}\label{EcmaScript6} \-\\
 Seguendo le indicazioni presenti nella documentazione\footnote{\texttt{http://docs.grafana.org/plugins/developing/development/}} dell'azienda fornitrice di \textit{Grafana}, la piattaforma  per cui si intende sviluppare il plug-in, il team ha deciso di adottare come linguaggio di programmazione principale ECMAScript 6\footnote{Linguaggio divenuto standard ISO: ISO/IEC 16262:2011, e relativo aggiornamento ISO/IEC 22275:2018.}.\\
 ECMAScript 6 viene stardardizzato da \textbf{ECMA}\glossario\footnote{\texttt{http://www.ecma-international.org/}} nel giugno 2015 con la sigla \textbf{ECMA-262\footnote{\texttt{https://www.ecma-international.org/ecma-262/6.0/}}}.\\
 Come stile di codifica si adottano le linee guida proposte da \textbf{Airbnb JavaScript Style Guide}\footnote{\texttt{https://github.com/airbnb/javascript}}. Per la verifica dell'adesione a tali norme, i Programmatori devono utilizzare, come suggerito dalla documentazione proposta da \textit{Grafana}, \textbf{ESLint}\glossario\footnote{\texttt{https://eslint.org/}}.\\
-In particolare i Programmatori devono rispettare \underline{5 linee guida} proposte dalla documentazione ufficiale di \textit{Grafana}:
+In particolare i Programmatori devono rispettare 5 linee guida proposte dalla documentazione ufficiale di \textit{Grafana}:
 \begin{enumerate}
 	\item Se una variabile non viene riutilizzata, deve essere dichiarata come \texttt{\textbf{const}};
 	\item Utilizzare preferibilmente, per la definizione di variabili, la keyword  \texttt{\textbf{let}}, anziché  \texttt{\textbf{var}};
@@ -248,7 +248,7 @@ if (condtion) {
 
 \subparagraph{Variabili}\-\\
 \textbf{Norma 1}
-Fare riferimento alle norme 1 e 2, delle \underline{5 linee guida enunciate sopra}.
+Fare riferimento alle norme 1 e 2, all'inizio della sezione \ref{EcmaScript6}.
 
 \-\\
 \textbf{Norma 2}
@@ -266,7 +266,7 @@ var x = 1, y = 0;
 
 %va linkato il paragrafo
 \subparagraph{Nomi}\-\\
-\textbf{Norma 1} Oltre a quanto enunciato nel secondo punto del paragrafo §2.2.3.1, tutti i nomi di funzioni o variabili composti da una singola lettera, o che indichino temporaneità della variabile sono \textit{vietati}: ogni nome deve essere significativo.\\
+\textbf{Norma 1} Oltre a quanto enunciato nel secondo punto del paragrafo \ref{Nomi}, tutti i nomi di funzioni o variabili composti da una singola lettera, o che indichino temporaneità della variabile sono \textit{vietati}: ogni nome deve essere significativo.\\
 \-\\
 \textbf{Norma 2} 
 \begin{enumerate}

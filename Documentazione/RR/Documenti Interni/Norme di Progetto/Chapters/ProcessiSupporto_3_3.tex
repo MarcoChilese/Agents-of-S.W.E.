@@ -9,15 +9,15 @@ La necessità di più componenti del \texttt{gruppo} di cooperare su uno stesso 
 Il sistema di versionamento, utilizzato nella fase di \textbf{RR}, è \textbf{git}, con il supporto hosting di \textbf{GitHub}.
 
 	\paragraph{Struttura del repository} 
-La struttura del repository segue il workflow \textbf{gitflow} di \textbf{Driessen at nvie}, idealizzato attorno il concetto di \textbf{release} del prodotto. Questo produce
+La struttura del repository segue il workflow \textit{gitflow} di \textit{Driessen at nvie}, idealizzato attorno il concetto di \textbf{release} del prodotto. Questo produce
 un framework robusto attorno al quale si possono gestire progetti di grandi dimensioni. I due branch principali sono il \textbf{master} e in parallelo ad esso il \textbf{develop}. 
-Il \textbf{master} viene considerato il branch \textit{main}, dove il codice sorgente della \textit{testa} riflette sempre lo stato di \textit{"production-ready"},
+Il \textbf{master} viene considerato il branch \textit{main}, dove il codice sorgente della testa riflette sempre lo stato di \textit{"production-ready"},
 mentre il ramo di \textbf{develop} è considerato il branch principale dove vengono effettuate le ultime modifiche per il prossimo rilascio del prodotto. 
 
 %\paragraph{Configurazione sistema}
 
 	\paragraph{Processo di implementazione}
-L'implementazione dei documenti avviene tramite gli strumenti utilizzati nel paragrafo §3.1\\
+L'implementazione dei documenti avviene tramite gli strumenti utilizzati nel paragrafo \ref{documentazione}\\
 Quest'ultimi, in fase di compilazione producono dei file di poca rilevanza con estensioni come: \textit{.log, .out, .idx, .aux, .gz, .aux, .toc},
 i quali verranno ignorati come da configurazione, ma soprattutto file di più rilevanza
 come \textit{.pdf, .tex}, i quali verranno versionati dal sistema di git preinstallato.  
