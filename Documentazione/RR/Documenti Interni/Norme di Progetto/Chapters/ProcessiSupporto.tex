@@ -36,6 +36,13 @@ Le seguenti regole valgono per tutti i documenti eccetto per la lettera di prese
 \paragraph{Struttura indice} \-\\
 In tutta la documentazione, fatta eccezione per i verbali, dopo la pagina di presentazione è presente l'indice del documento. La struttura è standard: numero e titolo del capitolo, eventuali sottosezioni e paragrafi con indicato a fianco la pagina del contenuto. Ogni titolo è un link alla pagina del contenuto. 
 
+\paragraph{Struttura tabelle} \-\\
+Il gruppo ha deciso di standardizzare il formato delle tabelle come descritto:
+\begin{itemize}
+	\item Intestazione a sfondo blu e scritte bianche;
+	\item Corpo con righe alternate di colore grigio e bianco, per facilitare la lettura.
+\end{itemize}
+
 \paragraph{Elenco tabelle} \-\\
 In tutti i documenti è presente un elenco delle tabelle utilizzate, ove presenti. \'E posizionato appena dopo l'indice.  
 
@@ -56,7 +63,7 @@ Ogni documento, eccezion fatta per verbali e lettera di presentazione, presenta 
 	\item \textbf{Elenchi puntati}: ogni elemento di un elenco puntato deve essere seguito da un punto e virgola eccezion fatta per l'ultimo che sarà seguito dal punto. La prima lettera di ogni item dovrà essere maiuscola;
 	\item \textbf{Stile testo}:
 	\begin{itemize}
-		\item \textbf{Corsivo}: è utilizzato per citare tecnologie esterne, e per riferimenti a documentazione;	
+		\item \textbf{Corsivo}: è utilizzato per citare tecnologie esterne, per riferimenti a documentazione(es. Analisi dei Requisiti, Piano di Progetto,..), e per identificare i ruoli del progetto(Responsabile,Analista,...);	
 		\item \textbf{Grassetto}: le parole in grassetto identificano il titolo di una sezione, sottosezione, paragrafo e un elemento di un elenco puntato;
 		\item \textbf{URI}:	i link esterni sono evidenti per il colore blu.
 	\end{itemize}
@@ -97,28 +104,28 @@ La necessità di più componenti del gruppo di cooperare su uno stesso documento
 
 %Nella fase di RR, non in questa fase di RR
 \subsubsection{Controllo di versione}
-Il sistema di versionamento, utilizzato in questa fase di \textbf{RR}, è \textbf{git}, con il supporto hosting di \textbf{GitHub}.
+Il sistema di versionamento, utilizzato nella fase di \textbf{RR}, è \textbf{git}, con il supporto hosting di \textbf{GitHub}.
 
 \paragraph{Struttura del repository} \-\\ 
-La struttura del repository segue il workflow \textbf{gitflow} di \textbf{Driessen at nvie}, idealizzato attorno il concetto di \textbf{release} del prodotto. Questo produce un framework robusto attorno al quale si possono gestire progetti di grandi dimensioni. I due branch principali sono il \textbf{master} ed in parallelo ad esso il \textbf{develop}. 
-Il \textbf{master} viene considerato il branch \textit{main}, dove il codice sorgente della \textit{testa} riflette sempre lo stato di \textit{"production-ready"},
+La struttura del repository segue il workflow \textit{gitflow} di \textit{Driessen at nvie}, idealizzato attorno il concetto di \textbf{release} del prodotto. Questo produce un framework robusto attorno al quale si possono gestire progetti di grandi dimensioni. I due branch principali sono il \textbf{master} ed in parallelo ad esso il \textbf{develop}. 
+Il \textbf{master} viene considerato il branch \textit{main}, dove il codice sorgente della testa riflette sempre lo stato di \textit{"production-ready"},
 mentre il ramo di \textbf{develop} è considerato il branch principale dove vengono effettuate le ultime modifiche per il prossimo incremento del prodotto. ~\\
-Più precisamente il Repository\glossario \textit{"Agents-of-S.W.E."} è caratterizzata da una cartella principale "Documentazione", la cui sottocartella "RR" rappresenta la principlae struttura in cui sono organizzati i files su cui il gruppo \textit{Agents of S.W.E.} ha lavorato in vista della RR.\\
+Più precisamente il Repository\glossario \textit{"Agents-of-S.W.E."} è caratterizzata da una cartella principale "Documentazione", la cui sottocartella "RR" rappresenta la principlae struttura in cui sono organizzati i files su cui il gruppo \texttt{Agents of S.W.E.} ha lavorato in vista della RR.\\
 	Nello specifico la sottocartella \textbf{"RR"} è caratterizzata dalla seguente struttura di folders:
 	\begin{itemize}
 	\item \textbf{Documenti Esterni}:
 		\begin{itemize}
-		\item \textbf{Analisi dei Requisiti};
-		\item \textbf{Glossario};
-		\item \textbf{Piano di Progetto};
-		\item \textbf{Piano di Qualifica};
-		\item \textbf{Verbali Esterni}.
+		\item \textit{Analisi dei Requisiti};
+		\item \textit{Glossario};
+		\item \textit{Piano di Progetto};
+		\item \textit{Piano di Qualifica};
+		\item \textit{Verbali Esterni}.
 		\end{itemize}
 	\item \textbf{Documenti Interni}:
 		\begin{itemize}
-		\item \textbf{Norme di Progetto};
-		\item \textbf{Studio di Fattibilità};
-		\item \textbf{Verbali Interni}.
+		\item \textit{Norme di Progetto};
+		\item \textit{Studio di Fattibilità};
+		\item \textit{Verbali Interni}.
 		\end{itemize}
 	\item \textbf{Corrispondenza};
 	\item \textbf{Utility}.
@@ -129,7 +136,7 @@ Più precisamente il Repository\glossario \textit{"Agents-of-S.W.E."} è caratte
 %\paragraph{Configurazione sistema}
 
 \paragraph{Processo di implementazione} \-\\
-L'implementazione dei documenti avviene tramite gli strumenti utilizzati nel paragrafo §3.1\\
+L'implementazione dei documenti avviene tramite gli strumenti utilizzati nel paragrafo §\ref{ProcessiSupporto_Documentazione}\\
 Quest'ultimi, in fase di compilazione producono dei file di poca rilevanza con estensioni come \textit{.log, .out, .idx, .aux, .gz, .toc}, i quali verranno ignorati come da configurazione. I file con maggior rilevanza, come \textit{.pdf, .tex}, verranno versionati dal sistema di git preinstallato. \\
 Una volta creati e/o modificati i documenti, si procede con il commit\glossario di essi. Il commit riporta un \textit{cambiamento} al file, con un messaggio allegato ad esso che ne 
 descrive le modifiche apportate o un comando apposito per chiudere alcune task con tale commit. Dopo di che il commit viene pushato\glossario nel branch appropriato, a seconda dei criteri descritti nel prossimo paragrafo. 
@@ -145,7 +152,7 @@ descrive le modifiche apportate o un comando apposito per chiudere alcune task c
 	prodotto, esso si riversa nel branch \textbf{master} e \textbf{develop}. Ha una durata breve in quanto il rilascio deve essere effettuato il prima possibile;
 
 	\item \textbf{Feature}: branch usato per sviluppare nuove feature per il prossimo rilascio a breve o lungo termine. Il suo tempo di vita dura quanto lo sviluppo della nuova feature
-	fintanto che non avviene il \glossario{merge} sul branch di \textbf{develop};
+	fintanto che non avviene il merge\glossario sul branch di \textbf{develop};
 
 	\item \textbf{Hotfix}: branch molto simili a quello di release, con l'obbiettivo di risolvere immediatamente un bug del prodotto in produzione o release. Una volta risolto il bug, 
 	esso si riversa sui branch \textbf{master} e \textbf{develop}, aggiornandoli nel minor tempo possibile. Ha un tempo di vita breve, in quanto viene creato per la necessità di risolvere 
@@ -177,7 +184,7 @@ Dal branch \textbf{develop} si avvia un processo di verifica, che sfocia in una 
 		
 \subsection{Gestione di progetto}\label{ProcessiSupporto_GestioneProgetto}
 La gestione di progetto avviene tramite un sistema di task integrato nel servizio di hosting \textbf{GitHub}. 
-Esso permette l'integrazione delle task con il repository stesso, dando la possibilità ai vari commit\glossario di chiudere con comandi appositi determinate task, aumentando cosi l'automazione di tutto il processo. 
+Esso permette l'integrazione delle task con il repository stesso, dando la possibilità ai vari commit di chiudere con comandi appositi determinate task, aumentando cosi l'automazione di tutto il processo. 
 
 \subsubsection{Configurazione strumenti di organizzazione}
 	La configurazione di tutto il processo di organizzazione avviene nel portale di \textbf{GitHub}, dove si crea una project board per ogni categoria di processo. 	
@@ -187,7 +194,7 @@ Esso permette l'integrazione delle task con il repository stesso, dando la possi
 
 \begin{itemize}
 		\item \textbf{Basic Kanban}: presenta le fasi di \textit{ToDo, In Progress, e Done}; 
-		\item \textbf{Automated Kanban}: presenta \glossario{trigger} predefiniti che permettono lo spostamento di task
+		\item \textbf{Automated Kanban}: presenta trigger\glossario predefiniti che permettono lo spostamento di task
 		 automatici nei vari cicli di vita, utilizzando il meccanismo di chiusura dei commit;
 		\item \textbf{Automated Kanban with Reviews}: tutto cioè che viene incluso nel template \textit{"Automated Kanban"} con l'aggiunta di trigger per la revisione di nuove componenti; 
 		\item \textbf{Bug Triage}: template centrato sulla gestione degli errori, fornendo un ciclo di vita per essi che varia tra \textit{ToDo, Alta Priorità, Bassa Priorità e Chiusi}. 
