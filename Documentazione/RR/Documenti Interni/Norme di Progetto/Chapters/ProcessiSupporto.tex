@@ -1,6 +1,6 @@
-\section{Processi di supporto}
+\section{Processi di supporto}\label{ProcessiSupporto}
 
-\subsection{Documentazione}
+\subsection{Documentazione}\label{ProcessiSupporto_Documentazione}
 
 \subsubsection{Descrizione}
 Questo capitolo descrive i dettagli su come deve essere redatta e verificata la documentazione durante il ciclo di vita del software. Le norme sono tassativamente valide per tutti i documenti formali.
@@ -15,7 +15,7 @@ Il ciclo di vita previsto della documentazione si può suddividere principalment
 \subsubsection{Template}
 Il gruppo ha deciso di strutturare un template \LaTeX  per dare uniformità a tutti i documenti. Il template facilita e velocizza la stesura, poiché i redattori devono concentrarsi solo ed esclusivamente sul contenuto e non sul layout.  
 
-\subsubsection{Struttura documenti}
+\subsubsection{Struttura documenti}\label{ProcessiSupporto_Documentazione_StrutturaDocumenti}
 Ogni documento segue una determinata struttura, predefinita e accordata dal gruppo:
 
 \paragraph{Prima pagina} \-\\
@@ -68,7 +68,7 @@ Ogni documento, eccezion fatta per verbali e lettera di presentazione, presenta 
 \end{itemize}
 
 
-\subsubsection{Documenti Correnti}
+\subsubsection{Documenti Correnti}\label{ProcessiSupporto_Documentazione_DocumentiCorrenti}
 Sono descritti brevemente i documenti formali da consegnare:
 \begin{itemize}
 	\item \textbf{Analisi dei Requisiti}: ha un utilizzo prettamente esterno, inoltre ha l'obiettivo di esporre e scomporre i requisiti\glossario del progetto. Contiene i casi d'uso ed i diagrammi di interazione con l'utente. Viene redatti dagli analisti dopo una profonda analisi del capitolato ed eventuali colloqui con la proponente; 
@@ -79,7 +79,7 @@ Sono descritti brevemente i documenti formali da consegnare:
 	\item \textbf{Studio di Fattibilità}: è un documento interno, espone pregi e difetti di tutti i capitolati in esame. Descrive i motivi per cui il gruppo ha scelto il capitolato corrente.
 \end{itemize}
 
-\subsubsection{Ambiente}
+\subsubsection{Ambiente}\label{ProcessiSupporto_Documentazione_Ambiente} 
 Per uniformare e strutturare al meglio la scrittura dei documenti il gruppo ha adottato il formato \LaTeX. 
 \textit{TexMaker\footnote{\texttt{http://www.xm1math.net/texmaker/}}} è utilizzato per la stesura, si è optato per questo editor perchè open-source ed integra un controllo ortografico della lingua italiana. 
 Per la costruzione dei diagrammi è stato optato per l'utilizzo di script in \textit{Python}, scritti e testati dal gruppo, per uniformare la procedura in tutta la documentazione.
@@ -87,7 +87,7 @@ Per la costruzione dei diagrammi è stato optato per l'utilizzo di script in \te
 
 
 
-\subsection{Versionamento}
+\subsection{Versionamento}\label{ProcessiSupporto_Versionamento}
 La necessità di più componenti del gruppo di cooperare su uno stesso documento, porta la necessità di utilizzare un sistema di versionamento distribuito. 
 
 %Per le parti in cui più componenti del \texttt{gruppo} devono cooperare sugli stessi file, 
@@ -175,7 +175,7 @@ Dal branch \textbf{develop} si avvia un processo di verifica, che sfocia in una 
 		\item \textbf{Terminale(Bash)}: gestore di versionamento a riga di comando per i sistemi MacOS \& Linux.
 	\end{itemize}
 		
-\subsection{Gestione di progetto}
+\subsection{Gestione di progetto}\label{ProcessiSupporto_GestioneProgetto}
 La gestione di progetto avviene tramite un sistema di task integrato nel servizio di hosting \textbf{GitHub}. 
 Esso permette l'integrazione delle task con il repository stesso, dando la possibilità ai vari commit\glossario di chiudere con comandi appositi determinate task, aumentando cosi l'automazione di tutto il processo. 
 
@@ -204,7 +204,7 @@ Esso permette l'integrazione delle task con il repository stesso, dando la possi
 	Inoltre ad ognuna di esse può essere assegnato un colore che ne identifica il tipo come. per esempio, \textit{bug, ToDo, miglioramenti, ecc...}. 
 	Si può creare una nuova task senza l'obbligo di assegnarla ad una project board, mantenendo comunque tutte le funzionalità descritte precedentemente. 
 
-\paragraph{Completamento} \-\\
+\paragraph{Completamento} \-\\\label{ProcessiSupporto_GestioneProgetto_CicloTask_Completamento}
 	Il completamento di una task avviene in diversi modi, a seconda delle impostazioni della project board. 
 	Se la project board è automatizzata, il completamento di una task può avvenire tramite commit utilizzando il codice di chiusura. \\
 	Questo metodo collega direttamente l'implementazione richiesta alla task. \\
