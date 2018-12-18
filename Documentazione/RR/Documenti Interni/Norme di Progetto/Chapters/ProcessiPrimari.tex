@@ -42,15 +42,41 @@ La classificazione dei requisiti aiuta a mettere ordine e a facilitare la compre
 	\item \textbf{Attributi di Processo}: specificano "\textit{come}" bisogna svolgere definendo norme contrattuali e realizzative. 
 \end{itemize}
 Ogni requisito, nel documento, deve seguire le seguenti regole di identificazione:
+\begin{center}
+\textbf{R[Identificativo][Importanza][Tipo]}
+\end{center}  
 \begin{itemize}
-	\item TODO PROSSIMA RIUNIONE
+	\item \textbf{R}: sta per appunto "requisito";
+	\item \textbf{Identificativo}: numero progressivo che identifica il requisito;
+	\item \textbf{Importanza}: specifica quanto è importante il requisito, può assumere tre valori:
+	\begin{itemize}
+			\item \textbf{O}: indica che il requisito è obbligatorio, e deve essere per forza soddisfatto per il corretto funzionamento di base del sistema;
+			\item \textbf{D}: indica che il requisito è desiderabile, se viene soddisfatto aumenta la completezza del sistema, se non viene soddisfatto non crea alcuna penalizzazione;
+			\item \textbf{F}: indica un requisito opzionale (F sta per "facoltativo"). 
+	\end{itemize}
+	\item \textbf{Tipo}: specifica la tipologia e può assumere i seguenti valori:
+	\begin{itemize}
+		\item \textbf{F}: requisito funzionale;
+		\item \textbf{P}: requisito prestazionale;
+		\item \textbf{Q}: requisito qualitativo;
+		\item \textbf{D}: requisito dichiarativo.
+	\end{itemize}
 \end{itemize}
 
 \paragraph{Classificazione dei casi d'uso} \-\\
 Un caso d'uso consiste nel valutare ogni requisito con lo scopo di definire gli attori(utenti esterni) all'interno di un scenario che hanno un obiettivo finale comune. Il gruppo, nel documento, oltre a fornire una spiegazione verbosa e dettagliata dei casi d'uso, fornirà una rappresentazione grafica nel linguaggio UML.
+Si è stabilito la seguente classificazione dei casi d'uso:
+\begin{center}
+	\textbf{UC[codice padre].[codice identificativo]}
+\end{center}
+dove:
+\begin{itemize}
+	\item \textbf{Codice padre}: indica il codice identificativo del caso d'uso che ha generato il corrente, se non è stato generato da nessun caso d'uso allora viene tralasciato;
+	\item \textbf{Codice identificativo}: indica il codice univoco del caso d'uso corrente, è rappresentato da una cifra.
+\end{itemize}
 Ogni caso d'uso avrà le seguenti informazioni:
 \begin{itemize}
-	\item Nome o identificativo: TODO
+	\item Identificativo: codice univoco del caso d'uso;
 	\item Scenario: sequenza di passi che descrivono interazioni tra gli attori e il sistema, possono creare scenari secondari a seconda del comportamento dell'utente, per esempio dalla log-in passare alla registrazione;
 	\item Pre-condizioni: identifica le condizioni sempre vere prima degli eventi del caso d'uso;
 	\item Post-condizioni: identifica le condizioni sempre vere dopo gli eventi del caso d'uso;
@@ -58,7 +84,6 @@ Ogni caso d'uso avrà le seguenti informazioni:
 	\item Attori: identifica gli attori principali e attori secondari del caso d'uso. 
 \end{itemize}
 
-\subsubsection{Progettazione}
 \subsubsection{Codifica}
 Di seguito vengono definite delle norme che devono essere adottate dai Programmatori per garantire una buona leggibilità  e manutenibilità  del codice. Le prime norme che seguiranno sono le più generali, da adottarsi per ogni linguaggio di programmazione adottato all'interno del progetto, in seguito quelle più specifiche per i linguaggi ECMAScript 6\glossario, HTML\glossario e CSS\glossario.\\
 Ogni norma è caratterizzata da un paragrafo di appartenenza, da un titolo, una breve descrizione e, se il caso lo richiede, un esempio.\\
