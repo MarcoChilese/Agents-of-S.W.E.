@@ -2,3 +2,42 @@
 \subsection{Introduzione}\label{CasiUso_Introduzione}
 Nella seguente sezione verranno identificati i casi d'uso individuati dal team \texttt{Agents of S.W.E.}.\\
 Il numero di casi analizzati è limitato poiché il plug-in fornisce funzionalità aggiuntive ad una piattaforma preesistente, per la quale non è fornita documentazione in quanto già disponibile presso il sito web del fornitore della piattaforma: \href{http://docs.grafana.org/}{\textit{Grafana Labs}}.\\
+
+\subsection{Attori}
+\subsubsection{Attori primari}
+
+
+\subsubsection{Attori secondari}
+
+\subsection{Elenco dei casi d'uso}
+\subsubsection{UC1 - Aggiunta della rete bayesiana al plug-in G\&B}\label{UC1}
+\begin{itemize}
+	\item \textbf{Attore primario}: Utente;
+	\item \textbf{Precondizioni}: L'utente deve aver effettuato il login nella piattaforma Grafana, deve aver selezionato una Dashboard e aggiunto il pannello "G\&B Panel".
+	\item \textbf{Postcondizioni}: L'utente ha aggiunto la rete bayesiana al plug-in. Attraverso UC2 (§\ref{UC2}) può selezionare quali nodi sorgente collegare alla rete.
+	\item \textbf{Scenario principale:}
+	\begin{enumerate}
+		\item L'utente accede alla piattaforma Grafana, si trova nella dashboard preferita ed ha aggiunto il pannello "G\&B Panel";
+		\item L'utente seleziona e clicca sul bottone con simbolo di "+";
+		\item L'utente si trova davanti una finestra presso cui selezionare il file JSON contenente la rete, che rispetta i vincoli imposti, e seleziona "Aggiungi".
+	\end{enumerate}
+	\item \textbf{Estensioni}:
+	\begin{itemize}
+		\item[a.] La mappa selezionata non è corretta per estensione o per contenuto;
+		\begin{enumerate}
+			\item L'aggiunta della rete al plug-in fallisce;
+			\item Viene visualizzato un messaggio di errore esplicito che spieghi l'errore;
+			\item Viene fornita all'utente un'altra possibilità per selezionare il file corretto.
+		\end{enumerate}
+	\end{itemize}
+\end{itemize}
+
+\subsubsection{UC2 - ...}\label{UC2}
+
+\subsubsection{UC3 - ...}\label{UC3}
+
+\subsubsection{UC4 - ...}\label{UC4}
+
+\subsubsection{UC5 - ...}\label{UC5}
+
+\subsubsection{UC6 - ...}\label{UC6}
