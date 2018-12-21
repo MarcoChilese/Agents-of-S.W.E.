@@ -24,8 +24,8 @@ Il numero di casi analizzati è limitato poiché il plug-in fornisce funzionalit
 	\item \textbf{Scenario principale:}
 	\begin{enumerate}
 		\item L'utente accede alla piattaforma Grafana, si trova nella dashboard preferita ed ha aggiunto il pannello "G\&B Panel";
-		\item L'utente seleziona e clicca sul bottone con simbolo di "+";
-		\item L'utente si trova davanti una finestra presso cui selezionare il file JSON contenente la rete (UC1.1, §\ref{UC1.1}) e seleziona "Aggiungi".
+		\item L'utente seleziona e clicca sul bottone con simbolo di "+" (UC1.1, §\ref{UC1.1});
+		\item L'utente si trova davanti una finestra presso cui selezionare il file JSON contenente la rete (UC1.2, §\ref{UC1.2}) e seleziona "Aggiungi".
 	\end{enumerate}
 	\item \textbf{Estensioni}:
 	\begin{itemize}
@@ -38,7 +38,25 @@ Il numero di casi analizzati è limitato poiché il plug-in fornisce funzionalit
 	\end{itemize}
 \end{itemize}
 
-\subsubsection{UC1.1 - Selezione della rete bayesiana}\label{UC1.1}
+\subsubsection{UC1.1 - Apertura pannello di selezione della rete bayesiana}\label{UC1.1}
+\begin{itemize}
+	\item \textbf{Attore primario}: Utente;
+	\item \textbf{Precondizioni}:
+	\begin{enumerate}
+		\item L'utente visualizza il pannello "G\&B Panel" nella dashboard.
+	\end{enumerate}
+	\item \textbf{Postcondizioni}: 
+	\begin{enumerate}
+		\item L'utente ha cliccato il bottone con etichetta "+" e visualizza il pannello per la selezione del file della rete.
+	\end{enumerate}
+	\item \textbf{Scenario principale:}
+	\begin{enumerate}
+		\item L'utente seleziona clicca il pulsante con etichetta "+" nel pannello "G\&B Panel" nella dashboard.
+	\end{enumerate}
+\end{itemize}
+
+
+\subsubsection{UC1.2 - Selezione della rete bayesiana}\label{UC1.2}
 \begin{itemize}
 	\item \textbf{Attore primario}: Utente;
 	\item \textbf{Precondizioni}:
@@ -54,7 +72,6 @@ Il numero di casi analizzati è limitato poiché il plug-in fornisce funzionalit
 		\item L'utente seleziona dalla finestra il file da importare;
 		\item L'utente clicca il pulsante con etichetta "Aggiungi".
 	\end{enumerate}
-	\item \textbf{Estensioni}:
 \end{itemize}
 
 \subsubsection{UC2 - ...}\label{UC2}
