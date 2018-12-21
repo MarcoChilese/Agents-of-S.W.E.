@@ -13,23 +13,48 @@ Il numero di casi analizzati è limitato poiché il plug-in fornisce funzionalit
 \subsubsection{UC1 - Aggiunta della rete bayesiana al plug-in G\&B}\label{UC1}
 \begin{itemize}
 	\item \textbf{Attore primario}: Utente;
-	\item \textbf{Precondizioni}: L'utente deve aver effettuato il login nella piattaforma Grafana, deve aver selezionato una Dashboard e aggiunto il pannello "G\&B Panel".
-	\item \textbf{Postcondizioni}: L'utente ha aggiunto la rete bayesiana al plug-in. Attraverso UC2 (§\ref{UC2}) può selezionare quali nodi sorgente collegare alla rete.
+	\item \textbf{Precondizioni}:
+		\begin{enumerate}
+			\item L'utente deve aver effettuato il login nella piattaforma Grafana, deve aver selezionato una Dashboard e aggiunto il pannello "G\&B Panel".
+		\end{enumerate}
+	\item \textbf{Postcondizioni}: 
+	\begin{enumerate}
+		\item L'utente ha aggiunto la rete bayesiana al plug-in. Attraverso UC2 (§\ref{UC2}) può selezionare quali nodi sorgente collegare alla rete.
+	\end{enumerate}
 	\item \textbf{Scenario principale:}
 	\begin{enumerate}
 		\item L'utente accede alla piattaforma Grafana, si trova nella dashboard preferita ed ha aggiunto il pannello "G\&B Panel";
 		\item L'utente seleziona e clicca sul bottone con simbolo di "+";
-		\item L'utente si trova davanti una finestra presso cui selezionare il file JSON contenente la rete, che rispetta i vincoli imposti, e seleziona "Aggiungi".
+		\item L'utente si trova davanti una finestra presso cui selezionare il file JSON contenente la rete (UC1.1, §\ref{UC1.1}) e seleziona "Aggiungi".
 	\end{enumerate}
 	\item \textbf{Estensioni}:
 	\begin{itemize}
-		\item[a.] La mappa selezionata non è corretta per estensione o per contenuto;
+		\item \hyperref[UC6]{UC6 (\ref*{UC6})} La mappa selezionata non è corretta per estensione o per contenuto;
 		\begin{enumerate}
 			\item L'aggiunta della rete al plug-in fallisce;
 			\item Viene visualizzato un messaggio di errore esplicito che spieghi l'errore;
 			\item Viene fornita all'utente un'altra possibilità per selezionare il file corretto.
 		\end{enumerate}
 	\end{itemize}
+\end{itemize}
+
+\subsubsection{UC1.1 - Selezione della rete bayesiana}\label{UC1.1}
+\begin{itemize}
+	\item \textbf{Attore primario}: Utente;
+	\item \textbf{Precondizioni}:
+	\begin{enumerate}
+		\item L'utente ha cliccato il bottone con etichetta "+".
+	\end{enumerate}
+	\item \textbf{Postcondizioni}: 
+	\begin{enumerate}
+		\item L'utente ha selezionato la rete bayesiana desiderata e ha premuto il pulsante con etichetta "Aggiungi".
+	\end{enumerate}
+	\item \textbf{Scenario principale:}
+	\begin{enumerate}
+		\item L'utente seleziona dalla finestra il file da importare;
+		\item L'utente clicca il pulsante con etichetta "Aggiungi".
+	\end{enumerate}
+	\item \textbf{Estensioni}:
 \end{itemize}
 
 \subsubsection{UC2 - ...}\label{UC2}
