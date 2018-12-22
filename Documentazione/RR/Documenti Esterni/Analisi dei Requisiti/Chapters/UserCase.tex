@@ -10,6 +10,24 @@ Il numero di casi analizzati è limitato poiché il plug-in fornisce funzionalit
 \subsubsection{Attori secondari}
 
 \subsection{Elenco dei casi d'uso}
+
+%\begin{itemize}
+%\item \textbf{Attore primario:}
+%\item \textbf{Precondizioni:}
+% \begin{enumerate}
+% \item
+% \end{enumerate}
+%\item \textbf{Postcondizioni:}
+% \begin{enumerate}
+% \item
+% \end{enumerate}
+%\item \textbf{Scenario Principale:}
+% \begin{enumerate}
+% \item
+% \end{enumerate}
+%\item \textbf{Estensioni:}
+%\end{itemize}
+
 \subsubsection{UC1 - Aggiunta della rete bayesiana al plug-in G\&B}\label{UC1}
 \begin{itemize}
 	\item \textbf{Attore primario}: Utente;
@@ -74,7 +92,42 @@ Il numero di casi analizzati è limitato poiché il plug-in fornisce funzionalit
 	\end{enumerate}
 \end{itemize}
 
-\subsubsection{UC2 - ...}\label{UC2}
+\pagebreak
+
+\subsubsection{UC2 - Collegamento nodi al flusso dati}\label{UC2}
+\begin{itemize}
+\item \textbf{Attore primario:} Utente Autenticato;
+\item \textbf{Precondizioni:} L'utente ha caricato con successo la rete bayesiana (\hyperref[UC1]{UC1 (\ref*{UC1})});
+\item \textbf{Postcondizioni:} L'utente ha collegato con successo i nodi desiderati della rete bayesiana caricata in \hyperref[UC1]{UC1 (\ref*{UC1})};
+\item \textbf{Scenario principale:}
+	\begin{enumerate}
+	\item L'utente collega i nodi desiderati ad un flusso dati (\hyperref[UC2.1]{UC2.1 (\ref*{UC2.1})});
+	\item L'utente conferma il collegamento dei nodi (\hyperref[2.2]{UC2.2 (\ref*{UC2.2})}).
+	\end{enumerate}
+\item \textbf{Estensioni:} \hyperref[UC7]{UC7 (\ref*{UC7})} estende \hyperref[UC2.2]{UC2.2 (\ref*{UC2.2})}: L'utente visualizza un messaggio di errore nel caso in cui non abbia collegato alcun nodo al flusso dati.
+\end{itemize}
+
+\paragraph{UC2.1 - Selezione flusso di dati per ogni nodo}\label{UC2.1}
+\begin{itemize}
+\item \textbf{Attore primario:} Utente Autenticato;
+\item \textbf{Precondizioni:} L'utente ha caricato con successo la rete bayesiana (\hyperref[UC1]{UC1 (\ref*{UC1})}).
+\item \textbf{Postcondizioni:} L'utente ha selezionato il flusso dati opportuno per ogni nodo che desidera collegare alla rete bayesiana.
+\item \textbf{Scenario Principale:}
+ \begin{enumerate}
+ \item L'utente seleziona, tramite click, la checkbox corrispondente al nodo che desidera collegare ad un determinato flusso dati;
+ \item L'utente visualizza, a seguito del click precedente, una tendina a comparsa contente i possibili flussi dati a cui collegare il nodo;
+ \item L'utente seleziona, tramite click, il flusso dati opportuno a cui collegare il nodo selezionato in precedenza.
+ \end{enumerate}
+\end{itemize}
+
+\paragraph{UC2.2 - Conferma collegamento}\label{UC2.2}
+\begin{itemize}
+\item \textbf{Attore primario:} Utente Autenticato;
+\item \textbf{Precondizioni:} L'utente ha caricato con successo la rete bayesiana (\hyperref[UC1]{UC1 (\ref*{UC1})});
+\item \textbf{Postcondizioni:} L'utente ha collegato con successo i nodi desiderati, della rete bayesiana caricata in \hyperref[UC1]{UC1 (\ref*{UC1})}, ai rispettivi flussi dati;
+\item \textbf{Scenario Principale:} L'utente conferma le proprie scelte (\hyperref[UC2.1]{UC2.1 (\ref*{UC2.1})}) cliccando il pulsante "Conferma";
+\item \textbf{Estensioni:} \hyperref[UC7]{UC7 (\ref*{UC7})}: L'utente visualizza un messaggio di errore nel caso in cui non abbia collegato alcun nodo al flusso dati.
+\end{itemize}
 
 \subsubsection{UC3 - ...}\label{UC3}
 
@@ -83,3 +136,5 @@ Il numero di casi analizzati è limitato poiché il plug-in fornisce funzionalit
 \subsubsection{UC5 - ...}\label{UC5}
 
 \subsubsection{UC6 - ...}\label{UC6}
+
+\subsubsection{UC7 - ...}\label{UC7}
