@@ -30,20 +30,35 @@ Il numero di casi analizzati è limitato poiché il plug-in fornisce funzionalit
 
 \subsubsection{UC1 - Aggiunta della rete bayesiana al plug-in G\&B}\label{UC1}
 \begin{itemize}
-	\item \textbf{Attore primario}: Utente;
-	\item \textbf{Precondizioni}:
-		\begin{enumerate}
-			\item L'utente deve aver effettuato il login nella piattaforma Grafana, deve aver selezionato una Dashboard e aggiunto il pannello "G\&B Panel".
-		\end{enumerate}
-	\item \textbf{Postcondizioni}: 
-	\begin{enumerate}
-		\item L'utente ha aggiunto la rete bayesiana al plug-in. Attraverso UC2 (§\ref{UC2}) può selezionare quali nodi sorgente collegare alla rete.
-	\end{enumerate}
+	\item \textbf{Attore primario}: Utente registrato;
+	\item \textbf{Precondizioni}: l'utente deve aver effettuato il login nella piattaforma Grafana, deve aver selezionato una Dashboard e aggiunto il pannello "G\&B Panel".
+	\item \textbf{Postcondizioni}: l'utente ha aggiunto la rete bayesiana al plug-in. Attraverso UC2 (§\ref{UC2}) può selezionare quali nodi sorgente collegare alla rete.
 	\item \textbf{Scenario principale:}
 	\begin{enumerate}
 		\item L'utente accede alla piattaforma Grafana, si trova nella dashboard preferita ed ha aggiunto il pannello "G\&B Panel";
 		\item L'utente seleziona e clicca sul bottone con simbolo di "+" (UC1.1, §\ref{UC1.1});
 		\item L'utente si trova davanti una finestra presso cui selezionare il file JSON contenente la rete (UC1.2, §\ref{UC1.2}) e seleziona "Aggiungi".
+	\end{enumerate}
+\end{itemize}
+
+\subsubsection{UC1.1 - Apertura pannello di selezione della rete bayesiana}\label{UC1.1}
+\begin{itemize}
+	\item \textbf{Attore primario}: Utente registrato; 
+	\item \textbf{Precondizioni}: l'utente visualizza il pannello "G\&B Panel" nella dashboard.
+	\item \textbf{Postcondizioni}: l'utente ha cliccato il bottone con etichetta "+" e visualizza il pannello per la selezione del file della rete.
+	\item \textbf{Scenario principale:} l'utente seleziona clicca il pulsante con etichetta "+" nel pannello "G\&B Panel" nella dashboard.
+\end{itemize}
+
+
+\subsubsection{UC1.2 - Selezione della rete bayesiana}\label{UC1.2}
+\begin{itemize}
+	\item \textbf{Attore primario}: Utente registrato;
+	\item \textbf{Precondizioni}: l'utente ha cliccato il bottone con etichetta "+".
+	\item \textbf{Postcondizioni}: l'utente ha selezionato la rete bayesiana desiderata e ha premuto il pulsante con etichetta "Aggiungi".
+	\item \textbf{Scenario principale:}
+	\begin{enumerate}
+		\item L'utente seleziona dalla finestra il file da importare;
+		\item L'utente clicca il pulsante con etichetta "Aggiungi".
 	\end{enumerate}
 	\item \textbf{Estensioni}:
 	\begin{itemize}
@@ -58,55 +73,11 @@ Il numero di casi analizzati è limitato poiché il plug-in fornisce funzionalit
 
 \begin{figure}[h!]
 	\begin{center}
-		\includegraphics[scale=0.6]{./images/UC1.png}
+		\includegraphics[scale=0.5]{./images/UC1.png}
 		 \caption{Rappresentazione di UC1.}	
 	\end{center}
 \end{figure}
 
-	
-
-\subsubsection{UC1.1 - Apertura pannello di selezione della rete bayesiana}\label{UC1.1}
-\begin{itemize}
-	\item \textbf{Attore primario}: Utente;
-	\item \textbf{Precondizioni}:
-	\begin{enumerate}
-		\item L'utente visualizza il pannello "G\&B Panel" nella dashboard.
-	\end{enumerate}
-	\item \textbf{Postcondizioni}: 
-	\begin{enumerate}
-		\item L'utente ha cliccato il bottone con etichetta "+" e visualizza il pannello per la selezione del file della rete.
-	\end{enumerate}
-	\item \textbf{Scenario principale:}
-	\begin{enumerate}
-		\item L'utente seleziona clicca il pulsante con etichetta "+" nel pannello "G\&B Panel" nella dashboard.
-	\end{enumerate}
-\end{itemize}
-
-
-\subsubsection{UC1.2 - Selezione della rete bayesiana}\label{UC1.2}
-\begin{itemize}
-	\item \textbf{Attore primario}: Utente;
-	\item \textbf{Precondizioni}:
-	\begin{enumerate}
-		\item L'utente ha cliccato il bottone con etichetta "+".
-	\end{enumerate}
-	\item \textbf{Postcondizioni}: 
-	\begin{enumerate}
-		\item L'utente ha selezionato la rete bayesiana desiderata e ha premuto il pulsante con etichetta "Aggiungi".
-	\end{enumerate}
-	\item \textbf{Scenario principale:}
-	\begin{enumerate}
-		\item L'utente seleziona dalla finestra il file da importare;
-		\item L'utente clicca il pulsante con etichetta "Aggiungi".
-	\end{enumerate}
-\end{itemize}
-
-\begin{figure}[h!]
-	\begin{center}
-		\includegraphics[scale=0.5]{./images/subcaseUC1.png}
-		 \caption{Rappresentazione di UC1.1 e UC1.2.}	
-	\end{center}
-\end{figure}
 
 \pagebreak
 
