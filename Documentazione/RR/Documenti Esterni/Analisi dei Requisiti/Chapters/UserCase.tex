@@ -38,8 +38,17 @@ E' importante notare che il numero esiguo di differenti attori che possono appro
 %\end{itemize}
 
 \subsubsection{UC1 - Aggiunta della rete bayesiana al plug-in G\&B}\label{UC1}
+
+\begin{figure}[h!]
+	\begin{center}
+		\includegraphics[scale=0.5]{./images/UC1.png}
+		 \caption{Rappresentazione di UC1.}	
+	\end{center}
+\end{figure}
+
+
 \begin{itemize}
-	\item \textbf{Attore primario}: Utente registrato;
+	\item \textbf{Attore primario}: Utente autenticato;
 	\item \textbf{Precondizioni}: l'utente deve aver effettuato il login nella piattaforma Grafana, deve aver selezionato una Dashboard e aggiunto il pannello "G\&B Panel".
 	\item \textbf{Postcondizioni}: l'utente ha aggiunto la rete bayesiana al plug-in. Attraverso UC2 (§\ref{UC2}) può selezionare quali nodi sorgente collegare alla rete.
 	\item \textbf{Scenario principale:}
@@ -52,7 +61,7 @@ E' importante notare che il numero esiguo di differenti attori che possono appro
 
 \subsubsection{UC1.1 - Apertura pannello di selezione della rete bayesiana}\label{UC1.1}
 \begin{itemize}
-	\item \textbf{Attore primario}: Utente registrato; 
+	\item \textbf{Attore primario}: Utente autenticato; 
 	\item \textbf{Precondizioni}: l'utente visualizza il pannello "G\&B Panel" nella dashboard.
 	\item \textbf{Postcondizioni}: l'utente ha cliccato il bottone con etichetta "+" e visualizza il pannello per la selezione del file della rete.
 	\item \textbf{Scenario principale:} l'utente seleziona clicca il pulsante con etichetta "+" nel pannello "G\&B Panel" nella dashboard.
@@ -61,7 +70,7 @@ E' importante notare che il numero esiguo di differenti attori che possono appro
 
 \subsubsection{UC1.2 - Selezione della rete bayesiana}\label{UC1.2}
 \begin{itemize}
-	\item \textbf{Attore primario}: Utente registrato;
+	\item \textbf{Attore primario}: Utente autenticato;
 	\item \textbf{Precondizioni}: l'utente ha cliccato il bottone con etichetta "+".
 	\item \textbf{Postcondizioni}: l'utente ha selezionato la rete bayesiana desiderata e ha premuto il pulsante con etichetta "Aggiungi".
 	\item \textbf{Scenario principale:}
@@ -79,13 +88,6 @@ E' importante notare che il numero esiguo di differenti attori che possono appro
 		\end{enumerate}
 	\end{itemize}
 \end{itemize}
-
-\begin{figure}[h!]
-	\begin{center}
-		\includegraphics[scale=0.5]{./images/UC1.png}
-		 \caption{Rappresentazione di UC1.}	
-	\end{center}
-\end{figure}
 
 \pagebreak
 
@@ -160,7 +162,23 @@ E' importante notare che il numero esiguo di differenti attori che possono appro
 
 \subsubsection{UC5 - ...}\label{UC5}
 
-\subsubsection{UC6 - ...}\label{UC6}
+\subsubsection{UC6 - Visualizzazione messaggio d'errore selezione  rete bayesiana}\label{UC6}
+\begin{itemize}
+\item \textbf{Attore primario:} Utente Autenticato;
+\item \textbf{Precondizione:} L'utente ha selezionato una rete da aggiungere ed ha cliccato il pulsante "Aggiungi", per confermare la rete;
+\item \textbf{Postcondizione:} L'utente visualizza l'errore, viene quindi riportato alla finestra di selezione della rete;
+\item \textbf{Scenario Principale:} 
+	\begin{enumerate}
+		\item La rete selezionata dall'utente è errata per formato, o per struttura;
+		\item Viene visualizzato un messaggio d'errore che varia in base alla tipologia d'errore:
+			\begin{enumerate}
+				\item Estensione file della rete errato: il messaggio contiene "Il formato della rete bayesiana deve essere di tipo JSON. Selezionare un file corretto.";
+				\item Struttura errata del file: il file selezionato ha l'estensione corretta, ma il contenuto è errato. Viene visualizzato il messaggio: "La struttura della rete bayesiana selezionata non è corretta. Selezionare un file corretto.";
+			\end{enumerate}
+		\item L'utente clicca il pulsante con etichetta "OK";
+		\item L'utente viene quindi ricondotto alla finestra di selezione del file della rete baysiana (\hyperref[UC1.2]{UC1.2 (\ref*{UC1.2})}).
+	\end{enumerate}
+\end{itemize}
 
 \subsubsection{UC7 - Visualizzazione messaggio di errore collegamento nodi}\label{UC7}
 \begin{itemize}
