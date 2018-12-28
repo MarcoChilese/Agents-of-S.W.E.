@@ -174,7 +174,19 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 \pagebreak
 
 
-\subsubsection{UC5 - ...}\label{UC5}
+\subsubsection{UC5 - Visualizzazione alert}\label{UC5}
+\begin{itemize}
+	\item \textbf{Attore primario:} Utente Autenticato;
+	\item \textbf{Attore secondario:} Grafana;
+	\item \textbf{Precondizioni:} L'utente ha collegato in modo corretto i nodi (\hyperref[UC2]{UC2 (\ref*{UC2})} )
+	\item \textbf{Postcondizioni:} L'utente visualizza nell'apposito pannello gli alert.
+	\item \textbf{Scenario principale:}
+	\begin{enumerate}
+		\item Il flusso di dati monitorato da Grafana ha attivato un alert
+		\item L'utente seleziona l'apposito pannello degli alert
+		\item L'utente visualizza eventuali alert derivati da i dati ottenuti da  \hyperref[UC2]{UC2 (\ref*{UC2})}  
+	\end{enumerate}
+\end{itemize}
 
 \pagebreak
 
@@ -203,4 +215,31 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 \item \textbf{Precondizione:} L'utente ha confermato il collegamento dei nodi al flusso dati (\hyperref[UC2.2]{UC2.2 (\ref*{UC2.2})}) senza averne effettivamente collegato alcuno;
 \item \textbf{Postcondizione:} L'utente visualizza l'errore;
 \item \textbf{Scenario Principale:} L'utente visualizza un messaggio di errore in cui è segnalato il fatto che non è stato collegato alcun nodo al flusso dati durante \hyperref[UC2]{UC2 (\ref*{UC2})}.
+\end{itemize}
+
+\pagebreak
+
+\subsubsection{UC8 - Definizione di un alert in base a livelli di soglia raggiunti dai nodi non collegati al flusso dei dati}\label{UC8}
+\begin{itemize}
+	\item \textbf{Attore primario:} Utente Autenticato;
+	\item \textbf{Attore secondario:} Grafana;
+	\item \textbf{Precondizioni:} Alcuni nodi non sono collegati al flussi di dati.
+	\item \textbf{Postcondizioni:} L'utente ha aggiunto un alert per i nodi non collegati.
+	\item \textbf{Scenario principale:}
+	\begin{enumerate}
+		\item L'utente clicca sul pulsante "crea alert"
+		\item L'utente configura l'alert 
+	\end{enumerate}
+\end{itemize}
+
+\paragraph{UC8.1 - Rimozione alert}\label{UC8.1}
+\begin{itemize}
+	\item \textbf{Attore primario:} Utente Autenticato;
+	\item \textbf{Attore secondario:} Grafana;
+	\item \textbf{Precondizioni:} E' presente un alert associato ad un nodo non collegato a un flusso di dati.
+	\item \textbf{Postcondizioni:} L'utente ha rimosso l'alert.
+	\item \textbf{Scenario principale:}
+	\begin{enumerate}
+		\item L'utente clicca sul pulsante "elimina alert"
+	\end{enumerate}
 \end{itemize}
