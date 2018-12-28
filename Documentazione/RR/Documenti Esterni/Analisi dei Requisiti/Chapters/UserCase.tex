@@ -131,10 +131,25 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 \item \textbf{Estensioni:} \hyperref[UC7]{UC7 (\ref*{UC7})}: L'utente visualizza un messaggio di errore nel caso in cui non abbia collegato alcun nodo al flusso dati.
 \end{itemize}
 
-
+\newpage
 \subsubsection{UC3 - Politiche temporali di ricalcolo delle probabilità}\label{UC3}
 
-\pagebreak
+\begin{itemize}
+	\item \textbf{Attore primario:} Utente Autenticato; 
+	\item \textbf{Precondizione:} L'utente ha caricato con successo la rete bayesiana (\hyperref[UC1]{UC1 (\ref*{UC1})});
+
+	\item \textbf{Postcondizione:} L'utente ha creato con successo le policy per il ricalcolo delle probabilità della rete bayesiana, caricata in (\hyperref[UC1]{UC1 (\ref*{UC1})});	
+	\item \textbf{Scenario Principale:}
+
+	\begin{enumerate}
+		\item L'utente autenticato accede alle impostazioni passando dalla dashboard. 
+		\item L'utente crea una nuova policy, aggiungendo le regole per il ricalcolo delle probabilità. 
+		\item L'utente, una volta creata la policy, associa una policy ad una rete bayesiana preesistente. 
+		\item L'utente conferma l'associazione della policy alla rete. 
+	\end{enumerate}
+	
+\end{itemize}
+
 
 
 \subsubsection{UC4 - Visualizzazione dati forniti dai nodi non collegati al flusso}\label{UC4}
