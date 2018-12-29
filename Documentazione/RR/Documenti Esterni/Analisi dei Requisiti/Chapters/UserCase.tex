@@ -178,13 +178,12 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 \begin{itemize}
 	\item \textbf{Attore primario:} Utente Autenticato;
 	\item \textbf{Attore secondario:} Grafana;
-	\item \textbf{Precondizioni:} L'utente ha collegato in modo corretto i nodi (\hyperref[UC2]{UC2 (\ref*{UC2})} )
-	\item \textbf{Postcondizioni:} L'utente visualizza nell'apposito pannello gli alert.
+	\item \textbf{Precondizioni:} L'utente ha collegato in modo corretto i nodi (\hyperref[UC2]{UC2 (\ref*{UC2})} );
+	\item \textbf{Postcondizioni:} L'utente visualizza nell'apposito pannello gli alert;
 	\item \textbf{Scenario principale:}
 	\begin{enumerate}
-		\item Il flusso di dati monitorato da Grafana ha attivato un alert
-		\item L'utente seleziona l'apposito pannello degli alert
-		\item L'utente visualizza eventuali alert derivati da i dati ottenuti da  \hyperref[UC2]{UC2 (\ref*{UC2})}  
+		\item Il flusso di dati monitorato da Grafana ha attivato un alert;
+		\item L'utente visualizza eventuali alert derivati da i dati ottenuti da  \hyperref[UC2]{UC2 (\ref*{UC2})}.
 	\end{enumerate}
 \end{itemize}
 
@@ -223,12 +222,11 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 \begin{itemize}
 	\item \textbf{Attore primario:} Utente Autenticato;
 	\item \textbf{Attore secondario:} Grafana;
-	\item \textbf{Precondizioni:} Alcuni nodi non sono collegati al flussi di dati.
-	\item \textbf{Postcondizioni:} L'utente ha aggiunto un alert per i nodi non collegati.
+	\item \textbf{Precondizioni:} Alcuni nodi non sono collegati al flussi di dati;
+	\item \textbf{Postcondizioni:} L'utente ha aggiunto un alert per i nodi non collegati;
 	\item \textbf{Scenario principale:}
 	\begin{enumerate}
-		\item L'utente clicca sul pulsante "crea alert"
-		\item L'utente configura l'alert 
+		\item L'utente tramite le impostazioni di Grafana configura l'alert.
 	\end{enumerate}
 \end{itemize}
 
@@ -236,10 +234,10 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 \begin{itemize}
 	\item \textbf{Attore primario:} Utente Autenticato;
 	\item \textbf{Attore secondario:} Grafana;
-	\item \textbf{Precondizioni:} E' presente un alert associato ad un nodo non collegato a un flusso di dati.
-	\item \textbf{Postcondizioni:} L'utente ha rimosso l'alert.
+	\item \textbf{Precondizioni:} E' presente un alert associato ad un nodo non collegato a un flusso di dati;
+	\item \textbf{Postcondizioni:} L'utente ha rimosso l'alert;
 	\item \textbf{Scenario principale:}
 	\begin{enumerate}
-		\item L'utente clicca sul pulsante "elimina alert"
+		\item L'utente nelle impostazioni di Grafana rimuove l'alert.
 	\end{enumerate}
 \end{itemize}
