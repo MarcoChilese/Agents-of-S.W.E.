@@ -39,3 +39,76 @@ Per garantire una corretta struttura, il gruppo ha deciso di introdurre una nome
 	\item \textbf{num}: identificativo univoco formato da due cifre intere a partire da 1.
 \end{itemize}
 
+\subsubsection{Controllo qualità di processo}
+La qualità di processo è raggiunta tramite l'utilizzo di metodi e modelli che garantiscono il corretto procedimento delle fasi di sviluppo del processo. Il team sfrutta le potenzialità del metodo PDCA, descritto nell'appendice A, ottenendo miglioramenti continui nelle qualità di processo e verifica in modo da avere una maggiore qualità nel prodotto risultante. Inoltre verrà utilizzato lo standard ISO/IEC 15504, comunemente conosciuto con l'acronimo SPICE, che misurerà il livello di maturità dei processi.
+
+\subsubsection{Metriche per la qualità di processo}
+Le seguenti metriche sono utilizzate per la valutazione dell'efficacia e dell'efficienza dei processi.
+
+\paragraph{MTPC01 Schedule Variance(SV)}\--\\
+\'E un indice che consente di rilevare se l'andamento del progetto è in linea con quanto pianificato nella baseline\glossario. Può essere utile al cliente per verificare quantitativamente se il team di sviluppo del progetto intero sono in linea con i tempi. \-\\
+Calcolo:\-\\
+\begin{center}
+	\item \textbf{SV = BCWP - BCWS}
+\end{center}
+dove:
+\begin{itemize}
+	\item BCWP: valore delle attività realizzate alla data odierna(in euro o giorni);
+	\item BCWS: costo pianificato per realizzare le attività alla data odierna(in euro o giorni).
+\end{itemize}
+Se SV > 0 significa che il progetto sta producendo con maggiore velocità prevista.
+
+\paragraph{MTPC02 Budget Variance(BV)}\-\\
+\'E un indice calcolato che permette di rilevare la differenza tra i costi previsti e quelli reali alla data odierna. 
+Calcolo:
+\begin{center}
+	\item \textbf{BV = BCWS - ACWP}
+\end{center} 
+dove:
+\begin{itemize}
+	\item BCWS: costo pianificato per realizzare le attività alla data odierna(in euro o giorni);
+	\item ACWP: costo effettivo sostenuto per completare le attività alla data odierna(in euro o giorni).
+\end{itemize}
+Se BV > 0 significa che il progetto sta risparmiando sui costi prestabiliti, se BV = 0 significa che il progetto sta mantenendo i costi prefissati, se BV = 0 significa che il progetto sta superando il budget imposto.
+
+\paragraph{MTPC03 Estimated At Completion(EAC)}
+Indice che rappresenta la stima dei costi mancanti. Viene calcolato man mano che il progetto procede ed è fondamentale per attività di pianificazione.
+Calcolo:
+\begin{center}
+	\item \textbf{EAC = ACWP + ETC}
+\end{center}
+dove:
+\begin{itemize}
+	\item ACWP: costo effettivo sostenuto per completare le attività alla data odierna(in euro o giorni);
+	\item ETC: valore stimato per la realizzazione delle attività mancanti(in euro o giorni).
+\end{itemize}
+
+\paragraph{MTPC04 Cost Variance(CV)}
+Indice che quantifica la produttività o efficienza monitorando se il valore del costo realmente maturato è minore, maggiore o uguale al costo effettivo.
+Calcolo:
+\begin{center}
+	\item \textbf{CV = BCWP - ACWP}
+\end{center}
+dove:
+\begin{itemize}
+	\item BCWP: valore delle attività realizzate alla data odierna(in euro o giorni);
+	\item ACWP: costo effettivo sostenuto per completare le attività alla data odierna(in euro o giorni).
+\end{itemize}
+Se CV > 0 significa che il progetto produce con maggior efficienza e minor costo.
+
+\paragraph{Code Coverage}\-\\
+Le operazioni di verifica della qualità sul software vengono eseguite seguendo le metriche principali sotto elencate:
+\begin{itemize}
+	\item \textbf{MTPC05 Function Coverage}: verificare che una funzione sia chiamata;
+	\item \textbf{MTPC06 Statement Coverage}: verificare che ogni statement del codice sia eseguito, e non ci sia quindi codice che non verrà mai preso in considerazione;
+	\item \textbf{MTPC07 Branch Coverage}: verificare che tutti i possibili percorsi delle strutture di controllo (del tipo if,case,ecc) siano stati eseguiti.
+	\item \textbf{MTPC08 Condition Coverage}: verificare che ogni condizione booleana sia considerata sia vera che falsa.
+\end{itemize}
+
+\subsubsection{Controllo qualità di prodotto}
+La qualità di prodotto è raggiunta mediante l'utilizzo dello standard ISO/IEC 9126:2001. TO DO
+
+\subsubsection{Metriche per la qualità di prodotto}
+TO DO
+
+
