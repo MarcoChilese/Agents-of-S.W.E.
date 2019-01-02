@@ -105,45 +105,52 @@ Le operazioni di verifica della qualità sul software vengono eseguite seguendo 
 	\item \textbf{MTPC08 Condition Coverage}: verificare che ogni condizione booleana sia considerata sia vera che falsa.
 \end{itemize}
 
+\paragraph{MTPC09 Rischi non preventivati}\-\\
+Indice numerico incrementale a partire da 0. Indica il numero di rischi non preventivati che si verificano e vengono considerati durante la corrente fase del progetto. La misurazione avviene incrementando il valore per ogni rischio (non individuato precedentemente) che viene rilevato, il valore viene azzerato per ogni fase del progetto.
 
-\paragraph{MTTSA09 Percentuale di test passati}\-\\
+\paragraph{MTTSA10 Percentuale di test passati}\-\\
 Indica la percentuale di test passati, utile per misurare l'avanzamento qualitativo. La misurazione avviene:
 \begin{center}
 	\item $PTP = \frac{TP}{TT}*100$
 \end{center}
 dove PTP è la percentuale finale di test passati, TP sono i test passati e TT i test totali eseguiti.
 
-\paragraph{MTTSA10 Percentuale di test falliti}\-\\
+\paragraph{MTTSA11 Percentuale di test falliti}\-\\
 Indica la percentuale di test falliti. La misurazione avviene:
 \begin{center}
 	\item $PTF = \frac{TF}{TT}*100$
 \end{center}
 dove PTF è la percentuale finale di test falliti, TF sono i test passati e TT i test totali eseguiti.
 
-\paragraph{MTTSA11 Percentuale di difetti sistemati}\-\\
+\paragraph{MTTSA12 Percentuale di difetti sistemati}\-\\
 Indica la percentuale di bug/difetti sistemati, indice utile per misurare l'avanzamento. La misurazione avviene:
 \begin{center}
 	\item $PDS = \frac{DS}{DT}*100$
 \end{center}
 dove PDS è la percentuale calcolata, DS i difetti sistemati e DT i difetti totali.
 
-\paragraph{MTTSA12 Tempo medio di risoluzione degli errori}\-\\
+\paragraph{MTTSA13 Tempo medio di risoluzione degli errori}\-\\
 Indice calcolato sul tempo medio della risoluzione di bug creati dal team durante lo sviluppo. Utile per considerare abilità e tempo di assorbimento di un bug nel sistema. La misurazione avviene:
 \begin{center}
-	\item $TMRE = \frac{TRE}{NE}*100$
+	\item $TMRE = \frac{TRE}{NE}$
 \end{center}
 dove TMRE è il tempo medio calcolato, TRE il tempo totale per la risoluzione degli errori e NE il numero degli errori.
 
-\paragraph{MTTSA13 Numero di bug trovati per test}\-\\
+\paragraph{MTTSA14 Numero medio di bug trovati per test}\-\\
+Indica il numero medio di bug trovati eseguendo i test. \'E un indice utile per verificare la qualità dei test e del sistema in generale. La misurazione avviene:
+\begin{center}
+	\item $MBT = \frac{NB}{NT}$
+\end{center}
+dove MBT è la media calcolata, NB il numero di bug rilevati e NT il numero dei test.
 
-\paragraph{MTTSA14 Numero di test eseguiti per requisito}\-\\
+\paragraph{MTTSA15 Numero di test eseguiti per requisito}\-\\
 
-\paragraph{MTTSA15 Difetti trovati per requisito}\-\\
+\paragraph{MTTSA16 Difetti trovati per requisito}\-\\
 
-\paragraph{MTTSA16 Percentuali di difetti risolti}\-\\
+\paragraph{MTTSA17 Percentuali di difetti risolti}\-\\
 
 \subsubsection{Controllo qualità di prodotto}
-La qualità di prodotto è raggiunta mediante l'utilizzo dello standard ISO/IEC 9126:2001. TO DO
+La qualità di prodotto è raggiunta mediante l'utilizzo dello standard ISO/IEC 9126:2001. 
 
 \subsubsection{Metriche per la qualità di prodotto}
 TO DO
