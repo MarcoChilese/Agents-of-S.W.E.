@@ -16,7 +16,7 @@
 \large
 \renewcommand{\arraystretch}{1.3}
 \begin{tabular}{r|l}
-\textbf{Versione} & 0.0.2\\
+\textbf{Versione} & 0.0.5\\
 \textbf{Approvazione} & ?\\
 \textbf{Redazione} & \parbox[t]{5cm}{Marco Favaro\\Diego Mazzalovo\\Carlotta Segna}\\
 \textbf{Verifica} & \parbox[t]{5cm}{?\\?}\\
@@ -35,6 +35,9 @@
 \pagenumbering{Roman}
 \tableofcontents
 
+% Inclusione degli indici di tabelle e immagini
+\listoftables
+
 \pagebreak
 
 \pagenumbering{arabic}
@@ -51,6 +54,11 @@
 
 \pagebreak
 
+\input{Chapters/Test.tex}
+
+\pagebreak
+
+\appendix
 \input{Chapters/Resoconto.tex}
 
 \pagebreak
