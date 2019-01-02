@@ -16,16 +16,16 @@ dove:
 \subsubsection{Classificazione Metriche}
 Per garantire una corretta struttura, il gruppo ha deciso di introdurre una nomenclatura per identificare le metriche utilizzate. Si potranno quindi identificare cosi:
 \begin{center}
-	\textbf{MT[cat][mcat][num]}
+	\textbf{MT[mcat][mat][num]}
 \end{center}
 \begin{itemize}
-		\item \textbf{cat}: identifica la categoria di appartenenza della metrica. Può assumere i seguenti valori:
+		\item \textbf{mcat}: identifica le metriche in base a quale macrocategoria andranno a misurare. Può assumere i seguenti valori:
 	\begin{itemize}
 		\item \textbf{PC}: per indicare le metriche di processo;
 		\item \textbf{PD}: per indicare le metriche di prodotto;
 		\item \textbf{TS}: per indicare le metriche di test.
 	\end{itemize}
-	\item \textbf{mcat}: identifica la macrocategoria di appartenenza, se esiste, altrimenti è vuota. Per le metriche di prodotto può assumere i seguenti valori:
+	\item \textbf{cat}: identifica la categoria di appartenenza, se esiste, altrimenti è vuota. Per le metriche di prodotto può assumere i seguenti valori:
 	\begin{itemize}
 		\item \textbf{D}: per indicare i documenti;
 		\item \textbf{S}: per indicare il software.
@@ -46,7 +46,7 @@ La qualità di processo è raggiunta tramite l'utilizzo di metodi e modelli che 
 Le seguenti metriche sono utilizzate per la valutazione dell'efficacia e dell'efficienza dei processi.
 
 \paragraph{MTPC01 Schedule Variance(SV)}\--\\
-\'E un indice che consente di rilevare se l'andamento del progetto è in linea con quanto pianificato nella baseline\glossario. Può essere utile al cliente per verificare quantitativamente se il team di sviluppo del progetto intero sono in linea con i tempi. \-\\
+\'E un indice che consente di rilevare se l'andamento del progetto è in linea con quanto pianificato nella baseline\glossario. Può essere utile al cliente per verificare quantitativamente se il team di sviluppo del progetto è in linea con i tempi. \-\\
 Calcolo:\-\\
 \begin{center}
 	\item \textbf{SV = BCWP - BCWS}
@@ -69,9 +69,9 @@ dove:
 	\item BCWS: costo pianificato per realizzare le attività alla data odierna(in euro o giorni);
 	\item ACWP: costo effettivo sostenuto per completare le attività alla data odierna(in euro o giorni).
 \end{itemize}
-Se BV > 0 significa che il progetto sta risparmiando sui costi prestabiliti, se BV = 0 significa che il progetto sta mantenendo i costi prefissati, se BV = 0 significa che il progetto sta superando il budget imposto.
+Se BV > 0 significa che il progetto sta risparmiando sui costi prestabiliti, se BV = 0 significa che il progetto sta mantenendo i costi prefissati, se BV < 0 significa che il progetto sta superando il budget imposto.
 
-\paragraph{MTPC03 Estimated At Completion(EAC)}
+\paragraph{MTPC03 Estimated At Completion(EAC)}\-\\
 Indice che rappresenta la stima dei costi mancanti. Viene calcolato man mano che il progetto procede ed è fondamentale per attività di pianificazione.
 Calcolo:
 \begin{center}
@@ -83,7 +83,7 @@ dove:
 	\item ETC: valore stimato per la realizzazione delle attività mancanti(in euro o giorni).
 \end{itemize}
 
-\paragraph{MTPC04 Cost Variance(CV)}
+\paragraph{MTPC04 Cost Variance(CV)}\-\\
 Indice che quantifica la produttività o efficienza monitorando se il valore del costo realmente maturato è minore, maggiore o uguale al costo effettivo.
 Calcolo:
 \begin{center}
@@ -104,6 +104,43 @@ Le operazioni di verifica della qualità sul software vengono eseguite seguendo 
 	\item \textbf{MTPC07 Branch Coverage}: verificare che tutti i possibili percorsi delle strutture di controllo (del tipo if,case,ecc) siano stati eseguiti.
 	\item \textbf{MTPC08 Condition Coverage}: verificare che ogni condizione booleana sia considerata sia vera che falsa.
 \end{itemize}
+
+
+\paragraph{MTTSA09 Percentuale di test passati}\-\\
+Indica la percentuale di test passati, utile per misurare l'avanzamento qualitativo. La misurazione avviene:
+\begin{center}
+	\item $PTP = \frac{TP}{TT}*100$
+\end{center}
+dove PTP è la percentuale finale di test passati, TP sono i test passati e TT i test totali eseguiti.
+
+\paragraph{MTTSA10 Percentuale di test falliti}\-\\
+Indica la percentuale di test falliti. La misurazione avviene:
+\begin{center}
+	\item $PTF = \frac{TF}{TT}*100$
+\end{center}
+dove PTF è la percentuale finale di test falliti, TF sono i test passati e TT i test totali eseguiti.
+
+\paragraph{MTTSA11 Percentuale di difetti sistemati}\-\\
+Indica la percentuale di bug/difetti sistemati, indice utile per misurare l'avanzamento. La misurazione avviene:
+\begin{center}
+	\item $PDS = \frac{DS}{DT}*100$
+\end{center}
+dove PDS è la percentuale calcolata, DS i difetti sistemati e DT i difetti totali.
+
+\paragraph{MTTSA12 Tempo medio di risoluzione degli errori}\-\\
+Indice calcolato sul tempo medio della risoluzione di bug creati dal team durante lo sviluppo. Utile per considerare abilità e tempo di assorbimento di un bug nel sistema. La misurazione avviene:
+\begin{center}
+	\item $TMRE = \frac{TRE}{NE}*100$
+\end{center}
+dove TMRE è il tempo medio calcolato, TRE il tempo totale per la risoluzione degli errori e NE il numero degli errori.
+
+\paragraph{MTTSA13 Numero di bug trovati per test}\-\\
+
+\paragraph{MTTSA14 Numero di test eseguiti per requisito}\-\\
+
+\paragraph{MTTSA15 Difetti trovati per requisito}\-\\
+
+\paragraph{MTTSA16 Percentuali di difetti risolti}\-\\
 
 \subsubsection{Controllo qualità di prodotto}
 La qualità di prodotto è raggiunta mediante l'utilizzo dello standard ISO/IEC 9126:2001. TO DO
