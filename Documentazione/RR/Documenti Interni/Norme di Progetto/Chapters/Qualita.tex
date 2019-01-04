@@ -30,12 +30,7 @@ Per garantire una corretta struttura, il gruppo ha deciso di introdurre una nome
 		\item \textbf{D}: per indicare i documenti;
 		\item \textbf{S}: per indicare il software.
 	\end{itemize}
-	Per le metriche di test invece può assumere:
-	\begin{itemize}
-		\item \textbf{A}: tutti i tipi di test;
-		\item \textbf{M}: test di modulo;
-		\item \textbf{H}: test ad alto livello.
-	\end{itemize}
+
 	\item \textbf{num}: identificativo univoco formato da due cifre intere a partire da 1.
 \end{itemize}
 
@@ -108,44 +103,44 @@ Le operazioni di verifica della qualità sul software vengono eseguite seguendo 
 \paragraph{MTPC09 Rischi non preventivati}\-\\
 Indice numerico incrementale a partire da 0. Indica il numero di rischi non preventivati che si verificano e vengono considerati durante la corrente fase del progetto. La misurazione avviene incrementando il valore per ogni rischio (non individuato precedentemente) che viene rilevato, il valore viene azzerato per ogni fase del progetto.
 
-\paragraph{MTTSA10 Percentuale di test passati}\-\\
+\paragraph{MTTS10 Percentuale di test passati}\-\\
 Indica la percentuale di test passati, utile per misurare l'avanzamento qualitativo. La misurazione avviene:
 \begin{center}
 	\item $PTP = \frac{TP}{TT}*100$
 \end{center}
 dove PTP è la percentuale finale di test passati, TP sono i test passati e TT i test totali eseguiti.
 
-\paragraph{MTTSA11 Percentuale di test falliti}\-\\
+\paragraph{MTTS11 Percentuale di test falliti}\-\\
 Indica la percentuale di test falliti. La misurazione avviene:
 \begin{center}
 	\item $PTF = \frac{TF}{TT}*100$
 \end{center}
 dove PTF è la percentuale finale di test falliti, TF sono i test passati e TT i test totali eseguiti.
 
-\paragraph{MTTSA12 Percentuale di difetti sistemati}\-\\
+\paragraph{MTTS12 Percentuale di difetti sistemati}\-\\
 Indica la percentuale di bug/difetti sistemati, indice utile per misurare l'avanzamento. La misurazione avviene:
 \begin{center}
 	\item $PDS = \frac{DS}{DT}*100$
 \end{center}
 dove PDS è la percentuale calcolata, DS i difetti sistemati e DT i difetti totali.
 
-\paragraph{MTTSA13 Tempo medio di risoluzione degli errori}\-\\
+\paragraph{MTTS13 Tempo medio di risoluzione degli errori}\-\\
 Indice calcolato sul tempo medio della risoluzione di bug creati dal team durante lo sviluppo. Utile per considerare abilità e tempo di assorbimento di un bug nel sistema. La misurazione avviene:
 \begin{center}
 	\item $TMRE = \frac{TRE}{NE}$
 \end{center}
 dove TMRE è il tempo medio calcolato, TRE il tempo totale per la risoluzione degli errori e NE il numero degli errori.
 
-\paragraph{MTTSA14 Numero medio di bug trovati per test}\-\\
+\paragraph{MTTS14 Numero medio di bug trovati per test}\-\\
 Indica il numero medio di bug trovati eseguendo i test. \'E un indice utile per verificare la qualità dei test e del sistema in generale. La misurazione avviene:
 \begin{center}
 	\item $MBT = \frac{NB}{NT}$
 \end{center}
 dove MBT è la media calcolata, NB il numero di bug rilevati e NT il numero dei test.
 
-\paragraph{MTTSA15 Numero di test eseguiti per requisito}\-\\
+\paragraph{MTTS15 Numero di test eseguiti per requisito}\-\\
 
-\paragraph{MTTSA16 Difetti trovati per requisito}\-\\
+\paragraph{MTTS16 Difetti trovati per requisito}\-\\
 Indice numerico che rappresenta il numero medio di test eseguiti per requisito. Utile per verificare che il sistema soddisfi i requisiti a pieno. La misurazione avviene:
 \begin{center}
 	\item $MDR = \frac{TDR}{TR}$
@@ -174,12 +169,6 @@ Indicatore percentuale che verifica se tutti i requisiti opzionali scelti siano 
 	\item $PRP = \frac{RPS}{RPT}*100$
 \end{center}
 dove PRP è la percentuale di requisiti opzionali scelti soddisfatti, RPS i requisiti opzionali scelti soddisfatti e RPT i requisiti opzionali scelti totali.
-
-\paragraph{MTPDS21 Tempo di Risposta Medio}\-\\
-Tempo misurato in secondi che indica la velocità e la reattività del sistema. Le misurazioni possono essere eseguite in fase di sviluppo e nel momento del collaudo al fine di migliorare il funzionamento e la velocità.
-
-\paragraph{MTPDS22 Tempo di Risposta di Picco}\-\\
-TODO
 
 \paragraph{MTPDS23 Tempo Medio di Comprensione}\-\\
 Indica il tempo medio che l'utente impiega per comprendere cosa può svolgere il sistema. \'E misurato in minuti ed è rilevato attraverso test a persone esterne al team di sviluppo.

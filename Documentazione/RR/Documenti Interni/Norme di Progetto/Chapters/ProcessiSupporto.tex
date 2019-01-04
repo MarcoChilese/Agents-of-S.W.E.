@@ -93,9 +93,6 @@ Per la costruzione dei diagrammi è stato optato per l'utilizzo di script in \te
 
 \input{Chapters/Qualita.tex}
 
-
-
-
 \subsection{Versionamento}\label{ProcessiSupporto_Versionamento}
 La necessità di più componenti del gruppo di cooperare su uno stesso documento, porta la necessità di utilizzare un sistema di versionamento distribuito. 
 
@@ -106,14 +103,14 @@ La necessità di più componenti del gruppo di cooperare su uno stesso documento
 
 %Nella fase di RR, non in questa fase di RR
 \subsubsection{Controllo di versione}
-Il sistema di versionamento, utilizzato nella fase di \textbf{RR}, è \textbf{git}, con il supporto hosting di \textbf{GitHub}.
+Il sistema di versionamento, utilizzato nella fase di RR, è \textit{git}, con il supporto hosting di \textit{GitHub}.
 
 \paragraph{Struttura del repository} \-\\ 
-La struttura del repository segue il workflow \textit{gitflow} di \textit{Driessen at nvie}, idealizzato attorno il concetto di \textbf{release} del prodotto. Questo produce un framework robusto attorno al quale si possono gestire progetti di grandi dimensioni. I due branch principali sono il \textbf{master} ed in parallelo ad esso il \textbf{develop}. 
-Il \textbf{master} viene considerato il branch \textit{main}, dove il codice sorgente della testa riflette sempre lo stato di \textit{"production-ready"},
-mentre il ramo di \textbf{develop} è considerato il branch principale dove vengono effettuate le ultime modifiche per il prossimo incremento del prodotto. ~\\
-Più precisamente il Repository\glossario \textit{"Agents-of-S.W.E."} è caratterizzata da una cartella principale "Documentazione", la cui sottocartella "RR" rappresenta la principlae struttura in cui sono organizzati i files su cui il gruppo \texttt{Agents of S.W.E.} ha lavorato in vista della RR.\\
-	Nello specifico la sottocartella \textbf{"RR"} è caratterizzata dalla seguente struttura di folders:
+La struttura del repository segue il workflow \textit{gitflow} di \textit{Driessen at nvie}, idealizzato attorno il concetto di release del prodotto. Questo produce un framework robusto attorno al quale si possono gestire progetti di grandi dimensioni. I due branch principali sono il "master" ed in parallelo ad esso il "develop". 
+Il master viene considerato il branch main, dove il codice sorgente della testa riflette sempre lo stato di \textit{"production-ready"},
+mentre il ramo di develop è considerato il branch principale dove vengono effettuate le ultime modifiche per il prossimo incremento del prodotto. ~\\
+Più precisamente la repository\glossario "Agents-of-S.W.E." è caratterizzata da una cartella principale "Documentazione", la cui sottocartella "RR" rappresenta la principale struttura in cui sono organizzati i files su cui il gruppo \texttt{Agents of S.W.E.} ha lavorato in vista della RR.\\
+	Nello specifico la sottocartella "RR" è caratterizzata dalla seguente struttura di folders:
 	\begin{itemize}
 	\item \textbf{Documenti Esterni}:
 		\begin{itemize}
@@ -132,8 +129,8 @@ Più precisamente il Repository\glossario \textit{"Agents-of-S.W.E."} è caratte
 	\item \textbf{Corrispondenza};
 	\item \textbf{Utility}.
 	\end{itemize}
-	Ciascuna sottocartella corrispondente ad un documento contiene a sua volta un file LaTeX ".tex" che assume il nome del documento e il corrispettivo file ".pdf" ottenuto attraverso la compilazione.\\
-	La cartella "Corrispondenza" contiene una copia delle mail inviate all'azienda proponente attraverso l'indirizzo \texttt{agentsofswe@gmail.com}, la cartella "Utility" invece contiene gli \textit{Script}\glossario realizzati dal gruppo.
+	Ciascuna sottocartella, corrispondente ad un documento, contiene a sua volta un file LaTeX ".tex" che assume il nome del documento e il corrispettivo file ".pdf" ottenuto attraverso la compilazione.\\
+	La cartella "Corrispondenza" contiene una copia delle mail inviate all'azienda proponente attraverso l'indirizzo agentsofswe@gmail.com, la cartella "Utility" invece contiene gli Script\glossario realizzati dal gruppo.
 
 %\paragraph{Configurazione sistema}
 
@@ -146,18 +143,18 @@ descrive le modifiche apportate o un comando apposito per chiudere alcune task c
 \paragraph{Ciclo di vita dei branch} \-\\
 \begin{enumerate}
 	
-	\item \textbf{Master}: branch \textit{main} del repository, esso rappresenta lo stato di \textit{"production-ready"} del prodotto. Questo branch ha una durata di vita quanto il repository stesso o infinita;
-	\item \textbf{Develop}: branch di sviluppo parallelo al \textbf{master} sul quale vengono aggiunte le feature provenienti appunto dai branch \textbf{features}, e dal quale inizia il branch di \textbf{release}. Ha la stessa durata di vita del branch master;
+	\item \textbf{Master}: branch main del repository, esso rappresenta lo stato di \textit{production-ready} del prodotto. Questo branch ha una durata di vita quanto il repository stesso o infinita;
+	\item \textbf{Develop}: branch di sviluppo parallelo al "master" sul quale vengono aggiunte le feature provenienti appunto dai branch "features", e dal quale inizia il branch di "release". Ha la stessa durata di vita del branch master;
 	 
 	\item \textbf{Release}: branch di preparazione per un nuovo rilascio o aggiornamento del prodotto. 
 	Utilizzato per risolvere piccoli errori e configurare le impostazioni di rilascio. Una volta rilasciato il 
-	prodotto, esso si riversa nel branch \textbf{master} e \textbf{develop}. Ha una durata breve in quanto il rilascio deve essere effettuato il prima possibile;
+	prodotto, esso si riversa nel branch "master" e "develop". Ha una durata breve in quanto il rilascio deve essere effettuato il prima possibile;
 
 	\item \textbf{Feature}: branch usato per sviluppare nuove feature per il prossimo rilascio a breve o lungo termine. Il suo tempo di vita dura quanto lo sviluppo della nuova feature
-	fintanto che non avviene il merge\glossario sul branch di \textbf{develop};
+	fintanto che non avviene il merge\glossario sul branch "develop";
 
 	\item \textbf{Hotfix}: branch molto simili a quello di release, con l'obbiettivo di risolvere immediatamente un bug del prodotto in produzione o release. Una volta risolto il bug, 
-	esso si riversa sui branch \textbf{master} e \textbf{develop}, aggiornandoli nel minor tempo possibile. Ha un tempo di vita breve, in quanto viene creato per la necessità di risolvere 
+	esso si riversa sui branch "master" e "develop", aggiornandoli nel minor tempo possibile. Ha un tempo di vita breve, in quanto viene creato per la necessità di risolvere 
 	un problema sul prodotto rilasciato. 
 	
 \end{enumerate}
@@ -165,17 +162,17 @@ descrive le modifiche apportate o un comando apposito per chiudere alcune task c
 
 \paragraph{Rilascio di versione} \-\\
 Il rilascio di una nuova versione del prodotto avviene nel momento in cui si raggiunge un certo numero di features implementate e testate. 
-Dal branch \textbf{develop} si avvia un processo di verifica, che sfocia in una nuovo branch di \textbf{release}, il quale porta il nome della relase e che nella sua ultima fase rilascia la nuova versione sul branch master e applica le modifiche effettuate nel frattempo anche nel branch \textbf{develop}, portando i due allo stesso livello di produzione. 
+Dal branch "develop" si avvia un processo di verifica, che sfocia in una nuovo branch di "release", il quale porta il nome della release e che nella sua ultima fase rilascia la nuova versione sul branch "master" e applica le modifiche effettuate nel frattempo anche nel branch "develop", portando i due allo stesso livello di produzione. 
 
 \subsubsection{Configurazione versionamento}
 
 \paragraph{Remoto} \-\\
-	La configurazione di \textbf{GitHub} avviene nel portale \textit{www.github.com}, dove si inseriscono le chiavi \textbf{SSH}\glossario per ciascun collaboratore del nuovo repository. 
-	Una volta creato il repository nel server remoto ed inserite le chiavi \textbf{SSH}, si procedere con la configurazione in locale.
+	La configurazione di GitHub avviene nel portale www.github.com, dove si inseriscono le chiavi SSH\glossario per ciascun collaboratore del nuovo repository. 
+	Una volta creato il repository nel server remoto ed inserite le chiavi SSH, si procedere con la configurazione in locale.
 	
 \paragraph{Locale} \-\\
-	In locale, si devono generare le chiavi \textbf{SSH}, che permettono il collegamento con il server remoto dove viene gestito il repository. 
-	Una volta generate le chiavi, seguendo le varie procedure specifiche per ogni sistema operativo, vengono caricate sul portale apposito del gestore \textbf{GitHub}.
+	In locale, si devono generare le chiavi SSH, che permettono il collegamento con il server remoto dove viene gestito il repository. 
+	Una volta generate le chiavi, seguendo le varie procedure specifiche per ogni sistema operativo, vengono caricate sul portale apposito del gestore GitHub.
 	L'ultima fase prevede la clonazione con uno dei seguenti metodi: 
 
 	\begin{itemize}
@@ -185,39 +182,39 @@ Dal branch \textbf{develop} si avvia un processo di verifica, che sfocia in una 
 	\end{itemize}
 		
 \subsection{Gestione di progetto}\label{ProcessiSupporto_GestioneProgetto}
-La gestione di progetto avviene tramite un sistema di task integrato nel servizio di hosting \textbf{GitHub}. 
+La gestione di progetto avviene tramite un sistema di task integrato nel servizio di hosting GitHub. 
 Esso permette l'integrazione delle task con il repository stesso, dando la possibilità ai vari commit di chiudere con comandi appositi determinate task, aumentando cosi l'automazione di tutto il processo. 
 
 \subsubsection{Configurazione strumenti di organizzazione}
-	La configurazione di tutto il processo di organizzazione avviene nel portale di \textbf{GitHub}, dove si crea una project board per ogni categoria di processo. 	
+	La configurazione di tutto il processo di organizzazione avviene nel portale di GitHub, dove si crea una project board per ogni categoria di processo. 	
 
 \paragraph{Inizializzazione} \-\\
- L'inizializzazione della project board avviene tramite un'istanza vuota oppure selezionando un template di ciclo di vita fornito da \textbf{GitHub} largamente utilizzate in molti progetti, quindi testati ed affidabili. Tra i template forniti abbiamo: 
+ L'inizializzazione della project board avviene tramite un'istanza vuota oppure selezionando un template di ciclo di vita fornito da GitHub largamente utilizzate in molti progetti, quindi testati ed affidabili. Tra i template forniti abbiamo: 
 
 \begin{itemize}
 		\item \textbf{Basic Kanban}: presenta le fasi di \textit{ToDo, In Progress, e Done}; 
 		\item \textbf{Automated Kanban}: presenta trigger\glossario predefiniti che permettono lo spostamento di task
 		 automatici nei vari cicli di vita, utilizzando il meccanismo di chiusura dei commit;
-		\item \textbf{Automated Kanban with Reviews}: tutto cioè che viene incluso nel template \textit{"Automated Kanban"} con l'aggiunta di trigger per la revisione di nuove componenti; 
+		\item \textbf{Automated Kanban with Reviews}: tutto cioè che viene incluso nel template \textit{Automated Kanban} con l'aggiunta di trigger per la revisione di nuove componenti; 
 		\item \textbf{Bug Triage}: template centrato sulla gestione degli errori, fornendo un ciclo di vita per essi che varia tra \textit{ToDo, Alta Priorità, Bassa Priorità e Chiusi}. 
 \end{itemize}
 	  	
 \paragraph{Aggiunta milestone} \-\\
-	Le milestone sono gruppi di task mirate ad un obbiettivo comune tra esse.
+	Le milestone\glossario sono gruppi di task mirate ad un obbiettivo comune tra esse.
 	Possono essere aggiunte in qualsiasi momento, sia prima che dopo la creazione di una task.
 
 \subsubsection{Ciclo di vita delle task}
 
 \paragraph{Apertura} \-\\
-	Da una specifica project board si possono creare le task o le issue\glossario, le quali possono essere assegnate ad uno o più individui che collaborano al repository, inoltre ogni task può far parte di una milestone\glossario, che raggruppa un insieme di task o issue per il raggiungimento di un obbiettivo comune. 
-	Inoltre ad ognuna di esse può essere assegnato un colore che ne identifica il tipo come. per esempio, \textit{bug, ToDo, miglioramenti, ecc...}. 
+	Da una specifica project board si possono creare le task o le issue\glossario, le quali possono essere assegnate ad uno o più individui che collaborano al repository, inoltre ogni task può far parte di una milestone, che raggruppa un insieme di task o issue per il raggiungimento di un obbiettivo comune. 
+	Inoltre ad ognuna di esse può essere assegnato un colore che ne identifica il tipo come per esempio: bug, ToDo, miglioramenti, ecc.... 
 	Si può creare una nuova task senza l'obbligo di assegnarla ad una project board, mantenendo comunque tutte le funzionalità descritte precedentemente. 
 
 \paragraph{Completamento} \-\\\label{ProcessiSupporto_GestioneProgetto_CicloTask_Completamento}
 	Il completamento di una task avviene in diversi modi, a seconda delle impostazioni della project board. 
 	Se la project board è automatizzata, il completamento di una task può avvenire tramite commit utilizzando il codice di chiusura. \\
 	Questo metodo collega direttamente l'implementazione richiesta alla task. \\
-	Se la project board non è automatizzata, il completamento dalla task deve essere manuale spostandola nello stato di \textit{Concluso}. 
+	Se la project board non è automatizzata, il completamento dalla task deve essere manuale spostandola nello stato di "Concluso". 
 	
 \paragraph{Richiesta di revisione} \-\\
 	Accumulate un certo numero di task o di milestone, si avvia la procedura di revisione da parte del verificatore. \\ Questa può essere notificata e pianificata in modo automatico a seconda del livello di automatizzazione della project board, oppure può essere totalmente gestita dal verificatore. 
@@ -228,5 +225,5 @@ Esso permette l'integrazione delle task con il repository stesso, dando la possi
 	Una volta che le task o le milestone sono state approvate dal verificatore, esse concludono il loro ciclo di vita nello stato di chiusura, le quali verranno spostate manualmente dal verificatore o automaticamente dalla project board se il merge è avvenuto con successo. 
 	
 \paragraph{Riapertura} \-\\
-	Le task in stato di \textit{"Chiusura"} possono essere riaperte e spostate nello stato di \textit{"Apertura"} se esse non soddisfanno tutti i parametri di qualità richiesti.
+	Le task in stato di "Chiusura" possono essere riaperte e spostate nello stato di "Apertura" se esse non soddisfanno tutti i parametri di qualità richiesti.
 	
