@@ -180,22 +180,31 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 
 \pagebreak
 
-
-\subsubsection{UC5 - Visualizzazione alert}\label{UC5}
+\subsubsection{UC5 - Definizione di un alert in base a livelli di soglia raggiunti dai nodi non collegati al flusso dei dati}\label{UC5}
 \begin{itemize}
 	\item \textbf{Attore primario:} Utente Autenticato;
 	\item \textbf{Attore secondario:} Grafana;
-	\item \textbf{Precondizioni:} L'utente ha collegato in modo corretto i nodi (\hyperref[UC2]{UC2 (\ref*{UC2})} );
-	\item \textbf{Postcondizioni:} L'utente visualizza nell'apposito pannello gli alert;
+	\item \textbf{Precondizione:} Alcuni nodi non sono collegati al flussi di dati;
+	\item \textbf{Postcondizione:} L'utente ha aggiunto un alert per i nodi non collegati;
 	\item \textbf{Scenario principale:}
 	\begin{enumerate}
-		\item Il flusso di dati monitorato da Grafana ha attivato un alert;
-		\item L'utente visualizza eventuali alert derivati da i dati ottenuti da  \hyperref[UC2]{UC2 (\ref*{UC2})}.
+		\item L'utente tramite le impostazioni di Grafana, accessibili dai pannelli, configura l'alert desiderato.
+	\end{enumerate}
+\end{itemize}
+
+\paragraph{UC5.1 - Rimozione alert}\label{UC5.1}
+\begin{itemize}
+	\item \textbf{Attore primario:} Utente Autenticato;
+	\item \textbf{Attore secondario:} Grafana;
+	\item \textbf{Precondizione:} E' presente un alert associato ad un nodo non collegato a un flusso di dati;
+	\item \textbf{Postcondizione:} L'utente ha rimosso l'alert;
+	\item \textbf{Scenario principale:}
+	\begin{enumerate}
+		\item L'utente nelle impostazioni di Grafana, accessibili dai pannelli, rimuove l'alert desiderato.
 	\end{enumerate}
 \end{itemize}
 
 \pagebreak
-
 
 \subsubsection{UC6 - Visualizzazione messaggio d'errore selezione  rete bayesiana}\label{UC6}
 \begin{itemize}
@@ -225,26 +234,15 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 
 \pagebreak
 
-\subsubsection{UC8 - Definizione di un alert in base a livelli di soglia raggiunti dai nodi non collegati al flusso dei dati}\label{UC8}
+\subsubsection{UC8 - Visualizzazione alert}\label{UC8}
 \begin{itemize}
 	\item \textbf{Attore primario:} Utente Autenticato;
 	\item \textbf{Attore secondario:} Grafana;
-	\item \textbf{Precondizioni:} Alcuni nodi non sono collegati al flussi di dati;
-	\item \textbf{Postcondizioni:} L'utente ha aggiunto un alert per i nodi non collegati;
+	\item \textbf{Precondizioni:} L'utente ha collegato in modo corretto i nodi (\hyperref[UC2]{UC2 (\ref*{UC2})} );
+	\item \textbf{Postcondizioni:} L'utente visualizza nell'apposito pannello gli alert;
 	\item \textbf{Scenario principale:}
 	\begin{enumerate}
-		\item L'utente tramite le impostazioni di Grafana configura l'alert.
-	\end{enumerate}
-\end{itemize}
-
-\paragraph{UC8.1 - Rimozione alert}\label{UC8.1}
-\begin{itemize}
-	\item \textbf{Attore primario:} Utente Autenticato;
-	\item \textbf{Attore secondario:} Grafana;
-	\item \textbf{Precondizioni:} E' presente un alert associato ad un nodo non collegato a un flusso di dati;
-	\item \textbf{Postcondizioni:} L'utente ha rimosso l'alert;
-	\item \textbf{Scenario principale:}
-	\begin{enumerate}
-		\item L'utente nelle impostazioni di Grafana rimuove l'alert.
+		\item Il flusso di dati monitorato da Grafana ha attivato un alert;
+		\item L'utente visualizza eventuali alert derivati da i dati ottenuti da  \hyperref[UC2]{UC2 (\ref*{UC2})}.
 	\end{enumerate}
 \end{itemize}
