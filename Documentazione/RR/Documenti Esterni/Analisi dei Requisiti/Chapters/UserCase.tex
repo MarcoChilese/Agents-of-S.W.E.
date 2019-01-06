@@ -123,8 +123,8 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 \item \textbf{Scenario Principale:} L'utente conferma le proprie scelte (\hyperref[UC2.1]{UC2.1 (\ref*{UC2.1})}) cliccando il pulsante "Conferma";
 \item \textbf{Estensioni:} \hyperref[UC7]{UC7 (\ref*{UC7})}: L'utente visualizza un messaggio di errore nel caso in cui non abbia collegato alcun nodo al flusso dati.
 \end{itemize}
-
 \newpage
+
 \subsubsection{UC3 - Politiche temporali di ricalcolo delle probabilità}\label{UC3}
 
 \begin{figure}[H]
@@ -150,8 +150,31 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 	
 \end{itemize}
 
+\paragraph{UC3.1 - Apertura panello di configurazione}\label{UC3.1}
+\begin{itemize}
+	\item \textbf{Attore primario:} Utente Autenticato; 
+	\item \textbf{Precondizione:} L'utente ha caricato con successo la rete bayesiana (\hyperref[UC1]{UC1 (\ref*{UC1})});
+	\item \textbf{Postcondizione:} L'utente accede al panello di configurazione;
+	\item \textbf{Scenario Principale:} L'utente dalla dashboard, tramite click, apre il panello di configurazione. 
+\end{itemize}
 
+\paragraph{UC3.2 - Creazione nuova policy}\label{UC3.2}
 
+\begin{itemize}
+	\item \textbf{Attore primario:} Utente Autenticato; 
+	\item \textbf{Precondizione:} L'utente si è spostato nell'area di configurazione (\hyperref[UC3.1]{UC3.1 (\ref*{UC3.1})});
+	\item \textbf{Postcondizione:} L'utente ha creato una nuova policy per il ricalcolo delle probabilità; 
+	\item \textbf{Scenario principale:} L'utente crea un nuova policy inserendo le varie metriche per il ricalcolo delle probabilità.
+\end{itemize}
+
+\paragraph{UC3.3 - Collegamento policy alla rete bayesiana}
+\begin{itemize}
+	\item \textbf{Attore primario:} Utente Autenticato; 
+	\item \textbf{Precondizione:} L'utente ha creato una nuova policy (\hyperref[UC3.2]{UC3.2 (\ref{UC3.2})});
+	\item \textbf{Postcondizione:} L'utente ha collegato la policy a una rete bayesiana; 
+	\item \textbf{Scenario principale:} L'utente collega la policy desiderata alla rete bayesiana, impostando cosi i nuovi parametri. 
+\end{itemize}
+\newpage
 \subsubsection{UC4 - Visualizzazione dati forniti dai nodi non collegati al flusso}\label{UC4}
 
 \begin{figure}[H]
