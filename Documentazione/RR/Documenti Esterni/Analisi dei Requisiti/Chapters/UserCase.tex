@@ -55,6 +55,7 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 		\item L'utente seleziona e clicca sul bottone con simbolo di "+"(\hyperref[UC1.1]{UC1.1 (\ref*{UC1.1})});
 		\item L'utente si trova davanti una finestra presso cui selezionare il file JSON contenente la rete (\hyperref[UC1.2]{UC1.2 (\ref*{UC1.2})}) e seleziona "Aggiungi".
 	\end{enumerate}
+	\item \textbf{Estensioni:} \hyperref[UC6]{UC6 (\ref*{UC6})} estende \hyperref[UC1.2]{UC1.2 (\ref*{UC1.2})}: L'utente visualizza un messaggio di errore nel caso in cui l'operazione non sia andata  abuon fine.
 \end{itemize}
 
 \paragraph{UC1.1 - Apertura pannello di selezione della rete bayesiana}\label{UC1.1}
@@ -76,15 +77,7 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 		\item L'utente seleziona dalla finestra il file da importare;
 		\item L'utente clicca il pulsante con etichetta "Aggiungi".
 	\end{enumerate}
-	\item \textbf{Estensioni}:
-	\begin{enumerate}
-		\item \hyperref[UC6]{UC6 (\ref*{UC6})} La mappa selezionata non è corretta per estensione o per contenuto;
-		\begin{enumerate}
-			\item L'aggiunta della rete al plug-in fallisce;
-			\item Viene visualizzato un messaggio di errore esplicito che spieghi l'errore;
-			\item Viene fornita all'utente un'altra possibilità per selezionare il file corretto.
-		\end{enumerate}
-	\end{enumerate}
+	\item \textbf{Estensioni:} \hyperref[UC6]{UC6 (\ref*{UC6})}: L'utente visualizza un messaggio di errore nel caso in cui l'operazione di caricamento del file non sia andata a buon fine.
 \end{itemize}
 
 \pagebreak

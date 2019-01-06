@@ -2,34 +2,67 @@
 
 \subsection{Requisiti Funzionali}\label{RF}
 \begin{center}
-\begin{longtable}[c]{|m{.08\textwidth}|m{.50\textwidth}|m{.2\textwidth}|m{.1\textwidth}|}
+\begin{longtable}[c]{|m{.09\textwidth}|m{.50\textwidth}|m{.2\textwidth}|m{.1\textwidth}|}
 \hline
 \rowcolor{bluelogo}\textbf{\textcolor{white}{ID}} & \textbf{\textcolor{white}{Descrizione}} & \textbf{\textcolor{white}{Obbligatorietà}} & \textbf{\textcolor{white}{Fonti}}\\
 \hline \hline
 \endfirsthead
 RF1 & L'utente deve poter aggiungere una rete bayesiana al sistema & Obbligatorio & UC1\\
 \hline
-\rowcolor{grigio}RF2 & L'utente deve poter collegare un flusso di dati a un nodo della rete preesistente & Obbligatorio & UC2\\
+\rowcolor{grigio}RF1.1 & Il Sistema deve mettere a disposizione un pulsante per avviare l'operazione di selezione del file da caricare & Obbligatorio & UC1\\
+\hline
+RF1.2 & Il sistema deve consentire all'utente di selezionare un file da caricare & Obbligatorio & UC1\\
+\hline
+\rowcolor{grigio}RF1.3 & Il Sistema deve mettere a disposizione dell'utente un bottone per avviare l'operazione di caricamento & Obbligatorio & UC1\\
+\hline
+RF1.4 & Il Sistema deve visualizzare un messaggio di errore nel caso l'operazione di caricamento del file non sia andata a buon fine & Obbligatorio & UC1 UC6\\
+\hline
+\rowcolor{grigio}RF1.4.1 & Il Sistema deve visualizzare un messaggio di errore nel caso in cui l'estensione del file selezionato sia errata & Opzionale & UC1 UC6\\
+\hline
+RF1.4.2 & Il Sistema deve visualizzare un messaggio di errore nel caso in cui la struttura interna del file selezionato sia errata & Opzionale & UC1 UC6\\
+\hline
+\rowcolor{grigio}RF2 & L'utente deve poter collegare un flusso di dati ad ogni nodo desiderato della rete preesistente & Obbligatorio & UC2\\
+\hline
+RF2.1 & Il Sistema deve mostrare una lista di nodi della rete bayesiana caricata & Obbligatorio & UC2\\
+\hline
+\rowcolor{grigio}RF2.2 & Il Sistema mettere a disposizione dell'utente una lista di flussi dati a cui collegare i nodi desiderati & Obbligatorio & UC2\\
+\hline
+RF2.3 & Il Sistema deve mettere a disposizione dell'utente un bottone per confermare il collegamento dei nodi & Obbligatorio & UC2\\
+\hline
+\rowcolor{grigio}RF2.4 & Il Sistema deve visualizzare un messaggio di errore nel caso in cui l'utente abbia confermato il collegamento dei nodi senza averne effettivamente collegato alcuno & Obbligatorio & UC2 UC7\\
 \hline
 RF3 & L'utente deve poter aggiungere una policy per il ricalcolo delle probabilità nella rete & Obbligatorio & UC3\\
 \hline
-\rowcolor{grigio}RF4 & L'utente deve poter aggiungere alert ai nodi caricati o a quelli derivati & Obbligatorio & UC7\\ 
+\rowcolor{grigio}RF4 & L'utente deve poter aggiungere alert ai nodi caricati o a quelli derivati & Obbligatorio & UC5\\ 
 \hline
 \caption{Requisiti Funzionali}
 \end{longtable}
 \end{center}
 
-\subsection{Requisiti Prestazionali}\label{RP}
-%Ne abbiamo?
+%\subsection{Requisiti Prestazionali}\label{RP}
 
 \subsection{Requisiti di Qualità}\label{RQ}
 \begin{center}
-\begin{longtable}[c]{|m{.08\textwidth}|m{.50\textwidth}|m{.2\textwidth}|m{.1\textwidth}|}
+\begin{longtable}[c]{|m{.09\textwidth}|m{.48\textwidth}|m{.2\textwidth}|m{.12\textwidth}|}
 \hline
 \rowcolor{bluelogo}\textbf{\textcolor{white}{ID}} & \textbf{\textcolor{white}{Descrizione}} & \textbf{\textcolor{white}{Obbligatorietà}} & \textbf{\textcolor{white}{Fonti}}\\
 \hline \hline
 \endfirsthead
-RQ1 & E' necessario fornire un manuale utente in formato pdf & Obbligatorio & Decisione Interna\\
+RQ1 & E' necessario fornire un manuale utente, per l'utilizzo del prodotto, in formato pdf & Obbligatorio & Capitolato\\
+\hline
+\rowcolor{grigio}RQ1.1 & Il manuale utente deve essere disponibile in lingua italiana & Obbligatorio & Decisione Interna\\
+\hline
+RQ1.2 & Il manuale utente deve essere disponibile in lingua inglese & Opzionale & Decisione Interna\\
+\hline
+\rowcolor{grigio}RQ2 & E' necessario fornire un manuale per la manutenzione ed estensione del prodotto & Obbligatorio & Capitolato\\
+\hline
+RQ2.1 & Il manuale di manutenzione/estensione deve essere disponibile in lingua italiana & Obbligatorio & Decisione Interna\\
+\hline
+\rowcolor{grigio}RQ2.2 & Il manuale di manutenzione/estensione deve essere disponibile in lingua inglese & Opzionale & Decisione Interna\\
+\hline
+RQ3 & Il prodotto deve essere sviluppato in modo concorde a quanto stabilito nelle \textit{Norme di Progetto} & Obbligatorio & Decisione Interna\\
+\hline
+\rowcolor{grigio}RQ4 & Il prodotto deve essere sviluppato nei tempi stabiliti all'interno del \textit{Piano di Progetto} & Obbligatorio & Decisione Interna\\
 \hline
 \caption{Requisiti Qualità}
 \end{longtable}
