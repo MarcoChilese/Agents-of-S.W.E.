@@ -12,7 +12,7 @@ I documenti dovranno rispettare i pilastri della scrittura che prevedono la legg
 \subsubsection{Comprensione}
 
 \begin{itemize}
-	\item \textbf{Leggibilità}: vista la natura molto tecnica dei documenti prodotti, essi verranno considerati leggibili se comprensibili da persone con licenza di istruzione superiore. Per garantire una corretta leggibilità dei documenti il gruppo ha deciso di utilizzare l'indice di riferimento Gulpease descritto nel documento \textit{Norme di Progetto v1.0.0} alla sezione .... ;
+	\item \textbf{Leggibilità}: vista la natura molto tecnica dei documenti prodotti, essi verranno considerati leggibili se comprensibili da persone con licenza di istruzione superiore. Per garantire una corretta leggibilità dei documenti il gruppo ha deciso di utilizzare l'indice di riferimento Gulpease descritto nel documento \textit{Norme di Progetto v1.0.0} alla sezione §3.2.6.1 ;
 	\item \textbf{Correttezza Ortografica}: i documenti non conterranno errori ortografici. Per garantire una corretta correttezza grammaticale dei documenti, il gruppo ha deciso di utilizzare il software TexMaker, che rende disponibile un segnalatore automatico di identificazione degli errori grammaticali;
 	\item \textbf{Correttezza Logica e Semantica}: non essendo disponibili sistemi automatici al fine di controllare 
 la correttezza logica e semantica, la comprensione totale del prodotto letto identificherà anche tale correttezza, in quanto un documento viene considerato leggibile solamente se è corretto.
@@ -23,7 +23,7 @@ la correttezza logica e semantica, la comprensione totale del prodotto letto ide
 \rowcolor{bluelogo}\textbf{\textcolor{white}{ID}} & \textbf{\textcolor{white}{Nome}} & \textbf{\textcolor{white}{Ottimalità}} & \textbf{\textcolor{white}{Accettabilità}}\\
 ID15 & Leggibilità & 100 & $\geq 40$ \\
 \hline
-\rowcolor{grigio}ID16 & Correttezza Grammaticale & 0 & 0 \\ 
+\rowcolor{grigio}ID16 & Correttezza Ortografica & 0 errori & 0 errori \\ 
 \hline
 \caption{Qualità dei Documenti}
 \label{QualitàDocumenti}
@@ -32,6 +32,7 @@ ID15 & Leggibilità & 100 & $\geq 40$ \\
 \subsection{Qualità del Software}
 
 Seguendo lo standard ISO/IEC 9126:2001, il gruppo \texttt{Agents of S.W.E.} ha deciso di perseguire i seguenti obiettivi di qualità del prodotto software finale:
+
 
 \subsubsection{Funzionalità}
 
@@ -75,6 +76,9 @@ Con \textit{Efficienza} si intendono le prestazioni raggiungibili sotto specific
 	\item \textbf{Utilizzo di Risorse}: uso non eccessivo di risorse;
 \end{itemize}
 
+
+\iffalse
+
 \begin{longtable}{|C{.15\textwidth}|C{.24\textwidth}|C{.24\textwidth}|C{.24\textwidth}|}
 \hline
 \rowcolor{bluelogo}\textbf{\textcolor{white}{ID}} & \textbf{\textcolor{white}{Nome}} & \textbf{\textcolor{white}{Ottimalità}} & \textbf{\textcolor{white}{Accettabilità}}\\
@@ -85,6 +89,9 @@ ID19 & Tempo di Risposta Medio & $\leq 2s$ & 2s<x $\leq 5s$\\
 \caption{Efficienza}
 \label{Efficienza}
 \end{longtable}
+
+\fi
+
 
 \subsubsection{Usabilità}
 
@@ -119,6 +126,7 @@ Con \textit{Manutenibilità} si intende il livello di semplicità richiesto al f
 	\item \textbf{Testabilità}: il codice deve essere sviluppato in maniera tale da garantire facilità in creazione ed esecuzione dei test.
 \end{itemize}
 
+\iffalse
 
 \begin{longtable}{|C{.15\textwidth}|C{.24\textwidth}|C{.24\textwidth}|C{.24\textwidth}|}
 \hline
@@ -130,25 +138,8 @@ ID23 & Percentuale Commenti/Codice & $\leq 5m$ & 5m<x $\leq 10m$\\
 \caption{Manutenibilità}
 \label{Manutenibilità}
 \end{longtable}
- da stabilire
-http://wpage.unina.it/ptramont/Download/Tesi/LAURENZAGABRIELLA.pdf 
-  /**************************************************************
- **************************************************************
- ***************************************************************
- **************************************************************
- ***************************************************************
- ***************************************************************
- ***************************************************************
- ****************************************************************
- ****************************************************************
- ****************************************************************
- *****************************************************************
- ****************************************************************
- *****************************************************************
- *****************************************************************
- ****************************************************************
- ****************************************************************
- ***************************************/
+
+\fi
 
 
 \subsubsection{Portabilità}

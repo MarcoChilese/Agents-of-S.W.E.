@@ -3,7 +3,8 @@
 
 \subsection{Scopo}
 
-La seguente sezione si prefigge lo scopo di esporre le tecniche che verranno utilizzate durante lo svolgimento del progetto, al fine di garantire la qualità dei processi istanziati durante il suo sviluppo. In particolar modo si farà riferimento al Principio di Miglioramento Continuo, denominato PDCA\glossario\footnote{•}, e verrà seguito lo standard ISO/IEC 15504, comunemente conosciuto con l'acronimo SPICE\glossario\footnote{•} (Software Process Improvement and Capability Determination).
+La seguente sezione si prefigge lo scopo di esporre le tecniche che verranno utilizzate durante lo svolgimento del progetto, al fine di garantire la qualità dei processi istanziati durante il suo sviluppo. In particolar modo si farà riferimento al Principio di Miglioramento Continuo, denominato PDCA\glossario\footnote{\href{https://it.wikipedia.org/wiki/Ciclo_di_Deming}{PDCA}}, e verrà seguito lo standard ISO/IEC 15504, comunemente conosciuto con l'acronimo SPICE\glossario\footnote{\href{https://en.wikipedia.org/wiki/ISO/IEC_15504}{SPICE}} (Software Process Improvement and Capability Determination).\\
+Al fine di garantire migliore qualità nei processi interni al gruppo, si è deciso di valutare i processi attivi seguendo il Capability Maturity Model Integration(CMMI) descritto nel documento \textit{Norme di Progetto v1.0.0} alla sezione ****************************.
 
 \subsection{Processi}
 \subsubsection{Gestione del Progetto e dei Processi} 
@@ -19,7 +20,7 @@ Questo processo si prefigge di descrivere le modalità con le quali il gruppo \t
 	\item Verifica del soddisfacimento degli obiettivi.
 \end{itemize}
 
-\paragraph{Gestione dei Task} \-\\
+\paragraph{PR01: Gestione dei Task} \-\\
 \'E rilevante	 l'adempimento dei task\glossario assegnati entro i tempi prestabiliti. Per far ciò, nella fase di pianificazione, si sono scelte delle date entro le quali è preferibile e consigliabile completare i task assegnati. Tuttavia è comunque accettabile l'adempimento di un task a priorità minore oltre i limiti prefissati, se e solo se il ritardo è dovuto al completamento di un task a priorità maggiore.\\
 Per far ciò si è scelto di utilizzare la metrica Schedule Variance (SV), descritta nel documento \textit{Norme di Progetto v1.0.0}, all'interno della sezione §3.2.5.1.
 
@@ -34,7 +35,7 @@ MTPC01 & Schedule Variance (SV) & $\leqslant 0$ giorni & $\leqslant +3$ giorni \
 \label{GestioneTempi}
 \end{longtable}
 
-\paragraph{Gestione dei Costi} \-\\
+\paragraph{PR02: Gestione dei Costi} \-\\
 Per la gestione dei costi del progetto il gruppo ha deciso di utilizzare l'indice Budget Variance (BV), grazie al quale il gruppo sarà in grado di non superare i costi precedentemente preventivati.  
 
 \begin{longtable}{|C{.15\textwidth}|C{.24\textwidth}|C{.24\textwidth}|C{.24\textwidth}|}
@@ -46,13 +47,15 @@ MTPC02 & Budget Variance (BV) & $\leqslant 0\% $ & $\leqslant 5\%$ \\
 \hline
 \rowcolor{grigio} MTPC03 & Estimated at Completion (EAC) & $\leqslant 0\% $ & $\leqslant 5\%$ \\
 \hline
+\iffalse
 MTPC04 & Cost Variance (CV) & $\leqslant 0\% $ & $ \leqslant -5\%$ \\
 \hline
+\fi
 \caption{Gestione dei Costi}
 \label{GestioneCosti}
 \end{longtable}
 
-\paragraph{Verifica del Software}\-\\
+\paragraph{PR03: Verifica del Software}\-\\
 \label{VerificaSoftwareCap}
 Questo processo ha lo scopo di verificare che i requisiti software precedentemente stabiliti vengano rispettati. \'E inoltre suo compito verificare che vengano soddisfatti tutti i requisiti precedentemente fissati nel documento \textit{Analisi dei Requisiti v1.0.0}.\\
 Verranno utilizzati i seguenti indici descritte all'interno del documento \textit{Norme di Progetto v1.0.0}:
@@ -81,7 +84,7 @@ MTPC07 & Branch Coverage (BC) & 100\% & $\geqslant 95\%$ \\
 \label{VerificaSoftware}
 \end{longtable}
 
-\paragraph{Gestione dei Rischi}\-\\
+\paragraph{PR04: Gestione dei Rischi}\-\\
 Il suo scopo è quello del continuo monitoraggio, della continua identificazione, scoperta dei rischi che incorrono o che posso incorrere durante lo svolgimento del progetto e la loro risoluzione qualora si verifichino. 
 \begin{itemize}
 	\item \textbf{Analisi dei Rischi}: all'inizio di ogni nuova fase verranno rianalizzati i precedenti rischi e verranno incrementati se necessario;
@@ -93,13 +96,13 @@ Il suo scopo è quello del continuo monitoraggio, della continua identificazione
 \rowcolor{bluelogo}\textbf{\textcolor{white}{ID}} & \textbf{\textcolor{white}{Nome}} & \textbf{\textcolor{white}{Ottimalità}} & \textbf{\textcolor{white}{Accettabilità}}\\
 \hline \hline
 \endfirsthead
-?qwe & Rischi non Preventivati & 0 & $ \leqslant +4$ rischi \\
+MTPC09 & Rischi non Preventivati & 0 & $ \leqslant +4$ rischi \\
 \hline
 \caption{Gestione dei Rischi}
 \label{GestioneRischi}
 \end{longtable}
 
-\paragraph{Gestione dei Test}\-\\
+\paragraph{PR05: Gestione dei Test}\-\\
 Questa sezione riguarda le metriche di qualità decise per la realizzazione dei test e del loro svolgimento. 
 
 \begin{itemize}
@@ -108,7 +111,7 @@ Questa sezione riguarda le metriche di qualità decise per la realizzazione dei 
 	\item Percentuale di difetti sistemati;
 	\item Tempo medio di risoluzione degli errori;
 	\item Numero medio di bug trovati per test;
-	\item Difetti trovati per requisito.
+	\iffalse \item Difetti trovati per requisito. \fi
 \end{itemize}
 
 \begin{longtable}{|C{.15\textwidth}|C{.24\textwidth}|C{.24\textwidth}|C{.24\textwidth}|}
@@ -126,8 +129,12 @@ MTSA12 & Percentuale di difetti sistemati & 100\% & $\geq 95$\%\\
 \hline
 MTSA14 & Numero medio di bug trovati per test & $\leq 1$ & 0.2$\leq$x$\leq 10$  \\
 \hline
+
+\iffalse
 \rowcolor{grigio}MTSA15 & Difetti trovati per requisito & $\leq 10$ minuti & $\leq 120$ minuti\\
 \hline
+\fi
+
 \caption{Gestione dei Test}
 \label{GestioneTest}
 \end{longtable}
