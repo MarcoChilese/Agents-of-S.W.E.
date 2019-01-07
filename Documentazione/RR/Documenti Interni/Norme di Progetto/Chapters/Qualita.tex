@@ -138,49 +138,54 @@ Indica il numero medio di bug trovati eseguendo i test. \'E un indice utile per 
 \end{center}
 dove MBT è la media calcolata, NB il numero di bug rilevati e NT il numero dei test.
 
-\paragraph{MTTS15 Numero di test eseguiti per requisito}\-\\
-
-\paragraph{MTTS16 Difetti trovati per requisito}\-\\
+\iffalse 
+\paragraph{MTTS15 Difetti trovati per requisito}\-\\
 Indice numerico che rappresenta il numero medio di test eseguiti per requisito. Utile per verificare che il sistema soddisfi i requisiti a pieno. La misurazione avviene:
 \begin{center}
 	\item $MDR = \frac{TDR}{TR}$
 \end{center}
 dove MDR è la media calcolata, TDR il numero totale di difetti trovati e TR il numero totale di requisiti.
+\fi
 
 \subsubsection{Metriche per la qualità di prodotto}
 Le seguenti metriche sono utilizzate per misurare qualitativamente il prodotto.
 
-\paragraph{MTPDD17 Indice di Gulpease}\-\\
+\iffalse
+\paragraph{MTTS15 Numero di test eseguiti per requisito}\-\\
+\fi
+
+\paragraph{MTPDD15 Indice di Gulpease}\-\\
 Il gruppo ha deciso di utilizzare l'\textit{indice di Gulpease}\glossario\footnote{\texttt{$https://it.wikipedia.org/wiki/Indice\char`_Gulpease$}} per misurare la leggibilità di un testo. \'E stato sviluppato appositamente uno script in python per automatizzare la procedura e allo stesso modo velocizzarla. La procedura verrà utilizzata a documento terminato e completo così da valutare il lavoro svolto dai redattori.
 
-\paragraph{MTPDD18 Correttezza Grammaticale}\-\\
+\paragraph{MTPDD16 Correttezza Ortografica}\-\\
 La correttezza grammaticale è un aspetto importante che non accetta errori, i documenti al momento della pubblicazione sono corretti. Verranno utilizzati appositi strumenti che supporteranno la correzione. Il software TexMaker, per esempio, integra un segnalatore automatico degli errori grammaticali. 
 
-\paragraph{MTPDS19 Soddisfacimento Requisiti Obbligatori}\-\\
+\paragraph{MTPDS17 Soddisfacimento Requisiti Obbligatori}\-\\
 Indicatore percentuale che verifica se tutti i requisiti obbligatori siano soddisfatti. Condizione necessaria al fine di rispettare il contratto. La misurazione avviene:
 \begin{center}
 	\item $PRO = \frac{ROS}{ROT}*100$
 \end{center}
 dove PRO è la percentuale di requisiti obbligatori soddisfatti, ROS i requisiti obbligatori soddisfatti e ROT i requisiti obbligatori totali.
 
-\paragraph{MTPDS20 Soddisfacimento Requisiti Opzionali Scelti}\-\\
+\paragraph{MTPDS18 Soddisfacimento Requisiti Opzionali Scelti}\-\\
 Indicatore percentuale che verifica se tutti i requisiti opzionali scelti siano soddisfatti. Condizione necessaria al fine di rispettare il contratto. La misurazione avviene:
 \begin{center}
 	\item $PRP = \frac{RPS}{RPT}*100$
 \end{center}
 dove PRP è la percentuale di requisiti opzionali scelti soddisfatti, RPS i requisiti opzionali scelti soddisfatti e RPT i requisiti opzionali scelti totali.
 
-\paragraph{MTPDS23 Tempo Medio di Comprensione}\-\\
+\paragraph{MTPDS19 Tempo Medio di Comprensione}\-\\
 Indica il tempo medio che l'utente impiega per comprendere cosa può svolgere il sistema. \'E misurato in minuti ed è rilevato attraverso test a persone esterne al team di sviluppo.
 
-\paragraph{MTPDS24 Tempo Medio di Apprendimento}\-\\
+\paragraph{MTPDS20 Tempo Medio di Apprendimento}\-\\
 Indica il tempo medio che l'utente impiega per riuscire a utilizzare a pieno il software e tutte le sue funzionalità. \'E misurato in minuti ed è rilevato tramite test a persone esterne al team di sviluppo 
 
+\iffalse
 \paragraph{MTPDS25 Percentuale Commenti/Codice}\-\\
 Indica le righe di commenti presente rispetto al codice. \'E calcolato per ogni procedura e non per l'intera codebase. La misurazione avviene:
 \begin{center}
 	\item $PC = \frac{RC}{RT}*100$
 \end{center}
 dove PC è la percentuale calcolata, RC il numero di righe di commento e RT il numero di righe totale.
-
+\fi
 
