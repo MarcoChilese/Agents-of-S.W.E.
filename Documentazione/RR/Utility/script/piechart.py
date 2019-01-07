@@ -1,9 +1,11 @@
 import matplotlib.pyplot as plt
 import plotly.plotly as py
 
+#avvio ed analisi e validazione e collaudo
+
 # Data to plot
 labels = 'Responsabile', 'Amministratore', 'Analista', 'Progettista', 'Programmatore' ,'Verificatore'
-sizes = [ 60, 66, 77, 160, 211, 196]
+sizes = [60,66,79,165,190,175]
 colors = ["#9DA1AA", "#C51D34", "#415A66", "#7ECCFD", "#57A639" ,"#F5D033"] 
 
 explode = (0, 0, 0, 0, 0, 0) 
