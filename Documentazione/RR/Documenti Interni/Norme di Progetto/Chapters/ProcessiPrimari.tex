@@ -4,7 +4,7 @@
 In questa sezione del documento vengono trattate le norme che il team \texttt{Agents of S.W.E.} decide e si impegna a rispettare, con lo scopo di proporsi e divenire fornitori nei confronti dell'azienda proponente, \textit{Zucchetti S.p.A.} e dei committenti Prof. Tullio Vardanega e Prof. Riccardo Cardin nell'ambito della progettazione, sviluppo e consegna del prodotto "\textit{G\&B}".
 
 \subsection{Studio di fattibilità} \label{ProcessiPrimari_Sviluppo_StudioFattibilità}
-In seguito all'incontro con le aziende il 16 novembre 2018, il gruppo si è riunito per discutere la scelta del capitolato. Dopo un'opportuna analisi il team ha deciso di scegliere il capitolato C2 ovvero "\textit{G\&B}". A questo punto gli analisti hanno redatto il documento "\textit{Studio di fattibilità}" dove sono contenute le analisi dei capitolati, specificando pro e contro di ognuno e motivando la scelta.
+In seguito all'incontro con le aziende il 16 novembre 2018, il gruppo si è riunito per discutere la scelta del capitolato. Dopo un'opportuna analisi il team ha deciso di scegliere il capitolato C3 ovvero "\textit{G\&B}". A questo punto gli analisti hanno redatto il documento "\textit{Studio di fattibilità}" dove sono contenute le analisi dei capitolati, specificando pro e contro di ognuno e motivando la scelta.
 Tale documento è così strutturato: 
 \begin{itemize}
 	\item \textbf{Informazioni del capitolato}: sezione che contiene il nome del fornitore e il nome del capitolato;
@@ -64,7 +64,7 @@ Ogni requisito, nel documento, deve seguire le seguenti regole di identificazion
 \end{itemize}
 
 \paragraph{Classificazione dei casi d'uso} \-\\
-Un caso d'uso consiste nel valutare ogni requisito con lo scopo di definire gli attori(utenti esterni) all'interno di un scenario che hanno un obiettivo finale comune. Il gruppo, nel documento, oltre a fornire una spiegazione verbosa e dettagliata dei casi d'uso, fornirà una rappresentazione grafica nel linguaggio UML.
+Un caso d'uso consiste nel valutare ogni requisito con lo scopo di definire gli attori (utenti esterni) all'interno di un scenario che hanno un obiettivo finale comune. Il gruppo, nel documento, oltre a fornire una spiegazione verbosa e dettagliata dei casi d'uso, fornirà una rappresentazione grafica nel linguaggio UML.
 Si è stabilito la seguente classificazione dei casi d'uso:
 \begin{center}
 	\textbf{UC[codice padre].[codice identificativo]}
@@ -130,9 +130,9 @@ MyFunction() { ... } //NO
 	\item La versione del file nell'intestazione deve rispettare la seguente formulazione: $X.Y.Z$, dove X rappresenta la versione principale, Y la versione parziale della relativa versione principale e Z l'avanzamento rispetto ad Y.\\ I numeri di versione del tipo $X.0.0$, dalla $1.0.0$, vengono considerate versioni stabili e quindi versioni da testare per saggiarne la qualità .
 \end{itemize}
 \paragraph{ECMAScript 6}\label{EcmaScript6} \-\\
-Seguendo le indicazioni presenti nella documentazione\footnote{\texttt{http://docs.grafana.org/plugins/developing/development/}} dell'azienda fornitrice di \textit{Grafana}, la piattaforma  per cui si intende sviluppare il plug-in, il team ha deciso di adottare come linguaggio di programmazione principale ECMAScript 6\footnote{Linguaggio divenuto standard ISO: ISO/IEC 16262:2011, e relativo aggiornamento ISO/IEC 22275:2018.}.\\
-ECMAScript 6 viene stardardizzato da \textbf{ECMA}\glossario\footnote{\texttt{http://www.ecma-international.org/}} nel giugno 2015 con la sigla \textbf{ECMA-262\footnote{\texttt{https://www.ecma-international.org/ecma-262/6.0/}}}.\\
-Come stile di codifica si adottano le linee guida proposte da \textbf{Airbnb JavaScript Style Guide}\footnote{\texttt{https://github.com/airbnb/javascript}}. Per la verifica dell'adesione a tali norme, i Programmatori devono utilizzare, come suggerito dalla documentazione proposta da \textit{Grafana}, \textbf{ESLint}\glossario\footnote{\texttt{https://eslint.org/}}.\\
+Seguendo le indicazioni presenti nella documentazione\footnote{\texttt{\url{http://docs.grafana.org/plugins/developing/development/}}} dell'azienda fornitrice di \textit{Grafana}, la piattaforma  per cui si intende sviluppare il plug-in, il team ha deciso di adottare come linguaggio di programmazione principale ECMAScript 6\footnote{Linguaggio divenuto standard ISO: ISO/IEC 16262:2011, e relativo aggiornamento ISO/IEC 22275:2018.}.\\
+ECMAScript 6 viene stardardizzato da \textbf{ECMA}\glossario\footnote{\texttt{\url{http://www.ecma-international.org/}}} nel giugno 2015 con la sigla \textbf{ECMA-262\footnote{\texttt{\url{https://www.ecma-international.org/ecma-262/6.0/}}}}.\\
+Come stile di codifica si adottano le linee guida proposte da \textbf{Airbnb JavaScript Style Guide}\footnote{\texttt{\url{https://github.com/airbnb/javascript}}}. Per la verifica dell'adesione a tali norme, i Programmatori devono utilizzare, come suggerito dalla documentazione proposta da \textit{Grafana}, \textbf{ESLint}\glossario\footnote{\texttt{\url{https://eslint.org/}}}.\\
 In particolare i Programmatori devono rispettare 5 linee guida proposte dalla documentazione ufficiale di \textit{Grafana}:
 \begin{enumerate}
 	\item Se una variabile non viene riutilizzata, deve essere dichiarata come \texttt{\textbf{const}};
@@ -215,7 +215,7 @@ function() {
 \end{lstlisting}
 \-\\
 \textbf{Norma 5}
-Negli statement di controllo (\texttt{if, while}, etc) le condizioni concatenate o annidate, mediante operatori logici, che diventano eccessivamente lunghe NON vanno espresse in un'unica linea, bensì spezzate in più righe. Nel seguente modo:
+Negli statement di controllo (\texttt{if, while}, etc.) le condizioni concatenate o annidate, mediante operatori logici, che diventano eccessivamente lunghe NON vanno espresse in un'unica linea, bensì spezzate in più righe. Nel seguente modo:
 \begin{lstlisting}[language=JavaScript]
 function() {
   if (condition && condition) {

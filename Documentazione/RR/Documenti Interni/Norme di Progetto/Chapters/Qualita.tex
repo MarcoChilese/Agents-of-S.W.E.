@@ -40,7 +40,7 @@ La qualità di processo è raggiunta tramite l'utilizzo di metodi e modelli che 
 \subsubsection{Metriche per la qualità di processo}
 Le seguenti metriche sono utilizzate per la valutazione dell'efficacia e dell'efficienza dei processi.
 
-\paragraph{MTPC01 Schedule Variance(SV)}\-\\
+\paragraph{MTPC01 Schedule Variance (SV)}\-\\
 \'E un indice che consente di rilevare se l'andamento del progetto è in linea con quanto pianificato nella baseline\glossario. Può essere utile al cliente per verificare quantitativamente se il team di sviluppo del progetto è in linea con i tempi. \-\\
 Calcolo:\-\\
 \begin{center}
@@ -48,12 +48,12 @@ Calcolo:\-\\
 \end{center}
 dove:
 \begin{itemize}
-	\item BCWP: valore delle attività realizzate alla data odierna(in giorni);
-	\item BCWS: costo pianificato per realizzare le attività alla data odierna(in giorni).
+	\item BCWP: valore delle attività realizzate alla data odierna (in giorni);
+	\item BCWS: costo pianificato per realizzare le attività alla data odierna (in giorni).
 \end{itemize}
 Se SV > 0 significa che il progetto sta producendo con maggiore velocità prevista.
 
-\paragraph{MTPC02 Budget Variance(BV)}\-\\
+\paragraph{MTPC02 Budget Variance (BV)}\-\\
 \'E un indice calcolato che permette di rilevare la differenza tra i costi previsti e quelli reali alla data odierna. \\
 Calcolo:
 \begin{center}
@@ -61,12 +61,12 @@ Calcolo:
 \end{center} 
 dove:
 \begin{itemize}
-	\item BCWS: costo pianificato per realizzare le attività alla data odierna(in euro);
-	\item ACWP: costo effettivo sostenuto per completare le attività alla data odierna(in euro).
+	\item BCWS: costo pianificato per realizzare le attività alla data odierna (in euro);
+	\item ACWP: costo effettivo sostenuto per completare le attività alla data odierna (in euro).
 \end{itemize}
 Se BV > 0 significa che il progetto sta risparmiando sui costi prestabiliti, se BV = 0 significa che il progetto sta mantenendo i costi prefissati, se BV < 0 significa che il progetto sta superando il budget imposto.
 
-\paragraph{MTPC03 Estimated At Completion(EAC)}\-\\
+\paragraph{MTPC03 Estimated At Completion (EAC)}\-\\
 Indice che rappresenta la stima dei costi mancanti. Viene calcolato man mano che il progetto procede ed è fondamentale per attività di pianificazione. \\
 Calcolo:
 \begin{center}
@@ -74,8 +74,8 @@ Calcolo:
 \end{center}
 dove:
 \begin{itemize}
-	\item ACWP: costo effettivo sostenuto per completare le attività alla data odierna(in euro);
-	\item ETC: valore stimato per la realizzazione delle attività mancanti(in euro).
+	\item ACWP: costo effettivo sostenuto per completare le attività alla data odierna (in euro);
+	\item ETC: valore stimato per la realizzazione delle attività mancanti (in euro).
 \end{itemize}
 
 \iffalse
@@ -98,7 +98,7 @@ Le operazioni di verifica della qualità sul software vengono eseguite seguendo 
 \begin{itemize}
 	\item \textbf{MTPC04 Function Coverage}: verificare che una funzione sia chiamata;
 	\item \textbf{MTPC05 Statement Coverage}: verificare che ogni statement del codice sia eseguito, e non ci sia quindi codice che non verrà mai preso in considerazione;
-	\item \textbf{MTPC06 Branch Coverage}: verificare che tutti i possibili percorsi delle strutture di controllo (del tipo if, case, ecc.) siano stati eseguiti.
+	\item \textbf{MTPC06 Branch Coverage}: verificare che tutti i possibili percorsi delle strutture di controllo (del tipo \texttt{if, case}, ecc.) siano stati eseguiti.
 	\item \textbf{MTPC07 Condition Coverage}: verificare che ogni condizione booleana sia considerata sia vera che falsa.
 \end{itemize}
 
@@ -157,10 +157,10 @@ Le seguenti metriche sono utilizzate per misurare qualitativamente il prodotto.
 \fi
 
 \paragraph{MTPDD14 Indice di Gulpease}\-\\
-Il gruppo ha deciso di utilizzare l'\textit{indice di Gulpease}\glossario\footnote{\url{https://it.wikipedia.org/wiki/Indice\_Gulpease}} per misurare la leggibilità di un testo. \'E stato sviluppato appositamente uno script in Python per automatizzare la procedura e allo stesso modo velocizzarla. La procedura verrà utilizzata a documento terminato e completo così da valutare il lavoro svolto dai redattori.
+Il gruppo ha deciso di utilizzare l'\textit{indice di Gulpease}\glossario\footnote{\url{https://it.wikipedia.org/wiki/Indice\_Gulpease}} per misurare la leggibilità di un testo. \'E stato sviluppato appositamente uno script in \textit{Python} per automatizzare la procedura e allo stesso modo velocizzarla. La procedura verrà utilizzata a documento terminato e completo così da valutare il lavoro svolto dai redattori.
 
 \paragraph{MTPDD15 Correttezza Ortografica}\-\\
-La correttezza ortografica è un aspetto importante che non accetta errori, i documenti al momento della pubblicazione sono corretti. Verranno utilizzati appositi strumenti che supporteranno la correzione. Il software TexMaker, per esempio, integra un segnalatore automatico degli errori grammaticali. 
+La correttezza ortografica è un aspetto importante che non accetta errori, i documenti al momento della pubblicazione sono corretti. Verranno utilizzati appositi strumenti che supporteranno la correzione. Il software \textit{TexMaker}, per esempio, integra un segnalatore automatico degli errori grammaticali. 
 
 \paragraph{MTPDS16 Soddisfacimento Requisiti Obbligatori}\-\\
 Indicatore percentuale che verifica che tutti i requisiti obbligatori siano soddisfatti. Condizione necessaria al fine di rispettare il contratto. La misurazione avviene:
@@ -180,7 +180,7 @@ dove PRP è la percentuale di requisiti opzionali scelti soddisfatti, RPS i requ
 Indica il tempo medio che l'utente impiega per comprendere cosa può svolgere il sistema. \'E misurato in minuti ed è rilevato attraverso test a persone esterne al team di sviluppo.
 
 \paragraph{MTPDS19 Tempo Medio di Apprendimento}\-\\
-Indica il tempo medio che l'utente impiega per riuscire a utilizzare a pieno il software e tutte le sue funzionalità. \'E misurato in minuti ed è rilevato tramite test a persone esterne al team di sviluppo 
+Indica il tempo medio che l'utente impiega per riuscire a utilizzare a pieno il software e tutte le sue funzionalità. \'E misurato in minuti ed è rilevato tramite test a persone esterne al team di sviluppo. 
 
 \iffalse
 \paragraph{MTPDS25 Percentuale Commenti/Codice}\-\\
