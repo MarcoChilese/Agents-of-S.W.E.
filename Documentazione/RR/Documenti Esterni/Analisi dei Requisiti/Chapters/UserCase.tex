@@ -125,7 +125,7 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 \end{itemize}
 \newpage
 
-\subsubsection{UC3 - Politiche temporali di ricalcolo delle probabilità}\label{UC3}
+\subsubsection{UC3 - Impostazione delle politiche temporali di ricalcolo delle probabilità}\label{UC3}
 
 \begin{figure}[H]
 \centering
@@ -133,18 +133,16 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 \caption{UC3 - Impostazione delle politiche temporali di ricalcolo.}
 \end{figure}
 
-
 \begin{itemize}
 	\item \textbf{Attore primario:} Utente Autenticato; 
 	\item \textbf{Precondizione:} L'utente ha caricato con successo la rete bayesiana (\hyperref[UC1]{UC1 (\ref*{UC1})});
-
-	\item \textbf{Postcondizione:} L'utente ha creato con successo le policy per il ricalcolo delle probabilità della rete bayesiana, caricata in (\hyperref[UC1]{UC1 (\ref*{UC1})});	
+	\item \textbf{Postcondizione:} L'utente ha collegato con successo le policy per il ricalcolo delle probabilità alla rete bayesiana, caricata in (\hyperref[UC1]{UC1 (\ref*{UC1})});	
 	\item \textbf{Scenario Principale:}
 
 	\begin{enumerate}
 		\item L'utente autenticato accede alle impostazioni passando dalla dashboard;
-		\item L'utente crea una nuova policy, aggiungendo le regole per il ricalcolo delle probabilità;
-		\item L'utente, una volta creata la policy, associa una policy ad una rete bayesiana esistente;
+		\item L'utente ha selezionato una policy esistente o ne ha creata una nuova con i parametri desiderati; 
+		\item L'utente, una volta selezionata la policy, associa una policy ad una rete bayesiana esistente;
 		\item L'utente conferma l'associazione della policy alla rete.
 	\end{enumerate}
 	
@@ -158,22 +156,28 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 	\item \textbf{Scenario Principale:} L'utente dalla dashboard, tramite click, apre il panello di configurazione. 
 \end{itemize}
 
-\paragraph{UC3.2 - Creazione nuova policy}\label{UC3.2}
+\paragraph{UC3.2 - Creazione nuova policy o riuso di una policy esistente}\label{UC3.2}
 
 \begin{itemize}
 	\item \textbf{Attore primario:} Utente Autenticato; 
 	\item \textbf{Precondizione:} L'utente si è spostato nell'area di configurazione (\hyperref[UC3.1]{UC3.1 (\ref*{UC3.1})});
-	\item \textbf{Postcondizione:} L'utente ha creato una nuova policy per il ricalcolo delle probabilità; 
-	\item \textbf{Scenario principale:} L'utente crea un nuova policy inserendo le varie metriche per il ricalcolo delle probabilità.
+	\item \textbf{Postcondizione:} L'utente ha selezionato la policy desiderata;
+	\item \textbf{Scenario principale:}
+	\begin{enumerate}
+		\item L'utente dispone già di una policy e la seleziona; 
+		\item L'utente crea una nuova policy, e una volta creata la seleziona. 
+	\end{enumerate}
+	
 \end{itemize}
 
 \paragraph{UC3.3 - Collegamento policy alla rete bayesiana}\label{UC3.3}
 \begin{itemize}
 	\item \textbf{Attore primario:} Utente Autenticato; 
-	\item \textbf{Precondizione:} L'utente ha creato una nuova policy (\hyperref[UC3.2]{UC3.2 (\ref{UC3.2})});
-	\item \textbf{Postcondizione:} L'utente ha collegato la policy a una rete bayesiana; 
-	\item \textbf{Scenario principale:} L'utente collega la policy desiderata alla rete bayesiana, impostando cosi i nuovi parametri. 
+	\item \textbf{Precondizione:} L'utente ha selezionato una nuova policy (\hyperref[UC3.2]{UC3.2 (\ref{UC3.2})});
+	\item \textbf{Postcondizione:} L'utente ha collegato la policy selezionata a una rete bayesiana; 
+	\item \textbf{Scenario principale:} L'utente collega la policy selezionata alla rete bayesiana, impostando cosi i nuovi parametri. 
 \end{itemize}
+
 \newpage
 \subsubsection{UC4 - Visualizzazione dati forniti dai nodi non collegati al flusso}\label{UC4}
 
