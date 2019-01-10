@@ -1,207 +1,235 @@
-\section{Processi di supporto}
+\section{Processi di supporto}\label{ProcessiSupporto}
 
-\subsection{Documentazione}
+\subsection{Documentazione}\label{ProcessiSupporto_Documentazione}
 
 \subsubsection{Descrizione}
 Questo capitolo descrive i dettagli su come deve essere redatta e verificata la documentazione durante il ciclo di vita del software. Le norme sono tassativamente valide per tutti i documenti formali.
 \subsubsection{Ciclo di vita documentazione}
 Il ciclo di vita previsto della documentazione si può suddividere principalmente in tre processi: 
 \begin{itemize}
-	\item \textbf{Sviluppo}: è il processo di stesura, eseguita dal redattore, dove descrive il tasks\glossario assegnato dal responsabile. Una volta terminata la fase di scrittura del documento, il redattore lo segnala al responsabile, che assegnerà a un verificatore il compito di	analizzare il lavoro svolto;
- 	\item \textbf{Verifica}: è il processo eseguito dai verificatori designati dal responsabile, il loro compito è controllare che il redattore abbia scritto il documento nella norma e in maniera corretta grammaticalmente e strutturalmente;
- 	\item \textbf{Approvato}: è il processo conclusivo, in cui il verificatore ha terminato il suo compito di controllo e comunica al responsabile il termine del lavoro. Il responsabile procederà a confermare il documento e ad eseguire il rilascio.
+	\item \textbf{Sviluppo}: è il processo di stesura, eseguita dal redattore, dove sviluppa il task\glossario assegnato dal responsabile. Una volta terminata la fase di scrittura del documento, il redattore lo segnalerà al responsabile, il quale assegnerà ad un verificatore il compito di analizzare il lavoro svolto;
+ 	\item \textbf{Verifica}: è il processo eseguito dai verificatori designati dal responsabile. Il loro compito è quello di controllare che il redattore abbia scritto il documento adottando le regole indicate nel documento \textit{Norme di Progetto} ed in maniera grammaticalmente e strutturalmente corretta;
+ 	\item \textbf{Approvato}: è il processo conclusivo, in cui il verificatore ha terminato il suo compito di controllo e comunica al responsabile il termine del lavoro. Il responsabile procederà a confermare il documento ed ad eseguirne il rilascio.
 \end{itemize} 
 
 \subsubsection{Template}
-Il \texttt{gruppo} ha deciso di strutturare un template \LaTeX per dare uniformità a tutti i documenti. Il template facilita e velocizza la stesura, poiché i redattori devono concentrarsi solo ed esclusivamente al contenuto e non alla layout.  
+Il gruppo ha deciso di strutturare un template \LaTeX  per dare uniformità a tutti i documenti. Il template facilita e velocizza la stesura, poiché i redattori devono concentrarsi solo ed esclusivamente sul contenuto e non sul layout.  
 
-\subsubsection{Struttura documenti}
-Ogni documento segue una determinata struttura, predefinita e accordata dal \texttt{gruppo}:
+\subsubsection{Struttura documenti}\label{ProcessiSupporto_Documentazione_StrutturaDocumenti}
+Ogni documento segue una determinata struttura, predefinita e accordata dal gruppo:
 
-\paragraph{Prima pagina ~\\} 
-La prima pagina di ogni documento ha la stessa struttura: il logo del \texttt{gruppo} centrato in alto, con sotto, sempre centrato, il nome del \texttt{gruppo} e il capitolato scelto. Appena sotto è posizionato il titolo del documento e una tabella contenente informazioni relative al documento, ovvero, la versione, i nome dei redattori e dei verificatori, lo stato (che può essere "confermato" o "work in progress"), l'utilizzo che avrà nel progetto (interno o esterno) e i destinatari.
+\paragraph{Prima pagina} \-\\
+La prima pagina di ogni documento ha la stessa struttura: il logo del gruppo centrato in alto con sotto, sempre centrato, il nome del gruppo ed il capitolato scelto. Appena sotto è posizionato il titolo del documento ed una tabella contenente informazioni relative al documento, ovvero la versione, i nome dei redattori e dei verificatori, lo stato (che può essere "confermato" o "work in progress"), l'utilizzo che avrà nel progetto (interno o esterno) ed i destinatari.
 
-\paragraph{Nomenclatura ~\\}
-Le seguenti regole valgono per tutti i documenti eccetto per la lettera di presentazione. La nomenclatura è un aspetto fondamentale che abbiamo deciso di struttura nel seguente modo: 
+\paragraph{Nomenclatura} \-\\
+Le seguenti regole valgono per tutti i documenti eccetto per la lettera di presentazione. La nomenclatura è un aspetto fondamentale che abbiamo deciso di strutturare nel seguente modo: 
 \begin{itemize}
-	\item \textbf{vX.Y.Z }: rappresenta la versione del documento con X , Y e Z numeri non negativi:
+	\item \textbf{vX.Y.Z }: rappresenta la versione del documento con X, Y e Z numeri non negativi:
 	\begin{itemize}
 		\item \textbf{X}: rappresenta il numero di pubblicazioni ufficiali del documento in passato; se il valore è 0 significa che il documento non è mai stato pubblicato. Ogni qualvolta viene pubblicato Y e Z vengono azzerati e X viene incrementato di una unità;
 		\item \textbf{Y}: identifica il numero di verifiche avvenute con successo, ogni qualvolta viene effettuata una verifica il valore di Z viene azzerato;
 		\item \textbf{Z}: identifica il numero di volte che il documento è stato modificato prima di una pubblicazione e/o verifica.
 	\end{itemize}
-	\item Il formato dei file è .tex durante la fase di sviluppo, mentre dopo l'approvazione da parte del responsabile verrà creato un file con formato .pdf che rappresenta la pubblicazione in via ufficiosa.
+	\item Il formato dei file è \textit{.tex} durante la fase di sviluppo, mentre dopo l'approvazione da parte del responsabile verrà creato un file con formato \textit{.pdf} che rappresenta la pubblicazione in via ufficiosa.
 \end{itemize}
 
-\paragraph{Struttura indice ~\\}
+\paragraph{Struttura indice} \-\\
 In tutta la documentazione, fatta eccezione per i verbali, dopo la pagina di presentazione è presente l'indice del documento. La struttura è standard: numero e titolo del capitolo, eventuali sottosezioni e paragrafi con indicato a fianco la pagina del contenuto. Ogni titolo è un link alla pagina del contenuto. 
 
-\paragraph{Elenco tabelle ~\\}
+\paragraph{Struttura tabelle} \-\\
+Il gruppo ha deciso di standardizzare il formato delle tabelle come descritto:
+\begin{itemize}
+	\item Intestazione a sfondo blu e scritte bianche;
+	\item Corpo con righe alternate di colore bianco e grigio, per facilitare la lettura.
+\end{itemize}
+
+\paragraph{Elenco tabelle} \-\\
 In tutti i documenti è presente un elenco delle tabelle utilizzate, ove presenti. \'E posizionato appena dopo l'indice.  
 
-\paragraph{Elenco figure ~\\}
+\paragraph{Elenco figure} \-\\
 In tutti i documenti è presente un elenco delle figure utilizzate, ove presenti. \'E posizionato appena dopo l'elenco delle tabelle.
 
-\paragraph{Piè di pagina}: le pagine con indice e presentazione del documento contengono dei numeri progressivi romani, mentre le pagine con il contenuto il numero della pagina; possono essere presenti riferimenti bibliografici;
+\paragraph{Elenco Riferimenti} \-\\
+In tutti i documenti, se necessario, è presente un elenco dei riferimenti alle fonti utilizzate per stilare il documento in esame. \'E posizionato all'inizio del documento, dopo l'elenco delle tabelle e delle figure.
 
-\paragraph{Registro Modifiche ~\\}
-Ogni documento, eccezion fatta per verbali e lettera di presentazione, presenta un registro delle modifiche chiamato "Changelog". \'E strutturato sotto forma di tabella, che contiene in ordine cronologico tutte le modifiche identificabili dalla versione.  Ogni riga contiene la data, il nome di chi ha effettuato la modifica e il relativo ruolo, e infine una breve descrizione della modifica effettuata.
+\paragraph{Piè di pagina} \-\\ 
+Le pagine con indice e presentazione del documento contengono dei numeri progressivi romani, mentre le pagine con il contenuto il numero della pagina; possono essere presenti riferimenti bibliografici;
+
+\paragraph{Registro Modifiche} \-\\
+Ogni documento, eccezion fatta per verbali e lettera di presentazione, presenta un registro delle modifiche chiamato "Changelog". \'E strutturato sotto forma di tabella, che contiene in ordine cronologico tutte le modifiche identificabili dalla versione.  Ogni riga contiene la versione del documento, la data, il nome di chi ha effettuato la modifica, con il suo corrispettivo ruolo, ed infine una breve descrizione della modifica effettuata.
+
+%Per adesso i link sono fucsia
 
 \subsubsection{Norme tipografiche}
 \begin{itemize}
 	\item \textbf{Glossario}: i termini contenuti nel glossario si possono identificare dal carattere G maiuscolo e corsivo a pedice della parola interessata, per esempio Norme\textsubscript{G};	 		
-	\item \textbf{Nome gruppo}: in qualsiasi documento, quando si fa riferimento al gruppo si è deciso di adottare il seguente font: \texttt{gruppo};
-	\item \textbf{Elenchi puntati}: ogni elemento di un elenco puntato deve essere seguito da un punto e virgola eccezion fatta per l'ultimo che sarà seguito dal punto;
+	\item \textbf{Nome gruppo}: in qualsiasi documento, quando si fa riferimento al gruppo si è deciso di adottare il seguente font: \texttt{Agents of S.W.E.};
+	\item \textbf{Elenchi puntati}: ogni elemento di un elenco puntato deve essere seguito da un punto e virgola, eccezion fatta per l'ultimo che sarà seguito dal punto. La prima lettera di ogni item dovrà essere maiuscola;
 	\item \textbf{Stile testo}:
 	\begin{itemize}
-		\item \textbf{Corsivo}: è utilizzato per citare tecnologie esterne, e per riferimenti a documentazione;	
+		\item \textbf{Corsivo}: è utilizzato per citare tecnologie esterne, per riferimenti a documentazione (es. Analisi dei Requisiti, Piano di Progetto, ecc.), estensione dei file (es. .pdf, .tex, ecc.) e per identificare i ruoli del progetto (Responsabile,Analista, ecc.);	
 		\item \textbf{Grassetto}: le parole in grassetto identificano il titolo di una sezione, sottosezione, paragrafo e un elemento di un elenco puntato;
 		\item \textbf{URI}:	i link esterni sono evidenti per il colore blu.
 	\end{itemize}
 	\item \textbf{Formati}:
 	\begin{itemize}
 		\item \textbf{Date}: sono scritte seguendo il formato YYYY-MM-DD, dove YYYY rappresenta l'anno, MM il mese e DD il giorno;
-		\item \textbf{Valuta}: si è adottato il formato XXX.YY con Y, le cifre dopo la virgola, e il "punto" come delimitatore tra decimale e parte intera.
+		\item \textbf{Valuta}: si è adottato il formato XXX.YY con Y che denota le cifre decimali, X le cifre intere ed il punto (.) come delimitatore tra decimale e parte intera.
 	\end{itemize}
 \end{itemize}
 
 
 \subsubsection{Documenti Correnti}
+\label{ProcessiSupporto_Documentazione_DocumentiCorrenti}
 Sono descritti brevemente i documenti formali da consegnare:
 \begin{itemize}
-	\item \textbf{Analisi dei Requisiti}: ha un utilizzo prettamente esterno, e ha l'obiettivo di esporre e scomporre i requisiti\glossario del progetto. Contiene i casi d'uso e i diagrammi di interazione con l'utente. Viene scritto dagli analisti dopo una profonda analisi del capitolato e vari colloqui con il proponente; 
-	\item \textbf{Glossario}: ha un utilizzo prettamente esterno e ha lo scopo di dare una definizione ai termini più specifici usati nei documenti formali;
-	\item \textbf{Norme di Progetto}: è utilizzato internamente, ed espone gli standard e le direttive utilizzate dal \texttt{gruppo} per sviluppare il progetto in tutta la sua interezza;
-	\item \textbf{Piano di Progetto}: ha un utilizzo esterno, ed espone come il gruppo ha deciso di impiegare le risorse di tempo e umane;
-	\item \textbf{Piano di Qualifica}: utilizzo esterno, descrive gli standard e gli obiettivi che il \texttt{gruppo} dovrà raggiungere per garantire la qualità di prodotto e processo;
-	\item \textbf{Studio di Fattibilità}: documento interno, espone pregi e difetti di tutti i capitolati in esame. Descrive i motivi per cui il \texttt{gruppo} ha scelto il capitolato corrente.
+	\item \textbf{Analisi dei Requisiti}: ha un utilizzo prettamente esterno, inoltre ha l'obiettivo di esporre e scomporre i requisiti\glossario del progetto. Contiene i casi d'uso ed i diagrammi di interazione con l'utente. Viene redatto dagli analisti dopo una profonda analisi del capitolato ed eventuali colloqui con la proponente; 
+	\item \textbf{Glossario}: ha un utilizzo prettamente esterno ed ha lo scopo di dare una definizione ai termini più specifici usati nei documenti formali;
+	\item \textbf{Norme di Progetto}: è utilizzato internamente, ed espone gli standard e le direttive utilizzate dal gruppo per sviluppare il progetto in tutta la sua interezza;
+	\item \textbf{Piano di Progetto}: ha un utilizzo esterno, ed espone come il gruppo ha deciso di impiegare le risorse di tempo ed umane;
+	\item \textbf{Piano di Qualifica}: ha un utilizzo esterno, descrive gli standard e gli obiettivi che il gruppo dovrà raggiungere per garantire la qualità di prodotto e processo;
+	\item \textbf{Studio di Fattibilità}: è un documento interno, espone pregi e difetti di tutti i capitolati in esame. Descrive i motivi per cui il gruppo ha scelto il capitolato corrente.
 \end{itemize}
 
-\subsubsection{Ambiente}
-Per uniformare e strutturare al meglio la scrittura dei documenti il \texttt{gruppo} ha adottato il formato \LaTeX. 
-\textit{TexMaker\footnote{\texttt{http://www.xm1math.net/texmaker/}}} è utilizzato per la stesura, il \texttt{gruppo} ha optato per questo editor perchè open-source e integra un controllo ortografico della lingua italiana. 
-Per la costruzione dei diagrammi è stato optato per l'utilizzo di script in python, scritti e testati dal \texttt{gruppo}, per uniformare la procedura in tutta la documentazione.
+\subsubsection{Ambiente}\label{ProcessiSupporto_Documentazione_Ambiente} 
+Per uniformare e strutturare al meglio la scrittura dei documenti il gruppo ha adottato il formato \LaTeX. 
+\textit{TexMaker\footnote{\texttt{\url{http://www.xm1math.net/texmaker/}}}} è utilizzato per la stesura, si è optato per questo editor perchè open-source ed integra un controllo ortografico della lingua italiana. 
+Per la costruzione dei diagrammi è stato optato per l'utilizzo di script in \textit{Python}, scritti e testati dal gruppo, per uniformare la procedura in tutta la documentazione.
 
+\input{Chapters/Qualita.tex}
 
-
-
-\subsection{Versionamento}
-La necessità di più componenti del \texttt{gruppo} di cooperare su uno stesso documento, porta alla soluzione di utilizzare un sistema di versionamento distribuito. 
+\subsection{Versionamento}\label{ProcessiSupporto_Versionamento}
+La necessità di più componenti del gruppo di cooperare su uno stesso documento, porta la necessità di utilizzare un sistema di versionamento distribuito. 
 
 %Per le parti in cui più componenti del \texttt{gruppo} devono cooperare sugli stessi file, 
 %Per le parti in cui più componenti del \texttt{gruppo} devono operare contemporaneamente su gli stessi file, in questa fase di \textit{RR}, si è scelto un sistema di 
 %versionamento distribuito come, \textbf{git} e col supporto hosting di \textbf{GitHub}. 
 
-\subsubsection{Controllo di versione}
-Il sistema di versionamento, utilizzato in questa fase di \textbf{RR}, è \textbf{git}, con il supporto hosting di \textbf{GitHub}.
 
-\paragraph{Struttura del repository  ~\\} 
-La struttura del repository segue il workflow \textbf{gitflow} di \textbf{Driessen at nvie}, idealizzato attorno il concetto di \textbf{release} del prodotto. Questo produce
-un framework robusto attorno al quale si possono gestire progetti di grandi dimensioni. I due branch principali sono il \textbf{master} e in parallelo ad esso il \textbf{develop}. 
-Il \textbf{master} viene considerato il branch \textit{main}, dove il codice sorgente della \textit{testa} riflette sempre lo stato di \textit{"production-ready"},
-mentre il ramo di \textbf{develop} è considerato il branch principale dove vengono effettuate le ultime modifiche per il prossimo rilascio del prodotto. 
+%Nella fase di RR, non in questa fase di RR
+\subsubsection{Controllo di versione}
+Il sistema di versionamento, utilizzato nella fase di RR, è \textit{git}, con il supporto hosting di \textit{GitHub}.
+
+\paragraph{Struttura del repository} \-\\ 
+La struttura del repository segue il workflow \textit{gitflow} di \textit{Driessen at nvie}, idealizzato attorno il concetto di release del prodotto. Questo produce un framework robusto attorno al quale si possono gestire progetti di grandi dimensioni. I due branch principali sono il "master" ed in parallelo ad esso il "develop". 
+Il master viene considerato il branch main, dove il codice sorgente della testa riflette sempre lo stato di \textit{"production-ready"},
+mentre il ramo di develop è considerato il branch principale dove vengono effettuate le ultime modifiche per il prossimo incremento del prodotto.\\
+Più precisamente la repository\glossario "Agents-of-S.W.E." è caratterizzata da una cartella principale "Documentazione", la cui sottocartella "RR" rappresenta la principale struttura in cui sono organizzati i file su cui il gruppo \texttt{Agents of S.W.E.} ha lavorato in vista della RR.\\
+	Nello specifico la sottocartella "RR" è caratterizzata dalla seguente struttura di folder:
+	\begin{itemize}
+	\item \textbf{Documenti Esterni}:
+		\begin{itemize}
+		\item \textit{Analisi dei Requisiti};
+		\item \textit{Glossario};
+		\item \textit{Piano di Progetto};
+		\item \textit{Piano di Qualifica};
+		\item \textit{Verbali Esterni}.
+		\end{itemize}
+	\item \textbf{Documenti Interni}:
+		\begin{itemize}
+		\item \textit{Norme di Progetto};
+		\item \textit{Studio di Fattibilità};
+		\item \textit{Verbali Interni}.
+		\end{itemize}
+	\item \textbf{Corrispondenza};
+	\item \textbf{Utility}.
+	\end{itemize}
+	Ciascuna sottocartella, corrispondente ad un documento, contiene a sua volta un file LaTeX \textit{.tex} che assume il nome del documento e il corrispettivo file \textit{.pdf} ottenuto attraverso la compilazione.\\
+	La cartella "Corrispondenza" contiene una copia delle mail inviate all'azienda proponente attraverso l'indirizzo agentsofswe@gmail.com, la cartella "Utility" invece contiene gli Script\glossario realizzati dal gruppo.
 
 %\paragraph{Configurazione sistema}
 
-\paragraph{Processo di implementazione ~\\}
-L'implementazione dei documenti avviene tramite gli strumenti utilizzati nel paragrafo §3.1\\
-Quest'ultimi, in fase di compilazione producono dei file di poca rilevanza con estensioni come: \textit{.log, .out, .idx, .aux, .gz, .aux, .toc},
-i quali verranno ignorati come da configurazione, ma soprattutto file di più rilevanza
-come \textit{.pdf, .tex}, i quali verranno versionati dal sistema di git preinstallato.  
-Una volta creati/modificati i documenti, si procede con il \glossario{commit} di essi. Il commit riporta un \textit{cambiamento} al file,con un messaggio allegato ad esso che ne 
-descrive le modifiche apportate o un commando apposito per chiudere alcune task con tale commit. Dopo di che, il commit viene \glossario{pushato} nel branch appropriato, 
-a seconda dei criteri descritti nel prossimo paragrafo. 
+\paragraph{Processo di implementazione} \-\\
+L'implementazione dei documenti avviene tramite gli strumenti utilizzati nel paragrafo §\ref{ProcessiSupporto_Documentazione}\\
+Quest'ultimi, in fase di compilazione producono dei file di poca rilevanza con estensioni come \textit{.log, .out, .idx, .aux, .gz, .toc}, i quali verranno ignorati come da configurazione. I file con maggior rilevanza, come \textit{.pdf, .tex}, verranno versionati dal sistema di git preinstallato. \\
+Una volta creati e/o modificati i documenti, si procede con il commit\glossario di essi. Il commit riporta un \textit{cambiamento} al file, con un messaggio allegato ad esso che ne 
+descrive le modifiche apportate o un comando apposito per chiudere alcune task con tale commit. Dopo di che il commit viene pushato\glossario nel branch appropriato, a seconda dei criteri descritti nel prossimo paragrafo. 
 
-\paragraph{Ciclo di vita dei branch ~\\}
+\paragraph{Ciclo di vita dei branch} \-\\
 \begin{enumerate}
 	
-	\item \textbf{Master}: branch \textit{main} del repository, esso rappresenta lo stato di \textit{"production-ready"} del prodotto. Questo branch ha una durata di vita quanto il repository stesso o infinita;
-	\item \textbf{Develop}: branch di sviluppo parallelo al \textbf{master} sul quale vengono aggiunte le feature provenienti appunto dai branch \textbf{feature},
-	 e dal quale inizia il branch di \textbf{realse}. Ha una durata di vita quanto il branch master;
+	\item \textbf{Master}: branch main del repository, esso rappresenta lo stato di \textit{production-ready} del prodotto. Questo branch ha una durata di vita quanto il repository stesso o infinita;
+	\item \textbf{Develop}: branch di sviluppo parallelo al "master" sul quale vengono aggiunte le feature provenienti appunto dai branch "features", e dal quale inizia il branch di "release". Ha la stessa durata di vita del branch master;
 	 
 	\item \textbf{Release}: branch di preparazione per un nuovo rilascio o aggiornamento del prodotto. 
 	Utilizzato per risolvere piccoli errori e configurare le impostazioni di rilascio. Una volta rilasciato il 
-	prodotto, esso si riversa sul branch \textbf{master} e \textbf{develop}. Ha una durata breve in quanto il rilascio deve essere effettuato il prima possibile;
+	prodotto, esso si riversa nel branch "master" e "develop". Ha una durata breve in quanto il rilascio deve essere effettuato il prima possibile;
 
-	\item \textbf{Feature}: branch usato per sviluppare nuove feature per il prossimo rilascio a breve o lungo tempo. Il suo tempo di vita dura quanto lo sviluppo della nuova feature
-	fintanto che non avviene il \glossario{merge} sul branch di \textbf{develop};
+	\item \textbf{Feature}: branch usato per sviluppare nuove feature per il prossimo rilascio a breve o lungo termine. Il suo tempo di vita dura quanto lo sviluppo della nuova feature
+	fintanto che non avviene il merge\glossario sul branch "develop";
 
-	\item \textbf{Hotfix}: branch molto simili a quelli di release, con l'obbiettivo di risolvere immediatamente un bug del prodotto in produzione o release. Una volta risolto il bug, 
-	esso si riversa sui branch \textbf{master} e \textbf{develop}, aggiornandoli nel minor tempo possibile. Ha un tempo di vita breve, in quanto viene creato per la necessità di risolvere 
+	\item \textbf{Hotfix}: branch molto simili a quello di release, con l'obbiettivo di risolvere immediatamente un bug del prodotto in produzione o release. Una volta risolto il bug, 
+	esso si riversa sui branch "master" e "develop", aggiornandoli nel minor tempo possibile. Ha un tempo di vita breve, in quanto viene creato per la necessità di risolvere 
 	un problema sul prodotto rilasciato. 
 	
 \end{enumerate}
 
-\paragraph{Rilascio di versione ~\\}
-Il rilascio di una nuova versione del prodotto avviene nel momento in cui si raggiunge un certo numero di feature implementate e testate. 
-Dal branch \textbf{develop} si avvia un processo di verifica e verifica che sfocia in una nuovo branch di \textbf{release}, il quale porta il nome della relase e che nella sua ultima fase 
-rilascia la nuova versione sul branch master e applica le modifiche effettuate nel frattempo anche nel branch di \textbf{develop}, portando i due allo stesso livello di produzione. 
+
+\paragraph{Rilascio di versione} \-\\
+Il rilascio di una nuova versione del prodotto avviene nel momento in cui si raggiunge un certo numero di features implementate e testate. 
+Dal branch "develop" si avvia un processo di verifica, che sfocia in una nuovo branch di "release", il quale porta il nome della release e che nella sua ultima fase rilascia la nuova versione sul branch "master" e applica le modifiche effettuate nel frattempo anche nel branch "develop", portando i due allo stesso livello di produzione. 
 
 \subsubsection{Configurazione versionamento}
 
-\paragraph{Remoto ~\\}
-	La configurazione di \textbf{GitHub} avviene nel portale: \textit{www.github.com}, dove si inseriscono le chiavi \glossario{\textbf{SSH}} per ciascun collaboratore del nuovo repository. 
-	Una volta creato il repository nel server remoto ed inserite le chiavi \textbf{SSH}, si procedere con la configurazione in locale.
+\paragraph{Remoto} \-\\
+	La configurazione di GitHub avviene nel portale www.github.com, dove si inseriscono le chiavi SSH\glossario per ciascun collaboratore del nuovo repository. 
+	Una volta creato il repository nel server remoto ed inserite le chiavi SSH, si procedere con la configurazione in locale.
 	
-\paragraph{Locale ~\\}
-	In locale, si devono generare le chiavei \textbf{SSH}, le quali permettono il collegamento con li server remoto dove viene gestito il repository. 
-	Una volta generate le chiavi, seguendo le varie procedure specifiche per ogni sistema operativo, vengono caricate sul portare apposito del gestore \textbf{GitHub}.
-	L'ultima fase prevede la clonazione con il programma apposito tra i seguenti: 
+\paragraph{Locale} \-\\
+	In locale, si devono generare le chiavi SSH, che permettono il collegamento con il server remoto dove viene gestito il repository. 
+	Una volta generate le chiavi, seguendo le varie procedure specifiche per ogni sistema operativo, vengono caricate sul portale apposito del gestore GitHub.
+	L'ultima fase prevede la clonazione con uno dei seguenti metodi: 
 
 	\begin{itemize}
 		\item \textbf{GitHub Desktop}: gestore di versionamento a interfaccia grafica per sistemi Windows \& MacOS; 
 		\item \textbf{GitKraken}: gestore di versionamento a interfaccia grafica per sistemi Windows, MacOS \& Linux; 		
-		\item \textbf{Terminale(Bash)}: gestore di versionamento a riga di commando per i sistemi MacOS \& Linux.
+		\item \textbf{Terminale(Bash)}: gestore di versionamento a riga di comando per i sistemi MacOS \& Linux.
 	\end{itemize}
 		
 \subsection{Gestione di progetto}
-La gestione di progetto avviene tramite un sistema di task integrato nel servizio di hosting \textbf{GitHub}. 
-Esso permette l'integrazione delle task con il repository stesso, dando la possibilità ai vari \glossario{commit} di chiudere con comandi appositi determinate task, 
-aumentando cosi l'automazione di tutto il processo. 
+\label{ProcessiSupporto_GestioneProgetto}
+La gestione di progetto avviene tramite un sistema di task integrato nel servizio di hosting GitHub. 
+Esso permette l'integrazione delle task con il repository stesso, dando la possibilità ai vari commit di chiudere con comandi appositi determinate task, aumentando cosi l'automazione di tutto il processo. 
 
 \subsubsection{Configurazione strumenti di organizzazione}
-	La configurazione di tutto il processo di organizzazione avviene nel portale di \textbf{GitHub}, dove si crea una project board per ogni categoria di processo. 	
+	La configurazione di tutto il processo di organizzazione avviene nel portale di GitHub, dove si crea una project board per ogni categoria di processo. 	
 
-\paragraph{Inizializzazione ~\\}
-	L'inizializzazione della project board avviene tramite un istanza vuota oppure selezionando un template di ciclo di vita fornito da \textbf{GitHub} 
-	largamente utilizzate in molti progetti, quindi testate ed affidabili. Tra i template forniti abbiamo: 
+\paragraph{Inizializzazione} \-\\
+ L'inizializzazione della project board avviene tramite un'istanza vuota oppure selezionando un template di ciclo di vita fornito da GitHub largamente utilizzate in molti progetti, quindi testati ed affidabili. Tra i template forniti abbiamo: 
 
 \begin{itemize}
 		\item \textbf{Basic Kanban}: presenta le fasi di \textit{ToDo, In Progress, e Done}; 
-		\item \textbf{Automated Kanban}: presenta \glossario{trigger} predefiniti che permettono lo spostamento di task automatici nei vari cicli di vita, utilizzando il meccanismo di chiusura 
-		dei commit;
-		\item \textbf{Automated Kanban with Reviews}: tutto cioè che viene incluso nel template \textit{"Automated Kanban"} con l'aggiunta di trigger 
-		aggiuntivi per la revisione di nuove componenti; 
+		\item \textbf{Automated Kanban}: presenta trigger\glossario predefiniti che permettono lo spostamento di task
+		 automatici nei vari cicli di vita, utilizzando il meccanismo di chiusura dei commit;
+		\item \textbf{Automated Kanban with Reviews}: tutto cioè che viene incluso nel template \textit{Automated Kanban} con l'aggiunta di trigger per la revisione di nuove componenti; 
 		\item \textbf{Bug Triage}: template centrato sulla gestione degli errori, fornendo un ciclo di vita per essi che varia tra \textit{ToDo, Alta Priorità, Bassa Priorità e Chiusi}. 
 \end{itemize}
 	  	
-\paragraph{Aggiunta milestones ~\\}
-	Le milestones sono gruppi di task mirate a un obbiettivo comune tra esse.
+\paragraph{Aggiunta milestone} \-\\
+	Le milestone\glossario sono gruppi di task mirate ad un obbiettivo comune tra esse.
 	Possono essere aggiunte in qualsiasi momento, sia prima che dopo la creazione di una task.
 
-\subsubsection{Ciclo di vita delle tasks}
+\subsubsection{Ciclo di vita delle task}
 
-\paragraph{Apertura ~\\}
-	Da una specifica project board si possono creare le task o le \glossario{issue}, le quali possono essere assegnate a uno o più individui che collaborano al repository, inoltre ogni task
-	può far parte di una \glossario{milestone}, che raggruppa un insieme di task o issue per il raggiungimento di un obbiettivo in comune. 
-	Inoltre ad ognuna di essere può essere assegnato un colore che ne identifica il tipo come per esempio: \textit{bug, ToDo, miglioramenti, ecc...}. 
-	Si può creare una nuova task senza l'obbligo di assegnarla a una project board, mantenendo comunque tutte le funzionalità descritte prima. 
+\paragraph{Apertura} \-\\
+	Da una specifica project board si possono creare le task o le issue\glossario, le quali possono essere assegnate ad uno o più individui che collaborano al repository, inoltre ogni task può far parte di una milestone, che raggruppa un insieme di task o issue per il raggiungimento di un obbiettivo comune. \\
+	Ad ognuna di esse può essere assegnato un colore che ne identifica il tipo come per esempio: bug, ToDo, miglioramenti, ecc.,\\
+	Si può creare una nuova task senza l'obbligo di assegnarla ad una project board, mantenendo comunque tutte le funzionalità descritte precedentemente. 
 
-\paragraph{Completamento ~\\}
-	Il completamento di una task avviene in diversi modi, a seconda delle impostazioni di project board. 
-	Se la project board e automatizzata, il completamento di una task può avvenire tramite commit utilizzando il codice di chiusura. 
-	Questo metodo collega direttamente l'implementazione richiesta alla task. 
-	Se la project board non è automatizzata, il completamento dalla task deve essere manuale spostandola nello stato di \textit{Concluso}. 
+\paragraph{Completamento} \-\\\label{ProcessiSupporto_GestioneProgetto_CicloTask_Completamento}
+	Il completamento di una task avviene in diversi modi, a seconda delle impostazioni della project board. 
+	Se la project board è automatizzata, il completamento di una task può avvenire tramite commit utilizzando il codice di chiusura. \\
+	Questo metodo collega direttamente l'implementazione richiesta alla task. \\
+	Se la project board non è automatizzata, il completamento dalla task deve essere manuale spostandola nello stato di "Concluso". 
 	
-\paragraph{Richiesta di revisione ~\\}
-	Accumulate un certo numero di task o di milestones, si avvia la procedura di revisione da parte del verificatore. Questa può essere notificata e pianificata in modo automatico
-	a seconda del livello di automatizzazione della project board, oppure può essere totalmente gestita dal verificatore. 
+\paragraph{Richiesta di revisione} \-\\
+	Accumulate un certo numero di task o di milestone, si avvia la procedura di revisione da parte del verificatore. \\ Questa può essere notificata e pianificata in modo automatico a seconda del livello di automatizzazione della project board, oppure può essere totalmente gestita dal verificatore. 
 	
-	\paragraph{Chiusura ~\\}
-	Una volta che le task o le milestones sono state approvate dal verificatore, esse concludono il loro ciclo di vita nello stato di chiusura, le quali verranno spostate manualmente dal 
-	verificatore o automaticamente dalla project board se il merge è avvenuto con successo. 
+%Sposatate dove?
 	
-\paragraph{Riapertura ~\\}
-	Le task in stato di \textit{"Chiusura"} possono essere riaperte e spostate nello stato di \textit{"Apertura"} se esse in un lungo periodo non soddisfanno certi parametri di qualità
-	richiesti. 
+	\paragraph{Chiusura} \-\\
+	Una volta che le task o le milestone sono state approvate dal verificatore, esse concludono il loro ciclo di vita nello stato di chiusura, le quali verranno spostate manualmente dal verificatore o automaticamente dalla project board se il merge è avvenuto con successo. 
+	
+\paragraph{Riapertura} \-\\ \label{ProcessiSupporto_Riapertura}
+	Le task in stato di "Chiusura" possono essere riaperte e spostate nello stato di "Apertura" se esse non soddisfanno tutti i parametri di qualità richiesti.
 	
