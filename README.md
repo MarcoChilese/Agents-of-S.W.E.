@@ -26,11 +26,11 @@
 
 ## Riunione 4/01/18
 ### Analisi Dei Requisiti
-- [ ] Ordine requisiti da sistemare: c'è prima visualizzazione alert rispetto a creazione (UC5 da scambiare con UC8);
-- [ ] UC3: il diagramma non è coerente, vanno riportati tutti i passaggi. Da correggere precondizione. Aggiungere sottocasi;
-- [ ] UC1 scenario principale .2 e .3 vanno linkati nello stesso modo dei seguenti;
-- [ ] Specificare sottorequisiti nella tabella dei Requisiti Funzionali;
-- [ ] Allocare le fonti.
+- [x] Ordine requisiti da sistemare: c'è prima visualizzazione alert rispetto a creazione (UC5 da scambiare con UC8);
+- [x] UC3: il diagramma non è coerente, vanno riportati tutti i passaggi. Da correggere precondizione. Aggiungere sottocasi;
+- [x] UC1 scenario principale .2 e .3 vanno linkati nello stesso modo dei seguenti;
+- [x] Specificare sottorequisiti nella tabella dei Requisiti Funzionali;
+- [x] Allocare le fonti.
 
 ### Piano di qualifica
 - [ ] Metriche generiche e su codice da inserire.
