@@ -1,9 +1,150 @@
-\section{Requisiti}
+\section{Requisiti}\label{Requisiti}
 
-\subsection{Requisiti Funzionali}
+\subsection{Requisiti Funzionali}\label{RF}
+\begin{center}
+\begin{longtable}[c]{|m{.09\textwidth}|m{.50\textwidth}|m{.2\textwidth}|m{.1\textwidth}|}
+\hline
+\rowcolor{bluelogo}\textbf{\textcolor{white}{ID}} & \textbf{\textcolor{white}{Descrizione}} & \textbf{\textcolor{white}{Obbligatorietà}} & \textbf{\textcolor{white}{Fonti}}\\
+\hline \hline
+\endhead
+RF1 & L'utente deve poter aggiungere una rete bayesiana al sistema & Obbligatorio & UC1\\
+\hline
+\rowcolor{grigio}RF1.1 & Il Sistema deve mettere a disposizione un pulsante per avviare l'operazione di selezione del file da caricare & Obbligatorio & UC1\\
+\hline
+RF1.2 & Il sistema deve consentire all'utente di selezionare un file da caricare & Obbligatorio & UC1\\
+\hline
+\rowcolor{grigio}RF1.3 & Il Sistema deve mettere a disposizione dell'utente un bottone per avviare l'operazione di caricamento & Obbligatorio & UC1\\
+\hline
+RF1.4 & Il Sistema deve visualizzare un messaggio di errore nel caso l'operazione di caricamento del file non sia andata a buon fine & Obbligatorio & UC1 UC8\\
+\hline
+\rowcolor{grigio}RF1.4.1 & Il Sistema deve visualizzare un messaggio di errore nel caso in cui l'estensione del file selezionato sia errata & Opzionale & UC1 UC8\\
+\hline
+RF1.4.2 & Il Sistema deve visualizzare un messaggio di errore nel caso in cui la struttura interna del file selezionato sia errata & Opzionale & UC1 UC8\\
+\hline
+\rowcolor{grigio}RF2 & L'utente deve poter collegare un flusso di dati ad ogni nodo desiderato della rete preesistente & Obbligatorio & UC2\\
+\hline
+RF2.1 & Il Sistema deve mostrare una lista di nodi della rete bayesiana caricata & Obbligatorio & UC2\\
+\hline
+\rowcolor{grigio}RF2.2 & Il Sistema deve mettere a disposizione dell'utente una lista di flussi dati a cui collegare i nodi desiderati & Obbligatorio & UC2\\
+\hline
+RF2.3 & Il Sistema deve mettere a disposizione dell'utente un bottone per confermare il collegamento dei nodi & Obbligatorio & UC2\\
+\hline
+\rowcolor{grigio}RF2.4 & Il Sistema deve visualizzare un messaggio di errore nel caso in cui l'utente abbia confermato il collegamento dei nodi senza averne effettivamente collegato alcuno & Obbligatorio & UC2 UC9\\
+\hline
+RF3 & L'utente deve poter impostare una policy per il ricalcolo delle probabilità nella rete & Obbligatorio & UC3\\
+\hline
+\rowcolor{grigio}RF3.1 & L'utente deve avere la possibilità di impostare una policy esistente a una rete bayesiana  & Obbligatorio & UC3\\ 
+\hline
+RF3.2 & L'utente deve avere la possibilità di creare una nuova policy da aggiungere a una rete bayesiana & Obbligatorio & UC3\\
+\hline
+\rowcolor{grigio}RF4 & Il Sistema deve fornire i dati relativi ai nodi della rete bayesiana non collegati al flusso & Obbligatorio & UC4\\
+\hline
+RF4.1 & Il Sistema deve fornire all'utente una lista di probabilità dinamiche associate ai nodi della rete & Obbligatorio & UC4\\
+\hline
+\rowcolor{grigio}RF4.2 & Il Sistema deve aggiornare periodicamente le probabilità in base a quanto definito come policy per il ricalcolo delle probabilità & Obbligatorio & UC4\\
+\hline
+RF4.3 & Il Sistema deve mettere a disposizione di \textit{Grafana} i dati per l'operazione di creazione di allert ad essi associati da parte dell'utente & Obbligatorio & UC5\\
+\hline
+RF5 & Il Sistema deve mostrare all'utente gli allert associati al flusso di dati collegato alla rete bayesiana & Obbligatorio & UC7\\ 
+\hline
+\rowcolor{grigio}RF5.1 & L'utente deve poter rimuovere gli allert associati ai nodi della rete bayesiana & Obbligatorio & UC6\\ 
+\hline
+\caption{Requisiti Funzionali}
+\end{longtable}
+\end{center}
 
-\subsection{Requisiti Prestazionali}
+%\subsection{Requisiti Prestazionali}\label{RP}
 
-\subsection{Requisiti di Qualità}
+\subsection{Requisiti di Qualità}\label{RQ}
+\begin{center}
+\begin{longtable}[c]{|m{.09\textwidth}|m{.48\textwidth}|m{.2\textwidth}|m{.12\textwidth}|}
+\hline
+\rowcolor{bluelogo}\textbf{\textcolor{white}{ID}} & \textbf{\textcolor{white}{Descrizione}} & \textbf{\textcolor{white}{Obbligatorietà}} & \textbf{\textcolor{white}{Fonti}}\\
+\hline \hline
+\endhead
+RQ1 & E' necessario fornire un manuale utente, per l'utilizzo del prodotto, in formato pdf & Obbligatorio & Capitolato\\
+\hline
+\rowcolor{grigio}RQ1.1 & Il manuale utente deve essere disponibile in lingua italiana & Obbligatorio & Decisione Interna\\
+\hline
+RQ1.2 & Il manuale utente deve essere disponibile in lingua inglese & Desiderabile & Decisione Interna\\
+\hline
+\rowcolor{grigio}RQ2 & E' necessario fornire un manuale per la manutenzione ed estensione del prodotto & Obbligatorio & Capitolato\\
+\hline
+RQ2.1 & Il manuale di manutenzione/estensione deve essere disponibile in lingua italiana & Obbligatorio & Decisione Interna\\
+\hline
+\rowcolor{grigio}RQ2.2 & Il manuale di manutenzione/estensione deve essere disponibile in lingua inglese & Desiderabile & Decisione Interna\\
+\hline
+RQ3 & Il prodotto deve essere sviluppato in modo concorde a quanto stabilito nelle \textit{Norme di Progetto} & Obbligatorio & Decisione Interna\\
+\hline
+\rowcolor{grigio}RQ4 & Il prodotto deve essere sviluppato nei tempi stabiliti all'interno del \textit{Piano di Progetto} & Obbligatorio & Decisione Interna\\
+\hline
+\caption{Requisiti Qualità}
+\end{longtable}
+\end{center}
 
-\subsection{Requisiti di Vincolo}
+\subsection{Requisiti di Vincolo}\label{RV}
+\begin{center}
+\begin{longtable}[c]{|m{.1\textwidth}|m{.58\textwidth}|m{.2\textwidth}|}
+\hline
+\rowcolor{bluelogo}\textbf{\textcolor{white}{ID}} & \textbf{\textcolor{white}{Descrizione}} & \textbf{\textcolor{white}{Fonti}}\\
+\hline \hline
+\endfirsthead
+RV1 & Il plug-in deve essere sviluppato in linguaggio ECMAScript6 & Piattaforma Grafana\\
+\hline
+\caption{Requisiti di Vincolo}
+\end{longtable}
+\end{center}
+
+\pagebreak
+
+\subsection{Tacciamento Fonti-Requisiti}\label{Tracciamento}
+\begin{center}
+\begin{longtable}[c]{|c|m{.15\textwidth}|}
+\hline
+\rowcolor{bluelogo}\textbf{\textcolor{white}{Fonte}} & \textbf{\textcolor{white}{Requisiti}}\\
+\hline \hline
+\endfirsthead
+Capitolato & \makecell{RQ1\\RQ2}\\
+\hline
+\rowcolor{grigio}Decisione Interna & \makecell{RQ1.1\\RQ1.2\\RQ2.1\\RQ2.3\\RQ3\\RQ4}\\
+\hline
+Piafforma Grafana & \makecell{RV1}\\
+\hline
+\rowcolor{grigio}UC1 & \makecell{RF1\\RF1.1\\RF1.2\\RF1.3\\RF1.4\\RF1.4.1\\RF1.4.2}\\
+\hline
+UC2 & \makecell{RF2\\RF2.1\\RF2.2\\RF2.3\\RF2.4}\\
+\hline
+\rowcolor{grigio}UC3 & \makecell{RF3\\RF3.1\\RF3.2}\\
+\hline
+UC4 & \makecell{RF4\\RF4.1\\RF4.2}\\
+\hline
+\rowcolor{grigio}UC5 & \makecell{RF4.3}\\
+\hline
+UC6 & \makecell{RF5.1}\\
+\hline
+\rowcolor{grigio}UC7 & \makecell{RF5}\\
+\hline
+UC8 & \makecell{RF1.4\\RF1.4.1\\RF1.4.2}\\
+\hline
+\rowcolor{grigio}UC9 & \makecell{RF2.4}\\
+\hline
+\caption{Tracciamento Fonti-Requisiti}
+\end{longtable}
+\end{center}
+
+\subsection{Riepilogo Requisiti}\label{Riepilogo}
+\begin{center}
+\begin{longtable}[c]{|c|c|c|c|c|}
+\hline
+\rowcolor{bluelogo}\textbf{\textcolor{white}{Tipologia}} & \textbf{\textcolor{white}{Obbligatorio}} & \textbf{\textcolor{white}{Opzionale}} & \textbf{\textcolor{white}{Desiderabile}} & \textbf{\textcolor{white}{Totale}}\\
+\hline \hline
+\endhead
+Funzionale & 19 & 2 & 0 & 21\\
+\hline
+\rowcolor{grigio}Di Qualità & 6 & 0 & 2 & 8\\
+\hline
+Di Vincolo & 1 & 0 & 0 & 1\\
+\hline
+\caption{Riepilogo dei Requisiti}
+\end{longtable}
+\end{center}
