@@ -1,7 +1,7 @@
 \section{Casi d'Uso}\label{CasiUso}
 \subsection{Introduzione}\label{CasiUso_Introduzione}
 Nella seguente sezione verranno identificati i casi d'uso individuati dal team \texttt{Agents of S.W.E.}.\\
-Il numero di casi analizzati è limitato poiché il plug-in fornisce funzionalità aggiuntive ad una piattaforma preesistente, per la quale non è fornita documentazione in quanto già disponibile presso il sito web del fornitore della piattaforma: \href{http://docs.grafana.org/}{\textit{Grafana Labs}}.
+Il numero di casi analizzati è limitato poiché il plug-in fornisce funzionalità aggiuntive ad una piattaforma preesistente, per la quale non è fornita documentazione in quanto già disponibile presso il sito web del fornitore della piattaforma: \textit{Grafana Labs}\footnote{\url{http://docs.grafana.org/}}.
 
 \subsection{Attori}\label{Attori}
 E' importante notare che il numero esiguo di differenti attori che possono approcciarsi al prodotto in esame è principalmente dovuto al fatto che, essendo il progetto "G\&B" un plug-in di un sistema indipendente, poche tipologie di utenti possono effettivamente approcciarsi al prodotto finale.\\
@@ -148,11 +148,11 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 	
 \end{itemize}
 
-\paragraph{UC3.1 - Apertura panello di configurazione}\label{UC3.1}
+\paragraph{UC3.1 - Apertura pannello di configurazione}\label{UC3.1}
 \begin{itemize}
 	\item \textbf{Attore primario:} Utente Autenticato; 
 	\item \textbf{Precondizione:} L'utente ha caricato con successo la rete bayesiana (\hyperref[UC1]{UC1 (§\ref*{UC1})});
-	\item \textbf{Postcondizione:} L'utente accede al panello di configurazione;
+	\item \textbf{Postcondizione:} L'utente accede al pannello di configurazione;
 	\item \textbf{Scenario Principale:} L'utente, tramite un click sulla dashboard, apre il pannello di configurazione. 
 \end{itemize}
 
@@ -274,7 +274,7 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 		\item Viene visualizzato un messaggio d'errore che varia in base alla tipologia d'errore:
 			\begin{enumerate}
 				\item Estensione file della rete errato: il messaggio contiene "Il formato della rete bayesiana deve essere di tipo \textit{JSON}. Selezionare un file corretto.";
-				\item Struttura errata del file: il file selezionato ha l'estensione corretta, ma il contenuto è errato. Viene visualizzato il messaggio: "La struttura della rete bayesiana selezionata non è corretta. Selezionare un file corretto.";
+				\item Struttura errata del file: il file selezionato ha l'estensione corretta, ma il contenuto è errato. Viene visualizzato il messaggio: "La struttura della rete bayesiana selezionata non è corretta. Selezionare un file corretto.".
 			\end{enumerate}
 		\item L'utente clicca il pulsante con etichetta "OK".
 	\end{enumerate}
