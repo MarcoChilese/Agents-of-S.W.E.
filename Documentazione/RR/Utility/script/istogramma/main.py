@@ -1,18 +1,18 @@
 import plot_generator as pg
 
-plot_title = 'Totale ore con investimento'   # il grafo si salva con questo nome
+plot_title = 'Totale ore Rendicontate'   # il grafo si salva con questo nome
 y_label = 'ore'
 x_values = ['Marco Chilese', 'Marco Favaro', 'Diego Mazzalovo',
             'Carlotta Segna', 'Matteo Slanzi', 'Bogdan Stanciu', 'Luca Violato']
 colors = ["#9DA1AA", "#C51D34", "#415A66", "#7ECCFD", "#57A639", "#F5D033"] 
 
 d = {
-    'Responsabile': [8, 14, 8, 11, 9, 22, 14],
-    'Amministratore': [15, 11, 8, 17, 8, 8, 22],
-    'Analista': [22, 29, 25, 10, 26, 22, 12],
-    'Progettista': [23, 14, 29, 22, 25, 31, 16],
-    'Programmatore': [26, 22, 37, 38, 35, 22, 31],
-    'Verificatore': [41, 45, 28, 37, 32, 30, 40]
+    'Responsabile': [10,12,10,0,10,5,13],
+    'Amministratore': [13,10,11,17,0,10,5],
+    'Analista': [3,18,5,15,5,23,10],
+    'Progettista': [32,14,33,10,32,25,19],
+    'Programmatore': [16,19,34,46,32,12,31],
+    'Verificatore': [31,32,12,17,26,30,27]
 }
 
 width = 0.70       # the width of the bars: can also be len(x) sequence

@@ -16,6 +16,7 @@
 \usepackage{graphicx}  %per le immagini
 \usepackage{flafter}
 \usepackage[font=small,labelfont=bf]{caption}
+\usepackage[dvipsnames, table]{xcolor}
 
 \usepackage{framed}
 
@@ -58,6 +59,10 @@ framexleftmargin=15pt}
 
 \lhead{\includegraphics[scale=0.08]{./images/logo.png}}
 
+\definecolor{bluelogo}{HTML}{415A66}
+\definecolor{grigio}{HTML}{D0D0D0}
+\usepackage{makecell}
+
 \renewcommand{\footrulewidth}{0.4pt}
 \newcommand{\glossario}{\textsubscript{G} }
 
@@ -66,6 +71,8 @@ framexleftmargin=15pt}
 \makeindex
 \setcounter{secnumdepth}{4}
 \setcounter{tocdepth}{4}
+
+\setlength{\parindent}{0pt}
 
 % \lhead{\includegraphics[scale=]{}} TODO LOGO ripetuto angolo Top SX
 
