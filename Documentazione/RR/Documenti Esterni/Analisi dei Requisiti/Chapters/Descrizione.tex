@@ -2,7 +2,7 @@
 
 \subsection{Caratteristiche del Prodotto}\label{CaratteristicheProdotto}
 Lo scopo del progetto è quello di realizzare un plug-in\glossario per \textit{Grafana}\glossario, in grado di utilizzare una rete bayesiana\glossario, definita ad hoc in formato \textit{JSON}\glossario, per stimare la probabilità che alcuni eventi si possano verificare o meno.\\
-In particolare, deve essere possibile registrare i dati di un particolare ambiente, ad esempio tutti i dati di PC quali percentuale d'uso della CPU, pressione di memoria, utilizzo del disco ecc., che verranno poi visualizzati in pannelli di una dashboard\glossario. Tra tali pannelli dovrà esserne presente uno in cui visualizzare la probabilità di determinati eventi.\\
+In particolare, deve essere possibile registrare i dati di un particolare ambiente, ad esempio tutti i dati di PC quali percentuale d'uso della CPU, disponibilità di memoria libera, utilizzo del disco ecc., che verranno poi visualizzati in pannelli di una dashboard\glossario. Tra tali pannelli dovrà esserne presente uno in cui visualizzare la probabilità di determinati eventi.\\
 La probabilità di eventi definiti in sede di progettazione, viene stimata dalla rete bayesiana che, utilizzando i dati di ambiente, potrà avanzare delle ipotesi sugli eventi in atto. Un esempio: in un contesto di un calcolatore a cui è affidata la gestione di un complesso database\glossario, se si rilevasse un elevato uso della CPU, un'alta percentuale di memoria RAM occupata, ma un basso tasso di scrittura su disco, mediante parametri prefissati, la rete potrà ipotizzare con una probabilità $x$ che si stanno eseguendo delle "query\glossario lente"\footnote{Si intende query malformate che richiedono un eccessivo dispendio di risorse.}, permettendo quindi l'intervento da parte dei gestori del database in modo da non sprecare risorse preziose.\\
 La stima delle probabilità deve essere eseguita secondo regole temporali prefissate. Ciò significa che il plug-in continuerà a registrare dati provenienti dall'ambiente e che ad ogni intervallo di tempo $t$ eseguirà un ricalcolo delle probabilità, fornendo di conseguenza appropriati alert, ove necessario.\\
 La rete bayesiana in formato \textit{JSON}, menzionata sopra, può essere sviluppata tramite la libreria \textit{jsbayes}\glossario, indicata dalla proponente.\\
@@ -32,11 +32,11 @@ L'implementazione finale del prodotto "G\&B" deve realizzare un plug-in per la p
 	\item Possibilità di disegnare la rete bayesiana con un editor grafico;
 	\item Possibilità di applicare più reti bayesiane ad oggetti di monitoraggio diversi;
 	\item Possibilità di creare la rete bayesiana a partire da dati raccolti sul campo;
-	\item Identificare altri metodi di IA applicabili.
+	\item Identificare altri metodi di IA\glossario applicabili.
 	\end{enumerate}
 \item \textbf{Tecnologie Richieste:}
 	\begin{itemize}
-	\item \textit{ECMAScript} 6 per lo sviluppo di plug-in per \textit{Grafana};
+	\item \textit{ECMAScript\glossario} 6 per lo sviluppo di plug-in per \textit{Grafana};
 	\item \textit{JSON} per la definizione della rete bayesiana;
 	\item \textit{Jsbayes} (libreria open-source) per la gestione dei calcoli della rete bayesiana.
 	\end{itemize}
