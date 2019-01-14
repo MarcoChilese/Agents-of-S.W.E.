@@ -1,0 +1,108 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Professional Formal Letter
+% LaTeX Template
+% Version 2.0 (12/2/17)
+%
+% This template originates from:
+% http://www.LaTeXTemplates.com
+%
+% Authors:
+% Brian Moses
+% Vel (vel@LaTeXTemplates.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%-------------------------------------da---------------------------------------------------
+
+
+
+\documentclass[11pt, a4paper]{letter} % Set the font size (10pt, 11pt and 12pt) and paper size (letterpaper, a4paper, etc)
+
+\input{structure.tex} % Include the file that specifies the document structure
+
+\longindentation=0pt % Un-commenting this line will push the closing "Sincerely," and date to the left of the page
+
+%----------------------------------------------------------------------------------------
+%	YOUR INFORMATION
+%----------------------------------------------------------------------------------------
+
+\Who{Agents of S.W.E.} % Your name
+
+\Title{} % Your title, leave blank for no title
+
+\authordetails{
+	Dipartimento di Matematica\\ % Your department/institution
+	Via Trieste 63\\ % Your address
+	Padova (PD), 35121, Italia	\\ % Your city, zip code, country, etc
+	Email: agentsofswe@gmail.com\\ % Your email address
+}
+
+%----------------------------------------------------------------------------------------
+%	HEADER CONTENTS
+%----------------------------------------------------------------------------------------
+
+\logo{images/logo.jpg} % Logo filename, your logo should have square dimensions (i.e. roughly the same width and height), if it does not, you will need to adjust spacing within the HEADER STRUCTURE block in structure.tex (read the comments carefully!)
+
+%\headerlineone{Agents} % Top header line, leave blank if you only want the bottom line
+
+%\headerlinetwo{} % Bottom header line
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	TO ADDRESS
+%----------------------------------------------------------------------------------------
+
+\begin{letter}{
+	\-\\\-
+	6 Dicembre 2018
+	\-\\\-\\\-\\\-\\
+	Alla cortese attenzione di Zucchetti S.p.A.\\
+	Via Giovanni Cittadella, 7\\
+	Padova (PD), 35137, Italia
+}
+
+%----------------------------------------------------------------------------------------
+%	LETTER CONTENT
+%----------------------------------------------------------------------------------------
+
+\opening{Spett.le Zucchetti,}
+
+Siamo degli studenti dell'Università di Padova che devono affrontare l'esame di Ingegneria del Software (prof. Vardanega Tullio) nell'anno accademico 2018-2019.\\
+Il gruppo formato, ha espresso la preferenza per il capitolato da Voi proposto. Gradiremmo quindi, porre delle domande inerenti al progetto:
+\begin{itemize}	
+	\item È possibile avere un campione di dati che il plug-in dovrà trattare? In particolare ci interessava per formulare delle ipotesi di sviluppo della rete bayesana, e per avere un'idea più precisa di ciò che il plug-in dovraà elaborare.
+	\item Nel capitolato esposto, non viene menzionato alcun standard, ne richiedete qualcuno in particolare per quanto riguarda il codice sorgente da sviluppare e/o i documenti?
+	\item È possibile visionare un esempio di plug-in da Voi sviluppato?
+	\item È possibile visionare un esempio di utilizzo della libreria da Voi suggerita per quanto riguarda le reti bayesiane (jsbayes)?
+	\item È possibile fissare un incontro presso la Vostra sede per ulteriori chiarimenti e confronti?	
+\end{itemize}
+
+\closing{Ringraziamo per l'attenzione,\\
+Cordialmente,\\
+Bogdan Stanciu\\
+Responsabile di Progetto
+\includegraphics[scale=0.4]{images/BogdanStanciu.pdf}}
+
+%----------------------------------------------------------------------------------------
+%	OPTIONAL FOOTNOTE
+%----------------------------------------------------------------------------------------
+
+% Uncomment the 4 lines below to print a footnote with custom text
+%\def\thefootnote{}
+%\def\footnoterule{\hrule}
+%\footnotetext{\hspace*{\fill}{\footnotesize\em Footnote text}}
+%\def\thefootnote{\arabic{footnote}}
+
+%----------------------------------------------------------------------------------------
+
+\end{letter}
+
+\end{document}

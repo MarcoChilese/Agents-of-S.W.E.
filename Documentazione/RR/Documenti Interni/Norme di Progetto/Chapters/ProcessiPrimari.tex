@@ -1,5 +1,333 @@
-\section{Processi Primari}
+\section{Processi Primari}\label{ProcessiPrimari}
 
 \subsection{Fornitura}
+In questa sezione del documento vengono trattate le norme che il team \texttt{Agents of S.W.E.} decide e si impegna a rispettare, con lo scopo di proporsi e divenire fornitori nei confronti dell'azienda proponente, \textit{Zucchetti S.p.A.} e dei committenti Prof. Tullio Vardanega e Prof. Riccardo Cardin nell'ambito della progettazione, sviluppo e consegna del prodotto "\textit{G\&B}".
 
+\subsection{Studio di fattibilità} \label{ProcessiPrimari_Sviluppo_StudioFattibilità}
+In seguito all'incontro con le aziende il 16 novembre 2018, il gruppo si è riunito per discutere la scelta del capitolato. Dopo un'opportuna analisi il team ha deciso di scegliere il capitolato C3 ovvero "\textit{G\&B}". A questo punto gli analisti hanno redatto il documento "\textit{Studio di fattibilità}" dove sono contenute le analisi dei capitolati, specificando pro e contro di ognuno e motivando la scelta.
+Tale documento è così strutturato: 
+\begin{itemize}
+	\item \textbf{Informazioni del capitolato}: sezione che contiene il nome del fornitore e il nome del capitolato;
+	\item \textbf{Descrizione Capitolato e Obiettivo Finale}: descrizione obiettivo finale del capitolato e ambito di utilizzo del prodotto;
+	\item \textbf{Dominio Tecnologico}: definisce il dominio tecnologico, ovvero le tecnologie richieste dall'azienda;
+	\item \textbf{Valutazione del Capitolato}: definisce aspetti positivi, negativi, e criticità, motivando la scelta del capitolato.  
+\end{itemize} 
 \subsection{Sviluppo}
+\subsubsection{Analisi dei requisiti}\label{ProcessiPrimari_Sviluppo_AnalisiRequisiti}
+\'E un documento stilato dagli Analisti con lo scopo di riportare tutti i requisiti del capitolato. Le informazioni possono essere recuperate da più fonti, tra cui: 
+\begin{itemize}
+	\item \textbf{Riunioni esterne:} incontri con il cliente con lo scopo di approfondire aspetti critici;
+	\item \textbf{Riunioni interne:} riunioni del gruppo dove l'obiettivo è discutere i casi d'uso del capitolato e studiare il dominio di utilizzo;
+	\item \textbf{Documentazione:} analisi della documentazione offerta dall'azienda.
+\end{itemize}
+Il risultato dello studio sarà un documento verificato che contiene:
+\begin{itemize}
+	\item Descrizione generale del prodotto;
+	\item Argomentazioni precise ed affidabili per i Progettisti;
+	\item Diagrammi UML che rappresentano i casi d'uso;
+	\item Funzionalità finali accordate con il cliente;
+	\item Stima dei costi.      
+\end{itemize}
+
+\paragraph{Classificazione dei requisiti} \-\\
+Il requisito si può definire come:
+\begin{itemize}
+	\item Capacità necessaria a un utente per raggiungere un obiettivo;
+	\item Capacità del sistema per soddisfare un obbligo da contratto;
+	\item Descrizione documentata di una capacità.
+\end{itemize}
+La classificazione dei requisiti aiuta a mettere ordine e a facilitare la comprensione e il mantenimento futuro del sistema. Si possono dividere in:
+\begin{itemize}
+	\item \textbf{Attributi di Prodotto}: specificano "\textit{cosa}" bisogna svolgere e definiscono i requisiti funzionali, prestazionali e di qualità;
+	\item \textbf{Attributi di Processo}: specificano "\textit{come}" bisogna svolgere definendo norme contrattuali e realizzative. 
+\end{itemize}
+Ogni requisito, nel documento, deve seguire le seguenti regole di identificazione:
+\begin{center}
+\textbf{R[Importanza][Tipo][Identificativo]}
+\end{center}  
+\begin{itemize}
+	\item \textbf{R}: sta per appunto "requisito";
+	\item \textbf{Importanza}: specifica quanto è importante il requisito, può assumere tre valori:
+	\begin{itemize}
+			\item \textbf{O}: indica che il requisito è obbligatorio, e deve essere per forza soddisfatto per il corretto funzionamento di base del sistema;
+			\item \textbf{D}: indica che il requisito è desiderabile, se viene soddisfatto aumenta la completezza del sistema, se non viene soddisfatto non crea alcuna penalizzazione;
+			\item \textbf{F}: indica un requisito opzionale (F sta per "facoltativo"). 
+	\end{itemize}
+	\item \textbf{Tipo}: specifica la tipologia e può assumere i seguenti valori:
+	\begin{itemize}
+		\item \textbf{F}: requisito funzionale;
+		\item \textbf{P}: requisito prestazionale;
+		\item \textbf{Q}: requisito qualitativo;
+		\item \textbf{V}: requisito di vincolo.
+	\end{itemize}
+	\item \textbf{Identificativo}: numero progressivo che identifica il requisito, strutturato come segue: 
+	\begin{center}
+		\textbf{[codice padre].[codice figlio]}	
+	\end{center}
+
+	
+\end{itemize}
+
+\paragraph{Classificazione dei casi d'uso} \-\\
+Un caso d'uso consiste nel valutare ogni requisito con lo scopo di definire gli attori (utenti esterni) all'interno di un scenario che hanno un obiettivo finale comune. Il gruppo, nel documento, oltre a fornire una spiegazione verbosa e dettagliata dei casi d'uso, fornirà una rappresentazione grafica nel linguaggio UML.
+Si è stabilito la seguente classificazione dei casi d'uso:
+\begin{center}
+	\textbf{UC[codice padre].[codice identificativo]}
+\end{center}
+dove:
+\begin{itemize}
+	\item \textbf{Codice padre}: indica il codice identificativo del caso d'uso che ha generato il corrente, se non è stato generato da nessun caso d'uso allora viene tralasciato;
+	\item \textbf{Codice identificativo}: indica il codice univoco del caso d'uso corrente, è rappresentato da una cifra.
+\end{itemize}
+Ogni caso d'uso avrà le seguenti informazioni:
+\begin{itemize}
+	\item \textbf{Identificativo}: codice univoco del caso d'uso;
+	\item \textbf{Attori}: identifica gli attori principali e attori secondari del caso d'uso;
+	\item \textbf{Precondizioni}: identifica le condizioni sempre vere prima degli eventi del caso d'uso;
+	\item \textbf{Postcondizioni}: identifica le condizioni sempre vere dopo gli eventi del caso d'uso;
+	\item \textbf{Scenario}: sequenza di passi che descrivono interazioni tra gli attori e il sistema, possono creare scenari secondari a seconda del comportamento dell'utente, per esempio dalla log-in passare alla registrazione.	
+\end{itemize}
+
+\subsubsection{Codifica}
+Di seguito vengono definite delle norme che devono essere adottate dai Programmatori per garantire una buona leggibilità  e manutenibilità  del codice. Le prime norme che seguiranno sono le più generali, da adottarsi per ogni linguaggio di programmazione adottato all'interno del progetto, in seguito quelle più specifiche per i linguaggi ECMAScript 6\glossario, HTML\glossario e CSS\glossario.\\
+Ogni norma è caratterizzata da un paragrafo di appartenenza, da un titolo, una breve descrizione e, se il caso lo richiede, un esempio.\\
+Il rispetto delle seguenti norme è fondamentale per garantire uno stile di codifica uniforme all'interno del progetto, oltre che per massimizzare la leggibilità  e agevolare la manutenzione, la verifica\glossario e la validazione\glossario.
+
+\paragraph{Convenzioni per i nomi:} \label{Nomi}
+\begin{itemize}	
+	\item I Programmatori devono adottare come notazione per la definizione di cartelle, file, metodi, funzioni e variabili il CamelCase\glossario.\\
+	Di seguito un esempio di corretta nomenclatura:
+	\begin{lstlisting}[language=JavaScript]
+//Cartelle 
+./thisIsAFolder	//OK
+./ThisIsAFolder //NO
+
+//File
+myFile.extension //OK
+MyFile.extension //NO
+
+//Funzioni
+myFunction() { ... } //OK
+MyFunction() { ... } //NO
+	\end{lstlisting}
+
+	\item Tutti i nomi devono essere \textbf{unici} ed \textbf{autoesplicativi}, ciò per evitare ambiguità  e limitare la complessità .
+\end{itemize}
+\paragraph{Convenzioni per la documentazione:}
+\begin{itemize}	
+	\item Tutti i nomi ed i commenti al codice vanno scritti in \textbf{inglese};
+	\item Nel codice è possibile utilizzare un commento con denominazione \textbf{TODO} in cui si vanno ad indicare compiti da svolgere;
+	\item L'intestazione di ogni file deve essere la seguente:
+	\begin{lstlisting}[language=JavaScript]
+/**
+* File: nameFile
+* Type: fileType
+* Creation date: yyyy-mm-gg
+* Author: Name Surname
+* Author e-mail: email@example.com
+* Version: versionNumber 
+*
+* Changelog:
+* #entry || Author || Date || Description
+*/
+	\end{lstlisting}
+	\item La versione del file nell'intestazione deve rispettare la seguente formulazione: $X.Y.Z$, dove X rappresenta la versione principale, Y la versione parziale della relativa versione principale e Z l'avanzamento rispetto ad Y.\\ I numeri di versione del tipo $X.0.0$, dalla $1.0.0$, vengono considerate versioni stabili e quindi versioni da testare per saggiarne la qualità .
+\end{itemize}
+\paragraph{ECMAScript 6}\label{EcmaScript6} \-\\
+Seguendo le indicazioni presenti nella documentazione\footnote{\texttt{\url{http://docs.grafana.org/plugins/developing/development/}}} dell'azienda fornitrice di \textit{Grafana}, la piattaforma  per cui si intende sviluppare il plug-in, il team ha deciso di adottare come linguaggio di programmazione principale ECMAScript 6\footnote{Linguaggio divenuto standard ISO: ISO/IEC 16262:2011, e relativo aggiornamento ISO/IEC 22275:2018.}.\\
+ECMAScript 6 viene stardardizzato da \textbf{ECMA}\glossario\footnote{\texttt{\url{http://www.ecma-international.org/}}} nel giugno 2015 con la sigla \textbf{ECMA-262\footnote{\texttt{\url{https://www.ecma-international.org/ecma-262/6.0/}}}}.\\
+Come stile di codifica si adottano le linee guida proposte da \textbf{Airbnb JavaScript Style Guide}\footnote{\texttt{\url{https://github.com/airbnb/javascript}}}. Per la verifica dell'adesione a tali norme, i Programmatori devono utilizzare, come suggerito dalla documentazione proposta da \textit{Grafana}, \textbf{ESLint}\glossario\footnote{\texttt{\url{https://eslint.org/}}}.\\
+In particolare i Programmatori devono rispettare 5 linee guida proposte dalla documentazione ufficiale di \textit{Grafana}:
+\begin{enumerate}
+	\item Se una variabile non viene riutilizzata, deve essere dichiarata come \texttt{\textbf{const}};
+	\item Utilizzare preferibilmente, per la definizione di variabili, la keyword  \texttt{\textbf{let}}, anziché  \texttt{\textbf{var}};
+	\item Utilizzare il marcatore freccia (\texttt{\textbf{=>}}), in quanto non oscura il \texttt{\textbf{this}}:
+	\begin{lstlisting}[language=JavaScript]
+testDatasource() {
+  return this.getServerStatus()
+  .then(status => {
+    return this.doSomething(status);
+  })
+}	
+	\end{lstlisting}
+	Invece che:
+	\begin{lstlisting}[language=JavaScript]
+testDatasource() {
+  var self = this;
+  return this.getServerStatus()
+    .then(function(status) {
+  return self.doSomething(status);
+  })
+}
+	\end{lstlisting}
+	\item Utilizzare l'oggetto \textit{Promise}:
+	\begin{lstlisting}[language=JavaScript]
+metricFindQuery(query) {
+  if (!query) {
+    return Promise.resolve([]);
+  }
+}	
+	\end{lstlisting}
+	Invece che:
+	\begin{lstlisting}[language=JavaScript]
+metricFindQuery(query) {
+  if (!query) {
+    return this.$q.when([]);
+  }
+}
+	\end{lstlisting}
+	%conseguenti?
+	\item Se si utilizza \textit{Lodash}, per coerenza, lo si preferisca alle array function native di ES6.
+\end{enumerate}
+Verranno esaminate di seguito le norme in merito allo stile di codifica che i Programmatori dovranno adottare.
+
+\subparagraph{Identazione}\-\\
+\textbf{Norma 1}
+L'identazione è da eseguirsi con tabulazione la cui larghezza sia impostata a due (2) spazi per ogni livello.\\
+Di seguito un esempio da ritenersi corretto:
+\begin{lstlisting}[language=JavaScript]
+function() {
+..let x = 2;
+..if (x > 0)
+....return true;
+..else
+....return false;
+}
+\end{lstlisting}
+Qualsiasi altro tipo di indentazione è da ritenersi scorretta.\\
+\-\\
+\textbf{Norma 2}
+Dopo la graffa principale va inserito uno (1) spazio. Nel seguente modo:
+\begin{lstlisting}[language=JavaScript]
+function() { ... }
+\end{lstlisting}
+\-\\
+\textbf{Norma 3}
+Dopo la keyword di un dato statement (\texttt{if, while}, etc.) va inserito uno (1) spazio. Per un esempio corretto si veda la norma successiva.\\
+\-\\
+\textbf{Norma 4}
+Prima dell'apertura della graffa negli statement di controllo va inserito uno (1) spazio. Nel seguente modo:
+\begin{lstlisting}[language=JavaScript]
+function() {
+  if (condition) {
+    ...  
+  }
+  while (condition) {
+    ...
+  }
+}
+\end{lstlisting}
+\-\\
+\textbf{Norma 5}
+Negli statement di controllo (\texttt{if, while}, etc.) le condizioni concatenate o annidate, mediante operatori logici, che diventano eccessivamente lunghe NON vanno espresse in un'unica linea, bensì spezzate in più righe. Nel seguente modo:
+\begin{lstlisting}[language=JavaScript]
+function() {
+  if (condition && condition) {
+    ...  
+  }
+  
+  if (
+   veryLongCondition
+   && longCondition
+   && condition
+    ) {
+    doSomething();
+  }
+}
+\end{lstlisting}
+\-\\
+\textbf{Norma 6}
+Dopo blocchi, o prima di un nuovo statement va lasciata una riga vuota. Nel seguente modo:
+\begin{lstlisting}[language=JavaScript]
+function1() {
+  if (condition) {
+    doSomething():  
+  }
+  
+  return toReturn;  
+}
+
+function2(){
+  ...
+}
+\end{lstlisting}
+\-\\
+\textbf{Norma 7}
+I blocchi di codice multi-riga devono essere contenuti all'interno di graffe. Blocchi costituiti da una singola riga non è necessario che siano contenuti tra graffe: nel caso non vengano utilizzate, la definizione deve essere \textit{inline}, cioè sulla stessa riga.\\
+Nel seguente modo:
+\begin{lstlisting}[language=JavaScript]
+if (condition) return true;
+
+if (condtion) {
+  return true;
+}
+\end{lstlisting}
+
+\subparagraph{Commenti al codice}\-\\
+Il codice va commentato nel seguente modo:
+\begin{itemize}
+	\item "\texttt{//}" se il commento occupa una sola riga;
+	\item "\texttt{/** ... */} " se il commento occupa più righe.
+\end{itemize}
+Nel seguente modo:
+\begin{lstlisting}[language=JavaScript]
+// single line comment
+if (condition) return true;
+
+/**
+* multi line comment, line 1
+* multi line comment, line 2
+*/
+if (condtion) {
+  return true;
+}
+\end{lstlisting}
+
+\subparagraph{Variabili}\-\\
+\textbf{Norma 1}
+Fare riferimento alle norme 1 e 2, all'inizio della sezione §\ref{EcmaScript6}.
+
+\-\\
+\textbf{Norma 2}
+Non utilizzare dichiarazioni multiple di variabili, dichiarare una variabile per riga.\\
+Nel seguente modo:
+\begin{lstlisting}[language=JavaScript]
+// OK
+var x = 1;
+var y = 0;
+
+// NO
+var x = 1, y = 0;
+\end{lstlisting}
+
+
+%va linkato il paragrafo
+\subparagraph{Nomi}\-\\
+\textbf{Norma 1} Oltre a quanto enunciato nel secondo punto del paragrafo §\ref{Nomi}, tutti i nomi di funzioni o variabili composti da una singola lettera, o che indichino temporaneità della variabile sono \textit{vietati}: ogni nome deve essere significativo.\\
+\-\\
+\textbf{Norma 2} 
+\begin{enumerate}
+	\item I nomi delle variabili, funzioni ed istanze devono utilizzare il CamelCase;
+	\item I nomi delle classi deve avere lo stile \texttt{capWords}.
+\end{enumerate}
+Nel seguente modo:
+\begin{lstlisting}[language=JavaScript]
+// OK
+var thisIsAVariable;
+
+function thisIsAFunction() { ... }
+
+class ThisIsAClass() {
+  ...
+}
+
+// NO
+var Variable;
+
+function Function() { ... }
+
+class myClass() {
+  ...
+}
+\end{lstlisting}
+

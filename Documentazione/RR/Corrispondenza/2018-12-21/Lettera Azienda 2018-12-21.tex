@@ -1,0 +1,107 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Professional Formal Letter
+% LaTeX Template
+% Version 2.0 (12/2/17)
+%
+% This template originates from:
+% http://www.LaTeXTemplates.com
+%
+% Authors:
+% Brian Moses
+% Vel (vel@LaTeXTemplates.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%-------------------------------------da---------------------------------------------------
+
+
+
+\documentclass[11pt, a4paper]{letter} % Set the font size (10pt, 11pt and 12pt) and paper size (letterpaper, a4paper, etc)
+
+\input{structure.tex} % Include the file that specifies the document structure
+
+\longindentation=0pt % Un-commenting this line will push the closing "Sincerely," and date to the left of the page
+
+%----------------------------------------------------------------------------------------
+%	YOUR INFORMATION
+%----------------------------------------------------------------------------------------
+
+\Who{Agents of S.W.E.} % Your name
+
+\Title{} % Your title, leave blank for no title
+
+\authordetails{
+	Dipartimento di Matematica\\ % Your department/institution
+	Via Trieste 63\\ % Your address
+	Padova (PD), 35121, Italia	\\ % Your city, zip code, country, etc
+	Email: agentsofswe@gmail.com\\ % Your email address
+}
+
+%----------------------------------------------------------------------------------------
+%	HEADER CONTENTS
+%----------------------------------------------------------------------------------------
+
+\logo{images/logo.jpg} % Logo filename, your logo should have square dimensions (i.e. roughly the same width and height), if it does not, you will need to adjust spacing within the HEADER STRUCTURE block in structure.tex (read the comments carefully!)
+
+%\headerlineone{Agents} % Top header line, leave blank if you only want the bottom line
+
+%\headerlinetwo{} % Bottom header line
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	TO ADDRESS
+%----------------------------------------------------------------------------------------
+
+\begin{letter}{
+	\-\\\-
+	21/12/2018
+	\-\\\-\\\-\\\-\\
+	Alla cortese attenzione di Zucchetti S.p.A. \\
+	Via Giovanni Cittadella, 7\\
+	Padova (PD), 35137, Italia
+}
+
+%----------------------------------------------------------------------------------------
+%	LETTER CONTENT
+%----------------------------------------------------------------------------------------
+
+\opening{Spett.le Zucchetti,}
+
+Siamo gli studenti interessati alla realizzazione del vostro progetto, i primi venuti a fare un incontro
+presso la Vostra sede.\\
+Rileggendo il capitolato d'appalto per lo sviluppo dell'Analisi dei Requisiti ci è sorta un'altra domanda riguardante il requisito obbligatorio numero 4.\\
+I dati derivati dai nodi non collegati al flusso di che natura devono essere? Preferireste i sopracitati in natura tabellare, a forma di grafico o devono essere rappresentati in un modo diverso da quello appena proposto?\\
+Inoltre, all'ultimo incontro ci aveva parlato di uno storico. Esattamente con questa affermazione che cosa intendeva? Per meglio spiegarci intendeva uno storico riguardante il numero di alert scattati od eravate più propensi verso uno storico contenente l'andamento delle probabilità osservate?
+
+
+
+\closing{Ringraziamo per l'attenzione,\\
+Cordialmente,\\
+Carlotta Segna\\
+Responsabile di Progetto
+\includegraphics[scale=0.4]{images/CarlottaSegna.pdf}} 
+
+
+%----------------------------------------------------------------------------------------
+%	OPTIONAL FOOTNOTE
+%----------------------------------------------------------------------------------------
+
+% Uncomment the 4 lines below to print a footnote with custom text
+%\def\thefootnote{}
+%\def\footnoterule{\hrule}
+%\footnotetext{\hspace*{\fill}{\footnotesize\em Footnote text}}
+%\def\thefootnote{\arabic{footnote}}
+
+%----------------------------------------------------------------------------------------
+
+\end{letter}
+
+\end{document}

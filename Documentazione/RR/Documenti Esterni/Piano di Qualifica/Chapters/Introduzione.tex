@@ -1,7 +1,62 @@
 \section{Introduzione}
+\label{introduzione}
 
 \subsection{Scopo del Documento}
 
+Lo scopo del documento \textit{Piano di Qualifica v1.0.0} è quello di stabilire gli obbiettivi metrici da dover rispettare nello sviluppo di processi e prodotti sviluppati dal gruppo \texttt{Agents of S.W.E.} per la verifica\glossario e validazione\glossario degli stessi. In particolare verranno seguite le norme descritte nel documento \textit{Norme di Progetto v1.0.0}. Sarà compito dei verificatori del gruppo provvedere ad una continua verifica dei processi e dei prodotti in modo da ottenere incrementi parziali, fino ad arrivare alla realizzazione completa del progetto, senza l'inserimento di errori che possano compromettere il risultato finale. 
+
+\subsection{Scopo del Prodotto}
+Lo scopo del prodotto è la creazione di un plug-in per la piattaforma open source\glossario di visualizzazione e gestione dati, denominata Grafana, 
+con l'obiettivo di creare un sistema di alert dinamico per monitorare la "liveliness"\glossario del sistema a supporto dei processi
+devops\glossario e per consigliare interventi nel sistema di produzione del software.
+In particolare, il plug-in utilizzerà dati in input forniti ad intervalli regolari o con continuità, ad una rete bayesiana\glossario per stimare la probabilità di alcuni eventi, segnalandone quindi il rischio in modo dinamico, prevenendo situazioni di stallo.   
+
+\subsection{Incrementalità}
+Essendo un documento incrementale la versione 1.0.0 consegnata non è da intendersi come finale: al suo interno sono presenti solamente i contenuti riguardanti argomenti propri della fase di \textit{Avvio ed Analisi dei Requisiti}.
+Dopo un'iniziale analisi del problema, il gruppo \texttt{Agents of S.W.E.} ha deciso di stendere solamente la parte riguardante i contenuti deducibili da una prima analisi del prodotto finale.\\
+Nella fase di \textit{Progettazione Architetturale} si andranno ad inserire le metriche non ancora presenti da utilizzare per conseguire qualità di prodotto, in quanto un'analisi più approfondita delle tecnologie utilizzate porterà ad una migliore comprensione degli obiettivi desiderati in materia.
+Nel momento in cui comincerà la programmazione, verranno successivamente sviluppate le sezioni sui test.
+
 \subsection{Ambiguità e Glossario}
+I termini che potrebbero risultare ambigui all'interno del documento sono siglati tramite pedice rappresentante la lettera \textmd{G}, tale terminologia trova una sua più specifica definizione nel \textit{Glossario v1.0.0} che viene fornito tra i Documenti Esterni.
 
 \subsection{Riferimenti}
+\label{riferimenti}
+\subsubsection{Riferimenti Normativi}
+
+	\begin{itemize}
+		\item \textbf{\textit{Norme di Progetto v1.0.0}};
+		\item \textbf{Standard ISO/IEC 9126} : \\ \url{https://it.wikipedia.org/wiki/ISO/IEC_9126};
+		\item \textbf{Standard ISO/IEC 15504} : \\ \url{https://en.wikipedia.org/wiki/ISO/IEC_15504};
+	\end{itemize}
+
+
+\subsubsection{Riferimenti Informativi}
+
+	\begin{itemize}
+		\item \textbf{PDCA} :\\ \url{https://it.wikipedia.org/wiki/Ciclo_di_Deming};
+		\item \textbf{Metriche per il Software} :\\\url{https://metriche-per-il-software-pa.readthedocs.io/it/latest/documento-in-consultazione/metriche-e-strumenti.html#misurazioni-di-portabilita};
+		\item \textbf{Metriche per il Software} :\\\url{https://www.sealights.io/test-metrics/11-test-automation-metrics-and-their-pros-cons/};
+		\item \textbf{Metriche per la Scrittura} :\\\url{http://wpage.unina.it/ptramont/Download/Tesi/LAURENZAGABRIELLA.pdf};
+		\item \textbf{Tempi di Risposta} :\\\url{https://www.cdnetworks.com/it/news/6-parametri-critici-da-considerare-relativi-alle-prestazioni-delle-applicazioni-web/479};
+		\item \textbf{Indice di Gulpease}: \\ \url{https://it.wikipedia.org/wiki/Indice_Gulpease};
+		
+		
+		\item \textbf{Materiale didattico del corso di Ingegneria del Software:}
+			\begin{itemize}
+				\item \textbf{Qualità di Prodotto}: \\ \url{https://www.math.unipd.it/~tullio/IS-1/2018/Dispense/L13.pdf};
+				
+				\item \textbf{Qualità di Processo}: \\ \url{https://www.math.unipd.it/~tullio/IS-1/2018/Dispense/L15.pdf};
+				
+				\item \textbf{Verifica e Validazione: Introduzione}: \\ \url{https://www.math.unipd.it/~tullio/IS-1/2018/Dispense/L16.pdf};
+				
+				\item \textbf{Verifica e Validazione: Analisi Statica}: \\ \url{https://www.math.unipd.it/~tullio/IS-1/2018/Dispense/L17.pdf};
+				\item \textbf{Verifica e Validazione: Analisi Dinamica}: \\ \url{https://www.math.unipd.it/~tullio/IS-1/2018/Dispense/L18.pdf};
+			\end{itemize}
+			
+		\item \textbf{Materiale didattico del corso di Tecnologie Open Source\footnote{Tenuto dal Prof. Bertazzo nel corrente A.A. 2018-2019. Il materiale didattico citato è disponibile nella piattaforma di e-learning Moodle.}:}
+			\begin{itemize}
+				\item Test del software: Lezione 7;
+				\item Test di unità, Test di Integrazione e Test di Sistema: Lezione 8.
+			\end{itemize}
+	\end{itemize}

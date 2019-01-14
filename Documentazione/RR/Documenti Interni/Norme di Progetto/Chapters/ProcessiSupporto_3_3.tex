@@ -1,0 +1,120 @@
+\subsection{Versionamento}
+La necessità di più componenti del \texttt{gruppo} di cooperare su uno stesso documento, porta alla soluzione di utilizzare un sistema di versionamento distribuito. 
+
+%Per le parti in cui più componenti del \texttt{gruppo} devono cooperare sugli stessi file, 
+%Per le parti in cui più componenti del \texttt{gruppo} devono operare contemporaneamente su gli stessi file, in questa fase di \textit{RR}, si è scelto un sistema di 
+%versionamento distribuito come, \textbf{git} e col supporto hosting di \textbf{GitHub}. 
+
+\subsubsection{Controllo di versione}
+Il sistema di versionamento, utilizzato nella fase di \textbf{RR}, è \textbf{git}, con il supporto hosting di \textbf{GitHub}.
+
+	\paragraph{Struttura del repository} 
+La struttura del repository segue il workflow \textit{gitflow} di \textit{Driessen at nvie}, idealizzato attorno il concetto di \textbf{release} del prodotto. Questo produce
+un framework robusto attorno al quale si possono gestire progetti di grandi dimensioni. I due branch principali sono il \textbf{master} e in parallelo ad esso il \textbf{develop}. 
+Il \textbf{master} viene considerato il branch \textit{main}, dove il codice sorgente della testa riflette sempre lo stato di \textit{"production-ready"},
+mentre il ramo di \textbf{develop} è considerato il branch principale dove vengono effettuate le ultime modifiche per il prossimo rilascio del prodotto. 
+
+%\paragraph{Configurazione sistema}
+
+	\paragraph{Processo di implementazione}
+L'implementazione dei documenti avviene tramite gli strumenti utilizzati nel paragrafo \ref{documentazione}\\
+Quest'ultimi, in fase di compilazione producono dei file di poca rilevanza con estensioni come: \textit{.log, .out, .idx, .aux, .gz, .aux, .toc},
+i quali verranno ignorati come da configurazione, ma soprattutto file di più rilevanza
+come \textit{.pdf, .tex}, i quali verranno versionati dal sistema di git preinstallato.  
+Una volta creati/modificati i documenti, si procede con il commit\glossario di essi. Il commit riporta un \textit{cambiamento} al file,con un messaggio allegato ad esso che ne 
+descrive le modifiche apportate o un commando apposito per chiudere alcune task con tale commit. Dopo di che, il commit viene pushato\glossario nel branch appropriato, 
+a seconda dei criteri descritti nel prossimo paragrafo. 
+
+\paragraph{Ciclo di vita dei branch}
+\begin{enumerate}
+	
+	\item \textbf{Master}: branch \textit{main} del repository, esso rappresenta lo stato di \textit{"production-ready"} del prodotto. Questo branch ha una durata di vita quanto il repository stesso o infinita;
+	\item \textbf{Develop}: branch di sviluppo parallelo al \textbf{master} sul quale vengono aggiunte le feature provenienti appunto dai branch \textbf{feature},
+	 e dal quale inizia il branch di \textbf{realse}. Ha una durata di vita quanto il branch master;
+	 
+	\item \textbf{Release}: branch di preparazione per un nuovo rilascio o aggiornamento del prodotto. 
+	Utilizzato per risolvere piccoli errori e configurare le impostazioni di rilascio. Una volta rilasciato il 
+	prodotto, esso si riversa sul branch \textbf{master} e \textbf{develop}. Ha una durata breve in quanto il rilascio deve essere effettuato il prima possibile;
+
+	\item \textbf{Feature}: branch usato per sviluppare nuove feature per il prossimo rilascio a breve o lungo tempo. Il suo tempo di vita dura quanto lo sviluppo della nuova feature
+	fintanto che non avviene il merge\glossario sul branch di \textbf{develop};
+
+	\item \textbf{Hotfix}: branch molto simili a quelli di release, con l'obbiettivo di risolvere immediatamente un bug del prodotto in produzione o release. Una volta risolto il bug, 
+	esso si riversa sui branch \textbf{master} e \textbf{develop}, aggiornandoli nel minor tempo possibile. Ha un tempo di vita breve, in quanto viene creato per la necessità di risolvere 
+	un problema sul prodotto rilasciato. 
+	
+\end{enumerate}
+
+\paragraph{Rilascio di versione}
+Il rilascio di una nuova versione del prodotto avviene nel momento in cui si raggiunge un certo numero di feature implementate e testate. 
+Dal branch \textbf{develop} si avvia un processo di verifica e verifica che sfocia in una nuovo branch di \textbf{release}, il quale porta il nome della relase e che nella sua ultima fase 
+rilascia la nuova versione sul branch master e applica le modifiche effettuate nel frattempo anche nel branch di \textbf{develop}, portando i due allo stesso livello di produzione. 
+
+\subsubsection{Configurazione versionamento}
+
+\paragraph{Remoto}
+	La configurazione di \textbf{GitHub} avviene nel portale: \textit{www.github.com}, dove si inseriscono le chiavi \textbf{SSH}\glossario per ciascun collaboratore del nuovo repository. 
+	Una volta creato il repository nel server remoto ed inserite le chiavi \textbf{SSH}, si procedere con la configurazione in locale.
+	
+\paragraph{Locale}
+	In locale, si devono generare le chiavei \textbf{SSH}, le quali permettono il collegamento con li server remoto dove viene gestito il repository. 
+	Una volta generate le chiavi, seguendo le varie procedure specifiche per ogni sistema operativo, vengono caricate sul portare apposito del gestore \textbf{GitHub}.
+	L'ultima fase prevede la clonazione con il programma apposito tra i seguenti: 
+
+	\begin{itemize}
+		\item \textbf{GitHub Desktop}: gestore di versionamento a interfaccia grafica per sistemi Windows \& MacOS; 
+		\item \textbf{GitKraken}: gestore di versionamento a interfaccia grafica per sistemi Windows, MacOS \& Linux; 		
+		\item \textbf{Terminale(Bash)}: gestore di versionamento a riga di commando per i sistemi MacOS \& Linux.
+	\end{itemize}
+		
+\subsection{Gestione di progetto}
+La gestione di progetto avviene tramite un sistema di task integrato nel servizio di hosting \textbf{GitHub}. 
+Esso permette l'integrazione delle task con il repository stesso, dando la possibilità ai vari commit di chiudere con comandi appositi determinate task, 
+aumentando cosi l'automazione di tutto il processo. 
+
+\subsubsection{Configurazione strumenti di organizzazione}
+	La configurazione di tutto il processo di organizzazione avviene nel portale di \textbf{GitHub}, dove si crea una project board per ogni categoria di processo. 	
+
+	\paragraph{Inizializzazione}
+	L'inizializzazione della project board avviene tramite un istanza vuota oppure selezionando un template di ciclo di vita fornito da \textbf{GitHub} 
+	largamente utilizzate in molti progetti, quindi testate ed affidabili. Tra i template forniti abbiamo: 
+
+	\begin{itemize}
+		\item \textbf{Basic Kanban}: presenta le fasi di \textit{ToDo, In Progress, e Done}; 
+		\item \textbf{Automated Kanban}: presenta trigger\glossario predefiniti che permettono lo spostamento di task automatici nei vari cicli di vita, utilizzando il meccanismo di chiusura 
+		dei commit;
+		\item \textbf{Automated Kanban with Reviews}: tutto cioè che viene incluso nel template \textit{"Automated Kanban"} con l'aggiunta di trigger 
+		aggiuntivi per la revisione di nuove componenti; 
+		\item \textbf{Bug Triage}: template centrato sulla gestione degli errori, fornendo un ciclo di vita per essi che varia tra \textit{ToDo, Alta Priorità, Bassa Priorità e Chiusi}. 
+	\end{itemize}
+	  	
+	\paragraph{Aggiunta milestones}
+	Le milestones sono gruppi di task mirate a un obbiettivo comune tra esse.
+	Possono essere aggiunte in qualsiasi momento, sia prima che dopo la creazione di una task.
+
+\subsubsection{Ciclo di vita delle tasks}
+
+	\paragraph{Apertura}
+	Da una specifica project board si possono creare le task o le issue\glossario, le quali possono essere assegnate a uno o più individui che collaborano al repository, inoltre ogni task
+	può far parte di una milestone\glossario, che raggruppa un insieme di task o issue per il raggiungimento di un obbiettivo in comune. 
+	Inoltre ad ognuna di essere può essere assegnato un colore che ne identifica il tipo come per esempio: \textit{bug, ToDo, miglioramenti, ecc...}. 
+	Si può creare una nuova task senza l'obbligo di assegnarla a una project board, mantenendo comunque tutte le funzionalità descritte prima. 
+
+	\paragraph{Completamento}
+	Il completamento di una task avviene in diversi modi, a seconda delle impostazioni di project board. 
+	Se la project board e automatizzata, il completamento di una task può avvenire tramite commit utilizzando il codice di chiusura. 
+	Questo metodo collega direttamente l'implementazione richiesta alla task. 
+	Se la project board non è automatizzata, il completamento dalla task deve essere manuale spostandola nello stato di \textit{Concluso}. 
+	
+	\paragraph{Richiesta di revisione}
+	Accumulate un certo numero di task o di milestones, si avvia la procedura di revisione da parte del verificatore. Questa può essere notificata e pianificata in modo automatico
+	a seconda del livello di automatizzazione della project board, oppure può essere totalmente gestita dal verificatore. 
+	
+	\paragraph{Chiusura}
+	Una volta che le task o le milestones sono state approvate dal verificatore, esse concludono il loro ciclo di vita nello stato di chiusura, le quali verranno spostate manualmente dal 
+	verificatore o automaticamente dalla project board se il merge è avvenuto con successo. 
+	
+	\paragraph{Riapertura}
+	Le task in stato di \textit{"Chiusura"} possono essere riaperte e spostate nello stato di \textit{"Apertura"} se esse in un lungo periodo non soddisfanno certi parametri di qualità
+	richiesti. 
+	

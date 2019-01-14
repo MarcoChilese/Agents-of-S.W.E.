@@ -1,0 +1,139 @@
+\section{Qualità di Processo}
+\label{qualitaProcesso}
+
+\subsection{Scopo}
+
+La seguente sezione si prefigge lo scopo di esporre le tecniche che verranno utilizzate durante lo svolgimento del progetto, al fine di garantire la qualità dei processi istanziati durante il suo sviluppo. In particolar modo si farà riferimento al Principio di Miglioramento Continuo, denominato PDCA\glossario\footnote{\url{https://it.wikipedia.org/wiki/Ciclo_di_Deming}}, e verrà seguito lo standard ISO/IEC 15504, comunemente conosciuto con l'acronimo SPICE\glossario\footnote{\url{https://en.wikipedia.org/wiki/ISO/IEC_15504}} (Software Process Improvement and Capability Determination).\\
+Al fine di garantire migliore qualità nei processi interni al gruppo, si è deciso di valutare i processi attivi seguendo il Capability Maturity Model Integration(CMMI) descritto nel documento \textit{Norme di Progetto v1.0.0} all'appendice C.
+
+\subsection{Processi}
+\subsubsection{Gestione del Progetto e dei Processi} 
+
+Questo processo si prefigge di descrivere le modalità con le quali il gruppo \texttt{Agents of S.W.E.} intende organizzarsi per lo svolgimento del progetto. In esso sono racchiuse le seguenti attività:
+\begin{itemize}
+	\item Scelta del modello del ciclo di vita del prodotto;
+	\item Descrizione delle attività da svolgere;
+	\item Descrizione dei compiti;
+	\item Pianificazione del lavoro in termini di tempo;
+	\item Pianificazione dei costi;
+	\item Assegnazione dei compiti;
+	\item Verifica del soddisfacimento degli obiettivi.
+\end{itemize}
+
+\paragraph{PR01: Gestione dei Task} \-\\
+È rilevante l'adempimento dei task\glossario assegnati entro i tempi prestabiliti. Per far ciò, nella fase di pianificazione, si sono scelte delle date entro le quali è preferibile e consigliabile completare i task assegnati. Tuttavia è comunque accettabile l'adempimento di un task a priorità minore oltre i limiti prefissati, se e solo se il ritardo è dovuto al completamento di un task a priorità maggiore.\\
+Per far ciò si è scelto di utilizzare la metrica Schedule Variance (SV), descritta nel documento \textit{Norme di Progetto v1.0.0}, all'interno della sezione §3.2.5.1.
+
+\begin{longtable}{|C{.15\textwidth}|C{.24\textwidth}|C{.24\textwidth}|C{.24\textwidth}|}
+\hline
+\rowcolor{bluelogo}\textbf{\textcolor{white}{ID}} & \textbf{\textcolor{white}{Nome}} & \textbf{\textcolor{white}{Ottimalità}} & \textbf{\textcolor{white}{Accettabilità}}\\
+\hline \hline
+\endfirsthead
+MTPC01 & Schedule Variance (SV) & $\leqslant 0$ giorni & $\leqslant +3$ giorni \\
+\hline
+\caption{Gestione dei Tempi}
+\label{GestioneTempi}
+\end{longtable}
+
+\paragraph{PR02: Gestione dei Costi} \-\\
+Per la gestione dei costi del progetto il gruppo ha deciso di utilizzare l'indice Budget Variance (BV), grazie al quale il gruppo sarà in grado di non superare i costi precedentemente preventivati. 
+
+\begin{longtable}{|C{.15\textwidth}|C{.24\textwidth}|C{.24\textwidth}|C{.24\textwidth}|}
+\hline
+\rowcolor{bluelogo}\textbf{\textcolor{white}{ID}} & \textbf{\textcolor{white}{Nome}} & \textbf{\textcolor{white}{Ottimalità}} & \textbf{\textcolor{white}{Accettabilità}}\\
+\hline \hline
+\endfirsthead
+MTPC02 & Budget Variance (BV) & $\leqslant 0\% $ & $\leqslant 5\%$ \\
+\hline
+\rowcolor{grigio} MTPC03 & Estimated at Completion (EAC) & $\leqslant 0\% $ & $\leqslant 5\%$ \\
+\hline
+\iffalse
+MTPC04 & Cost Variance (CV) & $\leqslant 0\% $ & $ \leqslant -5\%$ \\
+\hline
+\fi
+\caption{Gestione dei Costi}
+\label{GestioneCosti}
+\end{longtable}
+
+\paragraph{PR03: Verifica del Software}\-\\
+\label{VerificaSoftwareCap}
+Questo processo ha lo scopo di verificare che i requisiti software precedentemente stabiliti vengano rispettati. È inoltre suo compito verificare che vengano soddisfatti tutti i requisiti precedentemente fissati nel documento \textit{Analisi dei Requisiti v1.0.0}.\\
+Verranno utilizzati i seguenti indici descritte all'interno del documento \textit{Norme di Progetto v1.0.0}:
+\begin{itemize}
+	\item Function Coverage (FC);
+	\item Statement Coverage (SC);
+	\item Branch Coverage (BC);
+	\item Condition Coverage (CC).
+\end{itemize}
+
+\begin{longtable}{|C{.15\textwidth}|C{.24\textwidth}|C{.24\textwidth}|C{.24\textwidth}|}
+\hline
+\rowcolor{bluelogo}\textbf{\textcolor{white}{ID}} & \textbf{\textcolor{white}{Nome}} & \textbf{\textcolor{white}{Ottimalità}} & \textbf{\textcolor{white}{Accettabilità}}\\
+\hline \hline
+\endfirsthead
+MTPC04 & Function Coverage (FC) & 100\% & $\geqslant 95\%$ \\
+\hline
+\rowcolor{grigio} MTPC05 & Statement Coverage (SC) & 100\% & $\geqslant 95\%$ \\
+\hline
+MTPC06 & Branch Coverage (BC) & 100\% & $\geqslant 95\%$ \\
+\hline
+\rowcolor{grigio}MTPC07 & Condition Coverage (CC) & 100\% & $\geqslant 95\%$ \\
+\hline
+\caption{Verifica del Software}
+\label{VerificaSoftware}
+\end{longtable}
+
+\paragraph{PR04: Gestione dei Rischi}\-\\
+Il suo scopo è quello del continuo monitoraggio, della continua identificazione, scoperta dei rischi che incorrono o che posso incorrere durante lo svolgimento del progetto e la loro risoluzione qualora si verifichino. 
+\begin{itemize}
+	\item \textbf{Analisi dei Rischi}: all'inizio di ogni nuova fase verranno rianalizzati i precedenti rischi e verranno incrementati se necessario;
+	\item \textbf{Risoluzione dei Rischi}: nel momento in cui si dovesse verificare un rischio, il gruppo deve essere in grado di risolverlo in un tempo ragionevole, evitando cospicui ritardi.
+\end{itemize}
+
+\begin{longtable}{|C{.15\textwidth}|C{.24\textwidth}|C{.24\textwidth}|C{.24\textwidth}|}
+\hline
+\rowcolor{bluelogo}\textbf{\textcolor{white}{ID}} & \textbf{\textcolor{white}{Nome}} & \textbf{\textcolor{white}{Ottimalità}} & \textbf{\textcolor{white}{Accettabilità}}\\
+\hline \hline
+\endfirsthead
+MTPC08 & Rischi non Preventivati & 0 & $ \leqslant +4$ rischi \\
+\hline
+\caption{Gestione dei Rischi}
+\label{GestioneRischi}
+\end{longtable}
+
+\paragraph{PR05: Gestione dei Test}\-\\
+Questa sezione riguarda le metriche di qualità decise per la realizzazione dei test e del loro svolgimento. 
+
+\begin{itemize}
+	\item Percentuale di test passati;
+	\item Percentuale di test falliti;
+	\item Percentuale di difetti sistemati;
+	\item Tempo medio di risoluzione degli errori;
+	\item Numero medio di bug trovati per test;
+	\iffalse \item Difetti trovati per requisito. \fi
+\end{itemize}
+
+\begin{longtable}{|C{.15\textwidth}|C{.24\textwidth}|C{.24\textwidth}|C{.24\textwidth}|}
+\hline
+\rowcolor{bluelogo}\textbf{\textcolor{white}{ID}} & \textbf{\textcolor{white}{Nome}} & \textbf{\textcolor{white}{Ottimalità}} & \textbf{\textcolor{white}{Accettabilità}}\\
+\hline \hline
+\endfirsthead
+MTSA09 & Percentuale di test passati & 100\% & $\geq 95$\%\\
+\hline
+\rowcolor{grigio}MTSA10 & Percentuale di test falliti & 0\% & $\leq 95$\%\\
+\hline
+MTSA11 & Percentuale di difetti sistemati & 100\% & $\geq 95$\%\\
+\hline
+\rowcolor{grigio}MTSA12 & Tempo medio di risoluzione degli errori & $\leq 10$ minuti & $\leq 120$ minuti\\
+\hline
+MTSA13 & Numero medio di bug trovati per test & $\leq 1$ & 0.2$\leq$x$\leq 10$ \\
+\hline
+
+\iffalse
+\rowcolor{grigio}MTSA15 & Difetti trovati per requisito & $\leq 10$ minuti & $\leq 120$ minuti\\
+\hline
+\fi
+
+\caption{Gestione dei Test}
+\label{GestioneTest}
+\end{longtable}
