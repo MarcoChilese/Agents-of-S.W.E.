@@ -30,3 +30,9 @@
 - Responsabile: Bogdan Stanciu
 - Verificatore: Marco C., Carlotta
 - Analista: Diego, Marco F., Matteo
+
+### WHO 
+- Bogdan Stanciu
+- Marco Chilese 
+- Luca Violato 
+- Marco Favaro 
