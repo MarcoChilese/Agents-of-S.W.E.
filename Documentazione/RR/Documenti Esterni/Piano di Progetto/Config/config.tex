@@ -36,13 +36,25 @@
 \renewcommand{\footrulewidth}{0.4pt}
 \newcommand{\glossario}{\textsubscript{G} }
 
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+ 
 \pagestyle{fancy}
+
+\fancyhf{}
+
+\lhead{\includegraphics[scale=0.08]{./images/logo.png}}
+\rhead{\rightmark}
+
+\lfoot{Piano di Progetto}
+\cfoot{}
+\rfoot{Pagina \thepage \hspace{1pt} di \pageref{LastPage}}
 
 \makeindex
 \setcounter{secnumdepth}{4}
 \setcounter{tocdepth}{4}
 
-\lhead{\includegraphics[scale=0.08]{./images/logo.png}}
+%\lhead{\includegraphics[scale=0.08]{./images/logo.png}}
 %\usepackage[headheight=2cm, headsep=0.5cm, a4paper, margin=3cm]{geometry}
 
 \newcolumntype{C}[1]{>{\centering\arraybackslash}m{#1}}
