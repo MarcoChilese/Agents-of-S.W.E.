@@ -36,3 +36,6 @@
 - Marco Chilese 
 - Luca Violato 
 - Marco Favaro 
+
+Glossario to add:
+influxdb, telegraf
