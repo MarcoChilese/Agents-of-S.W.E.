@@ -28,12 +28,24 @@
 \renewcommand\UrlFont{\color{blue}\rmfamily\itshape} %Forzato colore blu su tutti i link ESTERNI
 
 
-\lhead{\includegraphics[scale=0.08]{./images/logo.png}}
+%\lhead{\includegraphics[scale=0.08]{./images/logo.png}}
 
 \renewcommand{\footrulewidth}{0.4pt}
 \newcommand{\glossario}{\textsubscript{G} }
 
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+ 
 \pagestyle{fancy}
+
+\fancyhf{}
+
+\lhead{\includegraphics[scale=0.08]{./images/logo.png}}
+\rhead{\rightmark}
+
+\lfoot{Piano di Qualifica}
+\cfoot{}
+\rfoot{Pagina \thepage \hspace{1pt} di \pageref{LastPage}}
 
 \usepackage[dvipsnames,table]{xcolor}
 \definecolor{bluelogo}{HTML}{415A66}
