@@ -23,3 +23,10 @@
 - Responsabile: Carlotta
 - Verificatore: Marco F., Diego
 - Analista: Luca, Marco C., Bogdan
+
+
+### Ruoli (3) Risanamento
+- Amministratore: Luca Violato
+- Responsabile: Bogdan Stanciu
+- Verificatore: Marco C., Carlotta
+- Analista: Diego, Marco F., Matteo
