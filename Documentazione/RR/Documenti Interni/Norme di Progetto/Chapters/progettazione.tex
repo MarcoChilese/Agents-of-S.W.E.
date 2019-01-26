@@ -1,4 +1,4 @@
-\paragraph{Scopo}
+\paragraph{Scopo}\label{Progettazione_Scopo}
 L'attività di Progettazione consiste nel descrivere una soluzione che sia soddisfacente per gli stakeholder\glossario È compito dei Progettisti svolgere tale attività, definendo l'architettura del prodotto finale, mantenendo chiare e riusabili le componenti, restando nei costi prefissati.\\
 L'architettura definita dovrà quindi:
 \begin{itemize}
@@ -7,7 +7,7 @@ L'architettura definita dovrà quindi:
 	\item Essere robusta riuscendo a gestire situazioni d'errore improvvise.
 \end{itemize}
 
-\paragraph{Sviluppo}
+\paragraph{Sviluppo}\label{Progettazione_Sviluppo}
 Lo sviluppo di \textit{G\&B} avviene seguendo il modello incrementale, spiegato nel dettaglio nel documento \textit{Piano di Progetto} alla sezione §4.\\
 La proponente nel capitolato d'appalto pone un singolo vincolo riguardo le tecnologie da utilizzare:
 \begin{itemize}
@@ -29,12 +29,12 @@ Tuttavia, ai fini della realizzazione del prodotto finale, il team \texttt{Agent
 \end{figure}
 
 
-\paragraph{Integrazione}
+\paragraph{Integrazione}\label{Progettazione_Integrazione}
 L'attività di integrazione sarà effettuata utilizzando il servizio compatibile con GitHub\glossario\footnote{\url{https://github.com}}, Travis CI\glossario\footnote{\url{https://travis-ci.org/}}.\\
 Questo servizio implementa un modello di integrazione continua, ad ogni commit\glossario nel repository\glossario, Travis CI creerà automaticamente la build ed andrà ad eseguire i test di unità. In questo modo è possibile rilevare tempestivamente eventuali errori.\\
 Per quanto riguarda il code coverage\glossario si utilizzerà un servizio compatibile con GitHub: Codecov\glossario\footnote{\url{https://codecov.io/}}.
 
-\paragraph{Diagrammi}
+\paragraph{Diagrammi}\label{Progettazione_Diagrammi}
 Per rendere più chiare le scelte progettuali adottate, si farà largo uso di diagrammi UML 2.0\glossario. Essi potranno essere di diversi tipi:
 \begin{itemize}
 	\item Diagrammi dei casi d'uso: dedicati alle funzionalità offerte dal sistema;
@@ -44,4 +44,11 @@ Per rendere più chiare le scelte progettuali adottate, si farà largo uso di di
 	\item Diagrammi di attività: dedicati ala descrizione della logica procedurale.
 \end{itemize}
 
-\paragraph{Obiettivi della progettazione}
+\paragraph{Obiettivi della progettazione}\label{Progettazione_Obiettivi}
+La Progettazione serve per garantire che il prodotto sviluppato soddisfi le proprietà ed i requisiti delineati durante l'attività di analisi, ponendosi come obiettivi:
+\begin{itemize}
+	\item Garantire la qualità di prodotto sviluppato, perseguendo la correttezza percostruzione;
+	\item Rendere chiara e comprensibile l'architettura progettata per gli stakeholder;
+	\item Mantenere bassa la dipendenza tra le varie parti del prodotto favorendo la modularità ed il riuso;
+	\item Ottimizzare l'uso delle risorse.
+\end{itemize}
