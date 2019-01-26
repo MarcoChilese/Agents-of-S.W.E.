@@ -59,7 +59,7 @@ framexleftmargin=15pt}
 \hypersetup{linkcolor= blue}
 \renewcommand\UrlFont{\color{blue}\rmfamily\itshape} %Forzato colore blu su tutti i link ESTERNI
 
-\lhead{\includegraphics[scale=0.08]{./images/logo.png}}
+%\lhead{\includegraphics[scale=0.08]{./images/logo.png}}
 
 \renewcommand{\footrulewidth}{0.4pt}
 \newcommand{\glossario}{\textsubscript{G} }
@@ -69,7 +69,19 @@ framexleftmargin=15pt}
 
 \usepackage{makecell}
 
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+ 
 \pagestyle{fancy}
+
+\fancyhf{}
+
+\lhead{\includegraphics[scale=0.08]{./images/logo.png}}
+\rhead{\rightmark}
+
+\lfoot{Norme di Progetto}
+\cfoot{}
+\rfoot{Pagina \thepage \hspace{1pt} di \pageref{LastPage}}
 
 \makeindex
 \setcounter{secnumdepth}{4}
