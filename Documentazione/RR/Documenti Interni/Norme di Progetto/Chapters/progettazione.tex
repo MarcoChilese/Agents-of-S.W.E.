@@ -1,4 +1,11 @@
 \paragraph{Scopo}
+L'attività di Progettazione consiste nel descrivere una soluzione che sia soddisfacente per gli stakeholder\glossario È compito dei Progettisti svolgere tale attività, definendo l'architettura del prodotto finale, mantenendo chiare e riusabili le componenti, restando nei costi prefissati.\\
+L'architettura definita dovrà quindi:
+\begin{itemize}
+	\item Soddisfare i requisiti\glossario definiti nel \textit{Analisi dei Requisiti};
+	\item Essere comprensibile e modulare;
+	\item Essere robusta riuscendo a gestire situazioni d'errore improvvise.
+\end{itemize}
 
 \paragraph{Sviluppo}
 Lo sviluppo di \textit{G\&B} avviene seguendo il modello incrementale, spiegato nel dettaglio nel documento \textit{Piano di Progetto} alla sezione §4.\\
@@ -16,15 +23,25 @@ Tuttavia, ai fini della realizzazione del prodotto finale, il team \texttt{Agent
 
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[scale=0.25]{./images/influxTelegraf.jpg}
+		\includegraphics[scale=0.4]{./images/influxTelegraf.jpg}
 		\caption{Rappresentazione del funzionamento di Telegraf e InfluxDB. Immagine dal sito web del produttore: \url{https://www.influxdata.com/time-series-platform/telegraf}}
 	\end{center}
 \end{figure}
 
 
-
 \paragraph{Integrazione}
+L'attività di integrazione sarà effettuata utilizzando il servizio compatibile con GitHub\glossario\footnote{\url{https://github.com}}, Travis CI\glossario\footnote{\url{https://travis-ci.org/}}.\\
+Questo servizio implementa un modello di integrazione continua, ad ogni commit\glossario nel repository\glossario, Travis CI creerà automaticamente la build ed andrà ad eseguire i test di unità. In questo modo è possibile rilevare tempestivamente eventuali errori.\\
+Per quanto riguarda il code coverage\glossario si utilizzerà un servizio compatibile con GitHub: Codecov\glossario\footnote{\url{https://codecov.io/}}.
 
 \paragraph{Diagrammi}
+Per rendere più chiare le scelte progettuali adottate, si farà largo uso di diagrammi UML 2.0\glossario. Essi potranno essere di diversi tipi:
+\begin{itemize}
+	\item Diagrammi dei casi d'uso: dedicati alle funzionalità offerte dal sistema;
+	\item Diagrammi delle classi: dedicati alla descrizione degli oggetti che fanno parte del sistema, e le loro dipendenze;
+	\item Diagrammi dei package: dedicati alla descrizione delle dipendenze tra gli oggetti raggruppati in un package;
+	\item Diagrammi di sequenza: dedicati alla descrizione della collaborazione nel tempo tra un gruppo di oggetti;
+	\item Diagrammi di attività: dedicati ala descrizione della logica procedurale.
+\end{itemize}
 
 \paragraph{Obiettivi della progettazione}
