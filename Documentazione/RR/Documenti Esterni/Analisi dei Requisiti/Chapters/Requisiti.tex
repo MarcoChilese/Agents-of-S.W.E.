@@ -25,29 +25,39 @@ RFF1.4.2 & Il Sistema deve visualizzare un messaggio di errore nel caso in cui l
 \hline
 ROF2.1 & Il Sistema deve mostrare una lista di nodi della rete bayesiana caricata & Obbligatorio & UC2\\
 \hline
+\rowcolor{grigio}ROF2.1.1 & Il Sistema deve mostrare, per ogni nodo, il nominativo dello stesso & Obbligatorio & UC2\\
+\hline
+ROF2.1.2 & Il Sistema deve mostrare, per ogni nodo, una corrispondente checkbox che identifichi lo stato dello stesso: Collegato ad un flusso dati oppure no & Obbligatorio & UC2\\
+\hline
 \rowcolor{grigio}ROF2.2 & Il Sistema deve mettere a disposizione dell'utente una lista di flussi dati a cui collegare i nodi desiderati & Obbligatorio & UC2\\
+\hline
+ROF2.2.1 & Il Sistema, in seguito al click dell'utente su un nominativo, deve aprire una finestra contente un elenco dei flussi dati disponibili per il collegamento & Obbligatorio & UC2\\
+\hline
+\rowcolor{grigio}ROF2.2.2 & L'Utente deve poter cliccare il flusso dati desiderato per il collegamento & Obbligatorio & UC2\\
 \hline
 ROF2.3 & Il Sistema deve mettere a disposizione dell'utente un bottone per confermare il collegamento dei nodi & Obbligatorio & UC2\\
 \hline
 \rowcolor{grigio}ROF2.4 & Il Sistema deve visualizzare un messaggio di errore nel caso in cui l'utente abbia confermato il collegamento dei nodi senza averne effettivamente collegato alcuno & Obbligatorio & UC2 UC9\\
 \hline
-ROF3 & L'utente deve poter impostare una policy per il ricalcolo delle probabilità nella rete & Obbligatorio & UC3\\
+ROF2.5 & Il Sistema deve aggiornare la lista di checkbox, registrando il nuovo stato di ogni nodo (collegato o meno ad un flusso dati) & Obbligatorio & UC2\\
 \hline
-\rowcolor{grigio}ROF3.1 & L'utente deve avere la possibilità di impostare una policy esistente ad una rete bayesiana  & Obbligatorio & UC3\\ 
+\rowcolor{grigio}ROF3 & L'utente deve poter impostare una policy per il ricalcolo delle probabilità nella rete & Obbligatorio & UC3\\
 \hline
-ROF3.2 & L'utente deve avere la possibilità di creare una nuova policy da aggiungere ad una rete bayesiana & Obbligatorio & UC3\\
+ROF3.1 & L'utente deve avere la possibilità di impostare una policy esistente ad una rete bayesiana  & Obbligatorio & UC3\\ 
 \hline
-\rowcolor{grigio}ROF4 & Il Sistema deve fornire i dati relativi ai nodi della rete bayesiana non collegati al flusso & Obbligatorio & UC4\\
+\rowcolor{grigio}ROF3.2 & L'utente deve avere la possibilità di creare una nuova policy da aggiungere ad una rete bayesiana & Obbligatorio & UC3\\
 \hline
-ROF4.1 & Il Sistema deve fornire all'utente una lista di probabilità dinamiche associate ai nodi della rete & Obbligatorio & UC4\\
+ROF4 & Il Sistema deve fornire i dati relativi ai nodi della rete bayesiana non collegati al flusso & Obbligatorio & UC4\\
 \hline
-\rowcolor{grigio}ROF4.2 & Il Sistema deve aggiornare periodicamente le probabilità in base a quanto definito come policy per il ricalcolo delle probabilità & Obbligatorio & UC4\\
+\rowcolor{grigio}ROF4.1 & Il Sistema deve fornire all'utente una lista di probabilità dinamiche associate ai nodi della rete & Obbligatorio & UC4\\
 \hline
-ROF4.3 & Il Sistema deve mettere a disposizione di \textit{Grafana} i dati per l'operazione di creazione di alert ad essi associati da parte dell'utente & Obbligatorio & UC5\\
+ROF4.2 & Il Sistema deve aggiornare periodicamente le probabilità in base a quanto definito come policy per il ricalcolo delle probabilità & Obbligatorio & UC4\\
 \hline
-\rowcolor{grigio}ROF5 & Il Sistema deve mostrare all'utente gli alert associati al flusso di dati collegato alla rete bayesiana & Obbligatorio & UC7\\ 
+\rowcolor{grigio}ROF4.3 & Il Sistema deve mettere a disposizione di \textit{Grafana} i dati per l'operazione di creazione di alert ad essi associati da parte dell'utente & Obbligatorio & UC5\\
 \hline
-ROF5.1 & L'utente deve poter rimuovere gli alert associati ai nodi della rete bayesiana & Obbligatorio & UC6\\ 
+ROF5 & Il Sistema deve mostrare all'utente gli alert associati al flusso di dati collegato alla rete bayesiana & Obbligatorio & UC7\\ 
+\hline
+\rowcolor{grigio}ROF5.1 & L'utente deve poter rimuovere gli alert associati ai nodi della rete bayesiana & Obbligatorio & UC6\\ 
 \hline
 \caption{Requisiti Funzionali}
 \end{longtable}
@@ -112,7 +122,7 @@ Piattaforma \textit{Grafana} & \makecell{ROV1}\\
 \hline
 \rowcolor{grigio}UC1 & \makecell{ROF1\\ROF1.1\\ROF1.2\\ROF1.3\\ROF1.4\\RFF1.4.1\\RFF1.4.2}\\
 \hline
-UC2 & \makecell{ROF2\\ROF2.1\\ROF2.2\\ROF2.3\\ROF2.4}\\
+UC2 & \makecell{ROF2\\ROF2.1\\ROF2.1.1\\ROF2.1.2\\ROF2.2\\ROF2.2.1\\ROF2.2.2\\ROF2.3\\ROF2.4\\ROF2.5}\\
 \hline
 \rowcolor{grigio}UC3 & \makecell{ROF3\\ROF3.1\\ROF3.2}\\
 \hline
@@ -140,7 +150,7 @@ UC8 & \makecell{ROF1.4\\RFF1.4.1\\RFF1.4.2}\\
 \rowcolor{bluelogo}\textbf{\textcolor{white}{Tipologia}} & \textbf{\textcolor{white}{Obbligatorio}} & \textbf{\textcolor{white}{Opzionale}} & \textbf{\textcolor{white}{Desiderabile}} & \textbf{\textcolor{white}{Totale}}\\
 \hline \hline
 \endhead
-Funzionale & 19 & 2 & 0 & 21\\
+Funzionale & 24 & 2 & 0 & 26\\
 \hline
 \rowcolor{grigio}Di Qualità & 5 & 0 & 2 & 7\\
 \hline

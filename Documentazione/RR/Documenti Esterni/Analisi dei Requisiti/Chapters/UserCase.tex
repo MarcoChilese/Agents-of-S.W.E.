@@ -93,35 +93,57 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 \begin{itemize}
 \item \textbf{Attore primario}: Utente;
 \item \textbf{Precondizione}: l'utente ha caricato con successo la rete bayesiana (\hyperref[UC1]{UC1 (§\ref*{UC1})});
-\item \textbf{Postcondizione}: l'utente ha collegato con successo i nodi desiderati della rete bayesiana caricata in \hyperref[UC1]{UC1 (§\ref*{UC1})};
+\item \textbf{Postcondizione}: L'utente ha collegato con successo i nodi desiderati della rete bayesiana caricata in \hyperref[UC1]{UC1 (§\ref*{UC1})};
 \item \textbf{Scenario principale}:
 	\begin{enumerate}
-	\item L'utente collega i nodi desiderati ad un flusso dati (\hyperref[UC2.1]{UC2.1 (§\ref*{UC2.1})});
-	\item L'utente conferma il collegamento dei nodi (\hyperref[UC2.2]{UC2.2 (§\ref*{UC2.2})}).
+	\item (\hyperref[UC2.1]{UC2.1 (§\ref*{UC2.1})}) L'utente visualizza la lista di nodi che costituisce la rete bayesiana caricata in \hyperref[UC1]{UC1(§\ref*{UC1})};
+	\item (\hyperref[UC2.2]{UC2.2 (§\ref*{UC2.2})}) L'utente collega i nodi desiderati ad un flusso dati;
+	\item (\hyperref[UC2.3]{UC2.3 (§\ref*{UC2.3})}) L'utente conferma il collegamento dei nodi.
 	\end{enumerate}
-\item \textbf{Estensioni}: \hyperref[UC9]{UC9 (§\ref*{UC9})} estende \hyperref[UC2.2]{UC2.2 (§\ref*{UC2.2})}: l'utente visualizza un messaggio di errore nel caso in cui non abbia collegato alcun nodo al flusso dati.
+\item \textbf{Estensioni}: \hyperref[UC9]{UC9 (§\ref*{UC9})} estende \hyperref[UC2.3]{UC2.3 (§\ref*{UC2.3})}: l'utente visualizza un messaggio di errore nel caso in cui non abbia collegato alcun nodo al flusso dati.
 \end{itemize}
 
-\paragraph{UC2.1 - Selezione flusso di dati per ogni nodo}\label{UC2.1}
+\paragraph{UC2.1 - Visualizzazione lista di nodi della rete bayesiana e rispettivo stato}\label{UC2.1}
+\begin{itemize}
+\item \textbf{Attore primario:}  Utente
+\item \textbf{Precondizione:} L'utente ha caricato con successo la rete bayesiana (\hyperref[UC1]{UC1 									(§\ref*{UC1})});
+\item \textbf{Postcondizione:} L'utente visualizza la lista di nodi di cui la rete bayesiana è costituita, viene 			inoltre visualizzato lo stato di ogni nodo (collegato ad un flusso dati oppure no);
+\item \textbf{Scenario Principale:}
+	\begin{enumerate}
+	\item L'ultente visualizza una lista contente i nominativi associati ad ogni nodo della rete bayesiana caricata 				in \hyperref[UC1]{UC1(§\ref*{UC1})};
+	\item L'utente visualizza, accanto ai nominativi dei nodi, una lista di checkbox associate. Tali checkbox 							rappresentano lo stato del nodo a cui sono associate: "V" nel caso il nodo sia collegato ad un flusso dati, "X" 		altrimenti.
+	\end{enumerate}
+\end{itemize}
+
+\paragraph{UC2.2 - Selezione flusso di dati per ogni nodo}\label{UC2.2}
 \begin{itemize}
 \item \textbf{Attore primario}: Utente;
-\item \textbf{Precondizione}: l'utente ha caricato con successo la rete bayesiana (\hyperref[UC1]{UC1 (§\ref*{UC1})});
-\item \textbf{Postcondizione}: l'utente ha selezionato il flusso dati opportuno per ogni nodo che desidera collegare alla rete bayesiana;
+\item \textbf{Precondizioni}: 
+\begin{enumerate}
+	\item L'utente ha caricato con successo la rete bayesiana (\hyperref[UC1]{UC1(§\ref*{UC1})});
+	\item L'utente ha visualizzato la lista di nodi di cui la rete bayesiana è costituita ed il corrispondente stato 			(\hyperref[UC2.1]{UC2.1 (§\ref*{UC2.1})}).
+\end{enumerate}
+\item \textbf{Postcondizione}: L'utente ha collegato ogni nodo che desidera ad uno e un solo flusso dati;
 \item \textbf{Scenario Principale}:
  \begin{enumerate}
- \item L'utente seleziona, tramite click, la checkbox corrispondente al nodo che desidera collegare ad un determinato flusso dati;
- \item L'utente visualizza, a seguito del click precedente, una tendina a comparsa contente i possibili flussi dati a cui collegare il nodo;
- \item L'utente seleziona, tramite click, il flusso dati opportuno a cui collegare il nodo selezionato in precedenza.
+ \item L'utente clicca con il cursore il nominativo corrispondente al nodo che desidera collegare ad un determinato 		flusso dati;
+ \item L'utente visualizza, a seguito del click precedente, una tendina a comparsa contente i possibili flussi dati 		a cui collegare il nodo selezionato;
+ \item L'utente seleziona, tramite click, il flusso dati opportuno (non sono disponibile scelte multiple) a cui 					collegare il nodo selezionato in precedenza;
+ \item L'utente ripete i passaggi precedenti per ogni nodo che desidera collegare ad un flusso dati di 									monitoraggio.
  \end{enumerate}
 \end{itemize}
 
-\paragraph{UC2.2 - Conferma collegamento}\label{UC2.2}
+\paragraph{UC2.3 - Conferma collegamento}\label{UC2.3}
 \begin{itemize}
 \item \textbf{Attore primario}: Utente;
-\item \textbf{Precondizione}: l'utente ha caricato con successo la rete bayesiana (\hyperref[UC1]{UC1 (§\ref*{UC1})});
-\item \textbf{Postcondizione}: l'utente ha collegato con successo i nodi desiderati della rete bayesiana caricata in \hyperref[UC1]{UC1 (§\ref*{UC1})} ai rispettivi flussi dati;
-\item \textbf{Scenario Principale:} l'utente conferma le proprie scelte (\hyperref[UC2.1]{UC2.1 (§\ref*{UC2.1})}) cliccando il pulsante "Conferma";
-\item \textbf{Estensioni}: \hyperref[UC9]{UC9 (§\ref*{UC9})}: l'utente visualizza un messaggio di errore nel caso in cui non abbia collegato alcun nodo al flusso dati.
+\item \textbf{Precondizione}: L'utente ha caricato con successo la rete bayesiana (\hyperref[UC1]{UC1 (§\ref*{UC1})});
+\item \textbf{Postcondizioni}: 
+	\begin{enumerate}
+	\item L'utente ha collegato con successo i nodi desiderati della rete bayesiana caricata in \hyperref[UC1]{UC1 				(§\ref*{UC1})} ai rispettivi flussi dati;
+	\item La corrispondente checkbox di ogni nodo viene marcata con una "V" se questo è stato collegato dall'utente 				ad un flusso dati, viene invece marcata con una "X" altrimenti.
+	\end{enumerate}
+\item \textbf{Scenario Principale:} l'utente conferma le proprie scelte (\hyperref[UC2.2]{UC2.2 (§\ref*{UC2.2})}) cliccando il pulsante "Conferma";
+\item \textbf{Estensioni}: \hyperref[UC9]{UC9 (§\ref*{UC9})}: l'utente visualizza un messaggio di errore nel caso in cui non abbia collegato alcun nodo ad un flusso dati.
 \end{itemize}
 \newpage
 
@@ -282,6 +304,10 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 \item \textbf{Attore primario}: Utente;
 \item \textbf{Precondizione}: l'utente ha confermato il collegamento dei nodi al flusso dati (\hyperref[UC2.2]{UC2.2 (§\ref*{UC2.2})}), senza averne effettivamente collegato alcuno;
 \item \textbf{Postcondizione}: l'utente visualizza l'errore;
-\item \textbf{Scenario Principale}: l'utente visualizza un messaggio di errore in cui è segnalato il fatto che non sia stato collegato alcun nodo al flusso dati durante \hyperref[UC2]{UC2 (§\ref*{UC2})}.
+\item \textbf{Scenario Principale}: 
+	\begin{enumerate}
+	\item L'utente visualizza un messaggio di errore in cui è segnalato il fatto che non sia stato collegato alcun 				nodo al flusso dati durante \hyperref[UC2]{UC2 (§\ref*{UC2})};
+	\item L'utente clicca il pulsante con etichetta "OK".
+	\end{enumerate}
 \end{itemize}
 
