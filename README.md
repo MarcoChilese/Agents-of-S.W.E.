@@ -34,8 +34,8 @@
 
 ## da discutere prossima riunione:
 - riunione greg:
- - materiale jsbayes
- - soglia di traduzione true/false
+  - materiale jsbayes
+  - soglia di traduzione true/false
 - parser
 - docker
 - tecnologie
