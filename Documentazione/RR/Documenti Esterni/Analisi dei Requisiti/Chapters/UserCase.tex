@@ -23,7 +23,7 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 %\begin{itemize}
 %\item \textbf{Attore primario:}
 %\item \textbf{Precondizioni:}
-% \begin{enumerate}
+%	\begin{enumerate}
 % \item
 % \end{enumerate}
 %\item \textbf{Postcondizioni:}
@@ -47,7 +47,7 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 \end{figure}
 \begin{itemize}
 	\item \textbf{Attore primario}: Utente;
-	\item \textbf{Precondizioni}: l'utente deve aver effettuato il login nella piattaforma \textit{Grafana}, deve aver selezionato una dashboard e aggiunto il pannello "G\&B Panel";
+	\item \textbf{Precondizioni}: L'utente deve aver effettuato il login nella piattaforma \textit{Grafana}, deve aver selezionato una dashboard e aggiunto il pannello "G\&B Panel";
 	\item \textbf{Postcondizioni}: l'utente ha aggiunto la rete bayesiana al plug-in. Attraverso \hyperref[UC2]{UC2 (§\ref*{UC2})} può selezionare quali nodi sorgente collegare alla rete.
 	\item \textbf{Scenario principale:}
 	\begin{enumerate}
@@ -92,8 +92,12 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 
 \begin{itemize}
 \item \textbf{Attore primario}: Utente;
-\item \textbf{Precondizione}: l'utente ha caricato con successo la rete bayesiana (\hyperref[UC1]{UC1 (§\ref*{UC1})});
-\item \textbf{Postcondizione}: L'utente ha collegato con successo i nodi desiderati della rete bayesiana caricata in \hyperref[UC1]{UC1 (§\ref*{UC1})};
+\item \textbf{Precondizione}: L'utente ha caricato con successo la rete bayesiana (\hyperref[UC1]{UC1 (§\ref*{UC1})});
+\item \textbf{Postcondizioni}: 
+	\begin{enumerate}
+	\item L'utente ha collegato con successo i nodi desiderati della rete bayesiana caricata in \hyperref[UC1]{UC1 				(§\ref*{UC1})};
+	\item Il pannello usato per il collegamento dei nodi non è più interagibile, tranne il pulsante "Modifica 							Collegamento Nodi".
+	\end{enumerate}
 \item \textbf{Scenario principale}:
 	\begin{enumerate}
 	\item (\hyperref[UC2.1]{UC2.1 (§\ref*{UC2.1})}) L'utente visualizza la lista di nodi che costituisce la rete bayesiana caricata in \hyperref[UC1]{UC1(§\ref*{UC1})};
@@ -157,8 +161,8 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 
 \begin{itemize}
 	\item \textbf{Attore primario}: Utente; 
-	\item \textbf{Precondizione}: l'utente ha caricato con successo la rete bayesiana (\hyperref[UC1]{UC1 (§\ref*{UC1})});
-	\item \textbf{Postcondizione}: l'utente ha collegato con successo le policy per il ricalcolo delle probabilità alla rete bayesiana, caricata in (\hyperref[UC1]{UC1 (§\ref*{UC1})});	
+	\item \textbf{Precondizione}: L'utente ha caricato con successo la rete bayesiana (\hyperref[UC1]{UC1 (§\ref*{UC1})});
+	\item \textbf{Postcondizione}: L'utente ha collegato con successo le policy per il ricalcolo delle probabilità alla rete bayesiana, caricata in (\hyperref[UC1]{UC1 (§\ref*{UC1})});	
 	\item \textbf{Scenario Principale:}
 
 	\begin{enumerate}
@@ -173,8 +177,8 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 \paragraph{UC3.1 - Apertura pannello di configurazione}\label{UC3.1}
 \begin{itemize}
 	\item \textbf{Attore primario}: Utente; 
-	\item \textbf{Precondizione}: l'utente ha caricato con successo la rete bayesiana (\hyperref[UC1]{UC1 (§\ref*{UC1})});
-	\item \textbf{Postcondizione}: l'utente accede al pannello di configurazione;
+	\item \textbf{Precondizione}: L'utente ha caricato con successo la rete bayesiana (\hyperref[UC1]{UC1 (§\ref*{UC1})});
+	\item \textbf{Postcondizione}: L'utente accede al pannello di configurazione;
 	\item \textbf{Scenario Principale}: l'utente, tramite un click sulla dashboard, apre il pannello di configurazione. 
 \end{itemize}
 
@@ -182,8 +186,8 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 
 \begin{itemize}
 	\item \textbf{Attore primario}: Utente; 
-	\item \textbf{Precondizione}: l'utente si è spostato nell'area di configurazione (\hyperref[UC3.1]{UC3.1 (§\ref*{UC3.1})});
-	\item \textbf{Postcondizione}: l'utente ha selezionato la policy desiderata;
+	\item \textbf{Precondizione}: L'utente si è spostato nell'area di configurazione (\hyperref[UC3.1]{UC3.1 (§\ref*{UC3.1})});
+	\item \textbf{Postcondizione}: L'utente ha selezionato la policy desiderata;
 	\item \textbf{Scenario principale:}
 	\begin{enumerate}
 		\item L'utente dispone già di una policy e la seleziona; 
@@ -195,32 +199,76 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 \paragraph{UC3.3 - Collegamento policy alla rete bayesiana}\label{UC3.3}
 \begin{itemize}
 	\item \textbf{Attore primario}: Utente; 
-	\item \textbf{Precondizione}: l'utente ha selezionato la policy desiderata (\hyperref[UC3.2]{UC3.2 (§\ref*{UC3.2})});
-	\item \textbf{Postcondizione}: l'utente ha collegato la policy selezionata ad una rete bayesiana; 
+	\item \textbf{Precondizione}: L'utente ha selezionato la policy desiderata (\hyperref[UC3.2]{UC3.2 (§\ref*{UC3.2})});
+	\item \textbf{Postcondizione}: L'utente ha collegato la policy selezionata ad una rete bayesiana; 
 	\item \textbf{Scenario principale}: l'utente collega la policy selezionata alla rete bayesiana, impostando cosi i nuovi parametri. 
 \end{itemize}
 
 \newpage
+
+
 \subsubsection{UC4 - Visualizzazione probabilità associate ai nodi non collegati al flusso}\label{UC4}
 
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.4]{./images/UC4.png}
-\caption{UC4 - Visualizzazione dell probabilità associate ai nodi non collegati al flusso}
+\caption{UC4 - Visualizzazione delle probabilità associate ai nodi non collegati al flusso}
 \end{figure}
 
 \begin{itemize}
 \item \textbf{Attore primario}: Utente;
-\item \textbf{Precondizioni}:
+\item \textbf{Precondizione}: L'utente deve aver effettuato il login nella piattaforma \textit{Grafana}, deve aver selezionato una dashboard e aggiunto il pannello "G\&B Panel";
+%	\begin{enumerate}
+%	\item L'utente ha collegato con successo alcuni nodi della rete bayesiana al flusso dati (\hyperref[UC2]{UC2 (§\ref*{UC2})});
+%	\item L'utente ha definito le politiche temporali per il ricalcolo delle probabilità relative ai nodi della rete bayesiana (\hyperref[UC3]{UC3 (§\ref*{UC3})}).
+%	\end{enumerate}
+\item \textbf{Postcondizione}: L'utente monitora l'andamento delle probabilità dinamiche associate ad ogni nodo della rete bayesiana non collegato ad un flusso dati;
+\item \textbf{Scenario Principale}: 
 	\begin{enumerate}
-	\item L'utente ha collegato con successo alcuni nodi della rete bayesiana al flusso dati (\hyperref[UC2]{UC2 (§\ref*{UC2})});
-	\item L'utente ha definito le politiche temporali per il ricalcolo delle probabilità relative ai nodi della rete bayesiana (\hyperref[UC3]{UC3 (§\ref*{UC3})}).
+	\item L'utente clicca il pulsante "Avvio Monitoraggio";
+	\item L'utente visualizza i dati forniti dai nodi della rete bayesiana, tali dati sono una misura di probabilità 			associata ad ogni nodo della rete bayesiana non collegato al flusso dati (\hyperref[UC2]{UC2 (§\ref*{UC2})}). 				Tali probabilità vengono ricalcolate,mutando dinamicamente in base alle politiche temporali stabilite in 						\hyperref[UC3]{UC3 (§\ref*{UC3})}.
 	\end{enumerate}
-\item \textbf{Postcondizione}: l'utente monitora l'andamento delle probabilità dinamiche associate ad ogni nodo della rete bayesiana non collegato ad un flusso dati;
-\item \textbf{Scenario Principale}: l'utente visualizza i dati forniti dai nodi della rete bayesiana, tali dati sono una misura di probabilità associata ad ogni nodo della rete bayesiana non collegato al flusso dati (\hyperref[UC2]{UC2 (§\ref*{UC2})}). Tali probabilità vengono ricalcolate,mutando dinamicamente in base alle politiche temporali stabilite in \hyperref[UC3]{UC3 (§\ref*{UC3})}.
+\item \textbf{Estensioni}:
+	\begin{enumerate}
+	\item \hyperref[UC10]{UC10 (§\ref*{UC10})} estende \hyperref[UC4.1]{UC4.1 (§\ref*{UC4.1})}: l'utente visualizza 				un messaggio di errore nel caso in cui non abbia caricato una rete bayesiana;
+	\item \hyperref[UC11]{UC11 (§\ref*{UC11})} estende \hyperref[UC4.1]{UC4.1 (§\ref*{UC4.1})}: l'utente visualizza 				un messaggio di errore nel caso in cui non collegato correttamente qualche nodo alla rete bayesiana;
+	\item \hyperref[UC12]{UC12 (§\ref*{UC12})} estende \hyperref[UC4.1]{UC4.1 (§\ref*{UC4.1})}: l'utente visualizza 				un messaggio di errore nel caso in cui non abbia definito correttamente alcuna politica temporale per il 						ricalcolo delle probabilità;
+	\item \hyperref[UC13]{UC13 (§\ref*{UC13})} estende \hyperref[UC4.2]{UC4.2 (§\ref*{UC4.2})}: La visualizzazione 				dei dati viene interrotta nel caso in cui l'utente decida di modificare il collegamento dei nodi della rete 					bayesiana al flusso dati.
+	\end{enumerate}
 \end{itemize}
 
-\pagebreak
+\paragraph{UC4.1 - Avvio Monitoraggio}\label{UC4.1}
+\begin{itemize}
+\item \textbf{Attore primario:} Utente
+\item \textbf{Precondizioni:}
+	\begin{enumerate}
+	\item L'utente ha collegato con successo alcuni nodi della rete bayesiana al flusso dati (\hyperref[UC2]{UC2 					(§\ref*{UC2})});
+	\item L'utente ha definito le politiche temporali per il ricalcolo delle probabilità relative ai nodi della rete 			bayesiana (\hyperref[UC3]{UC3 (§\ref*{UC3})}).
+	\end{enumerate}
+\item \textbf{Postcondizione:} Il pannello espone all'utente la lista di nodi della rete bayesiana caricata ed i 			corrispondenti dati ad essi associati.
+\item \textbf{Scenario Principale:}
+	\begin{enumerate}
+	\item L'utente clicca il pulsante denominato "Avvio Monitoraggio";
+	\item Il pulsante "Avvio Monitoraggio" scompare, venendo sostituito dalla lista lista di nodi della rete 							bayesiana associati ai corrispondenti dati di monitoraggio.
+	\end{enumerate}
+\item \textbf{Estensioni:}
+	\begin{enumerate}
+	\item \hyperref[UC10]{UC10 (§\ref*{UC10})}: l'utente visualizza un messaggio di errore nel caso in cui non abbia 			caricato alcuna rete bayesiana (\hyperref[UC1]{UC1 (§\ref*{UC1})});
+	\item \hyperref[UC11]{UC11 (§\ref*{UC11})}: l'utente visualizza un messaggio di errore nel caso in cui non abbia 			collegato correttamente qualche nodo alla rete bayesiana (\hyperref[UC2]{UC2 (§\ref*{UC2})});
+	\item \hyperref[UC12]{UC12 (§\ref*{UC12})}: l'utente visualizza un messaggio di errore nel caso in cui non abbia 			definito correttamente alcuna politica temporale per il ricalcolo delle probabilità (\hyperref[UC3]{UC3 							(§\ref*{UC3})}).
+	\end{enumerate}
+\end{itemize}
+
+\paragraph{UC4.2 - Visualizzazione dati}\label{UC4.2}
+\begin{itemize}
+\item \textbf{Attore primario:} Utente
+\item \textbf{Precondizione:} L'utente ha avviato correttamente il monitoraggio del flusso dati.
+\item \textbf{Postcondizione:} L'utente monitora l'andamento delle probabilità dinamiche associate ad ogni nodo della rete bayesiana non collegato ad un flusso dati;
+\item \textbf{Scenario Principale:} L'utente visualizza l'andamento delle probabilità dinamiche associate ai nodi 			della rete bayesiana non collegati direttamente al flusso dati.
+\item \textbf{Estensioni:} \hyperref[UC13]{UC13 (§\ref*{UC13})}: La visualizzazione dei dati viene interrotta nel 			caso in cui l'utente decida di modificare il collegamento dei nodi della rete bayesiana al flusso dati.
+\end{itemize}
+
+\newpage
 
 \subsubsection{UC5 - Definizione di un alert sui nodi non collegati al flusso di dati}\label{UC5}
 
@@ -233,7 +281,7 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 \begin{itemize}
 	\item \textbf{Attore primario}: Utente;
 	\item \textbf{Attore secondario}: \textit{Grafana};
-	\item \textbf{Precondizione}: alcuni nodi non sono collegati al flussi di dati;
+	\item \textbf{Precondizione}: L'utente ha avviato con successo il monitoraggio del flusso dati (\hyperref[UC4]					{UC4 (§\ref*{UC4})}) e visualizza correttamente le probabilità associate ai nodi della rete bayesiana.
 	\item \textbf{Postcondizione}: l'utente ha aggiunto un alert per i nodi non collegati;
 	\item \textbf{Scenario principale}: l'utente tramite le impostazioni di \textit{Grafana}, accessibili dai pannelli, configura l'alert desiderato.
 \end{itemize}
@@ -269,8 +317,7 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 
 \begin{itemize}
 	\item \textbf{Attore primario}: Utente;
-	\item \textbf{Precondizioni}: l'utente ha collegato in modo corretto i nodi 
-	(\hyperref[UC2]{UC2 (§\ref*{UC2})});
+	\item \textbf{Precondizioni}: L'utente ha definito correttamente alcuni alert (\hyperref[UC5]{UC5 											(§\ref*{UC5})});
 	\item \textbf{Postcondizioni}: l'utente visualizza gli alert nell'apposito pannello;
 	\item \textbf{Scenario principale}:
 	\begin{enumerate}
@@ -281,7 +328,7 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 
 \pagebreak
 
-\subsubsection{UC8 - Visualizzazione messaggio d'errore selezione  rete bayesiana}\label{UC8}
+\subsubsection{UC8 - Visualizzazione messaggio di errore selezione rete bayesiana}\label{UC8}
 \begin{itemize}
 \item \textbf{Attore primario}: Utente;
 \item \textbf{Precondizione}: l'utente ha selezionato una rete da aggiungere ed ha cliccato il pulsante "Aggiungi", per confermare la rete. La rete selezionata dall'utente è errata per formato o per struttura;
@@ -311,3 +358,79 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 	\end{enumerate}
 \end{itemize}
 
+\pagebreak
+
+\subsubsection{UC10 - Visualizzazione messaggio di errore nessuna rete bayesiana caricata}\label{UC10}
+\begin{itemize}
+\item \textbf{Attore primario}: Utente;
+\item \textbf{Precondizione}: L'utente ha avviato il monitoraggio del flusso dati (\hyperref[UC4.1]{UC4.1 (§\ref*{UC4.1})}), senza aver preventivamente caricato alcuna rete bayesiana (\hyperref[UC1]{UC1 (§\ref*{UC1})}).
+\item \textbf{Postcondizione}: L'utente visualizza l'errore;
+\item \textbf{Scenario Principale}: 
+	\begin{enumerate}
+	\item L'utente visualizza un messaggio di errore in cui è segnalato il fatto che non sia stata preventivamente 				caricata alcuna rete bayesiana;
+	\item L'utente clicca il pulsante con etichetta "OK".
+	\end{enumerate}
+\end{itemize}
+
+\pagebreak
+
+\subsubsection{UC11 - Visualizzazione messaggio di errore nodi non collegati}\label{UC11}
+\begin{itemize}
+\item \textbf{Attore primario}: Utente;
+\item \textbf{Precondizione}: L'utente ha avviato il monitoraggio del flusso dati (\hyperref[UC4.1]{UC4.1 							(§\ref*{UC4.1})}), senza aver preventivamente collegato alcuni nodi della rete bayesiana al flusso dati 							(\hyperref[UC2]{UC2 (§\ref*{UC2})}).
+\item \textbf{Postcondizione}: L'utente visualizza l'errore;
+\item \textbf{Scenario Principale}: 
+	\begin{enumerate}
+	\item L'utente visualizza un messaggio di errore in cui è segnalato il fatto che non siano stati collegati 						correttamente dei nodi della rete bayesiana al flusso dati;
+	\item L'utente clicca il pulsante con etichetta "OK".
+	\end{enumerate}
+\end{itemize}
+
+\pagebreak
+
+\subsubsection{UC12 - Visualizzazione messaggio di errore politiche temporali non definite}\label{UC12}
+\begin{itemize}
+\item \textbf{Attore primario}: Utente;
+\item \textbf{Precondizione}: L'utente ha avviato il monitoraggio del flusso dati (\hyperref[UC4.1]{UC4.1 							(§\ref*{UC4.1})}), senza aver preventivamente definito alcuna politica temporale per il ricalcolo delle 							probabilità (\hyperref[UC3]{UC3 (§\ref*{UC3})}).
+\item \textbf{Postcondizione}: L'utente visualizza l'errore;
+\item \textbf{Scenario Principale}: 
+	\begin{enumerate}
+	\item L'utente visualizza un messaggio di errore in cui è segnalato il fatto che non sia stata definita alcuna 				politica temporale per il ricalcolo delle probabilità;
+	\item L'utente clicca il pulsante con etichetta "OK".
+	\end{enumerate}
+\end{itemize}
+
+\pagebreak
+
+\subsubsection{UC13 - Modifica collegamento nodi al flusso dati}\label{UC13}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.6]{./images/UC13.png}
+\caption{UC13 - Modifica collegamento nodi al flusso dati}
+\end{figure}
+
+
+\begin{itemize}
+\item \textbf{Attore primario:} Utente;
+\item \textbf{Precondizione:} L'utente ha collegato con successo alcuni nodi della rete bayesiana al flusso dati 			(\hyperref[UC2]{UC2 (§\ref*{UC2})});
+\item \textbf{Postcondizioni:} 
+	\begin{enumerate}
+	\item L'utente ha modificato con successo i nodi della rete bayesiana collegati al flusso dati;
+	\item La visualizzazione dei dati forniti dai nodi della rete bayesiana (\hyperref[UC4]{UC4 (§\ref*{UC4})}) viene 		interrotta, se avviata. Di conseguenza torna visibile il pulsante "Avvio Monitoraggio";
+	\item Gli alert definiti in \hyperref[UC5]{UC5 (§\ref*{UC5})} vengono eliminati, se presenti.
+	\end{enumerate}
+\item \textbf{Scenario Principale:}
+	\begin{enumerate}
+	\item (\hyperref[UC13.1]{UC13.1 (§\ref*{UC13.1})}) L'utente clicca il pulsante "Modifica Collegamento Nodi";
+	\item (\hyperref[UC2]{UC2 (§\ref*{UC2})}) L'utente effetua nuovamente il collegamento dei nodi.
+	\end{enumerate}
+\end{itemize}
+
+\paragraph{UC13.1 - Click pulsante "Modifica Collegamento Nodi"}\label{UC13.1}
+\begin{itemize}
+\item \textbf{Attore primario:} Utente;
+\item \textbf{Precondizione:} L'utente ha collegato con successo alcuni nodi della rete bayesiana al flusso dati 			(\hyperref[UC2]{UC2 (§\ref*{UC2})});
+\item \textbf{Postcondizione:} Il pannello contente la lista dei nodi torna ad essere interagibile da parte dell'utente.
+\item \textbf{Scenario Principale:} L'utente clicca il pulsante donominato: "Modifica Collegamento Nodi".
+\end{itemize}
