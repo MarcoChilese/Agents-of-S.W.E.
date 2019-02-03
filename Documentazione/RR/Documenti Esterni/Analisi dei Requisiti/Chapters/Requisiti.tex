@@ -97,12 +97,16 @@ ROQ3 & Il prodotto deve essere sviluppato in modo concorde a quanto stabilito ne
 
 \subsection{Requisiti di Vincolo}\label{RV}
 \begin{center}
-\begin{longtable}[c]{|m{.1\textwidth}|m{.58\textwidth}|m{.2\textwidth}|}
+\begin{longtable}[c]{|m{.1\textwidth}|m{.53\textwidth}|m{.25\textwidth}|}
 \hline
 \rowcolor{bluelogo}\textbf{\textcolor{white}{ID}} & \textbf{\textcolor{white}{Descrizione}} & \textbf{\textcolor{white}{Fonti}}\\
 \hline \hline
 \endfirsthead
-ROV1 & Il plug-in deve essere sviluppato in linguaggio \textit{ECMAScript6} & Piattaforma \textit{Grafana}\\
+ROV1 & Il plug-in deve essere sviluppato in linguaggio \textit{ECMAScript6} & \textit{Grafana}: guida per gli sviluppatori\\
+\hline
+\rowcolor{grigio}ROV2 & Il punto di ingresso per il plug-in deve essere sviluppato nel file "module.js" & \textit{Grafana}: guida per gli sviluppatori\\
+\hline
+ROV3 & Va utilizzato un qualsiasi build system\glossario che supporti \textit{systemjs}\glossario & \textit{Grafana}: guida per gli sviluppatori\\
 \hline
 \caption{Requisiti di Vincolo}
 \end{longtable}
@@ -156,7 +160,7 @@ Funzionale & 25 & 2 & 0 & 27\\
 \hline
 \rowcolor{grigio}Di Qualità & 5 & 0 & 2 & 7\\
 \hline
-Di Vincolo & 1 & 0 & 0 & 1\\
+Di Vincolo & 3 & 0 & 0 & 3\\
 \hline
 \caption{Riepilogo dei Requisiti}
 \end{longtable}
