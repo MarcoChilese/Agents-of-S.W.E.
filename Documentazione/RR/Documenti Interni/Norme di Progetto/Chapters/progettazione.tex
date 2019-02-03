@@ -18,7 +18,9 @@ Tuttavia, ai fini della realizzazione del prodotto finale, il team \texttt{Agent
 	\item Telegraf\glossario\footnote{\url{https://www.influxdata.com/time-series-platform/telegraf/}}: è un agente per la raccolta e la rilevazione periodica di metriche\footnote{Metriche d'uso di un elaboratore. Per esempio: percentuale d'uso della CPU, pressione di memoria, etc.} e dati. Si connette ad un database\glossario e salva tali dati;
 	\item InfluxDB\glossario\footnote{\url{https://www.influxdata.com/time-series-platform/influxdb/}}: è un database\glossario per le serie temporali. Verrà utilizzato per il salvataggio dei dati raccolti da Telegraf;
 	\item jsbayes\glossario: libreria suggerita dal proponente per la semplice definizione di reti bayesiane; 
-	\item UnBBayes\glossario\footnote{\url{https://sourceforge.net/projects/unbbayes/}}: framework e interfaccia grafica per le reti bayesiane. In particolare, verrà utilizzato per la visualizzazione della rete bayesiana in uso all'interno del plug-in, per soddisfare il requisito opzionale 2 esposto all'interno del capitolato d'appalto.
+	\item UnBBayes\glossario\footnote{\url{https://sourceforge.net/projects/unbbayes/}}: framework e interfaccia grafica per le reti bayesiane. In particolare, verrà utilizzato per la visualizzazione della rete bayesiana in uso all'interno del plug-in, per soddisfare il requisito opzionale 2 esposto all'interno del capitolato d'appalto;
+	\item Docker\glossario\footnote{\url{https://www.docker.com/}}: progetto open-source\glossario che automatizza il deployment\glossario di applicazioni all'interno di contenitori software. In particolare, in Docker Hub\glossario\footnote{\url{https://hub.docker.com/}} sono presenti le immagini utilizzabili mediante container di Telegraf, InfluxDB e Grafana. Pertanto, per agevolare la collaborazione e l'ottimizzazione del processo di sviluppo all'interno del team, \texttt{Agents of S.W.E.} ha deciso di utilizzare Docker per quanto riguarda il deploy e il processo di Continuos Integration;
+	\item Docker Hub\glossario: repository di immagini di container Docker. Permette il collegamento con un repository su GitHub per automatizzare il processo di integrazione continua.
 \end{itemize}
 
 \begin{figure}[H]
@@ -28,10 +30,14 @@ Tuttavia, ai fini della realizzazione del prodotto finale, il team \texttt{Agent
 	\end{center}
 \end{figure}
 
-
-\paragraph{Integrazione}\label{Progettazione_Integrazione}
+\paragraph{Integrazione}\label{Progettazione_Integrazione}\-\\
+\textbf{Version A}\\
 L'attività di integrazione sarà effettuata utilizzando il servizio compatibile con GitHub\glossario\footnote{\url{https://github.com}}, Travis CI\glossario\footnote{\url{https://travis-ci.org/}}.\\
 Questo servizio implementa un modello di integrazione continua, ad ogni commit\glossario nel repository\glossario, Travis CI creerà automaticamente la build ed andrà ad eseguire i test di unità. In questo modo è possibile rilevare tempestivamente eventuali errori.\\
+Per quanto riguarda il code coverage\glossario si utilizzerà un servizio compatibile con GitHub: Codecov\glossario\footnote{\url{https://codecov.io/}}.\\
+
+\textbf{Version B}\\
+L'attività di integrazione sarà effettuata utilizzando il servizio compatibile con GitHub\glossario\footnote{\url{https://github.com}}, Docker Hub\glossario.\\ Questo servizio implementa un modello di integrazione continua, ad ad ogni commit\glossario nel repository\glossario, Docker Hub creerà automaticamente la build ed andrà ad eseguire i test di unità. In questo modo è possibile rilevare tempestivamente eventuali errori.\\
 Per quanto riguarda il code coverage\glossario si utilizzerà un servizio compatibile con GitHub: Codecov\glossario\footnote{\url{https://codecov.io/}}.
 
 \paragraph{Diagrammi}\label{Progettazione_Diagrammi}
