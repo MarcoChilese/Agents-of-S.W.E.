@@ -38,4 +38,4 @@
 - Marco Favaro 
 
 Glossario to add:
-influxdb, telegraf, UnBBayes, stakeholders, requisiti, commit, github, travis ci, code coverage, codecov, UML 2.0
+requisiti, UML 2.0
