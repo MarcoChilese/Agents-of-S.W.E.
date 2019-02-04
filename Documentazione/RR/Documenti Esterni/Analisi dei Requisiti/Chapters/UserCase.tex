@@ -18,8 +18,6 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 \item \textbf{Piattaforma Grafana:} Sistema di monitoraggio di flusso dati, di cui il prodotto da realizzare è un plug-in. Consente agli utenti autenticati, attraverso funzionalità proprie, di realizzare grafici ed alert riferiti a dati forniti dal plug-in.
 \end{itemize}
 
-\subsection{Elenco dei casi d'uso}
-
 %\begin{itemize}
 %\item \textbf{Attore primario:}
 %\item \textbf{Precondizioni:}
@@ -37,7 +35,7 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 %\item \textbf{Estensioni:}
 %\end{itemize}
 
-\subsubsection{UC1 - Aggiunta della rete bayesiana al plug-in G\&B}\label{UC1}
+\subsection{UC1 - Aggiunta della rete bayesiana al plug-in G\&B}\label{UC1}
 
 \begin{figure}[H]
 	\begin{center}
@@ -58,7 +56,7 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 	\item \textbf{Estensioni:} \hyperref[UC9]{UC9 (§\ref*{UC9})} estende \hyperref[UC1.2]{UC1.2 (§\ref*{UC1.2})}: l'utente visualizza un messaggio di errore nel caso in cui l'operazione non sia andata a buon fine.
 \end{itemize}
 
-\paragraph{UC1.1 - Apertura pannello di selezione della rete bayesiana}\label{UC1.1}
+\subsubsection{UC1.1 - Apertura pannello di selezione della rete bayesiana}\label{UC1.1}
 \begin{itemize}
 	\item \textbf{Attore primario}: Utente; 
 	\item \textbf{Precondizioni}: l'utente visualizza il pannello "G\&B Panel" nella dashboard.
@@ -67,7 +65,7 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 \end{itemize}
 
 
-\paragraph{UC1.2 - Selezione della rete bayesiana}\label{UC1.2}
+\subsubsection{UC1.2 - Selezione della rete bayesiana}\label{UC1.2}
 \begin{itemize}
 	\item \textbf{Attore primario}: Utente;
 	\item \textbf{Precondizioni}: l'utente ha cliccato il bottone con etichetta "+";
@@ -82,7 +80,7 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 
 \pagebreak
 
-\subsubsection{UC2 - Collegamento nodi al flusso dati}\label{UC2}
+\subsection{UC2 - Collegamento nodi al flusso dati}\label{UC2}
 
 \begin{figure}[H]
 \centering
@@ -107,7 +105,7 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 \item \textbf{Estensioni}: \hyperref[UC10]{UC10 (§\ref*{UC10})} estende \hyperref[UC2.3]{UC2.3 (§\ref*{UC2.3})}: l'utente visualizza un messaggio di errore nel caso in cui non abbia collegato alcun nodo al flusso dati.
 \end{itemize}
 
-\paragraph{UC2.1 - Visualizzazione lista di nodi della rete bayesiana e rispettivo stato}\label{UC2.1}
+\subsubsection{UC2.1 - Visualizzazione lista di nodi della rete bayesiana e rispettivo stato}\label{UC2.1}
 \begin{itemize}
 \item \textbf{Attore primario:}  Utente
 \item \textbf{Precondizione:} L'utente ha caricato con successo la rete bayesiana (\hyperref[UC1]{UC1 									(§\ref*{UC1})});
@@ -119,7 +117,16 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 	\end{enumerate}
 \end{itemize}
 
-\paragraph{UC2.2 - Selezione flusso di dati per ogni nodo}\label{UC2.2}
+\pagebreak
+
+\subsubsection{UC2.2 - Selezione flusso di dati e livello di soglia per il nodo}\label{UC2.2}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.5]{./images/UC2-2.png}
+\caption{UC2.2 - Selezione flusso di dati e livello di soglia per il nodo}
+\end{figure}
+
 \begin{itemize}
 \item \textbf{Attore primario}: Utente;
 \item \textbf{Precondizioni}: 
@@ -127,31 +134,85 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 	\item L'utente ha caricato con successo la rete bayesiana (\hyperref[UC1]{UC1(§\ref*{UC1})});
 	\item L'utente ha visualizzato la lista di nodi di cui la rete bayesiana è costituita ed il corrispondente stato 			(\hyperref[UC2.1]{UC2.1 (§\ref*{UC2.1})}).
 \end{enumerate}
-\item \textbf{Postcondizione}: L'utente ha collegato ogni nodo che desidera ad uno e un solo flusso dati;
+\item \textbf{Postcondizioni}: 
+	\begin{enumerate}
+	\item L'utente ha collegato il nodo desiderato ad uno e un solo flusso dati, impostandone correttamente un livello di soglia al di sotto, o al di sopra, del quale il nodo in questione viene considerato "True", ovvero una variabile di evidenza, all'interno della rete bayesiana;
+	\item Se lo desidera, e vi sono ancora nodi a disposizione, l’utente può selezionare un altro nodo per il collegamento, o modificare le impostazioni di nodi già collegati.
+	\end{enumerate}
 \item \textbf{Scenario Principale}:
  \begin{enumerate}
- \item L'utente clicca con il cursore il nominativo corrispondente al nodo che desidera collegare ad un determinato 		flusso dati;
- \item L'utente visualizza, a seguito del click precedente, una tendina a comparsa contente i possibili flussi dati 		a cui collegare il nodo selezionato;
- \item L'utente seleziona, tramite click, il flusso dati opportuno (non sono disponibile scelte multiple) a cui 					collegare il nodo selezionato in precedenza;
- \item L'utente ripete i passaggi precedenti per ogni nodo che desidera collegare ad un flusso dati di 									monitoraggio.
+ \item (\hyperref[UC2.2.1]{UC2.2.1 (§\ref*{UC2.2.1})}) Selezione del nodo;
+ \item (\hyperref[UC2.2.2]{UC2.2.2 (§\ref*{UC2.2.2})}) Selezione del flusso dati;
+ \item (\hyperref[UC2.2.3]{UC2.2.3 (§\ref*{UC2.2.3})}) Selezione del livello di soglia;
+ \item (\hyperref[UC2.2.4]{UC2.2.4 (§\ref*{UC2.2.4})}) Conferma delle scelte.
  \end{enumerate}
+\item \textbf{Estensioni:} \hyperref[UC15]{UC15 (§\ref*{UC15})} estende \hyperref[UC2.2.4]{UC2.2.4 										(§\ref*{UC2.2.4})}: L'utente visualizza un messaggio di errore nel caso in cui non abbia impostato correttamente 		un livello di soglia per il nodo selezionato.
 \end{itemize}
 
-\paragraph{UC2.3 - Conferma collegamento}\label{UC2.3}
+\paragraph{UC2.2.1 - Selezione del nodo}\label{UC2.2.1}
+\begin{itemize}
+\item \textbf{Attore primario:} Utente;
+\item \textbf{Precondizione:} L'utente ha visualizzato la lista di nodi di cui la rete bayesiana è costituita ed il 	corrispondente stato (\hyperref[UC2.1]{UC2.1 (§\ref*{UC2.1})});
+\item \textbf{Postcondizione:} L'utente visualizza una finestra contente una lista di flussi dati a cui è possibile 	collegare il nodo selezionato;
+\item \textbf{Scenario Principale:} L'utente clicca il nominativo del nodo che desidera collegare ad un certo 					flusso dati.
+\end{itemize}
+
+\paragraph{UC2.2.2 - Selezione del flusso dati}\label{UC2.2.2}
+\begin{itemize}
+\item \textbf{Attore primario:} Utente;
+\item \textbf{Precondizione:} L'utente ha selezionato il nodo che desidera collegare ad un certo flusso dati 					(\hyperref[UC2.2.1]{UC2.2.1 (§\ref*{UC2.2.1})});
+\item \textbf{Postcondizioni:}
+	\begin{enumerate}
+	\item L'utente ha selezionato il flusso dati a cui collegare il nodo desiderato;
+	\item L'utente visualizza un'estensione della finestra contenente i flussi dati disponibili, attraverso cui è 					possibile impostare un livello di soglia;
+	\end{enumerate}
+\item \textbf{Scenario Principale:} L'utente seleziona, attraverso un click, il flusso dati a cui desidera 						collegare il nodo in esame.
+\end{itemize}
+
+\paragraph{UC2.2.3 - Selezione del livello di soglia}\label{UC2.2.3}
+\begin{itemize}
+\item \textbf{Attore primario:} Utente
+\item \textbf{Precondizione:} L'utente ha selezionato un flusso dati a cui collegare il nodo desiderato;
+\item \textbf{Postcondizione:} L'utente ha impostato un livello di soglia al di sotto, o al di sopra, 	del quale il nodo in questione viene considerato "True", ovvero una variabile di evidenza, all'interno della rete 	bayesiana caricata in \hyperref[UC1]{UC1 (§\ref*{UC1})};
+\item \textbf{Scenario Principale:}
+	\begin{enumerate}
+	\item L'utente visualizza una sezione composta di tre campi che devono essere obbligatoriamente riempiti;
+	\item L'utente digita, nel primo campo editabile, il valore numerico del livello di soglia;
+	\item L'utente seleziona, attraverso una casella a scelta multipla, se il valore numerico della soglia è inteso 				come percentuale o valore assoluto;
+	\item L'utente seleziona, attraverso una casella a scelta multipla, se il valore numerico impostato rappresenta 				il massimo oppure il minimo valore legale.
+	\end{enumerate}
+\end{itemize}
+
+\paragraph{UC2.2.4 - Conferma delle scelte}\label{UC2.2.4}
+\begin{itemize}
+\item \textbf{Attore primario:} Utente;
+\item \textbf{Precondizioni:}
+	\begin{enumerate}
+	\item L'utente ha selezionato un flusso dati a cui collegare il nodo in esame (\hyperref[UC2.2.2]{UC2.2.2 							(§\ref*{UC2.2.2})});
+	\item L'utente ha impostato correttamente un livello di soglia al di sotto, o al di sopra, 	del quale il nodo in 			questione viene considerato "True", ovvero una variabile di evidenza, all'interno della rete 	bayesiana 							(\hyperref[UC2.2.3]{UC2.2.3 (§\ref*{UC2.2.3})});
+	\end{enumerate}
+\item \textbf{Postcondizioni:}
+	\begin{enumerate}
+	\item La finestra comparsa per consentire all'utente di compiere le operazioni necessarie al fine di collegare il 		nodo ad un flusso dati scompare;
+	\item La checkbox corrispondente al nodo appena collegato passa dallo stato "X", che rappresenta un nodo non 					collegato, allo stato "V";
+	\end{enumerate}
+\item \textbf{Scenario Principale:} L'utente clicca il pulsante "Conferma scelte";
+\item \textbf{Estensioni:} \hyperref[UC15]{UC15 (§\ref*{UC15})}: Nel caso in cui il valore numerico inserito per il livello di soglia del nodo non sia valido e/o coerente con le altre impostazioni l'utente visualizza un messaggio di errore.
+\end{itemize}
+
+\pagebreak
+
+\subsubsection{UC2.3 - Conferma collegamento}\label{UC2.3}
 \begin{itemize}
 \item \textbf{Attore primario}: Utente;
 \item \textbf{Precondizione}: L'utente ha caricato con successo la rete bayesiana (\hyperref[UC1]{UC1 (§\ref*{UC1})});
-\item \textbf{Postcondizioni}: 
-	\begin{enumerate}
-	\item L'utente ha collegato con successo i nodi desiderati della rete bayesiana caricata in \hyperref[UC1]{UC1 				(§\ref*{UC1})} ai rispettivi flussi dati;
-	\item La corrispondente checkbox di ogni nodo viene marcata con una "V" se questo è stato collegato dall'utente 				ad un flusso dati, viene invece marcata con una "X" altrimenti.
-	\end{enumerate}
+\item \textbf{Postcondizione}: L'utente ha collegato con successo i nodi desiderati della rete bayesiana caricata 			in \hyperref[UC1]{UC1(§\ref*{UC1})} ai rispettivi flussi dati;
 \item \textbf{Scenario Principale:} l'utente conferma le proprie scelte (\hyperref[UC2.2]{UC2.2 (§\ref*{UC2.2})}) cliccando il pulsante "Conferma";
-\item \textbf{Estensioni}: \hyperref[UC10]{UC10 (§\ref*{UC10})}: l'utente visualizza un messaggio di errore nel caso in cui non abbia collegato alcun nodo ad un flusso dati.
+\item \textbf{Estensioni}: \hyperref[UC10]{UC10 (§\ref*{UC10})}: L'utente visualizza un messaggio di errore nel 				caso in cui non abbia collegato alcun nodo ad un flusso dati.
 \end{itemize}
 \newpage
 
-\subsubsection{UC3 - Creazione delle politiche temporali di ricalcolo delle probabilità}\label{UC3}
+\subsection{UC3 - Creazione delle politiche temporali di ricalcolo delle probabilità}\label{UC3}
 
 \begin{figure}[H]
 \centering
@@ -174,7 +235,7 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 	
 \end{itemize}
 
-\paragraph{UC3.1 - Apertura pannello di configurazione}\label{UC3.1}
+\subsubsection{UC3.1 - Apertura pannello di configurazione}\label{UC3.1}
 \begin{itemize}
 	\item \textbf{Attore primario}: Utente; 
 	\item \textbf{Precondizione}: L'utente ha caricato con successo la rete bayesiana (\hyperref[UC1]{UC1 (§\ref*{UC1})});
@@ -182,7 +243,7 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 	\item \textbf{Scenario Principale}: l'utente, tramite un click sulla dashboard, apre il pannello di configurazione. 
 \end{itemize}
 
-\paragraph{UC3.2 - Creazione nuova policy}\label{UC3.2}
+\subsubsection{UC3.2 - Creazione nuova policy}\label{UC3.2}
 
 \begin{itemize}
 	\item \textbf{Attore primario}: Utente; 
@@ -198,7 +259,7 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 	
 \end{itemize}
 
-\paragraph{UC3.3 - Collegamento policy alla rete bayesiana}\label{UC3.3}
+\subsubsection{UC3.3 - Collegamento policy alla rete bayesiana}\label{UC3.3}
 \begin{itemize}
 	\item \textbf{Attore primario}: Utente; 
 	\item \textbf{Precondizione}: l'utente ha creato la policy desiderata (\hyperref[UC3.2]{UC3.2 (§\ref*{UC3.2})});
@@ -208,7 +269,7 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 
 \newpage
 
-\subsubsection{UC4 - Riutilizzo delle politiche temporali}
+\subsection{UC4 - Riutilizzo delle politiche temporali}
 \label{UC4}
 
 %\begin{figure}[H]
@@ -231,7 +292,7 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 	
 \end{itemize}
 
-\paragraph{UC4.1 - Apertura pannello di configurazione}\label{UC4.1}
+\subsubsection{UC4.1 - Apertura pannello di configurazione}\label{UC4.1}
 \begin{itemize}
 	\item \textbf{Attore primario}: Utente; 
 	\item \textbf{Precondizione}: l'utente ha caricato con successo la rete bayesiana (\hyperref[UC1]{UC1 (§\ref*{UC1})});
@@ -239,7 +300,7 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 	\item \textbf{Scenario Principale}: l'utente, tramite un click sulla dashboard, apre il pannello di configurazione. 
 \end{itemize}
 
-\paragraph{UC4.2 - Riutilizzo di una policy esistente}\label{UC4.2}
+\subsubsection{UC4.2 - Riutilizzo di una policy esistente}\label{UC4.2}
 
 \begin{itemize}
 	\item \textbf{Attore primario}: Utente; 
@@ -249,7 +310,7 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 	\item L'utente dispone già di una policy e la seleziona; 
 \end{itemize}
 
-\paragraph{UC4.3 - Collegamento policy alla rete bayesiana}\label{UC4.3}
+\subsubsection{UC4.3 - Collegamento policy alla rete bayesiana}\label{UC4.3}
 \begin{itemize}
 	\item \textbf{Attore primario}: Utente; 
 	\item \textbf{Precondizione}: l'utente ha selezionato la policy desiderata (\hyperref[UC4.2]{UC4.2 (§\ref*{UC4.2})});
@@ -259,7 +320,7 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 
 \newpage
 
-\subsubsection{UC5 - Visualizzazione probabilità associate ai nodi non collegati al flusso}\label{UC5}
+\subsection{UC5 - Visualizzazione probabilità associate ai nodi non collegati al flusso}\label{UC5}
 
 \begin{figure}[H]
 \centering
@@ -289,7 +350,7 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 	\end{enumerate}
 \end{itemize}
 
-\paragraph{UC5.1 - Avvio Monitoraggio}\label{UC5.1}
+\subsubsection{UC5.1 - Avvio Monitoraggio}\label{UC5.1}
 \begin{itemize}
 \item \textbf{Attore primario:} Utente
 \item \textbf{Precondizioni:}
@@ -311,7 +372,7 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 	\end{enumerate}
 \end{itemize}
 
-\paragraph{UC5.2 - Visualizzazione dati}\label{UC5.2}
+\subsubsection{UC5.2 - Visualizzazione dati}\label{UC5.2}
 \begin{itemize}
 \item \textbf{Attore primario:} Utente
 \item \textbf{Precondizione:} L'utente ha avviato correttamente il monitoraggio del flusso dati.
@@ -322,7 +383,7 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 
 \newpage
 
-\subsubsection{UC6 - Definizione di un alert sui nodi non collegati al flusso di dati}\label{UC6}
+\subsection{UC6 - Definizione di un alert sui nodi non collegati al flusso di dati}\label{UC6}
 
 \begin{figure}[H]
 	\centering
@@ -340,7 +401,7 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 
 \newpage
 
-\subsubsection{UC7 - Rimozione alert}\label{UC7}
+\subsection{UC7 - Rimozione alert}\label{UC7}
 
 \begin{figure}[H]
 	\centering
@@ -359,7 +420,7 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 
 \pagebreak
 
-\subsubsection{UC8 - Visualizzazione alert}\label{UC8}
+\subsection{UC8 - Visualizzazione alert}\label{UC8}
 
 \begin{figure}[H]
 	\centering
@@ -380,7 +441,7 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 
 \pagebreak
 
-\subsubsection{UC9 - Visualizzazione messaggio d'errore selezione  rete bayesiana}\label{UC9}
+\subsection{UC9 - Visualizzazione messaggio d'errore selezione  rete bayesiana}\label{UC9}
 \begin{itemize}
 \item \textbf{Attore primario}: Utente;
 \item \textbf{Precondizione}: l'utente ha selezionato una rete da aggiungere ed ha cliccato il pulsante "Aggiungi", per confermare la rete. La rete selezionata dall'utente è errata per formato o per struttura;
@@ -398,7 +459,7 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 
 \pagebreak
 
-\subsubsection{UC10 - Visualizzazione messaggio di errore collegamento nodi}\label{UC10}
+\subsection{UC10 - Visualizzazione messaggio di errore nessun nodo collegato}\label{UC10}
 \begin{itemize}
 \item \textbf{Attore primario}: Utente;
 \item \textbf{Precondizione}: l'utente ha confermato il collegamento dei nodi al flusso dati (\hyperref[UC2.2]{UC2.2 (§\ref*{UC2.2})}), senza averne effettivamente collegato alcuno;
@@ -412,7 +473,7 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 
 \pagebreak
 
-\subsubsection{UC11 - Visualizzazione messaggio di errore nessuna rete bayesiana caricata}\label{UC11}
+\subsection{UC11 - Visualizzazione messaggio di errore nessuna rete bayesiana caricata}\label{UC11}
 \begin{itemize}
 \item \textbf{Attore primario}: Utente;
 \item \textbf{Precondizione}: L'utente ha avviato il monitoraggio del flusso dati (\hyperref[UC5.1]{UC5.1 (§\ref*{UC5.1})}), senza aver preventivamente caricato alcuna rete bayesiana (\hyperref[UC1]{UC1 (§\ref*{UC1})}).
@@ -426,7 +487,7 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 
 \pagebreak
 
-\subsubsection{UC12 - Visualizzazione messaggio di errore nodi non collegati}\label{UC12}
+\subsection{UC12 - Visualizzazione messaggio di errore nodi non collegati}\label{UC12}
 \begin{itemize}
 \item \textbf{Attore primario}: Utente;
 \item \textbf{Precondizione}: L'utente ha avviato il monitoraggio del flusso dati (\hyperref[UC5.1]{UC5.1 							(§\ref*{UC5.1})}), senza aver preventivamente collegato alcuni nodi della rete bayesiana al flusso dati 							(\hyperref[UC2]{UC2 (§\ref*{UC2})}).
@@ -440,7 +501,7 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 
 \pagebreak
 
-\subsubsection{UC13 - Visualizzazione messaggio di errore politiche temporali non definite}\label{UC13}
+\subsection{UC13 - Visualizzazione messaggio di errore politiche temporali non definite}\label{UC13}
 \begin{itemize}
 \item \textbf{Attore primario}: Utente;
 \item \textbf{Precondizione}: L'utente ha avviato il monitoraggio del flusso dati (\hyperref[UC5.1]{UC5.1 							(§\ref*{UC5.1})}), senza aver preventivamente definito alcuna politica temporale per il ricalcolo delle 							probabilità (\hyperref[UC3]{UC3 (§\ref*{UC3})}).
@@ -454,7 +515,7 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 
 \pagebreak
 
-\subsubsection{UC14 - Modifica collegamento nodi al flusso dati}\label{UC14}
+\subsection{UC14 - Modifica collegamento nodi al flusso dati}\label{UC14}
 
 \begin{figure}[H]
 \centering
@@ -479,7 +540,7 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 	\end{enumerate}
 \end{itemize}
 
-\paragraph{UC14.1 - Click pulsante "Modifica Collegamento Nodi"}\label{UC14.1}
+\subsubsection{UC14.1 - Click pulsante "Modifica Collegamento Nodi"}\label{UC14.1}
 \begin{itemize}
 \item \textbf{Attore primario:} Utente;
 \item \textbf{Precondizione:} L'utente ha collegato con successo alcuni nodi della rete bayesiana al flusso dati 			(\hyperref[UC2]{UC2 (§\ref*{UC2})});
@@ -487,4 +548,23 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 \item \textbf{Scenario Principale:} L'utente clicca il pulsante donominato: "Modifica Collegamento Nodi".
 \end{itemize}
 \newpage
+
+\subsection{UC15 - Visualizzazione messaggio di errore nessuna soglia impostata}\label{UC15}
+\begin{itemize}
+\item \textbf{Attore primario}: Utente;
+\item \textbf{Precondizione}: l'utente ha confermato le scelte per il collegamento di un dato nodo ad un flusso 				dati (\hyperref[UC2.2.4]{UC2.2.4 (§\ref*{UC2.2.4})}), senza aver impostato correttamente una soglia per lo stesso 	(\hyperref[UC2.2.3]{UC2.2.3 (§\ref*{UC2.2.3})});
+\item \textbf{Postcondizioni}: 
+	\begin{enumerate}
+	\item L'utente visualizza l'errore;
+	\item Le scelte dell'utente non vengono confermate.
+	\end{enumerate}
+\item \textbf{Scenario Principale}: 
+	\begin{enumerate}
+	\item L'utente visualizza un messaggio di errore in cui sono indicati gli errori commessi;
+	\item L'utente clicca il pulsante con etichetta "OK".
+	\end{enumerate}
+\end{itemize}
+
+\pagebreak
+
 
