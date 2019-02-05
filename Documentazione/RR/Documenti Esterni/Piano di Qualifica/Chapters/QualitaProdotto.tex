@@ -12,10 +12,10 @@ I documenti dovranno rispettare i pilastri della scrittura che prevedono la legg
 \subsubsection{Comprensione}
 
 \begin{itemize}
-	\item \textbf{Leggibilità}: vista la natura molto tecnica dei documenti prodotti, essi verranno considerati leggibili se comprensibili da persone con licenza di istruzione superiore. Per garantire una corretta leggibilità dei documenti il gruppo ha deciso di utilizzare l'indice di riferimento Gulpease descritto nel documento \textit{Norme di Progetto v1.0.0} alla sezione §3.2.6.1;
-	\item \textbf{Correttezza Ortografica}: i documenti non conterranno errori ortografici. Per garantire una corretta correttezza grammaticale dei documenti, il gruppo ha deciso di utilizzare il software TexMaker, che rende disponibile un segnalatore automatico di identificazione degli errori grammaticali;
-	\item \textbf{Correttezza Logica e Semantica}: non essendo disponibili sistemi automatici al fine di controllare 
-la correttezza logica e semantica, la comprensione totale del prodotto letto identificherà anche tale correttezza, in quanto un documento viene considerato leggibile solamente se è corretto.
+	\item \textbf{Leggibilità}: vista la natura molto tecnica dei documenti prodotti, essi verranno considerati leggibili se comprensibili da persone con licenza di istruzione superiore. Per garantire una corretta leggibilità dei documenti il gruppo ha deciso di utilizzare l'indice di riferimento Gulpease descritto nel documento \textit{Norme di Progetto v2.0.0} nella sezione §3.2.5.1;
+	
+	\item \textbf{Correttezza Ortografica}: i documenti non conterranno errori ortografici. Per garantire tale correttezza, verranno utilizzati gli strumenti software descritti nelle \textit{Norme di Progetto v2.0.0} nella sezione §3.2.5.2;
+	
 \end{itemize}
 
 \begin{longtable}{|C{.15\textwidth}|C{.24\textwidth}|C{.24\textwidth}|C{.24\textwidth}|}
@@ -36,14 +36,17 @@ Seguendo lo standard ISO/IEC 9126:2001, il gruppo \texttt{Agents of S.W.E.} ha d
 
 \subsubsection{Funzionalità}
 
-Con \textit{Funzionalità} si intendono le qualità riguardanti le funzioni offerte dal software.
+Con \textit{Funzionalità} si intendono le qualità riguardanti le funzioni offerte dal software.\\
+\textbf{Obiettivi di qualità} :
 \begin{itemize}
 	\item \textbf{Appropriatezza}: le funzioni offerte devono essere in grado di ricoprire tutte le funzionalità proposte inizialmente all'utente;
 	\item \textbf{Accuratezza}: il prodotto finale sarà in grado di svolgere tutti i compiti richiesti;
 	\item \textbf{Interoperabilità}: il software deve essere in grado di eseguire su diversi sistemi;
 	\item \textbf{Sicurezza}: i dati sensibili utilizzati dal prodotto devono essere disponibili solo agli utenti che li hanno generati o a chi da loro richiesto. 
 \end{itemize}
-Le ultime due qualità precedentemente descritte, sono già rese disponibili dal software Grafana. 
+Le ultime due qualità precedentemente descritte, sono già rese disponibili dal software Grafana. \\
+
+Gli obiettivi metrici stabiliti per le metriche descritte nei paragrafi §3.2.5.4 e §3.2.5.5 delle \textit{Norme di Progetto v2.0.0} sono : 
 
 \begin{longtable}{|C{.15\textwidth}|C{.24\textwidth}|C{.24\textwidth}|C{.24\textwidth}|}
 \hline
@@ -58,10 +61,11 @@ MTPDS16 & Soddisfacimento Requisiti Obbligatori & 100\% & 100\%\\
 
 \subsubsection{Affidabilità}
 
-Con \textit{Affidabilità} si intende la garanzia di funzionamento del software sotto determinate condizioni d'uso. 
+Con \textit{Affidabilità} si intende la garanzia di funzionamento del software sotto determinate condizioni d'uso. \\
+\textbf{Obiettivi di qualità} :
 
 \begin{itemize}
-	\item \textbf{Maturità}: il prodotto deve essere sviluppato in modo da evitare l'insorgere di failure\glossario derivati dalla sua esecuzione. A tal fine, verrà utilizzate le metriche descritte nella sezione §\ref{VerificaSoftwareCap};
+	\item \textbf{Maturità}: il prodotto deve essere sviluppato in modo da evitare l'insorgere di failure\glossario derivati dalla sua esecuzione. A tal fine, verranno utilizzati gli obbiettivi metrici descritti nella sezione §\ref{VerificaSoftwareCap};
 	\item \textbf{Tolleranza agli Errori}: anche in presenza di errori o usi impropri, il software deve comunque garantire determinate prestazioni;
 	\item \textbf{Recuperabilità}: al verificarsi di un malfunzionamento, il software deve essere in grado di ripristinare uno stato funzionante del sistema in un tempo ragionevole e recuperando i dati persi;
 \end{itemize}
@@ -69,7 +73,8 @@ Con \textit{Affidabilità} si intende la garanzia di funzionamento del software 
 
 \subsubsection{Efficienza}
 
-Con \textit{Efficienza} si intendono le prestazioni raggiungibili sotto specifiche condizioni di utilizzo. 
+Con \textit{Efficienza} si intendono le prestazioni raggiungibili sotto specifiche condizioni di utilizzo. \\
+\textbf{Obiettivi di qualità} :
 
 \begin{itemize}
 	\item \textbf{Comportamento rispetto al Tempo}: il software deve garantire determinati tempi di risposta ed elaborazione;
@@ -95,7 +100,8 @@ ID19 & Tempo di Risposta Medio & $\leq 2s$ & 2s<x $\leq 5s$\\
 
 \subsubsection{Usabilità}
 
-Con \textit{Usabilità} si intende il livello di comprensione del prodotto da parte dell'utilizzatore.
+Con \textit{Usabilità} si intende il livello di comprensione del prodotto da parte dell'utilizzatore.\\
+\textbf{Obiettivi di qualità} :
 
 \begin{itemize}
 	\item \textbf{Comprensibilità}: la facilità di comprensione delle funzionalità offerte dal prodotto, atta a fungere da spiegazione per l'utente che desideri utilizzarlo. 
@@ -103,6 +109,8 @@ Con \textit{Usabilità} si intende il livello di comprensione del prodotto da pa
 	\item \textbf{Operabilità}: capacità del software di mettere l'utente in condizione di utilizzarlo per i suoi scopi; 
 	\item \textbf{Attrattività}: il software deve essere di piacevole utilizzo da parte dell'utente.
 \end{itemize}
+
+Gli obiettivi metrici stabiliti per le metriche descritte nei paragrafi §3.2.5.6 e §3.2.5.7 delle \textit{Norme di Progetto v2.0.0} sono : 
 
 \begin{longtable}{|C{.15\textwidth}|C{.24\textwidth}|C{.24\textwidth}|C{.24\textwidth}|}
 \hline
@@ -117,7 +125,8 @@ MTPDS18 & Tempo medio di Comprensione & $\leq 5m$ & 5m<x $\leq 10m$\\
 
 \subsubsection{Manutenibilità}
 
-Con \textit{Manutenibilità} si intende il livello di semplicità richiesto al fine di eseguire interventi di modifica, correzione o adattamento.
+Con \textit{Manutenibilità} si intende il livello di semplicità richiesto al fine di eseguire interventi di modifica, correzione o adattamento.\\
+\textbf{Obiettivi di qualità} :
 
 \begin{itemize}
 	\item \textbf{Analizzabilità}: facilità di lettura del codice per localizzare errori al suo interno; 
@@ -144,7 +153,8 @@ ID23 & Percentuale Commenti/Codice & $\leq 5m$ & 5m<x $\leq 10m$\\
 
 \subsubsection{Portabilità}
 
-Con \textit{Portabilità} si intende la capacità del software di funzionare in diversi sistemi, che siano essi software o hardware. 
+Con \textit{Portabilità} si intende la capacità del software di funzionare in diversi sistemi, che siano essi software o hardware. \\
+\textbf{Obiettivi di qualità} :
 
 \begin{itemize}
 	\item \textbf{Adattabilità}: capacità del software di funzionare su sistemi diversi senza dover implementare nuove funzionalità, oltre a quelle già fornite;

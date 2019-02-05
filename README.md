@@ -28,4 +28,3 @@
 ### Ruoli (3) Risanamento
 - Amministratore: Luca Violato
 - Responsabile: Bogdan Stanciu
-- Verificatore: Marco C., Carlotta
