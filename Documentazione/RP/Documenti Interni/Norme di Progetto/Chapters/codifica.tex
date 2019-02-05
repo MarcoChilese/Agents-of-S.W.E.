@@ -90,7 +90,7 @@ metricFindQuery(query) {
 \end{enumerate}
 Verranno esaminate di seguito le norme in merito allo stile di codifica che i Programmatori dovranno adottare.
 
-\subparagraph{indentazione}\-\\
+\subparagraph{Indentazione}\-\\
 \textbf{Norma 1}
 L'indentazione è da eseguirsi con tabulazione la cui larghezza sia impostata a due (2) spazi per ogni livello.\\
 Di seguito un esempio da ritenersi corretto:
@@ -240,3 +240,46 @@ class myClass() {
 }
 \end{lstlisting}
 
+\paragraph{CSS}
+\label{css} \-\\
+
+Per la parte front-end\glossario del plug-in il gruppo \texttt{Agents of S.W.E.} ha scelto di utilizzare i linguaggi \textit{CSS} ed \textit{HTML5}.\\
+Qui di seguito verrà descritta la Style Guide resa disponibile da \textbf{Airbnb CSS-in-JavaScript Style Guide}\footnote{\texttt{\url{http://airbnb.io/javascript/css-in-javascript}}}.
+
+\subparagraph{Indentazione} \-\\
+\textbf{Norma 1}
+Tra blocchi adiacenti dello stesso livello deve essere lasciata una linea bianca, tra l'una e l'altra. In questo modo il codice risulterà essere più leggibile. \\
+Di seguito, un esempio della corretta indentazione: 
+
+
+\begin{lstlisting} [language=JavaScript]
+//OK
+{
+  bigBang: {
+    display: 'inline-block',
+    '::before': {
+      content: "''",
+    },
+  },
+  universe: {
+    border: 'none',
+  },
+}
+
+//NO
+{
+  bigBang: {
+    display: 'inline-block',
+
+    '::before': {
+      content: "''",
+    },
+  },
+
+  universe: {
+    border: 'none',
+  },
+}
+\end{lstlisting}
+
+Per le restanti regole si farà riferimento allo standard imposto dalla World Wide Web Consortium\footnote{\href{http://www.w3.org/}{\texttt{W3C}}}. Per essere considerato corretto il file \textit{.css} dovrà essere validato tramite il sito reso disponibile dall'organizzazione, precedentemente nominata. La validazione potrà essere effettuata tramite il sistema disponibile al seguente \href{http://validator.w3.org/}{link}.
