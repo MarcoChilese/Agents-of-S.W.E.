@@ -1,19 +1,21 @@
-\paragraph{Scopo}\label{Progettazione_Scopo}
-L'attività di Progettazione consiste nel descrivere una soluzione che sia soddisfacente per gli stakeholder\glossario È compito dei Progettisti svolgere tale attività, definendo l'architettura del prodotto finale, mantenendo chiare e riusabili le componenti, restando nei costi prefissati.\\
+\paragraph{Scopo}
+\label{Progettazione_Scopo} \-\\
+L'attività di Progettazione consiste nel descrivere una soluzione che sia soddisfacente per gli stakeholder\glossario. È compito dei Progettisti svolgere tale attività, definendo l'architettura del prodotto finale, mantenendo chiare e riusabili le componenti, restando nei costi prefissati.\\
 L'architettura definita dovrà quindi:
 \begin{itemize}
-	\item Soddisfare i requisiti\glossario definiti nel \textit{Analisi dei Requisiti};
+	\item Soddisfare i requisiti\glossario  definiti nel \textit{Analisi dei Requisiti};
 	\item Essere comprensibile e modulare;
 	\item Essere robusta riuscendo a gestire situazioni d'errore improvvise.
 \end{itemize}
 
-\paragraph{Sviluppo}\label{Progettazione_Sviluppo}
+\paragraph{Sviluppo} \-\\
+\label{Progettazione_Sviluppo}
 Lo sviluppo di \textit{G\&B} avviene seguendo il modello incrementale, spiegato nel dettaglio nel documento \textit{Piano di Progetto} alla sezione §4.\\
 La proponente nel capitolato d'appalto pone un singolo vincolo riguardo le tecnologie da utilizzare:
 \begin{itemize}
 	\item JavaScript: in particolare nella sua declinazione nota come ECMAScript 6\glossario.
 \end{itemize}
-Tuttavia, ai fini della realizzazione del prodotto finale, il team \texttt{Agents of S.W.E.} ha definito l'uso di ulteriori tecnologie, analizzate brevemente di seguito, per scopi diversi:
+Tuttavia, ai fini della realizzazione del prodotto finale, il team \texttt{Agents of S.W.E.} ha definito l'uso di ulteriori tecnologie, analizzate di seguito, per scopi diversi:
 \begin{itemize} 
 	\item Telegraf\glossario\footnote{\url{https://www.influxdata.com/time-series-platform/telegraf/}}: è un agente per la raccolta e la rilevazione periodica di metriche\footnote{Metriche d'uso di un elaboratore. Per esempio: percentuale d'uso della CPU, pressione di memoria, etc.} e dati. Si connette ad un database\glossario e salva tali dati;
 	\item InfluxDB\glossario\footnote{\url{https://www.influxdata.com/time-series-platform/influxdb/}}: è un database\glossario per le serie temporali. Verrà utilizzato per il salvataggio dei dati raccolti da Telegraf;
@@ -43,7 +45,7 @@ L'attività di integrazione sarà effettuata utilizzando il servizio disponibile
 Questo servizio implementa un modello di integrazione continua, ad ogni commit\glossario nel repository\glossario, GitLab creerà automaticamente la build ed andrà ad eseguire i test di unità. In questo modo è possibile rilevare tempestivamente eventuali errori.\\
 Per quanto riguarda il code coverage\glossario si utilizzerà un servizio messo a disposizione da GitLab.\\
 
-\paragraph{Diagrammi}\label{Progettazione_Diagrammi}
+\paragraph{Diagrammi}\label{Progettazione_Diagrammi}\-\\
 Per rendere più chiare le scelte progettuali adottate, si farà largo uso di diagrammi UML 2.0\glossario. Essi potranno essere di diversi tipi:
 \begin{itemize}
 	\item Diagrammi dei casi d'uso: dedicati alle funzionalità offerte dal sistema;
@@ -53,7 +55,8 @@ Per rendere più chiare le scelte progettuali adottate, si farà largo uso di di
 	\item Diagrammi di attività: dedicati ala descrizione della logica procedurale.
 \end{itemize}
 
-\paragraph{Obiettivi della progettazione}\label{Progettazione_Obiettivi}
+\paragraph{Obiettivi della progettazione} \-\\
+\label{Progettazione_Obiettivi}
 La Progettazione serve per garantire che il prodotto sviluppato soddisfi le proprietà ed i requisiti delineati durante l'attività di analisi, ponendosi come obiettivi:
 \begin{itemize}
 	\item Garantire la qualità di prodotto sviluppato, perseguendo la correttezza percostruzione;
