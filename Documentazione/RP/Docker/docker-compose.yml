@@ -1,0 +1,29 @@
+version: "2"
+services:
+  influxdb:
+    container_name: influxdb
+    image: influxdb:1.5.4
+    ports:
+      - "8083:8083"
+      - "8086:8086"
+    volumes:
+      - /Users/marcochilese/Desktop/influxdb:/var/lib/influxdb #cartella dove vengono salvati i dati di influx per renderli permanenti
+    restart: always
+
+  grafana:
+    container_name: grafana
+    image: grafana/grafana:5.4.3
+    ports:
+      - "3000:3000"
+    links:
+      - influxdb
+    restart: always
+
+  telegraf:
+    container_name: telegraf
+    image: telegraf:1.9.2
+    network_mode: "host"
+    volumes:
+      - /Users/marcochilese/Desktop/telegraf.conf:/etc/telegraf/telegraf.conf #file di configurazione telegraf per accedere ai dati
+      - /var/run/docker.sock:/var/run/docker.sock
+    restart: always

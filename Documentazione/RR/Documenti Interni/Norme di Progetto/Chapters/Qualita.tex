@@ -6,7 +6,7 @@ Il contenuto di questa sezione descrive le metriche e i criteri di qualità di p
 \subsubsection{Classificazione Processi}
 Per garantire una corretta struttura, il gruppo ha deciso di introdurre una nomenclatura per identificare i processi descritti nel documento. I processi saranno identificati così:
 \begin{center}
-	\textbf{PRC[num]}
+	\textbf{PR[num]}
 \end{center}
 dove:
 \begin{itemize}
@@ -34,13 +34,16 @@ Per garantire una corretta struttura, il gruppo ha deciso di introdurre una nome
 	\item \textbf{num}: identificativo univoco formato da due cifre intere a partire da 1.
 \end{itemize}
 
-\subsubsection{Controllo qualità di processo}
-La qualità di processo è raggiunta tramite l'utilizzo di metodi e modelli che garantiscono il corretto procedimento delle fasi di sviluppo del processo. Il team sfrutta le potenzialità del metodo PDCA, descritto nell'appendice \ref{pdca}, ottenendo miglioramenti continui nelle qualità di processo e verifica in modo da avere una maggiore qualità nel prodotto risultante. Inoltre verrà utilizzato lo standard ISO/IEC 15504, comunemente conosciuto con l'acronimo SPICE, che misurerà il livello di maturità dei processi.
+\subsubsection{Controllo qualità di processo e metriche} \label{ControlloQualita_Processo}
+La qualità di processo è raggiunta tramite l'utilizzo di metodi e modelli che garantiscono il corretto procedimento delle fasi di sviluppo del processo. Il team sfrutta le potenzialità del metodo PDCA, descritto nell'appendice \ref{PDCASection}, ottenendo miglioramenti continui nelle qualità di processo e verifica in modo da avere una maggiore qualità nel prodotto risultante. Inoltre verrà utilizzato lo standard ISO/IEC 15504, comunemente conosciuto con l'acronimo SPICE, che misurerà il livello di maturità dei processi.\-\\
+Le seguenti metriche sono utilizzate per la valutazione dell'efficacia e dell'efficienza degli stessi.
 
-\subsubsection{Metriche per la qualità di processo}
-Le seguenti metriche sono utilizzate per la valutazione dell'efficacia e dell'efficienza dei processi.
+\paragraph{PR01: Gestione dei Task} \-\\
+È rilevante l'adempimento dei task assegnati entro i tempi prestabiliti. Per far ciò, nella fase di pianificazione, si sono scelte delle date entro le quali è preferibile e consigliabile completare i task assegnati. Tuttavia è comunque accettabile l'adempimento di un task a priorità minore oltre i limiti prefissati, se e solo se il ritardo è dovuto al completamento di un task a priorità maggiore.
 
-\paragraph{MTPC01 Schedule Variance (SV)}\-\\
+\begin{itemize}
+
+	\item \textbf{MTPC01 Schedule Variance (SV)}\-\\
 \'E un indice che consente di rilevare se l'andamento del progetto è in linea con quanto pianificato nella baseline\glossario. Può essere utile al cliente per verificare quantitativamente se il team di sviluppo del progetto è in linea con i tempi. \-\\
 Calcolo:\-\\
 \begin{center}
@@ -53,7 +56,14 @@ dove:
 \end{itemize}
 Se SV > 0 significa che il progetto sta producendo con maggiore velocità prevista.
 
-\paragraph{MTPC02 Budget Variance (BV)}\-\\
+\end{itemize}
+
+\paragraph{PR02: Gestione dei Costi} \-\\
+Per la gestione dei costi del progetto il gruppo ha deciso di utilizzare l'indice Budget Variance (BV),
+
+\begin{itemize}
+
+\item \textbf{MTPC02 Budget Variance (BV)}\-\\
 \'E un indice calcolato che permette di rilevare la differenza tra i costi previsti e quelli reali alla data odierna. \\
 Calcolo:
 \begin{center}
@@ -66,7 +76,7 @@ dove:
 \end{itemize}
 Se BV > 0 significa che il progetto sta risparmiando sui costi prestabiliti, se BV = 0 significa che il progetto sta mantenendo i costi prefissati, se BV < 0 significa che il progetto sta superando il budget imposto.
 
-\paragraph{MTPC03 Estimated At Completion (EAC)}\-\\
+\item \textbf{MTPC03 Estimated At Completion (EAC)}\-\\
 Indice che rappresenta la stima dei costi mancanti. Viene calcolato man mano che il progetto procede ed è fondamentale per attività di pianificazione. \\
 Calcolo:
 \begin{center}
@@ -76,6 +86,8 @@ dove:
 \begin{itemize}
 	\item ACWP: costo effettivo sostenuto per completare le attività alla data odierna (in euro);
 	\item ETC: valore stimato per la realizzazione delle attività mancanti (in euro).
+\end{itemize}
+
 \end{itemize}
 
 \iffalse
@@ -93,8 +105,10 @@ dove:
 Se CV > 0 significa che il progetto produce con maggior efficienza e minor costo.
 \fi
 
-\paragraph{Code Coverage}\-\\
-Le operazioni di verifica della qualità sul software vengono eseguite seguendo le metriche principali sotto elencate:
+\paragraph{PR03: Verifica del Software}
+Questo processo ha lo scopo di verificare che i requisiti software precedentemente stabiliti vengano rispettati. È inoltre suo compito verificare che vengano soddisfatti
+tutti i requisiti precedentemente fissati nel documento Analisi dei Requisiti v1.0.0. \-\\ Verranno utilizzati i seguenti indici:
+
 \begin{itemize}
 	\item \textbf{MTPC04 Function Coverage}: verificare che una funzione sia chiamata;
 	\item \textbf{MTPC05 Statement Coverage}: verificare che ogni statement del codice sia eseguito, e non ci sia quindi codice che non verrà mai preso in considerazione;
@@ -102,43 +116,54 @@ Le operazioni di verifica della qualità sul software vengono eseguite seguendo 
 	\item \textbf{MTPC07 Condition Coverage}: verificare che ogni condizione booleana sia considerata sia vera che falsa.
 \end{itemize}
 
-\paragraph{MTPC08 Rischi non preventivati}\-\\
+\paragraph{PR04: Gestione dei Rischi}
+Il suo scopo è quello del continuo monitoraggio, della continua identificazione, scoperta dei rischi che incorrono o che posso incorrere durante lo svolgimento del progetto e la loro risoluzione qualora si verifichino.
+\begin{itemize}
+
+\item \textbf{MTPC08 Rischi non preventivati}\-\\
 Indice numerico incrementale a partire da 0. Indica il numero di rischi non preventivati che si verificano e vengono considerati durante la corrente fase del progetto. La misurazione avviene incrementando il valore per ogni rischio (non individuato precedentemente) che viene rilevato, il valore viene azzerato per ogni fase del progetto.
 
-\paragraph{MTTS9 Percentuale di test passati}\-\\
+\end{itemize}
+
+\paragraph{PR05: Gestione dei Test}
+\begin{itemize}
+
+	\item \textbf{MTTS9 Percentuale di test passati}\-\\
 Indica la percentuale di test passati, utile per misurare l'avanzamento qualitativo. La misurazione avviene:
 \begin{center}
 	\item $PTP = \frac{TP}{TT}*100$
 \end{center}
 dove PTP è la percentuale finale di test passati, TP sono i test passati e TT i test totali eseguiti.
 
-\paragraph{MTTS10 Percentuale di test falliti}\-\\
+	\item \textbf{MTTS10 Percentuale di test falliti}\-\\
 Indica la percentuale di test falliti. La misurazione avviene:
 \begin{center}
 	\item $PTF = \frac{TF}{TT}*100$
 \end{center}
 dove PTF è la percentuale finale di test falliti, TF sono i test passati e TT i test totali eseguiti.
 
-\paragraph{MTTS11 Percentuale di difetti sistemati}\-\\
+	\item \textbf{MTTS11 Percentuale di difetti sistemati}\-\\
 Indica la percentuale di bug/difetti sistemati, indice utile per misurare l'avanzamento. La misurazione avviene:
 \begin{center}
 	\item $PDS = \frac{DS}{DT}*100$
 \end{center}
 dove PDS è la percentuale calcolata, DS i difetti sistemati e DT i difetti totali.
 
-\paragraph{MTTS12 Tempo medio di risoluzione degli errori}\-\\
+	\item \textbf{MTTS12 Tempo medio di risoluzione degli errori}\-\\
 Indice calcolato sul tempo medio della risoluzione di bug creati dal team durante lo sviluppo. Utile per considerare abilità e tempo di assorbimento di un bug nel sistema. La misurazione avviene:
 \begin{center}
 	\item $TMRE = \frac{TRE}{NE}$
 \end{center}
 dove TMRE è il tempo medio calcolato, TRE il tempo totale per la risoluzione degli errori e NE il numero degli errori.
 
-\paragraph{MTTS13 Numero medio di bug trovati per test}\-\\
+	\item \textbf{MTTS13 Numero medio di bug trovati per test}\-\\
 Indica il numero medio di bug trovati eseguendo i test. \'E un indice utile per verificare la qualità dei test e del sistema in generale. La misurazione avviene:
 \begin{center}
 	\item $MBT = \frac{NB}{NT}$
 \end{center}
 dove MBT è la media calcolata, NB il numero di bug rilevati e NT il numero dei test.
+
+\end{itemize}
 
 \iffalse 
 \paragraph{MTTS14 Difetti trovati per requisito}\-\\
@@ -156,31 +181,47 @@ Le seguenti metriche sono utilizzate per misurare qualitativamente il prodotto.
 \paragraph{MTTS15 Numero di test eseguiti per requisito}\-\\
 \fi
 
-\paragraph{MTPDD14 Indice di Gulpease}\-\\
+\paragraph{Leggibilità}
+\begin{itemize}
+	\item \textbf{MTPDD14 Indice di Gulpease}\-\\
 Il gruppo ha deciso di utilizzare l'\textit{indice di Gulpease}\glossario\footnote{\url{https://it.wikipedia.org/wiki/Indice\_Gulpease}} per misurare la leggibilità di un testo. \'E stato sviluppato appositamente uno script in \textit{Python} per automatizzare la procedura e allo stesso modo velocizzarla. La procedura verrà utilizzata a documento terminato e completo così da valutare il lavoro svolto dai redattori.
 
-\paragraph{MTPDD15 Correttezza Ortografica}\-\\
-La correttezza ortografica è un aspetto importante che non accetta errori, i documenti al momento della pubblicazione sono corretti. Verranno utilizzati appositi strumenti che supporteranno la correzione. Il software \textit{TexMaker}, per esempio, integra un segnalatore automatico degli errori grammaticali. 
+	\item \textbf{MTPDD15 Correttezza Ortografica}\-\\
+La correttezza ortografica è un aspetto importante che non accetta errori, i documenti al momento della pubblicazione sono corretti. Verranno utilizzati appositi strumenti che supporteranno la correzione, ovvero il software \textit{TexMaker} il quale integra un segnalatore automatico degli errori grammaticali. 
 
-\paragraph{MTPDS16 Soddisfacimento Requisiti Obbligatori}\-\\
+	\item \textbf{Correttezza Logica e Semantica} \-\\
+Non essendo disponibili sistemi automatici al fine di controllare la correttezza logica e semantica, la comprensione totale del prodotto letto identificherà anche tale correttezza, in quanto un documento viene considerato leggibile solamente se è corretto.
+\end{itemize}
+
+\paragraph{Funzionalità}
+\begin{itemize}
+
+	\item \textbf{MTPDS16 Soddisfacimento Requisiti Obbligatori}\-\\
 Indicatore percentuale che verifica che tutti i requisiti obbligatori siano soddisfatti. Condizione necessaria al fine di rispettare il contratto. La misurazione avviene:
 \begin{center}
 	\item $PRO = \frac{ROS}{ROT}*100$
 \end{center}
 dove PRO è la percentuale di requisiti obbligatori soddisfatti, ROS i requisiti obbligatori soddisfatti e ROT i requisiti obbligatori totali.
 
-\paragraph{MTPDS17 Soddisfacimento Requisiti Opzionali Scelti}\-\\
+	\item \textbf{MTPDS17 Soddisfacimento Requisiti Opzionali Scelti}\-\\
 Indicatore percentuale che verifica se tutti i requisiti opzionali scelti siano soddisfatti. Condizione necessaria al fine di rispettare il contratto. La misurazione avviene:
 \begin{center}
 	\item $PRP = \frac{RPS}{RPT}*100$
 \end{center}
 dove PRP è la percentuale di requisiti opzionali scelti soddisfatti, RPS i requisiti opzionali scelti soddisfatti e RPT i requisiti opzionali scelti totali.
+\end{itemize}
 
-\paragraph{MTPDS18 Tempo Medio di Comprensione}\-\\
+\paragraph{Usabilità}
+
+\begin{itemize}
+
+	\item\textbf{Tempo Medio di Comprensione}\-\\
 Indica il tempo medio che l'utente impiega per comprendere cosa può svolgere il sistema. \'E misurato in minuti ed è rilevato attraverso test a persone esterne al team di sviluppo.
 
-\paragraph{MTPDS19 Tempo Medio di Apprendimento}\-\\
+	\item\textbf{MTPDS19 Tempo Medio di Apprendimento}\-\\
 Indica il tempo medio che l'utente impiega per riuscire a utilizzare a pieno il software e tutte le sue funzionalità. \'E misurato in minuti ed è rilevato tramite test a persone esterne al team di sviluppo. 
+
+\end{itemize}
 
 \iffalse
 \paragraph{MTPDS25 Percentuale Commenti/Codice}\-\\

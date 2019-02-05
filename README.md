@@ -28,10 +28,3 @@
 ### Ruoli (3) Risanamento
 - Amministratore: Luca Violato
 - Responsabile: Bogdan Stanciu
-- Verificatore: Marco C., Carlotta
-- Analista: Diego, Marco F., Matteo
-
-### WHO 
-- Marco Favaro 
-- Carlotta Segna 
-- Diego Mazzalovo 
