@@ -16,6 +16,7 @@
 \usepackage{graphicx}  %per le immagini
 \usepackage{flafter}
 \usepackage[font=small,labelfont=bf]{caption}
+\usepackage[dvipsnames, table]{xcolor}
 
 \usepackage{framed}
 
@@ -28,46 +29,44 @@
 \usepackage{listings} %per i listati di codice
 %define Javascript language
 \lstdefinelanguage{JavaScript}{
-  keywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break},
-  keywordstyle=\color{blue}\bfseries,
-  ndkeywords={class, export, boolean, throw, implements, import, this},
-  ndkeywordstyle=\color{darkgray}\bfseries,
-  identifierstyle=\color{black},
-  sensitive=false,
-  comment=[l]{//},
-  morecomment=[s]{/*}{*/},
-  commentstyle=\color{purple}\ttfamily,
-  stringstyle=\color{red}\ttfamily,
-  morestring=[b]',
-  morestring=[b]"
+	keywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break},
+	keywordstyle=\color{blue}\bfseries,
+	ndkeywords={class, export, boolean, throw, implements, import, this},
+	ndkeywordstyle=\color{darkgray}\bfseries,
+	identifierstyle=\color{black},
+	sensitive=false,
+	comment=[l]{//},
+	morecomment=[s]{/*}{*/},
+	commentstyle=\color{purple}\ttfamily,
+	stringstyle=\color{red}\ttfamily,
+	morestring=[b]',
+	morestring=[b]"
 }
 
 \lstset{
-basicstyle=\footnotesize,
-numbers=left, 
-numberstyle=\small, 
-numbersep=8pt, 
-frame = single, 
-language=JavaScript, 
-framexleftmargin=15pt}
+	basicstyle=\footnotesize,
+	numbers=left, 
+	numberstyle=\small, 
+	numbersep=8pt, 
+	frame = single, 
+	language=JavaScript, 
+	framexleftmargin=15pt}
+
+\definecolor{bluelogo}{HTML}{415A66}
+\definecolor{grigio}{HTML}{D0D0D0}
+\usepackage{makecell}
 
 
-
-\hypersetup{colorlinks=true}		%Configurazione colore link documento
+\hypersetup{colorlinks=true}		%Configurazione colore link INTERNI documento
 \hypersetup{linkcolor= blue}
+\renewcommand\UrlFont{\color{blue}\rmfamily\itshape} %Forzato colore blu su tutti i link ESTERNI
 
 \lhead{\includegraphics[scale=0.08]{./images/logo.png}}
 
 \newcolumntype{C}[1]{>{\centering\arraybackslash}m{#1}}
 
+
 \renewcommand{\footrulewidth}{0.4pt}
 \newcommand{\glossario}{\textsubscript{G} }
 
 \pagestyle{fancy}
-
-\makeindex
-\setcounter{secnumdepth}{4}
-\setcounter{tocdepth}{4}
-
-% \lhead{\includegraphics[scale=]{}} TODO LOGO ripetuto angolo Top SX
-
