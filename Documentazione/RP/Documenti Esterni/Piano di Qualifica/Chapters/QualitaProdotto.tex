@@ -1,0 +1,218 @@
+\section{Qualità di Prodotto}
+\label{qualitaProdotto}
+
+\subsection{Scopo}
+
+Nello standard ISO/IEC 9126:2001, il gruppo \texttt{Agents of S.W.E.} ha individuato i principali obiettivi da dover perseguire per garantire un'ottima qualità di prodotto.  
+
+\subsection{Qualità dei Documenti}
+
+I documenti dovranno rispettare i pilastri della scrittura che prevedono la leggibilità e la comprensibilità del documento, le quali derivano dalla correttezza grammaticale, ortografica, logica e semantica.
+
+\subsubsection{Comprensione}
+
+\begin{itemize}
+	\item \textbf{Leggibilità}: vista la natura molto tecnica dei documenti prodotti, essi verranno considerati leggibili se comprensibili da persone con licenza di istruzione superiore. Per garantire una corretta leggibilità dei documenti il gruppo ha deciso di utilizzare l'indice di riferimento Gulpease descritto nel documento \textit{Norme di Progetto v2.0.0} nella sezione §3.2.5.1;
+	
+	\item \textbf{Correttezza Ortografica}: i documenti non conterranno errori ortografici. Per garantire tale correttezza, verranno utilizzati gli strumenti software descritti nelle \textit{Norme di Progetto v2.0.0} nella sezione §3.2.5.2;
+	
+\end{itemize}
+
+\begin{longtable}{|C{.15\textwidth}|C{.24\textwidth}|C{.24\textwidth}|C{.24\textwidth}|}
+\hline
+\rowcolor{bluelogo}\textbf{\textcolor{white}{ID}} & \textbf{\textcolor{white}{Nome}} & \textbf{\textcolor{white}{Ottimalità}} & \textbf{\textcolor{white}{Accettabilità}}\\
+MTPDD14 & Leggibilità & 100 & $\geq 40$ \\
+\hline
+\rowcolor{grigio}MTPDD15 & Correttezza Ortografica & 0 errori & 0 errori \\ 
+\hline
+\caption{Qualità dei Documenti}
+\label{QualitàDocumenti}
+\end{longtable}
+
+\subsection{Qualità del Software}
+
+Seguendo lo standard ISO/IEC 9126:2001, il gruppo \texttt{Agents of S.W.E.} ha deciso di perseguire i seguenti obiettivi di qualità del prodotto software finale:
+
+
+\subsubsection{Funzionalità}
+
+Con \textit{Funzionalità} si intendono le qualità riguardanti le funzioni offerte dal software.\\
+\textbf{Obiettivi di qualità} :
+\begin{itemize}
+	\item \textbf{Appropriatezza}: le funzioni offerte devono essere in grado di ricoprire tutte le funzionalità proposte inizialmente all'utente;
+	\item \textbf{Accuratezza}: il prodotto finale sarà in grado di svolgere tutti i compiti richiesti;
+	\item \textbf{Interoperabilità}: il software deve essere in grado di eseguire su diversi sistemi;
+	\item \textbf{Sicurezza}: i dati sensibili utilizzati dal prodotto devono essere disponibili solo agli utenti che li hanno generati o a chi da loro richiesto. 
+\end{itemize}
+Le ultime due qualità precedentemente descritte, sono già rese disponibili dal software Grafana. \\
+
+Gli obiettivi metrici stabiliti per le metriche descritte nei paragrafi §3.2.5.4 e §3.2.5.5 delle \textit{Norme di Progetto v2.0.0} sono : 
+
+\begin{longtable}{|C{.15\textwidth}|C{.24\textwidth}|C{.24\textwidth}|C{.24\textwidth}|}
+\hline
+\rowcolor{bluelogo}\textbf{\textcolor{white}{ID}} & \textbf{\textcolor{white}{Nome}} & \textbf{\textcolor{white}{Ottimalità}} & \textbf{\textcolor{white}{Accettabilità}}\\
+MTPDS16 & Soddisfacimento Requisiti Obbligatori & 100\% & 100\%\\
+\hline
+\rowcolor{grigio}MTPDS17 & Soddisfacimento Requisiti Opzionali Scelti & 100\% & 100\% \\ 
+\hline
+\caption{Funzionalità}
+\label{Funzionalità}
+\end{longtable}
+
+\subsubsection{Affidabilità}
+
+Con \textit{Affidabilità} si intende la garanzia di funzionamento del software sotto determinate condizioni d'uso. \\
+\textbf{Obiettivi di qualità} :
+
+\begin{itemize}
+	\item \textbf{Maturità}: il prodotto deve essere sviluppato in modo da evitare l'insorgere di failure\glossario derivati dalla sua esecuzione. A tal fine, verranno utilizzati gli obbiettivi metrici descritti nella sezione §\ref{VerificaSoftwareCap};
+	\item \textbf{Tolleranza agli Errori}: anche in presenza di errori o usi impropri, il software deve comunque garantire determinate prestazioni;
+	\item \textbf{Recuperabilità}: al verificarsi di un malfunzionamento, il software deve essere in grado di ripristinare uno stato funzionante del sistema in un tempo ragionevole e recuperando i dati persi;
+\end{itemize}
+
+
+\subsubsection{Efficienza}
+
+Con \textit{Efficienza} si intendono le prestazioni raggiungibili sotto specifiche condizioni di utilizzo. \\
+\textbf{Obiettivi di qualità} :
+
+\begin{itemize}
+	\item \textbf{Comportamento rispetto al Tempo}: il software deve garantire determinati tempi di risposta ed elaborazione;
+	\item \textbf{Utilizzo di Risorse}: uso non eccessivo di risorse;
+\end{itemize}
+
+
+\iffalse
+
+\begin{longtable}{|C{.15\textwidth}|C{.24\textwidth}|C{.24\textwidth}|C{.24\textwidth}|}
+\hline
+\rowcolor{bluelogo}\textbf{\textcolor{white}{ID}} & \textbf{\textcolor{white}{Nome}} & \textbf{\textcolor{white}{Ottimalità}} & \textbf{\textcolor{white}{Accettabilità}}\\
+ID19 & Tempo di Risposta Medio & $\leq 2s$ & 2s<x $\leq 5s$\\
+\hline
+\rowcolor{grigio}ID20 & Tempo di Risposta di Picco  & $\leq 5s$ & 5s<x $\leq 8s$ \\ 
+\hline
+\caption{Efficienza}
+\label{Efficienza}
+\end{longtable}
+
+\fi
+
+
+\subsubsection{Usabilità}
+
+Con \textit{Usabilità} si intende il livello di comprensione del prodotto da parte dell'utilizzatore.\\
+\textbf{Obiettivi di qualità} :
+
+\begin{itemize}
+	\item \textbf{Comprensibilità}: la facilità di comprensione delle funzionalità offerte dal prodotto, atta a fungere da spiegazione per l'utente che desideri utilizzarlo. 
+	\item \textbf{Apprendibilità}: livello di impegno richiesto dall'utente per imparare ad utilizzare il software;
+	\item \textbf{Operabilità}: capacità del software di mettere l'utente in condizione di utilizzarlo per i suoi scopi; 
+	\item \textbf{Attrattività}: il software deve essere di piacevole utilizzo da parte dell'utente.
+\end{itemize}
+
+Gli obiettivi metrici stabiliti per le metriche descritte nei paragrafi §3.2.5.6 e §3.2.5.7 delle \textit{Norme di Progetto v2.0.0} sono : 
+
+\begin{longtable}{|C{.15\textwidth}|C{.24\textwidth}|C{.24\textwidth}|C{.24\textwidth}|}
+\hline
+\rowcolor{bluelogo}\textbf{\textcolor{white}{ID}} & \textbf{\textcolor{white}{Nome}} & \textbf{\textcolor{white}{Ottimalità}} & \textbf{\textcolor{white}{Accettabilità}}\\
+MTPDS18 & Tempo medio di Comprensione & $\leq 5m$ & 5m<x $\leq 10m$\\
+\hline
+\rowcolor{grigio}MTPDS19 & Tempo medio di Apprendimento & $\leq 10m$ & 10m<x $\leq 20m$ \\ 
+\hline
+\caption{Usabilità}
+\label{Usabilità}
+\end{longtable}
+
+\subsubsection{Manutenibilità}
+
+Con \textit{Manutenibilità} si intende il livello di semplicità richiesto al fine di eseguire interventi di modifica, correzione o adattamento.\\
+\textbf{Obiettivi di qualità} :
+
+\begin{itemize}
+	\item \textbf{Analizzabilità}: facilità di lettura del codice per localizzare errori al suo interno; 
+	\item \textbf{Modificabilità}: facilità nella modifica delle componenti del software;
+	\item \textbf{Stabilità}: il software deve garantire il corretto funzionamento anche a fronte di modifiche errate;
+	\item \textbf{Testabilità}: il codice deve essere sviluppato in maniera tale da garantire facilità in creazione ed esecuzione dei test.
+\end{itemize}
+
+\iffalse
+
+\begin{longtable}{|C{.15\textwidth}|C{.24\textwidth}|C{.24\textwidth}|C{.24\textwidth}|}
+\hline
+\rowcolor{bluelogo}\textbf{\textcolor{white}{ID}} & \textbf{\textcolor{white}{Nome}} & \textbf{\textcolor{white}{Ottimalità}} & \textbf{\textcolor{white}{Accettabilità}}\\
+ID23 & Percentuale Commenti/Codice & $\leq 5m$ & 5m<x $\leq 10m$\\
+\hline
+\rowcolor{grigio}ID24 & Tempo medio di Apprendimento & $\leq 10m$ & 10m<x $\leq 20m$ \\ 
+\hline
+\caption{Manutenibilità}
+\label{Manutenibilità}
+\end{longtable}
+
+\fi
+
+
+\subsubsection{Portabilità}
+
+Con \textit{Portabilità} si intende la capacità del software di funzionare in diversi sistemi, che siano essi software o hardware. \\
+\textbf{Obiettivi di qualità} :
+
+\begin{itemize}
+	\item \textbf{Adattabilità}: capacità del software di funzionare su sistemi diversi senza dover implementare nuove funzionalità, oltre a quelle già fornite;
+	\item \textbf{Installabilità}: possibilità di installare il software in specifici ambienti;
+	\item \textbf{Sostituibilità}: capacità del software di essere utilizzato al posto di un altro software per lo svolgimento dei medesimi compiti nel medesimo ambiente.
+\end{itemize}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,65 @@
+\documentclass[12pt]{article}
+
+\usepackage[utf8]{inputenc}	%Encoding UTF8 per accenti
+\usepackage{pdflscape} % per pagine landscape
+
+\usepackage[T1]{fontenc}
+
+\usepackage[italian]{babel}
+
+\usepackage[onehalfspacing]{setspace}	%Interlinea di 1.5
+
+\usepackage[hyperfootnotes=false]{hyperref}	%Pacchetto per coll. ipertestuali
+
+\usepackage{tabularx}
+\usepackage{longtable,array} %Per Tabelle potenzialmente multipagina
+\usepackage{fancyhdr}  % per gli header e footer
+\usepackage{graphicx}  %per le immagini
+\usepackage{flafter}
+\usepackage{listings} %per i listati di codice
+\usepackage[font=small,labelfont=bf]{caption}
+
+\usepackage{framed}
+
+\usepackage[headheight=2cm, headsep=0.5cm, a4paper, margin=3cm]{geometry}
+\usepackage[bottom]{footmisc}
+
+\hypersetup{colorlinks=true}		%Configurazione colore link documento
+\hypersetup{linkcolor= blue}
+\renewcommand\UrlFont{\color{blue}\rmfamily\itshape} %Forzato colore blu su tutti i link ESTERNI
+
+\usepackage[dvipsnames,table]{xcolor}
+\definecolor{bluelogo}{HTML}{415A66}
+\definecolor{grigio}{HTML}{D0D0D0}
+\usepackage{makecell}
+
+\renewcommand{\footrulewidth}{0.1pt}
+\newcommand{\glossario}{\textsubscript{G} }
+
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+ 
+\pagestyle{fancy}
+
+\fancyhf{}
+
+\lhead{\includegraphics[scale=0.08]{./images/logo.png}}
+\rhead{\rightmark}
+
+\lfoot{Piano di Progetto v2.0.0}
+\cfoot{}
+\rfoot{Pagina \thepage \hspace{1pt} di \pageref*{LastPage}}
+
+\makeindex
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{4}
+
+%\lhead{\includegraphics[scale=0.08]{./images/logo.png}}
+%\usepackage[headheight=2cm, headsep=0.5cm, a4paper, margin=3cm]{geometry}
+
+\newcolumntype{C}[1]{>{\centering\arraybackslash}m{#1}}
+\usepackage{eurosym}
+
+\usepackage{grffile}
+\usepackage{float}
+

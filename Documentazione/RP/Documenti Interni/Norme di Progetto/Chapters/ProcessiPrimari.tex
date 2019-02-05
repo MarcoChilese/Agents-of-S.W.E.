@@ -1,0 +1,94 @@
+\section{Processi Primari}\label{ProcessiPrimari}
+
+\subsection{Fornitura}
+In questa sezione del documento vengono trattate le norme che il team \texttt{Agents of S.W.E.} decide e si impegna a rispettare, con lo scopo di proporsi e divenire fornitori nei confronti dell'azienda proponente, \textit{Zucchetti S.p.A.} e dei committenti Prof. Tullio Vardanega e Prof. Riccardo Cardin nell'ambito della progettazione, sviluppo e consegna del prodotto "\textit{G\&B}". 
+
+\subsection{Sviluppo}\label{Sviluppo}
+\subsubsection{Studio di fattibilità} \label{ProcessiPrimari_Sviluppo_StudioFattibilità}
+In seguito all'incontro con le aziende il 16 novembre 2018, il gruppo si è riunito per discutere la scelta del capitolato. Dopo un'opportuna analisi il team ha deciso di scegliere il capitolato C3 ovvero "\textit{G\&B}". A questo punto gli analisti hanno redatto il documento "\textit{Studio di fattibilità}" dove sono contenute le analisi dei capitolati, specificando pro e contro di ognuno e motivando la scelta.
+Tale documento è così strutturato: 
+\begin{itemize}
+	\item \textbf{Informazioni del capitolato}: sezione che contiene il nome del fornitore e il nome del capitolato;
+	\item \textbf{Descrizione Capitolato e Obiettivo Finale}: descrizione obiettivo finale del capitolato e ambito di utilizzo del prodotto;
+	\item \textbf{Dominio Tecnologico}: definisce il dominio tecnologico, ovvero le tecnologie richieste dall'azienda;
+	\item \textbf{Valutazione del Capitolato}: definisce aspetti positivi, negativi, e criticità, motivando la scelta del capitolato.  
+\end{itemize}
+
+\subsubsection{Analisi dei requisiti}\label{ProcessiPrimari_Sviluppo_AnalisiRequisiti}
+È un documento stilato dagli Analisti con lo scopo di riportare tutti i requisiti del capitolato. Le informazioni possono essere recuperate da più fonti, tra cui: 
+\begin{itemize}
+	\item \textbf{Riunioni esterne:} incontri con il cliente con lo scopo di approfondire aspetti critici;
+	\item \textbf{Riunioni interne:} riunioni del gruppo dove l'obiettivo è discutere i casi d'uso del capitolato e studiare il dominio di utilizzo;
+	\item \textbf{Documentazione:} analisi della documentazione offerta dall'azienda.
+\end{itemize}
+Il risultato dello studio sarà un documento verificato che contiene:
+\begin{itemize}
+	\item Descrizione generale del prodotto;
+	\item Argomentazioni precise ed affidabili per i Progettisti;
+	\item Diagrammi UML che rappresentano i casi d'uso;
+	\item Funzionalità finali accordate con il cliente;
+	\item Stima dei costi.      
+\end{itemize}
+
+\paragraph{Classificazione dei requisiti} \-\\
+Il requisito si può definire come:
+\begin{itemize}
+	\item Capacità necessaria a un utente per raggiungere un obiettivo;
+	\item Capacità del sistema per soddisfare un obbligo da contratto;
+	\item Descrizione documentata di una capacità.
+\end{itemize}
+La classificazione dei requisiti aiuta a mettere ordine e a facilitare la comprensione e il mantenimento futuro del sistema. Si possono dividere in:
+\begin{itemize}
+	\item \textbf{Attributi di Prodotto}: specificano "\textit{cosa}" bisogna svolgere e definiscono i requisiti funzionali, prestazionali e di qualità;
+	\item \textbf{Attributi di Processo}: specificano "\textit{come}" bisogna svolgere definendo norme contrattuali e realizzative. 
+\end{itemize}
+Ogni requisito, nel documento, deve seguire le seguenti regole di identificazione:
+\begin{center}
+\textbf{R[Importanza][Tipo][Identificativo]}
+\end{center}  
+\begin{itemize}
+	\item \textbf{R}: sta per appunto "requisito";
+	\item \textbf{Importanza}: specifica quanto è importante il requisito, può assumere tre valori:
+	\begin{itemize}
+			\item \textbf{O}: indica che il requisito è obbligatorio, e deve essere per forza soddisfatto per il corretto funzionamento di base del sistema;
+			\item \textbf{D}: indica che il requisito è desiderabile, se viene soddisfatto aumenta la completezza del sistema, se non viene soddisfatto non crea alcuna penalizzazione;
+			\item \textbf{F}: indica un requisito opzionale (F sta per "facoltativo"). 
+	\end{itemize}
+	\item \textbf{Tipo}: specifica la tipologia e può assumere i seguenti valori:
+	\begin{itemize}
+		\item \textbf{F}: requisito funzionale;
+		\item \textbf{P}: requisito prestazionale;
+		\item \textbf{Q}: requisito qualitativo;
+		\item \textbf{V}: requisito di vincolo.
+	\end{itemize}
+	\item \textbf{Identificativo}: numero progressivo che identifica il requisito, strutturato come segue: 
+	\begin{center}
+		\textbf{[codice padre].[codice figlio]}	
+	\end{center}
+\end{itemize}
+
+\paragraph{Classificazione dei casi d'uso} \-\\
+Un caso d'uso consiste nel valutare ogni requisito con lo scopo di definire gli attori (utenti esterni) all'interno di un scenario che hanno un obiettivo finale comune. Il gruppo, nel documento, oltre a fornire una spiegazione verbosa e dettagliata dei casi d'uso, fornirà una rappresentazione grafica nel linguaggio UML.
+Si è stabilito la seguente classificazione dei casi d'uso:
+\begin{center}
+	\textbf{UC[codice padre].[codice identificativo]}
+\end{center}
+dove:
+\begin{itemize}
+	\item \textbf{Codice padre}: indica il codice identificativo del caso d'uso che ha generato il corrente, se non è stato generato da nessun caso d'uso allora viene tralasciato;
+	\item \textbf{Codice identificativo}: indica il codice univoco del caso d'uso corrente, è rappresentato da una cifra.
+\end{itemize}
+Ogni caso d'uso avrà le seguenti informazioni:
+\begin{itemize}
+	\item \textbf{Identificativo}: codice univoco del caso d'uso;
+	\item \textbf{Attori}: identifica gli attori principali e attori secondari del caso d'uso;
+	\item \textbf{Precondizioni}: identifica le condizioni sempre vere prima degli eventi del caso d'uso;
+	\item \textbf{Postcondizioni}: identifica le condizioni sempre vere dopo gli eventi del caso d'uso;
+	\item \textbf{Scenario}: sequenza di passi che descrivono interazioni tra gli attori e il sistema, possono creare scenari secondari a seconda del comportamento dell'utente, per esempio dalla log-in passare alla registrazione.	
+\end{itemize}
+
+\subsubsection{Progettazione}\label{Progettazione}
+\input{Chapters/progettazione.tex}
+
+\subsubsection{Codifica}
+\input{Chapters/codifica.tex}
