@@ -29,9 +29,3 @@
 - Amministratore: Luca Violato
 - Responsabile: Bogdan Stanciu
 - Verificatore: Marco C., Carlotta
-- Analista: Diego, Marco F., Matteo
-
-### WHO 
-- Carlotta Segna 
-- Diego Mazzalovo 
-- Matteo Slanzi 
