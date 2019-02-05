@@ -1,5 +1,35 @@
 \section{Requisiti}\label{Requisiti}
 
+I requisiti vengono classificati ed assegnati con un identificativo univoco, secondo quanto definito nel documento \textit{Norme di progetto v2.0.0.}
+\\
+Di seguito, viene riportato il contenuto della classificazione dei requisiti per facilitare i lettori esterni che non hanno accesso al documento.
+\\
+Ogni requisito, nel documento, deve seguire le seguenti regole di identificazione:
+\begin{center}
+	\textbf{R[Importanza][Tipo][Identificativo]}
+\end{center}  
+\begin{itemize}
+	\item \textbf{R}: sta per appunto "requisito";
+	\item \textbf{Importanza}: specifica quanto è importante il requisito, può assumere tre valori:
+	\begin{itemize}
+		\item \textbf{O}: indica che il requisito è obbligatorio, e deve essere per forza soddisfatto per il corretto funzionamento di base del sistema;
+		\item \textbf{D}: indica che il requisito è desiderabile, se viene soddisfatto aumenta la completezza del sistema, se non viene soddisfatto non crea alcuna penalizzazione;
+		\item \textbf{F}: indica un requisito opzionale (F sta per "facoltativo"). 
+	\end{itemize}
+	\item \textbf{Tipo}: specifica la tipologia e può assumere i seguenti valori:
+	\begin{itemize}
+		\item \textbf{F}: requisito funzionale;
+		\item \textbf{P}: requisito prestazionale;
+		\item \textbf{Q}: requisito qualitativo;
+		\item \textbf{V}: requisito di vincolo.
+	\end{itemize}
+	\item \textbf{Identificativo}: numero progressivo che identifica il requisito, strutturato come segue: 
+	\begin{center}
+		\textbf{[codice padre].[codice figlio]}	
+	\end{center}
+\end{itemize}
+
+\newpage
 \subsection{Requisiti Funzionali}\label{RF}
 \begin{center}
 \begin{longtable}[c]{|m{.11\textwidth}|m{.50\textwidth}|m{.2\textwidth}|m{.08\textwidth}|}
@@ -89,6 +119,10 @@ ROQ2.1 & Il manuale di manutenzione/estensione deve essere disponibile in lingua
 \hline
 ROQ3 & Il prodotto deve essere sviluppato in modo concorde a quanto stabilito nelle \textit{Norme di Progetto v1.0.0} & Obbligatorio & Decisione Interna\\
 \hline
+\rowcolor{grigio}ROQ4 & Il codice sorgente del plug-in deve essere reperibile in una repository pubblica su GitHub\glossario o su altre piattaforme di condivisione & Desiderabile & Capitolato \\
+\hline
+ROQ5 & Il plug-in deve essere pubblicato nella sezione plug-in di \textit{Grafana}, disponibile all'indirizzo \url{https://grafana.com/plugins}   & Desiderabile & Decisione Interna \\
+\hline
 \caption{Requisiti di Qualità}
 \end{longtable}
 \end{center}
@@ -108,6 +142,12 @@ ROV1 & Il plug-in deve essere sviluppato in linguaggio \textit{ECMAScript6} & \t
 \hline
 ROV3 & Va utilizzato un qualsiasi build system\glossario che supporti \textit{systemjs}\glossario & \textit{Grafana}: guida per gli sviluppatori\\
 \hline
+\rowcolor{grigio}ROV4 & Il codice sorgente del plug-in deve essere open source & Capitolato\\
+\hline
+ROV5 & La rete bayesiana è definita in un file formato JSON & Capitolato\\
+\hline
+\rowcolor{grigio}ROV6 & L'interfaccia grafica del plug-in è sviluppata utilizzando HTML5\glossario e CSS\glossario & \textit{Grafana}: guida per gli sviluppatori \\
+\hline
 \caption{Requisiti di Vincolo}
 \end{longtable}
 \end{center}
@@ -120,11 +160,11 @@ ROV3 & Va utilizzato un qualsiasi build system\glossario che supporti \textit{sy
 \rowcolor{bluelogo}\textbf{\textcolor{white}{Fonte}} & \textbf{\textcolor{white}{Requisiti}}\\
 \hline \hline
 \endhead
-Capitolato & \makecell{ROQ1\\ROQ2}\\
+Capitolato & \makecell{ROQ1\\ROQ2\\ROQ4\\ROV4\\ROV5}\\
 \hline
-\rowcolor{grigio}Decisione Interna & \makecell{ROQ1.1\\RDQ1.2\\ROQ2.1\\RDQ2.2\\ROQ3}\\
+\rowcolor{grigio}Decisione Interna & \makecell{ROQ1.1\\RDQ1.2\\ROQ2.1\\RDQ2.2\\ROQ3\\ROQ5}\\
 \hline
-Piattaforma \textit{Grafana} & \makecell{ROV1\\ROV2\\ROV3}\\
+Piattaforma \textit{Grafana} & \makecell{ROV1\\ROV2\\ROV3\\ROV6}\\
 \hline
 \rowcolor{grigio}UC1 & \makecell{ROF1\\ROF1.1\\ROF1.2\\ROF1.3\\ROF1.4\\RFF1.4.1\\RFF1.4.2}\\
 \hline
@@ -158,9 +198,9 @@ UC8 & \makecell{ROF1.4\\RFF1.4.1\\RFF1.4.2}\\
 \endhead
 Funzionale & 25 & 2 & 0 & 27\\
 \hline
-\rowcolor{grigio}Di Qualità & 5 & 0 & 2 & 7\\
+\rowcolor{grigio}Di Qualità & 5 & 0 & 4 & 9\\
 \hline
-Di Vincolo & 3 & 0 & 0 & 3\\
+Di Vincolo & 6 & 0 & 0 & 6\\
 \hline
 \caption{Riepilogo dei Requisiti}
 \end{longtable}
