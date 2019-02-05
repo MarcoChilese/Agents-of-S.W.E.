@@ -6,7 +6,7 @@ Il contenuto di questa sezione descrive le metriche e i criteri di qualità di p
 \subsubsection{Classificazione Processi}
 Per garantire una corretta struttura, il gruppo ha deciso di introdurre una nomenclatura per identificare i processi descritti nel documento. I processi saranno identificati così:
 \begin{center}
-	\textbf{PRC[num]}
+	\textbf{PR[num]}
 \end{center}
 dove:
 \begin{itemize}
@@ -181,34 +181,47 @@ Le seguenti metriche sono utilizzate per misurare qualitativamente il prodotto.
 \paragraph{MTTS15 Numero di test eseguiti per requisito}\-\\
 \fi
 
-\paragraph{MTPDD14 Indice di Gulpease}\-\\
+\paragraph{Leggibilità}
+\begin{itemize}
+	\item \textbf{MTPDD14 Indice di Gulpease}\-\\
 Il gruppo ha deciso di utilizzare l'\textit{indice di Gulpease}\glossario\footnote{\url{https://it.wikipedia.org/wiki/Indice\_Gulpease}} per misurare la leggibilità di un testo. \'E stato sviluppato appositamente uno script in \textit{Python} per automatizzare la procedura e allo stesso modo velocizzarla. La procedura verrà utilizzata a documento terminato e completo così da valutare il lavoro svolto dai redattori.
 
-\paragraph{MTPDD15 Correttezza Ortografica}\-\\
+	\item \textbf{MTPDD15 Correttezza Ortografica}\-\\
 La correttezza ortografica è un aspetto importante che non accetta errori, i documenti al momento della pubblicazione sono corretti. Verranno utilizzati appositi strumenti che supporteranno la correzione, ovvero il software \textit{TexMaker} il quale integra un segnalatore automatico degli errori grammaticali. 
 
-\paragraph{Correttezza Logica e Semantica} \-\\
+	\item \textbf{Correttezza Logica e Semantica} \-\\
 Non essendo disponibili sistemi automatici al fine di controllare la correttezza logica e semantica, la comprensione totale del prodotto letto identificherà anche tale correttezza, in quanto un documento viene considerato leggibile solamente se è corretto.
+\end{itemize}
 
-\paragraph{MTPDS16 Soddisfacimento Requisiti Obbligatori}\-\\
+\paragraph{Funzionalità}
+\begin{itemize}
+
+	\item \textbf{MTPDS16 Soddisfacimento Requisiti Obbligatori}\-\\
 Indicatore percentuale che verifica che tutti i requisiti obbligatori siano soddisfatti. Condizione necessaria al fine di rispettare il contratto. La misurazione avviene:
 \begin{center}
 	\item $PRO = \frac{ROS}{ROT}*100$
 \end{center}
 dove PRO è la percentuale di requisiti obbligatori soddisfatti, ROS i requisiti obbligatori soddisfatti e ROT i requisiti obbligatori totali.
 
-\paragraph{MTPDS17 Soddisfacimento Requisiti Opzionali Scelti}\-\\
+	\item \textbf{MTPDS17 Soddisfacimento Requisiti Opzionali Scelti}\-\\
 Indicatore percentuale che verifica se tutti i requisiti opzionali scelti siano soddisfatti. Condizione necessaria al fine di rispettare il contratto. La misurazione avviene:
 \begin{center}
 	\item $PRP = \frac{RPS}{RPT}*100$
 \end{center}
 dove PRP è la percentuale di requisiti opzionali scelti soddisfatti, RPS i requisiti opzionali scelti soddisfatti e RPT i requisiti opzionali scelti totali.
+\end{itemize}
 
-\paragraph{MTPDS18 Tempo Medio di Comprensione}\-\\
+\paragraph{Usabilità}
+
+\begin{itemize}
+
+	\item\textbf{Tempo Medio di Comprensione}\-\\
 Indica il tempo medio che l'utente impiega per comprendere cosa può svolgere il sistema. \'E misurato in minuti ed è rilevato attraverso test a persone esterne al team di sviluppo.
 
-\paragraph{MTPDS19 Tempo Medio di Apprendimento}\-\\
+	\item\textbf{MTPDS19 Tempo Medio di Apprendimento}\-\\
 Indica il tempo medio che l'utente impiega per riuscire a utilizzare a pieno il software e tutte le sue funzionalità. \'E misurato in minuti ed è rilevato tramite test a persone esterne al team di sviluppo. 
+
+\end{itemize}
 
 \iffalse
 \paragraph{MTPDS25 Percentuale Commenti/Codice}\-\\
