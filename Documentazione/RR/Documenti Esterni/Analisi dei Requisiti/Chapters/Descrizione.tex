@@ -16,29 +16,6 @@ Un esempio più concreto del beneficio derivato da un corretto utilizzo del prod
 Il plug-in di \textit{Grafana} "G\&B" è caratterizzato da un ambito di utilizzo, ed un relativo bacino di utenza, singolarmente ristretto. Il prodotto finale è rivolto ai soli utenti già registrati presso la piattaforma \textit{Grafana} che desiderano monitorare un determinato flusso dati attraverso l'uso di una qualche rete bayesiana in loro possesso.
 
 \subsection{Vincoli Progettuali}\label{VincoliProgettuali}
-L'implementazione finale del prodotto "G\&B" deve realizzare un plug-in per la piattaforma \textit{Grafana} con le caratteristiche descritte in §\ref{CaratteristicheProdotto} e che soddisfi gli obiettivi presentati in §\ref{ObiettiviProdotto} rispettando i seguenti vincoli:
-\begin{itemize}
-\item \textbf{Requisiti Minimi Obbligatori:}
-	\begin{enumerate}
-	\item Leggere la definizione della rete bayesiana da un file in formato \textit{.JSON};
-	\item Associare alcuni nodi della rete ad un flusso di dati presente in \textit{Grafana};
-	\item Applicare il ricalcolo delle probabilità della rete secondo regole temporali prestabilite;
-	\item Fornire nuovi dati al sistema di \textit{Grafana} derivati dai nodi della rete non collegati al flusso di monitoraggio;
-	\item Rendere disponibili i dati al sistema di creazione di grafici e dashboard per la loro visualizzazione.
-	\end{enumerate}
-\item \textbf{Requisiti Opzionali:}
-	\begin{enumerate}
-	\item Possibilità di definire alert in base a livelli di soglia raggiunti dai nodi non collegati al flusso dati;
-	\item Possibilità di disegnare la rete bayesiana con un editor grafico;
-	\item Possibilità di applicare più reti bayesiane ad oggetti di monitoraggio diversi;
-	\item Possibilità di creare la rete bayesiana a partire da dati raccolti sul campo;
-	\item Identificare altri metodi di IA\glossario applicabili.
-	\end{enumerate}
-\item \textbf{Tecnologie Richieste:}
-	\begin{itemize}
-	\item \textit{ECMAScript\glossario} 6 per lo sviluppo di plug-in per \textit{Grafana};
-	\item \textit{JSON} per la definizione della rete bayesiana;
-	\item \textit{Jsbayes} (libreria open-source) per la gestione dei calcoli della rete bayesiana.
-	\end{itemize}
-\end{itemize}
- 
+L'implementazione finale del prodotto "G\&B" deve realizzare un plug-in per la piattaforma \textit{Grafana} con le caratteristiche descritte in §\ref{CaratteristicheProdotto} e che soddisfi gli obiettivi presentati in §\ref{ObiettiviProdotto}. \\
+I requisiti minimi obbligatori e opzionali sono descritti nel capitolato scelto  \url{https://www.math.unipd.it/~tullio/IS-1/2018/Progetto/C3.pdf}.
+
