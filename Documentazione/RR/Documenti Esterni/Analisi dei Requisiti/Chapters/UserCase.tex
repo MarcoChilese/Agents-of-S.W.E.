@@ -212,7 +212,7 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 \end{itemize}
 \newpage
 
-\subsection{UC3 - Creazione delle politiche temporali di ricalcolo delle probabilità}\label{UC3}
+\subsection{UC3 - Creazione policy temporali di ricalcolo delle probabilità}\label{UC3}
 
 \begin{figure}[H]
 \centering
@@ -272,17 +272,19 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 \subsection{UC4 - Riutilizzo delle politiche temporali}
 \label{UC4}
 
-%\begin{figure}[H]
-%\centering
-%\includegraphics[scale=0.3]{./images/UC4.png}
-%\caption{UC4 - Impostazione delle politiche temporali di ricalcolo.}
-%\end{figure}
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.3]{./images/UC4.png}
+\caption{UC4 - Impostazione delle politiche temporali di ricalcolo.}
+\end{figure}
 
 \begin{itemize}
 	\item \textbf{Attore primario}: Utente; 
 	\item \textbf{Precondizione}: l'utente ha caricato con successo la rete bayesiana (\hyperref[UC1]{UC1 (§\ref*{UC1})});
 	\item \textbf{Postcondizione}: l'utente ha collegato con successo la policy per il ricalcolo delle probabilità alla rete bayesiana, caricata in (\hyperref[UC1]{UC1 (§\ref*{UC1})});	
-	
+
+	\item \textbf{Scenario principale:}
+		
 	\begin{enumerate}
 		\item L'utente accede alle impostazioni passando dalla dashboard; 
 		\item L'utente ha selezionato una policy esistente; 
