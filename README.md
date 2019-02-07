@@ -28,3 +28,14 @@
 ### Ruoli (3) Risanamento
 - Amministratore: Luca Violato
 - Responsabile: Bogdan Stanciu
+
+
+### Tecnologie da usare
+- npm gestore pacchetti
+- nodejs come motore per es6 (?)
+- jest per i test al codice e la coverage
+- webstorm come ide
+- eslint come plugin su webstorm impostato con le regole di Airbnb per es6
+- ci su gitlab
+- coverage forse gitlab
+- (???) Sonarqube analisi statica
