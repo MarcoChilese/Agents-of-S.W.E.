@@ -15,7 +15,27 @@ Un esempio più concreto del beneficio derivato da un corretto utilizzo del prod
 \subsection{Caratteristiche degli Utenti}\label{CaratteristicheUtenti}
 Il plug-in di \textit{Grafana} "G\&B" è caratterizzato da un ambito di utilizzo, ed un relativo bacino di utenza, singolarmente ristretto. Il prodotto finale è rivolto ai soli utenti già registrati presso la piattaforma \textit{Grafana} che desiderano monitorare un determinato flusso dati attraverso l'uso di una qualche rete bayesiana in loro possesso.
 
-\subsection{Vincoli Progettuali}\label{VincoliProgettuali}
-L'implementazione finale del prodotto "G\&B" deve realizzare un plug-in per la piattaforma \textit{Grafana} con le caratteristiche descritte in §\ref{CaratteristicheProdotto} e che soddisfi gli obiettivi presentati in §\ref{ObiettiviProdotto}. \\
-I requisiti minimi obbligatori e opzionali sono descritti nel capitolato scelto  \url{https://www.math.unipd.it/~tullio/IS-1/2018/Progetto/C3.pdf}.
+\subsection{Vincoli Progettuali}
+\label{VincoliProgettuali}
 
+Il prodotto finale, così come descritto all'interno dei capitoli precedenti, è soggetto a vincoli progettuali obbligatori ed opzionali. Questi sono stati descritti all'interno della documentazione, il cui link è reperibile nella sezione §\ref{RN}. \\
+
+I vincoli obbligatori, richiesti dall'azienda proponente, sono:
+\begin{itemize}
+	\item Il linguaggio da utilizzare per lo sviluppo del plug-in è \textit{JavaScript};
+	\item La lettura della rete Bayesiana dovrà avvenire da un file in formato \textit{.json};
+	\item I nodi della rete dovranno essere collegati ad un flusso di dati presente in Grafana;
+	\item Definire regole temporali per il ricalcolo delle probabilità;
+	\item In base alle politiche temporali stabilite il sistema deve fornire dati relativi alle probabilità condizionate dei nodi non collegati al flusso dati;
+	\item I dati vengono forniti dal sistema sotto forma di misura di probabilità associata al corrispondente nodo; 
+	\item I dati dovranno poter essere visualizzati all'interno della dashboard di Grafana;
+\end{itemize}
+
+I vincoli opzionali, che possono essere realizzati parzialmente o nella loro totalità, a discrezione del fornitore, sono i seguenti: 
+\begin{itemize}
+\item L'utente avrà la possibilità di definire alert basati su livelli di soglia relativi ai dati forniti dai nodi non collegati al flusso di monitoraggio;
+\item Disegnare la rete Bayesiana tramite un editor; 
+\item Applicazione di oggetti di monitoraggio diversi a reti Bayesiane diverse;
+\item Creazione di una rete Bayesiana basata sui dati raccolti, piuttosto che lo sviluppo di questa da parte di esperti; 
+\item Ricerca di altri metodi di Intelligenza Artificiale diversi dalla rete Bayesiana, utilizzabili per l'analisi del flusso dati. 
+\end{itemize}
