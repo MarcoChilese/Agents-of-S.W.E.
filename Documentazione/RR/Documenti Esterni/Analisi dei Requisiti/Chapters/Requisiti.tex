@@ -87,32 +87,37 @@ ROF2.5.1 & Il Sistema deve rendere non interagibile il pannello contente la list
 \hline
 ROF2.5.3 & Il Sistema deve interrompere la visualizzazione dei dati ed eliminare eventuali alert ad essi associati nel caso in cui l'utente interagisca con il sistema per modificare il collegamento dei nodi & Obbligatorio & UC2 UC4 UC7 UC13\\
 \hline
-\rowcolor{grigio}ROF3 & L'utente deve poter impostare una policy per il ricalcolo delle probabilità nella rete & Obbligatorio & UC3\\
+\rowcolor{grigio}ROF3 & L'utente deve poter impostare una politica temporale per il ricalcolo delle probabilità condizionate associate ai nodi della rete bayesiana & Obbligatorio & UC3\\
 \hline
-ROF3.1 & L'utente deve avere la possibilità di impostare una policy esistente ad una rete bayesiana  & Obbligatorio & UC3\\ 
+ROF3.3 & L'utente deve avere la possibilità di definire una politica temporale & Obbligatorio & UC3\\ 
 \hline
-\rowcolor{grigio}ROF3.2 & L'utente deve avere la possibilità di creare una nuova policy da aggiungere ad una rete bayesiana & Obbligatorio & UC3\\
+\rowcolor{grigio}ROF3.3.1 & Il Sistema deve mettere a disposizione dell'utente un pannello di configurazione contente i campi dati necessari alla definizione di una politica temporale & Obbligatorio & UC3\\
 \hline
-%TODO REQUISITI COLLEGATI A UC3
-ROF4 & Il Sistema deve fornire i dati relativi ai nodi della rete bayesiana non collegati al flusso & Obbligatorio & UC4\\
+ROF3.3.2 & L'utente deve poter editare i campi dati per definire correttamente la politica temporale desiderata & Obbligatorio & UC3\\
 \hline
-\rowcolor{grigio}ROF4.1 & Il Sistema deve mettere a disposizione dell'utente un pulsante per avviare il monitoraggio dei dati & Obbligatorio & UC4\\
+\rowcolor{grigio}ROF3.4 & Il Sistema deve mettere a disposizione dell'utente un bottone per confermare la politica temporale da lui definita & Obbligatorio & UC3\\
 \hline
-ROF4.1.1 & Il Sistema deve visualizzare un messaggio di errore nel caso in cui l'utente abbia avviato il monitoraggio senza aver preventivamente caricato una rete bayesiana & Obbligatorio & UC4 UC10\\
+ROF3.5 & Il Sistema deve visualizzare un messaggio di errore nel caso in cui l'utente abbia confermato una politica temporale non correttamente definita & Obbligatorio & UC3 UC15\\
 \hline
-\rowcolor{grigio}ROF4.1.2 & Il Sistema deve visualizzare un messaggio di errore nel caso in cui l'utente abbia avviato il monitoraggio senza aver preventivamente collegato alcuni dei nodi della rete ad un flusso dati & Obbligatorio & UC4 UC11\\
+\rowcolor{grigio}ROF4 & Il Sistema deve fornire i dati relativi ai nodi della rete bayesiana non collegati al flusso & Obbligatorio & UC4\\
 \hline
-ROF4.1.3 & Il Sistema deve visualizzare un messaggio di errore nel caso in cui l'utente abbia avviato il monitoraggio senza aver preventivamente impostato la politica temporale per il ricalcolo delle probabilità & Obbligatorio & UC4 UC12\\
+ROF4.1 & Il Sistema deve mettere a disposizione dell'utente un pulsante per avviare il monitoraggio dei dati & Obbligatorio & UC4\\
 \hline
-\rowcolor{grigio}ROF4.2 & Il Sistema deve fornire all'utente una lista di probabilità dinamiche associate ai nodi della rete & Obbligatorio & UC4\\
+\rowcolor{grigio}ROF4.1.1 & Il Sistema deve visualizzare un messaggio di errore nel caso in cui l'utente abbia avviato il monitoraggio senza aver preventivamente caricato una rete bayesiana & Obbligatorio & UC4 UC10\\
 \hline
-ROF4.3 & Il Sistema deve aggiornare periodicamente le probabilità in base a quanto definito come policy per il ricalcolo delle probabilità & Obbligatorio & UC4\\
+ROF4.1.2 & Il Sistema deve visualizzare un messaggio di errore nel caso in cui l'utente abbia avviato il monitoraggio senza aver preventivamente collegato alcuni dei nodi della rete ad un flusso dati & Obbligatorio & UC4 UC11\\
 \hline
-\rowcolor{grigio}ROF5 & Il Sistema deve mettere a disposizione di \textit{Grafana} i dati per l'operazione di creazione di alert ad essi associati da parte dell'utente & Obbligatorio & UC5\\
+\rowcolor{grigio}ROF4.1.3 & Il Sistema deve visualizzare un messaggio di errore nel caso in cui l'utente abbia avviato il monitoraggio senza aver preventivamente impostato la politica temporale per il ricalcolo delle probabilità & Obbligatorio & UC4 UC12\\
 \hline
-ROF6 & Il Sistema deve mostrare all'utente gli alert associati al flusso di dati collegato alla rete bayesiana & Obbligatorio & UC7\\ 
+ROF4.2 & Il Sistema deve fornire all'utente una lista di probabilità dinamiche associate ai nodi della rete & Obbligatorio & UC4\\
 \hline
-\rowcolor{grigio}ROF6.1 & L'utente deve poter rimuovere gli alert associati ai nodi della rete bayesiana & Obbligatorio & UC6\\ 
+\rowcolor{grigio}ROF4.3 & Il Sistema deve aggiornare periodicamente le probabilità in base a quanto definito come policy per il ricalcolo delle probabilità & Obbligatorio & UC4\\
+\hline
+ROF5 & Il Sistema deve mettere a disposizione di \textit{Grafana} i dati per l'operazione di creazione di alert ad essi associati da parte dell'utente & Obbligatorio & UC5\\
+\hline
+\rowcolor{grigio}ROF6 & Il Sistema deve mostrare all'utente gli alert associati al flusso di dati collegato alla rete bayesiana & Obbligatorio & UC7\\ 
+\hline
+ROF6.1 & L'utente deve poter rimuovere gli alert associati ai nodi della rete bayesiana & Obbligatorio & UC6\\ 
 \hline
 \caption{Requisiti Funzionali}
 \end{longtable}
@@ -142,9 +147,9 @@ ROQ2.1 & Il manuale di manutenzione/estensione deve essere disponibile in lingua
 \hline
 ROQ3 & Il prodotto deve essere sviluppato in modo concorde a quanto stabilito nelle \textit{Norme di Progetto v1.0.0} & Obbligatorio & Decisione Interna\\
 \hline
-\rowcolor{grigio}RDQ4 & Il codice sorgente del plug-in deve essere reperibile in una repository pubblica su GitHub\glossario o su altre piattaforme di condivisione & Desiderabile & Capitolato \\
+\rowcolor{grigio}RDQ5 & Il codice sorgente del plug-in deve essere reperibile in una repository pubblica su GitHub\glossario o su altre piattaforme di condivisione & Desiderabile & Capitolato \\
 \hline
-RDQ5 & Il plug-in deve essere pubblicato nella sezione plug-in di \textit{Grafana}, disponibile all'indirizzo \url{https://grafana.com/plugins}   & Desiderabile & Decisione Interna \\
+RDQ6 & Il plug-in deve essere pubblicato nella sezione plug-in di \textit{Grafana}, disponibile all'indirizzo \url{https://grafana.com/plugins}   & Desiderabile & Decisione Interna \\
 \hline
 \caption{Requisiti di Qualità}
 \end{longtable}
@@ -183,9 +188,9 @@ ROV5 & La rete bayesiana è definita in un file formato JSON & Capitolato\\
 \rowcolor{bluelogo}\textbf{\textcolor{white}{Fonte}} & \textbf{\textcolor{white}{Requisiti}}\\
 \hline \hline
 \endhead
-Capitolato & \makecell{ROQ1\\ROQ2\\RDQ4\\ROV4\\ROV5}\\
+Capitolato & \makecell{ROQ1\\ROQ2\\RDQ5\\ROV4\\ROV6}\\
 \hline
-\rowcolor{grigio}Decisione Interna & \makecell{ROQ1.1\\RDQ1.2\\ROQ2.1\\RDQ2.2\\ROQ3\\RDQ5}\\
+\rowcolor{grigio}Decisione Interna & \makecell{ROQ1.1\\RDQ1.2\\ROQ2.1\\RDQ2.2\\ROQ3\\RDQ6}\\
 \hline
 Piattaforma \textit{Grafana} & \makecell{ROV1\\ROV2\\ROV3\\ROV6}\\
 \hline
@@ -195,7 +200,7 @@ UC2 & \makecell{ROF2\\ROF2.1\\ROF2.1.1\\ROF2.1.2\\ROF2.2\\ROF2.2.7\\ROF2.3\\ROF2
 \hline
 \rowcolor{grigio}UC2.2 & \makecell{ROF2.2.1\\ROF2.2.2\\ROF2.2.3\\ROF2.2.4\\RPF2.2.5\\ROF2.2.6}\\
 \hline
-UC3 & \makecell{ROF3\\ROF3.1\\ROF3.2}\\
+UC3 & \makecell{ROF3\\ROF3.3\\ROF3.3.1\\3.3.2\\3.4\\3.5}\\
 \hline
 \rowcolor{grigio}UC4 & \makecell{ROF2.5.3\\ROF4\\ROF4.1\\ROF4.1.1\\ROF4.1.2\\ROF4.1.3\\5.2\\5.3}\\
 \hline
@@ -219,6 +224,8 @@ UC13 & \makecell{ROF2.5\\ROF2.5.1\\ROF2.5.2\\ROF2.5.3}\\
 \hline
 \rowcolor{grigio}UC14 & \makecell{ROF2.2.6}\\
 \hline
+UC15 & \makecell{ROF3.5}\\
+\hline
 \caption{Tracciamento Fonti-Requisiti}
 \end{longtable}
 \end{center}
@@ -231,7 +238,7 @@ UC13 & \makecell{ROF2.5\\ROF2.5.1\\ROF2.5.2\\ROF2.5.3}\\
 \rowcolor{bluelogo}\textbf{\textcolor{white}{Tipologia}} & \textbf{\textcolor{white}{Obbligatorio}} & \textbf{\textcolor{white}{Opzionale}} & \textbf{\textcolor{white}{Desiderabile}} & \textbf{\textcolor{white}{Totale}}\\
 \hline \hline
 \endhead
-Funzionale & 36 & 2 & 0 & 38\\
+Funzionale & 39 & 2 & 0 & 41\\
 \hline
 \rowcolor{grigio}Di Qualità & 5 & 0 & 4 & 9\\
 \hline

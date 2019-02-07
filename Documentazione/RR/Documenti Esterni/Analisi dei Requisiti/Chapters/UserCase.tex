@@ -212,59 +212,58 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 \end{itemize}
 \newpage
 
-\subsection{UC3 - Creazione policy temporali di ricalcolo delle probabilità}\label{UC3}
+\subsection{UC3 - Selezione di una politica temporale di ricalcolo delle probabilità}\label{UC3}
 
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.3]{./images/UC3.png}
-\caption{UC3 - Creazione delle politiche temporali di ricalcolo.}
+\includegraphics[scale=0.5]{./images/UC3.png}
+\caption{UC3 - Selezione di una politica temporale di ricalcolo delle probabilità.}
 \end{figure}
 
 \begin{itemize}
 	\item \textbf{Attore primario}: Utente; 
-	\item \textbf{Precondizione}: l'utente ha caricato con successo la rete bayesiana (\hyperref[UC1]{UC1 (§\ref*{UC1})});
-	\item \textbf{Postcondizione}: l'utente ha collegato con successo le policy da lui creata, per il ricalcolo delle probabilità alla rete bayesiana, caricata in (\hyperref[UC1]{UC1 (§\ref*{UC1})});	
+	\item \textbf{Precondizione}: l'utente deve aver aggiunto il pannello "G\&B Panel";
+	\item \textbf{Postcondizione}: l'utente ha collegato con successo la politica temporale da lui creata, per il ricalcolo delle probabilità della rete bayesiana, caricata in (\hyperref[UC1]{UC1 (§\ref*{UC1})});	
 	\item \textbf{Scenario principale:}
-
 	\begin{enumerate}
-		\item L'utente accede alle impostazioni passando dalla dashboard;
-		\item L'utente crea una nuova policy con i parametri desiderati; 
-		\item L'utente, una volta creata la policy, la associa  ad una rete bayesiana esistente;
-		\item L'utente conferma l'associazione della policy alla rete.
+		\item L'utente clicca il pulsante denominato "Politiche Temporali";
+		\item L'utente crea una nuova politica temporale; 
+		\item L'utente conferma la politica temporale realizzata.
+	\end{enumerate}
+	\item \textbf{Estensioni}: \hyperref[UC15]{UC15 (§\ref*{UC15})} estende \hyperref[UC3.3]{UC3.3 (§\ref*{UC3.3})}: l'utente visualizza un messaggio di errore nel caso in cui non abbia definito correttamente la politica temporale per il ricalcolo delle probabilità.
+	
+\end{itemize}
+
+\subsubsection{UC3.1 - Click pulsante "Politiche temporali"}\label{UC3.1}
+\begin{itemize}
+	\item \textbf{Attore primario}: Utente; 
+	\item \textbf{Precondizione}: l'utente deve aver aggiunto il pannello "G\&B Panel";
+	\item \textbf{Postcondizione}: l'utente accede al pannello di creazione della politica temporale;
+	\item \textbf{Scenario principale}: l'utente, tramite un click sul pulsante "Politiche Temporali", apre il pannello di configurazione. 
+\end{itemize}
+
+\subsubsection{UC3.2 - Creazione nuova politica temporale}\label{UC3.2}
+
+\begin{itemize}
+	\item \textbf{Attore primario}: Utente; 
+	\item \textbf{Precondizione}: l'utente ha acceduto al pannello di creazione della politica temporale (\hyperref[UC3.1]{UC3.1 (§\ref*{UC3.1})});
+	\item \textbf{Postcondizione}: l'utente ha realizzato la politica temporale per il ricalcolo delle probabilità desiderata;
+	\item \textbf{Scenario principale:}
+	\begin{enumerate}
+		\item L'utente visualizza due campi dati editabili che consentono la definizione di una politica temporale;
+		\item L'utente inserisce, nel primo campo dati, il valore numerico del timeout ciclico per il ricalcolo delle probabilità condizionali associate ai nodi della rete bayesiana; 
+		\item L'utente seleziona l'unità di misura temporale, attraverso una casella a scelta multipla che rappresenta il secondo campo dati editabile.
 	\end{enumerate}
 	
 \end{itemize}
 
-\subsubsection{UC3.1 - Apertura pannello di configurazione}\label{UC3.1}
+\subsubsection{UC3.3 - Conferma politica temporale}\label{UC3.3}
 \begin{itemize}
 	\item \textbf{Attore primario}: Utente; 
-	\item \textbf{Precondizione}: l'utente ha caricato con successo la rete bayesiana (\hyperref[UC1]{UC1 (§\ref*{UC1})});
-	\item \textbf{Postcondizione}: l'utente accede al pannello di configurazione;
-	\item \textbf{Scenario principale}: l'utente, tramite un click sulla dashboard, apre il pannello di configurazione. 
-\end{itemize}
-
-\subsubsection{UC3.2 - Creazione nuova policy}\label{UC3.2}
-
-\begin{itemize}
-	\item \textbf{Attore primario}: Utente; 
-	\item \textbf{Precondizione}: l'utente si è spostato nell'area di configurazione (\hyperref[UC3.1]{UC3.1 (§\ref*{UC3.1})});
-	\item \textbf{Postcondizione}: l'utente ha selezionato la policy desiderata;
-	\item \textbf{Scenario principale:}
-
-	\begin{enumerate}
-		\item L'utente crea una nuova policy dal panello di configurazione;
-		\item L'utente salva la policy creata assegnandoli un nome; 
-		\item L'utente seleziona la policy creata.
-	\end{enumerate}
-	
-\end{itemize}
-
-\subsubsection{UC3.3 - Collegamento policy alla rete bayesiana}\label{UC3.3}
-\begin{itemize}
-	\item \textbf{Attore primario}: Utente; 
-	\item \textbf{Precondizione}: l'utente ha creato la policy desiderata (\hyperref[UC3.2]{UC3.2 (§\ref*{UC3.2})});
-	\item \textbf{Postcondizione}: l'utente ha collegato la policy selezionata ad una rete bayesiana; 
-	\item \textbf{Scenario principale}: l'utente collega la policy selezionata alla rete bayesiana, impostando cosi i nuovi parametri. 
+	\item \textbf{Precondizione}: l'utente ha creato la politica temporale desiderata (\hyperref[UC3.2]{UC3.2 (§\ref*{UC3.2})});
+	\item \textbf{Postcondizione}: l'utente ha confermato la politica temporale per il ricalcolo delle probabilità; 
+	\item \textbf{Scenario principale}: l'utente clicca il pusante "Conferma".
+	\item \textbf{Estensioni}: \hyperref[UC15]{UC15 (§\ref*{UC15})}: l'utente visualizza un messaggio di errore nel caso in cui non abbia collegato alcun nodo ad un flusso dati.
 \end{itemize}
 
 \newpage
@@ -453,7 +452,7 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 \subsection{UC12 - Visualizzazione messaggio di errore politiche temporali non definite}\label{UC12}
 \begin{itemize}
 \item \textbf{Attore primario}: Utente;
-\item \textbf{Precondizione}: l'utente ha avviato il monitoraggio del flusso dati (\hyperref[UC4.1]{UC4.1 							(§\ref*{UC4.1})}), senza aver preventivamente definito alcuna politica temporale per il ricalcolo delle 							probabilità (\hyperref[UC3]{UC3 (§\ref*{UC3})}).
+\item \textbf{Precondizione}: l'utente ha avviato il monitoraggio del flusso dati (\hyperref[UC4.1]{UC4.1 							(§\ref*{UC4.1})}), senza aver preventivamente definito correttamente alcuna politica temporale per il ricalcolo delle probabilità (\hyperref[UC3]{UC3 (§\ref*{UC3})}).
 \item \textbf{Postcondizione}: l'utente visualizza l'errore;
 \item \textbf{Scenario principale}: 
 	\begin{enumerate}
@@ -515,5 +514,21 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 \end{itemize}
 
 \pagebreak
+
+\subsection{UC15 - Visualizzazione messaggio di errore politica temporale non configurata correttamente}\label{UC15}
+\begin{itemize}
+\item \textbf{Attore primario}: Utente;
+\item \textbf{Precondizione}: l'utente ha confermato le scelte per la selezione di una politica temporale per il ricalcolo delle probabilità (\hyperref[UC3.3]{UC3.3 (§\ref*{UC3.3})}), senza averla definita correttamente (\hyperref[UC3.2]{UC3.2 (§\ref*{UC3.2})});
+\item \textbf{Postcondizioni}: 
+	\begin{enumerate}
+	\item L'utente visualizza l'errore;
+	\item La politica temporale non viene impostata.
+	\end{enumerate}
+\item \textbf{Scenario principale}: 
+	\begin{enumerate}
+	\item L'utente visualizza un messaggio di errore in cui sono indicati gli errori commessi;
+	\item L'utente clicca il pulsante con etichetta "OK".
+	\end{enumerate}
+\end{itemize}
 
 
