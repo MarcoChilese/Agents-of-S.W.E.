@@ -288,48 +288,49 @@ Per le restanti regole si farà riferimento allo standard imposto dalla World Wi
 \label{html}
 
 Insieme al \textit{CSS}, per lo sviluppo della parte front-end del progetto, il gruppo ha scelto di utilizzare \textit{HTML5}. Per la stesura della Style Guide verrà utilizzata la documentazione resa disponibile da W3C\footnote{\url{https://www.w3schools.com/html/html5_syntax.asp}}.\\
-
-Di seguito saranno riportate le principali norme da seguire: \\
+Di seguito saranno riportate le principali norme da seguire: 
 \begin{itemize}
-
-\item \textbf{Norma 1}: 
-il tipo di documento deve sempre essere dichiarato all'inizio del documento, in maiuscolo o minuscolo a piacere;
-\item \textbf{Norma 2}: 
-i nomi degli elementi ed attributi devono essere sempre scritti in minuscolo;
-\item \textbf{Norma 3}:
-tutti gli elementi HTML devono essere chiusi, anche se vuoti;
-\item \textbf{Norma 4}:
-il valore degli attributi deve essere racchiuso dentro doppio apice;
-\item \textbf{Norma 5}: 
-intorno al simbolo di uguaglianza (=) non devono essere presenti spazi;
-\item \textbf{Norma 6}:
-devono essere usati due (2) spazi e non le tabulazioni. Gli spazi bianchi vanno utilizzati solamente per ampli blocchi di codice, per una maggiore leggibilità;
-\item \textbf{Norma 7}:
-nonostante i tag \texttt{html}, 	\texttt{body} e \texttt{head} possano essere omessi, vanno inseriti affinché siano compatibili con tutti i browser;
-\item \textbf{Norma 8}:
-le classi che verranno dichiarate all'interno dell'\textit{HTML}, al fine di andare poi a ridefinire il \textit{CSS}, dovranno essere quelle rese disponibili dalla documentazione di Grafana\footnote{\url{http://docs.grafana.org/plugins/developing/code-styleguide/}}.
+	\item \textbf{Norma 1}: 
+		il tipo di documento deve sempre essere dichiarato all'inizio del documento, in maiuscolo o minuscolo a piacere;
+	\item \textbf{Norma 2}: 
+		i nomi degli elementi ed attributi devono essere sempre scritti in minuscolo;
+	\item \textbf{Norma 3}:
+		tutti gli elementi HTML devono essere chiusi, anche se vuoti;
+	\item \textbf{Norma 4}:
+		il valore degli attributi deve essere racchiuso dentro doppio apice;
+	\item \textbf{Norma 5}: 
+		intorno al simbolo di uguaglianza (=) non devono essere presenti spazi;
+	\item \textbf{Norma 6}:
+		devono essere usati due (2) spazi e non le tabulazioni. Gli spazi bianchi vanno utilizzati solamente per ampli blocchi di codice, per una maggiore leggibilità;
+	\item \textbf{Norma 7}:
+		nonostante i tag \texttt{html}, 	\texttt{body} e \texttt{head} possano essere omessi, vanno inseriti affinché siano compatibili con tutti i browser;
+	\item \textbf{Norma 8}:
+		le classi che verranno dichiarate all'interno dell'\textit{HTML}, al fine di andare poi a ridefinire il \textit{CSS}, dovranno essere quelle rese disponibili dalla documentazione di Grafana\footnote{\url{http://docs.grafana.org/plugins/developing/code-styleguide/}}.
 \end{itemize}
 
 Equivalentemente al \textit{CSS}, anche il codice \textit{HTML} dovrà essere validato. Questa validazione avverrà tramite il sito reso disponibile dalla W3C, al seguente \href{https://validator.w3.org/}{link}.
 
 %AGGIUNGERE E SISTEMARE DA QUA IN GIU
 
-\paragraph{Npm}
-
-Npm è un gestore di pacchetti per \textit{JavaScript} e gestore dei quelli presenti di default nell'ambiente \textit{Node.js}. \\
-Risulta essere strutturato in due parti: un client a riga di comando ed un database, contente pacchetti sia pubblici che privati. Lo scopo di no è quello di incoraggiare il riuso del codice tra team ed il suo utilizzo è mirato alla gestione delle dipendenze. Il suo utilizzo è necessario al fine di installare \textbf{ESLint}.
-
-\paragraph{WebStorm}
-
-Per lo sviluppo del plug-in, si è scelto di utilizzare L'IDE WebStorm \footnote{\url{https://www.jetbrains.com/webstorm/}}, facente parte della famiglia di prodotti di JetBrains. \\
+\paragraph{WebStorm}\-\\
+Come software per lo sviluppo comune, il team ha scelto di utilizzare L'IDE WebStorm\footnote{\url{https://www.jetbrains.com/webstorm/}}, facente parte della famiglia di prodotti di JetBrains. \\
 WebStorm è una cross-platform, sviluppata principalmente per lo sviluppo web, JavaScript e TypeScript. \\
-La configurazione della piattaforma di sviluppo dovrà essere equivalente per tutti i componenti del gruppo. All'interno della piattaforma dovrà essere installato \textbf{ESLint}, la cui funzione verrà spiegata nella sezione sequente. \\
+La configurazione della piattaforma di sviluppo dovrà essere equivalente per tutti i componenti del gruppo. All'interno della piattaforma dovrà essere installato il plug-in \textbf{ESLint}, la cui funzione verrà illustrata in seguito.
 
-\paragraph{ESLint}
+\paragraph{Npm}\-\\
+Npm è un gestore di pacchetti per \textit{JavaScript}, gestisce inoltre i pacchetti di default presenti nell'ambiente \textit{Node.js}.\\
+Risulta essere strutturato in due parti: un client a riga di comando ed un database, contente pacchetti sia pubblici che privati. Lo scopo di node.js è quello di incoraggiare il riuso del codice tra team ed il suo utilizzo è mirato alla gestione delle dipendenze.\\ 
+Il suo utilizzo è necessario per poter eseguire e testare il codice ES6.
 
+\paragraph{ESLint}\-\\
 Il plug-in \textbf{ESLint}, scaricabile dall'apposita sezione all'interno dell'IDE utilizzato, ha la funzione di segnalare errori che vengono effettuati durante la stesura del codice, in modo da evitare bug e rendere il codice più coerente. \\ 
+Si occupa inoltre di far aderire il codice allo standard \textit{Airbnb} che il team ha deciso di adottare, segnalando le varie difformità.\\
 Il plug-in è reperibile tra i pacchetti resi disponibili da NPM\footnote{\url{https://www.npmjs.com/package/eslint}}.\\
 Le regole utilizzate all'interno del plug-in saranno quelle esplicitate nella sezione §\ref{EcmaScript6}, riguardanti lo stile e le regole da rispettare per la stesura del codice con \textit{EcmaScript6}.
+
+\paragraph{Jest}\-\\
+Jest\footnote{\url{https://jestjs.io/}} è un framework per il testing di JavaScript che il team ha deciso di adottare per la costruzione e l'esecuzione dei test di unità.\\
+Inoltre, il framework offre la possibilità di eseguire il calcolo del code coverage dei file testati.
 
 
 
