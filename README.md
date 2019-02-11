@@ -28,3 +28,13 @@
 ### Ruoli (3) Risanamento
 - Amministratore: Luca Violato
 - Responsabile: Bogdan Stanciu
+- Verificatore: Marco C., Carlotta
+- Analista: Diego, Marco F., Matteo
+
+### Ruoli (4)
+- Amministratore: Bogdan Stanciu
+- Responsabile: Marco Favaro
+- Progettista: Marco Chilese, Diego Mazzalovo
+- Programmatore: Carlotta Segna
+- Verificatore: Matteo Slanzi
+- Analista: Luca Violato
