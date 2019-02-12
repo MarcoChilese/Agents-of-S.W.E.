@@ -115,11 +115,12 @@ ROF4.2 & Il Sistema deve fornire all'utente una lista di probabilità dinamiche 
 \hline
 RDF4.3.1 & Il Sistema, indipendentemente dalla politica temporale stabilita dall'utente, deve ricalcolare le probabilità al verificarsi del superamento della soglia di un nodo collegato al flusso di monitoraggio & Desiderabile & UC4 VER-2019-02-08\\
 \hline
-\rowcolor{grigio}ROF5 & Il Sistema deve mettere a disposizione di \textit{Grafana} i dati per l'operazione di creazione di alert ad essi associati da parte dell'utente & Obbligatorio & UC5\\
+\rowcolor{grigio}RFF5 & Il Sistema deve mettere a disposizione di \textit{Grafana} i dati per l'operazione di creazione di alert ad essi associati da parte dell'utente & Opzionale & UC5\\
 \hline
-ROF6 & Il Sistema deve mostrare all'utente gli alert associati al flusso di dati collegato alla rete bayesiana & Obbligatorio & UC7\\ 
+RFF5.1 & Il Sistema deve mettere a disposizione dell'utente un pulsante "Aggiungi Alert" per la defizione dell'alert & Opzionale & UC5 \\
+\rowcolor{grigio}RFF6 & Il Sistema deve mostrare all'utente gli alert associati al flusso di dati collegato alla rete bayesiana & Opzionale & UC7\\ 
 \hline
-\rowcolor{grigio}ROF6.1 & L'utente deve poter rimuovere gli alert associati ai nodi della rete bayesiana & Obbligatorio & UC6\\ 
+RFF6.1 & L'utente deve poter rimuovere gli alert associati ai nodi della rete bayesiana & Opzionale & UC6\\ 
 \hline
 \caption{Requisiti Funzionali}
 \end{longtable}
@@ -206,11 +207,11 @@ UC3 & \makecell{ROF3\\ROF3.3\\ROF3.3.1\\3.3.2\\3.4\\3.5}\\
 \hline
 \rowcolor{grigio}UC4 & \makecell{ROF2.5.3\\ROF4\\ROF4.1\\ROF4.1.1\\ROF4.1.2\\ROF4.1.3\\ROF4.2\\ROF4.3\\RDF4.3.1}\\
 \hline
-UC5 & \makecell{ROF5}\\
+UC5 & \makecell{RFF5 \\ RF5.1}\\
 \hline
-\rowcolor{grigio}UC6 & \makecell{ROF6.1}\\
+\rowcolor{grigio}UC6 & \makecell{RFF6.1}\\
 \hline
-UC7 & \makecell{ROF2.5.3\\ROF6}\\
+UC7 & \makecell{ROF2.5.3\\RFF6}\\
 \hline
 \rowcolor{grigio}UC8 & \makecell{ROF1.4\\RFF1.4.1\\RFF1.4.2}\\
 \hline
@@ -242,7 +243,7 @@ UC15 & \makecell{ROF3.5}\\
 \rowcolor{bluelogo}\textbf{\textcolor{white}{Tipologia}} & \textbf{\textcolor{white}{Obbligatorio}} & \textbf{\textcolor{white}{Opzionale}} & \textbf{\textcolor{white}{Desiderabile}} & \textbf{\textcolor{white}{Totale}}\\
 \hline \hline
 \endhead
-Funzionale & 39 & 2 & 1 & 42\\
+Funzionale & 39 & 3 & 1 & 43\\
 \hline
 \rowcolor{grigio}Di Qualità & 5 & 0 & 4 & 9\\
 \hline
