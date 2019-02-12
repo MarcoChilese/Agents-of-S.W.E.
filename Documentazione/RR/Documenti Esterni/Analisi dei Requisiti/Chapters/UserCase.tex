@@ -342,37 +342,39 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 \begin{itemize}
 	\item \textbf{Attore primario}: Utente;
 	\item \textbf{Precondizione}:
-	 l'utente ha avviato con successo il monitoraggio del flusso dati (\hyperref[UC4]				{UC4 (§\ref*{UC4})}) e visualizza correttamente le probabilità associate ai nodi della rete bayesiana;
+	l'utente ha avviato con successo il monitoraggio del flusso dati (\hyperref[UC4]				{UC4 (§\ref*{UC4})}) e visualizza correttamente le probabilità associate ai nodi della rete bayesiana;
 	\item \textbf{Postcondizione}: l'utente ha aggiunto un alert per i nodi non collegati;
 	\item \textbf{Scenario principale}:
 	\begin{enumerate}
-		\item \hyperref[UC5.1]{UC5.1 (§\ref*{UC5.1})} L'utente clicca sul pulsante "Collega Alert";
+		\item \hyperref[UC5.1]{UC5.1 (§\ref*{UC5.1})} L'utente clicca sul pulsante "Add panel" per aggiungere il pannello degli alert;
 		\item \hyperref[UC5.2]{UC5.2 (§\ref*{UC5.2})} L'utente, attraverso le impostazioni messe a disposizione della piattaforma \textit{Grafana}, definisce l'alert desiderato.
 	\end{enumerate}
-	\item \textbf{Estensioni:} \hyperref[UC13]{UC13 (§\ref*{UC13})}: l'utente visualizza un messaggio di errore nel caso in cui abbia modificato il collegamento dei nodi.
 	
 \end{itemize}
 
-\subsubsection{UC5.1 - Click pulsante "Collega Alert"}\label{UC5.1}
+\subsubsection{UC5.1 - Aggiungere pannello degli alert}\label{UC5.1}
 \begin{itemize}
 	\item \textbf{Attore primario}: Utente;
 	\item \textbf{Precondizione}: l'utente deve aver aggiunto il pannello "G\&B Panel";
-	\item \textbf{Postcondizione}: l'utente viene condotto alle impostazioni di edit del pannello 
-	"G\&B Panel", sotto la voce Alert;
-	\item \textbf{Scenario principale}: l'utente clicca il bottone "Collega Alert".
+	\item \textbf{Postcondizione}:
+	\begin{enumerate}
+		\item L'utente ha aggiunto il pannello degli alert;
+		\item L'utente viene condotto alle impostazioni di edit del pannello per definire l'alert.
+	\end{enumerate}
+	\item \textbf{Scenario principale}: 
+	\begin{enumerate}
+		\item L'utente clicca il bottone "Add Panel" sulla dashboard di \textit{Grafana};
+		\item L'utente seleziona il pannello relativo agli alert denominato "Alert List".
+	\end{enumerate}
 \end{itemize}
 
-\subsubsection{UC5.2 - Definizione parametri alert}\label{UC5.2}
+\subsubsection{UC5.2 - Definizione di alert attraverso \textit{Grafana}}\label{UC5.2}
 \begin{itemize}
 	\item \textbf{Attore primario}: Utente;
 	\item \textbf{Attore secondario}: \textit{Grafana};
-	\item \textbf{Precondizione}: l'utente ha cliccato il pulsante "Collega Alert" \hyperref[UC5.1]{UC5.1 (§\ref*{UC5.1})};
-	\item \textbf{Postcondizione}: l'utente ha definito i parametri dell'alert di un nodo non collegato al flusso di dati.
-	\item \textbf{Scenario principale}: 
-	\begin{enumerate}
-		\item L'utente, nelle impostazioni di \textit{Grafana}, definisce i parametri dell'alert desiderato del nodo non collegato al flusso di dati;
-		\item L'utente conferma la creazione dell'alert.
-	\end{enumerate}
+	\item \textbf{Precondizione}: l'utente ha aggiunto il pannello degli alert \hyperref[UC5.1]{UC5.1 (§\ref*{UC5.1})};
+	\item \textbf{Postcondizione}: l'utente ha definito i parametri dell'alert di un nodo non collegato al flusso di dati;
+	\item \textbf{Scenario principale}: l'utente, nelle impostazioni di \textit{Grafana}, definisce i parametri dell'alert desiderato del nodo non collegato al flusso di dati;
 \end{itemize}
 
 \newpage
@@ -387,35 +389,30 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 
 \begin{itemize}
 	\item \textbf{Attore primario}: Utente;
-	\item \textbf{Precondizione:} 
-	\begin{enumerate}
-		\item L'utente ha definito almeno un alert \hyperref[UC5]{UC5 (§\ref*{UC5})};
-		\item L'utente visualizza gli alert \hyperref[UC7]{UC7 (§\ref*{UC7})}.
-	\end{enumerate}
+	\item \textbf{Precondizione:} l'utente visualizza il pannello degli alert \hyperref[UC7]{UC7 (§\ref*{UC7})};
 	\item \textbf{Postcondizione}: l'utente ha rimosso l'alert associato al nodo non collegato al flusso dati;
 	\item \textbf{Scenario principale}: 
 	\begin{enumerate}
-		\item L'utente nella lista di alert, seleziona l'alert da eliminare;
-		\item \hyperref[UC6.1]{UC6.1 (§\ref*{UC6.1})} L'utente clicca sul pulsante "Elimina Alert";
+		\item \hyperref[UC6.1]{UC6.1 (§\ref*{UC6.1})} L'utente clicca sul pulsante "Delete Alert";
 		\item \hyperref[UC6.2]{UC6.2 (§\ref*{UC6.2})} L'utente attraverso le impostazioni di \textit{Grafana} elimina l'alert.
 	\end{enumerate}
 \end{itemize}
 
-\subsubsection{UC6.1 - Click pulsante "Elimina Alert"}\label{UC6.1}
+\subsubsection{UC6.1 - Click pulsante "Delete Alert"}\label{UC6.1}
 \begin{itemize}
 	\item \textbf{Attore primario}: Utente;
-	\item \textbf{Precondizione}: l'utente ha selezionato l'alert da rimuovere.
-	\item \textbf{Postcondizione}: l'utente viene condotto alle impostazioni di edit del pannello "G\&B Panel", sotto la voce Alert;
-	\item \textbf{Scenario principale}: l'utente clicca il bottone "Elimina Alert".
+	\item \textbf{Precondizione}: l'utente ha selezionato l'alert da rimuovere;
+	\item \textbf{Postcondizione}: l'utente viene condotto alle impostazioni di edit del pannello degli alert;
+	\item \textbf{Scenario principale}: l'utente clicca il bottone "Delete Alert";
 \end{itemize}
 
-\subsubsection{UC6.2 - \textit{Grafana} elimina l'alert}\label{UC6.2}
+\subsubsection{UC6.2 - Rimozione di alert attraverso \textit{Grafana}}\label{UC6.2}
 \begin{itemize}
 	\item \textbf{Attore primario}: Utente;
 	\item \textbf{Attore secondario}: \textit{Grafana};
-	\item \textbf{Precondizione}:  l'utente ha cliccato sul pulsante "Elimina Alert" \hyperref[UC6.1]{UC6.1 (§\ref*{UC6.1})}.
-	\item \textbf{Postcondizione}: l'alert desiderato è stato eliminato.
-	\item \textbf{Scenario principale}: 
+	\item \textbf{Precondizione}:  l'utente ha cliccato sul pulsante "Delete Alert" \hyperref[UC6.1]{UC6.1 (§\ref*{UC6.1})};
+	\item \textbf{Postcondizione}: l'alert desiderato è stato eliminato;
+	\item \textbf{Scenario principale}: l'utente elimina l'alert attraverso le impostazione messe a disposizione da \textit{Grafana};
 \end{itemize}
 
 \pagebreak
@@ -431,15 +428,35 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 \begin{itemize}
 	\item \textbf{Attore primario}: Utente;
 	\item \textbf{Attore secondario}: \textit{Grafana};
-	\item \textbf{Precondizioni}: l'utente ha definito correttamente un alert (\hyperref[UC5]{UC5(§\ref*{UC5})});
+	\item \textbf{Precondizioni}: l'utente ha definito correttamente almeno un alert (\hyperref[UC5]{UC5(§\ref*{UC5})});
 	\item \textbf{Postcondizioni}: l'utente visualizza l'elenco degli alert definiti e il loro stato;
 	\item \textbf{Scenario principale}:
 	\begin{enumerate}
-		\item L'utente attraverso le impostazioni messe a disposizione di \textit{Grafana}, aggiunge il pannello di visualizzazione degli alert.
+		\item (\hyperref[UC7.1]{UC7.1(§\ref*{UC7.1})}) L'utente attraverso le impostazioni messe a disposizione di \textit{Grafana}, aggiunge il pannello di visualizzazione degli alert.
 		\item Viene mostrato l'elenco degli alert;
-		\item L'utente visualizza lo stato degli alert definiti sui nodi non collegati al flusso di dati.
+		\item (\hyperref[UC7.2]{UC7.2(§\ref*{UC7.2})}) L'utente visualizza lo stato degli alert definiti sui nodi non collegati al flusso di dati.
 	\end{enumerate}
+	\item \textbf{Estensioni:} \hyperref[UC13]{UC13 (§\ref*{UC13})}: l'utente visualizza un messaggio di errore nel caso in cui abbia modificato il collegamento dei nodi.
 \end{itemize}
+
+\subsubsection{UC7.1 - Aggiunta pannello degli alert }\label{UC7.1}
+\begin{itemize}
+	\item \textbf{Attore primario}: Utente;
+	\item \textbf{Attore secondario} : \textit{Grafana};
+	\item \textbf{Precondizione}: l'utente ha selezionato l'alert da rimuovere.
+	\item \textbf{Postcondizione}: l'utente viene condotto alle impostazioni di edit del pannello "G\&B Panel", sotto la voce Alert;
+	\item \textbf{Scenario principale}: l'utente clicca il bottone "Elimina Alert".
+\end{itemize}
+
+\subsubsection{UC7.2 - Rimozione di alert attraverso \textit{Grafana}}\label{UC7.2}
+\begin{itemize}
+	\item \textbf{Attore primario}: Utente;
+	\item \textbf{Attore secondario}: \textit{Grafana};
+	\item \textbf{Precondizione}:  l'utente ha cliccato sul pulsante "Elimina Alert" \hyperref[UC6.1]{UC6.1 (§\ref*{UC6.1})}.
+	\item \textbf{Postcondizione}: l'alert desiderato è stato eliminato.
+	\item \textbf{Scenario principale}: l'utente elimina l'alert attraverso le impostazione messe a disposizione da \textit{Grafana}.
+\end{itemize}
+
 
 \pagebreak
 
