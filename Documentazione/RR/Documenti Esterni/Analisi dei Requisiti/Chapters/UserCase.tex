@@ -49,8 +49,7 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 	\item \textbf{Postcondizioni}: l'utente ha aggiunto la rete bayesiana al plug-in. Attraverso \hyperref[UC2]{UC2 (§\ref*{UC2})} può selezionare quali nodi sorgente collegare alla rete.
 	\item \textbf{Scenario principale:}
 	\begin{enumerate}
-		\item L'utente accede alla piattaforma \textit{Grafana}, si trova nella dashboard preferita ed ha aggiunto il pannello "G\&B Panel";
-		\item L'utente seleziona e clicca sul bottone con simbolo di "+"(\hyperref[UC1.1]{UC1.1 (§\ref*{UC1.1})});
+		\item L'utente seleziona e clicca sul bottone denominato "Carica Rete Bayesiana" (\hyperref[UC1.1]{UC1.1 (§\ref*{UC1.1})});
 		\item L'utente si trova davanti una finestra presso cui selezionare il file \textit{JSON} contenente la rete (\hyperref[UC1.2]{UC1.2 (§\ref*{UC1.2})}) e seleziona "Aggiungi".
 	\end{enumerate}
 	\item \textbf{Estensioni:} \hyperref[UC8]{UC8 (§\ref*{UC8})} estende \hyperref[UC1.2]{UC1.2 (§\ref*{UC1.2})}: l'utente visualizza un messaggio di errore nel caso in cui l'operazione non sia andata a buon fine.
@@ -60,15 +59,15 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 \begin{itemize}
 	\item \textbf{Attore primario}: Utente; 
 	\item \textbf{Precondizioni}: l'utente visualizza il pannello "G\&B Panel" nella dashboard.
-	\item \textbf{Postcondizioni}: l'utente ha cliccato il bottone con etichetta "+" e visualizza il pannello per la selezione del file della rete;
-	\item \textbf{Scenario principale}: l'utente clicca il pulsante con etichetta "+" nel pannello "G\&B Panel" nella dashboard.
+	\item \textbf{Postcondizioni}: l'utente ha cliccato il bottone con etichetta "Aggiungi Rete Bayesiana" e visualizza il pannello per la selezione del file della rete;
+	\item \textbf{Scenario principale}: l'utente clicca il pulsante con etichetta "Aggiungi Rete Bayesiana" nel pannello "G\&B Panel" nella dashboard.
 \end{itemize}
 
 
 \subsubsection{UC1.2 - Selezione della rete bayesiana}\label{UC1.2}
 \begin{itemize}
 	\item \textbf{Attore primario}: Utente;
-	\item \textbf{Precondizioni}: l'utente ha cliccato il bottone con etichetta "+";
+	\item \textbf{Precondizioni}: l'utente ha cliccato il bottone con etichetta "Aggiungi Rete Bayesiana";
 	\item \textbf{Postcondizioni}: l'utente ha selezionato la rete bayesiana desiderata e ha premuto il pulsante con etichetta "Aggiungi";
 	\item \textbf{Scenario principale}:
 	\begin{enumerate}
