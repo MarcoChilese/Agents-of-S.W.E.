@@ -115,12 +115,21 @@ ROF4.2 & Il Sistema deve fornire all'utente una lista di probabilità dinamiche 
 \hline
 RDF4.3.1 & Il Sistema, indipendentemente dalla politica temporale stabilita dall'utente, deve ricalcolare le probabilità al verificarsi del superamento della soglia di un nodo collegato al flusso di monitoraggio & Desiderabile & UC4 VER-2019-02-08\\
 \hline
-\rowcolor{grigio}RFF5 & Il Sistema deve mettere a disposizione di \textit{Grafana} i dati per l'operazione di creazione di alert ad essi associati da parte dell'utente & Opzionale & UC5\\
+\rowcolor{grigio}RFF5 & L'utente deve poter definire alert basati sui dati relativi ai nodi della rete bayesiana non collegati al flusso & Opzionale & UC5\\
 \hline
-RFF5.1 & Il Sistema deve mettere a disposizione dell'utente un pulsante "Aggiungi Alert" per la defizione dell'alert & Opzionale & UC5 \\
-\rowcolor{grigio}RFF6 & Il Sistema deve mostrare all'utente gli alert associati al flusso di dati collegato alla rete bayesiana & Opzionale & UC7\\ 
+RFF5.1 & Il Sistema deve mettere a disposizione di \textit{Grafana} i dati per l'operazione di creazione di alert ad essi associati da parte dell'utente & Opzionale & UC5\\
 \hline
-RFF6.1 & L'utente deve poter rimuovere gli alert associati ai nodi della rete bayesiana & Opzionale & UC6\\ 
+\rowcolor{grigio}RFF5.1.1 & Il pannello "G\&B" deve supportare la funzione di "edit" da parte dell'utente & Opzionale & UC5\\
+\hline
+RFF5.1.2 & Il Sistema deve mettere a disposizione dell'utente un pulsante "Aggiungi Alert" che conduca l'utente alle impostazioni di edit del pannello "G\&B" alla voce "Alert" & Opzionale & UC5\\
+\hline
+\rowcolor{grigio}RFF6 & L'utente deve poter visualizzare gli alert creati sulla base dei dati relativi ai nodi della rete bayesiana non collegati al flusso & Opzionale & UC7\\ 
+\hline
+RFF6.1 & Il Sistema deve mettere periodicamente a disposizione della piattaforma \textit{Grafana} i dati aggiornati per il monitoraggio costante dello stato degli alert & Opzionale & UC7\\
+\hline
+\rowcolor{grigio}RFF6.2 & L'utente deve poter rimuovere gli alert associati ai nodi della rete bayesiana & Opzionale & UC6\\
+\hline
+RFF6.2.1 & L'utente deve poter selezionare l'alert da eliminare attraverso il pannello di visualizzazione degli alert & Opzionale & UC6\\
 \hline
 \caption{Requisiti Funzionali}
 \end{longtable}
@@ -167,7 +176,7 @@ RDQ6 & Il plug-in deve essere pubblicato nella sezione plug-in di \textit{Grafan
 \rowcolor{bluelogo}\textbf{\textcolor{white}{ID}} & \textbf{\textcolor{white}{Descrizione}} & \textbf{\textcolor{white}{Fonti}}\\
 \hline \hline
 \endfirsthead
-ROV1 & Il plug-in deve essere sviluppato in linguaggio \textit{ECMAScript6}\footnote{Il supporto al linguaggio ECMASCript 6 è il seguente:\\\includegraphics[scale=0.3]{./images/ES6_Support.png}\\Immagine da: \url{https://www.w3schools.com/js/js_es6.asp}} & \textit{Grafana}: guida per gli sviluppatori.\\
+ROV1 & Il plug-in deve essere sviluppato in linguaggio \textit{ECMAScript6} & \textit{Grafana}: guida per gli sviluppatori.\\
 \hline
 \rowcolor{grigio}ROV2 & Il punto di ingresso per il plug-in deve essere sviluppato nel file "module.js" & \textit{Grafana}: guida per gli sviluppatori\\
 \hline
@@ -179,10 +188,31 @@ ROV5 & La rete bayesiana è definita in un file formato JSON & Capitolato\\
 \hline
 \rowcolor{grigio}ROV6 & L'interfaccia grafica del plug-in è sviluppata utilizzando HTML5\glossario e CSS\glossario & \textit{Grafana}: guida per gli sviluppatori \\
 \hline
+ROV7 & Il Sistema deve funzionare sui browser più diffusi e popolari & Decisione Interna\\
+\hline
+\rowcolor{grigio}ROV8 & Il Sistema deve funzionare sul browser \textit{Chrome} dalla versione 58 & \hyperref[SupportoECMAScript]{Supporto al linguaggio ECMAScript6 (§\ref*{SupportoECMAScript})}\\
+\hline
+ROV9 & Il Sistema deve funzionare sul browser \textit{Microsoft Edge} dalla versione 14 & \hyperref[SupportoECMAScript]{Supporto al linguaggio ECMAScript6 (§\ref*{SupportoECMAScript})}\\
+\hline
+\rowcolor{grigio}ROV10 & Il Sistema deve funzionare sul browser \textit{Firefox} dalla versione 54 & \hyperref[SupportoECMAScript]{Supporto al linguaggio ECMAScript6 (§\ref*{SupportoECMAScript})}\\
+\hline
+ROV11 & Il Sistema deve funzionare sul browser \textit{Safari} dalla versione 10 & \hyperref[SupportoECMAScript]{Supporto al linguaggio ECMAScript6 (§\ref*{SupportoECMAScript})}\\
+\hline
 \caption{Requisiti di Vincolo}
 \end{longtable}
 \end{center}
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.3]{./images/ES6_Support.png}
+		 \caption{Supporto al linguaggio ECMAScript6. Immagine da: \url{https://www.w3schools.com/js/js_es6.asp}}
+		 \label{SupportoECMAScript}	
+	\end{center}
+\end{figure}
+
 \pagebreak
+
+%\footnote{Il supporto al linguaggio ECMASCript 6 è il seguente:\\\includegraphics[scale=0.3]{./images/ES6_Support.png}\\Immagine da: \url{https://www.w3schools.com/js/js_es6.asp}} 
 
 \subsection{Tacciamento Fonti-Requisiti}\label{Tracciamento}
 \begin{center}
@@ -207,11 +237,11 @@ UC3 & \makecell{ROF3\\ROF3.3\\ROF3.3.1\\3.3.2\\3.4\\3.5}\\
 \hline
 \rowcolor{grigio}UC4 & \makecell{ROF2.5.3\\ROF4\\ROF4.1\\ROF4.1.1\\ROF4.1.2\\ROF4.1.3\\ROF4.2\\ROF4.3\\RDF4.3.1}\\
 \hline
-UC5 & \makecell{RFF5 \\ RF5.1}\\
+UC5 & \makecell{RFF5\\RFF5.1\\RFF5.1.1\\RFF5.1.2}\\
 \hline
-\rowcolor{grigio}UC6 & \makecell{RFF6.1}\\
+\rowcolor{grigio}UC6 & \makecell{RFF6.2\\RFF6.2.1}\\
 \hline
-UC7 & \makecell{ROF2.5.3\\RFF6}\\
+UC7 & \makecell{ROF2.5.3\\RFF6\\RFF6.1}\\
 \hline
 \rowcolor{grigio}UC8 & \makecell{ROF1.4\\RFF1.4.1\\RFF1.4.2}\\
 \hline
@@ -231,6 +261,8 @@ UC15 & \makecell{ROF3.5}\\
 \hline
 \rowcolor{grigio}VER-2019-02-08 & \makecell{RDF4.3.1}\\
 \hline
+Supporto a \textit{ECMAScript6} & \makecell{ROV8\\ROV9\\ROV10\\ROV11}\\
+\hline
 \caption{Tracciamento Fonti-Requisiti}
 \end{longtable}
 \end{center}
@@ -243,11 +275,11 @@ UC15 & \makecell{ROF3.5}\\
 \rowcolor{bluelogo}\textbf{\textcolor{white}{Tipologia}} & \textbf{\textcolor{white}{Obbligatorio}} & \textbf{\textcolor{white}{Opzionale}} & \textbf{\textcolor{white}{Desiderabile}} & \textbf{\textcolor{white}{Totale}}\\
 \hline \hline
 \endhead
-Funzionale & 39 & 3 & 1 & 43\\
+Funzionale & 36 & 10 & 1 & 47\\
 \hline
 \rowcolor{grigio}Di Qualità & 5 & 0 & 4 & 9\\
 \hline
-Di Vincolo & 6 & 0 & 0 & 6\\
+Di Vincolo & 10 & 0 & 0 & 10\\
 \hline
 \caption{Riepilogo dei Requisiti}
 \end{longtable}
