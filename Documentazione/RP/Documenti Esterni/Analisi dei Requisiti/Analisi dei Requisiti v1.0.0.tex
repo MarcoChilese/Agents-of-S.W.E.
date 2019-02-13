@@ -16,7 +16,7 @@
 \large
 \renewcommand{\arraystretch}{1.3}
 \begin{tabular}{r|l}
-\textbf{Versione} & 1.0.0\\
+\textbf{Versione} & 1.1.6\\
 \textbf{Approvazione} & Carlotta Segna\\
 \textbf{Redazione} & \parbox[t]{5cm}{Luca Violato\\Marco Chilese\\Bogdan Stanciu\\Matteo Slanzi}\\
 \textbf{Verifica} & \parbox[t]{5cm}{Diego Mazzalovo\\Marco Favaro}\\
@@ -32,10 +32,13 @@
 
 \pagebreak
 
-\pagenumbering{Roman}
-\tableofcontents
+\pagenumbering{arabic}
 
+\input{Chapters/Changelog.tex}
 \newpage
+
+
+\tableofcontents
 
 % Inclusione degli indici di tabelle e immagini
 \listoftables
@@ -43,9 +46,7 @@
 
 \pagebreak
 
-\pagenumbering{arabic}
-
-\input{Chapters/Changelog.tex}
+%\pagenumbering{arabic}
 
 \pagebreak
 
@@ -56,10 +57,12 @@
 \input{Chapters/Descrizione.tex}
 
 \pagebreak
+\rhead{3 Casi d'Uso}
 
 \input{Chapters/UserCase.tex}
 
 \pagebreak
+\rhead{\rightmark}
 
 \input{Chapters/Requisiti.tex}
 
