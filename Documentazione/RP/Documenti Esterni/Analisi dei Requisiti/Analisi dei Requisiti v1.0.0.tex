@@ -1,0 +1,66 @@
+\input{Config/config.tex}
+
+\begin{document}
+\begin{titlepage}
+\thispagestyle{empty}
+\pagenumbering{gobble}
+
+\begin{center}
+
+\includegraphics[scale=0.3]{./images/logo.png} 
+
+\large \textbf{Agents of S.W.E. - Progetto "G\&B"}
+\vfill
+\Huge \textbf{Analisi dei Requisiti}
+\vfill
+\large
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{r|l}
+\textbf{Versione} & 1.0.0\\
+\textbf{Approvazione} & Carlotta Segna\\
+\textbf{Redazione} & \parbox[t]{5cm}{Luca Violato\\Marco Chilese\\Bogdan Stanciu\\Matteo Slanzi}\\
+\textbf{Verifica} & \parbox[t]{5cm}{Diego Mazzalovo\\Marco Favaro}\\
+\textbf{Stato} & Approvato\\
+\textbf{Uso} & Esterno\\
+\textbf{Destinato a} & \parbox[t]{5cm}{Agents of S.W.E. \\Prof. Tullio Vardanega\\Prof. Riccardo Cardin \\ Zucchetti S.p.A.}
+\end{tabular}
+\vfill
+\small
+\texttt{agentsofswe@gmail.com}
+\end{center}
+\end{titlepage}
+
+\pagebreak
+
+\pagenumbering{Roman}
+\tableofcontents
+
+\newpage
+
+% Inclusione degli indici di tabelle e immagini
+\listoftables
+\listoffigures
+
+\pagebreak
+
+\pagenumbering{arabic}
+
+\input{Chapters/Changelog.tex}
+
+\pagebreak
+
+\input{Chapters/Introduzione.tex}
+
+\pagebreak
+
+\input{Chapters/Descrizione.tex}
+
+\pagebreak
+
+\input{Chapters/UserCase.tex}
+
+\pagebreak
+
+\input{Chapters/Requisiti.tex}
+
+\end{document}

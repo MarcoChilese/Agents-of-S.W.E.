@@ -5,7 +5,7 @@ import plotly.plotly as py
 
 # Data to plot
 labels = 'Responsabile', 'Amministratore', 'Analista', 'Progettista', 'Programmatore' ,'Verificatore'
-sizes = [60,66,79,165,190,175]
+sizes = [73,91,153,169,195,229]
 colors = ["#9DA1AA", "#C51D34", "#415A66", "#7ECCFD", "#57A639" ,"#F5D033"] 
 
 explode = (0, 0, 0, 0, 0, 0) 

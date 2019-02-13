@@ -31,8 +31,11 @@
 - Verificatore: Marco C., Carlotta
 - Analista: Diego, Marco F., Matteo
 
-### WHO 
-- Bogdan Stanciu
-- Marco Chilese 
-- Luca Violato 
-- Matteo Slanzi 
+### Ruoli (4)
+- Amministratore: Bogdan Stanciu
+- Responsabile: Marco Favaro
+- Progettista: Marco Chilese, Diego Mazzalovo
+- Programmatore: Carlotta Segna
+- Verificatore: Matteo Slanzi
+- Analista: Luca Violato
+
