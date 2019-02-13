@@ -38,3 +38,4 @@
 - Programmatore: Carlotta Segna
 - Verificatore: Matteo Slanzi
 - Analista: Luca Violato
+
