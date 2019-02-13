@@ -39,7 +39,7 @@ Ogni requisito, nel documento, deve seguire le seguenti regole di identificazion
 \endhead
 ROF1 & L'utente deve poter aggiungere una rete bayesiana al sistema & Obbligatorio & UC1\\
 \hline
-\rowcolor{grigio}ROF1.1 & Il Sistema deve mettere a disposizione un pulsante per avviare l'operazione di selezione del file da caricare & Obbligatorio & UC1\\
+\rowcolor{grigio}ROF1.1 & Il Sistema deve mettere a disposizione un pulsante per avviare l'operazione di selezione del file, contente la definizione della rete, da caricare & Obbligatorio & UC1\\
 \hline
 ROF1.2 & Il Sistema deve consentire all'utente di selezionare un file da caricare & Obbligatorio & UC1\\
 \hline
@@ -51,85 +51,87 @@ ROF1.4 & Il Sistema deve visualizzare un messaggio di errore nel caso l'operazio
 \hline
 RFF1.4.2 & Il Sistema deve visualizzare un messaggio di errore nel caso in cui la struttura interna del file selezionato sia errata & Opzionale & UC1 UC8\\
 \hline
-\rowcolor{grigio}ROF2 & L'utente deve poter collegare un flusso di dati ad ogni nodo desiderato della rete preesistente & Obbligatorio & UC2\\
+\rowcolor{grigio}ROF1.5 & Il Sistema deve interpretare il file caricato, al fine di costruire la rete bayesiana attraverso la sua definizione & Obbligatorio & UC1\\
 \hline
-ROF2.1 & Il Sistema deve interpretare la rete bayesiana caricata, al fine di estrapolarne i nodi e fornirli all'utente sotto forma di lista & Obbligatorio & UC2\\
+ROF2 & L'utente deve poter collegare un flusso di dati ad ogni nodo desiderato della rete preesistente & Obbligatorio & UC2\\
 \hline
-\rowcolor{grigio}ROF2.1.1 & Il Sistema deve mostrare, per ogni nodo, il nominativo dello stesso & Obbligatorio & UC2\\
+\rowcolor{grigio}ROF2.1 & Il Sistema deve interpretare la rete bayesiana caricata, al fine di estrapolarne i nodi e fornirli all'utente sotto forma di lista & Obbligatorio & UC2\\
 \hline
-ROF2.1.2 & Il Sistema deve mostrare, per ogni nodo, una corrispondente checkbox che identifichi lo stato dello stesso: collegato ad un flusso dati oppure no & Obbligatorio & UC2\\
+ROF2.1.1 & Il Sistema deve mostrare, per ogni nodo, il nominativo dello stesso & Obbligatorio & UC2\\
 \hline
-\rowcolor{grigio}ROF2.2 & Il Sistema deve mettere a disposizione dell'utente le impostazioni necessarie per effettuare correttamente il collegamento desiderato & Obbligatorio & UC2\\
+\rowcolor{grigio}ROF2.1.2 & Il Sistema deve mostrare, per ogni nodo, una corrispondente checkbox che identifichi lo stato dello stesso: collegato ad un flusso dati oppure no & Obbligatorio & UC2\\
 \hline
-ROF2.2.1 & Il Sistema, in seguito al click dell'utente su un nominativo, deve aprire una finestra contente un elenco dei flussi dati disponibili per il collegamento & Obbligatorio & UC2.2\\
+ROF2.2 & Il Sistema deve mettere a disposizione dell'utente le impostazioni necessarie per effettuare correttamente il collegamento desiderato & Obbligatorio & UC2\\
 \hline
-\rowcolor{grigio}ROF2.2.2 & L'utente deve poter selezionare il flusso dati desiderato per il collegamento & Obbligatorio & UC2.2\\
+\rowcolor{grigio}ROF2.2.1 & Il Sistema, in seguito al click dell'utente su un nominativo, deve aprire una finestra contente un elenco dei flussi dati disponibili per il collegamento & Obbligatorio & UC2.2\\
 \hline
-ROF2.2.3 & Il Sistema deve espandere la finestra e mettere a disposizione dell'utente i campi dati necessari alla definizione di un livello di soglia connesso al flusso dati selezionato & Obbligatorio & UC2.2\\
+ROF2.2.2 & L'utente deve poter selezionare il flusso dati desiderato per il collegamento & Obbligatorio & UC2.2\\
 \hline
-\rowcolor{grigio}ROF2.2.4 & L'utente deve poter editare i campi dati per definire correttamente un livello di soglia al di sotto, o al di sopra del quale il nodo viene considerato una variabile di evidenza nella rete bayesiana & Obbligatorio & UC2.2\\
+\rowcolor{grigio}ROF2.2.3 & Il Sistema deve espandere la finestra e mettere a disposizione dell'utente i campi dati necessari alla definizione di un livello di soglia connesso al flusso dati selezionato & Obbligatorio & UC2.2\\
 \hline
-ROF2.2.5 & Il Sistema deve mettere a disposizione dell'utente un bottone per confermare le scelte riguardardanti la definizione della soglia & Obbligatorio & UC2.2\\
+ROF2.2.4 & L'utente deve poter editare i campi dati per definire correttamente un livello di soglia al di sotto, o al di sopra del quale il nodo viene considerato una variabile di evidenza nella rete bayesiana & Obbligatorio & UC2.2\\
 \hline
-\rowcolor{grigio}ROF2.2.6 & Il Sistema deve visualizzare un messaggio di errore nel caso in cui l'utente abbia confermato le proprie scelte riguardanti il collegamento del singolo nodo in esame senza aver correttamente definito il livello di soglia & Obbligatorio & UC2.2 UC14\\
+\rowcolor{grigio}ROF2.2.5 & Il Sistema deve mettere a disposizione dell'utente un bottone per confermare le scelte riguardardanti la definizione della soglia & Obbligatorio & UC2.2\\
 \hline
-ROF2.2.7 & Il Sistema deve aggiornare la lista di checkbox, registrando il nuovo stato di ogni nodo (collegato o meno ad un flusso dati) & Obbligatorio & UC2\\
+ROF2.2.6 & Il Sistema deve visualizzare un messaggio di errore nel caso in cui l'utente abbia confermato le proprie scelte riguardanti il collegamento del singolo nodo in esame senza aver correttamente definito il livello di soglia & Obbligatorio & UC2.2 UC14\\
 \hline
-\rowcolor{grigio}ROF2.3 & Il Sistema deve mettere a disposizione dell'utente un bottone per confermare il collegamento dei nodi & Obbligatorio & UC2\\
+\rowcolor{grigio}ROF2.2.7 & Il Sistema deve aggiornare la lista di checkbox, registrando il nuovo stato di ogni nodo (collegato o meno ad un flusso dati) & Obbligatorio & UC2\\
 \hline
-ROF2.4 & Il Sistema deve visualizzare un messaggio di errore nel caso in cui l'utente abbia confermato il collegamento dei nodi senza averne effettivamente collegato alcuno & Obbligatorio & UC2 UC9\\
+ROF2.3 & Il Sistema deve mettere a disposizione dell'utente un bottone per confermare il collegamento dei nodi & Obbligatorio & UC2\\
 \hline
-\rowcolor{grigio}ROF2.5 & L'utente deve poter modificare il collegamento dei nodi dopo aver confermato le proprie scelte & Obbligatorio & UC2 UC13\\
+\rowcolor{grigio}ROF2.4 & Il Sistema deve visualizzare un messaggio di errore nel caso in cui l'utente abbia confermato il collegamento dei nodi senza averne effettivamente collegato alcuno & Obbligatorio & UC2 UC9\\
 \hline
-ROF2.5.1 & Il Sistema deve rendere non interagibile il pannello contente la lista dei nodi una volta che l'utente abbia effettuato la conferma del collegamento & Obbligatorio & UC2 UC13\\
+ROF2.5 & L'utente deve poter modificare il collegamento dei nodi dopo aver confermato le proprie scelte & Obbligatorio & UC2 UC13\\
 \hline
-\rowcolor{grigio}ROF2.5.2 & Il Sistema deve mettere a disposizione dell'utente un bottone per per accedere alla modifica del collegamento dei nodi, rendendo nuovamente interagibile il pannello contente la lista di nodi & Obbligatorio & UC13\\
+\rowcolor{grigio}ROF2.5.1 & Il Sistema deve rendere non interagibile il pannello contente la lista dei nodi una volta che l'utente abbia effettuato la conferma del collegamento & Obbligatorio & UC2 UC13\\
 \hline
-ROF2.5.3 & Il Sistema deve interrompere la visualizzazione dei dati ed eliminare eventuali alert ad essi associati nel caso in cui l'utente interagisca con il sistema per modificare il collegamento dei nodi & Obbligatorio & UC2 UC4 UC7 UC13\\
+ROF2.5.2 & Il Sistema deve mettere a disposizione dell'utente un bottone per per accedere alla modifica del collegamento dei nodi, rendendo nuovamente interagibile il pannello contente la lista di nodi & Obbligatorio & UC13\\
 \hline
-\rowcolor{grigio}ROF3 & L'utente deve poter impostare una politica temporale per il ricalcolo delle probabilità condizionate associate ai nodi della rete bayesiana & Obbligatorio & UC3\\
+\rowcolor{grigio}ROF2.5.3 & Il Sistema deve interrompere la visualizzazione dei dati ed eliminare eventuali alert ad essi associati nel caso in cui l'utente interagisca con il sistema per modificare il collegamento dei nodi & Obbligatorio & UC2 UC4 UC7 UC13\\
 \hline
-ROF3.3 & L'utente deve avere la possibilità di definire una politica temporale & Obbligatorio & UC3\\ 
+ROF3 & L'utente deve poter impostare una politica temporale per il ricalcolo delle probabilità condizionate associate ai nodi della rete bayesiana & Obbligatorio & UC3\\
 \hline
-\rowcolor{grigio}ROF3.3.1 & Il Sistema deve mettere a disposizione dell'utente un pannello di configurazione contente i campi dati necessari alla definizione di una politica temporale & Obbligatorio & UC3\\
+\rowcolor{grigio}ROF3.3 & L'utente deve avere la possibilità di definire una politica temporale & Obbligatorio & UC3\\ 
 \hline
-ROF3.3.2 & L'utente deve poter editare i campi dati per definire correttamente la politica temporale desiderata & Obbligatorio & UC3\\
+ROF3.3.1 & Il Sistema deve mettere a disposizione dell'utente un pannello di configurazione contente i campi dati necessari alla definizione di una politica temporale & Obbligatorio & UC3\\
 \hline
-\rowcolor{grigio}ROF3.4 & Il Sistema deve mettere a disposizione dell'utente un bottone per confermare la politica temporale da lui definita & Obbligatorio & UC3\\
+\rowcolor{grigio}ROF3.3.2 & L'utente deve poter editare i campi dati per definire correttamente la politica temporale desiderata & Obbligatorio & UC3\\
 \hline
-ROF3.5 & Il Sistema deve visualizzare un messaggio di errore nel caso in cui l'utente abbia confermato una politica temporale non correttamente definita & Obbligatorio & UC3 UC15\\
+ROF3.4 & Il Sistema deve mettere a disposizione dell'utente un bottone per confermare la politica temporale da lui definita & Obbligatorio & UC3\\
 \hline
-\rowcolor{grigio}ROF4 & Il Sistema deve fornire i dati relativi ai nodi della rete bayesiana non collegati al flusso & Obbligatorio & UC4\\
+\rowcolor{grigio}ROF3.5 & Il Sistema deve visualizzare un messaggio di errore nel caso in cui l'utente abbia confermato una politica temporale non correttamente definita & Obbligatorio & UC3 UC15\\
 \hline
-ROF4.1 & Il Sistema deve mettere a disposizione dell'utente un pulsante per avviare il monitoraggio dei dati & Obbligatorio & UC4\\
+ROF4 & Il Sistema deve fornire i dati relativi ai nodi della rete bayesiana non collegati al flusso & Obbligatorio & UC4\\
 \hline
-\rowcolor{grigio}ROF4.1.1 & Il Sistema deve visualizzare un messaggio di errore nel caso in cui l'utente abbia avviato il monitoraggio senza aver preventivamente caricato una rete bayesiana & Obbligatorio & UC4 UC10\\
+\rowcolor{grigio}ROF4.1 & Il Sistema deve mettere a disposizione dell'utente un pulsante per avviare il monitoraggio dei dati & Obbligatorio & UC4\\
 \hline
-ROF4.1.2 & Il Sistema deve visualizzare un messaggio di errore nel caso in cui l'utente abbia avviato il monitoraggio senza aver preventivamente collegato alcuni dei nodi della rete ad un flusso dati & Obbligatorio & UC4 UC11\\
+ROF4.1.1 & Il Sistema deve visualizzare un messaggio di errore nel caso in cui l'utente abbia avviato il monitoraggio senza aver preventivamente caricato una rete bayesiana & Obbligatorio & UC4 UC10\\
 \hline
-\rowcolor{grigio}ROF4.1.3 & Il Sistema deve visualizzare un messaggio di errore nel caso in cui l'utente abbia avviato il monitoraggio senza aver preventivamente impostato la politica temporale per il ricalcolo delle probabilità & Obbligatorio & UC4 UC12\\
+\rowcolor{grigio}ROF4.1.2 & Il Sistema deve visualizzare un messaggio di errore nel caso in cui l'utente abbia avviato il monitoraggio senza aver preventivamente collegato alcuni dei nodi della rete ad un flusso dati & Obbligatorio & UC4 UC11\\
 \hline
-ROF4.2 & Il Sistema deve fornire all'utente una lista di probabilità dinamiche associate ai nodi della rete & Obbligatorio & UC4\\
+ROF4.1.3 & Il Sistema deve visualizzare un messaggio di errore nel caso in cui l'utente abbia avviato il monitoraggio senza aver preventivamente impostato la politica temporale per il ricalcolo delle probabilità & Obbligatorio & UC4 UC12\\
 \hline
-\rowcolor{grigio}ROF4.3 & Il Sistema deve aggiornare periodicamente le probabilità in base a quanto definito come policy per il ricalcolo delle probabilità & Obbligatorio & UC4\\
+\rowcolor{grigio}ROF4.2 & Il Sistema deve fornire all'utente una lista di probabilità dinamiche associate ai nodi della rete & Obbligatorio & UC4\\
 \hline
-RDF4.3.1 & Il Sistema, indipendentemente dalla politica temporale stabilita dall'utente, deve ricalcolare le probabilità al verificarsi del superamento della soglia di un nodo collegato al flusso di monitoraggio & Desiderabile & UC4 VER-2019-02-08\\
+ROF4.3 & Il Sistema deve aggiornare periodicamente le probabilità in base a quanto definito come policy per il ricalcolo delle probabilità & Obbligatorio & UC4\\
 \hline
-\rowcolor{grigio}RFF5 & L'utente deve poter definire alert basati sui dati relativi ai nodi della rete bayesiana non collegati al flusso & Opzionale & UC5\\
+\rowcolor{grigio}RDF4.3.1 & Il Sistema, indipendentemente dalla politica temporale stabilita dall'utente, deve ricalcolare le probabilità al verificarsi del superamento della soglia di un nodo collegato al flusso di monitoraggio & Desiderabile & UC4 VER-2019-02-08\\
 \hline
-RFF5.1 & Il Sistema deve mettere a disposizione di \textit{Grafana} i dati per l'operazione di creazione di alert ad essi associati da parte dell'utente & Opzionale & UC5\\
+RFF5 & L'utente deve poter definire alert basati sui dati relativi ai nodi della rete bayesiana non collegati al flusso & Opzionale & UC5\\
 \hline
-\rowcolor{grigio}RFF5.1.1 & Il pannello "G\&B" deve supportare la funzione di "edit" da parte dell'utente & Opzionale & UC5\\
+\rowcolor{grigio}RFF5.1 & Il Sistema deve mettere a disposizione di \textit{Grafana} i dati per l'operazione di creazione di alert ad essi associati da parte dell'utente & Opzionale & UC5\\
 \hline
-RFF5.1.2 & Il Sistema deve mettere a disposizione dell'utente un pulsante "Aggiungi Alert" che conduca l'utente alle impostazioni di edit del pannello "G\&B" alla voce "Alert" & Opzionale & UC5\\
+RFF5.1.1 & Il pannello "G\&B" deve supportare la funzione di "edit" da parte dell'utente & Opzionale & UC5\\
 \hline
-\rowcolor{grigio}RFF6 & L'utente deve poter visualizzare gli alert creati sulla base dei dati relativi ai nodi della rete bayesiana non collegati al flusso & Opzionale & UC7\\ 
+\rowcolor{grigio}RFF5.1.2 & Il Sistema deve mettere a disposizione dell'utente un pulsante "Aggiungi Alert" che conduca l'utente alle impostazioni di edit del pannello "G\&B" alla voce "Alert" & Opzionale & UC5\\
 \hline
-RFF6.1 & Il Sistema deve mettere periodicamente a disposizione della piattaforma \textit{Grafana} i dati aggiornati per il monitoraggio costante dello stato degli alert & Opzionale & UC7\\
+RFF6 & L'utente deve poter visualizzare gli alert creati sulla base dei dati relativi ai nodi della rete bayesiana non collegati al flusso & Opzionale & UC7\\ 
 \hline
-\rowcolor{grigio}RFF6.2 & L'utente deve poter rimuovere gli alert associati ai nodi della rete bayesiana & Opzionale & UC6\\
+\rowcolor{grigio}RFF6.1 & Il Sistema deve mettere periodicamente a disposizione della piattaforma \textit{Grafana} i dati aggiornati per il monitoraggio costante dello stato degli alert & Opzionale & UC7\\
 \hline
-RFF6.2.1 & L'utente deve poter selezionare l'alert da eliminare attraverso il pannello di visualizzazione degli alert & Opzionale & UC6\\
+RFF6.2 & L'utente deve poter rimuovere gli alert associati ai nodi della rete bayesiana & Opzionale & UC6\\
+\hline
+\rowcolor{grigio}RFF6.2.1 & L'utente deve poter selezionare l'alert da eliminare attraverso il pannello di visualizzazione degli alert & Opzionale & UC6\\
 \hline
 \caption{Requisiti Funzionali}
 \end{longtable}
@@ -204,7 +206,7 @@ ROV11 & Il Sistema deve funzionare sul browser \textit{Safari} dalla versione 10
 
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[scale=0.3]{./images/ES6_Support.png}
+		\includegraphics[scale=0.4]{./images/ES6_Support.png}
 		 \caption{Supporto al linguaggio ECMAScript6. Immagine da: \url{https://www.w3schools.com/js/js_es6.asp}}
 		 \label{SupportoECMAScript}	
 	\end{center}
@@ -227,7 +229,7 @@ Capitolato & \makecell{ROQ1\\ROQ2\\RDQ5\\ROV4\\ROV6}\\
 \hline
 Piattaforma \textit{Grafana} & \makecell{ROV1\\ROV2\\ROV3\\ROV6}\\
 \hline
-\rowcolor{grigio}UC1 & \makecell{ROF1\\ROF1.1\\ROF1.2\\ROF1.3\\ROF1.4\\RFF1.4.1\\RFF1.4.2}\\
+\rowcolor{grigio}UC1 & \makecell{ROF1\\ROF1.1\\ROF1.2\\ROF1.3\\ROF1.4\\RFF1.4.1\\RFF1.4.2\\ROF1.5}\\
 \hline
 UC2 & \makecell{ROF2\\ROF2.1\\ROF2.1.1\\ROF2.1.2\\ROF2.2\\ROF2.2.7\\ROF2.3\\ROF2.4\\ROF2.5\\ROF2.5.1\\ROF2.5.3}\\
 \hline
@@ -275,7 +277,7 @@ Supporto a \textit{ECMAScript6} & \makecell{ROV8\\ROV9\\ROV10\\ROV11}\\
 \rowcolor{bluelogo}\textbf{\textcolor{white}{Tipologia}} & \textbf{\textcolor{white}{Obbligatorio}} & \textbf{\textcolor{white}{Opzionale}} & \textbf{\textcolor{white}{Desiderabile}} & \textbf{\textcolor{white}{Totale}}\\
 \hline \hline
 \endhead
-Funzionale & 36 & 10 & 1 & 47\\
+Funzionale & 37 & 10 & 1 & 48\\
 \hline
 \rowcolor{grigio}Di Qualità & 5 & 0 & 4 & 9\\
 \hline
