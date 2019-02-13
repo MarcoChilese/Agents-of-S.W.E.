@@ -140,25 +140,38 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 \item \textbf{Scenario principale}:
  \begin{enumerate}
  \item (\hyperref[UC2.2.1]{UC2.2.1 (§\ref*{UC2.2.1})}) Selezione del nodo;
- \item (\hyperref[UC2.2.2]{UC2.2.2 (§\ref*{UC2.2.2})}) Selezione del flusso dati;
- \item (\hyperref[UC2.2.3]{UC2.2.3 (§\ref*{UC2.2.3})}) Selezione del livello di soglia;
- \item (\hyperref[UC2.2.4]{UC2.2.4 (§\ref*{UC2.2.4})}) Conferma delle scelte.
+ \item (\hyperref[UC2.2.2]{UC2.2.2 (§\ref*{UC2.2.2})}) Selezione della sorgente dati;
+ \item (\hyperref[UC2.2.3]{UC2.2.3 (§\ref*{UC2.2.3})}) Selezione del flusso dati;
+ \item (\hyperref[UC2.2.4]{UC2.2.4 (§\ref*{UC2.2.4})}) Selezione del livello di soglia;
+ \item (\hyperref[UC2.2.5]{UC2.2.5 (§\ref*{UC2.2.5})}) Conferma delle scelte.
  \end{enumerate}
-\item \textbf{Estensioni:} \hyperref[UC14]{UC14 (§\ref*{UC14})} estende \hyperref[UC2.2.4]{UC2.2.4 (§\ref*{UC2.2.4})}: l'utente visualizza un messaggio di errore nel caso in cui non abbia impostato correttamente 	un livello di soglia per il nodo selezionato.
+\item \textbf{Estensioni:} \hyperref[UC14]{UC14 (§\ref*{UC14})} estende \hyperref[UC2.2.5]{UC2.2.5 (§\ref*{UC2.2.5})}: l'utente visualizza un messaggio di errore nel caso in cui non abbia impostato correttamente 	un livello di soglia per il nodo selezionato.
 \end{itemize}
 
 \paragraph{UC2.2.1 - Selezione del nodo}\label{UC2.2.1}
 \begin{itemize}
 \item \textbf{Attore primario:} Utente;
 \item \textbf{Precondizione:} l'utente ha visualizzato la lista di nodi di cui la rete bayesiana è costituita ed il 	corrispondente stato (\hyperref[UC2.1]{UC2.1 (§\ref*{UC2.1})});
-\item \textbf{Postcondizione:} l'utente visualizza una finestra contente una lista di flussi dati a cui è possibile 	collegare il nodo selezionato;
+\item \textbf{Postcondizione:} l'utente visualizza una finestra contente un menù a tendina in cui è possibile selezionare la sorgente dei dati;
 \item \textbf{Scenario principale:} l'utente clicca il nominativo del nodo che desidera collegare ad un certo flusso dati.
 \end{itemize}
 
-\paragraph{UC2.2.2 - Selezione del flusso dati}\label{UC2.2.2}
+\paragraph{UC2.2.2 - Selezione della sorgente dati}\label{UC2.2.2}
 \begin{itemize}
 \item \textbf{Attore primario:} Utente;
 \item \textbf{Precondizione:} l'utente ha selezionato il nodo che desidera collegare ad un certo flusso dati 					(\hyperref[UC2.2.1]{UC2.2.1 (§\ref*{UC2.2.1})});
+\item \textbf{Postcondizioni:} 
+	\begin{enumerate}
+	\item L'utente ha selezionato la sorgente dati;
+	\item L'utente visualizza una lista di flussi dati a cui è possibile 	collegare il nodo selezionato.
+	\end{enumerate}
+\item \textbf{Scenario principale:} l'utente seleziona, attraverso un menù a tendina, la sorgente dati.
+\end{itemize}
+
+\paragraph{UC2.2.3 - Selezione del flusso dati}\label{UC2.2.3}
+\begin{itemize}
+\item \textbf{Attore primario:} Utente;
+\item \textbf{Precondizione:} l'utente ha selezionato la sorgente dei dati (\hyperref[UC2.2.2]{UC2.2.2 (§\ref*{UC2.2.2})});
 \item \textbf{Postcondizioni:}
 	\begin{enumerate}
 	\item L'utente ha selezionato il flusso dati a cui collegare il nodo desiderato;
@@ -167,7 +180,7 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 \item \textbf{Scenario principale:} l'utente seleziona, attraverso un click, il flusso dati a cui desidera 						collegare il nodo in esame.
 \end{itemize}
 
-\paragraph{UC2.2.3 - Selezione del livello di soglia}\label{UC2.2.3}
+\paragraph{UC2.2.4 - Selezione del livello di soglia}\label{UC2.2.4}
 \begin{itemize}
 \item \textbf{Attore primario:} Utente
 \item \textbf{Precondizione:} l'utente ha selezionato un flusso dati a cui collegare il nodo desiderato;
@@ -181,13 +194,13 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 	\end{enumerate}
 \end{itemize}
 
-\paragraph{UC2.2.4 - Conferma delle scelte}\label{UC2.2.4}
+\paragraph{UC2.2.5 - Conferma delle scelte}\label{UC2.2.5}
 \begin{itemize}
 \item \textbf{Attore primario:} Utente;
 \item \textbf{Precondizioni:}
 	\begin{enumerate}
-	\item L'utente ha selezionato un flusso dati a cui collegare il nodo in esame (\hyperref[UC2.2.2]{UC2.2.2 							(§\ref*{UC2.2.2})});
-	\item L'utente ha impostato correttamente un livello di soglia al di sotto, o al di sopra, 	del quale il nodo in 			questione viene considerato "True", ovvero una variabile di evidenza, all'interno della rete 	bayesiana 							(\hyperref[UC2.2.3]{UC2.2.3 (§\ref*{UC2.2.3})});
+	\item L'utente ha selezionato un flusso dati a cui collegare il nodo in esame (\hyperref[UC2.2.3]{UC2.2.3 							(§\ref*{UC2.2.3})});
+	\item L'utente ha impostato correttamente un livello di soglia al di sotto, o al di sopra, 	del quale il nodo in 			questione viene considerato "True", ovvero una variabile di evidenza, all'interno della rete 	bayesiana 							(\hyperref[UC2.2.4]{UC2.2.4 (§\ref*{UC2.2.4})});
 	\end{enumerate}
 \item \textbf{Postcondizioni:}
 	\begin{enumerate}
