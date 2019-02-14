@@ -173,6 +173,7 @@ if (condtion) {
 \end{lstlisting}
 
 \subparagraph{Commenti al codice}\-\\
+\textbf{Norma 1}
 Il codice va commentato nel seguente modo:
 \begin{itemize}
 	\item "\texttt{//}" se il commento occupa una sola riga;
@@ -189,6 +190,58 @@ if (condition) return true;
 */
 if (condtion) {
   return true;
+}
+\end{lstlisting}
+\textbf{Norma 2}\label{Docs_Codice}
+Il codice sviluppato va adeguatamente commentato con i commenti di documentazione appositi:
+\begin{lstlisting}[language=JavaScript]
+/**
+ * Function or class description ...
+ */
+\end{lstlisting}
+Il team fa riferimento a quanto indicato dal sito \textit{@use JSDoc}\footnote{\url{http://usejsdoc.org}}.\\
+In particolari vengono ritenuti necessari, qualora utilizzato, il riferimento alle seguenti parti:
+\begin{itemize}
+	\item @extends: da utilizzare nell'intestazione della classe se la stessa ne estende un'altra;
+	\item @param: da utilizzare per descrivere l'uso di un parametro di una funzione;
+	\item @return: da utilizzare per descrivere il tipo di valore ritornato da una funzione; 
+	\item @module: da utilizzare per indicare un modulo importato;
+	\item @throws: da utilizzare per descrivere quali eccezioni possono essere lanciate.
+\end{itemize}
+Di seguito un esempio di utilizzo:
+\begin{lstlisting}[language=JavaScript]
+**
+* Class representing a dot.
+* @extends Point
+*/
+class Dot extends Point {
+  /**
+  * Create a dot.
+  * @param {number} x - The x value.
+  * @param {number} y - The y value.
+  * @param {number} width - The width of the dot, in pixels.
+  */
+  constructor(x, y, width) {
+    // ...
+  }
+
+  /**
+  * Get the dot's width.
+  * @return {number} The dot's width, in pixels.
+  */
+  getWidth() {
+    // ...
+  }
+  
+  /**
+  * Set the dot's width.
+  * @param {number} width - The width of the dot, in pixels.
+  * @throws {Error} Will throw an error if the argument is lower than 0.
+  */
+  setWidth(w) {
+    if(w < 0) throw new Error('Negative width');
+    this.width = w;
+  }
 }
 \end{lstlisting}
 
