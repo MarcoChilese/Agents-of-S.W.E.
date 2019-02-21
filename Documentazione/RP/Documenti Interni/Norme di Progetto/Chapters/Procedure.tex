@@ -1,17 +1,18 @@
 \subsubsection{Gestione degli Strumenti di Versionamento}\label{ProcessiOrganizzativi_Procedure_GestioneStrumentiVersionamento}
-	Come strumento per la gestione del versionamento dei files si è scelto di utilizzare una \textit{Repository}\glossario su \textit{GitHub}\glossario. La gestione di tale \textit{Repository} è compito dell'\textit{Amministratore di Progetto}.
+	Come strumento per la gestione del versionamento dei documenti si è scelto di utilizzare un \textit{Repository}\glossario su \textit{GitHub}\glossario, mentre come gestione del versionamento del codice si è scelto di utilizzare un repository su \textit{GitLab}. La gestione di tali \textit{Repository} è compito dell'\textit{Amministratore di Progetto}.
 
 \paragraph{Uso dei Branch} ~\\
 	Al fine di agevolare il più possibile il parallelismo, evitando al contempo quanto più possibile eventuali problematiche in fase di \textit{merge}\glossario, sono stati creati i seguenti branch\glossario:
 	\begin{itemize}
-	\item \textbf{master}: questo branch contiene solamente i documenti che si trovano in stato \textbf{"Approvato"}, i quali formano dunque la \textit{baseline}\glossario;
-	\item \textbf{develop}: questo è il branch di "sviluppo". Esso contiene tutti i documenti che, sebbene siano considerati ultimati per quanto riguarda la loro stesura, sono in attesa di approvazione o in fase di verifica;
+	\item \textbf{master}: questo branch contiene solamente i documenti e file che si trovano in stato \textbf{"Approvato"}, i quali formano dunque la \textit{baseline}\glossario;
+	\item \textbf{develop}: questo è il branch di "sviluppo". Esso contiene tutti i documenti e file che, sebbene siano considerati ultimati per quanto riguarda la loro stesura, sono in attesa di approvazione o in fase di verifica;
 	\item \textbf{feature/"nomeDocumento"}: vi sono quattro branch distinti questo tipo, nello specifico: "feature/analisiRequisiti", "feature/normeProgetto, "feature/pianoProgetto" e "feature/pianoQualifica". Ciascuno di questi è specializzato nell'avanzamento della stesura del documento a cui si riferisce;
-	\item \textbf{feature/revisione"nomeDocumento"}: questi branch vengono sfruttati qualora un documento presente nel branch \textit{develop}, in sede di verifica, dovesse necessitare di modifiche non immediate.
+	%TODO: inserire struttura repository su gitlab
+	\item \textbf{feature/revisione"nomeFile"}: questi branch vengono sfruttati qualora un documento o file presente nel branch \textit{develop}, in sede di verifica, dovesse necessitare di modifiche non immediate.
 	\end{itemize}
 
 \paragraph{Norme delle Commit} ~\\
-	Ogni \textit{commit}\glossario, ovvero ciascuna modifica alla repository \textit{Agents-of-S.W.E.} deve essere caratterizzata da una descrizione sensata, eventualmente accompagnata ad un riferimento esplicito ad una \textit{issue}\glossario aperta, al fine di agevolare una piena, e non onerosa, comprensione da parte di ogni membro del gruppo.
+	Ogni \textit{commit}\glossario, ovvero ciascuna modifica alle repository, deve essere caratterizzata da una descrizione sensata, eventualmente accompagnata ad un riferimento esplicito ad una \textit{issue}\glossario aperta, al fine di agevolare una piena, e non onerosa, comprensione da parte di ogni membro del gruppo.
 
 \paragraph{Norme dei Merge tra Branch} ~\\
 	Al fine di rispettare la caratterizzazione che si è deciso di dare al branch \textbf{master}, e per agevolare un lavoro sistematico ed organizzato del lavoro si sono stabilite le seguenti norme in sede di \textit{merge} tra diversi branch:

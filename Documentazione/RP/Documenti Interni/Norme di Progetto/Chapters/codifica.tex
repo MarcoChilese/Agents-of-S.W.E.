@@ -44,8 +44,8 @@ MyFunction() { ... } //NO
 \end{itemize}
 \paragraph{ECMAScript 6}\label{EcmaScript6} \-\\
 Seguendo le indicazioni presenti nella documentazione\footnote{\texttt{\url{http://docs.grafana.org/plugins/developing/development/}}} dell'azienda fornitrice di \textit{Grafana}, la piattaforma  per cui si intende sviluppare il plug-in, il team ha deciso di adottare come linguaggio di programmazione principale ECMAScript 6\footnote{Linguaggio divenuto standard ISO: ISO/IEC 16262:2011, e relativo aggiornamento ISO/IEC 22275:2018.}.\\
-ECMAScript 6 viene stardardizzato da \textbf{ECMA}\glossario\footnote{\texttt{\url{http://www.ecma-international.org/}}} nel giugno 2015 con la sigla \textbf{ECMA-262\footnote{\texttt{\url{https://www.ecma-international.org/ecma-262/6.0/}}}}.\\
-Come stile di codifica si adottano le linee guida proposte da \textbf{Airbnb JavaScript Style Guide}\footnote{\texttt{\url{https://github.com/airbnb/javascript}}}. Per la verifica dell'adesione a tali norme, i Programmatori devono utilizzare, come suggerito dalla documentazione proposta da \textit{Grafana}, \textbf{ESLint}\glossario\footnote{\texttt{\url{https://eslint.org/}}}.\\
+ECMAScript 6 viene stardardizzato da \textbf{ECMA}\glossario\ nel giugno 2015 con la sigla \textbf{ECMA-262}.\\
+Come stile di codifica si adottano le linee guida proposte da \textbf{Airbnb JavaScript Style Guide}. Per la verifica dell'adesione a tali norme, i Programmatori devono utilizzare, come suggerito dalla documentazione proposta da \textit{Grafana}, \textbf{ESLint}\glossario.\\
 In particolare i Programmatori devono rispettare 5 linee guida proposte dalla documentazione ufficiale di \textit{Grafana}:
 \begin{enumerate}
 	\item Se una variabile non viene riutilizzata, deve essere dichiarata come \texttt{\textbf{const}};
@@ -199,7 +199,7 @@ Il codice sviluppato va adeguatamente commentato con i commenti di documentazion
  * Function or class description ...
  */
 \end{lstlisting}
-Il team fa riferimento a quanto indicato dal sito \textit{@use JSDoc}\footnote{\url{http://usejsdoc.org}}.\\
+Il team fa riferimento a quanto indicato dal sito \textit{@use JSDoc}.\\
 In particolari vengono ritenuti necessari, qualora utilizzato, il riferimento alle seguenti parti:
 \begin{itemize}
 	\item @extends: da utilizzare nell'intestazione della classe se la stessa ne estende un'altra;
@@ -297,7 +297,7 @@ class myClass() {
 \label{css} \-\\
 
 Per la parte front-end\glossario del plug-in il gruppo \texttt{Agents of S.W.E.} ha scelto di utilizzare i linguaggi \textit{CSS} ed \textit{HTML5}.\\
-Qui di seguito verrà descritta la Style Guide resa disponibile da \textbf{Airbnb CSS-in-JavaScript Style Guide}\footnote{\texttt{\url{http://airbnb.io/javascript/css-in-javascript}}}.
+Qui di seguito verrà descritta la Style Guide resa disponibile da \textbf{Airbnb CSS-in-JavaScript Style Guide}.
 
 \subparagraph{Indentazione} \-\\
 \textbf{Norma 1}
@@ -340,7 +340,7 @@ Per le restanti regole si farà riferimento allo standard imposto dalla World Wi
 \paragraph{HTML}
 \label{html}
 
-Insieme al \textit{CSS}, per lo sviluppo della parte front-end del progetto, il gruppo ha scelto di utilizzare \textit{HTML5}. Per la stesura della Style Guide verrà utilizzata la documentazione resa disponibile da W3C\footnote{\url{https://www.w3schools.com/html/html5_syntax.asp}}.\\
+Insieme al \textit{CSS}, per lo sviluppo della parte front-end del progetto, il gruppo ha scelto di utilizzare \textit{HTML5}. Per la stesura della Style Guide verrà utilizzata la documentazione resa disponibile da W3C.\\
 Di seguito saranno riportate le principali norme da seguire: 
 \begin{itemize}
 	\item \textbf{Norma 1}: 
@@ -358,7 +358,7 @@ Di seguito saranno riportate le principali norme da seguire:
 	\item \textbf{Norma 7}:
 		nonostante i tag \texttt{html}, 	\texttt{body} e \texttt{head} possano essere omessi, vanno inseriti affinché siano compatibili con tutti i browser;
 	\item \textbf{Norma 8}:
-		le classi che verranno dichiarate all'interno dell'\textit{HTML}, al fine di andare poi a ridefinire il \textit{CSS}, dovranno essere quelle rese disponibili dalla documentazione di Grafana\footnote{\url{http://docs.grafana.org/plugins/developing/code-styleguide/}}.
+		le classi che verranno dichiarate all'interno dell'\textit{HTML}, al fine di andare poi a ridefinire il \textit{CSS}, dovranno essere quelle rese disponibili dalla documentazione di Grafana.
 \end{itemize}
 
 Equivalentemente al \textit{CSS}, anche il codice \textit{HTML} dovrà essere validato. Questa validazione avverrà tramite il sito reso disponibile dalla W3C, al seguente \href{https://validator.w3.org/}{link}.
@@ -366,7 +366,7 @@ Equivalentemente al \textit{CSS}, anche il codice \textit{HTML} dovrà essere va
 %AGGIUNGERE E SISTEMARE DA QUA IN GIU
 
 \paragraph{WebStorm}\-\\
-Come software per lo sviluppo comune, il team ha scelto di utilizzare L'IDE WebStorm\footnote{\url{https://www.jetbrains.com/webstorm/}}, facente parte della famiglia di prodotti di JetBrains. \\
+Come software per lo sviluppo comune, il team ha scelto di utilizzare L'IDE WebStorm, facente parte della famiglia di prodotti di JetBrains. \\
 WebStorm è una cross-platform, sviluppata principalmente per lo sviluppo web, JavaScript e TypeScript. \\
 La configurazione della piattaforma di sviluppo dovrà essere equivalente per tutti i componenti del gruppo. All'interno della piattaforma dovrà essere installato il plug-in \textbf{ESLint}, la cui funzione verrà illustrata in seguito.
 
