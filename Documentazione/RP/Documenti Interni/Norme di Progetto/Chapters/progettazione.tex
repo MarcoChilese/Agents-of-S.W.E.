@@ -22,7 +22,7 @@ Tuttavia, ai fini della realizzazione del prodotto finale, il team \texttt{Agent
 	\item \textit{jsbayes}\glossario: libreria suggerita dal proponente per la semplice definizione di reti bayesiane; 
 	\item \textit{UnBBayes}\glossario: framework e interfaccia grafica per le reti bayesiane. In particolare, verrà utilizzato per la visualizzazione della rete bayesiana in uso all'interno del plug-in, per soddisfare il requisito opzionale 2 esposto all'interno del capitolato d'appalto;
 %	\item Docker\glossario\footnote{\url{https://www.docker.com/}}: progetto open-source\glossario che automatizza il deployment\glossario di applicazioni all'interno di contenitori software. In particolare, in Docker Hub\glossario\footnote{\url{https://hub.docker.com/}} sono presenti le immagini utilizzabili mediante container di Telegraf, InfluxDB e Grafana. Pertanto, per agevolare la collaborazione e uniformare l'ambiente di sviluppo, \texttt{Agents Of S.W.E.} utilizzerà Grafana, Telegraf e InfluxDB in appositi container Docker;
-	\item \textit{GitLab}\glossario: piattaforma open-source per la gestione di repository Git. Il team utilizzerà un repository salvato su tale piattaforma in quanto permette la gestione di una pipeline di CI/CD\glossario, evitando quindi l'uso di altri strumenti. Il processo di CI/CD si configura come rappresentato nell'immagine.;
+	\item \textit{GitLab}\glossario: piattaforma open-source per la gestione di repository Git. Il team utilizzerà un repository salvato su tale piattaforma in quanto permette la gestione di una pipeline di CI/CD\glossario, evitando quindi l'uso di altri strumenti. Il processo di CI/CD si configura come rappresentato nell'immagine;
 	\item \textit{NPM}\glossario: manager di pacchetti per JavaScript. Verrà analizzato nel dettaglio in §\ref{NPM};
 	\item Jest: è un framework per il testing di JavaScript. Verrà analizzato nel dettaglio in §\ref{jest}.
 \end{itemize}
@@ -43,7 +43,7 @@ Tuttavia, ai fini della realizzazione del prodotto finale, il team \texttt{Agent
 
 \paragraph{Integrazione}\label{Progettazione_Integrazione}\-\\
 L'attività di integrazione sarà effettuata utilizzando il servizio disponibile su GitLab\glossario, piattaforma per repository utilizzata dal gruppo per il versionamento dei file sorgente.\\
-Questo servizio implementa un modello di integrazione continua, ad ogni commit\glossario nel repository\glossario, GitLab creerà automaticamente la build ed andrà ad eseguire i test di unità. In questo modo è possibile rilevare tempestivamente eventuali errori.\\
+Questo servizio implementa un modello di integrazione continua: ad ogni commit\glossario nel repository\glossario, GitLab creerà automaticamente la build ed andrà ad eseguire i test di unità. In questo modo è possibile rilevare tempestivamente eventuali errori.\\
 Per quanto riguarda il code coverage\glossario si utilizzerà un servizio messo a disposizione da GitLab.\\
 
 \paragraph{Diagrammi}\label{Progettazione_Diagrammi}\-\\

@@ -53,7 +53,7 @@ In tutti i documenti è presente un elenco delle figure utilizzate, ove presenti
 In tutti i documenti, se necessario, è presente un elenco dei riferimenti alle fonti utilizzate per stilare il documento in esame. \'E posizionato all'inizio del documento, dopo l'elenco delle tabelle e delle figure.
 
 \paragraph{Piè di pagina} \-\\ 
-Le pagine con indice e presentazione del documento contengono dei numeri progressivi romani, mentre le pagine con il contenuto il numero della pagina; possono essere presenti riferimenti bibliografici;
+Tutte le pagine, escluso il frontespizio, hanno a destra il numero della pagina ed il numero di pagine totali, così rappresentate: Pagina $x$ di $n$.
 
 \paragraph{Registro Modifiche} \-\\
 Ogni documento, eccezion fatta per verbali e lettera di presentazione, presenta un registro delle modifiche chiamato "Registro delle Modifiche". È strutturato sotto forma di tabella, che contiene in ordine cronologico tutte le modifiche identificabili dalla versione.  Ogni riga contiene la versione del documento, la data, il nome di chi ha effettuato la modifica, con il suo corrispettivo ruolo, ed infine una breve descrizione della modifica effettuata.
@@ -88,7 +88,7 @@ Sono descritti brevemente i documenti formali da consegnare:
 	\item \textbf{Norme di Progetto}: è utilizzato internamente, ed espone gli standard e le direttive utilizzate dal gruppo per sviluppare il progetto in tutta la sua interezza;
 	\item \textbf{Piano di Progetto}: ha un utilizzo esterno, ed espone come il gruppo ha deciso di impiegare le risorse di tempo ed umane;
 	\item \textbf{Piano di Qualifica}: ha un utilizzo esterno, descrive gli standard e gli obiettivi che il gruppo dovrà raggiungere per garantire la qualità di prodotto e processo;
-	\item \textbf{Studio di Fattibilità}: è un documento interno, espone pregi e difetti di tutti i capitolati in esame. Descrive i motivi per cui il gruppo ha scelto il capitolato corrente.
+	%\item \textbf{Studio di Fattibilità}: è un documento interno, espone pregi e difetti di tutti i capitolati in esame. Descrive i motivi per cui il gruppo ha scelto il capitolato corrente.
 \end{itemize}
 
 \subsubsection{Ambiente}\label{ProcessiSupporto_Documentazione_Ambiente} 
@@ -108,7 +108,7 @@ La necessità di più componenti del gruppo di cooperare su uno stesso documento
 
 %Nella fase di RR, non in questa fase di RR
 \subsubsection{Controllo di versione}
-Il sistema di versionamento, utilizzato nella fase di RR, è \textit{git}, con il supporto hosting di \textit{GitHub}. Per quanto riguarda la fase di codifica il gruppo ha deciso di appoggiarsi al supporto hosting di \textit{GitLab}, le motivazioni principali riguardano i servizi inclusi in materia di integrazione e pipeline di sviluppo spiegati nelle sezioni \ref{Progettazione_Sviluppo} e \ref{Progettazione_Integrazione}.
+Il sistema di versionamento, utilizzato nella fase di RR, è \textit{git}, con il supporto hosting di \textit{GitHub}. Per quanto riguarda la fase di codifica il gruppo ha deciso di appoggiarsi al supporto hosting di \textit{GitLab}, le motivazioni principali riguardano i servizi inclusi in materia di integrazione e pipeline di sviluppo spiegati nelle sezioni §\ref{Progettazione_Sviluppo} e §\ref{Progettazione_Integrazione}.
 
 \paragraph{Struttura del repository} \-\\ 
 La struttura del repository\glossario, in ambo gli hosting di versionamento, segue il workflow \textit{gitflow} di \textit{Driessen at nvie}, idealizzato attorno il concetto di release del prodotto. Questo produce un framework robusto attorno al quale si possono gestire progetti di grandi dimensioni. I due branch principali sono il "master" ed in parallelo ad esso il "develop". 
