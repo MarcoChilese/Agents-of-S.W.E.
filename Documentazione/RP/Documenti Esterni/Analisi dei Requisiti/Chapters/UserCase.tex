@@ -134,7 +134,7 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 \end{enumerate}
 \item \textbf{Postcondizioni}: 
 	\begin{enumerate}
-	\item L'utente ha collegato il nodo desiderato ad uno e un solo flusso dati, impostandone correttamente un livello di soglia al di sotto, o al di sopra, del quale il nodo in questione viene considerato "True", ovvero una variabile di evidenza, all'interno della rete bayesiana;
+	\item L'utente ha collegato il nodo desiderato ad uno e un solo flusso dati, impostandone correttamente per ogni possibile stato un livello di soglia al di sotto, o al di sopra, del quale la probabilità associata a quel dato stato risulta pari al 100\%, mentre le probabilità associate agli altri stati risultano pari allo 0\%;
 	\item Se lo desidera, e vi sono ancora nodi a disposizione, l’utente può selezionare un altro nodo per il collegamento, o modificare le impostazioni di nodi già collegati.
 	\end{enumerate}
 \item \textbf{Scenario principale}:
@@ -152,7 +152,7 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 \begin{itemize}
 \item \textbf{Attore primario:} Utente;
 \item \textbf{Precondizione:} l'utente ha visualizzato la lista di nodi di cui la rete bayesiana è costituita ed il 	corrispondente stato (\hyperref[UC2.1]{UC2.1 (§\ref*{UC2.1})});
-\item \textbf{Postcondizione:} l'utente visualizza una finestra contente un menù a tendina in cui è possibile selezionare la sorgente dei dati;
+\item \textbf{Postcondizione:} l'utente visualizza una finestra contente un menù a tendina in cui è possibile selezionare la sorgente dei dati e una lista di tutti i possibili stati del nodo selezionato;
 \item \textbf{Scenario principale:} l'utente clicca il nominativo del nodo che desidera collegare ad un certo flusso dati.
 \end{itemize}
 
@@ -183,14 +183,14 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 \paragraph{UC2.2.4 - Selezione del livello di soglia}\label{UC2.2.4}
 \begin{itemize}
 \item \textbf{Attore primario:} Utente
-\item \textbf{Precondizione:} l'utente ha selezionato un flusso dati a cui collegare il nodo desiderato;
-\item \textbf{Postcondizione:} l'utente ha impostato un livello di soglia al di sotto, o al di sopra, 	del quale il nodo in questione viene considerato "True", ovvero una variabile di evidenza, all'interno della rete 	bayesiana caricata in \hyperref[UC1]{UC1 (§\ref*{UC1})};
+\item \textbf{Precondizione:} l'utente ha selezionato il nodo che desidera collegare ad un certo flusso dati 					(\hyperref[UC2.2.1]{UC2.2.1 (§\ref*{UC2.2.1})});
+\item \textbf{Postcondizione:} l'utente ha impostato, per ogni stato del nodo, un livello di soglia al di sotto, o al di sopra,	del quale la probabilità associata a quel dato stato risulta pari al 100\%, mentre le probabilità associate agli altri stati risultano pari allo 0\%;
 \item \textbf{Scenario principale:}
 	\begin{enumerate}
-	\item L'utente visualizza una sezione composta di tre campi che devono essere obbligatoriamente riempiti;
-	\item L'utente digita, nel primo campo editabile, il valore numerico del livello di soglia;
-	\item L'utente seleziona, attraverso una casella a scelta multipla, se il valore numerico della soglia è inteso 				come percentuale o valore assoluto;
-	\item L'utente seleziona, attraverso una casella a scelta multipla, se il valore numerico impostato rappresenta 				il massimo oppure il minimo valore legale.
+	\item L'utente visualizza, associati al nominativo di ogni possibile stato del nodo, una sezione composta di tre campi che devono essere obbligatoriamente riempiti;
+	\item Per ogni stato del nodo l'utente digita, nel primo campo editabile, il valore numerico del livello di soglia;
+	\item Per ogni stato del nodo l'utente seleziona, attraverso una casella a scelta multipla, se il valore numerico impostato sia un valore di massimo oppure di minimo;
+	\item Per ogni stato del nodo l'utente seleziona, attraverso una checkbox\glossario, se la soglia definita sia critica o meno. Nel caso in cui si tratti di una soglia critica, qualora dovessero essere monitorati valori che la facciano scattare, si attiverebbe immediatamente l'attività di ricalcolo delle probabilità in sede di monitoraggio e visualizzazione dati (\hyperref[UC4.2]{UC4.2 (§\ref*{UC4.2})}).
 	\end{enumerate}
 \end{itemize}
 
@@ -200,7 +200,7 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 \item \textbf{Precondizioni:}
 	\begin{enumerate}
 	\item L'utente ha selezionato un flusso dati a cui collegare il nodo in esame (\hyperref[UC2.2.3]{UC2.2.3 							(§\ref*{UC2.2.3})});
-	\item L'utente ha impostato correttamente un livello di soglia al di sotto, o al di sopra, 	del quale il nodo in 			questione viene considerato "True", ovvero una variabile di evidenza, all'interno della rete 	bayesiana 							(\hyperref[UC2.2.4]{UC2.2.4 (§\ref*{UC2.2.4})});
+	\item L'utente ha impostato correttamente un livello di soglia al di sotto, o al di sopra, 	del quale la probabilità associata a quel dato stato risulta pari al 100\%, mentre le probabilità associate agli altri stati risultano pari allo 0\% (\hyperref[UC2.2.4]{UC2.2.4 (§\ref*{UC2.2.4})});
 	\end{enumerate}
 \item \textbf{Postcondizioni:}
 	\begin{enumerate}
@@ -294,7 +294,7 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 %	\item L'utente ha collegato con successo alcuni nodi della rete bayesiana al flusso dati (\hyperref[UC2]{UC2 (§\ref*{UC2})});
 %	\item L'utente ha definito le politiche temporali per il ricalcolo delle probabilità relative ai nodi della rete bayesiana (\hyperref[UC3]{UC3 (§\ref*{UC3})}).
 %	\end{enumerate}
-\item \textbf{Postcondizione}: l'utente monitora l'andamento delle probabilità dinamiche associate ad ogni nodo della rete bayesiana non collegato ad un flusso dati;
+\item \textbf{Postcondizione:} il Sistema mantiene aggiornate, e visualizzabili da parte dell'utente, le misure di probabilità derivate dai nodi della rete bayesiana non collegati al flusso dati;
 \item \textbf{Scenario principale}: 
 	\begin{enumerate}
 	\item L'utente clicca il pulsante "Avvio Monitoraggio";
@@ -335,8 +335,8 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 \begin{itemize}
 \item \textbf{Attore primario:} Utente
 \item \textbf{Precondizione:} l'utente ha avviato correttamente il monitoraggio del flusso dati.
-\item \textbf{Postcondizione:} l'utente monitora l'andamento delle probabilità dinamiche associate ad ogni nodo della rete bayesiana non collegato ad un flusso dati;
-\item \textbf{Scenario principale:} l'utente visualizza l'andamento delle probabilità dinamiche associate ai nodi 			della rete bayesiana non collegati direttamente al flusso dati;
+\item \textbf{Postcondizione:} il Sistema mantiene aggiornate, e visualizzabili da parte dell'utente, le misure di probabilità derivate dai nodi della rete bayesiana non collegati al flusso dati;
+\item \textbf{Scenario principale:} l'utente visualizza l'andamento delle probabilità dinamiche associate ai nodi 			della rete bayesiana non collegati direttamente al flusso dati. Il sistema aggiorna costantemente i dati forniti dalla rete bayesiana, effettuando l'operazione di ricalcolo delle probabilità associate ai nodi della rete non collegati al flusso dati. Tale operazione di ricalcolo delle probabilità avviene viene eseguita allo scadere del timeout ciclico rappresentato dalla politica temporale stabilita in \hyperref[UC3]{UC3 (§\ref*{UC3})}, oppure, nel caso siano state definite in sede di collegamento nodi (\hyperref[UC2.2.4]{UC2.2.4 (§\ref*{UC2.2.4})}), ogni volta che una soglia critica viene attivata dai dati monitorati;
 \item \textbf{Estensioni:} \hyperref[UC13]{UC13 (§\ref*{UC13})}: la visualizzazione dei dati viene interrotta nel 			caso in cui l'utente decida di modificare il collegamento dei nodi della rete bayesiana al flusso dati.
 \end{itemize}
 
