@@ -134,3 +134,27 @@ MTTS13 & Numero medio di bug trovati per test & $\leq 1$ & 0.2$\leq$x$\leq 10$ \
 \caption{Gestione dei Test}
 \label{GestioneTest}
 \end{longtable}
+
+\paragraph{PR06: Versionamento e Build}
+
+Il monitoraggio di commit e build avviene in modo continuo, attraverso gli strumenti di supporto integrati all'interno di GitLab\glossario. Ogni build viene costruita e verificata attraverso l'uso di una pipeline personalizzata definita all'interno del sistema di versionamento\glossario utilizzato. 
+
+\subparagraph{Obiettivi}
+\begin{itemize}
+	\item \textbf{Commit Frequenti}: i commit devono essere frequenti per garantire un codice quanto più possibile aggiornato;
+	\item \textbf{Build Positive}: al fine di evitare quanto più possibile il propagarsi di errori e mantenere, al contempo, una base di codice il più possibile funzionante, è necessario che il maggior numero possibile di commit\glossario portino al successo della build. 
+\end{itemize}
+
+\begin{longtable}{|C{.15\textwidth}|C{.24\textwidth}|C{.24\textwidth}|C{.24\textwidth}|}
+\hline
+\rowcolor{bluelogo}\textbf{\textcolor{white}{ID}} & \textbf{\textcolor{white}{Nome}} & \textbf{\textcolor{white}{Ottimalità}} & \textbf{\textcolor{white}{Accettabilità}}\\
+\hline \hline
+\endfirsthead
+MTPC14 & Media commit per settimana & 25 & 15 \\
+\hline
+\rowcolor{grigio}MTPC15 & Percentuali build superate & $\geq 75$\% & $\geq 90$\%\\
+\hline
+
+\caption{Versionamento e Build}
+\label{v&b}
+\end{longtable}

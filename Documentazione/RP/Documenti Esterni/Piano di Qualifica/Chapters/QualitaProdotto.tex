@@ -21,9 +21,9 @@ I documenti dovranno rispettare i pilastri della scrittura che prevedono la legg
 \begin{longtable}{|C{.15\textwidth}|C{.24\textwidth}|C{.24\textwidth}|C{.24\textwidth}|}
 \hline
 \rowcolor{bluelogo}\textbf{\textcolor{white}{ID}} & \textbf{\textcolor{white}{Nome}} & \textbf{\textcolor{white}{Ottimalità}} & \textbf{\textcolor{white}{Accettabilità}}\\
-MTPDD14 & Leggibilità & 100 & $\geq 40$ \\
+MTPDD16 & Leggibilità & 100 & $\geq 40$ \\
 \hline
-\rowcolor{grigio}MTPDD15 & Correttezza Ortografica & 0 errori & 0 errori \\ 
+\rowcolor{grigio}MTPDD17 & Correttezza Ortografica & 0 errori & 0 errori \\ 
 \hline
 \caption{Qualità dei Documenti}
 \label{QualitàDocumenti}
@@ -51,9 +51,9 @@ Gli obiettivi metrici stabiliti per le metriche descritte nei paragrafi §3.2.5.
 \begin{longtable}{|C{.15\textwidth}|C{.24\textwidth}|C{.24\textwidth}|C{.24\textwidth}|}
 \hline
 \rowcolor{bluelogo}\textbf{\textcolor{white}{ID}} & \textbf{\textcolor{white}{Nome}} & \textbf{\textcolor{white}{Ottimalità}} & \textbf{\textcolor{white}{Accettabilità}}\\
-MTPDS16 & Soddisfacimento Requisiti Obbligatori & 100\% & 100\%\\
+MTPDS18 & Soddisfacimento Requisiti Obbligatori & 100\% & 100\%\\
 \hline
-\rowcolor{grigio}MTPDS17 & Soddisfacimento Requisiti Opzionali Scelti & 100\% & 100\% \\ 
+\rowcolor{grigio}MTPDS19 & Soddisfacimento Requisiti Opzionali Accettati & 100\% & 60\% \\ 
 \hline
 \caption{Funzionalità}
 \label{Funzionalità}
@@ -70,6 +70,18 @@ Con \textit{Affidabilità} si intende la garanzia di funzionamento del software 
 	\item \textbf{Recuperabilità}: al verificarsi di un malfunzionamento, il software deve essere in grado di ripristinare uno stato funzionante del sistema in un tempo ragionevole e recuperando i dati persi;
 \end{itemize}
 
+\begin{longtable}{|C{.15\textwidth}|C{.24\textwidth}|C{.24\textwidth}|C{.24\textwidth}|}
+\hline
+\rowcolor{bluelogo}\textbf{\textcolor{white}{ID}} & \textbf{\textcolor{white}{Nome}} & \textbf{\textcolor{white}{Ottimalità}} & \textbf{\textcolor{white}{Accettabilità}}\\
+MTPDS20 & Densità di Failure & 100\% & 100\%\\
+\hline
+\rowcolor{grigio}MTPDS21 & Tolleranza agli Errori & 100\% & 60\% \\ 
+\hline
+\caption{Funzionalità}
+\label{Funzionalità}
+\end{longtable}
+
+
 
 \subsubsection{Efficienza}
 
@@ -81,21 +93,17 @@ Con \textit{Efficienza} si intendono le prestazioni raggiungibili sotto specific
 	\item \textbf{Utilizzo di Risorse}: uso non eccessivo di risorse;
 \end{itemize}
 
-
-\iffalse
-
 \begin{longtable}{|C{.15\textwidth}|C{.24\textwidth}|C{.24\textwidth}|C{.24\textwidth}|}
 \hline
 \rowcolor{bluelogo}\textbf{\textcolor{white}{ID}} & \textbf{\textcolor{white}{Nome}} & \textbf{\textcolor{white}{Ottimalità}} & \textbf{\textcolor{white}{Accettabilità}}\\
-ID19 & Tempo di Risposta Medio & $\leq 2s$ & 2s<x $\leq 5s$\\
+ID19 & Tempo di Risposta Medio & $\leq s$ & 2s<x $\leq 5s$\\
 \hline
-\rowcolor{grigio}ID20 & Tempo di Risposta di Picco  & $\leq 5s$ & 5s<x $\leq 8s$ \\ 
+\rowcolor{grigio}ID20 & Tempo di Risposta di Picco  & $\leq 5s$ & 2000ms<x $\leq 4000ms$ \\ 
 \hline
 \caption{Efficienza}
 \label{Efficienza}
 \end{longtable}
 
-\fi
 
 
 \subsubsection{Usabilità}
@@ -115,9 +123,9 @@ Gli obiettivi metrici stabiliti per le metriche descritte nei paragrafi §3.2.5.
 \begin{longtable}{|C{.15\textwidth}|C{.24\textwidth}|C{.24\textwidth}|C{.24\textwidth}|}
 \hline
 \rowcolor{bluelogo}\textbf{\textcolor{white}{ID}} & \textbf{\textcolor{white}{Nome}} & \textbf{\textcolor{white}{Ottimalità}} & \textbf{\textcolor{white}{Accettabilità}}\\
-MTPDS18 & Tempo medio di Comprensione & $\leq 5m$ & 5m<x $\leq 10m$\\
+MTPDS20 & Tempo medio di Comprensione & $\leq 5m$ & 5m<x $\leq 10m$\\
 \hline
-\rowcolor{grigio}MTPDS19 & Tempo medio di Apprendimento & $\leq 10m$ & 10m<x $\leq 20m$ \\ 
+\rowcolor{grigio}MTPDS21 & Tempo medio di Apprendimento & $\leq 10m$ & 10m<x $\leq 20m$ \\ 
 \hline
 \caption{Usabilità}
 \label{Usabilità}
@@ -161,6 +169,7 @@ Con \textit{Portabilità} si intende la capacità del software di funzionare in 
 	\item \textbf{Installabilità}: possibilità di installare il software in specifici ambienti;
 	\item \textbf{Sostituibilità}: capacità del software di essere utilizzato al posto di un altro software per lo svolgimento dei medesimi compiti nel medesimo ambiente.
 \end{itemize}
+
 
 
 
