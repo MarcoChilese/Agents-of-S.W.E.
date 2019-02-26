@@ -174,6 +174,14 @@ Indice numerico che rappresenta il numero medio di test eseguiti per requisito. 
 dove MDR è la media calcolata, TDR il numero totale di difetti trovati e TR il numero totale di requisiti.
 \fi
 
+\paragraph{PR06: Versionamento e Build} ~\\
+\begin{itemize}
+	\item \textbf{MTPC14 Media commit per settimana} ~\\
+	Calcolo della media dei commit effettuati settimanalmente. Essendo le repository presenti su due sistemi di versionamento differenti, verrà calcolata la media per ognuna di essi. Per il calcolo della media verrà utilizzato un bot.
+	\item \textbf{MTPC15 Percentuali build superate} ~\\
+	Calcolo della media delle build effettuate sulla repository contente il codice per lo sviluppo del prodotto. Il calcolo avviene tramite un bot connesso al sistema di versionamento GitLab. 
+\end{itemize}
+
 \subsubsection{Metriche per la qualità di prodotto}
 Le seguenti metriche sono utilizzate per misurare qualitativamente il prodotto.
 
@@ -183,10 +191,10 @@ Le seguenti metriche sono utilizzate per misurare qualitativamente il prodotto.
 
 \paragraph{Leggibilità}
 \begin{itemize}
-	\item \textbf{MTPDD14 Indice di Gulpease}\-\\
+	\item \textbf{MTPDD16 Indice di Gulpease}\-\\
 Il gruppo ha deciso di utilizzare l'\textit{indice di Gulpease}\glossario\footnote{\url{https://it.wikipedia.org/wiki/Indice\_Gulpease}} per misurare la leggibilità di un testo. \'E stato sviluppato appositamente uno script in \textit{Python} per automatizzare la procedura e allo stesso modo velocizzarla. La procedura verrà utilizzata a documento terminato e completo così da valutare il lavoro svolto dai redattori.
 
-	\item \textbf{MTPDD15 Correttezza Ortografica}\-\\
+	\item \textbf{MTPDD17 Correttezza Ortografica}\-\\
 La correttezza ortografica è un aspetto importante che non accetta errori, i documenti al momento della pubblicazione sono corretti. Verranno utilizzati appositi strumenti che supporteranno la correzione, ovvero il software \textit{TexMaker} il quale integra un segnalatore automatico degli errori grammaticali. 
 
 	\item \textbf{Correttezza Logica e Semantica} \-\\
@@ -196,19 +204,36 @@ Non essendo disponibili sistemi automatici al fine di controllare la correttezza
 \paragraph{Funzionalità}
 \begin{itemize}
 
-	\item \textbf{MTPDS16 Soddisfacimento Requisiti Obbligatori}\-\\
+	\item \textbf{MTPDS18 Soddisfacimento Requisiti Obbligatori}\-\\
 Indicatore percentuale che verifica che tutti i requisiti obbligatori siano soddisfatti. Condizione necessaria al fine di rispettare il contratto. La misurazione avviene:
 \begin{center}
 	\item $PRO = \frac{ROS}{ROT}*100$
 \end{center}
 dove PRO è la percentuale di requisiti obbligatori soddisfatti, ROS i requisiti obbligatori soddisfatti e ROT i requisiti obbligatori totali.
 
-	\item \textbf{MTPDS17 Soddisfacimento Requisiti Opzionali Scelti}\-\\
+	\item \textbf{MTPDS19 Soddisfacimento Requisiti Opzionali Accettati}\-\\
 Indicatore percentuale che verifica se tutti i requisiti opzionali scelti siano soddisfatti. Condizione necessaria al fine di rispettare il contratto. La misurazione avviene:
 \begin{center}
 	\item $PRP = \frac{RPS}{RPT}*100$
 \end{center}
-dove PRP è la percentuale di requisiti opzionali scelti soddisfatti, RPS i requisiti opzionali scelti soddisfatti e RPT i requisiti opzionali scelti totali.
+dove PRP è la percentuale di requisiti opzionali accettati, RPS i requisiti opzionali scelti soddisfatti e RPT il numero di requisiti accettati.
+\end{itemize}
+
+\paragraph{Affidabilità}
+
+\begin{itemize}
+	\item \textbf{MTPDS20 Densità di Failure} \-\\
+	Indicatore percentuale utilizzato per calcolare la percentuale di testing che si è conclusa in failure. La misurazione avviene: 
+	\begin{center}
+		\item $ DF = \frac{FR}{TE}*100 $
+	\end{center}
+	in cui DF è la percentuale della densità di failure, FR sono il numero di test falliti durante il testing e TE il numero di test totali. 
+	\item \textbf{MTPDS21 Tolleranza agli Errori} \-\\
+	Indicatore percentuale delle funzionalità che sono in grado di gestire correttamente ed efficientemente gli errori. La misurazione avviene: 
+	\begin{center}
+		\item $ TE = \frac{FE}{ON}*100 $
+	\end{center}
+	in cui TE è la percentuale di tolleranza agli errori, FE sono i test falliti durante il testing e ON sono i test eseguiti che eseguono operazioni non corrette che possono causare failure. 
 \end{itemize}
 
 \paragraph{Usabilità}
