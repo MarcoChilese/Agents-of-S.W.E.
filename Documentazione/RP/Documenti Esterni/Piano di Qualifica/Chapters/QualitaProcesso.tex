@@ -41,9 +41,9 @@ Per la gestione dei costi del progetto vengono utilizzati gli indici Budget Vari
 \rowcolor{bluelogo}\textbf{\textcolor{white}{ID}} & \textbf{\textcolor{white}{Nome}} & \textbf{\textcolor{white}{Ottimalità}} & \textbf{\textcolor{white}{Accettabilità}}\\
 \hline \hline
 \endfirsthead
-MTPC02 & Budget Variance (BV) & $\leqslant 0\% $ & $\leqslant 5\%$ \\
+MTPC02 & Budget Variance (BV) & $\leqslant 0\% $ & $\leqslant 12\%$ \\
 \hline
-\rowcolor{grigio} MTPC03 & Estimated at Completion (EAC) & $\leqslant 0\% $ & $\leqslant 5\%$ \\
+\rowcolor{grigio} MTPC03 & Estimated at Completion (EAC) & $\leqslant 0\% $ & $\leqslant 12\%$ \\
 \hline
 \iffalse
 MTPC04 & Cost Variance (CV) & $\leqslant 0\% $ & $ \leqslant -5\%$ \\
@@ -135,7 +135,7 @@ MTTS13 & Numero medio di bug trovati per test & $\leq 1$ & 0.2$\leq$x$\leq 10$ \
 \label{GestioneTest}
 \end{longtable}
 
-\paragraph{PR06: Versionamento e Build}
+\paragraph{PR06: Versionamento e Build} \-\\
 
 Il monitoraggio di commit e build avviene in modo continuo, attraverso gli strumenti di supporto integrati all'interno di GitLab\glossario. Ogni build viene costruita e verificata attraverso l'uso di una pipeline personalizzata definita all'interno del sistema di versionamento\glossario utilizzato. 
 
@@ -152,7 +152,7 @@ Il monitoraggio di commit e build avviene in modo continuo, attraverso gli strum
 \endfirsthead
 MTPC14 & Media commit per settimana & 25 & 15 \\
 \hline
-\rowcolor{grigio}MTPC15 & Percentuali build superate & $\geq 75$\% & $\geq 90$\%\\
+\rowcolor{grigio}MTPC15 & Percentuali build superate & $\geq 90$\% & $\geq 75$\%\\
 \hline
 
 \caption{Versionamento e Build}
