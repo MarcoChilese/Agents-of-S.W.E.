@@ -39,3 +39,11 @@
 - Verificatore: Matteo Slanzi
 - Analista: Luca Violato
 
+### Ruoli (5)
+- Amministratore: Marco Chilese
+- Responsabile: Diego Mazzalovo
+- Progettista: Carlotta Segna
+- Programmatore: Matteo Slanzi, Bogdan Stanciu
+- Verificatore: Luca Violato
+- Analista: Marco Favaro
+
