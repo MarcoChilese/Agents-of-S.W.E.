@@ -365,6 +365,56 @@ Equivalentemente al \textit{CSS}, anche il codice \textit{HTML} dovrà essere va
 
 %AGGIUNGERE E SISTEMARE DA QUA IN GIU
 
+\paragraph{AngularJS}
+\label{AngularJS}
+AngularJS\footnote{\url{https://www.angularjs.org/}} è un framework Javascript per lo sviluppo di applicazioni web client side. Viene utilizzato per il reperimento di dati 
+Di seguito sono riportate alcune norme da seguire:
+\begin{itemize}
+	\item \textbf{Norma 1}: 
+	verrà seguito il pattern Model Controller View(MVC) che propone la scomposizione in tre componenti:
+	\begin{itemize}
+		\item Model: responsabile per il mantenimento dei dati;
+		\item View: responsabile per la visualizzazione dei dati all'utente;
+		\item Controller: si occupa di controllare l'interazione tra Model e View.
+	\end{itemize} 
+	\item \textbf{Norma 2}:
+	il controller non deve essere sovraccaricato di funzionalità che non gli appartengono. In particolare il controller non deve:
+	\begin{itemize}
+		\item manipolare il DOM\glossario, questo renderà i controller difficili da testare. Questo compito è riservato alle direttive;
+		\item formattare l'input, a questo scopo vengono usati i form Angular;
+		\item formattare l'output, sarà compito dei filtri;
+		\item condividere dati con altri controller;
+		\item implementare funzionalità generali, le funzionalità che non riguardano direttamente l'interazione tra dati e la visualizzazione, deve essere fatta nei servizi.
+	\end{itemize}
+	\item \textbf{Norma 3}:
+	il nome dei moduli viene assegnato usando la notazione lowerCamelCase(itemListCtrl);
+	\item \textbf{Norma 4}:
+	quando è presente un modulo b che è submodule di a, si possono concatenere usando la notazione a.b;
+	\item \textbf{Norma 5}:
+	il nome dei controller viene assegnato in base alla loro funzionalità e viene usato l'UpperCamelCase(ItemListCtrl);
+	\item \textbf{Norma 6}:
+	i controller non devono essere definiti globali;
+	\item \textbf{Norma 7}:
+	per mantenere il codice HTML di più semplice lettura, le direttive AngularJS vengono messe in fondo:
+	\begin{lstlisting} [language=JavaScript]
+	//OK
+	<p>Nome: <input type="text" ng-model="utente.nome"></p>
+	
+	//NO
+	<p>Nome: <input ng-model="utente.nome" type="text"></p>
+	\end{lstlisting}
+	\item \textbf{Norma 8}:
+	il prefisso \$ è riservato ad AngularJS, non deve essere usato per nomi di variabili, proprietà o metodi;
+	\item \textbf{Norma 9}:
+	assegnare i nomi alle direttive seguendo il lowerCamelCase;
+	\item \textbf{Norma 10}:
+	usare prefissi personalizzati per le direttive per evitare collisioni con librerie di terze parti.
+	\item \textbf{Norma 10}:
+	in AngularJS viene adottato il two-way binding, ogni modifica al modello dati si riflette sulla view e ogni modifica alla view viene riportata sul modello dati.
+	Questa sincronizzazione avviene senza la necessità di scrivere codice particolare, è sufficiente associare il modello allo scope all'interno del controller ed utilizzare la direttiva ng-model nella view.
+	
+\end{itemize}
+
 \paragraph{WebStorm}\-\\
 Come software per lo sviluppo comune, il team ha scelto di utilizzare l'IDE WebStorm, facente parte della famiglia di prodotti di JetBrains. \\
 WebStorm è una cross-platform, sviluppata principalmente per lo sviluppo web, JavaScript e TypeScript. \\
