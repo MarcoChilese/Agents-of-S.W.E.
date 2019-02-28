@@ -347,11 +347,11 @@ Di seguito saranno riportate le principali norme da seguire: \\
 	\textbf{Norma 2}
 		i nomi degli elementi ed attributi devono essere sempre scritti in minuscolo; \\
 	\textbf{Norma 3}
-		tutti gli elementi HTML devono essere chiusi, anche se vuoti;
+		tutti gli elementi HTML devono essere chiusi, anche se vuoti; \\
 	\textbf{Norma 4}
-		il valore degli attributi deve essere racchiuso dentro doppio apice;
+		il valore degli attributi deve essere racchiuso dentro doppio apice;\\
 	\textbf{Norma 5}:
-		intorno al simbolo di uguaglianza (=) non devono essere presenti spazi;
+		intorno al simbolo di uguaglianza (=) non devono essere presenti spazi;\\
 	\textbf{Norma 6}
 		devono essere usati due (2) spazi e non le tabulazioni. Gli spazi bianchi vanno utilizzati solamente per ampli blocchi di codice, per una maggiore leggibilità; \\
 	\textbf{Norma 7}
@@ -364,55 +364,67 @@ Equivalentemente al \textit{CSS}, anche il codice \textit{HTML} dovrà essere va
 
 %AGGIUNGERE E SISTEMARE DA QUA IN GIU
 
-\paragraph{AngularJS}
-\label{AngularJS}
-AngularJS\footnote{\url{https://www.angularjs.org/}} è un framework Javascript per lo sviluppo di applicazioni web client side. Viene utilizzato per il reperimento di dati 
-Di seguito sono riportate alcune norme da seguire:
+\paragraph{AngularJS} \label{angularjs} \-\\
+Insieme al \textit{CSS} e all'\textit{HTML} il team ha deciso di sviluppare la parte front-end appoggiandosi al framework JavaScript Angularjs\footnote{\url{https://www.angularjs.org/}}\glossario.\\
+AngularJS è un framework per applicazioni web, sviluppato con lo scopo di affrontare le difficoltà incontrate con lo sviluppo di applicazioni su singola pagina di tipo client-side. \-\\
+La caratteristica principale è l'introduzione di funzionalità chiamate direttive, che permettono di creare componenti HTML personalizzati e riusabili con lo scopo di associare a ogni direttiva un comportamento, così nascondendo la complessità della struttura DOM. Le direttive sono riconoscibili poichè integrate nei tag con la dicitura "ng-" e susseguite dal nome (scelto dallo sviluppatore). 
+Di seguito sono riportate alcune norme da seguire:\\
+\textbf{Norma 1}
+Verrà seguito il pattern Model View Controller(MVC) che propone la scomposizione in tre componenti:
 \begin{itemize}
-	\item \textbf{Norma 1}: 
-	verrà seguito il pattern Model Controller View(MVC) che propone la scomposizione in tre componenti:
-	\begin{itemize}
-		\item Model: responsabile per il mantenimento dei dati;
-		\item View: responsabile per la visualizzazione dei dati all'utente;
-		\item Controller: si occupa di controllare l'interazione tra Model e View.
-	\end{itemize} 
-	\item \textbf{Norma 2}:
-	il controller non deve essere sovraccaricato di funzionalità che non gli appartengono. In particolare il controller non deve:
-	\begin{itemize}
-		\item manipolare il DOM\glossario, questo renderà i controller difficili da testare. Questo compito è riservato alle direttive;
-		\item formattare l'input, a questo scopo vengono usati i form Angular;
-		\item formattare l'output, sarà compito dei filtri;
-		\item condividere dati con altri controller;
-		\item implementare funzionalità generali, le funzionalità che non riguardano direttamente l'interazione tra dati e la visualizzazione, deve essere fatta nei servizi.
-	\end{itemize}
-	\item \textbf{Norma 3}:
-	il nome dei moduli viene assegnato usando la notazione lowerCamelCase(itemListCtrl);
-	\item \textbf{Norma 4}:
-	quando è presente un modulo b che è submodule di a, si possono concatenere usando la notazione a.b;
-	\item \textbf{Norma 5}:
-	il nome dei controller viene assegnato in base alla loro funzionalità e viene usato l'UpperCamelCase(ItemListCtrl);
-	\item \textbf{Norma 6}:
-	i controller non devono essere definiti globali;
-	\item \textbf{Norma 7}:
-	per mantenere il codice HTML di più semplice lettura, le direttive AngularJS vengono messe in fondo:
-	\begin{lstlisting} [language=JavaScript]
+	\item Model: responsabile per il mantenimento e l'elaborazione dei dati;
+	\item View: responsabile per la visualizzazione dei dati all'utente;
+	\item Controller: si occupa di controllare l'interazione tra Model e View.
+\end{itemize} 
+\textbf{Norma 2}
+Il controller non deve essere sovraccaricato di funzionalità che non gli appartengono. In particolare il controller non deve:
+\begin{itemize}
+	\item manipolare il DOM\glossario, questo renderà i controller difficili da testare. Questo compito è riservato alle direttive;
+	\item formattare l'input, a questo scopo vengono usati i form Angular;
+	\item formattare l'output, sarà compito dei filtri;
+	\item condividere dati con altri controller;
+	\item implementare funzionalità generali, le funzionalità che non riguardano direttamente l'interazione tra dati e la visualizzazione, deve essere fatta nei servizi.
+\end{itemize}
+\textbf{Norma 3}
+Il nome dei moduli seguono la notazione lowerCamelCase;
+\begin{lstlisting} [language=HTML]
+	
+	<div ng-app="myModule">...</div>
+
+\end{lstlisting}
+\textbf{Norma 4}
+Quando è presente un modulo b che è submodule di a, si possono concatenere usando la notazione a.b;\\
+\textbf{Norma 5}
+Il nome dei controller viene assegnato in base alla loro funzionalità e viene usata la notazione UpperCamelCase;
+\begin{lstlisting} [language=HTML]
+	<div ng-controller="MyController">
+  		{{ greeting }}
+	</div>
+\end{lstlisting}
+\textbf{Norma 6}
+I nomi delle restanti direttive seguono la notazione camelCase;
+\begin{lstlisting} [language=HTML]
+	<select class="myClass" ng-model="myModel">
+\end{lstlisting}
+\textbf{Norma 7}
+Le direttive AngularJS vengono scritte alla fine degli attributi di un tag: 
+\begin{lstlisting} [language=HTML]
 	//OK
 	<p>Nome: <input type="text" ng-model="utente.nome"></p>
 	
 	//NO
 	<p>Nome: <input ng-model="utente.nome" type="text"></p>
-	\end{lstlisting}
-	\item \textbf{Norma 8}:
-	il prefisso \$ è riservato ad AngularJS, non deve essere usato per nomi di variabili, proprietà o metodi;
-	\item \textbf{Norma 9}:
-	assegnare i nomi alle direttive seguendo il lowerCamelCase;
-	\item \textbf{Norma 10}:
-	usare prefissi personalizzati per le direttive per evitare collisioni con librerie di terze parti.
-	\item \textbf{Norma 10}:
-	in AngularJS viene adottato il two-way binding, ogni modifica al modello dati si riflette sulla view e ogni modifica alla view viene riportata sul modello dati.
-	Questa sincronizzazione avviene senza la necessità di scrivere codice particolare, è sufficiente associare il modello allo scope all'interno del controller ed utilizzare la direttiva ng-model nella view.
-	
-\end{itemize}
+\end{lstlisting}
+\textbf{Norma 8}
+Il prefisso \$ è riservato ad AngularJS, non deve essere usato per nomi di variabili, proprietà o metodi;\\
+\textbf{Norma 9}
+I controller non devono essere definiti globali;\\
+\textbf{Norma 10}
+Usare prefissi personalizzati per le direttive per evitare collisioni con librerie di terze parti.\\
+\textbf{Norma 11}
+In AngularJS viene adottato il two-way binding, ogni modifica al modello dati si riflette sulla view e ogni modifica alla view viene riportata sul modello dati.
+Questa sincronizzazione avviene senza la necessità di scrivere codice particolare, è sufficiente associare il modello allo scope all'interno del controller ed utilizzare la direttiva ng-model nella view.
+
 
 \paragraph{WebStorm}\-\\
 Come software per lo sviluppo comune, il team ha scelto di utilizzare l'IDE WebStorm, facente parte della famiglia di prodotti di JetBrains. \\
@@ -435,6 +447,29 @@ Le regole utilizzate all'interno del plug-in saranno quelle esplicitate nella se
 \label{jest}
 Jest è un framework per il testing di JavaScript che il team ha deciso di adottare per la costruzione e l'esecuzione dei test di unità.\\
 Inoltre, il framework offre la possibilità di eseguire il calcolo del code coverage dei file testati.
+
+\paragraph{Webpack} \label{webpack}\-\\
+Webpack è un module bundler per applicazioni javascript. Nella pratica lo scopo di webpack è creare un pacchetto di assets leggibile e utilizzabile dal browser a partire da un insieme di file sorgenti strutturati su diversi file e con dipendenze complesse. \\
+Gli aspetti fondamentali sono:
+\begin{itemize}
+\item \textbf{Entry Point}: rappresenta il punto di partenza da cui iniziare la build e creare lo schema delle dipendenze, di default è './src/index.js' ma può essere modificato nei file di configurazione;
+\item \textbf{Output}: rappresenta la destinazione in cui verranno generati i file leggibili dal browser, di default è './dist' e il file principale è './dist/main.js';
+\item \textbf{Loaders}: di default webpack esegue la build solamente di file javascript e JSON, tramite questa configurazione webpack può essere adattato ad altri tipi di file, così da permettere la conversione anche di essi. I loaders possono avere due proprietà: 
+	\begin{itemize}
+	\item La proprietà \textit{test} che identifica quali file dovrebbero essere trasformati;
+	\item La proprietà \textit{use} che identifica quali loaders utilizzare per eseguire la trasformazione.
+	\end{itemize}
+\item \textbf{Plugins}: a differenza dei loaders, i plugins operano in aspetti più generali riguardanti l'ottimizzazione dei pacchetti e la gestione delle risorse. Per utilizzare un plugin bisogna eseguire una 'require' dalla sorgente ed aggiungerlo mediante la 'new' nell'array apposito chiamato 'plugin'.
+\item \textbf{Mode}: viene settato in base all'ambiente in cui lanciato webpack, cosi da importare ottimizzazioni specifiche. Può assumere i seguenti valori:
+	\begin{itemize}
+	\item Development;
+	\item Production;
+	\item None.
+	\end{itemize}
+Se non viene specificato viene settato come valore di default 'production'.
+\end{itemize}
+
+ 
 
 
 
