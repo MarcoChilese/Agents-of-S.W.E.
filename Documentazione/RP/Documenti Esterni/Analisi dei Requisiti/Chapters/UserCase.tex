@@ -472,12 +472,8 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 \item \textbf{Postcondizione}: l'utente visualizza l'errore, viene quindi riportato alla finestra di selezione del file della rete baysiana (\hyperref[UC1.2]{UC1.2 (§\ref*{UC1.2})});
 \item \textbf{Scenario principale:} 
 	\begin{enumerate}
-		\item Viene visualizzato un messaggio d'errore che varia in base alla tipologia d'errore:
-			\begin{enumerate}
-				\item Estensione file della rete errato: il messaggio contiene "Il formato della rete bayesiana deve essere di tipo \textit{JSON}. Selezionare un file corretto.";
-				\item Struttura errata del file: il file selezionato ha l'estensione corretta, ma il contenuto è errato. Viene visualizzato il messaggio: "La struttura della rete bayesiana selezionata non è corretta. Selezionare un file corretto.".
-			\end{enumerate}
-		\item L'utente clicca il pulsante con etichetta "OK".
+	\item L'utente visualizza un messaggio di errore in cui è segnalato il fatto che la struttura del file di definizione della rete bayesiana, caricato in (\hyperref[UC1.2]{UC1.2 (§\ref*{UC1.2})}, non è corretta;
+	\item L'utente clicca il pulsante con etichetta "OK".
 	\end{enumerate}
 \end{itemize}
 

@@ -47,7 +47,7 @@ ROF1.2 & Il Sistema deve consentire all'utente di selezionare un file da caricar
 \hline
 ROF1.4 & Il Sistema deve visualizzare un messaggio di errore nel caso l'operazione di caricamento del file non sia andata a buon fine & Obbligatorio & UC1 UC8\\
 \hline
-\rowcolor{grigio}RFF1.4.1 & Il Sistema deve visualizzare un messaggio di errore nel caso in cui l'estensione del file selezionato sia errata & Opzionale & UC1 UC8\\
+\rowcolor{grigio}ROF1.4.1 & Il Sistema deve controllare l'estensione del file caricato, accettando come input solamente file in formato \textit{JSON} & Opzionale & UC1 UC8\\
 \hline
 RFF1.4.2 & Il Sistema deve visualizzare un messaggio di errore nel caso in cui la struttura interna del file selezionato sia errata & Opzionale & UC1 UC8\\
 \hline
@@ -123,19 +123,19 @@ ROF3.4 & Il Sistema deve mettere a disposizione dell'utente un bottone per confe
 \hline
 ROF4 & Il Sistema deve fornire i dati relativi ai nodi della rete bayesiana non collegati al flusso & Obbligatorio & UC4\\
 \hline
-\rowcolor{grigio}ROF4.1 & Il Sistema deve mettere a disposizione dell'utente un pulsante per avviare il monitoraggio dei dati & Obbligatorio & UC4\\
+\rowcolor{grigio}ROF4.4 & Il Sistema deve mettere a disposizione dell'utente un pulsante per avviare il monitoraggio dei dati & Obbligatorio & UC4\\
 \hline
-ROF4.1.1 & Il Sistema deve visualizzare un messaggio di errore nel caso in cui l'utente abbia avviato il monitoraggio senza aver preventivamente caricato una rete bayesiana & Obbligatorio & UC4 UC10\\
+ROF4.4.1 & Il Sistema deve visualizzare un messaggio di errore nel caso in cui l'utente abbia avviato il monitoraggio senza aver preventivamente caricato una rete bayesiana & Obbligatorio & UC4 UC10\\
 \hline
-\rowcolor{grigio}ROF4.1.2 & Il Sistema deve visualizzare un messaggio di errore nel caso in cui l'utente abbia avviato il monitoraggio senza aver preventivamente collegato alcuni dei nodi della rete ad un flusso dati & Obbligatorio & UC4 UC11\\
+\rowcolor{grigio}ROF4.4.2 & Il Sistema deve visualizzare un messaggio di errore nel caso in cui l'utente abbia avviato il monitoraggio senza aver preventivamente collegato alcuni dei nodi della rete ad un flusso dati & Obbligatorio & UC4 UC11\\
 \hline
-ROF4.1.3 & Il Sistema deve visualizzare un messaggio di errore nel caso in cui l'utente abbia avviato il monitoraggio senza aver preventivamente impostato la politica temporale per il ricalcolo delle probabilità & Obbligatorio & UC4 UC12\\
+ROF4.4.3 & Il Sistema deve visualizzare un messaggio di errore nel caso in cui l'utente abbia avviato il monitoraggio senza aver preventivamente impostato la politica temporale per il ricalcolo delle probabilità & Obbligatorio & UC4 UC12\\
 \hline
-\rowcolor{grigio}ROF4.2 & Il Sistema deve fornire all'utente una lista di probabilità dinamiche associate ai nodi della rete & Obbligatorio & UC4\\
+\rowcolor{grigio}ROF4.5 & Il Sistema deve fornire all'utente una lista di probabilità dinamiche associate ai nodi della rete & Obbligatorio & UC4\\
 \hline
-ROF4.3 & Il Sistema deve aggiornare periodicamente le probabilità in base a quanto definito come policy per il ricalcolo delle probabilità & Obbligatorio & UC4\\
+ROF4.6 & Il Sistema deve aggiornare periodicamente le probabilità in base a quanto definito come policy per il ricalcolo delle probabilità & Obbligatorio & UC4\\
 \hline
-\rowcolor{grigio}RDF4.3.1 & Il Sistema, indipendentemente dalla politica temporale stabilita dall'utente, deve ricalcolare le probabilità al verificarsi del superamento di una soglia critica associata ad uno stato di un nodo collegato al flusso di monitoraggio & Desiderabile & UC4 VER-2019-02-08\\
+\rowcolor{grigio}RDF4.6.1 & Il Sistema, indipendentemente dalla politica temporale stabilita dall'utente, deve ricalcolare le probabilità al verificarsi del superamento di una soglia critica associata ad uno stato di un nodo collegato al flusso di monitoraggio & Desiderabile & UC4 VER-2019-02-08\\
 \hline
 RFF5 & L'utente deve poter definire alert basati sui dati relativi ai nodi della rete bayesiana non collegati al flusso & Opzionale & UC5\\
 \hline
@@ -249,7 +249,7 @@ Capitolato & \makecell{ROQ1\\ROQ2\\RDQ5\\ROV4\\ROV6}\\
 \hline
 Piattaforma \textit{Grafana} & \makecell{ROV1\\ROV2\\ROV3\\ROV6}\\
 \hline
-\rowcolor{grigio}UC1 & \makecell{ROF1\\ROF1.1\\ROF1.2\\ROF1.3\\ROF1.4\\RFF1.4.1\\RFF1.4.2\\ROF1.5}\\
+\rowcolor{grigio}UC1 & \makecell{ROF1\\ROF1.1\\ROF1.2\\ROF1.3\\ROF1.4\\ROF1.4.1\\RFF1.4.2\\ROF1.5}\\
 \hline
 UC2 & \makecell{ROF2\\ROF2.1\\ROF2.1.1\\ROF2.1.2\\ROF2.5\\ROF2.5.10\\ROF2.6\\ROF2.7\\ROF2.8\\ROF2.8.1\\ROF2.8.3}\\
 \hline
@@ -259,7 +259,7 @@ UC3 & \makecell{ROF3\\ROF3.3\\ROF3.3.3\\ROF3.4\\ROF3.5}\\
 \hline
 \rowcolor{grigio}UC3.2 & \makecell{ROF3.3.1\\ROF3.3.2\\ROF3.3.2.1\\ROF3.3.2.2}\\
 \hline
-\rowcolor{grigio}UC4 & \makecell{ROF2.8.3\\ROF4\\ROF4.1\\ROF4.1.1\\ROF4.1.2\\ROF4.1.3\\ROF4.2\\ROF4.3\\RDF4.3.1}\\
+\rowcolor{grigio}UC4 & \makecell{ROF2.8.3\\ROF4\\ROF4.4\\ROF4.4.1\\ROF4.4.2\\ROF4.4.3\\ROF4.5\\ROF4.6\\RDF4.6.1}\\
 \hline
 UC5 & \makecell{RFF5\\RFF5.1\\RFF5.1.1\\RFF5.1.2}\\
 \hline
@@ -267,7 +267,7 @@ UC5 & \makecell{RFF5\\RFF5.1\\RFF5.1.1\\RFF5.1.2}\\
 \hline
 UC7 & \makecell{ROF2.8.3\\RFF6\\RFF6.1}\\
 \hline
-\rowcolor{grigio}UC8 & \makecell{ROF1.4\\RFF1.4.1\\RFF1.4.2}\\
+\rowcolor{grigio}UC8 & \makecell{ROF1.4\\ROF1.4.1\\RFF1.4.2}\\
 \hline
 UC9 & \makecell{ROF2.7}\\
 \hline
@@ -283,7 +283,7 @@ UC13 & \makecell{ROF2.8\\ROF2.8.1\\ROF2.8.2\\ROF2.8.3}\\
 \hline
 UC15 & \makecell{ROF3.5}\\
 \hline
-\rowcolor{grigio}VER-2019-02-08 & \makecell{RDF4.3.1\\RDF2.5.6.3}\\
+\rowcolor{grigio}VER-2019-02-08 & \makecell{RDF4.6.1\\RDF2.5.6.3}\\
 \hline
 Supporto a \textit{ECMAScript6} & \makecell{ROV8\\ROV9\\ROV10\\ROV11}\\
 \hline
