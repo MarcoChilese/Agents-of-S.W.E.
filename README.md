@@ -47,3 +47,33 @@
 - Verificatore: Luca Violato
 - Analista: Marco Favaro
 
+# Per consegna RP:
+
+## Norme di Progetto: 
+  - CI/CD; (Bogdan e Marco C.);
+  - JQuery (Ajax) (Bogdan);
+  - Verifica del documento (Diego M.) ;
+
+## Analisi dei Requisiti:
+  - Mettere Grafana 5.x.x (Luca) ; 
+  - Verifica del documento (Marco F. e Matteo);  
+
+## Piano di Qualifica: 
+  - Metriche da Utilizzare (Carlotta e Luca);
+  - Grafici PDQ (Carlotta e Luca);
+  - Verifica del PDQ (quando sarà finito);
+
+## Piano di Progetto:
+  - Verifica del Documento (Luca);
+
+## Glossario: 
+  - Check glossario (Marco F.) - PDP già fatto;
+
+## Verbale
+  - Verbale 13/02/2019 (Diego);
+  - Verbale 27/02/2019 (Bogdan);
+  - Verifica Verbali (Matteo);
+
+## Diagrammi di Attività:
+  - Verifica dei diagrammi (Diego M.);
+
