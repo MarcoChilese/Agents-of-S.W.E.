@@ -15,9 +15,15 @@ with open(os.path.join(rootdir, 'report.txt'), 'w') as dest:
                     i = 1
                     for line in src:
                         eAccentataMaiuscola = line.find("\\\'E", 0, len(line))
-                        eAccentataMinuscola = line.find("é", 0, len(line))
+                        eAccentataMinuscola = line.find(" é ", 0, len(line))
+                        perche = line.find("perché ", 0, len(line))
+                        nonche = line.find("nonchè", 0, len(line))
                         if eAccentataMaiuscola != -1:
-                            dest.write("Error in "+folder+"/"+file+" at line "+str(i)+": \\\'E \n\n")
+                            dest.write("Error in "+folder+"/"+file+" at line "+str(i)+": \\\'E => È\n\n")
                         if eAccentataMinuscola != -1:
-                            dest.write("Error in "+folder+"/"+file+" at line "+str(i)+":  é\n\n")
+                            dest.write("Error in "+folder+"/"+file+" at line "+str(i)+":  é => è\n\n")
+                        if perche != -1:
+                            dest.write("Error in "+folder+"/"+file+" at line "+str(i)+":  perché => perchè\n\n")        
+                        if nonche != -1:
+                            dest.write("Error in "+folder+"/"+file+" at line "+str(i)+":  nonchè => nonché\n\n")        
                         i = i+1
