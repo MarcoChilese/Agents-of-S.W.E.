@@ -26,7 +26,7 @@ def checkTitle(line):
     title = line[openB+1: closeB]
     return checkCapitalLetters(title)
 
-congiunzioni = ["di", "a", "e", "con", "su", "per", "tra", "fra", "che", "o", "dei", "i", "la", "gli", "le", "del", "della", "il", "li", "un", "uno", "una", "un'", "l'"]
+congiunzioni = ["di", "a", "e", "con", "su", "per", "tra", "fra", "che", "o", "dei", "i", "la", "gli", "le", "del", "della", "il", "li", "un", "uno", "una", "un'", "l'", "non"]
 def checkCapitalLetters(title):
     words = title.split(" ")
     for word in words:
