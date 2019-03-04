@@ -296,7 +296,7 @@ class myClass() {
 \paragraph{CSS}
 \label{css} \-\\
 
-Per la parte front-end\glossario del plug-in il gruppo \texttt{Agents of S.W.E.} ha scelto di utilizzare i linguaggi \textit{CSS} ed \textit{HTML5}.\\
+Per la parte front-end\glossario del plug-in il gruppo \texttt{Agents of S.W.E.} ha scelto di utilizzare i linguaggi \textit{CSS}\glossario ed \textit{HTML5}\glossario.\\
 Qui di seguito verrà descritta la Style Guide resa disponibile da \textbf{Airbnb CSS-in-JavaScript Style Guide}.
 
 \subparagraph{Indentazione} \-\\
@@ -367,10 +367,10 @@ Equivalentemente al \textit{CSS}, anche il codice \textit{HTML} dovrà essere va
 \paragraph{AngularJS} \label{angularjs} \-\\
 Insieme al \textit{CSS} e all'\textit{HTML} il team ha deciso di sviluppare la parte front-end appoggiandosi al framework JavaScript Angularjs\footnote{\url{https://www.angularjs.org/}}\glossario.\\
 AngularJS è un framework per applicazioni web, sviluppato con lo scopo di affrontare le difficoltà incontrate con lo sviluppo di applicazioni su singola pagina di tipo client-side. \-\\
-La caratteristica principale è l'introduzione di funzionalità chiamate direttive, che permettono di creare componenti HTML personalizzati e riusabili con lo scopo di associare a ogni direttiva un comportamento, così nascondendo la complessità della struttura DOM. Le direttive sono riconoscibili poichè integrate nei tag con la dicitura "ng-" e susseguite dal nome (scelto dallo sviluppatore). 
+La caratteristica principale è l'introduzione di funzionalità chiamate direttive, che permettono di creare componenti HTML personalizzati e riusabili con lo scopo di associare a ogni direttiva un comportamento, così nascondendo la complessità della struttura DOM\glossario\. Le direttive sono riconoscibili poichè integrate nei tag con la dicitura "ng-" e susseguite dal nome (scelto dallo sviluppatore). 
 Di seguito sono riportate alcune norme da seguire:\\
 \textbf{Norma 1}
-Verrà seguito il pattern Model View Controller(MVC) che propone la scomposizione in tre componenti:
+Verrà seguito il pattern Model View Controller(MVC)\glossario che propone la scomposizione in tre componenti:
 \begin{itemize}
 	\item Model: responsabile per il mantenimento e l'elaborazione dei dati;
 	\item View: responsabile per la visualizzazione dei dati all'utente;
@@ -379,7 +379,7 @@ Verrà seguito il pattern Model View Controller(MVC) che propone la scomposizion
 \textbf{Norma 2}
 Il controller non deve essere sovraccaricato di funzionalità che non gli appartengono. In particolare il controller non deve:
 \begin{itemize}
-	\item manipolare il DOM\glossario, questo renderà i controller difficili da testare. Questo compito è riservato alle direttive;
+	\item manipolare il DOM, questo renderà i controller difficili da testare. Questo compito è riservato alle direttive;
 	\item formattare l'input, a questo scopo vengono usati i form Angular;
 	\item formattare l'output, sarà compito dei filtri;
 	\item condividere dati con altri controller;
@@ -431,9 +431,8 @@ Come software per lo sviluppo comune, il team ha scelto di utilizzare l'IDE WebS
 WebStorm è una cross-platform, sviluppata principalmente per lo sviluppo web, JavaScript e TypeScript. \\
 La configurazione della piattaforma di sviluppo dovrà essere equivalente per tutti i componenti del gruppo. All'interno della piattaforma dovrà essere installato il plug-in \textbf{ESLint}, la cui funzione verrà illustrata in seguito.
 
-\paragraph{NPM}\-\\
-\label{NPM}
-Npm è un gestore di pacchetti per \textit{JavaScript}, gestisce inoltre i pacchetti di default presenti nell'ambiente \textit{Node.js}.\\
+\paragraph{NPM}\label{NPM} \-\\
+Npm è un gestore di pacchetti per \textit{JavaScript}, gestisce inoltre i pacchetti di default presenti nell'ambiente \textit{Node.js}\glossario.\\
 Risulta essere strutturato in due parti: un client a riga di comando ed un database, contente pacchetti sia pubblici che privati. Lo scopo di node.js è quello di incoraggiare il riuso del codice tra team ed il suo utilizzo è mirato alla gestione delle dipendenze.\\ 
 Il suo utilizzo è necessario per poter eseguire e testare il codice ES6.
 
@@ -449,12 +448,12 @@ Jest è un framework per il testing di JavaScript che il team ha deciso di adott
 Inoltre, il framework offre la possibilità di eseguire il calcolo del code coverage dei file testati.
 
 \paragraph{Webpack} \label{webpack}\-\\
-Webpack è un module bundler per applicazioni javascript. Nella pratica lo scopo di webpack è creare un pacchetto di assets leggibile e utilizzabile dal browser a partire da un insieme di file sorgenti strutturati su diversi file e con dipendenze complesse. \\
+Webpack è un module bundler\glossario per applicazioni javascript. Nella pratica lo scopo di webpack è creare un pacchetto di assets leggibile e utilizzabile dal browser a partire da un insieme di file sorgenti strutturati su diversi file e con dipendenze complesse. \\
 Gli aspetti fondamentali sono:
 \begin{itemize}
 \item \textbf{Entry Point}: rappresenta il punto di partenza da cui iniziare la build e creare lo schema delle dipendenze, di default è './src/index.js' ma può essere modificato nei file di configurazione;
 \item \textbf{Output}: rappresenta la destinazione in cui verranno generati i file leggibili dal browser, di default è './dist' e il file principale è './dist/main.js';
-\item \textbf{Loaders}: di default webpack esegue la build solamente di file javascript e JSON, tramite questa configurazione webpack può essere adattato ad altri tipi di file, così da permettere la conversione anche di essi. I loaders possono avere due proprietà: 
+\item \textbf{Loaders}: di default webpack esegue la build solamente di file javascript e \textit{JSON}\glossario, tramite questa configurazione webpack può essere adattato ad altri tipi di file, così da permettere la conversione anche di essi. I loaders possono avere due proprietà: 
 	\begin{itemize}
 	\item La proprietà \textit{test} che identifica quali file dovrebbero essere trasformati;
 	\item La proprietà \textit{use} che identifica quali loaders utilizzare per eseguire la trasformazione.
