@@ -18,7 +18,8 @@ with open(os.path.join(rootdir, 'report.txt'), 'w') as report:
                         eAccentataMaiuscola = line.find("\\\'E", 0, len(line))
                         eAccentataMinuscola = line.find(" é ", 0, len(line))
                         perche = line.find("perché ", 0, len(line))
-                        nonche = line.find("nonchè", 0, len(line))
+                        poiche = line.find("perché ", 0, len(line))
+                        nonche = line.find("poichè", 0, len(line))
                         if eAccentataMaiuscola != -1:
                             totalErrors += 1
                             report.write("Error in "+folder+"/"+file+" at line "+str(i)+": \\\'E => È\n\n")
@@ -31,5 +32,8 @@ with open(os.path.join(rootdir, 'report.txt'), 'w') as report:
                         if nonche != -1:
                             totalErrors += 1
                             report.write("Error in "+folder+"/"+file+" at line "+str(i)+":  nonchè => nonché\n\n")        
+                        if poiche != -1:
+                            totalErrors += 1
+                            report.write("Error in "+folder+"/"+file+" at line "+str(i)+":  poichè => poiché\n\n")           
                         i = i+1
     report.write("\n\n Total Errors: "+str(totalErrors))        
