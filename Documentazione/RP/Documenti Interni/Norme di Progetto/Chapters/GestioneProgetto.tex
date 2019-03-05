@@ -1,25 +1,25 @@
-La gestione di progetto avviene tramite un sistema di task integrato nei servizii di hosting GitHub e GitLab. 
+La gestione di progetto avviene tramite un sistema di task integrato nei servizii di hosting \textit{GitHub e GitLab}. 
 Esso permette l'integrazione delle task con il repository stesso, dando la possibilità ai vari commit di chiudere con comandi appositi determinate task, aumentando cosi l'automazione di tutto il processo. 
 
-\subsubsection{Configurazione strumenti di organizzazione}
-	La configurazione di tutto il processo di organizzazione avviene nel portale di GitHub, dove si crea una project board per ogni categoria di processo. 	
+\subsubsection{Configurazione Strumenti di Organizzazione}
+	La configurazione di tutto il processo di organizzazione avviene nel portale di \textit{GitHub}, dove si crea una project board per ogni categoria di processo. 	
 
 \paragraph{Inizializzazione} \-\\
- L'inizializzazione della project board avviene tramite un'istanza vuota oppure selezionando un template di ciclo di vita fornito da GitHub largamente utilizzate in molti progetti, quindi testati ed affidabili. Tra i template forniti abbiamo: 
+ L'inizializzazione della project board avviene tramite un'istanza vuota oppure selezionando un template di ciclo di vita fornito da \textit{GitHub} largamente utilizzate in molti progetti, quindi testati ed affidabili. Tra i template forniti abbiamo: 
 
 \begin{itemize}
-		\item \textbf{Basic Kanban}: presenta le fasi di \textit{ToDo, In Progress, e Done}; 
+		\item \textbf{Basic Kanban}: presenta le fasi di ToDo, In Progress, e Done; 
 		\item \textbf{Automated Kanban}: presenta trigger\glossario predefiniti che permettono lo spostamento di task
 		 automatici nei vari cicli di vita, utilizzando il meccanismo di chiusura dei commit;
 		\item \textbf{Automated Kanban with Reviews}: tutto cioè che viene incluso nel template \textit{Automated Kanban} con l'aggiunta di trigger per la revisione di nuove componenti; 
-		\item \textbf{Bug Triage}: template centrato sulla gestione degli errori, fornendo un ciclo di vita per essi che varia tra \textit{ToDo, Alta Priorità, Bassa Priorità e Chiusi}. 
+		\item \textbf{Bug Triage}: template centrato sulla gestione degli errori, fornendo un ciclo di vita per essi che varia tra ToDo, Alta Priorità, Bassa Priorità e Chiusi. 
 \end{itemize}
 	  	
-\paragraph{Aggiunta milestone} \-\\
+\paragraph{Aggiunta Milestone} \-\\
 	Le milestone\glossario sono gruppi di task mirate ad un obbiettivo comune tra esse.
 	Possono essere aggiunte in qualsiasi momento, sia prima che dopo la creazione di una task.
 
-\subsubsection{Ciclo di vita delle task}
+\subsubsection{Ciclo di Vita delle Task}
 
 \paragraph{Apertura} \-\\
 	Da una specifica project board si possono creare le task o le issue\glossario, le quali possono essere assegnate ad uno o più individui che collaborano al repository, inoltre ogni task può far parte di una milestone, che raggruppa un insieme di task o issue per il raggiungimento di un obbiettivo comune. \\
@@ -32,7 +32,7 @@ Esso permette l'integrazione delle task con il repository stesso, dando la possi
 	Questo metodo collega direttamente l'implementazione richiesta alla task. \\
 	Se la project board non è automatizzata, il completamento dalla task deve essere manuale spostandola nello stato di "Concluso". 
 	
-\paragraph{Richiesta di revisione} \-\\
+\paragraph{Richiesta di Revisione} \-\\
 	Accumulate un certo numero di task o di milestone, si avvia la procedura di revisione da parte del verificatore. \\ Questa può essere notificata e pianificata in modo automatico a seconda del livello di automatizzazione della project board, oppure può essere totalmente gestita dal verificatore. 
 	
 	
