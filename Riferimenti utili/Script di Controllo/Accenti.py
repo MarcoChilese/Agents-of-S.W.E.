@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
-# Usage: python accenti.py PATH
+# Usage: python accenti.py PATH REV   
+# REV --> RR or RP...
 
 import os
 import sys
@@ -10,6 +11,8 @@ totalErrors = 0
 
 with open(os.path.join(rootdir, 'report.txt'), 'w') as report:
     for folder, subs, files in os.walk(rootdir):
+        path = folder.split("/")
+        if ("Glossario" in path) or ("Verbali" in path) or (".git" in path) or (revisione not in path): continue 
         for file in files:
             if os.path.splitext(folder+"/"+file)[1] == ".tex":
                 with open(os.path.join(folder, file), 'r') as src:

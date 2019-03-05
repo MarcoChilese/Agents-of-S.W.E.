@@ -1,11 +1,13 @@
 # -*- coding: utf-8 -*-
 
-# Usage: python Iniziali.py PATH
+# Usage: python Iniziali.py PATH REV
+# REV --> RR or RP...
 
 import os
 import sys
 
 rootdir = sys.argv[1]
+revisione = sys.argv[2]
 totalErrors = 0
 
 def getSection(line):
@@ -37,7 +39,8 @@ def checkCapitalLetters(title):
 
 with open(os.path.join(rootdir, 'report.txt'), 'w') as report:
     for folder, subs, files in os.walk(rootdir):
-        if "Glossario" in folder.split("/") or "Verbali" in folder.split("/"): continue 
+        path = folder.split("/")
+        if ("Glossario" in path) or ("Verbali" in path) or (".git" in path) or (revisione not in path): continue 
         for file in files:
             if os.path.splitext(folder+"/"+file)[1] == ".tex":
                 with open(os.path.join(folder, file), 'r') as src:
