@@ -111,7 +111,7 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 \item \textbf{Scenario Principale:}
 	\begin{enumerate}
 	\item L'utente visualizza una lista contenente i nominativi associati ad ogni nodo della rete bayesiana caricata 				in \hyperref[UC1]{UC1(§\ref*{UC1})};
-	\item L'utente visualizza, accanto ai nominativi dei nodi, una lista di checkbox associate. Tali checkbox 							rappresentano lo stato del nodo a cui sono associate: "V" nel caso il nodo sia collegato ad un flusso dati, "X" 		altrimenti.
+	\item L'utente visualizza, accanto ai nominativi dei nodi, una lista di checkbox\glossario associate. Tali checkbox 							rappresentano lo stato del nodo a cui sono associate: "V" nel caso il nodo sia collegato ad un flusso dati, "X" 		altrimenti.
 	\end{enumerate}
 \end{itemize}
 
@@ -152,7 +152,7 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 \begin{itemize}
 \item \textbf{Attore Primario:} Utente;
 \item \textbf{Precondizione:} l'utente ha visualizzato la lista di nodi di cui la rete bayesiana è costituita ed il 	corrispondente stato (\hyperref[UC2.1]{UC2.1 (§\ref*{UC2.1})});
-\item \textbf{Postcondizione:} l'utente visualizza una finestra contente un menù a tendina in cui è possibile selezionare la sorgente dei dati e una lista di tutti i possibili stati del nodo selezionato;
+\item \textbf{Postcondizione:} l'utente visualizza una finestra contenente un menù a tendina in cui è possibile selezionare la sorgente dei dati e una lista di tutti i possibili stati del nodo selezionato;
 \item \textbf{Scenario Principale:} l'utente clicca il nominativo del nodo che desidera collegare ad un certo flusso dati.
 \end{itemize}
 
@@ -187,10 +187,10 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 \item \textbf{Postcondizione:} l'utente ha impostato, per ogni stato del nodo, un livello di soglia al di sotto, o al di sopra,	del quale la probabilità associata a quel dato stato risulta pari al 100\%, mentre le probabilità associate agli altri stati risultano pari allo 0\%;
 \item \textbf{Scenario Principale:}
 	\begin{enumerate}
-	\item L'utente visualizza, associati al nominativo di ogni possibile stato del nodo, una sezione composta di tre campi che devono essere obbligatoriamente riempiti;
+	\item L'utente visualizza, associati al nominativo di ogni possibile stato del nodo, una sezione composta di tre campi dati che devono essere obbligatoriamente riempiti;
 	\item Per ogni stato del nodo l'utente digita, nel primo campo editabile, il valore numerico del livello di soglia;
 	\item Per ogni stato del nodo l'utente seleziona, attraverso una casella a scelta multipla, se il valore numerico impostato sia un valore di massimo oppure di minimo;
-	\item Per ogni stato del nodo l'utente seleziona, attraverso una checkbox\glossario, se la soglia definita sia critica o meno. Nel caso in cui si tratti di una soglia critica, qualora dovessero essere monitorati valori che la facciano scattare, si attiverebbe immediatamente l'attività di ricalcolo delle probabilità in sede di monitoraggio e visualizzazione dati (\hyperref[UC4.2]{UC4.2 (§\ref*{UC4.2})}).
+	\item Per ogni stato del nodo l'utente seleziona, attraverso una checkbox, se la soglia definita sia critica o meno. Nel caso in cui si tratti di una soglia critica, qualora dovessero essere monitorati valori che la facciano scattare, si attiverebbe immediatamente l'attività di ricalcolo delle probabilità in sede di monitoraggio e visualizzazione dati (\hyperref[UC4.2]{UC4.2 (§\ref*{UC4.2})}).
 	\end{enumerate}
 \end{itemize}
 
@@ -204,11 +204,11 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 	\end{enumerate}
 \item \textbf{Postcondizioni:}
 	\begin{enumerate}
-	\item La finestra comparsa per consentire all'utente di compiere le operazioni necessarie al fine di collegare il 		nodo ad un flusso dati scompare;
+	\item La finestra comparsa, per consentire all'utente di compiere le operazioni necessarie al fine di collegare il 		nodo ad un flusso dati, scompare;
 	\item La checkbox corrispondente al nodo appena collegato passa dallo stato "X", che rappresenta un nodo non 					collegato, allo stato "V";
 	\end{enumerate}
 \item \textbf{Scenario Principale:} l'utente clicca il pulsante "Conferma scelte";
-\item \textbf{Estensioni:} \hyperref[UC14]{UC14 (§\ref*{UC14})}: nel caso in cui il valore numerico inserito per il livello di soglia del nodo non sia valido e/o coerente con le altre impostazioni l'utente visualizza un messaggio di errore.
+\item \textbf{Estensioni:} \hyperref[UC14]{UC14 (§\ref*{UC14})}: nel caso in cui il valore numerico inserito per il livello di soglia del nodo non sia valido e/o coerente con le altre impostazioni, l'utente visualizza un messaggio di errore.
 \end{itemize}
 
 \pagebreak
@@ -336,7 +336,7 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 \item \textbf{Attore Primario:} utente;
 \item \textbf{Precondizione:} l'utente ha avviato correttamente il monitoraggio del flusso dati.
 \item \textbf{Postcondizione:} il Sistema mantiene aggiornate, e visualizzabili da parte dell'utente, le misure di probabilità derivate dai nodi della rete bayesiana non collegati al flusso dati;
-\item \textbf{Scenario Principale:} l'utente visualizza l'andamento delle probabilità dinamiche associate ai nodi 			della rete bayesiana non collegati direttamente al flusso dati. Il sistema aggiorna costantemente i dati forniti dalla rete bayesiana, effettuando l'operazione di ricalcolo delle probabilità associate ai nodi della rete non collegati al flusso dati. Tale operazione di ricalcolo delle probabilità avviene viene eseguita allo scadere del timeout ciclico rappresentato dalla politica temporale stabilita in \hyperref[UC3]{UC3 (§\ref*{UC3})}, oppure, nel caso siano state definite in sede di collegamento nodi (\hyperref[UC2.2.4]{UC2.2.4 (§\ref*{UC2.2.4})}), ogni volta che una soglia critica viene attivata dai dati monitorati;
+\item \textbf{Scenario Principale:} l'utente visualizza l'andamento delle probabilità dinamiche associate ai nodi 			della rete bayesiana non collegati direttamente al flusso dati. Il sistema aggiorna costantemente i dati forniti dalla rete bayesiana, effettuando l'operazione di ricalcolo delle probabilità associate ai nodi della rete non collegati al flusso dati. Tale operazione di ricalcolo delle probabilità viene eseguita allo scadere del timeout ciclico rappresentato dalla politica temporale stabilita in \hyperref[UC3]{UC3 (§\ref*{UC3})}, oppure, nel caso siano state definite in sede di collegamento nodi (\hyperref[UC2.2.4]{UC2.2.4 (§\ref*{UC2.2.4})}), ogni volta che una soglia critica viene attivata dai dati monitorati;
 \item \textbf{Estensioni:} \hyperref[UC13]{UC13 (§\ref*{UC13})}: la visualizzazione dei dati viene interrotta nel 			caso in cui l'utente decida di modificare il collegamento dei nodi della rete bayesiana al flusso dati.
 \end{itemize}
 
@@ -378,7 +378,7 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 	\item \textbf{Attore secondario}: \textit{Grafana};
 	\item \textbf{Precondizione}: l'utente ha cliccato il pulsante "Aggiungi alert" \hyperref[UC5.1]{UC5.1 (§\ref*{UC5.1})};
 	\item \textbf{Postcondizione}: l'utente ha creato l'alert attraverso le impostazioni di \textit{Grafana};
-	\item \textbf{Scenario Principale}: l'utente attraverso le impostazioni messe a disposizione di \textit{Grafana} definisce l'alert desiderato.
+	\item \textbf{Scenario Principale}: l'utente, attraverso le impostazioni messe a disposizione da \textit{Grafana}, definisce l'alert desiderato.
 \end{itemize}
 
 \newpage
@@ -398,7 +398,7 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 	\item \textbf{Scenario Principale}: 
 	\begin{enumerate}
 		\item \hyperref[UC6.1]{UC6.1 (§\ref*{UC6.1})} L'utente clicca sull'alert che desidera eliminare;
-		\item \hyperref[UC6.2]{UC6.2 (§\ref*{UC6.2})} L'utente attraverso le impostazioni di \textit{Grafana} elimina l'alert.
+		\item \hyperref[UC6.2]{UC6.2 (§\ref*{UC6.2})} L'utente, attraverso le impostazioni di \textit{Grafana}, elimina l'alert.
 	\end{enumerate}
 \end{itemize}
 
@@ -469,7 +469,7 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 \begin{itemize}
 \item \textbf{Attore Primario}: utente;
 \item \textbf{Precondizione}: l'utente ha selezionato una rete da aggiungere ed ha cliccato il pulsante "Aggiungi", per confermare la rete. La rete selezionata dall'utente è errata per formato o per struttura;
-\item \textbf{Postcondizione}: l'utente visualizza l'errore, viene quindi riportato alla finestra di selezione del file della rete baysiana (\hyperref[UC1.2]{UC1.2 (§\ref*{UC1.2})});
+\item \textbf{Postcondizione}: l'utente visualizza l'errore, viene quindi riportato alla finestra di selezione del file della rete bayesiana (\hyperref[UC1.2]{UC1.2 (§\ref*{UC1.2})});
 \item \textbf{Scenario Principale:} 
 	\begin{enumerate}
 	\item L'utente visualizza un messaggio di errore in cui è segnalato il fatto che la struttura del file di definizione della rete bayesiana, caricato in (\hyperref[UC1.2]{UC1.2 (§\ref*{UC1.2})}, non è corretta;
@@ -564,7 +564,7 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 \begin{itemize}
 \item \textbf{Attore Primario:} utente;
 \item \textbf{Precondizione:} l'utente ha collegato con successo alcuni nodi della rete bayesiana al flusso dati 			(\hyperref[UC2]{UC2 (§\ref*{UC2})});
-\item \textbf{Postcondizione:} il pannello contente la lista dei nodi torna ad essere interagibile da parte dell'utente.
+\item \textbf{Postcondizione:} il pannello contenente la lista dei nodi torna ad essere interagibile da parte dell'utente.
 \item \textbf{Scenario Principale:} l'utente clicca il pulsante denominato: "Modifica Collegamento Nodi".
 \end{itemize}
 \newpage

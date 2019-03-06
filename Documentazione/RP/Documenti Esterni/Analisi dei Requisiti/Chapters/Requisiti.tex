@@ -2,7 +2,7 @@
 
 I requisiti vengono classificati ed assegnati con un identificativo univoco, secondo quanto definito nel documento \textit{Norme di progetto v2.0.0.}
 \\
-Di seguito, viene riportato il contenuto della classificazione dei requisiti per facilitare i lettori esterni che non hanno accesso al documento.
+Di seguito, per facilitare il lettore, viene riportato il contenuto della classificazione dei requisiti.
 \\
 Ogni requisito, nel documento, deve seguire le seguenti regole di identificazione:
 \begin{center}
@@ -87,7 +87,7 @@ RDF2.5.6.3 & Il Sistema deve mettere a dispozione dell'utente un campo dati che 
 \hline
 ROF2.5.8 & Il Sistema deve mettere a disposizione dell'utente un bottone per confermare le scelte riguardardanti la definizione della soglia & Obbligatorio & UC2.2\\
 \hline
-\rowcolor{grigio}ROF2.5.9 & Il Sistema deve visualizzare un messaggio di errore nel caso in cui l'utente abbia confermato le proprie scelte riguardanti il collegamento del singolo nodo in esame senza aver correttamente definito il livello di soglia & Obbligatorio & UC2.2 UC14\\
+\rowcolor{grigio}ROF2.5.9 & Il Sistema deve visualizzare un messaggio di errore nel caso in cui l'utente abbia confermato le proprie scelte riguardanti il collegamento del singolo nodo in esame, senza aver correttamente definito il livello di soglia & Obbligatorio & UC2.2 UC14\\
 \hline
 ROF2.5.10 & Il Sistema deve aggiornare la lista di checkbox, registrando il nuovo stato di ogni nodo (collegato o meno ad un flusso dati) & Obbligatorio & UC2\\
 \hline
@@ -99,7 +99,7 @@ ROF2.7 & Il Sistema deve visualizzare un messaggio di errore nel caso in cui l'u
 \hline
 ROF2.8.1 & Il Sistema deve rendere non interagibile il pannello contenente la lista dei nodi una volta che l'utente abbia effettuato la conferma del collegamento & Obbligatorio & UC2 UC13\\
 \hline
-\rowcolor{grigio}ROF2.8.2 & Il Sistema deve mettere a disposizione dell'utente un bottone per accedere alla modifica del collegamento dei nodi, rendendo nuovamente interagibile il pannello contente la lista di nodi & Obbligatorio & UC13\\
+\rowcolor{grigio}ROF2.8.2 & Il Sistema deve mettere a disposizione dell'utente un bottone per accedere alla modifica del collegamento dei nodi, rendendo nuovamente interagibile il pannello contenente la lista di nodi & Obbligatorio & UC13\\
 \hline
 ROF2.8.3 & Il Sistema deve interrompere la visualizzazione dei dati ed eliminare eventuali alert ad essi associati nel caso in cui l'utente interagisca con il sistema per modificare il collegamento dei nodi & Obbligatorio & UC2 UC4 UC7 UC13\\
 \hline
@@ -139,15 +139,15 @@ ROF4.6 & Il Sistema deve aggiornare periodicamente le probabilità in base a qua
 \hline
 RFF5 & L'utente deve poter definire alert basati sui dati relativi ai nodi della rete bayesiana non collegati al flusso & Opzionale & UC5\\
 \hline
-\rowcolor{grigio}RFF5.1 & Il Sistema deve mettere a disposizione di \textit{Grafana} i dati per l'operazione di creazione di alert ad essi associati da parte dell'utente & Opzionale & UC5\\
+\rowcolor{grigio}RFF5.1 & Il Sistema deve mettere a disposizione di \textit{Grafana}, i dati per l'operazione di creazione di alert ad essi associati da parte dell'utente & Opzionale & UC5\\
 \hline
 RFF5.1.1 & Il pannello "G\&B" deve supportare la funzione di "edit" da parte dell'utente & Opzionale & UC5\\
 \hline
-\rowcolor{grigio}RFF5.1.2 & Il Sistema deve mettere a disposizione dell'utente un pulsante "Aggiungi Alert" che conduca l'utente alle impostazioni di edit del pannello "G\&B" alla voce "Alert" & Opzionale & UC5\\
+\rowcolor{grigio}RFF5.1.2 & Il Sistema deve mettere a disposizione dell'utente un pulsante "Aggiungi Alert" che conduca l'utente alle impostazioni di edit del pannello "G\&B", alla voce "Alert" & Opzionale & UC5\\
 \hline
 RFF6 & L'utente deve poter visualizzare gli alert creati sulla base dei dati relativi ai nodi della rete bayesiana non collegati al flusso & Opzionale & UC7\\ 
 \hline
-\rowcolor{grigio}RFF6.1 & Il Sistema deve mettere periodicamente a disposizione della piattaforma \textit{Grafana} i dati aggiornati per il monitoraggio costante dello stato degli alert & Opzionale & UC7\\
+\rowcolor{grigio}RFF6.1 & Il Sistema deve mettere periodicamente a disposizione della piattaforma \textit{Grafana}, i dati aggiornati per il monitoraggio costante dello stato degli alert & Opzionale & UC7\\
 \hline
 RFF6.2 & L'utente deve poter rimuovere gli alert associati ai nodi della rete bayesiana & Opzionale & UC6\\
 \hline
@@ -185,7 +185,7 @@ ROQ3 & Il prodotto deve essere sviluppato in modo concorde a quanto stabilito ne
 \hline
 RDQ6 & Il plug-in deve essere pubblicato nella sezione plug-in di \textit{Grafana}, disponibile all'indirizzo \url{https://grafana.com/plugins}   & Desiderabile & Decisione Interna \\
 \hline
-RDQ7 & Il plug-in deve essere compatibile con la versione 6.0.0 di \textit{Grafana}, pubblicata in data 2019-02-25  & Desiderabile & Decisione Interna\\
+\rowcolor{grigio}RDQ7 & Il plug-in deve essere compatibile con la versione 6.0.0 di \textit{Grafana}, pubblicata in data 2019-02-25  & Desiderabile & Decisione Interna\\
 \hline
 RDQ8 & La struttura della directory del plug-in deve essere conforme con quanto indicato dalla documentazione di \textit{Grafana}, al link: \url{http://docs.grafana.org/plugins/developing/plugin-review-guidelines/}  & Desiderabile & Decisione Interna \\
 \hline
