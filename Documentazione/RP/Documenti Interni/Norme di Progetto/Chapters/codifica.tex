@@ -43,8 +43,8 @@ MyFunction() { ... } //NO
 	\item La versione del file nell'intestazione deve rispettare la seguente formulazione: $X.Y.Z$, dove X rappresenta la versione principale, Y la versione parziale della relativa versione principale e Z l'avanzamento rispetto ad Y.\\ I numeri di versione del tipo $X.0.0$, dalla $1.0.0$, vengono considerate versioni stabili e quindi versioni da testare per saggiarne la qualità .
 \end{itemize}
 \paragraph{\textit{ECMAScript 6}}\label{EcmaScript6} \-\\
-Seguendo le indicazioni presenti nella documentazione\footnote{\texttt{\url{http://docs.grafana.org/plugins/developing/development/}}} dell'azienda fornitrice di \textit{Grafana}, la piattaforma  per cui si intende sviluppare il plug-in, il team ha deciso di adottare come linguaggio di programmazione principale \textit{ECMAScript 6}\footnote{Linguaggio divenuto standard ISO: ISO/IEC 16262:2011, e relativo aggiornamento ISO/IEC 22275:2018.}.\\
-\textit{ECMAScript 6} viene stardardizzato da \textit{ECMA}\glossario\ nel giugno 2015 con la sigla "ECMA-262".\\
+Seguendo le indicazioni presenti nella documentazione dell'azienda fornitrice di \textit{Grafana}, la piattaforma  per cui si intende sviluppare il plug-in, il team ha deciso di adottare come linguaggio di programmazione principale \textit{ECMAScript 6}\footnote{Linguaggio divenuto standard ISO: ISO/IEC 16262:2011, e relativo aggiornamento ISO/IEC 22275:2018.}.\\
+\textit{ECMAScript 6} viene stardardizzato da \textit{ECMA}\glossario nel giugno 2015 con la sigla "ECMA-262".\\
 Come stile di codifica si adottano le linee guida proposte da \textit{Airbnb JavaScript Style Guide}. Per la verifica dell'adesione a tali norme, i \textit{Programmatori} devono utilizzare, come suggerito dalla documentazione proposta da \textit{Grafana}, \textit{ESLint}\glossario.\\
 In particolare i \textit{Programmatori} devono rispettare 5 linee guida proposte dalla documentazione ufficiale di \textit{Grafana}:
 \begin{enumerate}
@@ -335,7 +335,7 @@ Di seguito, un esempio della corretta indentazione:
 }
 \end{lstlisting}
 
-Per le restanti regole si farà riferimento allo standard imposto dalla World Wide Web Consortium\footnote{\href{http://www.w3.org/}{\texttt{W3C}}}. Per essere considerato corretto il file \textit{.css} dovrà essere validato tramite il sito reso disponibile dall'organizzazione, precedentemente nominata. La validazione potrà essere effettuata tramite il sistema messo a disposizione dalla W3C \footnote{\url{http://validator.w3.org/}}.
+Per le restanti regole si farà riferimento allo standard imposto dalla World Wide Web Consortium. Per essere considerato corretto il file \textit{.css} dovrà essere validato tramite il sito reso disponibile dall'organizzazione, precedentemente nominata. La validazione potrà essere effettuata tramite il sistema messo a disposizione dalla W3C.
 
 \paragraph{\textit{HTML}}
 \label{html}\-\\
@@ -365,9 +365,9 @@ Equivalentemente al \textit{CSS}, anche il codice \textit{HTML} dovrà essere va
 %AGGIUNGERE E SISTEMARE DA QUA IN GIU
 
 \paragraph{\textit{AngularJS}} \label{angularjs} \-\\
-Insieme al \textit{CSS} e all'\textit{HTML} il team ha deciso di sviluppare la parte front-end appoggiandosi al framework \textit{JavaScript Angularjs}\footnote{\url{https://www.angularjs.org/}}\glossario.\\
-\textit{AngularJS} è un framework per applicazioni web, sviluppato con lo scopo di affrontare le difficoltà incontrate con lo sviluppo di applicazioni su singola pagina di tipo client-side. \-\\
-La caratteristica principale è l'introduzione di funzionalità chiamate direttive, che permettono di creare componenti \textit{HTML} personalizzati e riusabili con lo scopo di associare a ogni direttiva un comportamento, così nascondendo la complessità della struttura DOM\glossario\. Le direttive sono riconoscibili poichè integrate nei tag con la dicitura "ng-" e susseguite dal nome (scelto dallo sviluppatore). 
+Insieme al \textit{CSS} e all'\textit{HTML} il team ha deciso di sviluppare la parte front-end appoggiandosi al framework \textit{JavaScript Angularjs}\glossario.\\
+\textit{AngularJS} è un framework per applicazioni web, sviluppato con lo scopo di affrontare le difficoltà incontrate con lo sviluppo di applicazioni su singola pagina di tipo client-side.\-\\
+La caratteristica principale è l'introduzione di funzionalità chiamate direttive, che permettono di creare componenti \textit{HTML} personalizzati e riusabili con lo scopo di associare a ogni direttiva un comportamento, così nascondendo la complessità della struttura DOM\glossario. Le direttive sono riconoscibili poiché integrate nei tag con la dicitura "ng-" e susseguite dal nome (scelto dallo sviluppatore). 
 Di seguito sono riportate alcune norme da seguire:\\
 \textbf{Norma 1}\\
 Verrà seguito il pattern Model View Controller(MVC)\glossario che propone la scomposizione in tre componenti:
@@ -393,7 +393,7 @@ Il nome dei moduli seguono la notazione lowerCamelCase;
 
 \end{lstlisting}
 \textbf{Norma 4}\\
-Quando è presente un modulo b che è submodule di a, si possono concatenere usando la notazione a.b;\\
+Quando è presente un modulo $b$ che è submodule di $a$, si possono concatenare usando la notazione $a.b$;\\
 \textbf{Norma 5}\\
 Il nome dei controller viene assegnato in base alla loro funzionalità e viene usata la notazione UpperCamelCase;
 \begin{lstlisting} [language=HTML]
@@ -439,7 +439,7 @@ Il suo utilizzo è necessario per poter eseguire e testare il codice \textit{ES6
 \paragraph{\textit{ESLint}}\-\\
 Il plug-in \textit{ESLint}, scaricabile dall'apposita sezione all'interno dell'IDE utilizzato, ha la funzione di segnalare errori che vengono effettuati durante la stesura del codice, in modo da evitare bug e rendere il codice più coerente. \\ 
 Si occupa inoltre di far aderire il codice allo standard \textit{Airbnb} che il team ha deciso di adottare, segnalando le varie difformità.\\
-Il plug-in è reperibile tra i pacchetti resi disponibili da \textit{NPM}\footnote{\url{https://www.npmjs.com/package/eslint}}.\\
+Il plug-in è reperibile tra i pacchetti resi disponibili da \textit{NPM}.\\
 Le regole utilizzate all'interno del plug-in saranno quelle esplicitate nella sezione §\ref{EcmaScript6}, riguardanti lo stile e le regole da rispettare per la stesura del codice con \textit{EcmaScript6}.
 
 \paragraph{\textit{Jest}}\-\\
