@@ -34,6 +34,40 @@ Per garantire una corretta struttura, il gruppo ha deciso di introdurre una nome
 	\item \textbf{num}: identificativo univoco formato da due cifre intere a partire da 1.
 \end{itemize}
 
+\subsubsection{Classificazione Test}\label{Class_test}
+Per garantire una corretta struttura, il gruppo ha deciso di introdurre una nomenclatura per identificare i test implementati. Si potranno quindi identificare così: 
+
+\begin{center}
+	T[Tipo][Priorità]-[Codice]
+\end{center}
+	Dove: 
+	\begin{itemize}
+		\item \textbf{Tipo}: indica il tipo di test ed è identificato da una lettera a scelta tra: 
+
+		\begin{itemize}
+			\item \textbf{V}: validazione; 
+			\item \textbf{S}: sistema; 
+			\item \textbf{I}: integrazione; 
+			\item \textbf{U}: unità.
+		\end{itemize}
+		
+		\item \textbf{Priorità}: indica la priorità, identificato da una lettere a scelta tra: 
+		\begin{itemize}
+			\item \textbf{0}: obbligatorio; 
+			\item \textbf{1}: desiderabile; 
+			\item \textbf{2}: opzionale.
+		\end{itemize}				
+		\item \textbf{Codice}: indica il codice del test, rispettando una struttura gerarchica. 
+	\end{itemize}
+	
+	L'esito del test, può assumere i seguenti valori: 
+		\begin{itemize}
+		\item \texttt{"N.I."} (non implementato);
+		\item \texttt{"N.S."} (non superato); 
+		\item \texttt{"S."} (superato). 
+		\end{itemize}
+
+
 \subsubsection{Controllo Qualità di Processo e Metriche} \label{ControlloQualita_Processo}
 La qualità di processo è raggiunta tramite l'utilizzo di metodi e modelli che garantiscono il corretto procedimento delle fasi di sviluppo del processo. Il team sfrutta le potenzialità del metodo PDCA, descritto nell'appendice \ref{PDCASection}, ottenendo miglioramenti continui nelle qualità di processo e verifica in modo da avere una maggiore qualità nel prodotto risultante. Inoltre verrà utilizzato lo standard ISO/IEC 15504, comunemente conosciuto con l'acronimo SPICE, che misurerà il livello di maturità dei processi.\-\\
 Le seguenti metriche sono utilizzate per la valutazione dell'efficacia e dell'efficienza degli stessi.
