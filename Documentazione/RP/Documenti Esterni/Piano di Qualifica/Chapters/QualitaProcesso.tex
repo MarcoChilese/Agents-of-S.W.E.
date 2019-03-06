@@ -3,8 +3,8 @@
 
 \subsection{Scopo}
 
-La seguente sezione si prefigge lo scopo di esporre le tecniche che verranno utilizzate durante lo svolgimento del progetto, al fine di garantire la qualità dei processi istanziati durante il suo sviluppo. In particolar modo si farà riferimento al Principio di Miglioramento Continuo, denominato PDCA\glossario\footnote{\url{https://it.wikipedia.org/wiki/Ciclo_di_Deming}}, e verrà seguito lo standard ISO/IEC 15504, comunemente conosciuto con l'acronimo SPICE\glossario\footnote{\url{https://en.wikipedia.org/wiki/ISO/IEC_15504}} (Software Process Improvement and Capability Determination).\\
-Al fine di garantire migliore qualità nei processi interni al gruppo, si è deciso di valutare i processi attivi seguendo il Capability Maturity Model Integration(CMMI) descritto nel documento \textit{Norme di Progetto v2.0.0} all'appendice C.
+La seguente sezione si prefigge lo scopo di esporre le tecniche che verranno utilizzate durante lo svolgimento del progetto, al fine di garantire la qualità dei processi istanziati durante il suo sviluppo. In particolar modo si farà riferimento al Principio di Miglioramento Continuo, denominato PDCA\glossario\footnote{\url{https://it.wikipedia.org/wiki/Ciclo_di_Deming}} e verrà seguito lo standard ISO/IEC 15504, comunemente conosciuto con l'acronimo SPICE\glossario\footnote{\url{https://en.wikipedia.org/wiki/ISO/IEC_15504}} (Software Process Improvement and Capability Determination).\\
+Al fine di garantire migliore qualità nei processi interni al gruppo, abbiamo deciso di valutare i processi attivi seguendo il Capability Maturity Model Integration(CMMI) descritto nel documento \textit{Norme di Progetto v2.0.0} all'appendice C.
 
 \subsection{Processi}
 \subsubsection{Gestione del Progetto e dei Processi} 
@@ -35,7 +35,7 @@ MTPC01 & Schedule Variance (SV) & $\leqslant 0$ giorni & $\leqslant +3$ giorni \
 \end{longtable}
 
 \paragraph{PR02: Gestione dei Costi} \-\\
-Per la gestione dei costi del progetto vengono utilizzati gli indici Budget Variance (BV) e Estimated at Completion(EAC), descritti nelle \textit{Norme di Progetto v2.0.0} nelle sezioni §3.2.4.2 e §3.2.4.3.
+Per la gestione dei costi del progetto vengono utilizzati gli indici Budget Variance (BV) e Estimated at Completion(EAC), descritti nelle \textit{Norme di Progetto v2.0.0} nelle sezioni §3.2.4.2.
 \begin{longtable}{|C{.15\textwidth}|C{.24\textwidth}|C{.24\textwidth}|C{.24\textwidth}|}
 \hline
 \rowcolor{bluelogo}\textbf{\textcolor{white}{ID}} & \textbf{\textcolor{white}{Nome}} & \textbf{\textcolor{white}{Ottimalità}} & \textbf{\textcolor{white}{Accettabilità}}\\
@@ -55,7 +55,7 @@ MTPC04 & Cost Variance (CV) & $\leqslant 0\% $ & $ \leqslant -5\%$ \\
 
 \paragraph{PR03: Verifica del Software}\-\\
 \label{VerificaSoftwareCap}
-Vengono utilizzati i seguenti indici descritti nelle  \textit{Norme di Progetto v2.0.0} nella sezione §3.2.4.4:
+Vengono utilizzati i seguenti indici descritti nelle  \textit{Norme di Progetto v2.0.0} nella sezione §3.2.4.3:
 \begin{itemize}
 	\item Function Coverage (FC);
 	\item Statement Coverage (SC);
@@ -81,7 +81,7 @@ MTPC06 & Branch Coverage (BC) & 100\% & $\geqslant 95\%$ \\
 \end{longtable}
 
 \paragraph{PR04: Gestione dei Rischi}\-\\
-Verrà utilizzata la seguente metrica descritta nella sezione §3.2.4.5.
+Verrà utilizzata la seguente metrica descritta nella sezione §3.2.4.4.
 \begin{itemize}
 	\item \textbf{Analisi dei Rischi}: all'inizio di ogni nuova fase verranno rianalizzati i precedenti rischi e verranno incrementati se necessario;
 	\item \textbf{Risoluzione dei Rischi}: nel momento in cui si dovesse verificare un rischio, il gruppo deve essere in grado di risolverlo in un tempo ragionevole, evitando cospicui ritardi.
@@ -99,7 +99,7 @@ MTPC08 & Rischi non Preventivati & 0 & $ \leqslant +4$ rischi \\
 \end{longtable}
 
 \paragraph{PR05: Gestione dei Test}\-\\
-Questa sezione riguarda le metriche di qualità decise per la realizzazione dei test e del loro svolgimento, descritte nelle \textit{Norme di Progetto v2.0.0} nelle sezioni dalla §3.2.4.6 alla §3.2.4.10 .
+Questa sezione riguarda le metriche di qualità decise per la realizzazione dei test e del loro svolgimento, descritte nelle \textit{Norme di Progetto v2.0.0} nella sezione §3.2.4.5.
 
 \begin{itemize}
 	\item Percentuale di test passati;
@@ -141,7 +141,7 @@ MTTS15 & Copertura dei requisiti & 100\% & 100\% \\
 
 \paragraph{PR06: Versionamento e Build} \-\\
 
-Il monitoraggio di commit e build avviene in modo continuo, attraverso gli strumenti di supporto integrati all'interno di \textit{GitLab}\glossario. Ogni build viene costruita e verificata attraverso l'uso di una pipeline personalizzata definita all'interno del sistema di versionamento\glossario utilizzato. 
+Il monitoraggio di commit e build avviene in modo continuo, attraverso gli strumenti di supporto integrati all'interno di \textit{GitLab}\glossario. Ogni build viene costruita e verificata attraverso l'uso di una pipeline personalizzata definita all'interno del sistema di versionamento\glossario utilizzato. Le seguenti metriche sono descritte all'interno del documento \textit{Norme di Progetto v2.0.0} nella sezione §3.2.4.6.
 
 \subparagraph{Obiettivi}
 \begin{itemize}
