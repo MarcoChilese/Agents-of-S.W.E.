@@ -3,7 +3,7 @@
 
 \subsection{Scopo}
 
-La seguente sezione si prefigge lo scopo di esporre le tecniche che verranno utilizzate durante lo svolgimento del progetto, al fine di garantire la qualità dei processi istanziati durante il suo sviluppo. In particolar modo si farà riferimento al Principio di Miglioramento Continuo, denominato PDCA\glossario\footnote{\url{https://it.wikipedia.org/wiki/Ciclo_di_Deming}} e verrà seguito lo standard ISO/IEC 15504, comunemente conosciuto con l'acronimo SPICE\glossario\footnote{\url{https://en.wikipedia.org/wiki/ISO/IEC_15504}} (Software Process Improvement and Capability Determination).\\
+La seguente sezione si prefigge lo scopo di esporre le tecniche che verranno utilizzate durante lo svolgimento del progetto, al fine di garantire la qualità dei processi istanziati durante il suo sviluppo. In particolar modo si farà riferimento al Principio di Miglioramento Continuo, denominato PDCA\glossario e verrà seguito lo standard ISO/IEC 15504, comunemente conosciuto con l'acronimo SPICE\glossario (Software Process Improvement and Capability Determination).\\
 Al fine di garantire migliore qualità nei processi interni al gruppo, abbiamo deciso di valutare i processi attivi seguendo il Capability Maturity Model Integration(CMMI) descritto nel documento \textit{Norme di Progetto v2.0.0} all'appendice C.
 
 \subsection{Processi}
@@ -139,14 +139,13 @@ MTTS15 & Copertura dei requisiti & 100\% & 100\% \\
 \label{GestioneTest}
 \end{longtable}
 
-\paragraph{PR06: Versionamento e Build} \-\\
-
-Il monitoraggio di commit e build avviene in modo continuo, attraverso gli strumenti di supporto integrati all'interno di \textit{GitLab}\glossario. Ogni build viene costruita e verificata attraverso l'uso di una pipeline personalizzata definita all'interno del sistema di versionamento\glossario utilizzato. Le seguenti metriche sono descritte all'interno del documento \textit{Norme di Progetto v2.0.0} nella sezione §3.2.4.6.
+\paragraph{PR06: Versionamento e Build}\-\\
+Il monitoraggio di commit\glossario e build\glossario avviene in modo continuo, attraverso gli strumenti di supporto integrati all'interno di \textit{GitLab}\glossario. Ogni build viene costruita e verificata attraverso l'uso di una pipeline personalizzata definita all'interno del sistema di versionamento\glossario utilizzato. Le seguenti metriche sono descritte all'interno del documento \textit{Norme di Progetto v2.0.0} nella sezione §3.2.4.6.
 
 \subparagraph{Obiettivi}
 \begin{itemize}
 	\item \textbf{Commit Frequenti}: i commit devono essere frequenti per garantire un codice quanto più possibile aggiornato;
-	\item \textbf{Build Positive}: al fine di evitare quanto più possibile il propagarsi di errori e mantenere, al contempo, una base di codice il più possibile funzionante, è necessario che il maggior numero possibile di commit\glossario portino al successo della build. 
+	\item \textbf{Build Positive}: al fine di evitare quanto più possibile il propagarsi di errori e mantenere, al contempo, una base di codice il più possibile funzionante, è necessario che il maggior numero possibile di commit portino al successo della build. 
 \end{itemize}
 
 \begin{longtable}{|C{.15\textwidth}|C{.24\textwidth}|C{.24\textwidth}|C{.24\textwidth}|}
