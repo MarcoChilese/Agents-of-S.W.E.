@@ -10,6 +10,8 @@
 
 \usepackage[hyperfootnotes=false]{hyperref}	%Pacchetto per coll. ipertestuali
 
+\usepackage{makecell}
+
 \setlength{\arrayrulewidth}{1.1pt} %dimensione linea righe
 
 \usepackage{tabularx}
@@ -64,6 +66,9 @@
 \usepackage{amssymb}
 
 \newcolumntype{C}[1]{>{\centering\arraybackslash}m{#1}}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+
+% \newcolumntype{L}[2]{\hsize\arraybackslash}X}
 
 % \lhead{\includegraphics[scale=]{}} TODO LOGO ripetuto angolo Top SX
 \usepackage{eurosym}
