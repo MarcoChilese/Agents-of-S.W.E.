@@ -216,8 +216,8 @@ Non essendo disponibili sistemi automatici al fine di controllare la correttezza
 \end{itemize}
 
 \paragraph{Funzionalità}
+Con \textit{Funzionalità} si intendono le qualità riguardanti le funzioni offerte dal software.
 \begin{itemize}
-
 	\item \textbf{MTPDS20 Soddisfacimento Requisiti Obbligatori}\-\\
 Indicatore percentuale che verifica che tutti i requisiti obbligatori siano soddisfatti. Condizione necessaria al fine di rispettare il contratto. La misurazione avviene:
 \begin{center}
@@ -233,8 +233,8 @@ Indicatore percentuale che verifica se tutti i requisiti opzionali scelti siano 
 dove PRP è la percentuale di requisiti opzionali accettati, RPS i requisiti opzionali scelti soddisfatti e RPT il numero di requisiti accettati.
 \end{itemize}
 
-\paragraph{Affidabilità}
-
+\paragraph{Affidabilità}\-\\
+Con \textit{Affidabilità} si intende la garanzia di funzionamento del software sotto determinate condizioni d'uso.
 \begin{itemize}
 	\item \textbf{MTPDS22 Densità di Failure} \-\\
 	Indicatore percentuale utilizzato per calcolare la percentuale di testing che si è conclusa in failure. La misurazione avviene: 
@@ -250,10 +250,25 @@ dove PRP è la percentuale di requisiti opzionali accettati, RPS i requisiti opz
 	in cui TE è la percentuale di tolleranza agli errori, FE sono i test falliti durante il testing e ON sono i test eseguiti che eseguono operazioni non corrette che possono causare failure. 
 \end{itemize}
 
-\paragraph{Usabilità}
-
+\paragraph{Efficienza}\-\\
+Con \textit{Efficienza} si intendono le prestazioni raggiungibili sotto specifiche condizioni di utilizzo.
 \begin{itemize}
+	\item \textbf{MTDS24 Tempo di Risposta Medio}\\
+		Il tempo di risposta medio è dovuto a varie componenti: 
+		\begin{itemize}
+			\item Carico medio del server in un range di tempo;
+			\item Complessità rete bayesiana presa in carico; 
+			\item Complessità media della libreria JSBayes; 
+		\end{itemize} 
+	\item \textbf{MTDS25 Tempo di Risposta di Picco}\\
+		Il tempo di risposta di Picco massimo, è inteso il tempo massimo di risposta in situazioni limite.
+		% $ TMEDIO = \frac{reteBays * JSBayes }{Server_s\Delta}$
+\end{itemize}
 
+
+\paragraph{Usabilità}\-\\
+Con \textit{Usabilità} si intende il livello di comprensione del prodotto da parte dell'utilizzatore.
+\begin{itemize}
 	\item\textbf{MTPDS26 Tempo Medio di Comprensione}\-\\
 Indica il tempo medio che l'utente impiega per comprendere cosa può svolgere il sistema. È misurato in minuti ed è rilevato attraverso test a persone esterne al team di sviluppo.
 
@@ -262,12 +277,16 @@ Indica il tempo medio che l'utente impiega per riuscire a utilizzare a pieno il 
 
 \end{itemize}
 
-\iffalse
-\paragraph{MTPDS25 Percentuale Commenti/Codice}\-\\
-Indica le righe di commenti presente rispetto al codice. È  calcolato per ogni procedura e non per l'intera codebase. La misurazione avviene:
-\begin{center}
-	\item $PC = \frac{RC}{RT}*100$
-\end{center}
-dove PC è la percentuale calcolata, RC il numero di righe di commento e RT il numero di righe totale.
-\fi
+\paragraph{Manutenibilità}\-\\
+Con \textit{Manutenibilità} si intende il livello di semplicità richiesto al fine di eseguire interventi di modifica, correzione o adattamento.
+\begin{itemize}
+	\item \textbf{MTPDS28 Percentuale Commenti/Codice}
+	Indica le righe di commenti presente rispetto al codice. È  calcolato per ogni procedura e non per l'intera codebase. La misurazione avviene:
+	\begin{center}
+		\item $PC = \frac{RC}{RT}*100$
+	\end{center}
+	dove PC è la percentuale calcolata, RC il numero di righe di commento e RT il numero di righe totale.
+\end{itemize}
 
+\paragraph{Portabilità}\-\\
+Con \textit{Portabilità} si intende la capacità del software di funzionare in diversi sistemi, che siano essi software o hardware.
