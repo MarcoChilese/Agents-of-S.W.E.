@@ -43,7 +43,7 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 	\end{center}
 \end{figure}
 \begin{itemize}
-	\item \textbf{Attore Primario}: utente;
+	\item \textbf{Attore Primario}: Utente;
 	\item \textbf{Precondizioni}: l'utente deve aver effettuato il login nella piattaforma \textit{Grafana}, deve aver selezionato una dashboard e aggiunto il pannello "G\&B";
 	\item \textbf{Postcondizioni}: l'utente ha aggiunto la rete bayesiana al plug-in. Attraverso \hyperref[UC2]{UC2 (§\ref*{UC2})} può selezionare quali nodi sorgente collegare alla rete.
 	\item \textbf{Scenario Principale:}
@@ -56,7 +56,7 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 
 \subsubsection{UC1.1 - Apertura Pannello di Selezione della Rete Bayesiana}\label{UC1.1}
 \begin{itemize}
-	\item \textbf{Attore Primario}: utente; 
+	\item \textbf{Attore Primario}: Utente; 
 	\item \textbf{Precondizioni}: l'utente visualizza il pannello "G\&B" nella dashboard.
 	\item \textbf{Postcondizioni}: l'utente ha cliccato il bottone con etichetta "Aggiungi Rete Bayesiana" e visualizza il pannello per la selezione del file della rete;
 	\item \textbf{Scenario Principale}: l'utente clicca il pulsante con etichetta "Aggiungi Rete Bayesiana" nel pannello "G\&B Panel" nella dashboard.
@@ -65,7 +65,7 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 
 \subsubsection{UC1.2 - Selezione della Rete Bayesiana}\label{UC1.2}
 \begin{itemize}
-	\item \textbf{Attore Primario}: utente;
+	\item \textbf{Attore Primario}: Utente;
 	\item \textbf{Precondizioni}: l'utente ha cliccato il bottone con etichetta "Aggiungi Rete Bayesiana";
 	\item \textbf{Postcondizioni}: l'utente ha selezionato la rete bayesiana desiderata e ha premuto il pulsante con etichetta "Aggiungi";
 	\item \textbf{Scenario Principale}:
@@ -87,7 +87,7 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 \end{figure}
 
 \begin{itemize}
-\item \textbf{Attore Primario}: utente;
+\item \textbf{Attore Primario}: Utente;
 \item \textbf{Precondizione}: l'utente ha caricato con successo la rete bayesiana (\hyperref[UC1]{UC1 (§\ref*{UC1})});
 \item \textbf{Postcondizioni}: 
 	\begin{enumerate}
@@ -105,7 +105,7 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 
 \subsubsection{UC2.1 - Visualizzazione della Lista dei Nodi della Rete Bayesiana e Rispettivi Stati}\label{UC2.1}
 \begin{itemize}
-\item \textbf{Attore Primario:}  utente
+\item \textbf{Attore Primario:}  Utente
 \item \textbf{Precondizione:} l'utente ha caricato con successo la rete bayesiana (\hyperref[UC1]{UC1 									(§\ref*{UC1})});
 \item \textbf{Postcondizione:} l'utente visualizza la lista di nodi di cui la rete bayesiana è costituita, vengono 			inoltre visualizzati gli stati di ogni nodo (collegato ad un flusso dati oppure no);
 \item \textbf{Scenario Principale:}
@@ -126,7 +126,7 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 \end{figure}
 
 \begin{itemize}
-\item \textbf{Attore Primario}: utente;
+\item \textbf{Attore Primario}: Utente;
 \item \textbf{Precondizioni}: 
 \begin{enumerate}
 	\item L'utente ha caricato con successo la rete bayesiana (\hyperref[UC1]{UC1(§\ref*{UC1})});
@@ -158,7 +158,7 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 
 \paragraph{UC2.2.2 - Selezione della Sorgente Dati}\label{UC2.2.2}
 \begin{itemize}
-\item \textbf{Attore Primario:} utente;
+\item \textbf{Attore Primario:} Utente;
 \item \textbf{Precondizione:} l'utente ha selezionato il nodo che desidera collegare ad un certo flusso dati 					(\hyperref[UC2.2.1]{UC2.2.1 (§\ref*{UC2.2.1})});
 \item \textbf{Postcondizioni:} 
 	\begin{enumerate}
@@ -170,7 +170,7 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 
 \paragraph{UC2.2.3 - Selezione del Flusso Dati}\label{UC2.2.3}
 \begin{itemize}
-\item \textbf{Attore Primario:} utente;
+\item \textbf{Attore Primario:} Utente;
 \item \textbf{Precondizione:} l'utente ha selezionato la sorgente dei dati (\hyperref[UC2.2.2]{UC2.2.2 (§\ref*{UC2.2.2})});
 \item \textbf{Postcondizioni:}
 	\begin{enumerate}
@@ -182,7 +182,7 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 
 \paragraph{UC2.2.4 - Selezione del Livello di Soglia}\label{UC2.2.4}
 \begin{itemize}
-\item \textbf{Attore Primario:} utente
+\item \textbf{Attore Primario:} Utente
 \item \textbf{Precondizione:} l'utente ha selezionato il nodo che desidera collegare ad un certo flusso dati 					(\hyperref[UC2.2.1]{UC2.2.1 (§\ref*{UC2.2.1})});
 \item \textbf{Postcondizione:} l'utente ha impostato, per ogni stato del nodo, un livello di soglia al di sotto, o al di sopra,	del quale la probabilità associata a quel dato stato risulta pari al 100\%, mentre le probabilità associate agli altri stati risultano pari allo 0\%;
 \item \textbf{Scenario Principale:}
@@ -196,7 +196,7 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 
 \paragraph{UC2.2.5 - Conferma delle Scelte}\label{UC2.2.5}
 \begin{itemize}
-\item \textbf{Attore Primario:} utente;
+\item \textbf{Attore Primario:} Utente;
 \item \textbf{Precondizioni:}
 	\begin{enumerate}
 	\item L'utente ha selezionato un flusso dati a cui collegare il nodo in esame (\hyperref[UC2.2.3]{UC2.2.3 							(§\ref*{UC2.2.3})});
@@ -215,7 +215,7 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 
 \subsubsection{UC2.3 - Conferma Collegamento}\label{UC2.3}
 \begin{itemize}
-\item \textbf{Attore Primario}: utente;
+\item \textbf{Attore Primario}: Utente;
 \item \textbf{Precondizione}: l'utente ha caricato con successo la rete bayesiana (\hyperref[UC1]{UC1 (§\ref*{UC1})});
 \item \textbf{Postcondizione}: l'utente ha collegato con successo i nodi desiderati della rete bayesiana caricata 			in \hyperref[UC1]{UC1(§\ref*{UC1})} ai rispettivi flussi dati;
 \item \textbf{Scenario Principale:} l'utente conferma le proprie scelte (\hyperref[UC2.2]{UC2.2 (§\ref*{UC2.2})}) cliccando il pulsante "Conferma";
@@ -232,7 +232,7 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 \end{figure}
 
 \begin{itemize}
-	\item \textbf{Attore Primario}: utente; 
+	\item \textbf{Attore Primario}: Utente; 
 	\item \textbf{Precondizione}: l'utente deve aver aggiunto il pannello "G\&B Panel";
 	\item \textbf{Postcondizione}: l'utente ha collegato con successo la politica temporale da lui creata, per il ricalcolo delle probabilità della rete bayesiana, caricata in (\hyperref[UC1]{UC1 (§\ref*{UC1})});	
 	\item \textbf{Scenario Principale:}
@@ -247,7 +247,7 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 
 \subsubsection{UC3.1 - Click Pulsante "Politiche Temporali"}\label{UC3.1}
 \begin{itemize}
-	\item \textbf{Attore Primario}: utente; 
+	\item \textbf{Attore Primario}: Utente; 
 	\item \textbf{Precondizione}: l'utente deve aver aggiunto il pannello "G\&B Panel";
 	\item \textbf{Postcondizione}: l'utente accede al pannello di creazione della politica temporale;
 	\item \textbf{Scenario Principale}: l'utente, tramite un click sul pulsante "Politiche Temporali", apre il pannello di configurazione. 
@@ -256,7 +256,7 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 \subsubsection{UC3.2 - Creazione Nuova Politica Temporale}\label{UC3.2}
 
 \begin{itemize}
-	\item \textbf{Attore Primario}: utente; 
+	\item \textbf{Attore Primario}: Utente; 
 	\item \textbf{Precondizione}: l'utente ha acceduto al pannello di creazione della politica temporale (\hyperref[UC3.1]{UC3.1 (§\ref*{UC3.1})});
 	\item \textbf{Postcondizione}: l'utente ha realizzato la politica temporale per il ricalcolo delle probabilità desiderata;
 	\item \textbf{Scenario Principale:}
@@ -270,7 +270,7 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 
 \subsubsection{UC3.3 - Conferma Politica Temporale}\label{UC3.3}
 \begin{itemize}
-	\item \textbf{Attore Primario}: utente; 
+	\item \textbf{Attore Primario}: Utente; 
 	\item \textbf{Precondizione}: l'utente ha creato la politica temporale desiderata (\hyperref[UC3.2]{UC3.2 (§\ref*{UC3.2})});
 	\item \textbf{Postcondizione}: l'utente ha confermato la politica temporale per il ricalcolo delle probabilità; 
 	\item \textbf{Scenario Principale}: l'utente clicca il pusante "Conferma".
@@ -288,7 +288,7 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 \end{figure}
 
 \begin{itemize}
-\item \textbf{Attore Primario}: utente;
+\item \textbf{Attore Primario}: Utente;
 \item \textbf{Precondizione}: l'utente deve aver effettuato il login nella piattaforma \textit{Grafana}, deve aver selezionato una dashboard e aggiunto il pannello "G\&B Panel";
 %	\begin{enumerate}
 %	\item L'utente ha collegato con successo alcuni nodi della rete bayesiana al flusso dati (\hyperref[UC2]{UC2 (§\ref*{UC2})});
@@ -351,7 +351,7 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 \end{figure}
 
 \begin{itemize}
-	\item \textbf{Attore Primario}: utente;
+	\item \textbf{Attore Primario}: Utente;
 	\item \textbf{Precondizione}:
 	l'utente ha avviato con successo il monitoraggio del flusso dati (\hyperref[UC4]				{UC4 (§\ref*{UC4})}) e visualizza correttamente le probabilità associate ai nodi della rete bayesiana;
 	\item \textbf{Postcondizione}: l'utente ha aggiunto un alert per i nodi non collegati al flusso di dati;
@@ -365,7 +365,7 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 
 \subsubsection{UC5.1 - Click Pulsante "Aggiungi Alert"}\label{UC5.1}
 \begin{itemize}
-	\item \textbf{Attore Primario}: utente;
+	\item \textbf{Attore Primario}: Utente;
 	\item \textbf{Precondizione}: l'utente deve aver aggiunto il pannello "G\&B Panel";
 	\item \textbf{Postcondizione}: l'utente viene condotto alle impostazioni di edit del pannello 
 	"G\&B Panel", sotto la voce Alert;
@@ -374,7 +374,7 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 
 \subsubsection{UC5.2 - Definizione di Alert Attraverso \textit{Grafana}}\label{UC5.2}
 \begin{itemize}
-	\item \textbf{Attore Primario}: utente;
+	\item \textbf{Attore Primario}: Utente;
 	\item \textbf{Attore secondario}: \textit{Grafana};
 	\item \textbf{Precondizione}: l'utente ha cliccato il pulsante "Aggiungi alert" \hyperref[UC5.1]{UC5.1 (§\ref*{UC5.1})};
 	\item \textbf{Postcondizione}: l'utente ha creato l'alert attraverso le impostazioni di \textit{Grafana};
@@ -392,7 +392,7 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 \end{figure}
 
 \begin{itemize}
-	\item \textbf{Attore Primario}: utente;
+	\item \textbf{Attore Primario}: Utente;
 	\item \textbf{Precondizione:} l'utente visualizza il pannello degli alert \hyperref[UC7]{UC7 (§\ref*{UC7})};
 	\item \textbf{Postcondizione}: l'utente ha rimosso l'alert associato al nodo non collegato al flusso dati;
 	\item \textbf{Scenario Principale}: 
@@ -404,7 +404,7 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 
 \subsubsection{UC6.1 - Selezione Alert da Eliminare}\label{UC6.1}
 \begin{itemize}
-	\item \textbf{Attore Primario}: utente;
+	\item \textbf{Attore Primario}: Utente;
 	\item \textbf{Precondizione}:  l'utente visualizza il pannello degli alert \hyperref[UC7]{UC7 (§\ref*{UC7})};
 	\item \textbf{Postcondizione}: l'utente viene condotto nella sezione di edit del pannello "G\&B Panel", sotto la voce Alert;
 	\item \textbf{Scenario Principale}: l'utente clicca sul nominativo dell'alert che desidera rimuovere.
@@ -412,7 +412,7 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 
 \subsubsection{UC6.2 - Rimozione di Alert Attraverso \textit{Grafana}}\label{UC6.2}
 \begin{itemize}
-	\item \textbf{Attore Primario}: utente;
+	\item \textbf{Attore Primario}: Utente;
 	\item \textbf{Attore secondario}: \textit{Grafana};
 	\item \textbf{Precondizione}:  l'utente ha selezionato l'alert che vuole eliminare \hyperref[UC6.1]{UC6.1 (§\ref*{UC6.1})};
 	\item \textbf{Postcondizione}: l'alert desiderato è stato eliminato;
@@ -425,12 +425,12 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[scale=0.4]{./images/UC7.png}
+	\includegraphics[scale=0.5]{./images/UC7.png}
 	\caption{UC7 - Visualizzazione di un Alert}
 \end{figure}
 
 \begin{itemize}
-	\item \textbf{Attore Primario}: utente;
+	\item \textbf{Attore Primario}: Utente;
 	\item \textbf{Attore secondario}: \textit{Grafana};
 	\item \textbf{Precondizioni}: l'utente ha definito correttamente almeno un alert (\hyperref[UC5]{UC5(§\ref*{UC5})});
 	\item \textbf{Postcondizioni}: l'utente visualizza l'elenco degli alert definiti e il relativo stato;
@@ -446,7 +446,7 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 
 \subsubsection{UC7.1 - Aggiunta Pannello degli Alert }\label{UC7.1}
 \begin{itemize}
-	\item \textbf{Attore Primario}: utente;
+	\item \textbf{Attore Primario}: Utente;
 	\item \textbf{Attore secondario}: \textit{Grafana};
 	\item \textbf{Precondizione}: l'utente ha aggiunto il pannello "G\&B Panel";
 	\item \textbf{Postcondizione}: l'utente ha aggiunto il pannello di visualizzazione degli alert;
@@ -455,7 +455,7 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 
 \subsubsection{UC7.2 - Visualizzazione Elenco degli Alert}\label{UC7.2}
 \begin{itemize}
-	\item \textbf{Attore Primario}: utente;
+	\item \textbf{Attore Primario}: Utente;
 	\item \textbf{Precondizione}:  l'utente ha aggiunto il pannello degli alert \hyperref[UC7.1]{UC7.1 (§\ref*{UC7.1})}.
 	\item \textbf{Postcondizione}: l'utente visualizza l'elenco degli alert definiti in  \hyperref[UC5]{UC5 (§\ref*{UC5})}.
 	\item \textbf{Scenario Principale}: l'utente visualizza l'elenco degli alert definiti sui nodi non collegati al flusso di dati e il relativo stato;
@@ -467,7 +467,7 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 
 \subsection{UC8 - Visualizzazione Messaggio d'Errore Selezione Rete Bayesiana}\label{UC8}
 \begin{itemize}
-\item \textbf{Attore Primario}: utente;
+\item \textbf{Attore Primario}: Utente;
 \item \textbf{Precondizione}: l'utente ha selezionato una rete da aggiungere ed ha cliccato il pulsante "Aggiungi", per confermare la rete. La rete selezionata dall'utente è errata per formato o per struttura;
 \item \textbf{Postcondizione}: l'utente visualizza l'errore, viene quindi riportato alla finestra di selezione del file della rete bayesiana (\hyperref[UC1.2]{UC1.2 (§\ref*{UC1.2})});
 \item \textbf{Scenario Principale:} 
@@ -481,7 +481,7 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 
 \subsection{UC9 - Visualizzazione Messaggio di Errore Nessun Nodo Collegato}\label{UC9}
 \begin{itemize}
-\item \textbf{Attore Primario}: utente;
+\item \textbf{Attore Primario}: Utente;
 \item \textbf{Precondizione}: l'utente ha confermato il collegamento dei nodi al flusso dati (\hyperref[UC2.2]{UC2.2 (§\ref*{UC2.2})}), senza averne effettivamente collegato alcuno;
 \item \textbf{Postcondizione}: l'utente visualizza l'errore;
 \item \textbf{Scenario Principale}: 
@@ -495,7 +495,7 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 
 \subsection{UC10 - Visualizzazione Messaggio di Errore Nessuna Rete Bayesiana Caricata}\label{UC10}
 \begin{itemize}
-\item \textbf{Attore Primario}: utente;
+\item \textbf{Attore Primario}: Utente;
 \item \textbf{Precondizione}: l'utente ha avviato il monitoraggio del flusso dati (\hyperref[UC4.1]{UC4.1 (§\ref*{UC4.1})}), senza aver preventivamente caricato alcuna rete bayesiana (\hyperref[UC1]{UC1 (§\ref*{UC1})}).
 \item \textbf{Postcondizione}: l'utente visualizza l'errore;
 \item \textbf{Scenario Principale}: 
@@ -509,7 +509,7 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 
 \subsection{UC11 - Visualizzazione Messaggio di Errore Nodi non Collegati}\label{UC11}
 \begin{itemize}
-\item \textbf{Attore Primario}: utente;
+\item \textbf{Attore Primario}: Utente;
 \item \textbf{Precondizione}: l'utente ha avviato il monitoraggio del flusso dati (\hyperref[UC4.1]{UC4.1 							(§\ref*{UC4.1})}), senza aver preventivamente collegato alcuni nodi della rete bayesiana al flusso dati 							(\hyperref[UC2]{UC2 (§\ref*{UC2})}).
 \item \textbf{Postcondizione}: l'utente visualizza l'errore;
 \item \textbf{Scenario Principale}: 
@@ -523,7 +523,7 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 
 \subsection{UC12 - Visualizzazione Messaggio di Errore Politiche Temporali non Definite}\label{UC12}
 \begin{itemize}
-\item \textbf{Attore Primario}: utente;
+\item \textbf{Attore Primario}: Utente;
 \item \textbf{Precondizione}: l'utente ha avviato il monitoraggio del flusso dati (\hyperref[UC4.1]{UC4.1 							(§\ref*{UC4.1})}), senza aver preventivamente definito correttamente alcuna politica temporale per il ricalcolo delle probabilità (\hyperref[UC3]{UC3 (§\ref*{UC3})}).
 \item \textbf{Postcondizione}: l'utente visualizza l'errore;
 \item \textbf{Scenario Principale}: 
@@ -571,7 +571,7 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 
 \subsection{UC14 - Visualizzazione Messaggio di Errore Nessuna Soglia Impostata}\label{UC14}
 \begin{itemize}
-\item \textbf{Attore Primario}: utente;
+\item \textbf{Attore Primario}: Utente;
 \item \textbf{Precondizione}: l'utente ha confermato le scelte per il collegamento di un dato nodo ad un flusso 				dati (\hyperref[UC2.2.4]{UC2.2.4 (§\ref*{UC2.2.4})}), senza aver impostato correttamente una soglia per lo stesso 	(\hyperref[UC2.2.3]{UC2.2.3 (§\ref*{UC2.2.3})});
 \item \textbf{Postcondizioni}: 
 	\begin{enumerate}
@@ -589,7 +589,7 @@ E' altrettanto importante sottolineare che il sistema di registrazione ed autent
 
 \subsection{UC15 - Visualizzazione Messaggio di Errore Politica Temporale non Configurata Correttamente}\label{UC15}
 \begin{itemize}
-\item \textbf{Attore Primario}: utente;
+\item \textbf{Attore Primario}: Utente;
 \item \textbf{Precondizione}: l'utente ha confermato le scelte per la selezione di una politica temporale per il ricalcolo delle probabilità (\hyperref[UC3.3]{UC3.3 (§\ref*{UC3.3})}), senza averla definita correttamente (\hyperref[UC3.2]{UC3.2 (§\ref*{UC3.2})});
 \item \textbf{Postcondizioni}: 
 	\begin{enumerate}
