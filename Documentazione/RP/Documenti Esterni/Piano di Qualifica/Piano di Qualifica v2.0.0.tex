@@ -1,5 +1,7 @@
 \input{Config/config.tex}
 
+\usepackage{float}
+
 \begin{document}
 \begin{titlepage}
 \thispagestyle{empty}
@@ -16,10 +18,10 @@
 \large
 \renewcommand{\arraystretch}{1.3}
 \begin{tabular}{r|l}
-\textbf{Versione} & 1.0.1\\
+\textbf{Versione} & 1.1.0\\
 \textbf{Approvazione} & Carlotta Segna\\
-\textbf{Redazione} & \parbox[t]{5cm}{Marco Favaro\\Diego Mazzalovo\\Carlotta Segna}\\
-\textbf{Verifica} & \parbox[t]{5cm}{Marco Chilese\\Bogdan Stanciu}\\
+\textbf{Redazione} & \parbox[t]{5cm}{Marco Chilese\\Diego Mazzalovo\\Carlotta Segna}\\
+\textbf{Verifica} & \parbox[t]{5cm}{Marco Favaro\\Bogdan Stanciu}\\
 \textbf{Stato} & Approvato\\
 \textbf{Uso} & Esterno\\
 \textbf{Destinato a} & \parbox[t]{5cm}{Agents of S.W.E. \\Prof. Tullio Vardanega\\Prof. Riccardo Cardin\\Zucchetti S.p.A.}
@@ -41,6 +43,7 @@
 
 % Inclusione degli indici di tabelle e immagini
 \listoftables
+\listoffigures
 
 %\pagenumbering{arabic}
 
@@ -57,12 +60,17 @@
 \input{Chapters/QualitaProdotto.tex}
 
 \pagebreak
+\appendix
 
 \input{Chapters/Test.tex}
 
 \pagebreak
 
-\appendix
+\input{Chapters/Copertura.tex}
+
+\pagebreak
+
+
 \input{Chapters/Resoconto.tex}
 
 
