@@ -10,6 +10,8 @@
 
 \usepackage[hyperfootnotes=false]{hyperref}	%Pacchetto per coll. ipertestuali
 
+\setlength{\arrayrulewidth}{1.1pt} %linea righe
+
 \usepackage{tabularx}
 \usepackage{longtable} %Per Tabelle potenzialmente multipagina
 \usepackage{fancyhdr}  % per gli header e footer
@@ -58,6 +60,11 @@ framexleftmargin=15pt}
 \hypersetup{colorlinks=true}		%Configurazione colore link documento
 \hypersetup{linkcolor= blue}
 \renewcommand\UrlFont{\color{blue}\rmfamily\itshape} %Forzato colore blu su tutti i link ESTERNI
+\hypersetup{
+	colorlinks,
+	linkcolor=blue,
+	urlcolor=blue
+}
 
 %\lhead{\includegraphics[scale=0.08]{./images/logo.png}}
 
@@ -79,7 +86,7 @@ framexleftmargin=15pt}
 \lhead{\includegraphics[scale=0.08]{./images/logo.png}}
 \rhead{\rightmark}
 
-\lfoot{Norme di Progetto}
+\lfoot{Norme di Progetto v2.0.0}
 \cfoot{}
 \rfoot{Pagina \thepage \hspace{1pt} di \pageref*{LastPage}}
 

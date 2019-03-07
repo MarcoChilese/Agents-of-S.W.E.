@@ -49,16 +49,16 @@
 
 # Per consegna RP:
 
-## Norme di Progetto: 
+## Norme di Progetto:
   - CI/CD; (Bogdan e Marco C.);
   - JQuery (Ajax) (Bogdan);
   - Verifica del documento (Diego M.) ;
 
 ## Analisi dei Requisiti:
-  - Mettere Grafana 5.x.x (Luca) ; 
+  - Mettere Grafana 5.x.x (Luca) ;
   - Verifica del documento (Marco F. e Matteo);  
 
-## Piano di Qualifica: 
+## Piano di Qualifica:
   - Metriche da Utilizzare (Carlotta e Luca);
   - Grafici PDQ (Carlotta e Luca);
   - Verifica del PDQ (quando sarà finito);
@@ -66,7 +66,7 @@
 ## Piano di Progetto:
   - Verifica del Documento (Luca);
 
-## Glossario: 
+## Glossario:
   - Check glossario (Marco F.) - PDP già fatto;
 
 ## Verbale
@@ -76,4 +76,3 @@
 
 ## Diagrammi di Attività:
   - Verifica dei diagrammi (Diego M.);
-
