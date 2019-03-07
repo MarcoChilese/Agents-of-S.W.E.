@@ -7,6 +7,7 @@ import os
 import sys
 
 rootdir = sys.argv[1]
+revisione = sys.argv[2]
 totalErrors = 0
 
 with open(os.path.join(rootdir, 'report.txt'), 'w') as report:
