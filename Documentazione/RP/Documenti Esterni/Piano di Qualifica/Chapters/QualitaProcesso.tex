@@ -7,7 +7,7 @@ La seguente sezione si prefigge lo scopo di esporre le tecniche che verranno uti
 Al fine di garantire migliore qualità nei processi interni al gruppo, si è deciso di valutare i processi attivi seguendo il Capability Maturity Model Integration(CMMI) descritto nel documento \textit{Norme di Progetto v1.0.0} all'appendice C.
 
 \subsection{Processi}
-\subsubsection{Gestione del Progetto e dei Processi} 
+\subsubsection{Gestione del Progetto e dei Processi}
 
 Questo processo si prefigge di descrivere le modalità con le quali il gruppo \texttt{Agents of S.W.E.} intende organizzarsi per lo svolgimento del progetto. In esso sono racchiuse le seguenti attività:
 \begin{itemize}
@@ -19,7 +19,7 @@ Questo processo si prefigge di descrivere le modalità con le quali il gruppo \t
 	\item Assegnazione dei compiti;
 	\item Verifica del soddisfacimento degli obiettivi.
 \end{itemize}
-
+\pagebreak
 \paragraph{PR01: Gestione dei Task} \-\\
 Viene utilizzata la metrica Schedule Variance (SV), descritta nel documento \textit{Norme di Progetto v1.0.0}, all'interno della sezione §3.2.4.1.
 
@@ -27,7 +27,7 @@ Viene utilizzata la metrica Schedule Variance (SV), descritta nel documento \tex
 \hline
 \rowcolor{bluelogo}\textbf{\textcolor{white}{ID}} & \textbf{\textcolor{white}{Nome}} & \textbf{\textcolor{white}{Ottimalità}} & \textbf{\textcolor{white}{Accettabilità}}\\
 \hline \hline
-\endfirsthead
+\endhead
 MTPC01 & Schedule Variance (SV) & $\leqslant 0$ giorni & $\leqslant +3$ giorni \\
 \hline
 \caption{Gestione dei Tempi}
@@ -40,8 +40,8 @@ Per la gestione dei costi del progetto vengono utilizzati gli indici Budget Vari
 \hline
 \rowcolor{bluelogo}\textbf{\textcolor{white}{ID}} & \textbf{\textcolor{white}{Nome}} & \textbf{\textcolor{white}{Ottimalità}} & \textbf{\textcolor{white}{Accettabilità}}\\
 \hline \hline
-\endfirsthead
-MTPC02 & Budget Variance (BV) & $\leqslant 0\% $ & $\leqslant 5\%$ \\
+\endhead
+MTPC02 & Budget Variance (BV) & $\leqslant 0\% $ & $\leqslant 12\%$ \\
 \hline
 \rowcolor{grigio} MTPC03 & Estimated at Completion (EAC) & $\leqslant 0\% $ & $\leqslant 5\%$ \\
 \hline
@@ -67,7 +67,7 @@ Vengono utilizzati i seguenti indici descritti nelle  \textit{Norme di Progetto 
 \hline
 \rowcolor{bluelogo}\textbf{\textcolor{white}{ID}} & \textbf{\textcolor{white}{Nome}} & \textbf{\textcolor{white}{Ottimalità}} & \textbf{\textcolor{white}{Accettabilità}}\\
 \hline \hline
-\endfirsthead
+\endhead
 MTPC04 & Function Coverage (FC) & 100\% & $\geqslant 95\%$ \\
 \hline
 \rowcolor{grigio} MTPC05 & Statement Coverage (SC) & 100\% & $\geqslant 95\%$ \\
@@ -91,7 +91,7 @@ Verrà utilizzata la seguente metrica descritta nella sezione §3.2.4.5.
 \hline
 \rowcolor{bluelogo}\textbf{\textcolor{white}{ID}} & \textbf{\textcolor{white}{Nome}} & \textbf{\textcolor{white}{Ottimalità}} & \textbf{\textcolor{white}{Accettabilità}}\\
 \hline \hline
-\endfirsthead
+\endhead
 MTPC08 & Rischi non Preventivati & 0 & $ \leqslant +4$ rischi \\
 \hline
 \caption{Gestione dei Rischi}
@@ -114,7 +114,7 @@ Questa sezione riguarda le metriche di qualità decise per la realizzazione dei 
 \hline
 \rowcolor{bluelogo}\textbf{\textcolor{white}{ID}} & \textbf{\textcolor{white}{Nome}} & \textbf{\textcolor{white}{Ottimalità}} & \textbf{\textcolor{white}{Accettabilità}}\\
 \hline \hline
-\endfirsthead
+\endhead
 MTTS09 & Percentuale di test passati & 100\% & $\geq 95$\%\\
 \hline
 \rowcolor{grigio}MTTS10 & Percentuale di test falliti & 0\% & $\leq 95$\%\\
@@ -133,4 +133,27 @@ MTTS13 & Numero medio di bug trovati per test & $\leq 1$ & 0.2$\leq$x$\leq 10$ \
 
 \caption{Gestione dei Test}
 \label{GestioneTest}
+\end{longtable}
+
+\paragraph{PR06: Versionamento e Build}\-\\
+Il monitoraggio di commit\glossario e build\glossario avviene in modo continuo, attraverso gli strumenti di supporto integrati all'interno di \textit{GitLab}\glossario. Ogni build viene costruita e verificata attraverso l'uso di una pipeline personalizzata definita all'interno del sistema di versionamento\glossario utilizzato. Le seguenti metriche sono descritte all'interno del documento \textit{Norme di Progetto v2.0.0} nella sezione §3.2.5.6.
+
+\subparagraph{Obiettivi}
+\begin{itemize}
+	\item \textbf{Commit Frequenti}: i commit devono essere frequenti per garantire un codice quanto più possibile aggiornato;
+	\item \textbf{Build Positive}: al fine di evitare quanto più possibile il propagarsi di errori e mantenere, al contempo, una base di codice il più possibile funzionante, è necessario che il maggior numero possibile di commit portino al successo della build.
+\end{itemize}
+
+\begin{longtable}{|C{.15\textwidth}|C{.24\textwidth}|C{.24\textwidth}|C{.24\textwidth}|}
+\hline
+\rowcolor{bluelogo}\textbf{\textcolor{white}{ID}} & \textbf{\textcolor{white}{Nome}} & \textbf{\textcolor{white}{Ottimalità}} & \textbf{\textcolor{white}{Accettabilità}}\\
+\hline \hline
+\endhead
+MTPC16 & Media commit per settimana & 50 & 20\\
+\hline
+\rowcolor{grigio}MTPC17 & Percentuale build superate & $\geq 80$\% & $\geq 65$\%\\
+\hline
+
+\caption{Versionamento e Build}
+\label{v&b}
 \end{longtable}
