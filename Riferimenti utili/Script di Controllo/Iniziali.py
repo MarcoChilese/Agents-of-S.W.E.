@@ -5,6 +5,7 @@
 
 import os
 import sys
+import re
 
 rootdir = sys.argv[1]
 revisione = sys.argv[2]
@@ -26,15 +27,22 @@ def checkTitle(line):
     openB = line.find("{", 0, len(line))
     closeB = line.find("}", 0, len(line))
     title = line[openB+1: closeB]
+    title = title.replace('\"', '') 
+    title = title.replace('\\textit{', '')
+    title = title.replace('}', '')
     return checkCapitalLetters(title)
 
-congiunzioni = ["di", "a", "e", "con", "su", "per", "tra", "fra", "che", "o", "dei", "i", "la", "gli", "le", "del", "della", "il", "li", "un", "uno", "una", "un'", "l'", "non"]
+
+congiunzioni = ["di", "a", "e", "con", "su", "per", "tra", "fra", "che", "o", "dei", "i", "la", "gli", "le", "del", "della", "il", "li", "un", "uno", "una", "un'", "l'", "non", "delle", "degli", "d'Uso", "al", "agli", "alle", "ai", "-", "\""]
 def checkCapitalLetters(title):
     words = title.split(" ")
     for word in words:
         if word not in congiunzioni:
-            if word[0].isupper() == False:
-                return False
+            try:
+                if word[0].isupper() == False:
+                    return False
+            except IndexError:
+                print(word)
     return True
 
 with open(os.path.join(rootdir, 'report.txt'), 'w') as report:
@@ -49,6 +57,6 @@ with open(os.path.join(rootdir, 'report.txt'), 'w') as report:
                         if getSection(line) != -1 or getSubsection(line) != -1 or getSubsubsection(line) != -1 or getParagraph(line) != -1:
                             if checkTitle(line) != True: 
                                 totalErrors += 1
-                                report.write("Error in: "+folder+"/"+file+" at line: "+str(atLine)+"\n\n")                                    
+                                report.write("Error in: "+folder+"/"+file+" at line: "+str(atLine)+".\n"+line+"\n\n")                                    
                         atLine += 1
     report.write("\n\nTotal Errors: "+str(totalErrors))        
