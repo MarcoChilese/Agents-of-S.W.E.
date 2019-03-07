@@ -2,8 +2,24 @@
 \label{test_u}
 
 La nomenclatura dei test viene descritta all'interno del documento \textit{Norme di Progetto v2.0.0}, nella sezione §3.2.4. Il codice identificativo dei requisiti è descritto all'interno del documento \textit{Norme di progetto v2.0.0} nella sezione §2.2.2.1.
+tta del \textit{Modello a V}.
 
-\subsection{Test di validazione}
+\newpage
+\section{Test di Integrazione}
+\label{test_i}
+Questa sezione verrà completata nel momento in cui verranno svolti i test. La descrizione di questo tipo di test è riportata nel documento \textit{Norme di Progetto v2.0.0}, nell'appendice §D che tratta del \textit{Modello a V}.
+
+\newpage
+\section{Test di Sistema}
+\label{test_s}
+Questa sezione verrà completata nel momento in cui verranno svolti i test. La descrizione di questo tipo di test è riportata nel documento \textit{Norme di Progetto v2.0.0}, nell'appendice §D che tratta del \textit{Modello a V}.
+\newpage
+
+
+
+
+
+\section{Test di Validazione}
 
 \begin{longtable}{|C{.15\textwidth}|C{.13\textwidth}|m{.52\textwidth}|C{.08\textwidth}|}
 \hline
@@ -15,7 +31,7 @@ TV0-1 & ROF1 &
 	\textbf{Obiettivo}: verificare che il Sistema permetta l'aggiunta di una rete bayesiana, tramite il caricamento di un file. \newline
 	\textbf{Procedimento}:
 	\begin{enumerate}
-		\item L'utente, dal pannello di configurazione del plug-in,individua la l'area di caricamento;
+		\item L'utente, dal pannello di configurazione del plug-in, individua la l'area di caricamento;
 		\item L'utente seleziona il file da caricare;
 		\item L'utente conferma il file selezionato;
 		\item Il Sistema carica e inizializza il file caricato.
@@ -176,7 +192,7 @@ TV0-2.1.2 & ROF2.1.2&
 	& N.I. \\
 \hline
 TV0-2.5.1 & ROF2.5.1 &
- 	\textbf{Obiettivo}: verificare che il Sistema, in seguito al click sul nominativo del nodo appartenente alla rete bayesiana, deve aprire una finestra contenente un elenco delle sorgenti di dati disponibili per il collegamento. \newline
+ 	\textbf{Obiettivo}: verificare che il Sistema, in seguito al click sul nominativo del nodo appartenente alla rete bayesiana, apra una finestra contenente un elenco delle sorgenti di dati disponibili per il collegamento. \newline
  	\textbf{Procedimento}:
  	\begin{enumerate}
  		\item Il Sistema ha salvato in memoria la rete bayesiana caricata precedentemente dall'utente;
@@ -259,19 +275,19 @@ TV0-2.5.6.1 & ROF2.5.6.1 &
 		\item Il Sistema, una volta che l'utente ha selezionato un nodo della rete, modifica l'interfaccia utente mostrando gli appositi campi dati, per ogni stato definito nel nodo selezionato dall'utente;
 		\item Il Sistema mette a disposizione un campo dati numerico per definire la soglia dello stato precedentemente selezionato dall'utente;
 		\item Il Sistema modifica l'interfaccia utente aggiungendo un campo dati per definire se la soglia definita dall'utente è un massimo o un minimo;
-		\item L'utente seleziona se la soglia presa in considerazione è essa un massimo o un minimo.
+		\item L'utente seleziona se la soglia presa in considerazione sia di massimo o di minimo.
 	\end{enumerate}
 	& N.I. \\
 \hline
 TV1-2.5.6.3 & RDF2.5.6.3  &
-	\textbf{Obiettivo}: verificare se il Sistema mette a disposizione un campo dati che permetta di definire se una soglia è critica o meno.  \newline
+	\textbf{Obiettivo}: verificare se il Sistema metta a disposizione un campo dati che permetta di definire se una soglia è critica o meno.  \newline
 	\textbf{Procedimento}:
 	\begin{enumerate}
 		\item Il Sistema modifica l'interfaccia utente mostrando una lista di nodi appartenenti alla rete bayesiana precedentemente caricata;
 		\item L'utente seleziona un nodo da quelli disponibili appartenente alla rete bayesiana;
 		\item Il Sistema, una volta che l'utente ha selezionato un nodo della rete, modifica l'interfaccia utente mostrando gli appositi campi dati, per ogni stato definito nel nodo selezionato dall'utente;
-		\item Il Sistema aggiunge a interfaccia utente un campo dati per definire se la soglia presa in considerazione dall'utente sia una soglia critica o meno;
-		\item L'utente può impostare il campo dati definendo cosi una soglia critica o meno.
+		\item Il Sistema aggiunge a interfaccia utente una check box per definire se la soglia presa in considerazione dall'utente sia una soglia critica o meno;
+		\item L'utente può selezionare la check box definendo cosi una soglia critica o meno.
 	\end{enumerate}
 	& N.I. \\
 \hline
@@ -282,8 +298,8 @@ TV1-2.5.6.3 & RDF2.5.6.3  &
 		\item Il Sistema modifica l'interfaccia utente mostrando una lista di nodi appartenenti alla rete bayesiana precedentemente caricata;
 		\item L'utente seleziona un nodo da quelli disponibili appartenente alla rete bayesiana;
 		\item Il Sistema, una volta che l'utente ha selezionato un nodo della rete, modifica l'interfaccia utente mostrando gli appositi campi dati, per ogni stato definito nel nodo selezionato dall'utente;
-		\item Il Sistema modifica l'interfaccia utente aggiungendo un campo dati al di sopra del quale la probabilità associata a quel stato risulta 100\%;
-		\item Il Sistema modifica l'interfaccia utente aggiungendo un campo dati al di sotto del quale la probabilità associata a quel stato risulta 0\%.
+		\item Il Sistema modifica l'interfaccia utente aggiungendo un campo dati al di sopra del quale la probabilità associata a quel stato risulti 100\%;
+		\item Il Sistema modifica l'interfaccia utente aggiungendo un campo dati al di sotto del quale la probabilità associata a quello stato risulti 0\%.
 	\end{enumerate}
 	& N.I. \\
 \hline
@@ -301,7 +317,7 @@ TV0-2.5.8 & ROF2.5.8 &
 	& N.I. \\
 \hline
 \rowcolor{grigio} TV0-2.5.9 & ROF2.5.9 &
-	\textbf{Obiettivo}: verificare che il Sistema mostri un messaggio d'errore nel caso in cui l'utente abbia confermato le proprie scelte riguardanti il collegamento dei singolo nodo in esame senza aver correttamente definito il livello di soglia. \newline
+	\textbf{Obiettivo}: verificare che il Sistema mostri un messaggio d'errore nel caso in cui l'utente abbia confermato le proprie scelte riguardanti il collegamento dei singolo nodo in esame senza aver correttamente definito i livelli di soglia. \newline
 	\textbf{Procedimento}:
 	\begin{enumerate}
 		\item Il Sistema modifica l'interfaccia utente mostrando una lista di nodi appartenenti alla rete bayesiana precedentemente caricata;
@@ -320,41 +336,41 @@ TV0-2.5.10 & ROF2.5.10 &
 		\item Il Sistema modifica l'interfaccia utente mostrando una lista di nodi appartenenti alla rete bayesiana precedentemente caricata;
 		\item Il Sistema modifica l'interfaccia utente creando una lista di nodi appartenenti alla rete bayesiana;
 		\item L'utente seleziona un nodo desiderato;
-		\item Il Sistema, alla selezione del nodo da parte dell'utente, modifica l'interfaccia utente mostrando la checbox di stato relativa al nodo selezionato;
+		\item Il Sistema, alla selezione del nodo da parte dell'utente, modifica l'interfaccia utente mostrando la checkbox di stato relativa al nodo selezionato;
 		\item L'utente interagisce con l'interfaccia apportando modifiche;
 		\item Il Sistema rileva le modifiche effettuate dall'utente ed aggiorna l'interfaccia utente modificando le checkbox ridefinite da quest'ultimo.
 	 \end{enumerate}
 	& N.I. \\
 \hline
 \rowcolor{grigio} TV0-2.6 & ROF2.6 &
-	\textbf{Obiettivo}: verificare che il Sistema metta a disposizione un bottone per confermare il collegamento dei nodi al flusso di dati. \newline
+	\textbf{Obiettivo}: verificare che il Sistema metta a disposizione un bottone per confermare il collegamento dei nodi ai flussi dati. \newline
 	\textbf{Procedimento}:
 	\begin{enumerate}
 		\item Il Sistema modifica l'interfaccia utente mostrando una lista di nodi appartenenti alla rete bayesiana precedentemente caricata;
 		\item Il Sistema modifica l'interfaccia utente creando una lista di nodi appartenenti alla rete bayesiana;
-		\item Il Sistema modifica l'interfaccia utente creando un bottone per la conferma del collegamento del nodo, preso in considerazione dall'utente, al flussi di dati.
+		\item Il Sistema modifica l'interfaccia utente creando un bottone per la conferma del collegamento dei nodi presi in considerazione dall'utente, ai flussi dati.
 	\end{enumerate}
 	& N.I. \\
 \hline
 TV0-2.7 & ROF2.7 &
-	\textbf{Obiettivo}: verificare che il Sistema mostri un messaggio d'errore nel caso in cui l'utente abbia confermato il collegamento dei nodi senza averne effettivamente collegati alcuno.
+	\textbf{Obiettivo}: verificare che il Sistema mostri un messaggio d'errore nel caso in cui l'utente abbia confermato il collegamento dei nodi senza averne effettivamente collegati alcuno. \newline
 	\textbf{Procedimento}:
 	\begin{enumerate}
 		\item Il Sistema modifica l'interfaccia utente mostrando una lista di nodi appartenenti alla rete bayesiana precedentemente caricata;
 		\item Il Sistema modifica l'interfaccia utente creando una lista di nodi appartenenti alla rete bayesiana;
-		\item Il Sistema modifica l'interfaccia utente creando un bottone per la conferma del collegamento del nodo, preso in considerazione dall'utente, al flussi di dati;
+		\item Il Sistema modifica l'interfaccia utente creando un bottone per la conferma del collegamento dei nodi presi in considerazione dall'utente, ai flussi dati;
 		\item L'utente preme il pulsante di conferma collegamento nodi;
 		\item Il Sistema mostra a interfaccia utente un messaggio d'errore poiché l'utente non ha effettuato effettivamente nessun collegamento.
 	\end{enumerate}
 	& N.I. \\
 \hline
 \rowcolor{grigio} TV0-2.8 & ROF2.8 &
-	\textbf{Obiettivo}: verificare che il Sistema permetta la modifica dei collegamenti da nodi ai flussi di dati, dopo aver confermato le proprie scelte. \newline
+	\textbf{Obiettivo}: verificare che il Sistema permetta la modifica dei collegamenti dei nodi ai flussi dati, dopo aver confermato le proprie scelte. \newline
 	\textbf{Procedimento}:
 	\begin{enumerate}
 		\item Il Sistema modifica l'interfaccia utente mostrando una lista di nodi appartenenti alla rete bayesiana precedentemente caricata;
 		\item Il Sistema modifica l'interfaccia utente creando una lista di nodi appartenenti alla rete bayesiana;
-		\item Il Sistema modifica l'interfaccia utente creando un bottone per la conferma del collegamento del nodo, preso in considerazione dall'utente, al flussi di dati;
+		\item Il Sistema modifica l'interfaccia utente creando un bottone per la conferma del collegamento dei nodi presi in considerazione dall'utente, ai flussi dati;
 		\item L'utente collega il nodo selezionato a un flusso di dati;
 		\item L'utente preme il pulsante di conferma collegamento nodi;
 		\item Il Sistema aggiunge al pannello di configurazione un bottone per la modifica dei collegamenti definiti dall'utente.
@@ -405,7 +421,7 @@ TV0-3.3 & ROF3.3 &
 	\textbf{Procedimento}:
 	\begin{enumerate}
 		\item L'utente dal pannello di configurazione delle politiche temporali, imposta le politiche temporali desiderate;
-		\item Il Sistema rileva la modifica effettuata dall'utente ed aggiorna la rete bayesiana;
+		\item Il Sistema rileva la modifica effettuata dall'utente ed aggiorna la rete bayesiana.
 	\end{enumerate}
 	& N.I. \\
 \hline
@@ -430,10 +446,10 @@ TV0-3.3.2 & ROF3.3.2 &
 \rowcolor{grigio} TV0-3.3.2.1 & ROF3.3.2.1 &
 	\textbf{Obiettivo}: verificare che il Sistema metta a disposizione un campo dati numerico per la definizione di un timeout ciclico. \newline
 	\textbf{Procedimento}:
-	\begin{center}
+	\begin{enumerate}
 		\item L'utente preme il pulsante per accedere al pannello di configurazione delle politiche temporali;
 		\item Il Sistema modifica l'interfaccia utente mostrando un campo dati numerico per la definizione del timeout ciclico.
-	\end{center}
+	\end{enumerate}
 	& N.I. \\
 \hline
 TV0-3.3.2.2 & ROF3.3.2.2 &
@@ -533,9 +549,9 @@ TV0-4.4.3 & ROF4.4.3 &
 	\textbf{Procedimento}:
 	\begin{enumerate}
 		\item Il Sistema ha inizializzato la rete bayesiana precedentemente caricata dall'utente;
-		\item L'utente collega i nodi desiderati ai flussi di dati, definisce la politica temporale e imposta le soglie;
+		\item L'utente collega i nodi desiderati ai flussi dati, definisce la politica temporale e imposta le soglie;
 		\item L'utente preme sul bottone di avvio monitoraggio;
-		\item Il Sistema modifica l'interfacca utente mostrando una lista di probabilità dinamiche associate ai nodi della rete.
+		\item Il Sistema modifica l'interfaccia utente mostrando una lista di probabilità dinamiche associate ai nodi della rete.
 	\end{enumerate}
 	& N.I. \\
 \hline
@@ -576,7 +592,7 @@ TV2-5 & RFF5 &
 	\begin{enumerate}
 		\item Il Sistema ha inizializzato la rete bayesiana precedentemente caricata dall'utente;
 		\item L'utente collega i nodi desiderati ai flussi di dati, definisce la politica temporale e imposta le soglie;
-		\item L'utente preme il bottone di avvio monitoraggio;
+		\item L'utente preme il bottone di avvio monitoraggio.
 	\end{enumerate}
 	& N.I. \\
 \hline
@@ -635,7 +651,7 @@ TV2-6.2 & RFF6.2 &
 	& N.I. \\
 \hline
 	\rowcolor{grigio} TV2-6.2.1 & RFF6.2.1 &
-	\textbf{Obiettivo}: verificare che il Sistema permetta la selezione di alert da eliminare attraverso il panello di visualizzazione degli alert;
+	\textbf{Obiettivo}: verificare che il Sistema permetta la selezione di alert da eliminare attraverso il panello di visualizzazione degli alert. \newline
 	\textbf{Procedimento}:
 	\begin{enumerate}
 		\item Il Sistema ha inizializzato la rete bayesiana precedentemente caricata dall'utente;
@@ -652,15 +668,4 @@ TV2-6.2 & RFF6.2 &
 
 
 
-% Questa sezione verrà completata nel momento in cui verranno svolti i test. La descrizione di questo tipo di test è riportata nel documento \textit{Norme di Progetto v2.0.0}, nell'appendice §D che tratta del \textit{Modello a V}.
-
-\newpage
-\section{Test di Integrazione}
-\label{test_i}
-Questa sezione verrà completata nel momento in cui verranno svolti i test. La descrizione di questo tipo di test è riportata nel documento \textit{Norme di Progetto v2.0.0}, nell'appendice §D che tratta del \textit{Modello a V}.
-
-\newpage
-\section{Test di Sistema}
-\label{test_s}
-Questa sezione verrà completata nel momento in cui verranno svolti i test. La descrizione di questo tipo di test è riportata nel documento \textit{Norme di Progetto v2.0.0}, nell'appendice §D che tratta del \textit{Modello a V}.
-\newpage
+% Questa sezione verrà completata nel momento in cui verranno svolti i test. La descrizione di questo tipo di test è riportata nel documento \textit{Norme di Progetto v2.0.0}, nell'appendice §D che tra
