@@ -395,17 +395,27 @@ TV0-2.8.1 & ROF2.8.1 &
 	\end{enumerate}
 	& N.I. \\
 \hline
-TV0-2.8.3 & ROF2.8.3 &
-	\textbf{Obiettivo}: verificare che il Sistema interrompa la visualizzazione dei dati ed elimini eventuali alert ad essi associati nel caso in cui l'utente modifichi o elimini un collegamento. \newline
+TV0-2.8.3 & RFF2.8.3 &
+	\textbf{Obiettivo}: verificare che il Sistema interrompa la visualizzazione dei dati nel caso in cui l'utente modifichi o elimini un collegamento. \newline
 	\textbf{Procedimento}:
 	\begin{enumerate}
 		\item L'utente da interfaccia accede al pannello di configurazione per sbloccare la modifica dei nodi precedentemente collegati;
 		\item L'utente modifica o elimina il collegamento desiderato;
-		\item Il Sistema aggiorna l'interfaccia eliminando eventuali aler definiti precedentemente sul collegamento preso in considerazione dall'utente.
+		\item Il Sistema interrompe la visualizzazione dei dati da interfaccia utente per il precedente collegamento; 
 	\end{enumerate}
 	& N.I. \\
 \hline
-\rowcolor{grigio} TV0-3 & ROF3 &
+\rowcolor{grigio} TV2-2.8.4 & RFF2.8.4 & 
+	\textbf{Obiettivo}: verificare che il sistema elimini eventuali alert associati ai nodi della rete bayesiana nel caso in cui l'utente interagisca con il Sistema per modificare il collegamento dei nodi. \newline
+	\textbf{Procedimento}: 
+	\begin{enumerate}
+		\item L'utente da interfaccia accede al pannello di configurazione per sbloccare la modifica dei nodi precedentemente collegati;
+		\item L'utente modifica o elimina il collegamento desiderato;
+		\item Il Sistema aggiorna l'interfaccia eliminando eventuali alert definiti precedentemente sul collegamento preso in considerazione dall'utente.
+	\end{enumerate}
+	& N.I. \\
+\hline
+TV0-3 & ROF3 &
 	\textbf{Obiettivi}: verificare che il Sistema permetta la definizione di una politica temporale per il ricalcolo delle probabilità condizionate associate ai nodi della rete bayesiana. \newline
 	\textbf{Procedimento}:
 	\begin{enumerate}
@@ -416,7 +426,7 @@ TV0-2.8.3 & ROF2.8.3 &
 	\end{enumerate}
 	& N.I. \\
 \hline
-TV0-3.3 & ROF3.3 &
+\rowcolor{grigio}TV0-3.3 & ROF3.3 &
 	\textbf{Obiettivi}: verificare che il Sistema offra la possibilità di definire una politica temporale. \newline
 	\textbf{Procedimento}:
 	\begin{enumerate}
@@ -425,7 +435,7 @@ TV0-3.3 & ROF3.3 &
 	\end{enumerate}
 	& N.I. \\
 \hline
-\rowcolor{grigio} TV0-3.3.1 & ROF3.3.1 &
+ TV0-3.3.1 & ROF3.3.1 &
 	\textbf{Obiettivo}: verificare che il Sistema metta a disposizione un pulsante per accedere al pannello di configurazione di una politica temporale. \newline
 	\textbf{Procedimento}:
 	\begin{enumerate}
@@ -434,7 +444,7 @@ TV0-3.3 & ROF3.3 &
 	\end{enumerate}
 	& N.I. \\
 \hline
-TV0-3.3.2 & ROF3.3.2 &
+\rowcolor{grigio}TV0-3.3.2 & ROF3.3.2 &
 	\textbf{Obiettivo}: verificare che il Sistema metta a disposizione un pannello di configurazione con i campi dati adeguati per la definizione di una politica temporale. \newline
 	\textbf{Procedimento}:
 	\begin{enumerate}
@@ -443,7 +453,7 @@ TV0-3.3.2 & ROF3.3.2 &
 	\end{enumerate}
 	& N.I. \\
 \hline
-\rowcolor{grigio} TV0-3.3.2.1 & ROF3.3.2.1 &
+ TV0-3.3.2.1 & ROF3.3.2.1 &
 	\textbf{Obiettivo}: verificare che il Sistema metta a disposizione un campo dati numerico per la definizione di un timeout ciclico. \newline
 	\textbf{Procedimento}:
 	\begin{enumerate}
@@ -452,7 +462,7 @@ TV0-3.3.2 & ROF3.3.2 &
 	\end{enumerate}
 	& N.I. \\
 \hline
-TV0-3.3.2.2 & ROF3.3.2.2 &
+\rowcolor{grigio}TV0-3.3.2.2 & ROF3.3.2.2 &
 	\textbf{Obiettivo}: verificare che il Sistema fornisca un campo dati per la definizione di misura temporale associata al timeout. \newline
 	\textbf{Procedimento}:
 	\begin{enumerate}
@@ -462,7 +472,7 @@ TV0-3.3.2.2 & ROF3.3.2.2 &
 	\end{enumerate}
 	& N.I. \\
 \hline
-\rowcolor{grigio} TV0-3.3.3 & ROF3.3.3 &
+TV0-3.3.3 & ROF3.3.3 &
 	\textbf{Obiettivo}: verificare che il Sistema dia la possibilità di modificare i campi dati per definire correttamente la politica temporale desiderata. \newline
 	\textbf{Procedimento}:
 	\begin{enumerate}
@@ -471,7 +481,7 @@ TV0-3.3.2.2 & ROF3.3.2.2 &
 	\end{enumerate}
 	& N.I. \\
 \hline
-TV0-3.4 & ROF3.4 &
+\rowcolor{grigio}TV0-3.4 & ROF3.4 &
 	\textbf{Obiettivo}: verificare che il Sistema metta a disposizione un bottone per confermare la politica temporale definita dall'utente. \newline
 	\textbf{Procedimento}:
 	\begin{enumerate}
@@ -480,7 +490,7 @@ TV0-3.4 & ROF3.4 &
 	\end{enumerate}
 	& N.I. \\
 \hline
-\rowcolor{grigio} TV0-3.5 & ROF3.5 &
+ TV0-3.5 & ROF3.5 &
 	\textbf{Obiettivo}: verificare che il Sistema visualizzi un messaggio d'errore nel caso in cui l'utente confermi una politica temporale non correttamente definita. \newline
 	\textbf{Procedimento}:
 	\begin{enumerate}
@@ -492,7 +502,7 @@ TV0-3.4 & ROF3.4 &
 	\end{enumerate}
 	& N.I. \\
 \hline
-TV0-4 & ROF4 &
+\rowcolor{grigio}TV0-4 & ROF4 &
 	\textbf{Obiettivo}: verificare che il Sistema a interfaccia utente mostri i dati relativi ai nodi della rete bayesiana non collegati a un flusso di dati. \newline
 	\textbf{Procedimento}:
 	\begin{enumerate}
@@ -502,7 +512,7 @@ TV0-4 & ROF4 &
 	\end{enumerate}
 	& N.I. \\
 \hline
-\rowcolor{grigio} TV0-4.4 & ROF4.4 &
+TV0-4.4 & ROF4.4 &
 	\textbf{Obiettivo}: verificare che il Sistema metta a disposizione un pulsante per avviare il monitoraggio dei dati. \newline
 	\textbf{Procedimento}:
 	\begin{enumerate}
@@ -511,7 +521,7 @@ TV0-4 & ROF4 &
 	\end{enumerate}
 	& N.I. \\
 \hline
-TV0-4.4.1 & ROF4.4.1 &
+\rowcolor{grigio}TV0-4.4.1 & ROF4.4.1 &
 	\textbf{Obiettivo}: verificare che il Sistema faccia visualizzare un messaggio d'errore nel caso in cui l'utente abbia avviato il monitoraggio senza aver preventivamente caricato una rete bayesiana. \newline
 	\textbf{Procedimento}:
 	\begin{enumerate}
@@ -522,7 +532,7 @@ TV0-4.4.1 & ROF4.4.1 &
 	\end{enumerate}
 	& N.I. \\
 \hline
-\rowcolor{grigio} TV0-4.4.2 & ROF4.4.2 &
+TV0-4.4.2 & ROF4.4.2 &
 	\textbf{Obiettivo}: verificare che il Sistema faccia visualizzare un messaggio di errore nel caso in cui l'utente abbia avviato il monitoraggio senza aver preventivamente collegato alcuni dei nodi della rete ad un flusso di dati. \newline
 	\textbf{Procedimento}:
 	\begin{enumerate}
@@ -533,7 +543,7 @@ TV0-4.4.1 & ROF4.4.1 &
 	\end{enumerate}
 	& N.I. \\
 \hline
-TV0-4.4.3 & ROF4.4.3 &
+\rowcolor{grigio}TV0-4.4.3 & ROF4.4.3 &
 	\textbf{Obiettivo}: verificare che il Sistema mostri un messaggio di errore nel caso in cui l'utente abbia avviato il monitoraggio senza aver preventivamente impostato la politica temporale per il ricalcolo delle probabilità. \newline
 	\textbf{Procedimento}:
 	\begin{enumerate}
@@ -544,7 +554,7 @@ TV0-4.4.3 & ROF4.4.3 &
 	\end{enumerate}
 	& N.I. \\
 \hline
-\rowcolor{grigio} TV0-4.5 & ROF4.5 &
+TV0-4.5 & ROF4.5 &
 	\textbf{Obiettivo}: verificare che il Sistema fornisca all'utente una lista di probabilità dinamiche associate ai nodi della rete. \newline
 	\textbf{Procedimento}:
 	\begin{enumerate}
@@ -555,7 +565,7 @@ TV0-4.4.3 & ROF4.4.3 &
 	\end{enumerate}
 	& N.I. \\
 \hline
-TV0-4.6 & ROF4.6 &
+\rowcolor{grigio}TV0-4.6 & ROF4.6 &
 	\textbf{Obiettivo}: verificare che il Sistema aggiorni periodicamente le probabilità in base a quanto definito nella politica temporale per il ricalcolo delle probabilità. \newline
 	\textbf{Procedimento}:
 	\begin{enumerate}
@@ -566,7 +576,7 @@ TV0-4.6 & ROF4.6 &
 	\end{enumerate}
 	& N.I. \\
 \hline
-\rowcolor{grigio} TV1-4.6.1 & RDF 4.6.1 &
+TV1-4.6.1 & RDF 4.6.1 &
 	\textbf{Obiettivo}: verificare che il Sistema, indipendentemente dalla politica temporale definita dall'utente, ricalcoli le probabilità al verificarsi del superamento di una soglia critica associata ad uno stato di un nodo collegato al flusso di dati di monitoraggio. \newline
 	\textbf{Procedimento}:
 	\begin{enumerate}
@@ -577,17 +587,17 @@ TV0-4.6 & ROF4.6 &
 	\end{enumerate}
 	& N.I. \\
 \hline
-TV2-5 & RFF5 &
-	\textbf{Obiettivo}: verificare che il Sistema dia la possibilità di definire alert basati sui dati relativi ai nodi della rete non collegati al flusso. \newline
+\rowcolor{grigio}TV2-5 & RFF5 &
+	\textbf{Obiettivo}: verificare che il Sistema dia la possibilità di definire alertt basati sui dati relativi ai nodi della rete non collegati al flusso. \newline
 	\textbf{Procedimento}:
 	\begin{enumerate}
 		\item Il Sistema ha inizializzato la rete bayesiana precedentemente caricata dall'utente;
-		\item Il Sistema modifica il pannello di configurazione fornendo la possibilità di definire alert sui nodi non collegati al flusso di dati.
+		\item Il Sistema modifica il pannello di configurazione fornendo la possibilità di definire alertt sui nodi non collegati al flusso di dati.
 	\end{enumerate}
 	& N.I. \\
 \hline
-\rowcolor{grigio} TV2-5.1 & RFF5.1 &
-	\textbf{Obiettivo}: verificare che il Sistema metta a disposizione di \textit{Grafana}, i dati per l'operazione di creazione di alert ad essi associati da parte dell'utente. \newline
+TV2-5.1 & RFF5.1 &
+	\textbf{Obiettivo}: verificare che il Sistema metta a disposizione di \textit{Grafana}, i dati per l'operazione di creazione di alertt ad essi associati da parte dell'utente. \newline
 	\textbf{Procedimento}:
 	\begin{enumerate}
 		\item Il Sistema ha inizializzato la rete bayesiana precedentemente caricata dall'utente;
@@ -596,7 +606,7 @@ TV2-5 & RFF5 &
 	\end{enumerate}
 	& N.I. \\
 \hline
-TV2-5.1.1 & RFF5.1.1 &
+\rowcolor{grigio}TV2-5.1.1 & RFF5.1.1 &
 	\textbf{Obiettivo}: verificare che il pannello G\&B supporti la funzione di "edit" da parte dell'utente. \newline
 	\textbf{Procedimento}:
 	\begin{enumerate}
@@ -605,60 +615,60 @@ TV2-5.1.1 & RFF5.1.1 &
 	\end{enumerate}
 	& N.I. \\
 \hline
-\rowcolor{grigio} TV2-5.1.2 & RFF5.1.2 &
-	\textbf{Obiettivo}: verificare che il Sistema metta a disposizione dell'utente un pulsante di aggiunta alert, che conduca l'utente alle impostazioni di edit del pannello. \newline
+TV2-5.1.2 & RFF5.1.2 &
+	\textbf{Obiettivo}: verificare che il Sistema metta a disposizione dell'utente un pulsante di aggiunta alertt, che conduca l'utente alle impostazioni di edit del pannello. \newline
 	\textbf{Procedimento}:
 	\begin{enumerate}
 		\item Il pannello del plug-in di G\&B estende il pannello base di \textit{Grafana};
 		\item Il Sistema inizializza il pannello di editing;
-		\item Il Sistema inizializza il Sistema di alert fornita dalle funzionalità base di \textit{Grafana}.
+		\item Il Sistema inizializza il Sistema di alertt fornita dalle funzionalità base di \textit{Grafana}.
 	\end{enumerate}
 	& N.I. \\
 \hline
-TV2-6 & RFF6 &
-	\textbf{Obiettivo}: verificare che il Sistema dia la possibilità di visualizzare gli alert creati sulla base dei dati relativi ai nodi della rete bayesiana non collegati al flusso. \newline
+\rowcolor{grigio}TV2-6 & RFF6 &
+	\textbf{Obiettivo}: verificare che il Sistema dia la possibilità di visualizzare gli alertt creati sulla base dei dati relativi ai nodi della rete bayesiana non collegati al flusso. \newline
 	\textbf{Procedimento}:
 	\begin{enumerate}
 		\item Il pannello del plug-in di G\&B estende il pannello base di \textit{Grafana};
-		\item Il Sistema inizializza il Sistema di alert fornita dalle funzionalità base di \textit{Grafana};
-		\item L'utente accede al pannello di configurazione degli alert di \textit{Grafana}.
+		\item Il Sistema inizializza il Sistema di alertt fornita dalle funzionalità base di \textit{Grafana};
+		\item L'utente accede al pannello di configurazione degli alertt di \textit{Grafana}.
 	\end{enumerate}
 	& N.I. \\
 \hline
-\rowcolor{grigio} TV2-6.1 & RFF6.1 &
-	\textbf{Obiettivo}: verificare che il Sistema metta periodicamente a disposizione della piattaforma \textit{Grafana} i dati aggiornati per il monitoraggio costante dello stato degli alert. \newline
+TV2-6.1 & RFF6.1 &
+	\textbf{Obiettivo}: verificare che il Sistema metta periodicamente a disposizione della piattaforma \textit{Grafana} i dati aggiornati per il monitoraggio costante dello stato degli alertt. \newline
 	\textbf{Procedimento}:
 	\begin{enumerate}
 		\item Il Sistema ha inizializzato la rete bayesiana precedentemente caricata dall'utente;
 		\item L'utente collega i nodi desiderati ai flussi di dati, definisce la politica temporale e imposta le soglie;
 		\item L'utente preme il bottone di avvio monitoraggio;
 		\item Il Sistema salva nel database le probabilità calcolate dal plug-in G\&B;
-		\item Il Sistema preleva i dati necessari dal database e aggiorna il monitoraggio dello stato degli alert;
+		\item Il Sistema preleva i dati necessari dal database e aggiorna il monitoraggio dello stato degli alertt;
 	\end{enumerate}
 	& N.I. \\
 \hline
-TV2-6.2 & RFF6.2 &
-	\textbf{Obiettivo}: verificare che il Sistema permetta di rimuovere gli alert associati ai nodi della rete bayesiana. \newline
+\rowcolor{grigio}TV2-6.2 & RFF6.2 &
+	\textbf{Obiettivo}: verificare che il Sistema permetta di rimuovere gli alertt associati ai nodi della rete bayesiana. \newline
 	\textbf{Procedimento}:
 	\begin{enumerate}
 		\item Il Sistema ha inizializzato la rete bayesiana precedentemente caricata dall'utente;
 		\item L'utente collega i nodi desiderati ai flussi di dati, definisce la politica temporale e imposta le soglie;
-		\item L'utente inizializza gli alert desiderati;
-		\item L'utente preme il bottone di conferma per gli alert;
-		\item L'utente elimina gli alert desiderati;
-		\item L'utente conferma l'eliminazione degli alert.
+		\item L'utente inizializza gli alertt desiderati;
+		\item L'utente preme il bottone di conferma per gli alertt;
+		\item L'utente elimina gli alertt desiderati;
+		\item L'utente conferma l'eliminazione degli alertt.
 	\end{enumerate}
 	& N.I. \\
 \hline
-	\rowcolor{grigio} TV2-6.2.1 & RFF6.2.1 &
-	\textbf{Obiettivo}: verificare che il Sistema permetta la selezione di alert da eliminare attraverso il panello di visualizzazione degli alert. \newline
+TV2-6.2.1 & RFF6.2.1 &
+	\textbf{Obiettivo}: verificare che il Sistema permetta la selezione di alertt da eliminare attraverso il panello di visualizzazione degli alertt. \newline
 	\textbf{Procedimento}:
 	\begin{enumerate}
 		\item Il Sistema ha inizializzato la rete bayesiana precedentemente caricata dall'utente;
-		\item L'utente collega i nodi desiderati ai flussi di dati, definisce la politica temporale, imposta le soglie e definisce gli alerti desiderati;
-		\item L'utente accede al pannello di configurazione degli alert;
-		\item L'utente seleziona l'alert desiderato;
-		\item L'utente conferma l'eliminazione dell'alert selezionato precedentemente premendo il bottone di conferma.
+		\item L'utente collega i nodi desiderati ai flussi di dati, definisce la politica temporale, imposta le soglie e definisce gli alertti desiderati;
+		\item L'utente accede al pannello di configurazione degli alertt;
+		\item L'utente seleziona l'alertt desiderato;
+		\item L'utente conferma l'eliminazione dell'alertt selezionato precedentemente premendo il bottone di conferma.
 	\end{enumerate}
 	& N.I. \\
 \hline
