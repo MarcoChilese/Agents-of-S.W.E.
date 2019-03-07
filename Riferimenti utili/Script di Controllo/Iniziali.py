@@ -30,6 +30,7 @@ def checkTitle(line):
     title = title.replace('\"', '') 
     title = title.replace('\\textit{', '')
     title = title.replace('}', '')
+    title = title.replace('d\'', '')
     return checkCapitalLetters(title)
 
 
