@@ -1,0 +1,57 @@
+La gestione di progetto avviene tramite un sistema di task integrato nei servizii di hosting \textit{GitHub e GitLab}. 
+Esso permette l'integrazione delle task con il repository stesso, dando la possibilità ai vari commit di chiudere con comandi appositi determinate task, aumentando cosi l'automazione di tutto il processo. 
+
+\subsubsection{Configurazione Strumenti di Organizzazione}
+	La configurazione di tutto il processo di organizzazione avviene nel portale di \textit{GitHub}, dove si crea una project board per ogni categoria di processo. 	
+
+\paragraph{Inizializzazione} \-\\
+ L'inizializzazione della project board avviene tramite un'istanza vuota oppure selezionando un template di ciclo di vita fornito da \textit{GitHub} largamente utilizzate in molti progetti, quindi testati ed affidabili. Tra i template forniti abbiamo: 
+
+\begin{itemize}
+		\item \textbf{Basic Kanban}: presenta le fasi di ToDo, In Progress, e Done; 
+		\item \textbf{Automated Kanban}: presenta trigger\glossario predefiniti che permettono lo spostamento di task
+		 automatici nei vari cicli di vita, utilizzando il meccanismo di chiusura dei commit;
+		\item \textbf{Automated Kanban with Reviews}: tutto cioè che viene incluso nel template \textit{Automated Kanban} con l'aggiunta di trigger per la revisione di nuove componenti; 
+		\item \textbf{Bug Triage}: template centrato sulla gestione degli errori, fornendo un ciclo di vita per essi che varia tra ToDo, Alta Priorità, Bassa Priorità e Chiusi. 
+\end{itemize}
+	  	
+\paragraph{Aggiunta Milestone} \-\\
+	Le milestone\glossario sono gruppi di task mirate ad un obbiettivo comune tra esse.
+	Possono essere aggiunte in qualsiasi momento, sia prima che dopo la creazione di una task.
+
+\subsubsection{Ciclo di Vita delle Task}
+
+\paragraph{Apertura} \-\\
+	Da una specifica project board si possono creare le task o le issue\glossario, le quali possono essere assegnate ad uno o più individui che collaborano al repository, inoltre ogni task può far parte di una milestone, che raggruppa un insieme di task o issue per il raggiungimento di un obbiettivo comune. \\
+	Ad ognuna di esse può essere assegnato un colore che ne identifica il tipo come per esempio: bug, ToDo, miglioramenti, ecc.,\\
+	Si può creare una nuova task senza l'obbligo di assegnarla ad una project board, mantenendo comunque tutte le funzionalità descritte precedentemente. 
+
+\paragraph{Completamento} \-\\\label{ProcessiOrganizzativi_GestioneProgetto_CicloTask_Completamento}
+	Il completamento di una task avviene in diversi modi, a seconda delle impostazioni della project board. 
+	Se la project board è automatizzata, il completamento di una task può avvenire tramite commit utilizzando il codice di chiusura. \\
+	Questo metodo collega direttamente l'implementazione richiesta alla task. \\
+	Se la project board non è automatizzata, il completamento dalla task deve essere manuale spostandola nello stato di "Concluso". 
+	
+\paragraph{Richiesta di Revisione} \-\\
+	Accumulate un certo numero di task o di milestone, si avvia la procedura di revisione da parte del \textit{Verificatore}. \\ Questa può essere notificata e pianificata in modo automatico a seconda del livello di automatizzazione della project board, oppure può essere totalmente gestita dal \textit{Verificatore}. 
+	
+	
+	\paragraph{Chiusura} \-\\
+	Una volta che le task o le milestone sono state approvate dal \textit{Verificatore}, esse concludono il loro ciclo di vita nello stato di chiusura, le quali verranno spostate manualmente dal \textit{Verificatore} o automaticamente dalla project board se il merge è avvenuto con successo. 
+	
+\paragraph{Riapertura} \-\\ \label{ProcessiOrganizzativi_Riapertura}
+	Le task in stato di "Chiusura" possono essere riaperte e spostate nello stato di "Apertura" se esse non soddisfanno tutti i parametri di qualità richiesti.
+	
+\subsubsection{Ruoli di Progetto}\label{ProcessiOrganizzativi_RuoliProgetto}
+	Nell'ottica di un lavoro ben organizzato e collaborativo tra i membri del gruppo, ad ogni componente, in ogni 					momento, è attribuito un ruolo per un periodo di tempo limitato.\\
+	Questi ruoli, che corrispondono ad una figura aziendale ben precisa, sono:
+	\begin{itemize}
+	\item \textit{Responsabile di Progetto};
+	\item \textit{Amministratore di Progetto};
+	\item \textit{Analista};
+	\item \textit{Progettista};
+	\item \textit{Programmatore};
+	\item \textit{Verificatore}.
+	\end{itemize}
+	\input{Chapters/Ruoli.tex}
+	

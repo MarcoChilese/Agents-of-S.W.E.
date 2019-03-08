@@ -1,0 +1,163 @@
+\section{Qualità di Processo}
+\label{qualitaProcesso}
+
+\subsection{Scopo}
+
+La seguente sezione si prefigge lo scopo di esporre le tecniche che verranno utilizzate durante lo svolgimento del progetto, al fine di garantire la qualità dei processi istanziati durante il suo sviluppo. In particolar modo si farà riferimento al Principio di Miglioramento Continuo, denominato PDCA\glossario e verrà seguito lo standard ISO/IEC 15504, comunemente conosciuto con l'acronimo SPICE\glossario (Software Process Improvement and Capability Determination).\\
+Al fine di garantire migliore qualità nei processi interni al gruppo, abbiamo deciso di valutare i processi attivi seguendo il Capability Maturity Model Integration(CMMI) descritto nel documento \textit{Norme di Progetto v2.0.0} all'appendice C.
+
+\subsection{Processi}
+\subsubsection{Gestione del Progetto e dei Processi} 
+
+Questo processo si prefigge di descrivere le modalità con le quali il gruppo \texttt{Agents of S.W.E.} intende organizzarsi per lo svolgimento del progetto. In esso sono racchiuse le seguenti attività:
+\begin{itemize}
+	\item Scelta del modello del ciclo di vita del prodotto;
+	\item Descrizione delle attività da svolgere;
+	\item Descrizione dei compiti;
+	\item Pianificazione del lavoro in termini di tempo;
+	\item Pianificazione dei costi;
+	\item Assegnazione dei compiti;
+	\item Verifica del soddisfacimento degli obiettivi.
+\end{itemize}
+\pagebreak
+\paragraph{PR01: Gestione dei Task} \-\\
+Viene utilizzata la metrica Schedule Variance (SV), descritta nel documento \textit{Norme di Progetto v2.0.0}, all'interno della sezione §3.2.5.1.
+
+\begin{longtable}{|C{.15\textwidth}|C{.24\textwidth}|C{.24\textwidth}|C{.24\textwidth}|}
+\hline
+\rowcolor{bluelogo}\textbf{\textcolor{white}{ID}} & \textbf{\textcolor{white}{Nome}} & \textbf{\textcolor{white}{Ottimalità}} & \textbf{\textcolor{white}{Accettabilità}}\\
+\hline \hline
+\endhead
+MTPC01 & Schedule Variance (SV) & $\leqslant 0$ giorni & $\leqslant +3$ giorni \\
+\hline
+\caption{Gestione dei Tempi}
+\label{GestioneTempi}
+\end{longtable}
+
+\paragraph{PR02: Gestione dei Costi} \-\\
+Per la gestione dei costi del progetto vengono utilizzati gli indici Budget Variance (BV) e Estimated at Completion(EAC), descritti nelle \textit{Norme di Progetto v2.0.0} nelle sezioni §3.2.5.2.
+\begin{longtable}{|C{.15\textwidth}|C{.24\textwidth}|C{.24\textwidth}|C{.24\textwidth}|}
+\hline
+\rowcolor{bluelogo}\textbf{\textcolor{white}{ID}} & \textbf{\textcolor{white}{Nome}} & \textbf{\textcolor{white}{Ottimalità}} & \textbf{\textcolor{white}{Accettabilità}}\\
+\hline \hline
+\endhead
+MTPC02 & Budget Variance (BV) & $\leqslant 0\% $ & $\leqslant 12\%$ \\
+\hline
+\rowcolor{grigio} MTPC03 & Estimated at Completion (EAC) & $\leqslant 0\% $ & $\leqslant 12\%$ \\
+\hline
+\iffalse
+MTPC04 & Cost Variance (CV) & $\leqslant 0\% $ & $ \leqslant -5\%$ \\
+\hline
+\fi
+\caption{Gestione dei Costi}
+\label{GestioneCosti}
+\end{longtable}
+
+\paragraph{PR03: Verifica del Software}\-\\
+\label{VerificaSoftwareCap}
+Vengono utilizzati i seguenti indici descritti nelle  \textit{Norme di Progetto v2.0.0} nella sezione §3.2.5.3:
+\begin{itemize}
+	\item Function Coverage (FC);
+	\item Statement Coverage (SC);
+	\item Branch Coverage (BC);
+	\item Condition Coverage (CC).
+\end{itemize}
+
+\begin{longtable}{|C{.15\textwidth}|C{.24\textwidth}|C{.24\textwidth}|C{.24\textwidth}|}
+\hline
+\rowcolor{bluelogo}\textbf{\textcolor{white}{ID}} & \textbf{\textcolor{white}{Nome}} & \textbf{\textcolor{white}{Ottimalità}} & \textbf{\textcolor{white}{Accettabilità}}\\
+\hline \hline
+\endhead
+MTPC04 & Function Coverage (FC) & 100\% & $\geqslant 95\%$ \\
+\hline
+\rowcolor{grigio} MTPC05 & Statement Coverage (SC) & 100\% & $\geqslant 95\%$ \\
+\hline
+MTPC06 & Branch Coverage (BC) & 100\% & $\geqslant 95\%$ \\
+\hline
+\rowcolor{grigio}MTPC07 & Condition Coverage (CC) & 100\% & $\geqslant 95\%$ \\
+\hline
+\caption{Verifica del Software}
+\label{VerificaSoftware}
+\end{longtable}
+
+\paragraph{PR04: Gestione dei Rischi}\-\\
+Verrà utilizzata la seguente metrica descritta nella sezione §3.2.5.4.
+\begin{itemize}
+	\item \textbf{Analisi dei Rischi}: all'inizio di ogni nuova fase verranno rianalizzati i precedenti rischi e verranno incrementati se necessario;
+	\item \textbf{Risoluzione dei Rischi}: nel momento in cui si dovesse verificare un rischio, il gruppo deve essere in grado di risolverlo in un tempo ragionevole, evitando cospicui ritardi.
+\end{itemize}
+
+\begin{longtable}{|C{.15\textwidth}|C{.24\textwidth}|C{.24\textwidth}|C{.24\textwidth}|}
+\hline
+\rowcolor{bluelogo}\textbf{\textcolor{white}{ID}} & \textbf{\textcolor{white}{Nome}} & \textbf{\textcolor{white}{Ottimalità}} & \textbf{\textcolor{white}{Accettabilità}}\\
+\hline \hline
+\endhead
+MTPC08 & Rischi non Preventivati & 0 & $ \leqslant +4$ rischi \\
+\hline
+\caption{Gestione dei Rischi}
+\label{GestioneRischi}
+\end{longtable}
+
+\paragraph{PR05: Gestione dei Test}\-\\
+Questa sezione riguarda le metriche di qualità decise per la realizzazione dei test e del loro svolgimento, descritte nelle \textit{Norme di Progetto v2.0.0} nella sezione §3.2.5.5.
+
+\begin{itemize}
+	\item Percentuale di test passati;
+	\item Percentuale di test falliti;
+	\item Percentuale di difetti sistemati;
+	\item Tempo medio di risoluzione degli errori;
+	\item Numero medio di bug trovati per test;
+	\iffalse \item Difetti trovati per requisito. \fi
+\end{itemize}
+
+\begin{longtable}{|C{.15\textwidth}|C{.24\textwidth}|C{.24\textwidth}|C{.24\textwidth}|}
+\hline
+\rowcolor{bluelogo}\textbf{\textcolor{white}{ID}} & \textbf{\textcolor{white}{Nome}} & \textbf{\textcolor{white}{Ottimalità}} & \textbf{\textcolor{white}{Accettabilità}}\\
+\hline \hline
+\endhead
+MTTS09 & Percentuale di test passati & 100\% & $\geq 95$\%\\
+\hline
+\rowcolor{grigio}MTTS10 & Percentuale di test falliti & 0\% & $\leq 95$\%\\
+\hline
+MTTS11 & Percentuale di difetti sistemati & 100\% & $\geq 95$\%\\
+\hline
+\rowcolor{grigio}MTTS12 & Tempo medio di risoluzione degli errori & $\leq 10$ minuti & $\leq 120$ minuti\\
+\hline
+MTTS13 & Numero medio di bug trovati per test & $\leq 1$ & 0.2$\leq$x$\leq 10$ \\
+\hline
+\rowcolor{grigio} MTTS14 & Copertura dei test eseguiti & 100\% & 80\% - 100\% \\
+\hline
+MTTS15 & Copertura dei requisiti & 100\% & 100\% \\
+\hline
+
+\iffalse
+\rowcolor{grigio}MTSA15 & Difetti trovati per requisito & $\leq 10$ minuti & $\leq 120$ minuti\\
+\hline
+\fi
+
+\caption{Gestione dei Test}
+\label{GestioneTest}
+\end{longtable}
+
+\paragraph{PR06: Versionamento e Build}\-\\
+Il monitoraggio di commit\glossario e build\glossario avviene in modo continuo, attraverso gli strumenti di supporto integrati all'interno di \textit{GitLab}\glossario. Ogni build viene costruita e verificata attraverso l'uso di una pipeline personalizzata definita all'interno del sistema di versionamento\glossario utilizzato. Le seguenti metriche sono descritte all'interno del documento \textit{Norme di Progetto v2.0.0} nella sezione §3.2.5.6.
+
+\subparagraph{Obiettivi}
+\begin{itemize}
+	\item \textbf{Commit Frequenti}: i commit devono essere frequenti per garantire un codice quanto più possibile aggiornato;
+	\item \textbf{Build Positive}: al fine di evitare quanto più possibile il propagarsi di errori e mantenere, al contempo, una base di codice il più possibile funzionante, è necessario che il maggior numero possibile di commit portino al successo della build. 
+\end{itemize}
+
+\begin{longtable}{|C{.15\textwidth}|C{.24\textwidth}|C{.24\textwidth}|C{.24\textwidth}|}
+\hline
+\rowcolor{bluelogo}\textbf{\textcolor{white}{ID}} & \textbf{\textcolor{white}{Nome}} & \textbf{\textcolor{white}{Ottimalità}} & \textbf{\textcolor{white}{Accettabilità}}\\
+\hline \hline
+\endhead
+MTPC16 & Media commit per settimana & 50 & 20\\
+\hline
+\rowcolor{grigio}MTPC17 & Percentuale build superate & $\geq 80$\% & $\geq 65$\%\\
+\hline
+
+\caption{Versionamento e Build}
+\label{v&b}
+\end{longtable}
