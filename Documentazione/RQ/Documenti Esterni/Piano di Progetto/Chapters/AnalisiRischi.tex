@@ -1,0 +1,87 @@
+\section{Analisi dei Rischi}
+\label{RischiIntroduzione}
+
+L'analisi dei rischi prevede la valutazione preventiva dei possibili problemi che possono verificarsi durante lo svolgimento del progetto. \\
+I rischi sono catalogati in base a tipologie stabilite a priori all'interno del gruppo. 
+Ogni rischio sarà inserito in una particolare categoria:
+\begin{itemize}
+\item Rischi relativi ai Componenti del Gruppo \texttt{Agents of S.W.E.} (G);
+\item Rischi relativi alle Tecnologie da utilizzare(T);
+\item Rischi relativi alla Gestione del Lavoro(L);
+\item Rischi relativi ai Requisiti\glossario Richiesti(R).  
+\end{itemize}
+
+L'utilizzo dei numeri è incrementale e la suddivisione dei rischi in sottocategorie non interferisce con l'incremento numerico, in modo tale da avere una visione complessiva del numero di possibili rischi che possono intercorrere durante lo svolgimento del progetto. \\
+
+\subsection{Identificazione}
+\label{RischiIdentificazione}
+
+\begin{longtable}{|C{.13\textwidth}|C{.36\textwidth}|C{.22\textwidth}|C{.17\textwidth}|}
+\hline
+\rowcolor{bluelogo}\textbf{\textcolor{white}{Rischio}} & \textbf{\textcolor{white}{Descrizione}} & \textbf{\textcolor{white}{Rilevamento}} & \textbf{\textcolor{white}{Grado di rischio}}\\
+\hline \hline
+\endhead
+G01 &  Alcuni componenti del gruppo non si conoscono tra di loro. Questo potrebbe causare problematiche relative alla comunicazione intragruppo. & Il \textit{Responsabile} avrà il compito di controllare e risolvere eventuali diatribe che  potrebbero venire a crearsi. & Occorrenza:  \textbf{Media}  Pericolosità:  \textbf{Media} \\
+\hline
+\rowcolor{grigio} \textbf{Piano di Contingenza} & \multicolumn{3}{ l |}{\parbox[c][2cm]{12cm}{La rotazione dei compiti avverrà in modo tale da far conoscere tutte le componenti del gruppo tra di loro, per trovare il corretto equilibrio in termini di efficienza ed efficacia.}} \\
+
+\hline
+G02 &  Alcuni membri del gruppo hanno impegni lavorativi e questo comporterà una presenza minore durante lo svolgimento delle componenti progettistiche.  & I vari membri del gruppo hanno impegni diversi. Fissare un appuntamento comune può essere un problema. &  Occorrenza:  \textbf{Bassa}  Pericolosità:  \textbf{Alta} \\
+\hline
+\rowcolor{grigio} \textbf{Piano di Contingenza} & \multicolumn{3}{ l |}{\parbox[c][2cm]{12.0cm}{La creazione di un calendario comune per il gruppo permette di accordarsi in modo comune e più semplice.}}\\
+
+\hline	
+G03 &  Quasi nessuno dei membri del gruppo ha avuto precedenti esperienze lavorative in team. Questo potrebbe implicare problemi nello svolgimento delle attività e conseguenti ritardi.  & Mancato rispetto delle milestone\glossario prestabilite. &  Occorrenza:  \textbf{Alta}  Pericolosità:  \textbf{Alta} \\
+\hline
+\rowcolor{grigio} \textbf{Piano di Contingenza} & \multicolumn{3}{ l |}{\parbox[c][2cm]{12.0cm}{Analisi della milestone non rispettata, al fine di migliorare la gestione del tempo per le milestone successive.}}\\
+
+\hline		
+T04 &  Certe tecnologie da usare sono sconosciute a tutti i membri del gruppo, mentre altre solo a certi membri. Ciò potrebbe causare ritardi nell'avanzamento del progetto. & Ogni membro del gruppo avrà la responsabilità di comunicare al \textit{Responsabile} le conoscenze mancanti sulle tecnologie da utilizzare. &  Occorrenza:  \textbf{Media}  Pericolosità:  \textbf{Alta} \\
+\hline
+\rowcolor{grigio} \textbf{Piano di Contingenza} & \multicolumn{3}{ l |}{\parbox[c][3cm]{12.0cm}{Coloro che conoscono determinate tecnologie sconosciute ad altri, dovranno aiutare chi non le conosce. Per quelle sconosciute a tutti, lo studio verrà suddiviso in maniera equa e successivamente ogni membro condividerà ciò che ha appreso con gli altri.}} \\
+
+\hline		
+T05 &  L'utilizzo da parte del gruppo di strumentazione software di terzi per la gestione del progetto, comporta che, in caso di malfunzionamenti, potrebbero verificarsi ritardi o eventuali perdite di dati.  & Il problema non sarà facilmente riscontrabile, in quanto dipende da fattori esterni ed eventuali guasti non sono identificabili prima che si verifichino. &  Occorrenza:  \textbf{Bassa}  Pericolosità:  \textbf{Alta} \\
+\hline
+\rowcolor{grigio} \textbf{Piano di Contingenza} & \multicolumn{3}{ l |}{\parbox[c][3cm]{12.0cm}{Per far fronte ad eventuali malfunzionamenti di \textit{Github}\glossario et similia, ogni membro del gruppo provvederà ad effettuare dei backup ad intervalli regolari dei dati, in modo da poterli recuperare in caso di bisogno.}}\\
+
+\hline		
+T06 & I PC dei singoli membri del gruppo potrebbero guastarsi ed eventuali malfunzionamenti hardware potrebbero causare la perdita di dati, oltre a possibili ritardi nel ripristinare lo stato ottimale dei mezzi di lavoro.  & In caso di problemi, l'interessato provvederà ad avvisare gli altri componenti del gruppo. &   Occorrenza:  \textbf{Bassa}  Pericolosità:  \textbf{Media} \\
+\hline
+\rowcolor{grigio} \textbf{Piano di Contingenza} & \multicolumn{3}{ l |}{\parbox[c][3cm]{12.0cm}{Ogni membro del gruppo effettuerà dei backup settimanali dei dati, in modo da poter recuperare la maggior parte del lavoro in caso di guasti.}}\\
+
+\hline
+T07 & L'utilizzo di software cross-platform\glossario/open-source\glossario può causare problemi di porting a seconda del 
+sistema operativo, portando al malfunzionamento o al non utilizzo di tale software. & I membri forniranno all'\textit{Amministratore} il sistema operativo in uso, in modo da prevedere il malfunzionamento di alcuni software su piattaforme differenti. &  Occorrenza:  \textbf{Bassa}  Pericolosità:  \textbf{Bassa} \\
+\hline
+\rowcolor{grigio} \textbf{Piano di Contingenza} & \multicolumn{3}{ l |}{\parbox[c][2cm]{12.0cm}{Prima dell'effettivo inizio del progetto, l'\textit{Amministratore} provvederà a ricercare software disponibili in ognuno di questi sistemi.}}\\
+
+\hline		
+T08 & Per l'apprendimento di certe tecnologie sconosciute al gruppo, potrebbe essere richiesto più tempo rispetto a quello programmato.  & Sarà compito del \textit{Responsabile} valutare la complessità di tali tecnologie. &  Occorrenza:  \textbf{Media}  Pericolosità:  \textbf{Media} \\
+\hline
+\rowcolor{grigio}\textbf{Piano di Contingenza} & \multicolumn{3}{ l |}{\parbox[c][3cm]{12.0cm}{Per far fronte a ciò, qualora sia possibile, saranno richiesti incontri con la proponente per la spiegazione di eventuali tecnologie di difficile apprendimento.}}\\
+
+\hline
+L09 & Nessun membro del gruppo ha precedenti esperienze nella pianificazione delle attività. & Il \textit{Responsabile} terrà traccia degli effettivi tempi di sviluppo. &   Occorrenza:  \textbf{Alta}  Pericolosità:  \textbf{Alta} \\
+\hline
+\rowcolor{grigio} \textbf{Piano di Contingenza} & \multicolumn{3}{ l |}{\parbox[c][4cm]{12.0cm}{Verranno stabilite delle milestones, in modo che ad ognuna di esse possa essere valutato l'adempimento o meno dei compiti prestabiliti. In caso negativo, il lavoro arretrato verrà ridistribuito tra i membri del gruppo. Inoltre, sarà possibile ripianificare le attività fino alla prossima milestone con maggior precisione.}} \\
+
+\hline
+L10 & La pianificazione prevede un costo per le attività. Tutti i membri del gruppo sono alla prima esperienza su un progetto simile, questo potrebbe portare a delle valutazioni errate sui costi complessivi del progetto. & In caso di ritardo nello svolgimento delle attività, il/i diretto/i interessato/i  lo comunicherà/nno al \textit{Responsabile}.  &  Occorrenza:  \textbf{Media}  Pericolosità:  \textbf{Media} \\
+\hline
+\rowcolor{grigio} \textbf{Piano di Contingenza} & \multicolumn{3}{ l |}{\parbox[c][3cm]{12.0cm}{Il \textit{Responsabile} valuterà di volta in volta le attività in modo tale da far quadrare i costi prestabiliti nel preventivo.}}\\
+
+\hline
+R11 & Potrebbero essere rivalutati i requisiti da parte della proponente \textit{Zucchetti S.p.A.} o da parte del gruppo in caso di necessità. Ciò richiederebbe una revisione parziale oppure completa dell'\textit{Analisi dei Requisiti v2.0.0}, portando così ritardi nelle consegne. & Già dalle prime fasi, il gruppo comunicherà il più possibile con la proponente, in modo da far emergere ogni possibile necessità nella modifica dei requisiti. &  Occorrenza:  \textbf{Bassa}  Pericolosità:  \textbf{Alta} \\
+\hline
+\rowcolor{grigio} \textbf{Piano di Contingenza} & \multicolumn{3}{ l |}{\parbox[c][3cm]{12.0cm}{Discuteremo apertamente con la proponente le modifiche sui requisiti, cercando di trovare un punto comune che soddisfi entrambe le parti.}} \\
+
+\hline
+R12 & L'analisi del capitolato scelto e la valutazione dei suoi requisiti possono essere fraintesi, questo può creare delle divergenze tra le aspettative della proponente e la visione del gruppo sul progetto. & Durante l'attività di Analisi dei requisiti, effettueremo degli incontri con la proponente per ridurre al minimo possibili incomprensioni ed errori. &  Occorrenza:  \textbf{Bassa}  Pericolosità:  \textbf{Bassa} \\
+\hline
+\rowcolor{grigio} \textbf{Piano di Contingenza} & \multicolumn{3}{ l |}{\parbox[c][4cm]{12.0cm}{Il gruppo esporrà negli incontri con la proponente, eventuali dubbi in modo da chiarire ogni requisito richiesto per il corretto sviluppo del progetto. Possibili errori dovranno essere corretti in seguito all'esito di ogni revisione.}}\\
+\hline
+
+\caption{Identificazione dei Rischi}
+\label{Tabella Identificazione dei Rischi}
+\end{longtable}

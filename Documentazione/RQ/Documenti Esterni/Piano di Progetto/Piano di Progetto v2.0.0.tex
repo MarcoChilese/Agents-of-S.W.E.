@@ -1,0 +1,86 @@
+\input{Config/config.tex}
+
+
+\usepackage{graphicx}
+
+% Ridefinizione dei nomi degli indici
+\renewcommand{\listtablename}{Indice delle Tabelle}
+\renewcommand{\listfigurename}{Indice di Figure e Grafici}
+
+
+\begin{document}
+\begin{titlepage}
+\thispagestyle{empty}
+\pagenumbering{gobble}
+
+\begin{center}
+\includegraphics[scale=0.3]{./images/logo.png}\\
+\large \textbf{Agents of S.W.E. - Progetto "G\&B"}
+\vfill
+\Huge \textbf{Piano di Progetto}
+\vfill
+\large
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{r|l}
+
+
+\textbf{Versione} & 2.0.0\\
+\textbf{Approvazione} & Diego Mazzalovo\\
+\textbf{Redazione} & \parbox[t]{5cm}{Carlotta Segna\\Diego Mazzalovo\\Matteo Slanzi}\\
+\textbf{Verifica} & \parbox[t]{5cm}{Marco Chilese \\ Marco Favaro\\Luca Violato}\\
+\textbf{Stato} & Approvato\\
+\textbf{Uso} & Esterno\\
+\textbf{Destinato a} & \parbox[t]{5cm}{Agents of S.W.E. \\Prof. Tullio Vardanega\\Prof. Riccardo Cardin \\ Zucchetti S.p.A.}
+\end{tabular}
+\vfill
+\small
+\texttt{agentsofswe@gmail.com}
+\end{center}
+\end{titlepage}
+
+\pagebreak
+
+\pagenumbering{arabic}
+
+\input{Chapters/Changelog.tex}
+\newpage
+
+\tableofcontents
+
+% Inclusione degli indici di tabelle e immagini
+\listoftables
+\listoffigures
+%\pagenumbering{arabic}
+
+\pagebreak
+
+\input{Chapters/Introduzione.tex}
+
+\pagebreak
+
+\input{Chapters/AnalisiRischi.tex}
+
+\pagebreak
+
+\input{Chapters/ModelloSviluppo.tex}
+
+\pagebreak
+
+\input{Chapters/Pianificazione.tex}
+
+\pagebreak
+
+\input{Chapters/Preventivo.tex}
+
+\pagebreak
+
+\input{Chapters/Paf.tex}
+
+\pagebreak
+
+\appendix
+\input{Chapters/Organigramma.tex}
+
+\pagebreak
+\input{Chapters/AttuazioneRischi.tex}
+\end{document}
