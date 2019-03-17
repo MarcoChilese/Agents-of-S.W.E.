@@ -9,7 +9,15 @@
   * Segna Carlotta
   * Slanzi Matteo
   * Violato Luca
-
+  
+## Valutazioni
+| Revisione | Presentazione {0.33} | Documenti {0.67} | Finale |
+|:---------:|:--------------------:|:----------------:|:------:|
+|     RR    |          24          |        23        |  23.33 |
+|     RP    |          20          |        22        |  21.34 |
+|     RQ    |                      |                  |        |
+|     RA    |                      |                  |        |
+|    **Finale**    |                      |                  |  22.34 |
 
 ## Rotazione dei ruoli
 ### Ruoli (1)
