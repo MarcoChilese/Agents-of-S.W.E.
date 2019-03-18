@@ -22,7 +22,7 @@ with open(os.path.join(rootdir, 'report.txt'), 'w') as report:
                         if line.find("\\\'E", 0, len(line)) != -1:
                             totalErrors += 1
                             report.write("Error in "+folder+"/"+file+" at line "+str(i)+": \\\'E => È\n\n")
-                        if line.find("é", 0, len(line)) != -1:
+                        if line.find(" é ", 0, len(line)) != -1:
                             totalErrors += 1
                             report.write("Error in "+folder+"/"+file+" at line "+str(i)+":  é => è\n\n")
                         if line.find("perché ", 0, len(line)) != -1:
