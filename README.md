@@ -55,32 +55,14 @@
 - Verificatore: Luca Violato
 - Analista: Marco Favaro
 
+### Ruoli (6) Risanamento
+- Amministratore: Bogdan Stanciu
+- Responsabile: Marco Favaro
+- Progettista: Marco Chilese, Diego Mazzalovo
+- Programmatore: Carlotta Segna
+- Verificatore: Matteo Slanzi
+- Analista: Luca Violato
 
-## Progettazione fase RQ
-- **Risanamento Criticità Documenti e Codice**;
-- **Nuovi documenti**: 
-  - Manuale Utente v1.0.0;
-  - Manuale dello Sviluppatore v1.0.0;
-- Valutare uso di Daemon Python per la permanenza dei dati:
-  - Contattare Greg **ASAP**;
-  - Nuovi requisiti;
-  - Normare Python;
-- Decidere definitivamente le funzionalità da introdurre in modo stabile:
-  - *Incremento/correzione* Diagrammi di Attività;
-- Decidere definitivamente l'interazione con l'utente
-  - Modifica/incremento AR;
-- Valutare uso *Sonarqube*:
-  - Normare Sonarqube;
-- Incremento documenti:
-  - PDP;
-  - PDQ (*molto*);
-  - NDP;
-- Test:
-  - Incremento Test Validazione (se accettati);
-  - Implementazione Test di Unità/Sistema/Integrazione;
-- Diagrammi:
-  - Diagrammi di classe;
-  - Diagrammi di package;
-  - Diagrammi di sequenza;
-  - *Incremento/correzione* Diagrammi di Attività;
-  
+#### Suddivisione gruppo documenti-codice:
+- **Documenti**: Carlotta, Marco C., Marco F., Luca, Matteo;
+- **Codice**: Bogdan, Diego.
