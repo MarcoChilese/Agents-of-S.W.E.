@@ -1,0 +1,27 @@
+Error in /Users/marcochilese/Documents/Istruzione/University/Corsi/Ingegneria del software/Agents-of-S.W.E./Documentazione/RP/Documenti Esterni/Piano di Qualifica/Chapters/Test.tex at line 328:  é => è
+
+Error in /Users/marcochilese/Documents/Istruzione/University/Corsi/Ingegneria del software/Agents-of-S.W.E./Documentazione/RP/Documenti Esterni/Piano di Qualifica/Chapters/Test.tex at line 363:  é => è
+
+Error in /Users/marcochilese/Documents/Istruzione/University/Corsi/Ingegneria del software/Agents-of-S.W.E./Documentazione/RP/Documenti Esterni/Analisi dei Requisiti/Chapters/UserCase.tex at line 4:  é => è
+
+Error in /Users/marcochilese/Documents/Istruzione/University/Corsi/Ingegneria del software/Agents-of-S.W.E./Documentazione/RP/Documenti Esterni/Piano di Progetto/Chapters/Pianificazione.tex at line 48:  é => è
+
+Error in /Users/marcochilese/Documents/Istruzione/University/Corsi/Ingegneria del software/Agents-of-S.W.E./Documentazione/RP/Documenti Interni/Norme di Progetto/Chapters/codifica.tex at line 52:  é => è
+
+Error in /Users/marcochilese/Documents/Istruzione/University/Corsi/Ingegneria del software/Agents-of-S.W.E./Documentazione/RP/Documenti Interni/Norme di Progetto/Chapters/codifica.tex at line 358:  é => è
+
+Error in /Users/marcochilese/Documents/Istruzione/University/Corsi/Ingegneria del software/Agents-of-S.W.E./Documentazione/RP/Documenti Interni/Norme di Progetto/Chapters/codifica.tex at line 370:  é => è
+
+Error in /Users/marcochilese/Documents/Istruzione/University/Corsi/Ingegneria del software/Agents-of-S.W.E./Documentazione/RP/Documenti Interni/Norme di Progetto/Chapters/CICD.tex at line 26:  é => è
+
+Error in /Users/marcochilese/Documents/Istruzione/University/Corsi/Ingegneria del software/Agents-of-S.W.E./Documentazione/RP/Documenti Interni/Norme di Progetto/Chapters/CICD.tex at line 27:  é => è
+
+Error in /Users/marcochilese/Documents/Istruzione/University/Corsi/Ingegneria del software/Agents-of-S.W.E./Documentazione/RP/Documenti Interni/Norme di Progetto/Chapters/CICD.tex at line 28:  é => è
+
+Error in /Users/marcochilese/Documents/Istruzione/University/Corsi/Ingegneria del software/Agents-of-S.W.E./Documentazione/RP/Documenti Interni/Norme di Progetto/Chapters/CICD.tex at line 36:  é => è
+
+Error in /Users/marcochilese/Documents/Istruzione/University/Corsi/Ingegneria del software/Agents-of-S.W.E./Documentazione/RP/Documenti Interni/Norme di Progetto/Chapters/ProcessiSupporto.tex at line 16:  é => è
+
+
+
+ Total Errors: 12
