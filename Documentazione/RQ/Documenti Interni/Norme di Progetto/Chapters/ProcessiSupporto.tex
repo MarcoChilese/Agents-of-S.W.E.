@@ -107,8 +107,9 @@ La necessità di più componenti del gruppo di cooperare su uno stesso documento
 
 
 %Nella fase di RR, non in questa fase di RR
-\subsubsection{Controllo di Versione}
-Il sistema di versionamento, utilizzato nella fase di RR, è \textit{git}, con il supporto hosting di \textit{GitHub}. Per quanto riguarda la fase di codifica il gruppo ha deciso di appoggiarsi al supporto hosting di \textit{GitLab}, le motivazioni principali riguardano i servizi inclusi in materia di integrazione e pipeline di sviluppo spiegati nelle sezioni §\ref{Progettazione_Sviluppo} e §\ref{Progettazione_Integrazione}.
+\subsubsection{Controllo di Versione}\label{ControlloVersione}
+Il sistema di versionamento, utilizzato nella fase di RR, è \textit{Git}, con il supporto hosting di \textit{GitHub}. Per quanto riguarda la fase di codifica il gruppo ha deciso di appoggiarsi al supporto hosting di \textit{GitLab}, le motivazioni principali riguardano i servizi inclusi in materia di integrazione e pipeline di sviluppo spiegati nelle sezioni §\ref{Progettazione_Sviluppo} e §\ref{Progettazione_Integrazione}.\\
+Successivamente alla fase di RP, il team ha deciso di unire le due repository convogliando quindi documentazione e codice in un unico repository \textit{Git} supportato dalla piattaforma di hosting \textit{GitLab}, al fine di semplificare la gestione del processo.
 
 \paragraph{Struttura del Repository} \-\\ 
 La struttura del repository, in ambo gli hosting di versionamento, segue il workflow \textit{gitflow} di \textit{Driessen at nvie}, idealizzato attorno il concetto di release del prodotto. Questo produce un framework robusto attorno al quale si possono gestire progetti di grandi dimensioni. I due branch principali sono il "master" ed in parallelo ad esso il "develop". 
