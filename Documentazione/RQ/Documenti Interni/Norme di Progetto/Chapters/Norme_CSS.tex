@@ -1,0 +1,41 @@
+\label{css} \-\\
+Per la parte front-end\glossario del plug-in il gruppo \texttt{Agents of S.W.E.} ha scelto di utilizzare i linguaggi \textit{CSS3}\glossario ed \textit{HTML5}\glossario.\\
+Qui di seguito verrà descritta la Style Guide resa disponibile da \textit{Airbnb CSS-in-JavaScript Style Guide}.
+
+\subparagraph{Indentazione} \-\\
+\textbf{Norma 1}\\
+Tra blocchi adiacenti dello stesso livello deve essere lasciata una linea bianca, tra l'una e l'altra. In questo modo il codice risulterà essere più leggibile. \\
+Di seguito, un esempio della corretta indentazione: 
+
+
+\begin{lstlisting} [language=JavaScript]
+//OK
+{
+  bigBang: {
+    display: 'inline-block',
+    '::before': {
+      content: "''",
+    },
+  },
+  universe: {
+    border: 'none',
+  },
+}
+
+//NO
+{
+  bigBang: {
+    display: 'inline-block',
+
+    '::before': {
+      content: "''",
+    },
+  },
+
+  universe: {
+    border: 'none',
+  },
+}
+\end{lstlisting}
+
+Per le restanti regole si farà riferimento allo standard imposto dalla World Wide Web Consortium. Per essere considerato corretto il file \textit{.css} dovrà essere validato tramite il sito reso disponibile dall'organizzazione, precedentemente nominata. La validazione potrà essere effettuata tramite il sistema messo a disposizione dalla W3C.

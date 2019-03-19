@@ -1,0 +1,66 @@
+Insieme al \textit{CSS} e all'\textit{HTML} il team ha deciso di sviluppare la parte front-end appoggiandosi al framework \textit{JavaScript Angularjs}\glossario.\\
+\textit{AngularJS} è un framework per applicazioni web, sviluppato con lo scopo di affrontare le difficoltà incontrate con lo sviluppo di applicazioni su singola pagina di tipo client-side.\-\\
+La caratteristica principale è l'introduzione di funzionalità chiamate direttive, che permettono di creare componenti \textit{HTML} personalizzati e riusabili con lo scopo di associare a ogni direttiva un comportamento, così nascondendo la complessità della struttura DOM\glossario. Le direttive sono riconoscibili poiché integrate nei tag con la dicitura "ng-" e susseguite dal nome (scelto dallo sviluppatore). 
+Di seguito sono riportate alcune norme da seguire:\\
+\textbf{Norma 1}\\
+Verrà seguito il pattern Model View Controller(MVC)\glossario che propone la scomposizione in tre componenti:
+\begin{itemize}
+	\item \textbf{Model}: responsabile per il mantenimento e l'elaborazione dei dati;
+	\item \textbf{View}: responsabile per la visualizzazione dei dati all'utente;
+	\item \textbf{Controller}: si occupa di controllare l'interazione tra Model e View.
+\end{itemize} 
+\textbf{Norma 2}\\
+Il controller non deve essere sovraccaricato di funzionalità che non gli appartengono. In particolare il controller non deve:
+\begin{itemize}
+	\item manipolare il DOM, questo renderà i controller difficili da testare. Questo compito è riservato alle direttive;
+	\item formattare l'input, a questo scopo vengono usati i form \textit{Angular};
+	\item formattare l'output, sarà compito dei filtri;
+	\item condividere dati con altri controller;
+	\item implementare funzionalità generali, le funzionalità che non riguardano direttamente l'interazione tra dati e la visualizzazione, deve essere fatta nei servizi.
+\end{itemize}
+\textbf{Norma 3}\\
+Il nome dei moduli seguono la notazione lowerCamelCase;
+\begin{lstlisting} [language=HTML]
+	<div ng-app="myModule">...</div>
+\end{lstlisting}
+\-\\
+\textbf{Norma 4}\\
+Quando è presente un modulo $b$ che è submodule di $a$, si possono concatenare usando la notazione $a.b$;\\
+\-\\
+\textbf{Norma 5}\\
+Il nome dei controller viene assegnato in base alla loro funzionalità e viene usata la notazione UpperCamelCase;
+\begin{lstlisting} [language=HTML]
+	<div ng-controller="MyController">
+  		{{ greeting }}
+	</div>
+\end{lstlisting}
+\-\\
+\textbf{Norma 6}\\
+I nomi delle restanti direttive seguono la notazione camelCase;
+\begin{lstlisting} [language=HTML]
+	<select class="myClass" ng-model="myModel">
+\end{lstlisting}
+\-\\
+\textbf{Norma 7}\\
+Le direttive \textit{AngularJS} vengono scritte alla fine degli attributi di un tag: 
+\begin{lstlisting} [language=HTML]
+	//OK
+	<p>Nome: <input type="text" ng-model="utente.nome"></p>
+	
+	//NO
+	<p>Nome: <input ng-model="utente.nome" type="text"></p>
+\end{lstlisting}
+\-\\
+\textbf{Norma 8}\\
+Il prefisso \$ è riservato ad \textit{AngularJS}, non deve essere usato per nomi di variabili, proprietà o metodi;\\
+\-\\
+\textbf{Norma 9}\\
+I controller non devono essere definiti globali;\\
+\-\\
+\textbf{Norma 10}\\
+Usare prefissi personalizzati per le direttive per evitare collisioni con librerie di terze parti;\\
+\-\\
+\textbf{Norma 11}\\
+In \textit{AngularJS} viene adottato il two-way binding, ogni modifica al modello dati si riflette sulla view e ogni modifica alla view viene riportata sul modello dati.
+\-\\
+Questa sincronizzazione avviene senza la necessità di scrivere codice particolare, è sufficiente associare il modello allo scope all'interno del controller ed utilizzare la direttiva ng-model nella view.
