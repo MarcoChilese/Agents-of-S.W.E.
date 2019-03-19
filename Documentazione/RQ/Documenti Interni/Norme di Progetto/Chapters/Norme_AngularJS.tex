@@ -21,7 +21,7 @@ Il controller non deve essere sovraccaricato di funzionalità che non gli appart
 \textbf{Norma 3}\\
 Il nome dei moduli seguono la notazione lowerCamelCase;
 \begin{lstlisting} [language=HTML]
-	<div ng-app="myModule">...</div>
+<div ng-app="myModule">...</div>
 \end{lstlisting}
 \-\\
 \textbf{Norma 4}\\
@@ -30,25 +30,25 @@ Quando è presente un modulo $b$ che è submodule di $a$, si possono concatenare
 \textbf{Norma 5}\\
 Il nome dei controller viene assegnato in base alla loro funzionalità e viene usata la notazione UpperCamelCase;
 \begin{lstlisting} [language=HTML]
-	<div ng-controller="MyController">
-  		{{ greeting }}
-	</div>
+<div ng-controller="MyController">
+  {{ greeting }}
+</div>
 \end{lstlisting}
 \-\\
 \textbf{Norma 6}\\
 I nomi delle restanti direttive seguono la notazione camelCase;
 \begin{lstlisting} [language=HTML]
-	<select class="myClass" ng-model="myModel">
+<select class="myClass" ng-model="myModel">
 \end{lstlisting}
 \-\\
 \textbf{Norma 7}\\
 Le direttive \textit{AngularJS} vengono scritte alla fine degli attributi di un tag: 
 \begin{lstlisting} [language=HTML]
-	//OK
-	<p>Nome: <input type="text" ng-model="utente.nome"></p>
+<!-- OK -->
+<p>Nome: <input type="text" ng-model="utente.nome"></p>
 	
-	//NO
-	<p>Nome: <input ng-model="utente.nome" type="text"></p>
+<!-- NO -->
+<p>Nome: <input ng-model="utente.nome" type="text"></p>
 \end{lstlisting}
 \-\\
 \textbf{Norma 8}\\
