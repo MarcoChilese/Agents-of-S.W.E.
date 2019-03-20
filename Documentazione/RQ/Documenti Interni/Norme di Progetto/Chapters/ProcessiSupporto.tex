@@ -112,10 +112,11 @@ Il sistema di versionamento, utilizzato nella fase di RR, è \textit{Git}, con i
 Successivamente alla fase di RP, il team ha deciso di unire le due repository convogliando quindi documentazione e codice in un unico repository \textit{Git} supportato dalla piattaforma di hosting \textit{GitLab}, al fine di semplificare la gestione del processo.
 
 \paragraph{Struttura del Repository} \-\\ 
-La struttura del repository, in ambo gli hosting di versionamento, segue il workflow \textit{gitflow} di \textit{Driessen at nvie}, idealizzato attorno il concetto di release del prodotto. Questo produce un framework robusto attorno al quale si possono gestire progetti di grandi dimensioni. I due branch principali sono il "master" ed in parallelo ad esso il "develop". 
+La struttura del repository segue il workflow \textit{gitflow} di \textit{Driessen at nvie}, idealizzato attorno il concetto di release del prodotto. Questo produce un framework robusto attorno al quale si possono gestire progetti di grandi dimensioni. I due branch principali sono il "master" ed in parallelo ad esso il "develop". 
 Il master viene considerato il branch main, dove il codice sorgente della testa riflette sempre lo stato di \textit{"production-ready"},
 mentre il ramo di develop è considerato il branch principale dove vengono effettuate le ultime modifiche per il prossimo incremento del prodotto.\\
-Più precisamente, per quanto riguarda i documenti, il repository utilizzato è "Agents-of-S.W.E." ed è caratterizzata da una cartella principale "Documentazione", le cui sottocartelle "RR" e "RP" rappresentano la principale struttura in cui sono organizzati i file su cui il gruppo \texttt{Agents of S.W.E.} ha lavorato in vista dell'ultima consegna prestabilita.\\
+Più precisamente, per quanto riguarda i documenti, il repository utilizzato è "Agents-of-S.W.E." ed è caratterizzata da due cartelle principali: "Documentazione" e "Codice".\\
+Per quanto riguarda la prima, essa contiene le sottocartelle "RR", "RP" ed "RQ" che rappresentano la principale struttura in cui sono organizzati i file su cui il gruppo \texttt{Agents of S.W.E.} ha lavorato in vista dell'ultima consegna prestabilita.\\
 	Nello specifico la sottocartella "RR" è caratterizzata dalla seguente struttura di folder:
 	\begin{itemize}
 	\item \textbf{Documenti Esterni}:
@@ -124,13 +125,13 @@ Più precisamente, per quanto riguarda i documenti, il repository utilizzato è 
 		\item \textit{Glossario v1.0.0};
 		\item \textit{Piano di Progetto v1.0.0};
 		\item \textit{Piano di Qualifica v1.0.0};
-		\item \textit{Verbali Esterni v1.0.0}.
+		\item \textit{Verbali Esterni}.
 		\end{itemize}
 	\item \textbf{Documenti Interni}:
 		\begin{itemize}
 		\item \textit{Norme di Progetto v1.0.0};
 		\item \textit{Studio di Fattibilità v1.0.0};
-		\item \textit{Verbali Interni v1.0.0}.
+		\item \textit{Verbali Interni}.
 		\end{itemize}
 	\item \textbf{Corrispondenza};
 	\item \textbf{Utility}.
@@ -143,18 +144,38 @@ Più precisamente, per quanto riguarda i documenti, il repository utilizzato è 
 		\item \textit{Glossario v2.0.0};
 		\item \textit{Piano di Progetto v2.0.0};
 		\item \textit{Piano di Qualifica v2.0.0};
-		\item \textit{Verbali Esterni v2.0.0}.
+		\item \textit{Verbali Esterni}.
 		\end{itemize}
 	\item \textbf{Documenti Interni}:
 		\begin{itemize}
 		\item \textit{Norme di Progetto v2.0.0};
-		\item \textit{Verbali Interni v2.0.0}.
+		\item \textit{Verbali Interni}.
 		\end{itemize}
 	\item \textbf{Corrispondenza};
 	\item \textbf{Utility}.
 	\end{itemize}
+	Nello specifico la sottocartella "RP" è caratterizzata dalla seguente struttura di folder:
+	\begin{itemize}
+		\item \textbf{Documenti Esterni}:
+		\begin{itemize}
+			\item \textit{Analisi dei Requisiti v3.0.0};
+			\item \textit{Glossario v3.0.0};
+			\item \textit{Piano di Progetto v3.0.0};
+			\item \textit{Piano di Qualifica v3.0.0};
+			\item \textit{Manuale Utente v1.0.0};
+			\item \textit{Manuale per lo Sviluppatore v1.0.0};
+		\end{itemize}
+		\item \textbf{Documenti Interni}:
+		\begin{itemize}
+			\item \textit{Norme di Progetto v3.0.0};
+			\item \textit{Verbali Interni}.
+		\end{itemize}
+		\item \textbf{Corrispondenza};
+		\item \textbf{Utility}.
+	\end{itemize}
 	Ciascuna sottocartella, corrispondente ad un documento, contiene a sua volta un file LaTeX \textit{.tex} che assume il nome del documento e il corrispettivo file \textit{.pdf} ottenuto attraverso la compilazione.\\
-	La cartella "Corrispondenza" contiene una copia delle mail inviate all'azienda proponente attraverso l'indirizzo agentsofswe@gmail.com, la cartella "Utility" invece contiene gli Script\glossario realizzati dal gruppo.
+	La cartella "Corrispondenza" contiene una copia delle mail inviate all'azienda proponente attraverso l'indirizzo agentsofswe@gmail.com, la cartella "Utility" invece contiene gli Script\glossario realizzati dal gruppo.\\
+	La cartella "Codice" contiene le sottocartelle corrispondenti alle revisioni.
 
 %\paragraph{Configurazione Sistema}
 
@@ -191,7 +212,7 @@ Dal branch "develop" si avvia un processo di verifica, che sfocia in una nuovo b
 \subsubsection{Configurazione Versionamento}
 
 \paragraph{Remoto} \-\\
-	La configurazione di \textit{GitHub e GitLab} avviene nei rispettivi portali, www.github.com e www.gitlab.com, dove si inseriscono le chiavi \textit{SSH}\glossario per ciascun collaboratore del nuovo repository. 
+	La configurazione di \textit{GitLab} avviene nel rispettivo portale, www.gitlab.com, dove si inseriscono le chiavi \textit{SSH}\glossario per ciascun collaboratore del nuovo repository. 
 	Una volta creato il repository nel server remoto ed inserite le chiavi \textit{SSH}, si procedere con la configurazione in locale.
 	
 \paragraph{Locale} \-\\
