@@ -226,18 +226,33 @@ Dal branch "develop" si avvia un processo di verifica, che sfocia in una nuovo b
 		\item \textbf{Terminale(Bash)}: gestore di versionamento a riga di comando per i sistemi MacOS \& Linux.
 	\end{itemize}
 		
-\subsection{Verifica}
+\subsection{Verifica}\label{verifica}
 \subsubsection{Descrizione}
+In questa sezione si analizzano i metodi e gli strumenti utilizzati per verificare codice e documenti durante la loro realizzazione.
 
 \subsubsection{Analisi Statica}
+L'analisi statica è una tecnica che si può applicare sia alla documentazione che al codice, essa permette di verificare il lavoro svolto individuando anomalie e/o errori.\\
+Tale tipo di verifica può svolgersi in due modi:
+\begin{itemize}
+	\item \textbf{Walkthrough}: tecnica applicata quando non si conoscono le tipologie di errori o problemi che si stanno cercando, è prevista quindi una lettura da cima a fondo del codice o documento per trovare anomalie di qualsiasi tipo.\\
+	Viene sempre svolto per la verifica dei contenuti dei documenti;
+	\item \textbf{Inspection}: tecnica applicata quando si è conoscenza della tipologia di errori o problemi, è prevista quindi una lettura attenta e mirata alla ricerca di tale tipologia di errori.
+\end{itemize}
 
 \subsubsection{Analisi Dinamica}
+Il processo di analisi dinamica consiste nella realizzazione ed esecuzione di una serie di test sul codice del software prodotto. Questa tecnica non è applicabile per trovare errori nella documentazione.
 
 \subsubsection{Verifica Diagrammi UML}
+I verificatori devono controllare che i diagrammi UML prodotti rispettino lo standard UML 2.x e che siano corretti semanticamente.
 
 \subsubsection{Strumenti}
+\begin{itemize}
+	\item \textbf{Software}: per la verifica del codice JavaScript è stato scelto Jest;
+	\item \textbf{Documenti}: 
+	\item \textbf{Gestione processi e feedback}: è stato scelto di utilizzare il sistema integrato di issues presente su GitLab.
+\end{itemize}
 
-\subsection{Validazione}
+\subsection{Validazione}\label{validazione}
 \subsubsection{Descrizione}
 La fase di validazione ha il compito di verificare che il prodotto sia conforme a quanto pianificato e sia in grado di gestire e minimizzare gli effetti dei possibili errori.
 \subsubsection{Procedure}
