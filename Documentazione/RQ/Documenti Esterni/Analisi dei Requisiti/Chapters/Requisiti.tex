@@ -99,10 +99,6 @@ ROF3.5 & Il Sistema deve visualizzare un messaggio di errore nel caso in cui l'u
 \hline
 ROF4.4 & Il Sistema deve mettere a disposizione dell'utente un pulsante per avviare il monitoraggio dei dati & Obbligatorio & UC4\\
 \hline
-\rowcolor{grigio}ROF4.4.1 & Il Sistema deve visualizzare un messaggio di errore nel caso in cui l'utente abbia avviato il monitoraggio senza aver preventivamente caricato una rete bayesiana & Obbligatorio & UC4 UC10\\
-\hline
-ROF4.4.2 & Il Sistema deve visualizzare un messaggio di errore nel caso in cui l'utente abbia avviato il monitoraggio senza aver preventivamente collegato alcuni dei nodi della rete ad un flusso dati & Obbligatorio & UC4 UC11\\
-\hline
 \rowcolor{grigio}ROF4.4.3 & Il Sistema deve visualizzare un messaggio di errore nel caso in cui l'utente abbia avviato il monitoraggio senza aver preventivamente impostato la politica temporale per il ricalcolo delle probabilità & Obbligatorio & UC4 UC12\\
 \hline
 ROF4.5 & Il Sistema deve fornire all'utente una lista di probabilità dinamiche associate ai nodi della rete & Obbligatorio & UC4\\
@@ -111,21 +107,11 @@ ROF4.5 & Il Sistema deve fornire all'utente una lista di probabilità dinamiche 
 \hline
 RDF4.6.1 & Il Sistema, indipendentemente dalla politica temporale stabilita dall'utente, deve ricalcolare le probabilità al verificarsi del superamento di una soglia critica associata ad uno stato di un nodo collegato al flusso di monitoraggio & Desiderabile & UC4 VER-2019-02-08\\
 \hline
-\rowcolor{grigio}RFF5 & L'utente deve poter definire alert basati sui dati relativi ai nodi della rete bayesiana non collegati al flusso & Opzionale & UC5\\
+\rowcolor{grigio}RFF5 & L'utente deve poter definire alert basati sui dati relativi ai nodi della rete bayesiana non collegati al flusso & Opzionale & Capitolato\\
 \hline
-RFF5.1 & Il Sistema deve mettere a disposizione di \textit{Grafana}, i dati per l'operazione di creazione di alert ad essi associati da parte dell'utente & Opzionale & UC5\\
+RFF5.1 & Il Sistema deve mettere a disposizione di \textit{Grafana}, i dati per l'operazione di creazione di alert ad essi associati da parte dell'utente & Opzionale & Capitolato UC4\\
 \hline
-\rowcolor{grigio}RFF5.1.1 & Il pannello "G\&B" deve supportare la funzione di "edit" da parte dell'utente & Opzionale & UC5\\
-\hline
-RFF5.1.2 & Il Sistema deve mettere a disposizione dell'utente un pulsante "Aggiungi Alert" che conduca l'utente alle impostazioni di edit del pannello "G\&B", alla voce "Alert" & Opzionale & UC5\\
-\hline
-\rowcolor{grigio}RFF6 & L'utente deve poter visualizzare gli alert creati sulla base dei dati relativi ai nodi della rete bayesiana non collegati al flusso & Opzionale & UC7\\ 
-\hline
-RFF6.1 & Il Sistema deve mettere periodicamente a disposizione della piattaforma \textit{Grafana}, i dati aggiornati per il monitoraggio costante dello stato degli alert & Opzionale & UC7\\
-\hline
-\rowcolor{grigio}RFF6.2 & L'utente deve poter rimuovere gli alert associati ai nodi della rete bayesiana & Opzionale & UC6\\
-\hline
-RFF6.2.1 & L'utente deve poter selezionare l'alert da eliminare attraverso il pannello di visualizzazione degli alert & Opzionale & UC6\\
+\rowcolor{grigio}RFF6.1 & Il Sistema deve mettere periodicamente a disposizione della piattaforma \textit{Grafana}, i dati aggiornati per il monitoraggio costante dello stato degli alert & Opzionale & UC4\\
 \hline
 \caption{Requisiti Funzionali}
 \end{longtable}
@@ -221,7 +207,7 @@ ROV12 & Il plug-in deve funzionare per l'ultima versione di \textit{Grafana} dis
 \rowcolor{bluelogo}\textbf{\textcolor{white}{Fonte}} & \textbf{\textcolor{white}{Requisiti}}\\
 \hline \hline
 \endhead
-Capitolato & \makecell{ROQ1\\ROQ2\\RDQ5\\ROV4\\ROV6}\\
+Capitolato & \makecell{RFF5\\RFF5.1\\ROQ1\\ROQ2\\RDQ5\\ROV4\\ROV6}\\
 \hline
 \rowcolor{grigio}Decisione Interna & \makecell{ROQ1.1\\RDQ1.2\\ROQ2.1\\RDQ2.2\\ROQ3\\RDQ6\\RDF1.6\\RDQ7\\RDQ8\\ROV12}\\
 \hline
@@ -237,21 +223,11 @@ UC3 & \makecell{ROF3\\ROF3.3\\ROF3.3.3\\ROF3.4\\ROF3.5}\\
 \hline
 \rowcolor{grigio}UC3.2 & \makecell{ROF3.3.1\\ROF3.3.2\\ROF3.3.2.1\\ROF3.3.2.2}\\
 \hline
-\rowcolor{grigio}UC4 & \makecell{ROF2.8.3\\RFF2.8.4\\ROF4\\ROF4.4\\ROF4.4.1\\ROF4.4.2\\ROF4.4.3\\ROF4.5\\ROF4.6\\RDF4.6.1}\\
+\rowcolor{grigio}UC4 & \makecell{ROF2.8.3\\RFF2.8.4\\ROF4\\ROF4.4\\ROF4.4.3\\ROF4.5\\ROF4.6\\RDF4.6.1\\RFF5.1}\\
 \hline
-UC5 & \makecell{RFF5\\RFF5.1\\RFF5.1.1\\RFF5.1.2}\\
+UC8 & \makecell{ROF1.4\\ROF1.4.1\\RFF1.4.2}\\
 \hline
-\rowcolor{grigio}UC6 & \makecell{RFF6.2\\RFF6.2.1}\\
-\hline
-UC7 & \makecell{RFF2.8.4\\RFF6\\RFF6.1}\\
-\hline
-\rowcolor{grigio}UC8 & \makecell{ROF1.4\\ROF1.4.1\\RFF1.4.2}\\
-\hline
-UC9 & \makecell{ROF2.7}\\
-\hline
-\rowcolor{grigio}UC10 & \makecell{ROF4.5.1}\\
-\hline
-UC11 & \makecell{ROF4.5.2}\\
+\rowcolor{grigio}UC9 & \makecell{ROF2.7}\\
 \hline
 \rowcolor{grigio}UC12 & \makecell{ROF4.5.3}\\
 \hline
@@ -277,7 +253,7 @@ Supporto a \textit{ECMAScript6} & \makecell{ROV8\\ROV9\\ROV10\\ROV11}\\
 \rowcolor{bluelogo}\textbf{\textcolor{white}{Tipologia}} & \textbf{\textcolor{white}{Obbligatorio}} & \textbf{\textcolor{white}{Opzionale}} & \textbf{\textcolor{white}{Desiderabile}} & \textbf{\textcolor{white}{Totale}}\\
 \hline \hline
 \endhead
-Funzionale & 44 & 12 & 2 & 58\\
+Funzionale & 42 & 7 & 2 & 51\\
 \hline
 \rowcolor{grigio}Di Qualità & 5 & 0 & 6 & 11\\
 \hline
