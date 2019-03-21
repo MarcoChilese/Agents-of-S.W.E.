@@ -290,63 +290,12 @@ Il numero di casi che abbiamo analizzato è limitato poiché il plug-in fornisce
 
 \subsection{UC4 - Visualizzazione Probabilità Associate ai Nodi non Collegati al Flusso}\label{UC4}
 
-\begin{figure}[H]
-\centering
-\includegraphics[scale=0.4]{./images/UC4.png}
-\caption{UC4 - Visualizzazione delle Probabilità Associate ai Nodi non Collegati al Flusso}
-\end{figure}
-
 \begin{itemize}
 \item \textbf{Attore Primario}: Utente;
-\item \textbf{Precondizione}: l'utente deve aver effettuato il login nella piattaforma \textit{Grafana}, deve aver selezionato una dashboard e aggiunto il pannello "G\&B Panel";
-%	\begin{enumerate}
-%	\item L'utente ha collegato con successo alcuni nodi della rete bayesiana al flusso dati (\hyperref[UC2]{UC2 (§\ref*{UC2})});
-%	\item L'utente ha definito le politiche temporali per il ricalcolo delle probabilità relative ai nodi della rete bayesiana (\hyperref[UC3]{UC3 (§\ref*{UC3})}).
-%	\end{enumerate}
-\item \textbf{Postcondizione:} il Sistema mantiene aggiornate, e visualizzabili da parte dell'utente, le misure di probabilità derivate dai nodi della rete bayesiana non collegati al flusso dati;
-\item \textbf{Scenario Principale}: 
-	\begin{enumerate}
-	\item L'utente clicca il pulsante "Avvio Monitoraggio";
-	\item L'utente visualizza i dati forniti dai nodi della rete bayesiana, tali dati sono una misura di probabilità 			associata ad ogni nodo della rete bayesiana non collegato al flusso dati (\hyperref[UC2]{UC2 (§\ref*{UC2})}). 				Tali probabilità vengono ricalcolate,mutando dinamicamente in base alle politiche temporali stabilite in 						\hyperref[UC3]{UC3 (§\ref*{UC3})}.
-	\end{enumerate}
-\item \textbf{Estensioni}:
-	\begin{enumerate}
-	\item \hyperref[UC10]{UC10 (§\ref*{UC10})} estende \hyperref[UC4.1]{UC4.1 (§\ref*{UC4.1})}: l'utente visualizza un messaggio di errore nel caso in cui non abbia caricato una rete bayesiana;
-	\item \hyperref[UC11]{UC11 (§\ref*{UC11})} estende \hyperref[UC4.1]{UC4.1 (§\ref*{UC4.1})}: l'utente visualizza un messaggio di errore nel caso in cui non abbia collegato correttamente qualche nodo alla rete bayesiana;
-	\item \hyperref[UC12]{UC12 (§\ref*{UC12})} estende \hyperref[UC4.1]{UC4.1 (§\ref*{UC4.1})}: l'utente visualizza un messaggio di errore nel caso in cui non abbia definito correttamente alcuna politica temporale per il ricalcolo delle probabilità;
-	\item \hyperref[UC13]{UC13 (§\ref*{UC13})} estende \hyperref[UC4.2]{UC4.2 (§\ref*{UC4.2})}: la visualizzazione dei dati viene interrotta nel caso in cui l'utente decida di modificare il collegamento dei nodi della rete bayesiana al flusso dati.
-	\end{enumerate}
-\end{itemize}
-
-\subsubsection{UC4.1 - Avvio Monitoraggio}\label{UC4.1}
-\begin{itemize}
-\item \textbf{Attore Primario:} utente;
-\item \textbf{Precondizioni:}
-	\begin{enumerate}
-	\item L'utente ha collegato con successo alcuni nodi della rete bayesiana al flusso dati (\hyperref[UC2]{UC2 					(§\ref*{UC2})});
-	\item L'utente ha definito le politiche temporali per il ricalcolo delle probabilità relative ai nodi della rete bayesiana (\hyperref[UC3]{UC3 (§\ref*{UC3})}).
-	\end{enumerate}
-\item \textbf{Postcondizione:} il pannello espone all'utente la lista di nodi della rete bayesiana caricata ed i corrispondenti dati ad essi associati;
-\item \textbf{Scenario Principale:}
-	\begin{enumerate}
-	\item L'utente clicca il pulsante denominato "Avvio Monitoraggio";
-	\item Il pulsante "Avvio Monitoraggio" scompare, venendo sostituito dalla lista lista di nodi della rete 	bayesiana associati ai corrispondenti dati di monitoraggio.
-	\end{enumerate}
-\item \textbf{Estensioni:}
-	\begin{enumerate}
-	\item \hyperref[UC11]{UC11 (§\ref*{UC11})}: l'utente visualizza un messaggio di errore nel caso in cui non abbia caricato alcuna rete bayesiana (\hyperref[UC1]{UC1 (§\ref*{UC1})});
-	\item \hyperref[UC12]{UC12 (§\ref*{UC12})}: l'utente visualizza un messaggio di errore nel caso in cui non abbia collegato correttamente qualche nodo alla rete bayesiana (\hyperref[UC2]{UC2 (§\ref*{UC2})});
-	\item \hyperref[UC13]{UC13 (§\ref*{UC13})}: l'utente visualizza un messaggio di errore nel caso in cui non abbia definito correttamente alcuna politica temporale per il ricalcolo delle probabilità (\hyperref[UC3]{UC3 (§\ref*{UC3})}).
-	\end{enumerate}
-\end{itemize}
-
-\subsubsection{UC4.2 - Visualizzazione Dati}\label{UC4.2}
-\begin{itemize}
-\item \textbf{Attore Primario:} utente;
-\item \textbf{Precondizione:} l'utente ha avviato correttamente il monitoraggio del flusso dati.
+\item \textbf{Precondizione:} l'utente ha avviato correttamente il monitoraggio del flusso dati (\hyperref[UC19]{UC19 (§\ref*{UC19})}).
 \item \textbf{Postcondizione:} il Sistema mantiene aggiornate, e visualizzabili da parte dell'utente, le misure di probabilità derivate dai nodi della rete bayesiana non collegati al flusso dati;
 \item \textbf{Scenario Principale:} l'utente visualizza l'andamento delle probabilità dinamiche associate ai nodi 			della rete bayesiana non collegati direttamente al flusso dati. Il sistema aggiorna costantemente i dati forniti dalla rete bayesiana, effettuando l'operazione di ricalcolo delle probabilità associate ai nodi della rete non collegati al flusso dati. Tale operazione di ricalcolo delle probabilità viene eseguita allo scadere del timeout ciclico rappresentato dalla politica temporale stabilita in \hyperref[UC3]{UC3 (§\ref*{UC3})}, oppure, nel caso siano state definite in sede di collegamento nodi (\hyperref[UC2.2.4]{UC2.2.4 (§\ref*{UC2.2.4})}), ogni volta che una soglia critica viene attivata dai dati monitorati;
-\item \textbf{Estensioni:} \hyperref[UC13]{UC13 (§\ref*{UC13})}: la visualizzazione dei dati viene interrotta nel 			caso in cui l'utente decida di modificare il collegamento dei nodi della rete bayesiana al flusso dati.
+\item \textbf{Estensioni:} \textcolor{red}{UC20 (TODO LINK)}: la visualizzazione dei dati viene interrotta nel 			caso in cui l'utente decida di modificare il collegamento dei nodi della rete bayesiana al flusso dati.
 \end{itemize}
 
 \pagebreak
@@ -458,6 +407,28 @@ Il numero di casi che abbiamo analizzato è limitato poiché il plug-in fornisce
 	\begin{enumerate}
 	\item L'utente visualizza un messaggio di errore in cui sono indicati gli errori commessi;
 	\item L'utente clicca il pulsante con etichetta "OK".
+	\end{enumerate}
+\end{itemize}
+
+\pagebreak
+
+\subsection{UC19 - Avvio Monitoraggio}\label{UC19}
+\begin{itemize}
+\item \textbf{Attore Primario:} Utente;
+\item \textbf{Precondizione:} L'utente ha collegato con successo alcuni nodi della rete bayesiana al flusso dati (\hyperref[UC2]{UC2(§\ref*{UC2})});
+\item \textbf{Postcondizioni:} 
+	\begin{enumerate}
+	\item La precedente visualizzazione del plug-in scompare, il pannello quindi espone all'utente la lista di nodi della rete bayesiana caricata ed i corrispondenti dati ad essi associati;
+	\item Il pulsante "Avvio Monitoraggio" viene sostituito da "Interruzione Monitoraggio"
+	\end{enumerate}
+\item \textbf{Scenario Principale:}
+	\begin{enumerate}
+	\item L'utente avvia il monitoraggio cliccalndo il pulsante denominato "Avvio Monitoraggio". Questo porta all'invio della configurazione della rete bayesiana (stabilita dall'utente attraverso \hyperref[UC1]{UC1 (§\ref*{UC1})}, \hyperref[UC2]{UC2 (§\ref*{UC2})}, \textcolor{red}{UC17 (TODO LINK)} e \hyperref[UC3]{UC3 (§\ref*{UC3})}) al Server (in ascolto presso la porta stabilita dall'utente in \textcolor{red}{UC16 (TODO LINK)}) che si occuperà delle necessarie operazioni per gestire il monitoraggio dei dati.
+	\end{enumerate}
+\item \textbf{Estensioni:}
+	\begin{enumerate}
+	\item \hyperref[UC13]{UC13 (§\ref*{UC13})}: l'utente visualizza un messaggio di errore nel caso in cui non abbia definito correttamente alcuna politica temporale per il ricalcolo delle probabilità (\hyperref[UC3]{UC3 (§\ref*{UC3})}).
+	\item \textcolor{red}{UC21 (TODO LINK)}: l'utente visualizza un messaggio di errore nel caso in cui non abbia selezionato correttamente la porta del Server in ascolto per le operazioni di calcolo \textcolor{red}{UC16 (TODO LINK)}.
 	\end{enumerate}
 \end{itemize}
 
