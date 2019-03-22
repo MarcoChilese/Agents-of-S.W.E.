@@ -51,36 +51,44 @@ Il numero di casi che abbiamo analizzato è limitato poiché il plug-in fornisce
 		 \caption{UC1 - Aggiunta della Rete Bayesiana al Plug-in G\&B}	
 	\end{center}
 \end{figure}
+
 \begin{itemize}
 	\item \textbf{Attore Primario}: Utente;
 	\item \textbf{Precondizioni}: l'utente deve aver effettuato il login nella piattaforma \textit{Grafana}, deve aver selezionato una dashboard e aggiunto il pannello "G\&B";
-	\item \textbf{Postcondizioni}: l'utente ha aggiunto la rete bayesiana al plug-in. Attraverso \hyperref[UC2]{UC2 (§\ref*{UC2})} può selezionare quali nodi sorgente collegare alla rete.
+	\item \textbf{Postcondizioni}: 
+	\begin{enumerate}
+		\item L'utente ha aggiunto la rete bayesiana al plug-in;
+		\item L'utente visualizza il pulsante denominato "Avvio Monitoraggio".
+	\end{enumerate}
 	\item \textbf{Scenario Principale:}
 	\begin{enumerate}
-		\item L'utente seleziona e clicca sul bottone denominato "Carica Rete Bayesiana" (\hyperref[UC1.1]{UC1.1 (§\ref*{UC1.1})});
-		\item L'utente si trova davanti una finestra presso cui selezionare il file \textit{.JSON} contenente la definizione della rete (\hyperref[UC1.2]{UC1.2 (§\ref*{UC1.2})}) e seleziona "Aggiungi".
+		\item (\hyperref[UC1.1]{UC1.1 (§\ref*{UC1.1})}) L'utente apre il pannello di selezione della rete bayesiana da caricare attraverso il click del pulsante "Seleziona Rete";
+		\item (\hyperref[UC1.2]{UC1.2 (§\ref*{UC1.2})}) L'utente seleziona la rete bayesiana che desidera caricare.
 	\end{enumerate}
 	\item \textbf{Estensioni:} \hyperref[UC8]{UC8 (§\ref*{UC8})} estende \hyperref[UC1.2]{UC1.2 (§\ref*{UC1.2})}: l'utente visualizza un messaggio di errore nel caso in cui l'operazione non sia andata a buon fine.
+	\item \textbf{Inclusioni:} UC1 include \hyperref[UC16]{UC16 (§\ref*{UC16})}: Viene visualizzata la lista di nodi di cui la rete bayesiana caricata è costituita.
 \end{itemize}
 
-\subsubsection{UC1.1 - Apertura Pannello di Selezione della Rete Bayesiana}\label{UC1.1}
+\pagebreak
+
+\subsubsection{UC1.1 - Apertura Pannello di Selezione del file}\label{UC1.1}
 \begin{itemize}
 	\item \textbf{Attore Primario}: Utente; 
 	\item \textbf{Precondizioni}: l'utente visualizza il pannello "G\&B" nella dashboard.
-	\item \textbf{Postcondizioni}: l'utente ha cliccato il bottone con etichetta "Aggiungi Rete Bayesiana" e visualizza il pannello per la selezione del file della rete;
-	\item \textbf{Scenario Principale}: l'utente clicca il pulsante con etichetta "Aggiungi Rete Bayesiana" nel pannello "G\&B Panel" nella dashboard.
+	\item \textbf{Postcondizioni}: l'utente ha cliccato il bottone con etichetta "Seleziona Rete" e visualizza il pannello per la selezione del file della rete;
+	\item \textbf{Scenario Principale}: l'utente clicca il pulsante con etichetta "Seleziona Rete".
 \end{itemize}
 
 
 \subsubsection{UC1.2 - Selezione della Rete Bayesiana}\label{UC1.2}
 \begin{itemize}
 	\item \textbf{Attore Primario}: Utente;
-	\item \textbf{Precondizioni}: l'utente ha cliccato il bottone con etichetta "Aggiungi Rete Bayesiana";
-	\item \textbf{Postcondizioni}: l'utente ha selezionato la rete bayesiana desiderata e ha premuto il pulsante con etichetta "Aggiungi";
+	\item \textbf{Precondizioni}: l'utente ha cliccato il bottone con etichetta "Seleziona Rete";
+	\item \textbf{Postcondizioni}: l'utente ha caricato con successo il file \textit{JSON} contente la definizione della rete bayesiana;
 	\item \textbf{Scenario Principale}:
 	\begin{enumerate}
 		\item L'utente seleziona dalla finestra il file da importare;
-		\item L'utente clicca il pulsante con etichetta "Aggiungi".
+		\item L'utente clicca il pulsante con etichetta "Apri".
 	\end{enumerate}
 	\item \textbf{Estensioni:} \hyperref[UC8]{UC8 (§\ref*{UC8})}: l'utente visualizza un messaggio di errore nel caso in cui l'operazione di caricamento del file non sia andata a buon fine.
 \end{itemize}
@@ -97,7 +105,7 @@ Il numero di casi che abbiamo analizzato è limitato poiché il plug-in fornisce
 
 \begin{itemize}
 \item \textbf{Attore Primario}: Utente;
-\item \textbf{Precondizione}: l'utente ha caricato con successo la rete bayesiana (\hyperref[UC1]{UC1 (§\ref*{UC1})});
+\item \textbf{Precondizione}: l'utente ha caricato con successo la rete bayesiana (\hyperref[UC1]{UC1 (§\ref*{UC1})}). Di conseguenza l'utente ;
 \item \textbf{Postcondizioni}: 
 	\begin{enumerate}
 	\item L'utente ha collegato con successo i nodi desiderati della rete bayesiana caricata in \hyperref[UC1]{UC1 				(§\ref*{UC1})};
@@ -105,23 +113,10 @@ Il numero di casi che abbiamo analizzato è limitato poiché il plug-in fornisce
 	\end{enumerate}
 \item \textbf{Scenario Principale}:
 	\begin{enumerate}
-	\item (\hyperref[UC2.1]{UC2.1 (§\ref*{UC2.1})}) l'utente visualizza la lista di nodi che costituiscono la rete bayesiana caricata in \hyperref[UC1]{UC1(§\ref*{UC1})};
 	\item (\hyperref[UC2.2]{UC2.2 (§\ref*{UC2.2})}) l'utente collega i nodi desiderati ad un flusso dati;
 	\item (\hyperref[UC2.3]{UC2.3 (§\ref*{UC2.3})}) l'utente conferma il collegamento dei nodi.
 	\end{enumerate}
 \item \textbf{Estensioni}: \hyperref[UC9]{UC9 (§\ref*{UC9})} estende \hyperref[UC2.3]{UC2.3 (§\ref*{UC2.3})}: l'utente visualizza un messaggio di errore nel caso in cui non abbia collegato alcun nodo al flusso dati.
-\end{itemize}
-
-\subsubsection{UC2.1 - Visualizzazione della Lista dei Nodi della Rete Bayesiana e Rispettivi Stati}\label{UC2.1}
-\begin{itemize}
-\item \textbf{Attore Primario:}  Utente
-\item \textbf{Precondizione:} l'utente ha caricato con successo la rete bayesiana (\hyperref[UC1]{UC1 									(§\ref*{UC1})});
-\item \textbf{Postcondizione:} l'utente visualizza la lista di nodi di cui la rete bayesiana è costituita, vengono 			inoltre visualizzati gli stati di ogni nodo (collegato ad un flusso dati oppure no);
-\item \textbf{Scenario Principale:}
-	\begin{enumerate}
-	\item L'utente visualizza una lista contenente i nominativi associati ad ogni nodo della rete bayesiana caricata 				in \hyperref[UC1]{UC1(§\ref*{UC1})};
-	\item L'utente visualizza, accanto ai nominativi dei nodi, una lista di checkbox\glossario associate. Tali checkbox 							rappresentano lo stato del nodo a cui sono associate: "V" nel caso il nodo sia collegato ad un flusso dati, "X" 		altrimenti.
-	\end{enumerate}
 \end{itemize}
 
 \pagebreak
@@ -139,7 +134,7 @@ Il numero di casi che abbiamo analizzato è limitato poiché il plug-in fornisce
 \item \textbf{Precondizioni}: 
 \begin{enumerate}
 	\item L'utente ha caricato con successo la rete bayesiana (\hyperref[UC1]{UC1(§\ref*{UC1})});
-	\item L'utente ha visualizzato la lista di nodi di cui la rete bayesiana è costituita ed il corrispondente stato 			(\hyperref[UC2.1]{UC2.1 (§\ref*{UC2.1})}).
+	\item L'utente ha visualizzato la lista di nodi di cui la rete bayesiana è costituita	(\hyperref[UC16]{UC16 (§\ref*{UC16})}).
 \end{enumerate}
 \item \textbf{Postcondizioni}: 
 	\begin{enumerate}
@@ -160,7 +155,7 @@ Il numero di casi che abbiamo analizzato è limitato poiché il plug-in fornisce
 \paragraph{UC2.2.1 - Selezione del Nodo}\label{UC2.2.1}
 \begin{itemize}
 \item \textbf{Attore Primario:} Utente;
-\item \textbf{Precondizione:} l'utente ha visualizzato la lista di nodi di cui la rete bayesiana è costituita ed il 	corrispondente stato (\hyperref[UC2.1]{UC2.1 (§\ref*{UC2.1})});
+\item \textbf{Precondizione:} l'utente ha visualizzato la lista di nodi di cui la rete bayesiana è costituita ed il 	corrispondente stato (\hyperref[UC16]{UC16 (§\ref*{UC16})});
 \item \textbf{Postcondizione:} l'utente visualizza una finestra contenente un menù a tendina in cui è possibile selezionare la sorgente dei dati e una lista di tutti i possibili stati del nodo selezionato;
 \item \textbf{Scenario Principale:} l'utente clicca il nominativo del nodo che desidera collegare ad un certo flusso dati.
 \end{itemize}
@@ -232,37 +227,29 @@ Il numero di casi che abbiamo analizzato è limitato poiché il plug-in fornisce
 \end{itemize}
 \newpage
 
-\subsection{UC3 - Selezione di una Politica Temporale di Ricalcolo delle Probabilità}\label{UC3}
+\subsection{UC3 - Selezione Politica Temporale di Ricalcolo delle Probabilità}\label{UC3}
 
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.5]{./images/UC3.png}
-\caption{UC3 - Selezione di una Politica Temporale di Ricalcolo delle Probabilità.}
+\caption{UC3 - Selezione Politica Temporale di Ricalcolo delle Probabilità.}
 \end{figure}
 
 \begin{itemize}
 	\item \textbf{Attore Primario}: Utente; 
-	\item \textbf{Precondizione}: l'utente deve aver aggiunto il pannello "G\&B Panel";
-	\item \textbf{Postcondizione}: l'utente ha collegato con successo la politica temporale da lui creata, per il ricalcolo delle probabilità della rete bayesiana, caricata in (\hyperref[UC1]{UC1 (§\ref*{UC1})});	
+	\item \textbf{Precondizione}: l'utente si trova presso il pannello di configurazione della Politica Temporale, acceduto tramite il click del pulsante "Politica Temporale";
+	\item \textbf{Postcondizione}: l'utente ha configurato con successo la politica temporale da lui creata, per il ricalcolo delle probabilità della rete bayesiana, caricata in (\hyperref[UC1]{UC1 (§\ref*{UC1})});	
 	\item \textbf{Scenario Principale:}
 	\begin{enumerate}
-		\item L'utente clicca il pulsante denominato "Politiche Temporali";
-		\item L'utente crea una nuova politica temporale; 
-		\item L'utente conferma la politica temporale realizzata.
+		\item (\hyperref[UC3.1]{UC3.1 (§\ref*{UC3.1})}) L'utente crea una nuova politica temporale; 
+		\item (\hyperref[UC3.2]{UC3.2 (§\ref*{UC3.2})}) L'utente conferma la politica temporale realizzata.
 	\end{enumerate}
-	\item \textbf{Estensioni}: \hyperref[UC15]{UC15 (§\ref*{UC15})} estende \hyperref[UC3.3]{UC3.3 (§\ref*{UC3.3})}: l'utente visualizza un messaggio di errore nel caso in cui non abbia definito correttamente la politica temporale per il ricalcolo delle probabilità.
-	
+	\item \textbf{Estensioni}: \hyperref[UC15]{UC15 (§\ref*{UC15})} estende \hyperref[UC3.2]{UC3.2 (§\ref*{UC3.2})}: l'utente visualizza un messaggio di errore nel caso in cui non abbia definito correttamente la politica temporale per il ricalcolo delle probabilità.
 \end{itemize}
 
-\subsubsection{UC3.1 - Click Pulsante "Politiche Temporali"}\label{UC3.1}
-\begin{itemize}
-	\item \textbf{Attore Primario}: Utente; 
-	\item \textbf{Precondizione}: l'utente deve aver aggiunto il pannello "G\&B Panel";
-	\item \textbf{Postcondizione}: l'utente accede al pannello di creazione della politica temporale;
-	\item \textbf{Scenario Principale}: l'utente, tramite un click sul pulsante "Politiche Temporali", apre il pannello di configurazione. 
-\end{itemize}
+\pagebreak
 
-\subsubsection{UC3.2 - Creazione Nuova Politica Temporale}\label{UC3.2}
+\subsubsection{UC3.1 - Creazione Nuova Politica Temporale}\label{UC3.1}
 
 \begin{itemize}
 	\item \textbf{Attore Primario}: Utente; 
@@ -277,7 +264,7 @@ Il numero di casi che abbiamo analizzato è limitato poiché il plug-in fornisce
 	
 \end{itemize}
 
-\subsubsection{UC3.3 - Conferma Politica Temporale}\label{UC3.3}
+\subsubsection{UC3.2 - Conferma Politica Temporale}\label{UC3.2}
 \begin{itemize}
 	\item \textbf{Attore Primario}: Utente; 
 	\item \textbf{Precondizione}: l'utente ha creato la politica temporale desiderata (\hyperref[UC3.2]{UC3.2 (§\ref*{UC3.2})});
@@ -292,10 +279,10 @@ Il numero di casi che abbiamo analizzato è limitato poiché il plug-in fornisce
 
 \begin{itemize}
 \item \textbf{Attore Primario}: Utente;
-\item \textbf{Precondizione:} l'utente ha avviato correttamente il monitoraggio del flusso dati (\hyperref[UC19]{UC19 (§\ref*{UC19})}).
+\item \textbf{Precondizione:} l'utente ha avviato correttamente il monitoraggio del flusso dati (\hyperref[UC20]{UC20 (§\ref*{UC20})}).
 \item \textbf{Postcondizione:} il Sistema mantiene aggiornate, e visualizzabili da parte dell'utente, le misure di probabilità derivate dai nodi della rete bayesiana non collegati al flusso dati;
 \item \textbf{Scenario Principale:} l'utente visualizza l'andamento delle probabilità dinamiche associate ai nodi 			della rete bayesiana non collegati direttamente al flusso dati. Il sistema aggiorna costantemente i dati forniti dalla rete bayesiana, effettuando l'operazione di ricalcolo delle probabilità associate ai nodi della rete non collegati al flusso dati. Tale operazione di ricalcolo delle probabilità viene eseguita allo scadere del timeout ciclico rappresentato dalla politica temporale stabilita in \hyperref[UC3]{UC3 (§\ref*{UC3})}, oppure, nel caso siano state definite in sede di collegamento nodi (\hyperref[UC2.2.4]{UC2.2.4 (§\ref*{UC2.2.4})}), ogni volta che una soglia critica viene attivata dai dati monitorati;
-\item \textbf{Estensioni:} \textcolor{red}{UC20 (TODO LINK)}: la visualizzazione dei dati viene interrotta nel 			caso in cui l'utente decida di modificare il collegamento dei nodi della rete bayesiana al flusso dati.
+\item \textbf{Estensioni:} \textcolor{red}{UC21 (TODO LINK)}: la visualizzazione dei dati viene interrotta nel 			caso in cui l'utente decida di modificare il collegamento dei nodi della rete bayesiana al flusso dati.
 \end{itemize}
 
 \pagebreak
@@ -317,7 +304,7 @@ Il numero di casi che abbiamo analizzato è limitato poiché il plug-in fornisce
 \subsection{UC9 - Visualizzazione Messaggio di Errore Nessun Nodo Collegato}\label{UC9}
 \begin{itemize}
 \item \textbf{Attore Primario}: Utente;
-\item \textbf{Precondizione}: l'utente ha avviato il monitoraggio (\hyperref[UC19]{UC19 (§\ref*{UC19})}), senza averne effettivamente collegato alcuno;
+\item \textbf{Precondizione}: l'utente ha avviato il monitoraggio (\hyperref[UC20]{UC20 (§\ref*{UC20})}), senza averne effettivamente collegato alcuno;
 \item \textbf{Postcondizioni}: 
 	\begin{enumerate}
 	\item l'utente visualizza l'errore;
@@ -335,7 +322,7 @@ Il numero di casi che abbiamo analizzato è limitato poiché il plug-in fornisce
 \subsection{UC12 - Visualizzazione Messaggio di Errore Politiche Temporali non Definite}\label{UC12}
 \begin{itemize}
 \item \textbf{Attore Primario}: Utente;
-\item \textbf{Precondizione}: l'utente ha avviato il monitoraggio del flusso dati (\hyperref[UC19]{UC19 							(§\ref*{UC19})}), senza aver preventivamente definito correttamente alcuna politica temporale per il ricalcolo delle probabilità (\hyperref[UC3]{UC3 (§\ref*{UC3})}).
+\item \textbf{Precondizione}: l'utente ha avviato il monitoraggio del flusso dati (\hyperref[UC20]{UC20 							(§\ref*{UC20})}), senza aver preventivamente definito correttamente alcuna politica temporale per il ricalcolo delle probabilità (\hyperref[UC3]{UC3 (§\ref*{UC3})}).
 \item \textbf{Postcondizione}: l'utente visualizza l'errore;
 \item \textbf{Scenario Principale}: 
 	\begin{enumerate}
@@ -366,41 +353,56 @@ Il numero di casi che abbiamo analizzato è limitato poiché il plug-in fornisce
 
 \subsection{UC15 - Visualizzazione Messaggio di Errore Politica Temporale non Configurata Correttamente}\label{UC15}
 \begin{itemize}
-\item \textbf{Attore Primario}: Utente;
-\item \textbf{Precondizione}: l'utente ha confermato le scelte per la selezione di una politica temporale per il ricalcolo delle probabilità (\hyperref[UC3.3]{UC3.3 (§\ref*{UC3.3})}), senza averla definita correttamente (\hyperref[UC3.2]{UC3.2 (§\ref*{UC3.2})});
-\item \textbf{Postcondizioni}: 
+	\item \textbf{Attore Primario}: Utente;
+	\item \textbf{Precondizione}: l'utente ha confermato le scelte per la selezione di una politica temporale per il ricalcolo delle probabilità (\hyperref[UC3.2]{UC3.2 (§\ref*{UC3.2})}), senza averla definita correttamente (\hyperref[UC3.1]{UC3.1 (§\ref*{UC3.1})});
+	\item \textbf{Postcondizioni}: 
 	\begin{enumerate}
-	\item L'utente visualizza l'errore;
-	\item La politica temporale non viene impostata.
+		\item L'utente visualizza l'errore;
+		\item La politica temporale non viene impostata.
 	\end{enumerate}
-\item \textbf{Scenario Principale}: 
+	\item \textbf{Scenario Principale}: 
 	\begin{enumerate}
-	\item L'utente visualizza un messaggio di errore in cui sono indicati gli errori commessi;
-	\item L'utente clicca il pulsante con etichetta "OK".
+		\item L'utente visualizza un messaggio di errore in cui sono indicati gli errori commessi;
+		\item L'utente clicca il pulsante con etichetta "OK".
 	\end{enumerate}
 \end{itemize}
 
 \pagebreak
 
-\subsection{UC19 - Avvio Monitoraggio}\label{UC19}
+\subsection{UC16 - Visualizzazione della Lista dei Nodi della Rete Bayesiana}\label{UC16}
 \begin{itemize}
-\item \textbf{Attore Primario:} Utente;
-\item \textbf{Precondizione:} L'utente ha collegato con successo alcuni nodi della rete bayesiana al flusso dati (\hyperref[UC2]{UC2(§\ref*{UC2})});
-\item \textbf{Postcondizioni:} 
+	\item \textbf{Attore Primario:}  Utente
+	\item \textbf{Precondizione:} l'utente ha caricato con successo la rete bayesiana (\hyperref[UC1]{UC1 									(§\ref*{UC1})});
+	\item \textbf{Postcondizione:} l'utente visualizza la lista di nodi di cui la rete bayesiana è costituita;
+	\item \textbf{Scenario Principale:}
 	\begin{enumerate}
-	\item La precedente visualizzazione del plug-in scompare, il pannello quindi espone all'utente la lista di nodi della rete bayesiana caricata ed i corrispondenti dati ad essi associati;
-	\item Il pulsante "Avvio Monitoraggio" viene sostituito da "Interruzione Monitoraggio"
+		\item L'utente visualizza la lista di nodi di cui la rete bayesiana, caricata in \hyperref[UC1]{UC1 									(§\ref*{UC1})}, è costituita. Ogni elemento della lista è formato da due componenti:
+		\begin{itemize}
+			\item Il nominativo del nodo stesso;
+			\item Una checkbox\glossario la quale rappresenta lo stato di collegamento del nodo a cui è associata: verrà cisualizzata una "V" nel caso il nodo sia collegato ad un flusso dati, checkbox vuota altrimenti.
+		\end{itemize}
 	\end{enumerate}
-\item \textbf{Scenario Principale:}
+\end{itemize}
+
+\pagebreak
+
+\subsection{UC20 - Avvio Monitoraggio}\label{UC20}
+\begin{itemize}
+	\item \textbf{Attore Primario:} Utente;
+	\item \textbf{Precondizione:} L'utente ha collegato con successo alcuni nodi della rete bayesiana al flusso dati (\hyperref[UC2]{UC2(§\ref*{UC2})});
+	\item \textbf{Postcondizioni:} 
 	\begin{enumerate}
-	\item L'utente avvia il monitoraggio cliccalndo il pulsante denominato "Avvio Monitoraggio". Questo porta all'invio della configurazione della rete bayesiana (stabilita dall'utente attraverso \hyperref[UC1]{UC1 (§\ref*{UC1})}, \hyperref[UC2]{UC2 (§\ref*{UC2})}, \textcolor{red}{UC17 (TODO LINK)} e \hyperref[UC3]{UC3 (§\ref*{UC3})}) al Server (in ascolto presso la porta stabilita dall'utente in \textcolor{red}{UC16 (TODO LINK)}) che si occuperà delle necessarie operazioni per gestire il monitoraggio dei dati.
+		\item La precedente visualizzazione del plug-in scompare, il pannello quindi espone all'utente la lista di nodi della rete bayesiana caricata ed i corrispondenti dati ad essi associati;
+		\item Il pulsante "Avvio Monitoraggio" viene sostituito da "Interruzione Monitoraggio"
 	\end{enumerate}
-\item \textbf{Estensioni:}
+	\item \textbf{Scenario Principale:} L'utente avvia il monitoraggio cliccalndo il pulsante denominato "Avvio Monitoraggio". Questo porta all'invio della configurazione della rete bayesiana (stabilita dall'utente attraverso \hyperref[UC1]{UC1 (§\ref*{UC1})}, \hyperref[UC2]{UC2 (§\ref*{UC2})}, \textcolor{red}{UC18 (TODO LINK)} e \hyperref[UC3]{UC3 (§\ref*{UC3})}) al Server (in ascolto presso la porta stabilita dall'utente in \textcolor{red}{UC17 (TODO LINK)}) che si occuperà delle necessarie operazioni per gestire il monitoraggio dei dati.
+	\item \textbf{Estensioni:}
 	\begin{enumerate}
-	\item \hyperref[UC9]{UC9 (§\ref*{UC9})}: l'utente visualizza un messaggio di errore nel caso in cui non abbia collegato alcun nodo ad un flusso dati (\hyperref[UC2]{UC2 (§\ref*{UC2})});
-	\item \hyperref[UC12]{UC12 (§\ref*{UC12})}: l'utente visualizza un messaggio di errore nel caso in cui non abbia definito correttamente alcuna politica temporale per il ricalcolo delle probabilità (\hyperref[UC3]{UC3 (§\ref*{UC3})}).
-	\item \textcolor{red}{UC21 (TODO LINK)}: l'utente visualizza un messaggio di errore nel caso in cui non abbia selezionato correttamente la porta del Server in ascolto per le operazioni di calcolo \textcolor{red}{UC16 (TODO LINK)}.
+		\item \hyperref[UC9]{UC9 (§\ref*{UC9})}: l'utente visualizza un messaggio di errore nel caso in cui non abbia collegato alcun nodo ad un flusso dati (\hyperref[UC2]{UC2 (§\ref*{UC2})});
+		\item \hyperref[UC12]{UC12 (§\ref*{UC12})}: l'utente visualizza un messaggio di errore nel caso in cui non abbia definito correttamente alcuna politica temporale per il ricalcolo delle probabilità (\hyperref[UC3]{UC3 (§\ref*{UC3})}).
+		\item \textcolor{red}{UC22 (TODO LINK)}: l'utente visualizza un messaggio di errore nel caso in cui non abbia selezionato correttamente la porta del Server in ascolto per le operazioni di calcolo \textcolor{red}{UC17 (TODO LINK)}.
 	\end{enumerate}
+	\item \textbf{Inclusioni:} UC20 include \hyperref[UC4]{UC4 (§\ref*{UC4})}: Vengono visualizzati i dati di monitoraggio sotto forma di misura di probabilità associate ai Nodi non collegati al flusso.
 \end{itemize}
 
 
