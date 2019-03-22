@@ -222,7 +222,6 @@ Dal branch "develop" si avvia un processo di verifica, che sfocia in una nuovo b
 
 	\begin{itemize}
 		\item \textbf{\textit{GitHub Desktop}}: gestore di versionamento a interfaccia grafica per sistemi Windows \& MacOS; 
-		\item \textbf{\textit{GitKraken}}: gestore di versionamento a interfaccia grafica per sistemi Windows, MacOS \& Linux; 		
 		\item \textbf{Terminale(Bash)}: gestore di versionamento a riga di comando per i sistemi MacOS \& Linux.
 	\end{itemize}
 		
@@ -243,13 +242,14 @@ Tale tipo di verifica può svolgersi in due modi:
 Il processo di analisi dinamica consiste nella realizzazione ed esecuzione di una serie di test sul codice del software prodotto. Questa tecnica non è applicabile per trovare errori nella documentazione.
 
 \subsubsection{Verifica Diagrammi UML}
-I verificatori devono controllare che i diagrammi UML prodotti rispettino lo standard UML 2.x e che siano corretti semanticamente.
+I verificatori devono controllare che i diagrammi UML prodotti rispettino lo standard \textit{UML 2.x} e che siano corretti semanticamente.
 
 \subsubsection{Strumenti}
 \begin{itemize}
-	\item \textbf{Software}: per la verifica del codice JavaScript è stato scelto Jest;
-	\item \textbf{Documenti}: 
-	\item \textbf{Gestione processi e feedback}: è stato scelto di utilizzare il sistema integrato di issues presente su GitLab.
+	\item \textbf{Software}: per la verifica del codice \textit{JavaScript} è stato scelto \textit{Jest};
+	\item \textbf{Documenti}: per la verifica dei documenti si utilizzano le funzionalità di \textit{TexMaker};
+	\item \textbf{Gestione processi e feedback}: è stato scelto di utilizzare il sistema integrato di issues presente su \textit{GitLab};
+	\item \textbf{Analisi dinamica locale}: è stato scelto \textit{ESLint} come soluzione iniziale per risolvere tutte le necessit`a di analisi del codice locale.
 \end{itemize}
 
 \subsection{Validazione}\label{validazione}
