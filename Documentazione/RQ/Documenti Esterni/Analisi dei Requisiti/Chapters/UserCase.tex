@@ -199,7 +199,7 @@ Il numero di casi che abbiamo analizzato è limitato poiché il plug-in fornisce
 	\item L'utente visualizza, associati al nominativo di ogni possibile stato del nodo, una sezione composta di tre campi dati che devono essere obbligatoriamente riempiti;
 	\item Per ogni stato del nodo l'utente digita, nel primo campo editabile, il valore numerico del livello di soglia;
 	\item Per ogni stato del nodo l'utente seleziona, attraverso una casella a scelta multipla, se il valore numerico impostato sia un valore di massimo oppure di minimo;
-	\item Per ogni stato del nodo l'utente seleziona, attraverso una checkbox, se la soglia definita sia critica o meno. Nel caso in cui si tratti di una soglia critica, qualora dovessero essere monitorati valori che la facciano scattare, si attiverebbe immediatamente l'attività di ricalcolo delle probabilità in sede di monitoraggio e visualizzazione dati (\hyperref[UC4.2]{UC4.2 (§\ref*{UC4.2})}).
+	\item Per ogni stato del nodo l'utente seleziona, attraverso una checkbox, se la soglia definita sia critica o meno. Nel caso in cui si tratti di una soglia critica, qualora dovessero essere monitorati valori che la facciano scattare, si attiverebbe immediatamente l'attività di ricalcolo delle probabilità in sede di monitoraggio e visualizzazione dati (\hyperref[UC4]{UC4 (§\ref*{UC4})}).
 	\end{enumerate}
 \end{itemize}
 
@@ -317,11 +317,15 @@ Il numero di casi che abbiamo analizzato è limitato poiché il plug-in fornisce
 \subsection{UC9 - Visualizzazione Messaggio di Errore Nessun Nodo Collegato}\label{UC9}
 \begin{itemize}
 \item \textbf{Attore Primario}: Utente;
-\item \textbf{Precondizione}: l'utente ha confermato il collegamento dei nodi al flusso dati (\hyperref[UC2.2]{UC2.2 (§\ref*{UC2.2})}), senza averne effettivamente collegato alcuno;
-\item \textbf{Postcondizione}: l'utente visualizza l'errore;
+\item \textbf{Precondizione}: l'utente ha avviato il monitoraggio (\hyperref[UC19]{UC19 (§\ref*{UC19})}), senza averne effettivamente collegato alcuno;
+\item \textbf{Postcondizioni}: 
+	\begin{enumerate}
+	\item l'utente visualizza l'errore;
+	\item il monitoraggio dei dati non viene avviato;
+	\end{enumerate}
 \item \textbf{Scenario Principale}: 
 	\begin{enumerate}
-	\item L'utente visualizza un messaggio di errore in cui è segnalato il fatto che non sia stato collegato alcun 				nodo al flusso dati durante \hyperref[UC2]{UC2 (§\ref*{UC2})};
+	\item L'utente visualizza un messaggio di errore in cui è segnalato il fatto che non sia stato collegato alcun 				nodo al flusso dati (\hyperref[UC2]{UC2 (§\ref*{UC2})});
 	\item L'utente clicca il pulsante con etichetta "OK".
 	\end{enumerate}
 \end{itemize}
@@ -331,7 +335,7 @@ Il numero di casi che abbiamo analizzato è limitato poiché il plug-in fornisce
 \subsection{UC12 - Visualizzazione Messaggio di Errore Politiche Temporali non Definite}\label{UC12}
 \begin{itemize}
 \item \textbf{Attore Primario}: Utente;
-\item \textbf{Precondizione}: l'utente ha avviato il monitoraggio del flusso dati (\hyperref[UC4.1]{UC4.1 							(§\ref*{UC4.1})}), senza aver preventivamente definito correttamente alcuna politica temporale per il ricalcolo delle probabilità (\hyperref[UC3]{UC3 (§\ref*{UC3})}).
+\item \textbf{Precondizione}: l'utente ha avviato il monitoraggio del flusso dati (\hyperref[UC19]{UC19 							(§\ref*{UC19})}), senza aver preventivamente definito correttamente alcuna politica temporale per il ricalcolo delle probabilità (\hyperref[UC3]{UC3 (§\ref*{UC3})}).
 \item \textbf{Postcondizione}: l'utente visualizza l'errore;
 \item \textbf{Scenario Principale}: 
 	\begin{enumerate}
@@ -340,40 +344,6 @@ Il numero di casi che abbiamo analizzato è limitato poiché il plug-in fornisce
 	\end{enumerate}
 \end{itemize}
 
-\pagebreak
-
-\subsection{UC13 - Modifica Collegamento Nodi al Flusso Dati}\label{UC13}
-
-\begin{figure}[H]
-\centering
-\includegraphics[scale=0.6]{./images/UC13.png}
-\caption{UC13 - Modifica Collegamento Nodi al Flusso Dati}
-\end{figure}
-
-
-\begin{itemize}
-\item \textbf{Attore Primario:} utente;
-\item \textbf{Precondizione:} l'utente ha collegato con successo alcuni nodi della rete bayesiana al flusso dati (\hyperref[UC2]{UC2 (§\ref*{UC2})});
-\item \textbf{Postcondizioni:} 
-	\begin{enumerate}
-	\item L'utente ha modificato con successo i nodi della rete bayesiana collegati al flusso dati;
-	\item La visualizzazione dei dati forniti dai nodi della rete bayesiana (\hyperref[UC4]{UC4 (§\ref*{UC4})}) viene interrotta, se avviata. Di conseguenza torna visibile il pulsante "Avvio Monitoraggio";
-	\item Gli alert definiti in \hyperref[UC5]{UC5 (§\ref*{UC5})} vengono eliminati, se presenti.
-	\end{enumerate}
-\item \textbf{Scenario Principale:}
-	\begin{enumerate}
-	\item (\hyperref[UC13.1]{UC13.1 (§\ref*{UC13.1})}) l'utente clicca il pulsante "Modifica Collegamento Nodi";
-	\item (\hyperref[UC2]{UC2 (§\ref*{UC2})}) l'utente effettua nuovamente il collegamento dei nodi.
-	\end{enumerate}
-\end{itemize}
-
-\subsubsection{UC13.1 - Click Pulsante "Modifica Collegamento Nodi"}\label{UC13.1}
-\begin{itemize}
-\item \textbf{Attore Primario:} utente;
-\item \textbf{Precondizione:} l'utente ha collegato con successo alcuni nodi della rete bayesiana al flusso dati 			(\hyperref[UC2]{UC2 (§\ref*{UC2})});
-\item \textbf{Postcondizione:} il pannello contenente la lista dei nodi torna ad essere interagibile da parte dell'utente.
-\item \textbf{Scenario Principale:} l'utente clicca il pulsante denominato: "Modifica Collegamento Nodi".
-\end{itemize}
 \newpage
 
 \subsection{UC14 - Visualizzazione Messaggio di Errore Nessuna Soglia Impostata}\label{UC14}
@@ -427,7 +397,8 @@ Il numero di casi che abbiamo analizzato è limitato poiché il plug-in fornisce
 	\end{enumerate}
 \item \textbf{Estensioni:}
 	\begin{enumerate}
-	\item \hyperref[UC13]{UC13 (§\ref*{UC13})}: l'utente visualizza un messaggio di errore nel caso in cui non abbia definito correttamente alcuna politica temporale per il ricalcolo delle probabilità (\hyperref[UC3]{UC3 (§\ref*{UC3})}).
+	\item \hyperref[UC9]{UC9 (§\ref*{UC9})}: l'utente visualizza un messaggio di errore nel caso in cui non abbia collegato alcun nodo ad un flusso dati (\hyperref[UC2]{UC2 (§\ref*{UC2})});
+	\item \hyperref[UC12]{UC12 (§\ref*{UC12})}: l'utente visualizza un messaggio di errore nel caso in cui non abbia definito correttamente alcuna politica temporale per il ricalcolo delle probabilità (\hyperref[UC3]{UC3 (§\ref*{UC3})}).
 	\item \textcolor{red}{UC21 (TODO LINK)}: l'utente visualizza un messaggio di errore nel caso in cui non abbia selezionato correttamente la porta del Server in ascolto per le operazioni di calcolo \textcolor{red}{UC16 (TODO LINK)}.
 	\end{enumerate}
 \end{itemize}
