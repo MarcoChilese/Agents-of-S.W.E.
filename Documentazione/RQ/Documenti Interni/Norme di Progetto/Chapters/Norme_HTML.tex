@@ -1,0 +1,83 @@
+\label{html}\-\\
+
+Insieme al \textit{CSS3}, per lo sviluppo della parte front-end del progetto, il gruppo ha scelto di utilizzare \textit{HTML5}. Per la stesura della Style Guide verrà utilizzata la documentazione resa disponibile da W3C.\\
+Di seguito saranno riportate le principali norme da seguire: \\
+\-\\
+\textbf{Norma 1}\\
+Il tipo di documento deve sempre essere dichiarato all'inizio del documento in maiuscolo, in questo modo:\\
+	\begin{lstlisting}[language=HTML]
+<!DOCTYPE html>
+	\end{lstlisting}
+
+\textbf{Norma 2}\\
+I nomi degli elementi ed attributi devono essere sempre scritti in minuscolo: \\
+	\begin{lstlisting}[language=HTML]
+<tag attr1="value"/> <!-- OK -->
+
+<TAG ATTR1="value"/> <!-- NO -->
+\end{lstlisting}
+\-\\
+\textbf{Norma 3}\\
+Tutti gli elementi \textit{HTML} devono essere chiusi, anche se vuoti: \\
+	\begin{lstlisting}[language=HTML]
+<tag /> 	<!-- OK -->
+<tag></tag> 	<!-- OK -->
+
+<tag> 		<!-- NO -->
+
+\end{lstlisting}
+\-\\
+\textbf{Norma 4}\\
+Il valore degli attributi deve essere racchiuso dentro doppio apice:\\
+	\begin{lstlisting}[language=HTML]
+<tag attr1="value"/> <!-- OK -->
+
+<tag attr1='value'/> <!-- NO -->
+\end{lstlisting}
+\-\\
+\textbf{Norma 5}\\
+Intorno al simbolo di uguaglianza (=) non devono essere presenti spazi:\\
+\begin{lstlisting}[language=HTML]
+<tag attr1="value"/> <!-- OK -->
+
+<tag attr1 = 'value'/> <!-- NO -->
+\end{lstlisting}
+\-\\
+\textbf{Norma 6}\\
+Devono essere usati due (2) spazi e non le tabulazioni. Gli spazi bianchi vanno utilizzati solamente per ampli blocchi di codice, per una maggiore leggibilità; \\
+\begin{lstlisting}[language=HTML]
+<!-- OK -->
+<rootTag>
+..<childTag>
+....<subChildTag/>
+..</childTag>  
+</rootTag>
+
+<!-- NO -->
+<rootTag>
+	<childTag>
+		<subChildTag/>
+	</childTag>  
+</rootTag>
+\end{lstlisting}
+\-\\
+\textbf{Norma 7}\\
+Nonostante i tag \texttt{html}, \texttt{body} e \texttt{head} possano essere omessi, vanno inseriti affinché siano compatibili con tutti i browser:\\
+\begin{lstlisting}[language=HTML]
+<!-- OK -->
+<html>
+  <head>
+    ...
+  </head>
+  <body>
+    ...
+  </body>
+</html>
+\end{lstlisting}
+\-\\
+\textbf{Norma 8}\\
+Le classi che verranno dichiarate all'interno dell'\textit{HTML}, al fine di andare poi a ridefinire il \textit{CSS}, dovranno essere quelle rese disponibili dalla documentazione di Grafana.	\\
+
+Equivalentemente al \textit{CSS}, anche il codice \textit{HTML} dovrà essere validato. Questa validazione avverrà tramite il sito reso disponibile dalla W3C, al seguente \href{https://validator.w3.org/}{link}.
+
+%AGGIUNGERE E SISTEMARE DA QUA IN GIU

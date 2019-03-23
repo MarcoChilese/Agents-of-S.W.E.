@@ -2,9 +2,26 @@
 	I sistemi operativi utilizzati dai membri del gruppo sono i seguenti:
 	\begin{itemize}
 	\item Windows 10 x64;
-	\item Mac OS 10.14.1;
+	\item Mac OS 10.14.x;
 	\item Manjaro Linux - 4.14.85-1 LTS.
 	\end{itemize}
+
+\subsubsection{Ambiente di Test del Prodotto}\label{Server}
+Il team \texttt{Agents Of S.W.E.} ha deciso, per avere un ambiente comune su cui testare il prodotto in via di sviluppo, di dotarsi di un server noleggiato online attraverso la nota piattaforma di hosting DigitalOcean\glossario.\\
+Il server in oggetto è raggiungibile all'indirizzo IP \texttt{142.93.102.115} ha le seguenti caratteristiche:
+\begin{itemize}
+	\item SO: Ubuntu 18.04 LTS;
+	\item CPU: 1x Intel(R) Xeon(R) CPU E5-2650 v4 @ 2.20GHz;
+	\item RAM: 2GiB ECC DIMM;
+	\item SSD: 24GiB.
+\end{itemize}
+Il team ha provveduto ad installare all'interno del server i seguenti pacchetti:
+\begin{itemize}
+	\item Grafana;
+	\item InfluxDB;
+	\item Telegraf;
+	\item Apache\glossario.
+\end{itemize}
 
 \subsubsection{Versionamento e Issue Tracking}
 
