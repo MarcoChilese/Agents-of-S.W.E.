@@ -1,0 +1,28 @@
+\section{Resoconto}
+
+\subsection{Punto 1}
+Il gruppo ha analizzato nel dettaglio le criticità rilevate dal proponente per il documento \textit{Analisi dei Requisiti} in sede di RR. Il gruppo ha individuato nei casi d'uso UC2, UC4 e UC13 le maggiori problematiche per il risanamento delle criticità. Tali casi d'uso, necessitando di una discussione ancor più approfondita, sono stati rimandati ad un secondo momento, decidendo da dare priorità iniziale a correttivi facilmente individuabili.\\
+L'attenzione dei membri del gruppo si quindi focalizzata nell'esame di quelle criticità facilmente sanabili, senza la necessità di un effettivo cambio del documento dal punto di vista del suo contenuto.\\
+Le decisioni principali di questa prima parte hanno dunque riguardato i casi d'uso UC1 e UC3. Nello specifico il gruppo ha deciso di riformulare la descrizione testuale dello scenario principale del caso UC1 in modo da uniformarla con il diagramma dello stesso. Si è inoltre stabilito, analizzando UC3, di spostare UC3.1 come precondizione del caso d'uso principale, come suggerito dal commitente in sede di valutazione.
+
+\subsection{Punto 2}
+Come rilevato dal committente in sede di valutazione UC2.1 non è sottocaso d'uso di UC2, il gruppo ha dunque discusso sulle modifiche necessarie al caso in esame.\\
+Dopo svariate proposte da diversi membri il gruppo ha stabilito, come opinione di maggioranza, che la situazione in esame fosse sensibilmente diversa da quanto analizzato per UC3.1. Il gruppo ha infatti reputato la visualizzazione dei nodi della rete bayesiana (UC2.1) come funzionalità meritevole di modellazione attraverso la stesura di un proprio caso d'uso.\\
+Il gruppo ha dunque rilevato la necessità della realizzazione di un nuovo caso d'uso, precedentemente indicato come UC2.1, scollegato da UC2 e modellato come inclusione da UC1.
+
+\subsection{Punto 3}
+Il gruppo, a seguito della valutazione del committente, ha preso atto di come modellare l'avvio del monitoraggio (UC4.1) come sottocaso della visualizzazione dei suoi risultati (UC4) fosse un'assunzione totalemente errata.\\
+Il gruppo ha dunque decretato, come unica soluzione possibile, la separazione dei due casi d'uso, modellando così due funzionalità distinte.
+
+\subsection{Punto 4}
+La discussione riguardo il caso d'uso UC13 ha toccato svariati aspetti, dalla modellazione del caso alla sua effettiva utilità. Il gruppo, a differenza delle precedenti decisioni, ha faticato ad accordarsi per una soluzione condivisa su come sanare la criticità rilevata dal committente. Si è dunque deciso, in un primo momento, di mantenere il caso d'uso, passando ad una modellazione differente, che non prevedesse l'inclusione del caso d'uso UC2.
+
+\subsection{Punto 5}
+Il gruppo ha dunque fatto il punto della situazione concentrandosi sul lato più tecnico dello sviluppo del prodotto. Alcuni membri del gruppo avevano infatti segnalato svariate problematiche emerse in fase di codifica, causate dalla modellazione di alcune funzionalità, nello specifico UC2, UC4, UC5, UC6, UC7.\\
+Il gruppo ha purtroppo dovuto constatare come, a causa delle meccaniche intrinseche della piattaforma \textit{Grafana}, non fosse possibile modellare la gestione degli alert come funzionalità propria del plug-in in sviluppo. Tali alert infatti, inseriti come requisiti opzionali dalla proponente nel capitolato, risultano essere realizzabili mantendo l'attuale configurazione del plug-in in sviluppo, tuttavia la loro gestione risulta essere una funzionalità propria della piattaforma \textit{Grafana}. L'unica soluzione rilevata è stata dunque l'eliminazione dei casi d'uso UC5, UC6 e UC7.\\
+Il gruppo ha inoltre concordato sul fatto che l'attuale modellazione di alcune funzionalità, soprattutto UC2 e UC4, fosse poco user friendly, eccessivamente rigida e inutilmente dispendiosa in termini di spazio su schermo. Al fine di garantire un prodotto più elegante e facilmente interagibile il gruppo ha dunque deciso di rimodellare alcune condizioni di avvio del monitoraggio dati, che hanno portato all'eliminazione di alcuni casi d'uso di gestione di errore, come UC10 e UC11.\\
+Studiando la nuova idea di modellazione del prodotto, che al contempo garantisce le stesse funzionalità della precedente con una migliore facilità di utilizzo dal lato utente, il gruppo ha inoltre optato per l'eliminazione del caso d'uso UC13. Ribaltando la decisione presa precedentemente (descritta nel \textbf{Punto 4} del verbale) il gruppo ha deciso di semplificare la modifica del collegamento dei nodi (Ex UC13) optando per un collegamento dei nodi (UC2) senza conferma di collegamento (EX UC2.3) ma con la sola conferma delle scelte di collegamento del singolo nodo per volta (UC2.2.5). Ciò ha condotto alla necessità di modellare un caso d'uso deputato al solo compito di interruzione del monitoraggio (precedentemente causato da UC13).\\
+Il gruppo ha inoltre stabilito di modellare la selezione della sorgente dati (precedentemente UC2.2.2) come caso d'uso a sè stante, per motivi sia logici sia di facilità di utilizzo del prodotto dal lato utente.\\
+Il gruppo ha infine rilevato la necessità di garantire la continuità di monitoraggio anche nel caso in cui il pannello del plug-in in esecuzione venisse chiuso. A tal fine è stata reputata indispensabile un'elaborazione dei dati lato server. Vista l'importanza della questione il gruppo ha stabilito di incontrarsi successivamente per discuterne le eventuali implicazioni di impiego.
+
+
