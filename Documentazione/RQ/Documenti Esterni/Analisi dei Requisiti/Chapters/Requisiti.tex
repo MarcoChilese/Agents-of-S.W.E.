@@ -29,51 +29,35 @@ RDF1.6 & Il Sistema deve mantenere in memoria, in caso di riavvio, l'ultima rete
 \hline
 \rowcolor{grigio}ROF2 & L'utente deve poter collegare un flusso di dati ad ogni nodo desiderato della rete preesistente & Obbligatorio & UC2\\
 \hline
-ROF2.1 & Il Sistema deve interpretare la rete bayesiana caricata, al fine di estrapolarne i nodi e fornirli all'utente sotto forma di lista & Obbligatorio & UC2\\
+ROF2.1 & Il Sistema deve interpretare la rete bayesiana caricata, al fine di estrapolarne i nodi e fornirli all'utente sotto forma di lista & Obbligatorio & 16\\
 \hline
-\rowcolor{grigio}ROF2.1.1 & Il Sistema deve mostrare, per ogni nodo, il nominativo dello stesso & Obbligatorio & UC2\\
+\rowcolor{grigio}ROF2.1.1 & Il Sistema deve mostrare, per ogni nodo, il nominativo dello stesso & Obbligatorio & UC16\\
 \hline
-ROF2.1.2 & Il Sistema deve mostrare, per ogni nodo, una corrispondente checkbox che identifichi lo stato dello stesso: collegato ad un flusso dati oppure no & Obbligatorio & UC2\\
+ROF2.1.2 & Il Sistema deve mostrare, per ogni nodo, una corrispondente checkbox che identifichi lo stato dello stesso: collegato ad un flusso dati oppure no & Obbligatorio & UC16 UC2\\
 \hline
 \rowcolor{grigio}ROF2.5 & Il Sistema deve mettere a disposizione dell'utente le impostazioni necessarie per effettuare correttamente il collegamento desiderato & Obbligatorio & UC2\\
 \hline
-ROF2.5.1 & Il Sistema, in seguito al click dell'utente su un nominativo, deve aprire una finestra contenente un elenco delle sorgenti di dati disponibili per il collegamento & Obbligatorio & UC2.2\\
+ROF2.5.3 & Il Sistema deve fornire un elenco dei flussi dati disponibili contestualmente alla sorgente di dati selezionata & Obbligatorio & UC2.3\\
 \hline
-\rowcolor{grigio}ROF2.5.2 & L'utente deve poter selezionare la sorgente dati desiderata per il collegamento & Obbligatorio & UC2.2\\
+\rowcolor{grigio}ROF2.5.4 & L'utente deve poter selezionare il flusso dati desiderato per il collegamento & Obbligatorio & UC2.3\\
 \hline
-ROF2.5.3 & Il Sistema deve fornire un elenco dei flussi dati disponibili contestualmente alla sorgente di dati selezionata & Obbligatorio & UC2.2\\
+ROF2.5.5 & Il Sistema deve mostrare la lista dei possibili stati del nodo selezionato & Obbligatorio & UC2.3\\
 \hline
-\rowcolor{grigio}ROF2.5.4 & L'utente deve poter selezionare il flusso dati desiderato per il collegamento & Obbligatorio & UC2.2\\
+\rowcolor{grigio}ROF2.5.6 & Il Sistema deve mettere a disposizione dell'utente, per ogni stato del nodo, i campi dati necessari alla definizione di un livello di soglia connesso al flusso dati selezionato & Obbligatorio & UC2.3\\
 \hline
-ROF2.5.5 & Il Sistema deve mostrare la lista dei possibili stati del nodo selezionato & Obbligatorio & UC2.2\\
+ROF2.5.6.1 & Il Sistema deve mettere a dispozione dell'utente un campo dati che permetta di definire il valore numerico della soglia & Obbligatorio & UC2.3\\
 \hline
-\rowcolor{grigio}ROF2.5.6 & Il Sistema deve mettere a disposizione dell'utente, per ogni stato del nodo, i campi dati necessari alla definizione di un livello di soglia connesso al flusso dati selezionato & Obbligatorio & UC2.2\\
+\rowcolor{grigio}ROF2.5.6.2 & Il Sistema deve mettere a dispozione dell'utente un campo dati che permetta di definire se il valore numerico definito per la soglia sia un minimo oppure un massimo & Obbligatorio & UC2.3\\
 \hline
-ROF2.5.6.1 & Il Sistema deve mettere a dispozione dell'utente un campo dati che permetta di definire il valore numerico della soglia & Obbligatorio & UC2.2\\
+RDF2.5.6.3 & Il Sistema deve mettere a dispozione dell'utente un campo dati che permetta di definire se la soglia sia critica oppure no & Desiderabile & UC2.3 VER-2019-02-08\\
 \hline
-\rowcolor{grigio}ROF2.5.6.2 & Il Sistema deve mettere a dispozione dell'utente un campo dati che permetta di definire se il valore numerico definito per la soglia sia un minimo oppure un massimo & Obbligatorio & UC2.2\\
+\rowcolor{grigio}ROF2.5.7 & L'utente deve poter editare i campi dati per definire correttamente un livello di soglia al di sotto, o al di sopra del quale la probabilità associata a quel dato stato risulta pari al 100\%, mentre le probabilità associate agli altri stati risultano pari allo 0\% & Obbligatorio & UC2.3\\
 \hline
-RDF2.5.6.3 & Il Sistema deve mettere a dispozione dell'utente un campo dati che permetta di definire se la soglia sia critica oppure no & Desiderabile & UC2.2 VER-2019-02-08\\
+ROF2.5.8 & Il Sistema deve mettere a disposizione dell'utente un bottone per confermare le scelte riguardardanti la definizione della soglia & Obbligatorio & UC2.3\\
 \hline
-\rowcolor{grigio}ROF2.5.7 & L'utente deve poter editare i campi dati per definire correttamente un livello di soglia al di sotto, o al di sopra del quale la probabilità associata a quel dato stato risulta pari al 100\%, mentre le probabilità associate agli altri stati risultano pari allo 0\% & Obbligatorio & UC2.2\\
-\hline
-ROF2.5.8 & Il Sistema deve mettere a disposizione dell'utente un bottone per confermare le scelte riguardardanti la definizione della soglia & Obbligatorio & UC2.2\\
-\hline
-\rowcolor{grigio}ROF2.5.9 & Il Sistema deve visualizzare un messaggio di errore nel caso in cui l'utente abbia confermato le proprie scelte riguardanti il collegamento del singolo nodo in esame, senza aver correttamente definito il livello di soglia & Obbligatorio & UC2.2 UC14\\
+\rowcolor{grigio}ROF2.5.9 & Il Sistema deve visualizzare un messaggio di errore nel caso in cui l'utente abbia confermato le proprie scelte riguardanti il collegamento del singolo nodo in esame, senza aver correttamente definito il livello di soglia & Obbligatorio & UC2.3 UC14\\
 \hline
 ROF2.5.10 & Il Sistema deve aggiornare la lista di checkbox, registrando il nuovo stato di ogni nodo (collegato o meno ad un flusso dati) & Obbligatorio & UC2\\
-\hline
-\rowcolor{grigio}ROF2.6 & Il Sistema deve mettere a disposizione dell'utente un bottone per confermare il collegamento dei nodi & Obbligatorio & UC2\\
-\hline
-ROF2.7 & Il Sistema deve visualizzare un messaggio di errore nel caso in cui l'utente abbia confermato il collegamento dei nodi senza averne effettivamente collegato alcuno & Obbligatorio & UC2 UC9\\
-\hline
-\rowcolor{grigio}ROF2.8 & L'utente deve poter modificare il collegamento dei nodi dopo aver confermato le proprie scelte & Obbligatorio & UC2 UC13\\
-\hline
-ROF2.8.1 & Il Sistema deve rendere non interagibile il pannello contenente la lista dei nodi una volta che l'utente abbia effettuato la conferma del collegamento & Obbligatorio & UC2 UC13\\
-\hline
-\rowcolor{grigio}ROF2.8.2 & Il Sistema deve mettere a disposizione dell'utente un bottone per accedere alla modifica del collegamento dei nodi, rendendo nuovamente interagibile il pannello contenente la lista di nodi & Obbligatorio & UC13\\
-\hline
-ROF2.8.3 & Il Sistema deve interrompere la visualizzazione dei dati nel caso in cui l'utente interagisca con il Sistema per modificare il collegamento dei nodi & Obbligatorio & UC2 UC4 UC13\\
 \hline
 ROF3 & L'utente deve poter impostare una politica temporale per il ricalcolo delle probabilità condizionate associate ai nodi della rete bayesiana & Obbligatorio & UC3\\
 \hline
@@ -98,6 +82,8 @@ ROF3.5 & Il Sistema deve visualizzare un messaggio di errore nel caso in cui l'u
 ROF4.4 & Il Sistema deve mettere a disposizione dell'utente un pulsante per avviare il monitoraggio dei dati & Obbligatorio & UC20\\
 \hline
 \rowcolor{grigio}ROF4.4.3 & Il Sistema deve visualizzare un messaggio di errore nel caso in cui l'utente abbia avviato il monitoraggio senza aver preventivamente impostato la politica temporale per il ricalcolo delle probabilità & Obbligatorio & UC20 UC12\\
+\hline
+ROF4.4.4 & Il Sistema deve visualizzare un messaggio di errore nel caso in cui l'utente abbia avviato il monitoraggio senza aver preventivamente collegato almeno un nodo della rete bayesiana al flusso dati & Obbligatorio & UC20 UC9\\
 \hline
 ROF4.5 & Il Sistema deve fornire all'utente una lista di probabilità dinamiche associate ai nodi della rete & Obbligatorio & UC4\\
 \hline
@@ -212,21 +198,19 @@ Piattaforma \textit{Grafana} & \makecell{ROV1\\ROV2\\ROV3\\ROV6}\\
 \hline
 \rowcolor{grigio}UC1 & \makecell{ROF1\\ROF1.1\\ROF1.2\\ROF1.3\\ROF1.4\\ROF1.4.1\\RFF1.4.2\\ROF1.5}\\
 \hline
-UC2 & \makecell{ROF2\\ROF2.1\\ROF2.1.1\\ROF2.1.2\\ROF2.5\\ROF2.5.10\\ROF2.6\\ROF2.7\\ROF2.8\\ROF2.8.1\\ROF2.8.3}\\
+UC2 & \makecell{ROF2\\ROF2.1\\ROF2.1.1\\ROF2.1.2\\ROF2.5\\ROF2.5.10}\\
 \hline
-\rowcolor{grigio}UC2.2 & \makecell{ROF2.5.1\\ROF2.5.2\\ROF2.5.3\\ROF2.5.4\\ROF2.5.6\\ROF2.5.6.1\\ROF2.5.6.2\\RDF2.5.6.3\\ROF2.5.7\\ROF2.5.8\\ROF2.5.9}\\
+\rowcolor{grigio}UC2.3 & \makecell{ROF2.5.3\\ROF2.5.4\\ROF2.5.6\\ROF2.5.6.1\\ROF2.5.6.2\\RDF2.5.6.3\\ROF2.5.7\\ROF2.5.8\\ROF2.5.9}\\
 \hline
 UC3 & \makecell{ROF3\\ROF3.3\\ROF3.3.1\\ROF3.3.2\\ROF3.3.2.1\\ROF3.3.2.2\\ROF3.3.3\\ROF3.4\\ROF3.5}\\
 \hline
-\rowcolor{grigio}UC4 & \makecell{ROF2.8.3\\ROF4\\ROF4.5\\ROF4.6\\RDF4.6.1\\RFF5.1}\\
+\rowcolor{grigio}UC4 & \makecell{ROF4\\ROF4.5\\ROF4.6\\RDF4.6.1\\RFF5.1}\\
 \hline
 UC8 & \makecell{ROF1.4\\ROF1.4.1\\RFF1.4.2}\\
 \hline
-\rowcolor{grigio}UC9 & \makecell{ROF2.7}\\
+\rowcolor{grigio}UC9 & \makecell{ROF4.4.4}\\
 \hline
 \rowcolor{grigio}UC12 & \makecell{ROF4.5.3}\\
-\hline
-UC13 & \makecell{ROF2.8\\ROF2.8.1\\ROF2.8.2\\ROF2.8.3}\\
 \hline
 \rowcolor{grigio}UC14 & \makecell{ROF2.5.9}\\
 \hline
@@ -250,7 +234,7 @@ Supporto a \textit{ECMAScript6} & \makecell{ROV8\\ROV9\\ROV10\\ROV11}\\
 \rowcolor{bluelogo}\textbf{\textcolor{white}{Tipologia}} & \textbf{\textcolor{white}{Obbligatorio}} & \textbf{\textcolor{white}{Opzionale}} & \textbf{\textcolor{white}{Desiderabile}} & \textbf{\textcolor{white}{Totale}}\\
 \hline \hline
 \endhead
-Funzionale & 42 & 6 & 2 & 50\\
+Funzionale & 35 & 6 & 2 & 43\\
 \hline
 \rowcolor{grigio}Di Qualità & 5 & 0 & 6 & 11\\
 \hline
