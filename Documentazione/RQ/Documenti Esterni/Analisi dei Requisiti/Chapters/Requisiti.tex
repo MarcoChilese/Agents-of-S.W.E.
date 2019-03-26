@@ -29,7 +29,7 @@ RDF1.6 & Il Sistema deve mantenere in memoria, in caso di riavvio, l'ultima rete
 \hline
 \rowcolor{grigio}ROF2 & L'utente deve poter collegare un flusso di dati ad ogni nodo desiderato della rete preesistente & Obbligatorio & UC2\\
 \hline
-ROF2.1 & Il Sistema deve interpretare la rete bayesiana caricata, al fine di estrapolarne i nodi e fornirli all'utente sotto forma di lista & Obbligatorio & 16\\
+ROF2.1 & Il Sistema deve interpretare la rete bayesiana caricata, al fine di estrapolarne i nodi e fornirli all'utente sotto forma di lista & Obbligatorio & UC16\\
 \hline
 \rowcolor{grigio}ROF2.1.1 & Il Sistema deve mostrare, per ogni nodo, il nominativo dello stesso & Obbligatorio & UC16\\
 \hline
@@ -43,7 +43,7 @@ ROF2.5.3 & Il Sistema deve fornire un elenco dei flussi dati disponibili contest
 \hline
 ROF2.5.5 & Il Sistema deve mostrare la lista dei possibili stati del nodo selezionato & Obbligatorio & UC2.3\\
 \hline
-\rowcolor{grigio}ROF2.5.6 & Il Sistema deve mettere a disposizione dell'utente, per ogni stato del nodo, i campi dati necessari alla definizione di un livello di soglia connesso al flusso dati selezionato & Obbligatorio & UC2.3\\
+\rowcolor{grigio}ROF2.5.6 & Il Sistema deve mettere a disposizione dell'utente, per ogni stato del nodo, la possibilità di aggiungere una soglia collegata allo stato in questione & Obbligatorio & UC2.3\\
 \hline
 ROF2.5.6.1 & Il Sistema deve mettere a dispozione dell'utente un campo dati che permetta di definire il valore numerico della soglia & Obbligatorio & UC2.3\\
 \hline
@@ -51,11 +51,25 @@ ROF2.5.6.1 & Il Sistema deve mettere a dispozione dell'utente un campo dati che 
 \hline
 RDF2.5.6.3 & Il Sistema deve mettere a dispozione dell'utente un campo dati che permetta di definire se la soglia sia critica oppure no & Desiderabile & UC2.3 VER-2019-02-08\\
 \hline
+ROF2.5.6.4 & Il Sistema deve mettere a disposizione dell'utente un pulsante per aggiungere una soglia ad un determinato stato del nodo. Il click di tale pulsante porterà alla comparsa dei campi dati editabili di cui la soglia è costituita & Obbligatorio & UC2.3 Decisione Interna\\
+\hline
+RDF2.5.6.5 & L'utente deve poter aggiungere molteplici soglie associate allo stesso stato del nodo & Desiderabile & UC2.3 Decisione Interna\\
+\hline
 \rowcolor{grigio}ROF2.5.7 & L'utente deve poter editare i campi dati per definire correttamente un livello di soglia al di sotto, o al di sopra del quale la probabilità associata a quel dato stato risulta pari al 100\%, mentre le probabilità associate agli altri stati risultano pari allo 0\% & Obbligatorio & UC2.3\\
 \hline
 ROF2.5.8 & Il Sistema deve mettere a disposizione dell'utente un bottone per confermare le scelte riguardardanti la definizione della soglia & Obbligatorio & UC2.3\\
 \hline
-\rowcolor{grigio}ROF2.5.9 & Il Sistema deve visualizzare un messaggio di errore nel caso in cui l'utente abbia confermato le proprie scelte riguardanti il collegamento del singolo nodo in esame, senza aver correttamente definito il livello di soglia & Obbligatorio & UC2.3 UC14\\
+\rowcolor{grigio}ROF2.5.9 & L'Utente deve visualizzare un messaggio di errore nel caso in cui abbia confermato le proprie scelte riguardanti il collegamento del singolo nodo commettendo alcuni errori & Obbligatorio & UC2 UC14\\
+\hline
+ROF2.5.9.1 & Il Sistema deve verificare che l'utente abbia correttamente selezionato un flusso dati per il collegamento del nodo, negando la conferma del collegamento in caso contrario & Obbligatorio & UC2\\
+\hline
+ROF2.5.9.2 & Il Sistema deve verificare che l'utente abbia aggiunto almeno una soglia per ogni stato del nodo, negando la conferma del collegamento in caso contrario & Obbligatorio & UC2\\
+\hline
+ROF2.5.9.3 & Il Sistema deve verificare che l'utente abbia inserito un valore numerico di soglia strettamente positivo, negando la conferma del collegamento in caso contrario & Obbligatorio & UC2\\
+\hline
+ROF2.5.9.4 & Il Sistema deve verificare che gli insiemi di valori associati ai diversi stati stati attraverso le soglie siano tra loro coerenti, negando la conferma del collegamento in caso contrario & Obbligatorio & UC2\\
+\hline
+ROF2.5.9.5 & L'Utente deve visualizzare un differente messaggio di errore a seconda degli errori commessi in sede di collegamento del nodo & Obbligatorio & UC14\\
 \hline
 ROF2.5.10 & Il Sistema deve aggiornare la lista di checkbox, registrando il nuovo stato di ogni nodo (collegato o meno ad un flusso dati) & Obbligatorio & UC2\\
 \hline
@@ -192,15 +206,15 @@ ROV12 & Il plug-in deve funzionare per l'ultima versione di \textit{Grafana} dis
 \endhead
 Capitolato & \makecell{RFF5\\RFF5.1\\ROQ1\\ROQ2\\RDQ5\\ROV4\\ROV6}\\
 \hline
-\rowcolor{grigio}Decisione Interna & \makecell{ROQ1.1\\RDQ1.2\\ROQ2.1\\RDQ2.2\\ROQ3\\RDQ6\\RDF1.6\\RDQ7\\RDQ8\\ROV12}\\
+\rowcolor{grigio}Decisione Interna & \makecell{ROQ1.1\\RDQ1.2\\ROQ2.1\\RDQ2.2\\ROQ3\\RDQ6\\RDF1.6\\RDQ7\\RDQ8\\ROV12\\ROF2.5.6.4\\RDF2.5.6.5}\\
 \hline
 Piattaforma \textit{Grafana} & \makecell{ROV1\\ROV2\\ROV3\\ROV6}\\
 \hline
 \rowcolor{grigio}UC1 & \makecell{ROF1\\ROF1.1\\ROF1.2\\ROF1.3\\ROF1.4\\ROF1.4.1\\RFF1.4.2\\ROF1.5}\\
 \hline
-UC2 & \makecell{ROF2\\ROF2.1\\ROF2.1.1\\ROF2.1.2\\ROF2.5\\ROF2.5.10}\\
+UC2 & \makecell{ROF2\\ROF2.1.2\\ROF2.5\\ROF2.5.9\\ROF2.5.9.1\\ROF2.5.9.2\\ROF2.5.9.3\\ROF2.5.9.4\\ROF2.5.10}\\
 \hline
-\rowcolor{grigio}UC2.3 & \makecell{ROF2.5.3\\ROF2.5.4\\ROF2.5.6\\ROF2.5.6.1\\ROF2.5.6.2\\RDF2.5.6.3\\ROF2.5.7\\ROF2.5.8\\ROF2.5.9}\\
+\rowcolor{grigio}UC2.3 & \makecell{ROF2.5.3\\ROF2.5.4\\ROF2.5.6\\ROF2.5.6.1\\ROF2.5.6.2\\RDF2.5.6.3\\ROF2.5.6.4\\RDF2.5.6.5\\ROF2.5.7\\ROF2.5.8}\\
 \hline
 UC3 & \makecell{ROF3\\ROF3.3\\ROF3.3.1\\ROF3.3.2\\ROF3.3.2.1\\ROF3.3.2.2\\ROF3.3.3\\ROF3.4\\ROF3.5}\\
 \hline
@@ -212,9 +226,11 @@ UC8 & \makecell{ROF1.4\\ROF1.4.1\\RFF1.4.2}\\
 \hline
 \rowcolor{grigio}UC12 & \makecell{ROF4.5.3}\\
 \hline
-\rowcolor{grigio}UC14 & \makecell{ROF2.5.9}\\
+\rowcolor{grigio}UC14 & \makecell{ROF2.5.9\\ROF2.5.9.5}\\
 \hline
 UC15 & \makecell{ROF3.5}\\
+\hline
+UC16 & \makecell{ROF2.1\\ROF2.1.1\\ROF2.1.2}\\
 \hline
 UC20 & \makecell{ROF4\\ROF4.4\\ROF4.4.3}\\
 \hline
@@ -234,7 +250,7 @@ Supporto a \textit{ECMAScript6} & \makecell{ROV8\\ROV9\\ROV10\\ROV11}\\
 \rowcolor{bluelogo}\textbf{\textcolor{white}{Tipologia}} & \textbf{\textcolor{white}{Obbligatorio}} & \textbf{\textcolor{white}{Opzionale}} & \textbf{\textcolor{white}{Desiderabile}} & \textbf{\textcolor{white}{Totale}}\\
 \hline \hline
 \endhead
-Funzionale & 35 & 6 & 2 & 43\\
+Funzionale & 41 & 7 & 2 & 50\\
 \hline
 \rowcolor{grigio}Di Qualità & 5 & 0 & 6 & 11\\
 \hline

@@ -99,13 +99,12 @@ Il numero di casi che abbiamo analizzato è limitato poiché il plug-in fornisce
 
 \subsection{UC2 - Collegamento Nodi al Flusso Dati}\label{UC2}
 
-\begin{comment} %%%%%%%%%%%%%%%%%
+
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.5]{./images/UC2.png}
-\caption{UC2 - Collegamento Nodi della Rete Bayesiana al Flusso Dati}
+\caption{UC2 - Collegamento Nodi al Flusso Dati}
 \end{figure}
-\end{comment} %%%%%%%%%%%%%%%%%%%
 
 \begin{itemize}
 \item \textbf{Attore Primario}: Utente;
@@ -114,15 +113,7 @@ Il numero di casi che abbiamo analizzato è limitato poiché il plug-in fornisce
 	\item L'utente ha caricato con successo la rete bayesiana (\hyperref[UC1]{UC1(§\ref*{UC1})});
 	\item L'utente visualizza la lista di nodi di cui la rete bayesiana è costituita	(\hyperref[UC16]{UC16 (§\ref*{UC16})}).
 \end{enumerate}
-\item \textbf{Postcondizione}: L'utente ha collegato correttamente uno o più nodi ad un flusso dati, definendone le soglie per i rispettivi stati.
-
-	\begin{comment} %%%%%%%%%%%%%%%%%%
-	\begin{enumerate}
-	\item L'utente ha collegato il nodo desiderato ad uno e un solo flusso dati, impostandone correttamente per ogni possibile stato un livello di soglia al di sotto, o al di sopra, del quale la probabilità associata a quel dato stato risulta pari al 100\%, mentre le probabilità associate agli altri stati risultano pari allo 0\%;
-	\item Se lo desidera, e vi sono ancora nodi a disposizione, l’utente può selezionare un altro nodo per il collegamento, o modificare le impostazioni di nodi già collegati.
-	\end{enumerate}
-	\end{comment} %%%%%%%%%%%%%%%%%%%%%%
-	
+\item \textbf{Postcondizione}: L'utente ha collegato correttamente uno o più nodi ad un flusso dati, definendone le soglie per i rispettivi stati.	
 \item \textbf{Scenario Principale}:
  \begin{enumerate}
  \item (\hyperref[UC2.1]{UC2.1 (§\ref*{UC2.1})}) Selezione del Nodo;
@@ -157,20 +148,27 @@ Il numero di casi che abbiamo analizzato è limitato poiché il plug-in fornisce
 \pagebreak
 
 \subsubsection{UC2.3 - Impostazione soglie}\label{UC2.3}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.5]{./images/UC2-3.png}
+\caption{UC2.3 - Impostazione delle soglie}
+\end{figure}
+
 \begin{itemize}
 \item \textbf{Attore Primario:} Utente
 \item \textbf{Precondizione:} l'utente ha selezionato il nodo che desidera collegare al flusso dati 					(\hyperref[UC2.1]{UC2.1 (§\ref*{UC2.1})});
 \item \textbf{Postcondizione:} l'utente ha impostato, per ogni stato del nodo, una o più soglie, le quali hanno la funzionalità di definire gli insiemi di valori per i quali la probabilità associata allo stato in questione risulta pari al 100\%, mentre le probabilità associate agli altri stati risultano pari allo 0\%;
 \item \textbf{Scenario Principale:}
 	\begin{enumerate}
-	\item (\hyperref[UC2.3.1]{UC2.3.1 (§\ref*{UC2.3.1})}) Aggiunta soglia;
+	\item (\hyperref[UC2.3.1]{UC2.3.1 (§\ref*{UC2.3.1})}) Aggiunta di una soglia;
 	\item (\hyperref[UC2.3.2]{UC2.3.2 (§\ref*{UC2.3.2})}) Definizione del valore numerico della soglia;
 	\item (\hyperref[UC2.3.3]{UC2.3.3 (§\ref*{UC2.3.3})}) Selezione "Maggiore" o "Minore";
 	\item (\hyperref[UC2.3.4]{UC2.3.4 (§\ref*{UC2.3.4})}) Selezione soglia critica.
 	\end{enumerate}
 \end{itemize}
 
-\paragraph{UC2.3.1 - Aggiunta soglia}\label{UC2.3.1}
+\paragraph{UC2.3.1 - Aggiunta di una soglia}\label{UC2.3.1}
 \begin{itemize}
 	\item \textbf{Attore Primario:} Utente;
 	\item \textbf{Precondizioni:} l'utente ha selezionato il nodo che desidera collegare al flusso dati 					(\hyperref[UC2.1]{UC2.1 (§\ref*{UC2.1})});
@@ -335,10 +333,10 @@ Il numero di casi che abbiamo analizzato è limitato poiché il plug-in fornisce
 
 \newpage
 
-\subsection{UC14 - Visualizzazione Messaggio di Errore Nessuna Soglia Impostata}\label{UC14}
+\subsection{UC14 - Visualizzazione messaggio di errore Impostaziondi di Collegamento}\label{UC14}
 \begin{itemize}
 \item \textbf{Attore Primario}: Utente;
-\item \textbf{Precondizione}: l'utente ha confermato le scelte per il collegamento di un dato nodo ad un flusso 				dati (\hyperref[UC2.2.4]{UC2.2.4 (§\ref*{UC2.2.4})}), senza aver impostato correttamente una soglia per lo stesso 	(\hyperref[UC2.2.3]{UC2.2.3 (§\ref*{UC2.2.3})});
+\item \textbf{Precondizione}: l'utente ha confermato le scelte per il collegamento di un dato nodo ad un flusso 				dati (\hyperref[UC2.5]{UC2.5 (§\ref*{UC2.5})}), avendo commesso alcuni errori durante la definizione delle impostazioni di collegamento;
 \item \textbf{Postcondizioni}: 
 	\begin{enumerate}
 	\item L'utente visualizza l'errore;
