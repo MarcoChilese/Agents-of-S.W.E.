@@ -372,7 +372,7 @@ Il numero di casi che abbiamo analizzato è limitato poiché il plug-in fornisce
 \subsection{UC16 - Visualizzazione della Lista dei Nodi della Rete Bayesiana}\label{UC16}
 \begin{itemize}
 	\item \textbf{Attore Primario:}  Utente
-	\item \textbf{Precondizione:} l'utente ha caricato con successo la rete bayesiana (\hyperref[UC1]{UC1 									(§\ref*{UC1})});
+	\item \textbf{Precondizione:} l'utente ha caricato con successo la rete bayesiana (\hyperref[UC1]{UC1 	(§\ref*{UC1})});
 	\item \textbf{Postcondizione:} l'utente visualizza la lista di nodi di cui la rete bayesiana è costituita;
 	\item \textbf{Scenario Principale:}
 	\begin{enumerate}
@@ -382,6 +382,56 @@ Il numero di casi che abbiamo analizzato è limitato poiché il plug-in fornisce
 			\item Una checkbox\glossario la quale rappresenta lo stato di collegamento del nodo a cui è associata: verrà cisualizzata una "V" nel caso il nodo sia collegato ad un flusso dati, checkbox vuota altrimenti.
 		\end{itemize}
 	\end{enumerate}
+\end{itemize}
+
+\pagebreak
+
+\subsection{UC17 - Configurazione Indirizzo e Porta del Server}\label{UC17}
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.65]{./images/UC17.png}
+	\caption{UC17 - Configurazione Indirizzo e Porta del Server.}
+\end{figure}
+\begin{itemize}
+	\item \textbf{Attore Primario:}  Utente
+	\item \textbf{Precondizione:} 
+		\begin{enumerate}
+			\item L'utente ha aggiunto il pannello "G\&B" alla propria dashboard;
+			\item L'utente si trova nella scheda "Server Setting" del menù "Edit" del pannello.
+		\end{enumerate}	
+	\item \textbf{Postcondizione:} L'utente ha configurato i parametri di connessione al server;
+	\item \textbf{Scenario Principale:}
+	\begin{enumerate}
+		\item (\hyperref[UC17.1]{UC17.1 (§\ref*{UC17.1})}) Inserimento indirizzo IP; 
+		\item (\hyperref[UC17.2]{UC17.2 (§\ref*{UC17.2})}) Inserimento porta;
+		\item (\hyperref[UC17.3]{UC17.3 (§\ref*{UC17.3})}) Click conferma collegamento.
+	\end{enumerate}
+	\item \textbf{Estensioni}: si è verificato un errore di connessione: l'utente visualizza un messaggio che lo informa dell'avvenuto errore, invitandolo quindi a verificare la correttezza di indirizzo e/o porta, e clicca "OK" (\hyperref[UC18]{UC18 (§\ref*{UC18})});
+	\item  \textbf{Inclusione}: (\hyperref[UC28]{UC28 (§\ref*{UC28})}) Visualizzazione notifica di avvenuto collegamento;
+\end{itemize}
+
+\subsubsection{UC17.1 - Inserimento Indirizzo Server}\label{UC17.1}
+\begin{itemize}
+	\item \textbf{Attore Primario:}  Utente
+	\item \textbf{Precondizione:} L'utente si trova nella scheda "Server Setting" del menù "Edit" del pannello.
+	\item \textbf{Postcondizione:} L'utente ha inserito l'indirizzo per la connessione al server;
+	\item \textbf{Scenario Principale:} L'utente inserisce l'indirizzo IP del server a cui desidera collegarsi nell'apposito campo di testo.
+\end{itemize}
+
+\subsubsection{UC17.2 - Inserimento Porta Server}\label{UC17.2}
+\begin{itemize}
+	\item \textbf{Attore Primario:}  Utente
+	\item \textbf{Precondizione:} L'utente si trova nella scheda "Server Setting" del menù "Edit" del pannello.
+	\item \textbf{Postcondizione:} L'utente ha inserito il numero della porta per la connessione al server;
+	\item \textbf{Scenario Principale:} L'utente inserisce il numero della porta del server a cui desidera collegarsi nell'apposito campo di testo.
+\end{itemize}
+
+\subsubsection{UC17.1 - Conferma Collegamento}\label{UC17.3}
+\begin{itemize}
+	\item \textbf{Attore Primario:}  Utente
+	\item \textbf{Precondizione:} L'utente si trova nella scheda "Server Setting" del menù "Edit" del pannello.
+	\item \textbf{Postcondizione:} L'utente ha confermato i parametri inseriti precedentemente per la connessione al server;
+	\item \textbf{Scenario Principale:} L'utente clicca il pulsante con etichetta "Collega".
 \end{itemize}
 
 \pagebreak
@@ -398,7 +448,6 @@ Il numero di casi che abbiamo analizzato è limitato poiché il plug-in fornisce
 	\end{enumerate}
 	\item \textbf{Scenario Principale:} l'utente scollega il nodo collegato desiderato cliccando il pulsante "Scollega Nodo" accando al nominativo dello stesso.
 \end{itemize}
-
 
 \pagebreak
 
@@ -421,5 +470,47 @@ Il numero di casi che abbiamo analizzato è limitato poiché il plug-in fornisce
 	\item \textbf{Inclusioni:} UC20 include \hyperref[UC4]{UC4 (§\ref*{UC4})}: Vengono visualizzati i dati di monitoraggio sotto forma di misura di probabilità associate ai Nodi non collegati al flusso.
 \end{itemize}
 
+\pagebreak
 
+\subsection{UC23 - Visualizzazione Errore nel Collegamento al Server}\label{UC23}
+%\begin{figure}[H]
+%	\centering
+%	\includegraphics[scale=0.5]{./images/UC17.png}
+%	\caption{UC17 - Configurazione Indirizzo e Porta del Server.}
+%\end{figure}
+\begin{itemize}
+	\item \textbf{Attore Primario:}  Utente
+	\item \textbf{Precondizione:} 
+	\begin{enumerate}
+		\item L'utente ha cliccato il pulsante con etichetta "Collega" per confermare il collegamento al server con i dati precedentemente impostati (\hyperref[UC17]{UC17 (§\ref*{UC17})}).
+	\end{enumerate}	
+	\item \textbf{Postcondizione:} L'utente ha visualizzato il messaggio di errore;
+	\item \textbf{Scenario Principale:}
+	\begin{enumerate}
+		\item L'utente visualizza l'errore di collegamento;
+		\item L'utente clicca "OK".
+	\end{enumerate}
+\end{itemize}
+
+\pagebreak
+
+\subsection{UC28 - Visualizzazione Notifica di Avvenuto Collegamento al Server}\label{UC28}
+%\begin{figure}[H]
+%	\centering
+%	\includegraphics[scale=0.5]{./images/UC17.png}
+%	\caption{UC17 - Configurazione Indirizzo e Porta del Server.}
+%\end{figure}
+\begin{itemize}
+	\item \textbf{Attore Primario:}  Utente
+	\item \textbf{Precondizione:} 
+	\begin{enumerate}
+		\item L'utente ha cliccato il pulsante con etichetta "Collega" per confermare il collegamento al server con i dati precedentemente impostati (\hyperref[UC17]{UC17 (§\ref*{UC17})}).
+	\end{enumerate}	
+	\item \textbf{Postcondizione:} L'utente visualizza la notifica dell'avvenuto collegamento;
+	\item \textbf{Scenario Principale:}
+	\begin{enumerate}
+		\item L'utente visualizza il messaggio dell'avvenuto collegamento;
+		\item L'utente clicca "OK".
+	\end{enumerate}
+\end{itemize}
 
