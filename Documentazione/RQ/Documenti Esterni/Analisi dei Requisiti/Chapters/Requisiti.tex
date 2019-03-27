@@ -73,6 +73,8 @@ ROF2.5.9.5 & L'Utente deve visualizzare un differente messaggio di errore a seco
 \hline
 ROF2.5.10 & Il Sistema deve aggiornare la lista di checkbox, registrando il nuovo stato di ogni nodo (collegato o meno ad un flusso dati) & Obbligatorio & UC2\\
 \hline
+ROF2.5.11 & Il Sistema deve mettere a disposizione dell’utente, per ogni stato del nodo, la possibilità di rimuovere una soglia collegata allo stato in questione & Obbligatorio & UC2 \\
+\hline
 ROF3 & L'utente deve poter impostare una politica temporale per il ricalcolo delle probabilità condizionate associate ai nodi della rete bayesiana & Obbligatorio & UC3\\
 \hline
 \rowcolor{grigio}ROF3.3 & L'utente deve avere la possibilità di definire una politica temporale & Obbligatorio & UC3\\ 
@@ -83,13 +85,18 @@ ROF3.3.1 & Il Sistema deve mettere a disposizione un pulsante per accedere al pa
 \hline
 ROF3.3.2.1 & Il Sistema deve mettere a dispozione dell'utente un campo dati che permetta di definire il valore numerico del timeout ciclico & Obbligatorio & UC3\\
 \hline
-\rowcolor{grigio}ROF3.3.2.2 & Il Sistema deve mettere a dispozione dell'utente un campo dati che permetta di definire l'unità di misura temporale associata al timeout & Obbligatorio & UC3\\
+ROF3.3.2.2 & Il Sistema deve verificare che l’utente abbia inserito un valore numerico
+del timeout ciclico strettamente positivo, negando la conferma del collegamento in caso contrario & Obbligatorio & UC3 \\
+\hline
+\rowcolor{grigio}ROF3.3.2.3 & Il Sistema deve mettere a dispozione dell'utente un campo dati che permetta di definire l'unità di misura temporale associata al timeout & Obbligatorio & UC3\\
 \hline
 ROF3.3.3 & L'utente deve poter editare i campi dati per definire correttamente la politica temporale desiderata & Obbligatorio & UC3\\
 \hline
 \rowcolor{grigio}ROF3.4 & Il Sistema deve mettere a disposizione dell'utente un bottone per confermare la politica temporale da lui definita & Obbligatorio & UC3\\
 \hline
 ROF3.5 & Il Sistema deve visualizzare un messaggio di errore nel caso in cui l'utente abbia confermato una politica temporale non correttamente definita & Obbligatorio & UC3 UC15\\
+\hline
+ROF3.5.1 & Il Sistema deve negare la creazione della politica temporale nel caso in cui l'utente abbia confermato una politica temporale non correttamente definita & Obbligatorio & UC3 UC15 \\
 \hline
 \rowcolor{grigio}ROF4 & Il Sistema deve fornire i dati relativi ai nodi della rete bayesiana non collegati al flusso & Obbligatorio & UC4 UC20\\
 \hline
@@ -130,6 +137,8 @@ ROQ1 & È necessario fornire un manuale utente, per l'utilizzo del prodotto, in 
 \hline
 RDQ1.2 & Il manuale utente deve essere disponibile in lingua inglese & Desiderabile & Decisione Interna\\
 \hline
+RDQ1.3 & Il manuale utente deve contenere una sezione in cui vengono descritti i possibili errori e malfunzionamenti dell’applicazione & Desiderabile & Decisione Interna\\
+\hline
 \rowcolor{grigio}ROQ2 & È necessario fornire un manuale per la manutenzione ed estensione del prodotto & Obbligatorio & Capitolato\\
 \hline
 ROQ2.1 & Il manuale di manutenzione/estensione deve essere disponibile in lingua italiana & Obbligatorio & Decisione Interna\\
@@ -145,6 +154,12 @@ RDQ6 & Il plug-in deve essere pubblicato nella sezione plug-in di \textit{Grafan
 \rowcolor{grigio}RDQ7 & Il plug-in deve essere compatibile con la versione 6.0.0 di \textit{Grafana}, pubblicata in data 2019-02-25  & Desiderabile & Decisione Interna\\
 \hline
 RDQ8 & La struttura della directory del plug-in deve essere conforme con quanto indicato dalla documentazione di \textit{Grafana}, al link: \url{http://docs.grafana.org/plugins/developing/plugin-review-guidelines/}  & Desiderabile & Decisione Interna \\
+\hline
+RDQ09 & Deve essere consegnato il Bug Reporting per il tracciamento di tutte le problematiche o anomalie del sistema & Desiderabile & Decisione Interna\\
+\hline
+RDQ10 & La progettazione e la codifica devono rispettare le metriche definite nei documento Piano di Qualifica & Desiderabile & Decisione Interna\\
+\hline
+RDQ11 & Lo sviluppo dell'applicativo deve comprendere l'implementazione di test di unità e di intergrazione & Desiderabile & Decisione Interna \\
 \hline
 \caption{Requisiti di Qualità}
 \end{longtable}
@@ -206,17 +221,17 @@ ROV12 & Il plug-in deve funzionare per l'ultima versione di \textit{Grafana} dis
 \endhead
 Capitolato & \makecell{RFF5\\RFF5.1\\ROQ1\\ROQ2\\RDQ5\\ROV4\\ROV6}\\
 \hline
-\rowcolor{grigio}Decisione Interna & \makecell{ROQ1.1\\RDQ1.2\\ROQ2.1\\RDQ2.2\\ROQ3\\RDQ6\\RDF1.6\\RDQ7\\RDQ8\\ROV12\\ROF2.5.6.4\\RDF2.5.6.5}\\
+\rowcolor{grigio}Decisione Interna & \makecell{ROQ1.1\\RDQ1.2 \\ RDQ1.3\\ROQ2.1\\RDQ2.2\\ROQ3\\RDQ6\\RDF1.6\\RDQ7\\RDQ8 \\ RDQ09 \\ RDQ10 \\ RDQ11\\ROV12\\ROF2.5.6.4\\RDF2.5.6.5}\\
 \hline
 Piattaforma \textit{Grafana} & \makecell{ROV1\\ROV2\\ROV3\\ROV6}\\
 \hline
 \rowcolor{grigio}UC1 & \makecell{ROF1\\ROF1.1\\ROF1.2\\ROF1.3\\ROF1.4\\ROF1.4.1\\RFF1.4.2\\ROF1.5}\\
 \hline
-UC2 & \makecell{ROF2\\ROF2.1.2\\ROF2.5\\ROF2.5.9\\ROF2.5.9.1\\ROF2.5.9.2\\ROF2.5.9.3\\ROF2.5.9.4\\ROF2.5.10}\\
+UC2 & \makecell{ROF2\\ROF2.1.2\\ROF2.5\\ROF2.5.9\\ROF2.5.9.1\\ROF2.5.9.2\\ROF2.5.9.3\\ROF2.5.9.4\\ROF2.5.10\\ ROF2.5.11}\\
 \hline
 \rowcolor{grigio}UC2.3 & \makecell{ROF2.5.3\\ROF2.5.4\\ROF2.5.6\\ROF2.5.6.1\\ROF2.5.6.2\\RDF2.5.6.3\\ROF2.5.6.4\\RDF2.5.6.5\\ROF2.5.7\\ROF2.5.8}\\
 \hline
-UC3 & \makecell{ROF3\\ROF3.3\\ROF3.3.1\\ROF3.3.2\\ROF3.3.2.1\\ROF3.3.2.2\\ROF3.3.3\\ROF3.4\\ROF3.5}\\
+UC3 & \makecell{ROF3\\ROF3.3\\ROF3.3.1\\ROF3.3.2\\ROF3.3.2.1\\ROF3.3.2.2 \\ ROF3.3.2.3\\ROF3.3.3\\ROF3.4\\ROF3.5 \\ ROF3.5.1}\\
 \hline
 \rowcolor{grigio}UC4 & \makecell{ROF4\\ROF4.5\\ROF4.6\\RDF4.6.1\\RFF5.1}\\
 \hline
@@ -228,7 +243,7 @@ UC8 & \makecell{ROF1.4\\ROF1.4.1\\RFF1.4.2}\\
 \hline
 \rowcolor{grigio}UC14 & \makecell{ROF2.5.9\\ROF2.5.9.5}\\
 \hline
-UC15 & \makecell{ROF3.5}\\
+UC15 & \makecell{ROF3.5 \\ ROF3.5.1}\\
 \hline
 UC16 & \makecell{ROF2.1\\ROF2.1.1\\ROF2.1.2}\\
 \hline
@@ -250,9 +265,9 @@ Supporto a \textit{ECMAScript6} & \makecell{ROV8\\ROV9\\ROV10\\ROV11}\\
 \rowcolor{bluelogo}\textbf{\textcolor{white}{Tipologia}} & \textbf{\textcolor{white}{Obbligatorio}} & \textbf{\textcolor{white}{Opzionale}} & \textbf{\textcolor{white}{Desiderabile}} & \textbf{\textcolor{white}{Totale}}\\
 \hline \hline
 \endhead
-Funzionale & 41 & 7 & 2 & 50\\
+Funzionale & 44 & 7 & 2 & 53\\
 \hline
-\rowcolor{grigio}Di Qualità & 5 & 0 & 6 & 11\\
+\rowcolor{grigio}Di Qualità & 5 & 0 & 10 & 15\\
 \hline
 Di Vincolo & 11 & 0 & 0 & 11\\
 \hline
