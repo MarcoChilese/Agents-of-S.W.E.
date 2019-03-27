@@ -57,7 +57,7 @@ RDF2.5.6.5 & L'utente deve poter aggiungere molteplici soglie associate allo ste
 \hline
 \rowcolor{grigio}ROF2.5.7 & L'utente deve poter editare i campi dati per definire correttamente un livello di soglia al di sotto, o al di sopra del quale la probabilità associata a quel dato stato risulta pari al 100\%, mentre le probabilità associate agli altri stati risultano pari allo 0\% & Obbligatorio & UC2.3\\
 \hline
-ROF2.5.8 & Il Sistema deve mettere a disposizione dell'utente un bottone per confermare le scelte riguardardanti la definizione della soglia & Obbligatorio & UC2.3\\
+ROF2.5.8 & Il Sistema deve mettere a disposizione dell'utente un bottone per confermare le proprie scelte riguardanti il collegamento del singolo nodo & Obbligatorio & UC2.3\\
 \hline
 \rowcolor{grigio}ROF2.5.9 & L'Utente deve visualizzare un messaggio di errore nel caso in cui abbia confermato le proprie scelte riguardanti il collegamento del singolo nodo commettendo alcuni errori & Obbligatorio & UC2 UC14\\
 \hline
@@ -74,6 +74,16 @@ ROF2.5.9.5 & L'Utente deve visualizzare un differente messaggio di errore a seco
 ROF2.5.10 & Il Sistema deve aggiornare la lista di checkbox, registrando il nuovo stato di ogni nodo (collegato o meno ad un flusso dati) & Obbligatorio & UC2\\
 \hline
 ROF2.5.11 & Il Sistema deve mettere a disposizione dell’utente, per ogni stato del nodo, la possibilità di rimuovere una soglia collegata allo stato in questione & Obbligatorio & UC2 \\
+\hline
+ROF2.6 & L'utente deve poter scollegare dal flusso un nodo precedentemente collegato & Obbligatorio & UC19 UC2\\
+\hline
+ROF2.6.1 & Il Sistema deve mettere a disposizione un pulsante, associato al nodo collegato, per lo scollegamento dello stesso dal flusso dati & Obbligatorio & UC19\\
+\hline
+ROF2.6.2 & Il Sistema deve resettare le impostazioni di collegamento del nodo se l'utente clicca il pulsante di scollegamento & Obbligatorio & UC19 UC2\\
+\hline
+ROF2.6.3 & Il Sistema deve aggiornare la checkbox associata al nodo scollegato, togliendo la spunta di collegamento & Obbligatorio & UC19 UC16\\
+\hline
+ROF2.6.4 & Il Sistema deve rimuovere il pulsante di scollegamento una volta che il nodo è stato scollegato & Obbligatorio & UC19 UC16\\
 \hline
 ROF3 & L'utente deve poter impostare una politica temporale per il ricalcolo delle probabilità condizionate associate ai nodi della rete bayesiana & Obbligatorio & UC3\\
 \hline
@@ -227,7 +237,7 @@ Piattaforma \textit{Grafana} & \makecell{ROV1\\ROV2\\ROV3\\ROV6}\\
 \hline
 \rowcolor{grigio}UC1 & \makecell{ROF1\\ROF1.1\\ROF1.2\\ROF1.3\\ROF1.4\\ROF1.4.1\\RFF1.4.2\\ROF1.5}\\
 \hline
-UC2 & \makecell{ROF2\\ROF2.1.2\\ROF2.5\\ROF2.5.9\\ROF2.5.9.1\\ROF2.5.9.2\\ROF2.5.9.3\\ROF2.5.9.4\\ROF2.5.10\\ ROF2.5.11}\\
+UC2 & \makecell{ROF2\\ROF2.1.2\\ROF2.5\\ROF2.5.9\\ROF2.5.9.1\\ROF2.5.9.2\\ROF2.5.9.3\\ROF2.5.9.4\\ROF2.5.10\\ ROF2.5.11\\ROF2.6\\ROF2.6.2}\\
 \hline
 \rowcolor{grigio}UC2.3 & \makecell{ROF2.5.3\\ROF2.5.4\\ROF2.5.6\\ROF2.5.6.1\\ROF2.5.6.2\\RDF2.5.6.3\\ROF2.5.6.4\\RDF2.5.6.5\\ROF2.5.7\\ROF2.5.8}\\
 \hline
@@ -239,13 +249,15 @@ UC8 & \makecell{ROF1.4\\ROF1.4.1\\RFF1.4.2}\\
 \hline
 \rowcolor{grigio}UC9 & \makecell{ROF4.4.4}\\
 \hline
-\rowcolor{grigio}UC12 & \makecell{ROF4.5.3}\\
+UC12 & \makecell{ROF4.5.3}\\
 \hline
 \rowcolor{grigio}UC14 & \makecell{ROF2.5.9\\ROF2.5.9.5}\\
 \hline
 UC15 & \makecell{ROF3.5 \\ ROF3.5.1}\\
 \hline
-UC16 & \makecell{ROF2.1\\ROF2.1.1\\ROF2.1.2}\\
+UC16 & \makecell{ROF2.1\\ROF2.1.1\\ROF2.1.2\\ROF2.6.3\\ROF2.6.4}\\
+\hline
+UC19 & \makecell{ROF2.6\\ROF2.6.1\\ROF2.6.2\\ROF2.6.3\\ROF2.6.4}\\
 \hline
 UC20 & \makecell{ROF4\\ROF4.4\\ROF4.4.3}\\
 \hline
@@ -265,7 +277,7 @@ Supporto a \textit{ECMAScript6} & \makecell{ROV8\\ROV9\\ROV10\\ROV11}\\
 \rowcolor{bluelogo}\textbf{\textcolor{white}{Tipologia}} & \textbf{\textcolor{white}{Obbligatorio}} & \textbf{\textcolor{white}{Opzionale}} & \textbf{\textcolor{white}{Desiderabile}} & \textbf{\textcolor{white}{Totale}}\\
 \hline \hline
 \endhead
-Funzionale & 44 & 7 & 2 & 53\\
+Funzionale & 49 & 7 & 2 & 58\\
 \hline
 \rowcolor{grigio}Di Qualità & 5 & 0 & 10 & 15\\
 \hline
