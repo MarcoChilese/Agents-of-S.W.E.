@@ -134,6 +134,22 @@ RFF5.1 & Il Sistema deve mettere a disposizione di \textit{Grafana}, i dati per 
 \hline
 \rowcolor{grigio}RFF6.1 & Il Sistema deve mettere periodicamente a disposizione della piattaforma \textit{Grafana}, i dati aggiornati per il monitoraggio costante dello stato degli alert & Opzionale & UC4\\
 \hline
+
+ROF7 & L'utente deve poter collegare il plug-in al server per l'elaborazione dati & Obbligatorio & UC17\\
+\hline
+\rowcolor{grigio}ROF7.1 & Il sistema deve disporre di una sezione adibita alle "Server Settings" all'interno del menù "Edit" del pannello & Obbligatorio & UC17\\
+\hline
+ROF7.1.1 & Il sistema deve disporre di, nella sezione "Server Settings" del menù "Edit" del pannello, un campo di testo in cui inserire l'indirizzo IP del server al quale ci si desidera connettere & Obbligatorio & UC17\\
+\hline
+\rowcolor{grigio}ROF7.1.2 & Il sistema deve disporre di, nella sezione "Server Settings" del menù "Edit" del pannello, un campo di testo in cui inserire la porta del server alla quale ci si desidera connettere & Obbligatorio & UC17\\
+\hline
+ROF7.1.3 & Il sistema deve disporre di, nella sezione "Server Settings" del menù "Edit" del pannello, un pulsante che permette di confermare i dati inseriti & Obbligatorio & UC17\\
+\hline
+\rowcolor{grigio}ROF7.2 & Il sistema deve poter visualizzare un messaggio di errore nel caso in cui il collegamento al server non sia giunto a buon fine& Obbligatorio & UC23\\
+\hline
+ROF7.3 & Il sistema deve poter visualizzare un messaggio di avvenuto collegamento al server nel caso in cui sia giunto a buon fine& Obbligatorio & UC28\\
+\hline
+
 \caption{Requisiti Funzionali}
 \end{longtable}
 \end{center}
@@ -261,17 +277,19 @@ UC12 & \makecell{ROF4.5.3}\\
 \hline
 UC15 & \makecell{ROF3.5 \\ ROF3.5.1}\\
 \hline
-UC16 & \makecell{ROF2.1\\ROF2.1.1\\ROF2.1.2\\ROF2.6.3\\ROF2.6.4}\\
+\rowcolor{grigio}UC16 & \makecell{ROF2.1\\ROF2.1.1\\ROF2.1.2\\ROF2.6.3\\ROF2.6.4}\\
 \hline
-UC18 & \makecell{ROF2.5.3.1}\\
+UC17 & \makecell{ROF7\\ROF7.1\\ROF7.1.1\\ROF7.1.2\\ROF7.1.3\\ROF7.2\\ROF7.3}\\
+\hline
+\rowcolor{grigio}UC18 & \makecell{ROF2.5.3.1}\\
 \hline
 UC19 & \makecell{ROF2.6\\ROF2.6.1\\ROF2.6.2\\ROF2.6.3\\ROF2.6.4}\\
 \hline
-UC20 & \makecell{ROF4\\ROF4.4\\ROF4.4.3}\\
+\rowcolor{grigio}UC20 & \makecell{ROF4\\ROF4.4\\ROF4.4.3}\\
 \hline
-\rowcolor{grigio}VER-2019-02-08 & \makecell{RDF4.6.1\\RDF2.5.6.3}\\
+VER-2019-02-08 & \makecell{RDF4.6.1\\RDF2.5.6.3}\\
 \hline
-Supporto a \textit{ECMAScript6} & \makecell{ROV8\\ROV9\\ROV10\\ROV11}\\
+\rowcolor{grigio}Supporto a \textit{ECMAScript6} & \makecell{ROV8\\ROV9\\ROV10\\ROV11}\\
 \hline
 \caption{Tracciamento Fonti-Requisiti}
 \end{longtable}
@@ -285,7 +303,7 @@ Supporto a \textit{ECMAScript6} & \makecell{ROV8\\ROV9\\ROV10\\ROV11}\\
 \rowcolor{bluelogo}\textbf{\textcolor{white}{Tipologia}} & \textbf{\textcolor{white}{Obbligatorio}} & \textbf{\textcolor{white}{Opzionale}} & \textbf{\textcolor{white}{Desiderabile}} & \textbf{\textcolor{white}{Totale}}\\
 \hline \hline
 \endhead
-Funzionale & 52 & 7 & 2 & 61\\
+Funzionale & 58 & 7 & 2 & 67\\
 \hline
 \rowcolor{grigio}Di Qualità & 5 & 0 & 10 & 15\\
 \hline
