@@ -39,11 +39,15 @@ ROF2.1.2 & Il Sistema deve mostrare, per ogni nodo, una corrispondente checkbox 
 \hline
 ROF2.5.3 & Il Sistema deve fornire un elenco dei flussi dati disponibili per il collegamento & Obbligatorio & UC2\\
 \hline
-ROF2.5.3.1 & Il Sistema deve fornire un elenco delle tabelle del database selezionato come sorgente di dati & Obbligatorio & UC2 UC18\\
+ROF2.5.3.1 & L'Utente deve poter selezionare un database come sorgente dati & Obbligatorio & UC18\\
 \hline
-ROF2.5.3.2 & L'utente deve poter selezionare la tabella del database desiderata & Obbligatorio & UC2\\
+ROF2.5.3.2 & Il Sistema deve mettere a disposizione dell'utente un elenco di database disponibili & Obbligatorio & UC18\\
 \hline
-ROF2.5.3.3 & Il Sistema deve aggiornare i flussi dati disponibili per la selezione a seconda della tabelle selezionata dall'utente & Obbligatorio & UC2\\
+ROF2.5.3.3 & Il Sistema deve fornire un elenco delle tabelle del database selezionato come sorgente di dati & Obbligatorio & UC2 UC18\\
+\hline
+ROF2.5.3.4 & L'utente deve poter selezionare la tabella del database desiderata & Obbligatorio & UC2\\
+\hline
+ROF2.5.3.5 & Il Sistema deve aggiornare i flussi dati disponibili per la selezione a seconda della tabelle selezionata dall'utente & Obbligatorio & UC2\\
 \hline
 \rowcolor{grigio}ROF2.5.4 & L'utente deve poter selezionare il flusso dati desiderato per il collegamento & Obbligatorio & UC2\\
 \hline
@@ -145,9 +149,9 @@ ROF7.1.1 & Il sistema deve disporre di, nella sezione "Server Settings" del men�
 \hline
 ROF7.1.3 & Il sistema deve disporre di, nella sezione "Server Settings" del menù "Edit" del pannello, un pulsante che permette di confermare i dati inseriti & Obbligatorio & UC17\\
 \hline
-\rowcolor{grigio}ROF7.2 & Il sistema deve poter visualizzare un messaggio di errore nel caso in cui il collegamento al server non sia giunto a buon fine& Obbligatorio & UC23\\
+\rowcolor{grigio}ROF7.2 & Il sistema deve poter visualizzare un messaggio di errore nel caso in cui il collegamento al server non sia giunto a buon fine& Obbligatorio & UC22\\
 \hline
-ROF7.3 & Il sistema deve poter visualizzare un messaggio di avvenuto collegamento al server nel caso in cui sia giunto a buon fine& Obbligatorio & UC27\\
+ROF7.3 & Il sistema deve poter visualizzare un messaggio di avvenuto collegamento al server nel caso in cui sia giunto a buon fine& Obbligatorio & UC26\\
 \hline
 
 \caption{Requisiti Funzionali}
@@ -259,7 +263,7 @@ Piattaforma \textit{Grafana} & \makecell{ROV1\\ROV2\\ROV3\\ROV6}\\
 \hline
 \rowcolor{grigio}UC1 & \makecell{ROF1\\ROF1.1\\ROF1.2\\ROF1.3\\ROF1.4\\ROF1.4.1\\RFF1.4.2\\ROF1.5}\\
 \hline
-UC2 & \makecell{ROF2\\ROF2.1.2\\ROF2.5\\ROF2.5.3\\ROF2.5.3.1\\ROF2.5.3.2\\ROF2.5.3.3\\ROF2.5.4\\ROF2.5.5\\ROF2.5.9\\ROF2.5.9.1\\ROF2.5.9.2\\ROF2.5.9.3\\ROF2.5.9.4\\ROF2.5.10\\ ROF2.5.11\\ROF2.6\\ROF2.6.2}\\
+UC2 & \makecell{ROF2\\ROF2.1.2\\ROF2.5\\ROF2.5.3\\ROF2.5.3.3\\ROF2.5.3.4\\ROF2.5.3.5\\ROF2.5.4\\ROF2.5.5\\ROF2.5.9\\ROF2.5.9.1\\ROF2.5.9.2\\ROF2.5.9.3\\ROF2.5.9.4\\ROF2.5.10\\ ROF2.5.11\\ROF2.6\\ROF2.6.2}\\
 \hline
 \rowcolor{grigio}UC2.4 & \makecell{ROF2.5.6\\ROF2.5.6.1\\ROF2.5.6.2\\RDF2.5.6.3\\ROF2.5.6.4\\RDF2.5.6.5\\ROF2.5.7\\ROF2.5.8}\\
 \hline
@@ -281,15 +285,15 @@ UC15 & \makecell{ROF3.5 \\ ROF3.5.1}\\
 \hline
 UC17 & \makecell{ROF7\\ROF7.1\\ROF7.1.1\\ROF7.1.2\\ROF7.1.3\\ROF7.2\\ROF7.3}\\
 \hline
-\rowcolor{grigio}UC18 & \makecell{ROF2.5.3.1}\\
+\rowcolor{grigio}UC18 & \makecell{ROF2.5.3.1\\ROF2.5.3.2\\ROF2.5.3.3}\\
 \hline
 UC19 & \makecell{ROF2.6\\ROF2.6.1\\ROF2.6.2\\ROF2.6.3\\ROF2.6.4}\\
 \hline
 \rowcolor{grigio}UC20 & \makecell{ROF4\\ROF4.4\\ROF4.4.3}\\
 \hline
-UC23 & \makecell{ROF7.2}\\
+UC22 & \makecell{ROF7.2}\\
 \hline
-UC27 & \makecell{ROF7.3}\\
+UC26 & \makecell{ROF7.3}\\
 \hline
 VER-2019-02-08 & \makecell{RDF4.6.1\\RDF2.5.6.3}\\
 \hline
@@ -307,7 +311,7 @@ VER-2019-02-08 & \makecell{RDF4.6.1\\RDF2.5.6.3}\\
 \rowcolor{bluelogo}\textbf{\textcolor{white}{Tipologia}} & \textbf{\textcolor{white}{Obbligatorio}} & \textbf{\textcolor{white}{Opzionale}} & \textbf{\textcolor{white}{Desiderabile}} & \textbf{\textcolor{white}{Totale}}\\
 \hline \hline
 \endhead
-Funzionale & 58 & 7 & 2 & 67\\
+Funzionale & 60 & 7 & 2 & 69\\
 \hline
 \rowcolor{grigio}Di Qualità & 5 & 0 & 10 & 15\\
 \hline

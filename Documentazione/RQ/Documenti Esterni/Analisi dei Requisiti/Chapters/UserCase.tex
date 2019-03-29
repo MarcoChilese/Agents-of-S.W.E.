@@ -415,8 +415,8 @@ Il numero di casi che abbiamo analizzato è limitato poiché il plug-in fornisce
 		\item (\hyperref[UC17.2]{UC17.2 (§\ref*{UC17.2})}) Inserimento porta;
 		\item (\hyperref[UC17.3]{UC17.3 (§\ref*{UC17.3})}) Click conferma collegamento.
 	\end{enumerate}
-	\item \textbf{Estensioni}: si è verificato un errore di connessione: l'utente visualizza un messaggio che lo informa dell'avvenuto errore, invitandolo quindi a verificare la correttezza di indirizzo e/o porta, e clicca "OK" (\hyperref[UC18]{UC18 (§\ref*{UC18})});
-	\item  \textbf{Inclusione}: (\hyperref[UC27]{UC27 (§\ref*{UC27})}) Visualizzazione notifica di avvenuto collegamento;
+	\item \textbf{Estensioni}: si è verificato un errore di connessione: l'utente visualizza un messaggio che lo informa dell'avvenuto errore, invitandolo quindi a verificare la correttezza di indirizzo e/o porta, e clicca "OK" (\hyperref[UC22]{UC22 (§\ref*{UC22})});
+	\item  \textbf{Inclusione}: (\hyperref[UC26]{UC26 (§\ref*{UC26})}) Visualizzazione notifica di avvenuto collegamento;
 \end{itemize}
 
 \subsubsection{UC17.1 - Inserimento Indirizzo Server}\label{UC17.1}
@@ -445,6 +445,20 @@ Il numero di casi che abbiamo analizzato è limitato poiché il plug-in fornisce
 
 \pagebreak
 
+\subsection{UC18 - Selezione Database}\label{UC18}
+\begin{itemize}
+	\item \textbf{Attore Primario:} Utente;
+	\item \textbf{Precondizione:} L'utente ha correttamente configurato le impostazioni per la connessione al server \hyperref[UC17]{UC17(§\ref*{UC17})};
+	\item \textbf{Postcondizioni:}
+	\begin{enumerate}
+		\item L'utente ha selezionato il database da usare come sorgente dati;
+		\item Contestualmente al database selezionato dall'utente cambiano le possibili scelte, in sede di collegamento nodi (\hyperref[UC2]{UC2(§\ref*{UC2})}), per la selezione della tabella (\hyperref[UC2.2]{UC2.2(§\ref*{UC2.2})}) e del flusso dati (\hyperref[UC2.3]{UC2.3(§\ref*{UC2.3})}).
+	\end{enumerate}
+	\item \textbf{Scenario Principale:} L'utente seleziona, attraverso un menù a tendina, il database da usare come sorgente dati tra quelli disponibili.
+\end{itemize}
+
+\pagebreak
+
 \subsection{UC19 - Scollegamento nodo}\label{UC19}
 \begin{itemize}
 	\item \textbf{Attore Primario:} Utente;
@@ -469,19 +483,18 @@ Il numero di casi che abbiamo analizzato è limitato poiché il plug-in fornisce
 		\item La precedente visualizzazione del plug-in scompare, il pannello quindi espone all'utente la lista di nodi della rete bayesiana caricata ed i corrispondenti dati ad essi associati;
 		\item Il pulsante "Avvio Monitoraggio" viene sostituito da "Interruzione Monitoraggio"
 	\end{enumerate}
-	\item \textbf{Scenario Principale:} L'utente avvia il monitoraggio cliccalndo il pulsante denominato "Avvio Monitoraggio". Questo porta all'invio della configurazione della rete bayesiana (stabilita dall'utente attraverso \hyperref[UC1]{UC1 (§\ref*{UC1})}, \hyperref[UC2]{UC2 (§\ref*{UC2})}, \textcolor{red}{UC18 (TODO LINK)} e \hyperref[UC3]{UC3 (§\ref*{UC3})}) al Server (in ascolto presso la porta stabilita dall'utente in \textcolor{red}{UC17 (TODO LINK)}) che si occuperà delle necessarie operazioni per gestire il monitoraggio dei dati.
+	\item \textbf{Scenario Principale:} L'utente avvia il monitoraggio cliccando il pulsante denominato "Avvio Monitoraggio". Questo porta all'invio della configurazione della rete bayesiana (stabilita dall'utente attraverso \hyperref[UC1]{UC1 (§\ref*{UC1})}, \hyperref[UC2]{UC2 (§\ref*{UC2})}, \hyperref[UC18]{UC18 (§\ref*{UC18})} e \hyperref[UC3]{UC3 (§\ref*{UC3})}) al Server (in ascolto presso la porta stabilita dall'utente in \hyperref[UC17]{UC17 (§\ref*{UC17})}) che si occuperà delle necessarie operazioni per gestire il monitoraggio dei dati.
 	\item \textbf{Estensioni:}
 	\begin{enumerate}
 		\item \hyperref[UC9]{UC9 (§\ref*{UC9})}: l'utente visualizza un messaggio di errore nel caso in cui non abbia collegato alcun nodo ad un flusso dati (\hyperref[UC2]{UC2 (§\ref*{UC2})});
 		\item \hyperref[UC12]{UC12 (§\ref*{UC12})}: l'utente visualizza un messaggio di errore nel caso in cui non abbia definito correttamente alcuna politica temporale per il ricalcolo delle probabilità (\hyperref[UC3]{UC3 (§\ref*{UC3})}).
-		\item \textcolor{red}{UC22 (TODO LINK)}: l'utente visualizza un messaggio di errore nel caso in cui non abbia selezionato correttamente la porta del Server in ascolto per le operazioni di calcolo \textcolor{red}{UC17 (TODO LINK)}.
 	\end{enumerate}
 	\item \textbf{Inclusioni:} UC20 include \hyperref[UC4]{UC4 (§\ref*{UC4})}: Vengono visualizzati i dati di monitoraggio sotto forma di misura di probabilità associate ai Nodi non collegati al flusso.
 \end{itemize}
 
 \pagebreak
 
-\subsection{UC23 - Visualizzazione Errore nel Collegamento al Server}\label{UC23}
+\subsection{UC22 - Visualizzazione Errore nel Collegamento al Server}\label{UC22}
 %\begin{figure}[H]
 %	\centering
 %	\includegraphics[scale=0.5]{./images/UC17.png}
@@ -503,7 +516,7 @@ Il numero di casi che abbiamo analizzato è limitato poiché il plug-in fornisce
 
 \pagebreak
 
-\subsection{UC24 - Selezione Rete Bayesiana già caricata}\label{UC24}
+\subsection{UC23 - Selezione Rete Bayesiana già caricata}\label{UC23}
 %\begin{figure}[H]
 %	\centering
 %	\includegraphics[scale=0.5]{./images/UC17.png}
@@ -524,29 +537,29 @@ Il numero di casi che abbiamo analizzato è limitato poiché il plug-in fornisce
 	\end{enumerate}
 \end{itemize}
 
-\subsubsection{UC24.1 - Apertura del Menù a Tendina per la Selezione di una Rete Precedentemente Caricata}\label{UC24.1}
+\subsubsection{UC23.1 - Apertura del Menù a Tendina per la Selezione di una Rete Precedentemente Caricata}\label{UC23.1}
 \begin{itemize}
 	\item \textbf{Attore Primario:}  Utente
 	\item \textbf{Precondizione:} 
 	\begin{enumerate}
 		\item L'utente ha correttamente configurato le impostazioni per la connessione al server \hyperref[UC17]{UC17(§\ref*{UC17})};
-		\item L'utente ha correttamente selezionato il database TODO %\hyperref[UC18]{UC17.2 (§\ref*{UC17.2})}.
+		\item L'utente ha correttamente selezionato il database TODO %\hyperref[UC17]{UC17.2 (§\ref*{UC17.2})}.
 	\end{enumerate}	
 	\item \textbf{Postcondizione:} l'utente ha aperto il menù a tendina per la selezione di una rete precedentemente caricata;
 	\item \textbf{Scenario Principale:} l'utente clicca sul menù a tendina "Selezione Reti Caricate" per la selezione di una rete  precedentemente caricata.
 \end{itemize}
 
-\subsubsection{UC24.2 - Selezione della Rete Precedentemente Caricata}\label{UC24.2}
+\subsubsection{UC23.2 - Selezione della Rete Precedentemente Caricata}\label{UC23.2}
 \begin{itemize}
 	\item \textbf{Attore Primario:} Utente
-	\item \textbf{Precondizione:}  l'utente ha aperto il menù a tendina "Selezione Reti Caricate" \hyperref[UC24.1]{UC24.1 (§\ref*{UC24.1})}
+	\item \textbf{Precondizione:}  l'utente ha aperto il menù a tendina "Selezione Reti Caricate" \hyperref[UC23.1]{UC23.1 (§\ref*{UC23.1})}
 	\item \textbf{Postcondizione:} l'utente ha selezionato la rete dal menù a tendina "Selezione Reti Caricate";
 	\item \textbf{Scenario Principale:} l'utente seleziona, dal menù a tendina, una rete precedentemente caricata per avviarne il monitoraggio. 
 \end{itemize}
 
 \pagebreak
 
-\subsection{UC27 - Visualizzazione Notifica di Avvenuto Collegamento al Server}\label{UC27}
+\subsection{UC26 - Visualizzazione Notifica di Avvenuto Collegamento al Server}\label{UC26}
 %\begin{figure}[H]
 %	\centering
 %	\includegraphics[scale=0.5]{./images/UC17.png}
