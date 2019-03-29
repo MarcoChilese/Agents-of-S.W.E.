@@ -39,13 +39,13 @@ Il numero di casi che abbiamo analizzato è limitato poiché il plug-in fornisce
 \subsection{Panoramica Casi d'Uso}\label{PanoramicaUC}
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[scale=0.2]{./images/VistaUC.png}
+		\includegraphics[scale=0.18]{./images/VistaUC.png}
 		 \caption{Panoramica dei Casi d'Uso basilari}	
 	\end{center}
 \end{figure}
 
 \pagebreak
-\subsection{UC1 - Aggiunta della Rete Bayesiana al Plug-in G\&B}\label{UC1}
+\subsection{UC1 - Caricamento Rete Bayesiana}\label{UC1}
 
 \begin{figure}[H]
 	\begin{center}
@@ -416,7 +416,7 @@ Il numero di casi che abbiamo analizzato è limitato poiché il plug-in fornisce
 		\item (\hyperref[UC17.3]{UC17.3 (§\ref*{UC17.3})}) Click conferma collegamento.
 	\end{enumerate}
 	\item \textbf{Estensioni}: si è verificato un errore di connessione: l'utente visualizza un messaggio che lo informa dell'avvenuto errore, invitandolo quindi a verificare la correttezza di indirizzo e/o porta, e clicca "OK" (\hyperref[UC18]{UC18 (§\ref*{UC18})});
-	\item  \textbf{Inclusione}: (\hyperref[UC28]{UC28 (§\ref*{UC28})}) Visualizzazione notifica di avvenuto collegamento;
+	\item  \textbf{Inclusione}: (\hyperref[UC27]{UC27 (§\ref*{UC27})}) Visualizzazione notifica di avvenuto collegamento;
 \end{itemize}
 
 \subsubsection{UC17.1 - Inserimento Indirizzo Server}\label{UC17.1}
@@ -503,7 +503,7 @@ Il numero di casi che abbiamo analizzato è limitato poiché il plug-in fornisce
 
 \pagebreak
 
-\subsection{UC25 - Selezione delle Impostazioni di Rete già Esistenti}\label{UC25}
+\subsection{UC24 - Selezione Rete Bayesiana già caricata}\label{UC24}
 %\begin{figure}[H]
 %	\centering
 %	\includegraphics[scale=0.5]{./images/UC17.png}
@@ -511,11 +511,7 @@ Il numero di casi che abbiamo analizzato è limitato poiché il plug-in fornisce
 %\end{figure}
 \begin{itemize}
 	\item \textbf{Attore Primario:}  Utente
-	\item \textbf{Precondizione:} 
-	\begin{enumerate}
-		\item L'utente ha correttamente configurato le impostazioni per la connessione al server \hyperref[UC17]{UC17(§\ref*{UC17})};
-		\item L'utente ha correttamente selezionato il database TODO %\hyperref[UC18]{UC17.2 (§\ref*{UC17.2})}.
-	\end{enumerate}	
+	\item \textbf{Precondizione:} L'utente ha correttamente configurato le impostazioni per la connessione al server \hyperref[UC17]{UC17(§\ref*{UC17})};
 	\item \textbf{Postcondizione:} 
 	\begin{enumerate}
 		\item L'utente visualizza le impostazioni della rete selezionata;
@@ -528,7 +524,7 @@ Il numero di casi che abbiamo analizzato è limitato poiché il plug-in fornisce
 	\end{enumerate}
 \end{itemize}
 
-\subsubsection{UC25.1 - Apertura del Menù a Tendina per la Selezione di una Rete Precedentemente Caricata}\label{UC25.1}
+\subsubsection{UC24.1 - Apertura del Menù a Tendina per la Selezione di una Rete Precedentemente Caricata}\label{UC24.1}
 \begin{itemize}
 	\item \textbf{Attore Primario:}  Utente
 	\item \textbf{Precondizione:} 
@@ -540,17 +536,17 @@ Il numero di casi che abbiamo analizzato è limitato poiché il plug-in fornisce
 	\item \textbf{Scenario Principale:} l'utente clicca sul menù a tendina "Selezione Reti Caricate" per la selezione di una rete  precedentemente caricata.
 \end{itemize}
 
-\subsubsection{UC25.2 - Selezione della Rete Precedentemente Caricata}\label{UC25.2}
+\subsubsection{UC24.2 - Selezione della Rete Precedentemente Caricata}\label{UC24.2}
 \begin{itemize}
 	\item \textbf{Attore Primario:} Utente
-	\item \textbf{Precondizione:}  l'utente ha aperto il menù a tendina "Selezione Reti Caricate" \hyperref[UC25.1]{UC25.1 (§\ref*{UC25.1})}
+	\item \textbf{Precondizione:}  l'utente ha aperto il menù a tendina "Selezione Reti Caricate" \hyperref[UC24.1]{UC24.1 (§\ref*{UC24.1})}
 	\item \textbf{Postcondizione:} l'utente ha selezionato la rete dal menù a tendina "Selezione Reti Caricate";
 	\item \textbf{Scenario Principale:} l'utente seleziona, dal menù a tendina, una rete precedentemente caricata per avviarne il monitoraggio. 
 \end{itemize}
 
 \pagebreak
 
-\subsection{UC28 - Visualizzazione Notifica di Avvenuto Collegamento al Server}\label{UC28}
+\subsection{UC27 - Visualizzazione Notifica di Avvenuto Collegamento al Server}\label{UC27}
 %\begin{figure}[H]
 %	\centering
 %	\includegraphics[scale=0.5]{./images/UC17.png}
