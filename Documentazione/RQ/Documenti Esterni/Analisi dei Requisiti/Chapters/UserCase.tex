@@ -56,7 +56,11 @@ Il numero di casi che abbiamo analizzato è limitato poiché il plug-in fornisce
 
 \begin{itemize}
 	\item \textbf{Attore Primario}: Utente;
-	\item \textbf{Precondizioni}: l'utente deve aver effettuato il login nella piattaforma \textit{Grafana}, deve aver selezionato una dashboard e aggiunto il pannello "G\&B";
+	\item \textbf{Precondizioni}: 
+		\begin{enumerate}
+			\item L'utente deve aver effettuato il login nella piattaforma \textit{Grafana}, deve aver selezionato una dashboard e aggiunto il pannello "G\&B";
+			\item L'utente deve aver correttamente configurato la connessione al server (\hyperref[UC17]{UC17 (§\ref*{UC17})}).
+		\end{enumerate}
 	\item \textbf{Postcondizioni}: 
 	\begin{enumerate}
 		\item L'utente ha aggiunto la rete bayesiana al plug-in;
@@ -237,7 +241,6 @@ Il numero di casi che abbiamo analizzato è limitato poiché il plug-in fornisce
 \pagebreak
 
 \subsection{UC3 - Selezione Politica Temporale di Ricalcolo delle Probabilità}\label{UC3}
-
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.5]{./images/UC3.png}
@@ -246,7 +249,11 @@ Il numero di casi che abbiamo analizzato è limitato poiché il plug-in fornisce
 
 \begin{itemize}
 	\item \textbf{Attore Primario}: Utente; 
-	\item \textbf{Precondizione}: l'utente si trova presso il pannello di configurazione della Politica Temporale, acceduto tramite il click del pulsante "Politica Temporale";
+	\item \textbf{Precondizione}: 
+		\begin{enumerate}
+			\item L'utente deve aver correttamente configurato la connessione al server (\hyperref[UC17]{UC17 (§\ref*{UC17})});
+			\item L'utente si trova presso il pannello di configurazione della Politica Temporale, acceduto tramite il click del pulsante "Politica Temporale".
+		\end{enumerate}
 	\item \textbf{Postcondizione}: l'utente ha configurato con successo la politica temporale da lui creata, per il ricalcolo delle probabilità della rete bayesiana, caricata in (\hyperref[UC1]{UC1 (§\ref*{UC1})});	
 	\item \textbf{Scenario Principale:}
 	\begin{enumerate}
@@ -345,7 +352,7 @@ Il numero di casi che abbiamo analizzato è limitato poiché il plug-in fornisce
 \subsection{UC14 - Visualizzazione messaggio di errore Impostaziondi di Collegamento}\label{UC14}
 \begin{itemize}
 \item \textbf{Attore Primario}: Utente;
-\item \textbf{Precondizione}: l'utente ha confermato le scelte per il collegamento di un dato nodo ad un flusso 				dati (\hyperref[UC2.6]{UC2.6 (§\ref*{UC2.6})}), avendo commesso alcuni errori durante la definizione delle impostazioni di collegamento;
+\item \textbf{Precondizione}: l'utente ha confermato le scelte per il collegamento di un dato nodo ad un flusso dati (\hyperref[UC2.6]{UC2.6 (§\ref*{UC2.6})}), avendo commesso alcuni errori durante la definizione delle impostazioni di collegamento;
 \item \textbf{Postcondizioni}: 
 	\begin{enumerate}
 	\item L'utente visualizza l'errore;
