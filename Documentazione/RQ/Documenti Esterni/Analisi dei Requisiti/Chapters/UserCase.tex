@@ -295,7 +295,7 @@ Il numero di casi che abbiamo analizzato è limitato poiché il plug-in fornisce
 \item \textbf{Precondizione:} l'utente ha avviato correttamente il monitoraggio del flusso dati (\hyperref[UC20]{UC20 (§\ref*{UC20})}).
 \item \textbf{Postcondizione:} il Sistema mantiene aggiornate, e visualizzabili da parte dell'utente, le misure di probabilità derivate dai nodi della rete bayesiana non collegati al flusso dati;
 \item \textbf{Scenario Principale:} l'utente visualizza l'andamento delle probabilità dinamiche associate ai nodi 			della rete bayesiana non collegati direttamente al flusso dati. Il sistema aggiorna costantemente i dati forniti dalla rete bayesiana, effettuando l'operazione di ricalcolo delle probabilità associate ai nodi della rete non collegati al flusso dati. Tale operazione di ricalcolo delle probabilità viene eseguita allo scadere del timeout ciclico rappresentato dalla politica temporale stabilita in \hyperref[UC3]{UC3 (§\ref*{UC3})}, oppure, nel caso siano state definite in sede di collegamento nodi (\hyperref[UC2.3.4]{UC2.3.4 (§\ref*{UC2.3.4})}), ogni volta che una soglia critica viene attivata dai dati monitorati;
-\item \textbf{Estensioni:} \textcolor{red}{UC21 (TODO LINK)}: la visualizzazione dei dati viene interrotta nel 			caso in cui l'utente decida di modificare il collegamento dei nodi della rete bayesiana al flusso dati.
+\item \textbf{Estensioni:} \textcolor{red}{UC21 (§\ref*{UC21})}: la visualizzazione dei dati viene interrotta nel 			caso in cui l'utente decida di modificare il collegamento dei nodi della rete bayesiana al flusso dati.
 \end{itemize}
 
 \pagebreak
@@ -494,6 +494,28 @@ Il numero di casi che abbiamo analizzato è limitato poiché il plug-in fornisce
 		\item \hyperref[UC12]{UC12 (§\ref*{UC12})}: l'utente visualizza un messaggio di errore nel caso in cui non abbia definito correttamente alcuna politica temporale per il ricalcolo delle probabilità (\hyperref[UC3]{UC3 (§\ref*{UC3})}).
 	\end{enumerate}
 	\item \textbf{Inclusioni:} UC20 include \hyperref[UC4]{UC4 (§\ref*{UC4})}: Vengono visualizzati i dati di monitoraggio sotto forma di misura di probabilità associate ai Nodi non collegati al flusso.
+\end{itemize}
+
+\pagebreak
+
+\subsection{UC21 - Interruzione Monitoraggio}\label{UC21}
+%\begin{figure}[H]
+%	\centering
+%	\includegraphics[scale=0.5]{./images/UC17.png}
+%	\caption{UC17 - Configurazione Indirizzo e Porta del Server.}
+%\end{figure}
+\begin{itemize}
+	\item \textbf{Attore Primario:} Utente
+	\item \textbf{Precondizione:}
+	\begin{enumerate}
+		\item L'utente ha aggiunto il pannello "G\&B" alla propria dashboard;
+		\item L'utente ha avviato il monitoraggio (\hyperref[UC20]{UC20(§\ref*{UC20})}).
+	\end{enumerate}
+	\item \textbf{Postcondizione:} L'utente ha interrotto il monitoraggio precedentemente attivo.
+	\item \textbf{Scenario Principale:}
+	\begin{enumerate}
+		\item L'utente interrompe il monitoraggio della rete le cui impostazioni sono attualmente visualizzate attraverso il click del bottone con etichetta "Interrompi Monitoraggio".
+	\end{enumerate}
 \end{itemize}
 
 \pagebreak
