@@ -132,28 +132,32 @@ ROF4.5 & Il Sistema deve fornire all'utente una lista di probabilità dinamiche 
 \hline
 RDF4.6.1 & Il Sistema, indipendentemente dalla politica temporale stabilita dall'utente, deve ricalcolare le probabilità al verificarsi del superamento di una soglia critica associata ad uno stato di un nodo collegato al flusso di monitoraggio & Desiderabile & UC4 VER-2019-02-08\\
 \hline
-\rowcolor{grigio}RFF5 & L'utente deve poter definire alert basati sui dati relativi ai nodi della rete bayesiana non collegati al flusso & Opzionale & Capitolato\\
+ROF7 & L'Utente deve poter collegare il plug-in al server per l'elaborazione dati & Obbligatorio & UC17\\
 \hline
-RFF5.1 & Il Sistema deve mettere a disposizione di \textit{Grafana}, i dati per l'operazione di creazione di alert ad essi associati da parte dell'utente & Opzionale & Capitolato UC4\\
+\rowcolor{grigio}ROF7.1 & Il Sistema deve disporre di una sezione adibita alle "Server Settings" all'interno del menù "Edit" del pannello & Obbligatorio & UC17\\
 \hline
-\rowcolor{grigio}RFF6.1 & Il Sistema deve mettere periodicamente a disposizione della piattaforma \textit{Grafana}, i dati aggiornati per il monitoraggio costante dello stato degli alert & Opzionale & UC4\\
+ROF7.1.1 & Il Sistema deve disporre di, nella sezione "Server Settings" del menù "Edit" del pannello, un campo di testo in cui inserire l'indirizzo IP del server al quale ci si desidera connettere & Obbligatorio & UC17\\
 \hline
-
-ROF7 & L'utente deve poter collegare il plug-in al server per l'elaborazione dati & Obbligatorio & UC17\\
+\rowcolor{grigio}ROF7.1.2 & Il Sistema deve disporre di, nella sezione "Server Settings" del menù "Edit" del pannello, un campo di testo in cui inserire la porta del server alla quale ci si desidera connettere & Obbligatorio & UC17\\
 \hline
-\rowcolor{grigio}ROF7.1 & Il sistema deve disporre di una sezione adibita alle "Server Settings" all'interno del menù "Edit" del pannello & Obbligatorio & UC17\\
+ROF7.1.3 & Il Sistema deve disporre di, nella sezione "Server Settings" del menù "Edit" del pannello, un pulsante che permette di confermare i dati inseriti & Obbligatorio & UC17\\
 \hline
-ROF7.1.1 & Il sistema deve disporre di, nella sezione "Server Settings" del menù "Edit" del pannello, un campo di testo in cui inserire l'indirizzo IP del server al quale ci si desidera connettere & Obbligatorio & UC17\\
+\rowcolor{grigio}ROF7.2 & Il Sistema deve poter visualizzare un messaggio di errore nel caso in cui il collegamento al server non sia giunto a buon fine& Obbligatorio & UC22\\
 \hline
-\rowcolor{grigio}ROF7.1.2 & Il sistema deve disporre di, nella sezione "Server Settings" del menù "Edit" del pannello, un campo di testo in cui inserire la porta del server alla quale ci si desidera connettere & Obbligatorio & UC17\\
+ROF7.3 & Il Sistema deve poter visualizzare un messaggio di avvenuto collegamento al server nel caso in cui sia giunto a buon fine & Obbligatorio & UC26\\
 \hline
-ROF7.1.3 & Il sistema deve disporre di, nella sezione "Server Settings" del menù "Edit" del pannello, un pulsante che permette di confermare i dati inseriti & Obbligatorio & UC17\\
+RDF8 & L'Utente deve poter selezionare una rete bayesiana, con eventuali relative impostazioni di collegamento, tra quelle precedentemente caricate & Desiderabile & UC23\\
 \hline
-\rowcolor{grigio}ROF7.2 & Il sistema deve poter visualizzare un messaggio di errore nel caso in cui il collegamento al server non sia giunto a buon fine& Obbligatorio & UC22\\
+RDF8.1 & Il Sistema deve mettere a disposizione dell'utente la lista delle reti bayesiane, con relative eventuali impostazioni di collegamento, salvate nel server & Desiderabile & UC23\\
 \hline
-ROF7.3 & Il sistema deve poter visualizzare un messaggio di avvenuto collegamento al server nel caso in cui sia giunto a buon fine& Obbligatorio & UC26\\
+RDF8.2 & Il Sistema, prima di cambiare il contesto di visualizzazione sostituendo le vecchie impostazioni con le nuove, deve salvare nel server la rete precedentemente visualizzata e le sue eventuali impostazioni di collegamento & Desiderabile & UC23\\
 \hline
-
+RDF8.2.1 & Il Sistema, nel caso in cui la rete da memorizzare sia già presente nel server, deve sovrascrivere le impostazioni di collegamento memorizzate & Desiderabile & UC23\\
+\hline
+RDF8.2.2 & Il Sistema, nel caso in cui la rete visualizzata prima del cambio di contesto sia attualmente in monitoraggio, non deve effettuare operazioni di memorizzazione su server & Desiderabile & UC23\\
+\hline
+RDF8.3 & Il Sistema, a seguito della scelta dell'utente, deve visualizzare la rete selezionata e le sue relative impostazioni di collegamento che vanno a sostituire quelle precedentemente visualizzate & Desiderabile & UC23\\
+\hline
 \caption{Requisiti Funzionali}
 \end{longtable}
 \end{center}
@@ -269,7 +273,7 @@ UC2 & \makecell{ROF2\\ROF2.1.2\\ROF2.5\\ROF2.5.3\\ROF2.5.3.3\\ROF2.5.3.4\\ROF2.5
 \hline
 UC3 & \makecell{ROF3\\ROF3.3\\ROF3.3.1\\ROF3.3.2\\ROF3.3.2.1\\ROF3.3.2.2 \\ ROF3.3.2.3\\ROF3.3.3\\ROF3.4\\ROF3.5 \\ ROF3.5.1}\\
 \hline
-\rowcolor{grigio}UC4 & \makecell{ROF4\\ROF4.5\\ROF4.6\\RDF4.6.1\\RFF5.1}\\
+\rowcolor{grigio}UC4 & \makecell{ROF4\\ROF4.5\\ROF4.6\\RDF4.6.1}\\
 \hline
 UC8 & \makecell{ROF1.4\\ROF1.4.1\\RFF1.4.2}\\
 \hline
@@ -293,6 +297,8 @@ UC19 & \makecell{ROF2.6\\ROF2.6.1\\ROF2.6.2\\ROF2.6.3\\ROF2.6.4}\\
 \hline
 UC22 & \makecell{ROF7.2}\\
 \hline
+UC23 & \makecell{RDF8\\RDF8.1\\RDF8.2\\RDF8.2.1\\RDF8.2.2\\RDF8.3}\\
+\hline
 UC26 & \makecell{ROF7.3}\\
 \hline
 VER-2019-02-08 & \makecell{RDF4.6.1\\RDF2.5.6.3}\\
@@ -311,7 +317,7 @@ VER-2019-02-08 & \makecell{RDF4.6.1\\RDF2.5.6.3}\\
 \rowcolor{bluelogo}\textbf{\textcolor{white}{Tipologia}} & \textbf{\textcolor{white}{Obbligatorio}} & \textbf{\textcolor{white}{Opzionale}} & \textbf{\textcolor{white}{Desiderabile}} & \textbf{\textcolor{white}{Totale}}\\
 \hline \hline
 \endhead
-Funzionale & 60 & 7 & 2 & 69\\
+Funzionale & 60 & 4 & 8 & 72\\
 \hline
 \rowcolor{grigio}Di Qualità & 5 & 0 & 10 & 15\\
 \hline

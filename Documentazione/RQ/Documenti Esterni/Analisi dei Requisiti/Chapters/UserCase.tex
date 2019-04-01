@@ -521,54 +521,22 @@ Il numero di casi che abbiamo analizzato è limitato poiché il plug-in fornisce
 \pagebreak
 
 \subsection{UC23 - Selezione Rete Bayesiana già caricata}\label{UC23}
-%\begin{figure}[H]
-%	\centering
-%	\includegraphics[scale=0.5]{./images/UC17.png}
-%	\caption{UC17 - Configurazione Indirizzo e Porta del Server.}
-%\end{figure}
+
 \begin{itemize}
 	\item \textbf{Attore Primario:}  Utente
-	\item \textbf{Precondizione:} L'utente ha correttamente configurato le impostazioni per la connessione al server \hyperref[UC17]{UC17(§\ref*{UC17})};
+	\item \textbf{Precondizione:} L'utente ha correttamente configurato le impostazioni per la connessione al server (\hyperref[UC17]{UC17(§\ref*{UC17})});
 	\item \textbf{Postcondizione:}
 	\begin{enumerate}
 		\item L'utente visualizza le impostazioni della rete selezionata;
-		\item Se la rete non è in fase di monitoraggio, il cambio della rete porta al salvataggio di questa nel server;
+		\item Le eventuali impostazioni di rete visualizzate prima del cambio vengono salvate nel server come rete già caricata.
 	\end{enumerate}
-	\item \textbf{Scenario Principale:}
-	\begin{enumerate}
-		\item L'utente apre il menù a tendina per la selezione di una rete già precedentemente caricata;
-		\item L'utente seleziona la rete.
-	\end{enumerate}
-\end{itemize}
-
-\subsubsection{UC23.1 - Apertura del Menù a Tendina per la Selezione di una Rete Precedentemente Caricata}\label{UC23.1}
-\begin{itemize}
-	\item \textbf{Attore Primario:}  Utente
-	\item \textbf{Precondizione:}
-	\begin{enumerate}
-		\item L'utente ha correttamente configurato le impostazioni per la connessione al server \hyperref[UC17]{UC17(§\ref*{UC17})};
-		\item L'utente ha correttamente selezionato il database TODO %\hyperref[UC17]{UC17.2 (§\ref*{UC17.2})}.
-	\end{enumerate}
-	\item \textbf{Postcondizione:} l'utente ha aperto il menù a tendina per la selezione di una rete precedentemente caricata;
-	\item \textbf{Scenario Principale:} l'utente clicca sul menù a tendina "Selezione Reti Caricate" per la selezione di una rete  precedentemente caricata.
-\end{itemize}
-
-\subsubsection{UC23.2 - Selezione della Rete Precedentemente Caricata}\label{UC23.2}
-\begin{itemize}
-	\item \textbf{Attore Primario:} Utente
-	\item \textbf{Precondizione:}  l'utente ha aperto il menù a tendina "Selezione Reti Caricate" \hyperref[UC23.1]{UC23.1 (§\ref*{UC23.1})}
-	\item \textbf{Postcondizione:} l'utente ha selezionato la rete dal menù a tendina "Selezione Reti Caricate";
-	\item \textbf{Scenario Principale:} l'utente seleziona, dal menù a tendina, una rete precedentemente caricata per avviarne il monitoraggio.
+	\item \textbf{Scenario Principale:} L'utente, attraverso un menù a tendina, seleziona una rete bayesiana (con eventuali relative impostazioni di collegamento) tra quelle già caricate e/o correntemente monitorate, e quindi salvate nel server.
 \end{itemize}
 
 \pagebreak
 
 \subsection{UC26 - Visualizzazione Notifica di Avvenuto Collegamento al Server}\label{UC26}
-%\begin{figure}[H]
-%	\centering
-%	\includegraphics[scale=0.5]{./images/UC17.png}
-%	\caption{UC17 - Configurazione Indirizzo e Porta del Server.}
-%\end{figure}
+
 \begin{itemize}
 	\item \textbf{Attore Primario:}  Utente
 	\item \textbf{Precondizione:}
