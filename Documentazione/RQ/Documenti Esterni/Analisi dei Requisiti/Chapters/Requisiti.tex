@@ -126,6 +126,8 @@ ROF4.4 & Il Sistema deve mettere a disposizione dell'utente un pulsante per avvi
 \hline
 ROF4.4.4 & Il Sistema deve visualizzare un messaggio di errore nel caso in cui l'utente abbia avviato il monitoraggio senza aver preventivamente collegato almeno un nodo della rete bayesiana al flusso dati & Obbligatorio & UC20 UC9\\
 \hline
+ROF4.4.5 & Il Sistema deve memorizzare sul server la rete bayesiana, insieme alle corrispondenti impostazioni di collegamento & Obbligatorio & UC20\\
+\hline
 ROF4.5 & Il Sistema deve fornire all'utente una lista di probabilità dinamiche associate ai nodi della rete & Obbligatorio & UC4\\
 \hline
 \rowcolor{grigio}ROF4.6 & Il Sistema deve aggiornare periodicamente le probabilità in base a quanto definito come policy per il ricalcolo delle probabilità & Obbligatorio & UC4\\
@@ -160,12 +162,14 @@ RDF8.2.2 & Il Sistema, nel caso in cui la rete visualizzata prima del cambio di 
 \hline
 RDF8.3 & Il Sistema, a seguito della scelta dell'utente, deve visualizzare la rete selezionata e le sue relative impostazioni di collegamento che vanno a sostituire quelle precedentemente visualizzate & Desiderabile & UC23\\
 \hline
-ROF9 & L'utente deve poter visualizzare i monitoraggi attivi. & Obbligatorio & UC24\\
+ROF9 & L'utente deve poter visualizzare i monitoraggi attivi & Obbligatorio & UC24\\
 \hline
-ROF9.1 & Il Sistema deve mettere a disposizione un bottone che consenta di visualizzare i monitoraggi attivi. & Obbligatorio & UC24\\
-ROF10 & L'utente deve poter visualizzare le impostazioni di collegamento a partire dalla visualizzazione dei monitoraggi attivi. & Obbligatorio & UC25\\
+ROF9.1 & Il Sistema deve mettere a disposizione un bottone che consenta di visualizzare i monitoraggi attivi & Obbligatorio & UC24\\
 \hline
-ROF10.1 & Il Sistema deve mettere a disposizione un bottone che consenta di visualizzare le impostazioni di collegamento a partire dalla visualizzazione dei monitoraggi attivi. & Obbligatorio & UC25\\
+ROF10 & L'utente deve poter visualizzare le impostazioni di collegamento a partire dalla visualizzazione dei monitoraggi attivi & Obbligatorio & UC25\\
+\hline
+ROF10.1 & Il Sistema deve mettere a disposizione un bottone che consenta di visualizzare le impostazioni di collegamento a partire dalla visualizzazione dei monitoraggi attivi & Obbligatorio & UC25\\
+\hline
 \caption{Requisiti Funzionali}
 \end{longtable}
 \end{center}
@@ -301,7 +305,7 @@ UC17 & \makecell{ROF7\\ROF7.1\\ROF7.1.1\\ROF7.1.2\\ROF7.1.3\\ROF7.2\\ROF7.3}\\
 \hline
 UC19 & \makecell{ROF2.6\\ROF2.6.1\\ROF2.6.2\\ROF2.6.3\\ROF2.6.4}\\
 \hline
-\rowcolor{grigio}UC20 & \makecell{ROF4\\ROF4.4\\ROF4.4.3}\\
+\rowcolor{grigio}UC20 & \makecell{ROF4\\ROF4.4\\ROF4.4.3\\ROF4.4.4\\ROF4.4.5}\\
 \hline
 UC21 & \makecell{ROF4.7}\\ 
 \hline
@@ -331,7 +335,7 @@ VER-2019-02-08 & \makecell{RDF4.6.1\\RDF2.5.6.3}\\
 \rowcolor{bluelogo}\textbf{\textcolor{white}{Tipologia}} & \textbf{\textcolor{white}{Obbligatorio}} & \textbf{\textcolor{white}{Opzionale}} & \textbf{\textcolor{white}{Desiderabile}} & \textbf{\textcolor{white}{Totale}}\\
 \hline \hline
 \endhead
-Funzionale & 64 & 4 & 8 & 76\\
+Funzionale & 65 & 4 & 8 & 77\\
 \hline
 \rowcolor{grigio}Di Qualità & 5 & 0 & 10 & 15\\
 \hline

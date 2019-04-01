@@ -332,7 +332,7 @@ Il numero di casi che abbiamo analizzato è limitato poiché il plug-in fornisce
 
 \pagebreak
 
-\subsection{UC12 - Visualizzazione Messaggio di Errore Politiche Temporali non Definite}\label{UC12}
+\subsection{UC12 - Visualizzazione Messaggio di Errore Politica Temporale non Definita}\label{UC12}
 \begin{itemize}
 \item \textbf{Attore Primario}: Utente;
 \item \textbf{Precondizione}: l'utente ha avviato il monitoraggio del flusso dati (\hyperref[UC20]{UC20 							(§\ref*{UC20})}), senza aver preventivamente definito correttamente alcuna politica temporale per il ricalcolo delle probabilità (\hyperref[UC3]{UC3 (§\ref*{UC3})}).
@@ -481,11 +481,12 @@ Il numero di casi che abbiamo analizzato è limitato poiché il plug-in fornisce
 \subsection{UC20 - Avvio Monitoraggio}\label{UC20}
 \begin{itemize}
 	\item \textbf{Attore Primario:} Utente;
-	\item \textbf{Precondizione:} L'utente ha collegato con successo alcuni nodi della rete bayesiana al flusso dati (\hyperref[UC2]{UC2(§\ref*{UC2})});
+	\item \textbf{Precondizione:} L'utente ha caricato con successo la rete bayesiana (\hyperref[UC1]{UC1(§\ref*{UC1})});
 	\item \textbf{Postcondizioni:}
 	\begin{enumerate}
-		\item La precedente visualizzazione del plug-in scompare, il pannello quindi espone all'utente la lista di nodi della rete bayesiana caricata ed i corrispondenti dati ad essi associati;
-		\item Il pulsante "Avvio Monitoraggio" viene sostituito da "Interruzione Monitoraggio"
+		\item Il pulsante "Avvio Monitoraggio" viene sostituito da "Interruzione Monitoraggio";
+		\item La rete bayesiana, con le corrispondenti impostazioni di collegamento, viene salvata nel server. Tale rete potrà dunque essere selezionata dall'utente durante \hyperref[UC23]{UC23(§\ref*{UC23})};
+		\item La precedente visualizzazione del plug-in scompare, il pannello quindi espone all'utente i dati di monitoraggio.
 	\end{enumerate}
 	\item \textbf{Scenario Principale:} L'utente avvia il monitoraggio cliccando il pulsante denominato "Avvio Monitoraggio". Questo porta all'invio della configurazione della rete bayesiana (stabilita dall'utente attraverso \hyperref[UC1]{UC1 (§\ref*{UC1})}, \hyperref[UC2]{UC2 (§\ref*{UC2})}, \hyperref[UC18]{UC18 (§\ref*{UC18})} e \hyperref[UC3]{UC3 (§\ref*{UC3})}) al Server (in ascolto presso la porta stabilita dall'utente in \hyperref[UC17]{UC17 (§\ref*{UC17})}) che si occuperà delle necessarie operazioni per gestire il monitoraggio dei dati.
 	\item \textbf{Estensioni:}
