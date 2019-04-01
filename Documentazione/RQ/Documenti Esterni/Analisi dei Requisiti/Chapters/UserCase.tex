@@ -543,7 +543,6 @@ Il numero di casi che abbiamo analizzato è limitato poiché il plug-in fornisce
 \pagebreak
 
 \subsection{UC23 - Selezione Rete Bayesiana già caricata}\label{UC23}
-
 \begin{itemize}
 	\item \textbf{Attore Primario:}  Utente
 	\item \textbf{Precondizione:} L'utente ha correttamente configurato le impostazioni per la connessione al server (\hyperref[UC17]{UC17(§\ref*{UC17})});
@@ -553,6 +552,20 @@ Il numero di casi che abbiamo analizzato è limitato poiché il plug-in fornisce
 		\item Le eventuali impostazioni di rete visualizzate prima del cambio vengono salvate nel server come rete già caricata.
 	\end{enumerate}
 	\item \textbf{Scenario Principale:} L'utente, attraverso un menù a tendina, seleziona una rete bayesiana (con eventuali relative impostazioni di collegamento) tra quelle già caricate e/o correntemente monitorate, e quindi salvate nel server.
+\end{itemize}
+
+\pagebreak
+
+\subsection{UC24 - Visualizzazione Monitoraggi}\label{UC24}
+\begin{itemize}
+	\item \textbf{Attore Primario:}  Utente
+	\item \textbf{Precondizione:} 
+	\begin{enumerate}
+		\item L'utente deve aver effettuato il login nella piattaforma \textit{Grafana}, deve aver selezionato una dashboard e aggiunto il pannello "G\&B";
+		\item L'utente deve aver correttamente configurato la connessione al server (\hyperref[UC17]{UC17 (§\ref*{UC17})}).
+	\end{enumerate}
+	\item \textbf{Postcondizione:} L'utente sta visualizzando i monitoraggi attivi
+	\item \textbf{Scenario Principale:} L'utente per accedere alla visualizzazione dei monitoraggi attivi clicca il pulsante con etichetta "Visualizzazione monitoraggio".
 \end{itemize}
 
 \pagebreak
