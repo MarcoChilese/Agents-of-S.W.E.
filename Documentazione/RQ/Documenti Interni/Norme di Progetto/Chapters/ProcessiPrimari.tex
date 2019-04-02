@@ -2,7 +2,10 @@
 
 \subsection{Fornitura}\label{Fornitura}
 In questa sezione del documento vengono trattate le norme che il team \texttt{Agents of S.W.E.} decide e si impegna a rispettare, con lo scopo di proporsi e divenire fornitori nei confronti dell'azienda proponente, \textit{Zucchetti S.p.A.} e dei committenti Prof. Tullio Vardanega e Prof. Riccardo Cardin nell'ambito della progettazione, sviluppo e consegna del prodotto "\textit{G\&B}".
-\subsubsection{Studio di Fattibilità} \label{ProcessiPrimari_Sviluppo_StudioFattibilità}
+
+\subsubsection{Attività}
+
+\paragraph{Studio di Fattibilità} \label{ProcessiPrimari_Sviluppo_StudioFattibilità}
 Lo \textit{Studio di Fattibilità} riguarda l'analisi dei capitolati, la specificazione di pro e contro di ognuno di essi e le motivazioni che hanno portato all'esclusione di questi, tranne per il capitolato C3, ovvero \textit{G\&B}, che è stato scelto del gruppo e, per questo, verranno redatte le motivazioni che hanno portato alla scelta. La stesura di questo documento è effettuata dagli analisti.
 Tale documento è così strutturato:
 \begin{itemize}
@@ -10,6 +13,30 @@ Tale documento è così strutturato:
 	\item \textbf{Descrizione Capitolato e Obiettivo Finale}: descrizione obiettivo finale del capitolato e ambito di utilizzo del prodotto;
 	\item \textbf{Dominio Tecnologico}: definisce il dominio tecnologico, ovvero le tecnologie richieste dall'azienda;
 	\item \textbf{Valutazione del Capitolato}: definisce aspetti positivi, negativi, e criticità, motivando la scelta del capitolato.
+\end{itemize}
+
+\paragraph{Piano di Progetto} \label{ProcessiPrimari_PianoProgetto}
+Il \textit{Responsabile}, aiutato dagli \textit{Amministratori}, istanzia i processi e le attività, pianificando tempi e costi. \\
+Il documento dovrà contenere:
+\begin{itemize}
+	\item \textbf{Analisi dei rischi}: vengono analizzati nel dettaglio i rischi che potrebbero insorgere nel corso del progetto e i modi per mitigarli, fornendo anche la probabilità che essi possano verificarsi e il relativo grado di pericolosità; 
+	\item \textbf{Pianificazione}: si pianificano le attività da svolgere durante tutte le fasi del progetto, fornendo delle scadenze temporali precise;
+	\item \textbf{Preventivo e Consuntivo}:  viene stimata la quantità
+	di lavoro necessaria per ogni fase, proponendo un preventivo per il costo totale
+	del progetto. Alla fine di ogni attività viene redatto un consuntivo di periodo
+	per tracciare l’andamento rispetto a quanto preventivato.
+
+\end{itemize}
+
+\paragraph{Piano di Qualifica} \label{ProcessiPrimari_PianoQualifica}
+I \textit{Verificatori} dovranno redigere il documento Piano di Qualifica, contenente le strategie da adottare per garantire la qualità del materiale prodotto.
+Il documento dovrà contenere:
+\begin{itemize}
+	\item \textbf{Qualità di Processo}: si identificano le tecniche che verranno utilizzate
+	durante lo svolgimento del progetto, al fine di garantire la qualità dei processi istanziati durante il suo sviluppo;
+	\item \textbf{Qualità di Prodotto}: vengono individuati i principali obiettivi da perseguire per garantire un'ottima qualità di prodotto e le relative metriche per misurarli;
+	\item \textbf{Specifiche dei Test}: si defeniscono nel dettaglio i test da eseguire sul prodotto per garantire che soddisfi i requisiti;
+	\item \textbf{Resoconto delle Attività di Verifica}: alla fine di ogni attività vengono riportate le metriche calcolate e un resoconto sulla verifica di tale attività.
 \end{itemize}
 
 \subsection{Sviluppo}\label{Sviluppo}
@@ -91,3 +118,26 @@ Ogni caso d'uso avrà le seguenti informazioni:
 
 \subsubsection{Codifica}\label{Codifica}
 \input{Chapters/codifica.tex}
+
+\subsubsection{Strumenti}
+
+\paragraph{\textit{WebStorm}}\-\\
+Come ambiente di sviluppo integrato comune il team ha scelto di utilizzare l'IDE \textit{WebStorm}, facente parte della famiglia di prodotti di JetBrains. \\
+\textit{WebStorm} è una cross-platform, sviluppata principalmente per lo sviluppo web, \textit{JavaScript e TypeScript}. \\
+La configurazione della piattaforma di sviluppo dovrà essere equivalente per tutti i componenti del gruppo. All'interno della piattaforma dovrà essere installato il plug-in \textit{ESLint}, la cui funzione verrà illustrata in seguito.
+
+\paragraph{\textit{NPM}}\label{NPM} \-\\
+\textit{Npm} è un gestore di pacchetti per \textit{JavaScript}, gestisce inoltre i pacchetti di default presenti nell'ambiente \textit{Node.js}\glossario.\\
+Risulta essere strutturato in due parti: un client a riga di comando ed un database, contente pacchetti sia pubblici che privati. Lo scopo di \textit{node.js} è quello di incoraggiare il riuso del codice tra team ed il suo utilizzo è mirato alla gestione delle dipendenze.\\ 
+Il suo utilizzo è necessario per poter eseguire e testare il codice \textit{ES6}.
+
+\paragraph{\textit{ESLint}}\-\\
+Il plug-in \textit{ESLint}, scaricabile dall'apposita sezione all'interno dell'IDE utilizzato, ha la funzione di segnalare errori che vengono effettuati durante la stesura del codice, in modo da evitare bug e rendere il codice più coerente. \\ 
+Si occupa inoltre di far aderire il codice allo standard \textit{Airbnb} che il team ha deciso di adottare, segnalando le varie difformità.\\
+Il plug-in è reperibile tra i pacchetti resi disponibili da \textit{NPM}.\\
+Le regole utilizzate all'interno del plug-in saranno quelle esplicitate nella sezione §\ref{EcmaScript6}, riguardanti lo stile e le regole da rispettare per la stesura del codice con \textit{EcmaScript6}.
+
+\paragraph{Diagrammi UML}
+Lo strumento scelto dal gruppo per la realizzazione dei diagrammi UML è \textit{Draw.io}, una applicazione online per il disegno di diagrammi UML 2.0. Anche in questo caso è stata tenuta in grande considerazione l'accessibilità dello strumento. Il software in questione risulta infatti gratuito ed essendo online non genera problemi per l'uso su più piattaforme.\\
+\textit{Draw.io} risulta essere sia User Friendly, con un'interfaccia utente chiara e consistente, sia abbastanza potente da essere utilizzato anche scopi più evoluti. Questo, unito alle dimensioni relativamente ridotte del software, e al fatto che sia gratuito, hanno fatto propendere il gruppo per questa applicazione online, a discapito di alternative, come \textit{Papyrus o Astah}, comunque considerate valide.
+
