@@ -138,15 +138,17 @@ ROF4.5 & Il Sistema deve fornire all'utente una lista di probabilità dinamiche 
 \hline
 RFF4.5.1 & L'Utente deve aver la possibilità di scegliere la rete bayesiana, tra quelle al momento in monitoraggio, di cui visualizzare i dati di monitoraggio sotto forma di probabilità dinamiche & Opzionale & UC4\\
 \hline
-\rowcolor{grigio}ROF4.6 & Il Sistema deve aggiornare periodicamente le probabilità in base a quanto definito come politica temporale per il ricalcolo delle probabilità & Obbligatorio & UC4\\
+RFF4.5.1.1 & Il Sistema deve fornire all'utente un menù a tendina contente la lista delle rete bayesiane in monitoraggio tra cui scegliere & Opzionale & UC4\\
+\hline
+\rowcolor{grigio}ROF4.6 & Il Sistema, attraverso l'uso del server per l'elaborazione dei dati, deve aggiornare periodicamente le probabilità in base a quanto definito come politica temporale per il ricalcolo delle probabilità & Obbligatorio & UC4\\
 \hline
 RDF4.6.1 & Il Sistema, indipendentemente dalla politica temporale stabilita dall'utente, deve ricalcolare le probabilità al verificarsi del superamento di una soglia critica associata ad uno stato di un nodo collegato al flusso di monitoraggio & Desiderabile & UC4 VER-2019-02-08\\
 \hline
 ROF4.7 & Il Sistema deve permettere l'interruzione del monitoraggio relativo alla rete correntemente visualizzata & Obbligatorio & UC21\\
 \hline
-\rowcolor{grigio}ROF7.1 & Il Sistema deve disporre di una sezione adibita alle "Server Settings" all'interno del menù "Edit" del pannello & Obbligatorio & UC17\\
+ROF7 & L'Utente deve poter collegare il plug-in al server per l'elaborazione dati e il salvataggio delle impostazioni di collegamento & Obbligatorio & UC17\\
 \hline
-ROF7 & L'Utente deve poter collegare il plug-in al server per l'elaborazione dati & Obbligatorio & UC17\\
+\rowcolor{grigio}ROF7.1 & Il Sistema deve disporre di una sezione adibita alle "Server Settings" all'interno del menù "Edit" del pannello & Obbligatorio & UC17\\
 \hline
 ROF7.1.1 & Il Sistema deve disporre di, nella sezione "Server Settings" del menù "Edit" del pannello, un campo di testo in cui inserire l'indirizzo IP del server al quale ci si desidera connettere & Obbligatorio & UC17\\
 \hline
@@ -154,9 +156,13 @@ ROF7.1.1 & Il Sistema deve disporre di, nella sezione "Server Settings" del men�
 \hline
 ROF7.1.3 & Il Sistema deve disporre di, nella sezione "Server Settings" del menù "Edit" del pannello, un pulsante che permette di confermare i dati inseriti & Obbligatorio & UC17\\
 \hline
-\rowcolor{grigio}ROF7.2 & Il Sistema deve poter visualizzare un messaggio di errore nel caso in cui il collegamento al server non sia giunto a buon fine& Obbligatorio & UC22\\
+\rowcolor{grigio}ROF7.2 & L'Utente deve visualizzare un messaggio di errore nel caso in cui il collegamento al server non sia giunto a buon fine& Obbligatorio & UC22\\
 \hline
-ROF7.3 & Il Sistema deve poter visualizzare un messaggio di avvenuto collegamento al server nel caso in cui sia giunto a buon fine & Obbligatorio & UC26\\
+ROF7.2.1 & Il Sistema deve verificare che l'indirizzo IP inserito dall'utente sia valido & Obbligatorio & UC17 UC22\\
+\hline
+ROF7.2.2 & Il Sistema deve verificare che la porta del server indicata dall'utente sia in ascolto & Obbligatorio & UC17 UC22\\
+\hline
+ROF7.3 & L'Utente visualizzare un messaggio di avvenuto collegamento al server nel caso in cui sia giunto a buon fine & Obbligatorio & UC26\\
 \hline
 RDF8 & L'Utente deve poter selezionare una rete bayesiana, con eventuali relative impostazioni di collegamento, tra quelle precedentemente caricate & Desiderabile & UC23\\
 \hline
@@ -170,13 +176,13 @@ RDF8.2.2 & Il Sistema, nel caso in cui la rete visualizzata prima del cambio di 
 \hline
 RDF8.3 & Il Sistema, a seguito della scelta dell'utente, deve visualizzare la rete selezionata e le sue relative impostazioni di collegamento che vanno a sostituire quelle precedentemente visualizzate & Desiderabile & UC23\\
 \hline
-ROF9 & L'utente deve poter visualizzare i monitoraggi attivi & Obbligatorio & UC24\\
+ROF9 & Il Sistema deve mettere a disposizione dell'utente una sezione unicamente dedicata alla visualizzazione dei dati di monitoraggio & Obbligatorio & Decisione Interna UC24\\
 \hline
-ROF9.1 & Il Sistema deve mettere a disposizione un bottone che consenta di visualizzare i monitoraggi attivi & Obbligatorio & UC24\\
+ROF9.1 & Il Sistema deve mettere a disposizione un bottone che consenta all'utente di passare alla sezione per la visualizzazione dei monitoraggi attivi & Obbligatorio & UC24\\
 \hline
-ROF10 & L'utente deve poter visualizzare le impostazioni di collegamento a partire dalla visualizzazione dei monitoraggi attivi & Obbligatorio & UC25\\
+ROF9.1.1 & Il Sistema deve sostituire la precedente vista del pannello e sostituirla con la sezione dedicata alla visualizzazione dei monitoraggi attivi & Obbligatorio & UC24\\
 \hline
-ROF10.1 & Il Sistema deve mettere a disposizione un bottone che consenta di visualizzare le impostazioni di collegamento a partire dalla visualizzazione dei monitoraggi attivi & Obbligatorio & UC25\\
+ROF9.2 & Il Sistema deve mettere a disposizione un bottone che consenta all'utente di uscire dalla sezione di visualizzazione dei monitoraggi attivi per tornare alle impostazioni di collegamento  & Obbligatorio & UC25\\
 \hline
 \caption{Requisiti Funzionali}
 \end{longtable}
@@ -281,7 +287,7 @@ ROV12 & Il plug-in deve funzionare per l'ultima versione di \textit{Grafana} dis
 \endhead
 Capitolato & \makecell{RFF4.4.7\\RFF4.4.7.1\\ROQ1\\ROQ2\\RDQ5\\ROV4\\ROV6}\\
 \hline
-\rowcolor{grigio}Decisione Interna & \makecell{ROQ1.1\\RDQ1.2 \\ RDQ1.3\\ROQ2.1\\RDQ2.2\\ROQ3\\RDQ6\\RDF1.6\\RDQ7\\RDQ8 \\ RDQ09 \\ RDQ10 \\ RDQ11\\ROV12\\ROF2.5.6.4\\RDF2.5.6.5}\\
+\rowcolor{grigio}Decisione Interna & \makecell{ROQ1.1\\RDQ1.2 \\ RDQ1.3\\ROQ2.1\\RDQ2.2\\ROQ3\\RDQ6\\RDF1.6\\RDQ7\\RDQ8 \\ RDQ09 \\ RDQ10 \\ RDQ11\\ROV12\\ROF2.5.6.4\\RDF2.5.6.5\\ROF9}\\
 \hline
 Piattaforma \textit{Grafana} & \makecell{ROV1\\ROV2\\ROV3\\ROV6}\\
 \hline
@@ -293,7 +299,7 @@ UC2 & \makecell{ROF2\\ROF2.1.2\\ROF2.5\\ROF2.5.3\\ROF2.5.3.3\\ROF2.5.3.4\\ROF2.5
 \hline
 UC3 & \makecell{ROF3\\ROF3.3\\ROF3.3.1\\ROF3.3.2\\ROF3.3.2.1\\ROF3.3.2.2 \\ ROF3.3.2.3\\ROF3.3.3\\ROF3.4\\ROF3.5 \\ ROF3.5.1}\\
 \hline
-\rowcolor{grigio}UC4 & \makecell{ROF4\\ROF4.5\\RFF4.5.1\\ROF4.6\\RDF4.6.1}\\
+\rowcolor{grigio}UC4 & \makecell{ROF4\\ROF4.5\\RFF4.5.1\\RFF4.5.1.1\\ROF4.6\\RDF4.6.1}\\
 \hline
 UC8 & \makecell{ROF1.4\\ROF1.4.1\\RFF1.4.2}\\
 \hline
@@ -307,7 +313,7 @@ UC15 & \makecell{ROF3.5 \\ ROF3.5.1}\\
 \hline
 \rowcolor{grigio}UC16 & \makecell{ROF2.1\\ROF2.1.1\\ROF2.1.2\\ROF2.6.3\\ROF2.6.4}\\
 \hline
-UC17 & \makecell{ROF7\\ROF7.1\\ROF7.1.1\\ROF7.1.2\\ROF7.1.3\\ROF7.2\\ROF7.3}\\
+UC17 & \makecell{ROF7\\ROF7.1\\ROF7.1.1\\ROF7.1.2\\ROF7.1.3\\ROF7.2\\ROF7.2.1\\ROF7.2.2\\ROF7.3}\\
 \hline
 \rowcolor{grigio}UC18 & \makecell{ROF2.5.3.1\\ROF2.5.3.2\\ROF2.5.3.3}\\
 \hline
@@ -317,13 +323,13 @@ UC19 & \makecell{ROF2.6\\ROF2.6.1\\ROF2.6.2\\ROF2.6.3\\ROF2.6.4}\\
 \hline
 UC21 & \makecell{ROF4.7}\\ 
 \hline
-UC22 & \makecell{ROF7.2}\\
+UC22 & \makecell{ROF7.2\\ROF7.2.1\\ROF7.2.2}\\
 \hline
 UC23 & \makecell{RDF8\\RDF8.1\\RDF8.2\\RDF8.2.1\\RDF8.2.2\\RDF8.3}\\
 \hline
-UC24 & \makecell{ROF9\\ROF9.1}\\
+UC24 & \makecell{ROF9\\ROF9.1\\ROF9.1.1}\\
 \hline
-UC25 & \makecell{ROF10\\ROF10.1}\\
+UC25 & \makecell{ROF9.2}\\
 \hline
 UC26 & \makecell{ROF7.3}\\
 \hline
@@ -343,7 +349,7 @@ VER-2019-02-08 & \makecell{RDF4.6.1\\RDF2.5.6.3}\\
 \rowcolor{bluelogo}\textbf{\textcolor{white}{Tipologia}} & \textbf{\textcolor{white}{Obbligatorio}} & \textbf{\textcolor{white}{Opzionale}} & \textbf{\textcolor{white}{Desiderabile}} & \textbf{\textcolor{white}{Totale}}\\
 \hline \hline
 \endhead
-Funzionale & 66 & 7 & 8 & 81\\
+Funzionale & 71 & 6 & 10 & 87\\
 \hline
 \rowcolor{grigio}Di Qualità & 5 & 0 & 10 & 15\\
 \hline
