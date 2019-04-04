@@ -36,13 +36,31 @@ Il numero di casi che abbiamo analizzato è limitato poiché il plug-in fornisce
 \end{itemize}
 \end{comment}
 
+\pagebreak
+
 \subsection{Panoramica Casi d'Uso}\label{PanoramicaUC}
+Questa sezione ha l'obiettivo di presentare una vista generale dei casi d'uso fondamentali del plug-in al fine di fornire una comprensione generale del prodotto migliore e più immediata. I casi d'uso sono stati suddivisi in due diagrammi separati per agevolarne la facilità di comprensione, anche e soprattutto a livello visivo.\\
+Il primo diagramma (\hyperref[Panoramica UC Configurazione]{Panoramica UC Configurazione (§\ref*{Panoramica UC Configurazione})}) racchiude i casi d'uso atti a modellare le operazioni che devono essere eseguite dall'utente prima di poter avviare il monitoraggio dei dati. Il secondo diagramma (\hyperref[Panoramica UC Monitoraggio]{Panoramica UC Monitoraggio (§\ref*{Panoramica UC Monitoraggio})}) invece contiene principalmente i casi d'uso che modellano la gestione dei monitoraggi che utilizzano le reti bayesiane.
+
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[scale=0.18]{./images/VistaUC.png}
-		 \caption{Panoramica dei Casi d'Uso basilari}
+		\includegraphics[scale=0.4]{./images/VistaUC.png}
+		 \caption{Panoramica dei Casi d'Uso di configurazione delle impostazioni di collegamento}
+		 \label{Panoramica UC Configurazione}
 	\end{center}
 \end{figure}
+
+\pagebreak
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.4]{./images/VistaUC2.png}
+		 \caption{Panoramica dei Casi d'Uso di gestione dei monitoraggi che utilizzano le reti bayesiane}
+		 \label{Panoramica UC Monitoraggio}
+	\end{center}
+\end{figure}
+
+\pagebreak
 
 \pagebreak
 \subsection{UC1 - Caricamento Rete Bayesiana}\label{UC1}
@@ -457,14 +475,14 @@ Il numero di casi che abbiamo analizzato è limitato poiché il plug-in fornisce
 			\item L'utente ha aggiunto il pannello "G\&B" alla propria dashboard;
 			\item L'utente si trova nella scheda "Server Setting" del menù "Edit" del pannello.
 		\end{enumerate}
-	\item \textbf{Postcondizione:} L'utente ha configurato i parametri di connessione al server;
+	\item \textbf{Postcondizione:} L'utente ha configurato i parametri di connessione al server atto a memorizzare le reti bayesiane caricate con le rispettive impostazioni di collegamento al flusso dati, ed eseguire i calcoli per il ricalcolo delle probabilità in sede di monitoraggio;
 	\item \textbf{Scenario Principale:}
 	\begin{enumerate}
 		\item (\hyperref[UC17.1]{UC17.1 (§\ref*{UC17.1})}) Inserimento indirizzo IP;
 		\item (\hyperref[UC17.2]{UC17.2 (§\ref*{UC17.2})}) Inserimento porta;
 		\item (\hyperref[UC17.3]{UC17.3 (§\ref*{UC17.3})}) Click conferma collegamento.
 	\end{enumerate}
-	\item \textbf{Estensioni}: si è verificato un errore di connessione: l'utente visualizza un messaggio che lo informa dell'avvenuto errore, invitandolo quindi a verificare la correttezza di indirizzo e/o porta, e clicca "OK" (\hyperref[UC22]{UC22 (§\ref*{UC22})});
+	\item \textbf{Estensioni}: si è verificato un errore di connessione: l'utente visualizza un messaggio che lo informa dell'avvenuto errore, invitandolo quindi a verificare la correttezza di indirizzo e/o porta (\hyperref[UC22]{UC22 (§\ref*{UC22})});
 	\item  \textbf{Inclusione}: (\hyperref[UC26]{UC26 (§\ref*{UC26})}) Visualizzazione notifica di avvenuto collegamento;
 \end{itemize}
 
@@ -570,14 +588,11 @@ Il numero di casi che abbiamo analizzato è limitato poiché il plug-in fornisce
 %\end{figure}
 \begin{itemize}
 	\item \textbf{Attore Primario:}  Utente
-	\item \textbf{Precondizione:}
-	\begin{enumerate}
-		\item L'utente ha cliccato il pulsante con etichetta "Collega" per confermare il collegamento al server con i dati precedentemente impostati (\hyperref[UC17]{UC17 (§\ref*{UC17})}).
-	\end{enumerate}
+	\item \textbf{Precondizione:} L'utente ha cliccato il pulsante con etichetta "Collega" per confermare il collegamento al server (\hyperref[UC17]{UC17 (§\ref*{UC17})}) commettendo degli errori.
 	\item \textbf{Postcondizione:} L'utente ha visualizzato il messaggio di errore;
 	\item \textbf{Scenario Principale:}
 	\begin{enumerate}
-		\item L'utente visualizza l'errore di collegamento;
+		\item L'utente visualizza il messaggio che notifica gli errori commessi;
 		\item L'utente clicca "OK".
 	\end{enumerate}
 \end{itemize}
@@ -598,15 +613,15 @@ Il numero di casi che abbiamo analizzato è limitato poiché il plug-in fornisce
 
 \pagebreak
 
-\subsection{UC24 - Visualizzazione Monitoraggi}\label{UC24}
+\subsection{UC24 - Visualizzazione Monitoraggi Attivi}\label{UC24}
 \begin{itemize}
 	\item \textbf{Attore Primario:}  Utente
-	\item \textbf{Precondizione:} 
+	\item \textbf{Precondizioni:} 
 	\begin{enumerate}
 		\item L'utente deve aver effettuato il login nella piattaforma \textit{Grafana}, deve aver selezionato una dashboard e aggiunto il pannello "G\&B";
 		\item L'utente deve aver correttamente configurato la connessione al server (\hyperref[UC17]{UC17 (§\ref*{UC17})}).
 	\end{enumerate}
-	\item \textbf{Postcondizione:} L'utente sta visualizzando i monitoraggi attivi
+	\item \textbf{Postcondizione:} La vista del plug-in contentente le impostazioni di collegamento di una rete bayesiana viene sostituita da una sezione atta alla visualizzazione dei monitoraggi attivi;
 	\item \textbf{Scenario Principale:} L'utente per accedere alla visualizzazione dei monitoraggi attivi clicca il pulsante con etichetta "Visualizzazione monitoraggio".
 \end{itemize}
 
@@ -621,8 +636,8 @@ Il numero di casi che abbiamo analizzato è limitato poiché il plug-in fornisce
 		\item L'utente deve aver correttamente configurato la connessione al server (\hyperref[UC17]{UC17 (§\ref*{UC17})})
 		\item L'utente sta visualizzando i monitoraggi attivi.
 	\end{enumerate}
-	\item \textbf{Postcondizione:} L'utente sta visualizzando le impostazioni di collegamento.
-	\item \textbf{Scenario Principale:} L'utente per accedere alla visualizzazione delle impostazioni di collegamento clicca il pulsante con etichetta "Visualizzazione impostazione collegamento".
+	\item \textbf{Postcondizione:} La sezione del plug-in atta alla visualizzazione dei monitoraggi attivi viene sostituita dalle impostazioni di collegamento della rete bayesiana;
+	\item \textbf{Scenario Principale:} L'utente per accedere alla visualizzazione delle impostazioni di collegamento cliccando il pulsante con etichetta "Visualizzazione impostazioni collegamento".
 \end{itemize}
 
 \pagebreak
