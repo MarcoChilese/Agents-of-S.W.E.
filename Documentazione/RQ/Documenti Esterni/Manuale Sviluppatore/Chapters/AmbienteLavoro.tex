@@ -4,8 +4,14 @@ In questa sezione viene riportata una guida per la corretta configurazione dell'
 Per contribuire al progetto non è strettamente necessario seguire questa sezione, tuttavia è consigliato al fine di ottenere un ambiente di lavoro pronto e correttamente impostato per lo sviluppo.
 
 \section{Requisiti}\label{AmbienteLavoro_requisiti}
-\subsection{WebStorm}
+\subsection{WebStorm}\label{webstorm}
+\textit{WebStorm} è l'ambiente di sviluppo integrato (IDE) di JetBrains utilizzato dal team per lo sviluppo del progetto. Esso può essere ottenuto mediante download dal sito ufficiale nella formula di prova gratuita se non si dispone di licenza, che può essere ottenuta attraverso l'indirizzo email universitario.\\
+Tale software è disponibile per i sistemi operativi Microsoft Windows, Linux e Apple MacOS.\\
+Per ulteriori informazioni si rimanda al sito ufficiale.
 
-\subsection{ESLint}
+\subsection{ESLint}\label{eslint}
+\textit{ESLint} verrà installato automaticamente attraverso il comando \texttt{npm install}.\\
+Per abilitarlo all'interno di WebStorm è necessario lanciare l'IDE e recarsi in: File > Settings > ESLint e scegliere "Enable". All'interno del campo "Node Interpreter" è necessario inserire il percorso alla directory in cui si trovano i file eseguibili di Node.\\
+Se non rilevato in automatico, specificare la posizione del file di configurazione ".eslintrc" all'interno della directory del progetto.
 
 % ...
