@@ -90,7 +90,11 @@ Il primo diagramma (\hyperref[Panoramica UC Configurazione]{Panoramica UC Config
 		\item (\hyperref[UC1.2]{UC1.2 (§\ref*{UC1.2})}) L'utente seleziona la rete bayesiana che desidera caricare.
 	\end{enumerate}
 	\item \textbf{Estensioni:} \hyperref[UC8]{UC8 (§\ref*{UC8})} estende \hyperref[UC1.2]{UC1.2 (§\ref*{UC1.2})}: l'utente visualizza un messaggio di errore nel caso in cui l'operazione non sia andata a buon fine.
-	\item \textbf{Inclusioni:} UC1 include \hyperref[UC16]{UC16 (§\ref*{UC16})}: Viene visualizzata la lista di nodi di cui la rete bayesiana caricata è costituita.
+	\item \textbf{Inclusioni:} 
+	\begin{enumerate}
+		\item UC1 include \hyperref[UC30]{UC30 (§\ref*{UC30})}: Viene visualizzata una notifica di avvenuto collegamento;
+		\item UC1 include \hyperref[UC16]{UC16 (§\ref*{UC16})}: Viene visualizzata la lista di nodi di cui la rete bayesiana caricata è costituita.
+	\end{enumerate}
 \end{itemize}
 
 \pagebreak
@@ -143,7 +147,8 @@ Il primo diagramma (\hyperref[Panoramica UC Configurazione]{Panoramica UC Config
  \item (\hyperref[UC2.5]{UC2.5 (§\ref*{UC2.5})}) Rimozione di una soglia;
  \item (\hyperref[UC2.6]{UC2.6 (§\ref*{UC2.6})}) Conferma impostazioni di collegamento del nodo;
  \end{enumerate}
-\item \textbf{Estensioni:} \hyperref[UC14]{UC14 (§\ref*{UC14})} estende \hyperref[UC2.6]{UC2.6 (§\ref*{UC2.6})}: l'utente visualizza un messaggio di errore nel caso in cui non abbia definito correttamente le impostazioni di collegamento.
+\item \textbf{Estensioni:} \hyperref[UC14]{UC14 (§\ref*{UC14})} estende \hyperref[UC2.6]{UC2.6 (§\ref*{UC2.6})}: l'utente visualizza un messaggio di errore nel caso in cui non abbia definito correttamente le impostazioni di collegamento;
+\item \textbf{Inclusioni:} \hyperref[UC2.6]{UC2.6 (§\ref*{UC2.6})} include \hyperref[UC33]{UC33 (§\ref*{UC33})}: Visualizzazione notifica avvenuto collegamento nodo.
 \end{itemize}
 
 \pagebreak
@@ -254,6 +259,7 @@ Il primo diagramma (\hyperref[Panoramica UC Configurazione]{Panoramica UC Config
 	\end{enumerate}
 \item \textbf{Scenario Principale:} l'utente clicca il pulsante "Conferma";
 \item \textbf{Estensioni:} \hyperref[UC14]{UC14 (§\ref*{UC14})}: nel caso in cui l'utente abbia commesso degli errori nella definizione delle impostazione di collegamento riceve un messaggio di errore.
+\item \textbf{Inclusioni:} UC2.6 include \hyperref[UC33]{UC33 (§\ref*{UC33})}: Viene visualizzata una notifica di avvenuto collegamento del nodo al flusso dati. 
 \end{itemize}
 
 \pagebreak
@@ -281,7 +287,8 @@ Il primo diagramma (\hyperref[Panoramica UC Configurazione]{Panoramica UC Config
 		\item (\hyperref[UC3.3]{UC3.3 (§\ref*{UC3.3})}) Impostazione delle ore;
 		\item (\hyperref[UC3.4]{UC3.4 (§\ref*{UC3.4})}) Conferma della politica temporale realizzata.
 	\end{enumerate}
-	\item \textbf{Estensioni}: \hyperref[UC15]{UC15 (§\ref*{UC15})} estende \hyperref[UC3.4]{UC3.4 (§\ref*{UC3.4})}: l'utente visualizza un messaggio di errore nel caso in cui non abbia definito correttamente la politica temporale per il ricalcolo delle probabilità.
+	\item \textbf{Estensioni:} \hyperref[UC15]{UC15 (§\ref*{UC15})} estende \hyperref[UC3.4]{UC3.4 (§\ref*{UC3.4})}: l'utente visualizza un messaggio di errore nel caso in cui non abbia definito correttamente la politica temporale per il ricalcolo delle probabilità;
+	\item \textbf{Inclusioni:} UC3 include \hyperref[UC32]{UC32 (§\ref*{UC32})}: Viene visualizzata una notifica di avvenuta selezione della politica temporale per il ricalcolo delle probabilità.
 \end{itemize}
 
 \pagebreak
@@ -500,7 +507,7 @@ Il primo diagramma (\hyperref[Panoramica UC Configurazione]{Panoramica UC Config
 		\item (\hyperref[UC17.3]{UC17.3 (§\ref*{UC17.3})}) Click conferma collegamento.
 	\end{enumerate}
 	\item \textbf{Estensioni}: si è verificato un errore di connessione: l'utente visualizza un messaggio che lo informa dell'avvenuto errore, invitandolo quindi a verificare la correttezza di indirizzo e/o porta (\hyperref[UC22]{UC22 (§\ref*{UC22})});
-	\item \textbf{Inclusioni:} (\hyperref[UC26]{UC26 (§\ref*{UC26})}) Visualizzazione notifica di avvenuto collegamento;
+	\item \textbf{Inclusioni:} UC17 include \hyperref[UC26]{UC26 (§\ref*{UC26})}: Viene visualizzata una notifica di avvenuto collegamento;
 \end{itemize}
 
 \subsubsection{UC17.1 - Inserimento Indirizzo Server}\label{UC17.1}
@@ -538,7 +545,8 @@ Il primo diagramma (\hyperref[Panoramica UC Configurazione]{Panoramica UC Config
 		\item L'utente ha selezionato il database da usare come sorgente dati;
 		\item Contestualmente al database selezionato dall'utente cambiano le possibili scelte, in sede di collegamento nodi (\hyperref[UC2]{UC2(§\ref*{UC2})}), per la selezione della tabella (\hyperref[UC2.2]{UC2.2(§\ref*{UC2.2})}) e del flusso dati (\hyperref[UC2.3]{UC2.3(§\ref*{UC2.3})}).
 	\end{enumerate}
-	\item \textbf{Scenario Principale:} L'utente seleziona, attraverso un menù a tendina, il database da usare come sorgente dati tra quelli disponibili.
+	\item \textbf{Scenario Principale:} L'utente seleziona, attraverso un menù a tendina, il database da usare come sorgente dati tra quelli disponibili;
+	\item \textbf{Inclusioni:} UC18 include (\hyperref[UC31]{UC31(§\ref*{UC31})}): Viene visualizzata una notifica di avvenuta selezione del database.
 \end{itemize}
 
 \pagebreak
@@ -575,6 +583,7 @@ Il primo diagramma (\hyperref[Panoramica UC Configurazione]{Panoramica UC Config
 		\item \hyperref[UC9]{UC9 (§\ref*{UC9})}: l'utente visualizza un messaggio di errore nel caso in cui non abbia collegato alcun nodo ad un flusso dati (\hyperref[UC2]{UC2 (§\ref*{UC2})});
 		\item \hyperref[UC12]{UC12 (§\ref*{UC12})}: l'utente visualizza un messaggio di errore nel caso in cui non abbia definito correttamente alcuna politica temporale per il ricalcolo delle probabilità (\hyperref[UC3]{UC3 (§\ref*{UC3})}).
 	\end{enumerate}
+	\item \textbf{Inclusioni:} UC20 include \hyperref[UC34]{UC34 (§\ref*{UC34})}: Viene visualizzata una notifica di avvio monitoraggio della rete bayesiana visualizzata nel pannello.
 \end{itemize}
 
 \pagebreak
@@ -589,10 +598,8 @@ Il primo diagramma (\hyperref[Panoramica UC Configurazione]{Panoramica UC Config
 		\item L'utente ha avviato il monitoraggio (\hyperref[UC20]{UC20(§\ref*{UC20})}).
 	\end{enumerate}
 	\item \textbf{Postcondizione:} L'utente ha interrotto il monitoraggio precedentemente attivo.
-	\item \textbf{Scenario Principale:}
-	\begin{enumerate}
-		\item L'utente interrompe il monitoraggio della rete le cui impostazioni sono attualmente visualizzate attraverso il click del bottone con etichetta "Interrompi Monitoraggio".
-	\end{enumerate}
+	\item \textbf{Scenario Principale:} L'utente interrompe il monitoraggio della rete le cui impostazioni sono attualmente visualizzate attraverso il click del bottone con etichetta "Interrompi Monitoraggio";
+	\item \textbf{Inclusioni:} UC21 include \hyperref[UC35]{UC35 (§\ref*{UC35})}: Viene visualizzata una notifica di avvio monitoraggio della rete bayesiana visualizzata nel pannello.
 \end{itemize}
 
 \pagebreak
@@ -693,7 +700,7 @@ Il primo diagramma (\hyperref[Panoramica UC Configurazione]{Panoramica UC Config
 		\item L'utente rimove la rete bayesiana selezionata cliccando il tasto "Elimina"
 	\end{enumerate}
 	\item \textbf{Estensioni:} \hyperref[UC28]{UC28 (§\ref*{UC28})}: l'utente visualizza un messaggio di errore nel caso in cui abbia tentato di rimuovere una rete bayesiana in monitoraggio.
-	\item \textbf{Inclusioni:} \hyperref[UC29]{UC29 (§\ref*{UC29})}: l'utente visualizza una notifica di avvenuta rimozione della rete bayesiana;
+	\item \textbf{Inclusioni:} UC27 include \hyperref[UC29]{UC29 (§\ref*{UC29})}: l'utente visualizza una notifica di avvenuta rimozione della rete bayesiana;
 \end{itemize}
 
 \pagebreak
@@ -715,7 +722,7 @@ Il primo diagramma (\hyperref[Panoramica UC Configurazione]{Panoramica UC Config
 	\end{enumerate}
 \end{itemize}
 
-\subsection{UC29 - Visualizzazione Notifica Avvenuta rimozione Rete Bayesiana}\label{UC29}
+\subsection{UC29 - Visualizzazione Notifica avvenuta rimozione Rete Bayesiana}\label{UC29}
 
 \begin{itemize}
 	\item \textbf{Attore Primario:} Utente
@@ -724,6 +731,93 @@ Il primo diagramma (\hyperref[Panoramica UC Configurazione]{Panoramica UC Config
 	\item \textbf{Scenario Principale:}
 	\begin{enumerate}
 		\item L'utente visualizza il messaggio dell'avvenuta rimozione della rete bayesiana;
+		\item L'utente clicca "OK".
+	\end{enumerate}
+\end{itemize}
+
+\pagebreak
+
+\subsection{UC30 - Visualizzazione Notifica avvenuto caricamento Rete Bayesiana}\label{UC30}
+
+\begin{itemize}
+	\item \textbf{Attore Primario:} Utente
+	\item \textbf{Precondizione:} L'utente ha caricato una rete bayesiana (\hyperref[UC1]{UC1(§\ref*{UC1})});
+	\item \textbf{Postcondizione:} L'utente visualizza la notifica di avvenuto caricamento;
+	\item \textbf{Scenario Principale:}
+	\begin{enumerate}
+		\item L'utente visualizza il messaggio dell'avvenuto caricamento della rete bayesiana;
+		\item L'utente clicca "OK".
+	\end{enumerate}
+\end{itemize}
+
+
+\subsection{UC31 - Visualizzazione Notifica avvenuta selezione Database}\label{UC31}
+
+\begin{itemize}
+	\item \textbf{Attore Primario:} Utente
+	\item \textbf{Precondizione:} L'utente ha selezionato il database da usare come sorgente dati (\hyperref[UC18]{UC18(§\ref*{UC18})});
+	\item \textbf{Postcondizione:} L'utente visualizza la notifica di avvenuta selezione del database;
+	\item \textbf{Scenario Principale:}
+	\begin{enumerate}
+		\item L'utente visualizza il messaggio che notifica l'avvenuta selezione del database da usare come sorgente dati;
+		\item L'utente clicca "OK".
+	\end{enumerate}
+\end{itemize}
+
+\pagebreak
+
+\subsection{UC32 - Visualizzazione Notifica avvenuta selezione Politica Temporale}\label{UC32}
+
+\begin{itemize}
+	\item \textbf{Attore Primario:} Utente
+	\item \textbf{Precondizione:} L'utente ha impostato una politica temporale (\hyperref[UC3]{UC3(§\ref*{UC3})});
+	\item \textbf{Postcondizione:} L'utente visualizza la notifica di avvenuta selezione della politica temporale per il ricalcolo delle probabilità;
+	\item \textbf{Scenario Principale:}
+	\begin{enumerate}
+		\item L'utente visualizza il messaggio che notifica l'avvenuta selezione della politica temporale di ricalcolo delle probabilità;
+		\item L'utente clicca "OK".
+	\end{enumerate}
+\end{itemize}
+
+
+\subsection{UC33 - Visualizzazione Notifica avvenuto collegamento Nodo}\label{UC33}
+
+\begin{itemize}
+	\item \textbf{Attore Primario:} Utente
+	\item \textbf{Precondizione:} L'utente ha confermato le impostazioni di collegamento di un nodo (\hyperref[UC2.6]{UC2.6 (§\ref*{UC2.6})});
+	\item \textbf{Postcondizione:} L'utente visualizza la notifica di avvenuto collegamento del nodo al flusso dati;
+	\item \textbf{Scenario Principale:}
+	\begin{enumerate}
+		\item L'utente visualizza il messaggio che notifica l'avvenuto collegamento al flusso dati di un nodo della rete bayesiana (caricata in \hyperref[UC1]{UC1 (§\ref*{UC1})});
+		\item L'utente clicca "OK".
+	\end{enumerate}
+\end{itemize}
+
+\pagebreak
+
+\subsection{UC34 - Visualizzazione Notifica Monitoraggio avviato}\label{UC34}
+
+\begin{itemize}
+	\item \textbf{Attore Primario:} Utente
+	\item \textbf{Precondizione:} L'utente ha avviato il monitoraggio di una rete bayesiana (\hyperref[UC20]{UC20 (§\ref*{UC20})});
+	\item \textbf{Postcondizione:} L'utente visualizza la notifica di avvio monitoraggio dati;
+	\item \textbf{Scenario Principale:}
+	\begin{enumerate}
+		\item L'utente visualizza il messaggio che notifica l'avvio del monitoraggio per la rete bayesiana attualmente visualizzata nel pannello;
+		\item L'utente clicca "OK".
+	\end{enumerate}
+\end{itemize}
+
+
+\subsection{UC35 - Visualizzazione Notifica Monitoraggio interrotto}\label{UC35}
+
+\begin{itemize}
+	\item \textbf{Attore Primario:} Utente
+	\item \textbf{Precondizione:} L'utente ha interrotto il monitoraggio di una rete bayesiana (\hyperref[UC21]{UC21 (§\ref*{UC21})});
+	\item \textbf{Postcondizione:} L'utente visualizza la notifica di interruzione del monitoraggio dati;
+	\item \textbf{Scenario Principale:}
+	\begin{enumerate}
+		\item L'utente visualizza il messaggio che notifica l'interruzione del monitoraggio della rete bayesiana attualmente visualizzata nel pannello;
 		\item L'utente clicca "OK".
 	\end{enumerate}
 \end{itemize}

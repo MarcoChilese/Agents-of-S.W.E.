@@ -27,6 +27,8 @@ RFF1.4.2 & Il Sistema deve visualizzare un messaggio di errore nel caso in cui l
 \hline
 RDF1.6 & Il Sistema deve mantenere in memoria, in caso di riavvio, l'ultima rete bayesiana caricata dall'utente & Desiderabile & Decisione Interna\\
 \hline
+ROF1.7 & L'Utente deve visualizzare un messaggio di notifica di avvenuto caricamento della rete bayesiana da lui selezionata & Obbligatorio & UC30\\
+\hline
 \rowcolor{grigio}ROF2 & L'utente deve poter collegare un flusso di dati ad ogni nodo desiderato della rete preesistente & Obbligatorio & UC2\\
 \hline
 ROF2.1 & Il Sistema deve interpretare la rete bayesiana caricata, al fine di estrapolarne i nodi e fornirli all'utente sotto forma di lista & Obbligatorio & UC16\\
@@ -43,11 +45,13 @@ ROF2.5.3.1 & L'Utente deve poter selezionare un database come sorgente dati & Ob
 \hline
 ROF2.5.3.2 & Il Sistema deve mettere a disposizione dell'utente un elenco di database disponibili & Obbligatorio & UC18\\
 \hline
-ROF2.5.3.3 & Il Sistema deve fornire un elenco delle tabelle del database selezionato come sorgente di dati & Obbligatorio & UC2 UC18\\
+ROF2.5.3.3 & L'Utente deve visualizzare un messaggio di notifica di avvenuta selezione del database che funge da sorgente dati & Obbligatorio & UC31\\
 \hline
-ROF2.5.3.4 & L'utente deve poter selezionare la tabella del database desiderata & Obbligatorio & UC2\\
+ROF2.5.3.4 & Il Sistema deve fornire un elenco delle tabelle del database selezionato come sorgente di dati & Obbligatorio & UC2 UC18\\
 \hline
-ROF2.5.3.5 & Il Sistema deve aggiornare i flussi dati disponibili per la selezione a seconda della tabelle selezionata dall'utente & Obbligatorio & UC2\\
+ROF2.5.3.5 & L'utente deve poter selezionare la tabella del database desiderata & Obbligatorio & UC2\\
+\hline
+ROF2.5.3.6 & Il Sistema deve aggiornare i flussi dati disponibili per la selezione a seconda della tabelle selezionata dall'utente & Obbligatorio & UC2\\
 \hline
 \rowcolor{grigio}ROF2.5.4 & L'utente deve poter selezionare il flusso dati desiderato per il collegamento & Obbligatorio & UC2\\
 \hline
@@ -67,7 +71,7 @@ RDF2.5.6.5 & L'utente deve poter aggiungere molteplici soglie associate allo ste
 \hline
 \rowcolor{grigio}ROF2.5.7 & L'utente deve poter editare i campi dati per definire correttamente un livello di soglia al di sotto, o al di sopra del quale la probabilità associata a quel dato stato risulta pari al 100\%, mentre le probabilità associate agli altri stati risultano pari allo 0\% & Obbligatorio & UC2.4\\
 \hline
-ROF2.5.8 & Il Sistema deve mettere a disposizione dell'utente un bottone per confermare le proprie scelte riguardanti il collegamento del singolo nodo & Obbligatorio & UC2.4\\
+ROF2.5.8 & Il Sistema deve mettere a disposizione dell'utente un bottone per confermare le proprie scelte riguardanti il collegamento del singolo nodo & Obbligatorio & UC2\\
 \hline
 \rowcolor{grigio}ROF2.5.9 & L'Utente deve visualizzare un messaggio di errore nel caso in cui abbia confermato le proprie scelte riguardanti il collegamento del singolo nodo commettendo alcuni errori & Obbligatorio & UC2 UC14\\
 \hline
@@ -94,6 +98,8 @@ ROF2.6.2 & Il Sistema deve resettare le impostazioni di collegamento del nodo se
 ROF2.6.3 & Il Sistema deve aggiornare la checkbox associata al nodo scollegato, togliendo la spunta di collegamento & Obbligatorio & UC19 UC16\\
 \hline
 ROF2.6.4 & Il Sistema deve rimuovere il pulsante di scollegamento una volta che il nodo è stato scollegato & Obbligatorio & UC19 UC16\\
+\hline
+ROF2.7 & L'Utente deve visualizzare un messaggio di notifica di avvenuto collegamento di un nodo al flusso dati & Obbligatorio & UC33\\
 \hline
 ROF3 & L'utente deve poter impostare una politica temporale per il ricalcolo delle probabilità condizionate associate ai nodi della rete bayesiana & Obbligatorio & UC3\\
 \hline
@@ -125,6 +131,8 @@ ROF3.5.4 & Il Sistema deve verificare che il contenuto del campo dati "minuti" s
 \hline
 ROF3.5.5 & Il Sistema deve verificare che il contenuto del campo dati "ore" sia un numero intero >= 0 & Obbligatorio & UC3 UC15\\
 \hline
+ROF3.6 & L'Utente deve visualizzare un messaggio di notifica di avvenuta selezione della politica temporale per il ricalcolo delle probabilità & Obbligatorio & UC32\\
+\hline
 \rowcolor{grigio}ROF4 & Il Sistema deve fornire i dati di monitoraggio relativi ai nodi della rete bayesiana non collegati al flusso & Obbligatorio & UC4 UC20\\
 \hline
 ROF4.4 & Il Sistema deve mettere a disposizione dell'utente un pulsante per avviare il monitoraggio dei dati & Obbligatorio & UC20\\
@@ -141,6 +149,8 @@ RFF4.4.7 & L'Utente deve aver la possibilità di monitorare contemporaneamente p
 \hline
 RFF4.4.7.1 & Il Sistema deve consentire l'avvio del monitoraggio di una rete anche nel caso in cui vi siano altri monitoraggi attivi & Opzionale & UC20 Capitolato\\
 \hline
+ROF4.4.8 & L'Utente deve visualizzare un messaggio di notifica di avvio del monitoraggio della rete bayesiana attualemnte visualizzata nel pannello & Obbligatorio & UC34\\
+\hline
 ROF4.5 & Il Sistema deve fornire all'utente una lista di probabilità dinamiche associate ai nodi della rete in monitoraggio & Obbligatorio & UC4\\
 \hline
 RFF4.5.1 & L'Utente deve aver la possibilità di scegliere la rete bayesiana, tra quelle al momento in monitoraggio, di cui visualizzare i dati di monitoraggio sotto forma di probabilità dinamiche & Opzionale & UC4\\
@@ -151,7 +161,11 @@ RFF4.5.1.1 & Il Sistema deve fornire all'utente un menù a tendina contente la l
 \hline
 RDF4.6.1 & Il Sistema, indipendentemente dalla politica temporale stabilita dall'utente, deve ricalcolare le probabilità al verificarsi del superamento di una soglia critica associata ad uno stato di un nodo collegato al flusso di monitoraggio & Desiderabile & UC4 VER-2019-02-08\\
 \hline
-ROF4.7 & Il Sistema deve permettere l'interruzione del monitoraggio relativo alla rete correntemente visualizzata & Obbligatorio & UC21\\
+ROF4.7 & L'Utente deve poter interrompere monitoraggio relativo alla rete correntemente visualizzata nel pannello & Obbligatorio & UC21\\
+\hline
+ROF4.7.1 & Il Sistema deve mettere a disposizione un pulsante per interrompere il monitoraggio della rete bayesiana & Obbligatorio & UC21\\
+\hline
+ROF4.7.2 & L'Utente deve visualizzare un messaggio di notifica di interruzione del monitoraggio della rete bayesiana attualemnte visualizzata nel pannello & Obbligatorio & UC35\\
 \hline
 ROF7 & L'Utente deve poter collegare il plug-in al server per l'elaborazione dati e il salvataggio delle impostazioni di collegamento & Obbligatorio & UC17\\
 \hline
@@ -314,9 +328,9 @@ Piattaforma \textit{Grafana} & \makecell{ROV1\\ROV2\\ROV3\\ROV6}\\
 \hline
 \rowcolor{grigio}UC1 & \makecell{ROF1\\ROF1.1\\ROF1.2\\ROF1.3\\ROF1.4\\ROF1.4.1\\RFF1.4.2\\ROF1.5}\\
 \hline
-UC2 & \makecell{ROF2\\ROF2.1.2\\ROF2.5\\ROF2.5.3\\ROF2.5.3.3\\ROF2.5.3.4\\ROF2.5.3.5\\ROF2.5.4\\ROF2.5.5\\ROF2.5.9\\ROF2.5.9.1\\ROF2.5.9.2\\ROF2.5.9.3\\ROF2.5.9.4\\ROF2.5.10\\ ROF2.5.11\\ROF2.6\\ROF2.6.2}\\
+UC2 & \makecell{ROF2\\ROF2.1.2\\ROF2.5\\ROF2.5.3\\ROF2.5.3.4\\ROF2.5.3.5\\ROF2.5.3.6\\ROF2.5.4\\ROF2.5.5\\ROF2.5.8\\ROF2.5.9\\ROF2.5.9.1\\ROF2.5.9.2\\ROF2.5.9.3\\ROF2.5.9.4\\ROF2.5.10\\ ROF2.5.11\\ROF2.6\\ROF2.6.2}\\
 \hline
-\rowcolor{grigio}UC2.4 & \makecell{ROF2.5.6\\ROF2.5.6.1\\ROF2.5.6.2\\RDF2.5.6.3\\ROF2.5.6.4\\RDF2.5.6.5\\ROF2.5.7\\ROF2.5.8}\\
+\rowcolor{grigio}UC2.4 & \makecell{ROF2.5.6\\ROF2.5.6.1\\ROF2.5.6.2\\RDF2.5.6.3\\ROF2.5.6.4\\RDF2.5.6.5\\ROF2.5.7}\\
 \hline
 UC3 & \makecell{ROF3\\ROF3.3\\ROF3.3.1\\ROF3.3.2\\ROF3.3.2.4\\ROF3.3.2.5\\ROF3.3.2.6\\ROF3.3.3\\ROF3.4\\ ROF3.5.1\\ROF3.5.2\\ROF3.5.3\\ROF3.5.4\\ROF3.5.5}\\
 \hline
@@ -336,13 +350,13 @@ UC15 & \makecell{ROF3.5 \\ ROF3.5.1\\ROF3.5.2\\ROF3.5.3\\ROF3.5.4\\ROF3.5.5}\\
 \hline
 UC17 & \makecell{ROF7\\ROF7.1\\ROF7.1.1\\ROF7.1.2\\ROF7.1.3\\ROF7.2\\ROF7.2.1\\ROF7.2.2\\ROF7.3}\\
 \hline
-\rowcolor{grigio}UC18 & \makecell{ROF2.5.3.1\\ROF2.5.3.2\\ROF2.5.3.3}\\
+\rowcolor{grigio}UC18 & \makecell{ROF2.5.3.1\\ROF2.5.3.2\\ROF2.5.3.4}\\
 \hline
 UC19 & \makecell{ROF2.6\\ROF2.6.1\\ROF2.6.2\\ROF2.6.3\\ROF2.6.4}\\
 \hline
 \rowcolor{grigio}UC20 & \makecell{ROF4\\ROF4.4\\ROF4.4.3\\ROF4.4.4\\ROF4.4.5\\ROF4.4.6\\RFF4.4.7.1\\RDF10.2.1}\\
 \hline
-UC21 & \makecell{ROF4.7}\\ 
+UC21 & \makecell{ROF4.7\\ROF4.7.2}\\ 
 \hline
 UC22 & \makecell{ROF7.2\\ROF7.2.1\\ROF7.2.2}\\
 \hline
@@ -360,6 +374,18 @@ UC28 & \makecell{RDF10.2\\RDF10.2.1}\\
 \hline
 UC29 & \makecell{RDF10.4}\\
 \hline
+UC30 & \makecell{ROF1.7}\\
+\hline
+UC31 & \makecell{ROF2.5.3.3}\\
+\hline
+UC32 & \makecell{ROF3.6}\\
+\hline
+UC33 & \makecell{ROF2.7}\\
+\hline
+UC34 & \makecell{ROF4.4.8}\\
+\hline
+UC35 & \makecell{ROF4.7.2}\\
+\hline
 VER-2019-02-08 & \makecell{RDF4.6.1\\RDF2.5.6.3}\\
 \hline
 \rowcolor{grigio}Supporto a \textit{ECMAScript6} & \makecell{ROV8\\ROV9\\ROV10\\ROV11}\\
@@ -376,7 +402,7 @@ VER-2019-02-08 & \makecell{RDF4.6.1\\RDF2.5.6.3}\\
 \rowcolor{bluelogo}\textbf{\textcolor{white}{Tipologia}} & \textbf{\textcolor{white}{Obbligatorio}} & \textbf{\textcolor{white}{Opzionale}} & \textbf{\textcolor{white}{Desiderabile}} & \textbf{\textcolor{white}{Totale}}\\
 \hline \hline
 \endhead
-Funzionale & 75 & 6 & 17 & 98\\
+Funzionale & 82 & 6 & 17 & 105\\
 \hline
 \rowcolor{grigio}Di Qualità & 5 & 0 & 10 & 15\\
 \hline
