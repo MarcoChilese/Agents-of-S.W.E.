@@ -270,40 +270,57 @@ Il primo diagramma (\hyperref[Panoramica UC Configurazione]{Panoramica UC Config
 	\item \textbf{Precondizione}:
 		\begin{enumerate}
 			\item L'utente deve aver correttamente configurato la connessione al server (\hyperref[UC17]{UC17 (§\ref*{UC17})});
-			\item L'utente si trova presso il pannello di configurazione della Politica Temporale, acceduto tramite il click del pulsante "Politica Temporale".
+			\item L'utente si trova presso il pannello di configurazione della Politica Temporale, acceduto tramite il click del pulsante "Configurazione Politica Temporale".
+			\item L'utente visualizza tra campi dati editabili, rispettivamente "secondi", "minuti" e "ore", necessari per la configurazione della politica temporale.
 		\end{enumerate}
-	\item \textbf{Postcondizione}: l'utente ha configurato con successo la politica temporale da lui creata, per il ricalcolo delle probabilità della rete bayesiana, caricata in (\hyperref[UC1]{UC1 (§\ref*{UC1})});
+	\item \textbf{Postcondizione}: L'utente ha configurato con successo la politica temporale da lui creata, per il ricalcolo delle probabilità della rete bayesiana, caricata in (\hyperref[UC1]{UC1 (§\ref*{UC1})});
 	\item \textbf{Scenario Principale:}
 	\begin{enumerate}
-		\item (\hyperref[UC3.1]{UC3.1 (§\ref*{UC3.1})}) L'utente crea una nuova politica temporale;
-		\item (\hyperref[UC3.2]{UC3.2 (§\ref*{UC3.2})}) L'utente conferma la politica temporale realizzata.
+		\item (\hyperref[UC3.1]{UC3.1 (§\ref*{UC3.1})}) Impostazione dei secondi;
+		\item (\hyperref[UC3.2]{UC3.2 (§\ref*{UC3.2})}) Impostazione dei minuti;
+		\item (\hyperref[UC3.3]{UC3.3 (§\ref*{UC3.3})}) Impostazione delle ore;
+		\item (\hyperref[UC3.4]{UC3.4 (§\ref*{UC3.4})}) Conferma della politica temporale realizzata.
 	\end{enumerate}
-	\item \textbf{Estensioni}: \hyperref[UC15]{UC15 (§\ref*{UC15})} estende \hyperref[UC3.2]{UC3.2 (§\ref*{UC3.2})}: l'utente visualizza un messaggio di errore nel caso in cui non abbia definito correttamente la politica temporale per il ricalcolo delle probabilità.
+	\item \textbf{Estensioni}: \hyperref[UC15]{UC15 (§\ref*{UC15})} estende \hyperref[UC3.4]{UC3.4 (§\ref*{UC3.4})}: l'utente visualizza un messaggio di errore nel caso in cui non abbia definito correttamente la politica temporale per il ricalcolo delle probabilità.
 \end{itemize}
 
 \pagebreak
 
-\subsubsection{UC3.1 - Creazione Nuova Politica Temporale}\label{UC3.1}
+\subsubsection{UC3.1 - Impostazione dei secondi}\label{UC3.1}
 
 \begin{itemize}
 	\item \textbf{Attore Primario}: Utente;
-	\item \textbf{Precondizione}: l'utente ha acceduto al pannello di creazione della politica temporale (\hyperref[UC3.1]{UC3.1 (§\ref*{UC3.1})});
-	\item \textbf{Postcondizione}: l'utente ha realizzato la politica temporale per il ricalcolo delle probabilità desiderata;
-	\item \textbf{Scenario Principale:}
-	\begin{enumerate}
-		\item L'utente visualizza due campi dati editabili che consentono la definizione di una politica temporale;
-		\item L'utente inserisce, nel primo campo dati, il valore numerico del timeout ciclico per il ricalcolo delle probabilità condizionali associate ai nodi della rete bayesiana;
-		\item L'utente seleziona l'unità di misura temporale, attraverso una casella a scelta multipla che rappresenta il secondo campo dati editabile.
-	\end{enumerate}
-
+	\item \textbf{Precondizione}: l'utente ha acceduto al pannello di creazione della politica temporale tramite il pulsante "Configurazione Politica Temporale";
+	\item \textbf{Postcondizione}: l'utente ha impostato il numero di secondi di cui è composta la politica temporale;
+	\item \textbf{Scenario Principale:} L'Utente edita il campo dati "secondi" inserendo il numero di secondi di cui è composta la politica temporale.
 \end{itemize}
 
-\subsubsection{UC3.2 - Conferma Politica Temporale}\label{UC3.2}
+\subsubsection{UC3.2 - Impostazione dei minuti}\label{UC3.2}
+
 \begin{itemize}
 	\item \textbf{Attore Primario}: Utente;
-	\item \textbf{Precondizione}: l'utente ha creato la politica temporale desiderata (\hyperref[UC3.2]{UC3.2 (§\ref*{UC3.2})});
+	\item \textbf{Precondizione}: l'utente ha acceduto al pannello di creazione della politica temporale tramite il pulsante "Configurazione Politica Temporale";
+	\item \textbf{Postcondizione}: l'utente ha impostato il numero di minuti di cui è composta la politica temporale;
+	\item \textbf{Scenario Principale:} L'Utente edita il campo dati "minuti" inserendo il numero di minuti di cui è composta la politica temporale.
+\end{itemize}
+
+
+\subsubsection{UC3.3 - Impostazione delle ore}\label{UC3.3}
+
+\begin{itemize}
+	\item \textbf{Attore Primario}: Utente;
+	\item \textbf{Precondizione}: l'utente ha acceduto al pannello di creazione della politica temporale tramite il pulsante "Configurazione Politica Temporale";
+	\item \textbf{Postcondizione}: l'utente ha impostato il numero delle ore di cui è composta la politica temporale;
+	\item \textbf{Scenario Principale:} L'Utente edita il campo dati "ore" inserendo il numero di ore di cui è composta la politica temporale.
+\end{itemize}
+
+
+\subsubsection{UC3.4 - Conferma Politica Temporale}\label{UC3.4}
+\begin{itemize}
+	\item \textbf{Attore Primario}: Utente;
+	\item \textbf{Precondizione}: l'utente ha acceduto al pannello di creazione della politica temporale tramite il pulsante "Configurazione Politica Temporale";
 	\item \textbf{Postcondizione}: l'utente ha confermato la politica temporale per il ricalcolo delle probabilità;
-	\item \textbf{Scenario Principale}: l'utente clicca il pusante "Conferma".
+	\item \textbf{Scenario Principale}: l'utente conferma le impostazioni di definizione della politica temporale cliccando il pusante "Conferma".
 	\item \textbf{Estensioni}: \hyperref[UC15]{UC15 (§\ref*{UC15})}: l'utente visualizza un messaggio di errore nel caso in cui non abbia collegato alcun nodo ad un flusso dati.
 \end{itemize}
 
@@ -430,10 +447,10 @@ Il primo diagramma (\hyperref[Panoramica UC Configurazione]{Panoramica UC Config
 \subsection{UC15 - Visualizzazione Messaggio di Errore Politica Temporale non Configurata Correttamente}\label{UC15}
 \begin{itemize}
 	\item \textbf{Attore Primario}: Utente;
-	\item \textbf{Precondizione}: l'utente ha confermato le scelte per la selezione di una politica temporale per il ricalcolo delle probabilità (\hyperref[UC3.2]{UC3.2 (§\ref*{UC3.2})}), senza averla definita correttamente (\hyperref[UC3.1]{UC3.1 (§\ref*{UC3.1})});
+	\item \textbf{Precondizione}: L'utente ha confermato le scelte per la selezione di una politica temporale per il ricalcolo delle probabilità (\hyperref[UC3.4]{UC3.4 (§\ref*{UC3.4})}), senza averla definita correttamente;
 	\item \textbf{Postcondizioni}:
 	\begin{enumerate}
-		\item L'utente visualizza l'errore;
+		\item L'utente visualizza il messaggio d'errore;
 		\item La politica temporale non viene impostata.
 	\end{enumerate}
 	\item \textbf{Scenario Principale}:
