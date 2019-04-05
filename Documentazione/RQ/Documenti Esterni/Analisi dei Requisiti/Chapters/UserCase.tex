@@ -500,7 +500,7 @@ Il primo diagramma (\hyperref[Panoramica UC Configurazione]{Panoramica UC Config
 		\item (\hyperref[UC17.3]{UC17.3 (§\ref*{UC17.3})}) Click conferma collegamento.
 	\end{enumerate}
 	\item \textbf{Estensioni}: si è verificato un errore di connessione: l'utente visualizza un messaggio che lo informa dell'avvenuto errore, invitandolo quindi a verificare la correttezza di indirizzo e/o porta (\hyperref[UC22]{UC22 (§\ref*{UC22})});
-	\item  \textbf{Inclusione}: (\hyperref[UC26]{UC26 (§\ref*{UC26})}) Visualizzazione notifica di avvenuto collegamento;
+	\item \textbf{Inclusioni:} (\hyperref[UC26]{UC26 (§\ref*{UC26})}) Visualizzazione notifica di avvenuto collegamento;
 \end{itemize}
 
 \subsubsection{UC17.1 - Inserimento Indirizzo Server}\label{UC17.1}
@@ -674,3 +674,57 @@ Il primo diagramma (\hyperref[Panoramica UC Configurazione]{Panoramica UC Config
 		\item L'utente clicca "OK".
 	\end{enumerate}
 \end{itemize}
+
+\pagebreak
+
+\subsection{UC27 - Rimozione Rete Bayesiana}\label{UC27}
+
+\begin{itemize}
+	\item \textbf{Attore Primario:} Utente
+	\item \textbf{Precondizioni:}
+	\begin{enumerate}
+ 		\item L'utente ha correttamente configurato le impostazioni per la connessione al server (\hyperref[UC17]{UC17(§\ref*{UC17})});
+ 		\item L'utente ha precedentemente caricato una rete bayesiana (\hyperref[UC1]{UC1(§\ref*{UC1})}).
+	\end{enumerate}
+	\item \textbf{Postcondizione:} L'utente ha eliminato la rete bayesiana selezionata;
+	\item \textbf{Scenario Principale:}
+	\begin{enumerate}
+		\item L'utente seleziona la rete bayesiana, tra quelle memorizzate nel server, che desidera eliminare attraverso un menù a tendina;
+		\item L'utente rimove la rete bayesiana selezionata cliccando il tasto "Elimina"
+	\end{enumerate}
+	\item \textbf{Estensioni:} \hyperref[UC28]{UC28 (§\ref*{UC28})}: l'utente visualizza un messaggio di errore nel caso in cui abbia tentato di rimuovere una rete bayesiana in monitoraggio.
+	\item \textbf{Inclusioni:} \hyperref[UC29]{UC29 (§\ref*{UC29})}: l'utente visualizza una notifica di avvenuta rimozione della rete bayesiana;
+\end{itemize}
+
+\pagebreak
+
+\subsection{UC28 - Visualizzazione Messaggio d'Errore Rimozione Rete Bayesiana}\label{UC28}
+
+\begin{itemize}
+	\item \textbf{Attore Primario:} Utente
+	\item \textbf{Precondizione:} L'utente ha tentato di rimuovere una rete bayesiana (\hyperref[UC27]{UC27(§\ref*{UC27})}) in monitoraggio attivo;
+	\item \textbf{Postcondizioni:}
+	\begin{enumerate}
+		\item L'utente visualizza il messaggio di errore;
+		\item La rimozione della rete bayesiana viene annullata.
+	\end{enumerate}
+	\item \textbf{Scenario Principale:}
+	\begin{enumerate}
+		\item L'utente visualizza un messaggio di errore in cui è segnalato il fatto che ha tentato di rimuovere una rete bayesiana in fase monitoraggio attivo. All'utente viene segnalata la necessità di interrompere preventivamente il monitoraggio (\hyperref[UC21]{UC21(§\ref*{UC21})}) prima di procedere con la rimozione della rete (\hyperref[UC27]{UC27(§\ref*{UC27})});
+		\item L'utente clicca il pulsante con etichetta "OK".
+	\end{enumerate}
+\end{itemize}
+
+\subsection{UC29 - Visualizzazione Notifica Avvenuta rimozione Rete Bayesiana}\label{UC29}
+
+\begin{itemize}
+	\item \textbf{Attore Primario:} Utente
+	\item \textbf{Precondizione:} L'utente ha rimosso una rete bayesiana tra quelle memorizzate nel server (\hyperref[UC27]{UC27(§\ref*{UC27})});
+	\item \textbf{Postcondizione:} L'utente visualizza la notifica di avvenuta rimozione;
+	\item \textbf{Scenario Principale:}
+	\begin{enumerate}
+		\item L'utente visualizza il messaggio dell'avvenuta rimozione della rete bayesiana;
+		\item L'utente clicca "OK".
+	\end{enumerate}
+\end{itemize}
+

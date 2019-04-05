@@ -169,19 +169,21 @@ ROF7.2.1 & Il Sistema deve verificare che l'indirizzo IP inserito dall'utente si
 \hline
 ROF7.2.2 & Il Sistema deve verificare che la porta del server indicata dall'utente sia in ascolto & Obbligatorio & UC17 UC22\\
 \hline
-ROF7.3 & L'Utente visualizzare un messaggio di avvenuto collegamento al server nel caso in cui sia giunto a buon fine & Obbligatorio & UC26\\
+ROF7.3 & L'Utente deve visualizzare un messaggio di avvenuto collegamento al server nel caso in cui sia giunto a buon fine & Obbligatorio & UC26\\
 \hline
 RDF8 & L'Utente deve poter selezionare una rete bayesiana, con eventuali relative impostazioni di collegamento, tra quelle precedentemente caricate & Desiderabile & UC23\\
 \hline
-RDF8.1 & Il Sistema deve mettere a disposizione dell'utente la lista delle reti bayesiane, con relative eventuali impostazioni di collegamento, salvate nel server & Desiderabile & UC23\\
+RDF8.1 & Il Sistema deve mettere a disposizione dell'utente la lista delle reti bayesiane, visualizzate sotto forma di un menù a tendina, salvate nel server & Desiderabile & UC23\\
 \hline
-RDF8.2 & Il Sistema, prima di cambiare il contesto di visualizzazione sostituendo le vecchie impostazioni con le nuove, deve salvare nel server la rete precedentemente visualizzata e le sue eventuali impostazioni di collegamento & Desiderabile & UC23\\
+RDF8.2 & Il Sistema deve mettere a disposizione dell'utente un pulsante per la selezione della rete bayesiana selezionata attraverso il menù a tendina & Desiderabile & UC23\\
 \hline
-RDF8.2.1 & Il Sistema, nel caso in cui la rete da memorizzare sia già presente nel server, deve sovrascrivere le impostazioni di collegamento memorizzate & Desiderabile & UC23\\
+RDF8.3 & Il Sistema, prima di cambiare il contesto di visualizzazione sostituendo le vecchie impostazioni con le nuove, deve salvare nel server la rete precedentemente visualizzata e le sue eventuali impostazioni di collegamento & Desiderabile & UC23\\
 \hline
-RDF8.2.2 & Il Sistema, nel caso in cui la rete visualizzata prima del cambio di contesto sia attualmente in monitoraggio, non deve effettuare operazioni di memorizzazione su server & Desiderabile & UC23\\
+RDF8.3.1 & Il Sistema, nel caso in cui la rete da memorizzare sia già presente nel server, deve sovrascrivere le impostazioni di collegamento memorizzate & Desiderabile & UC23\\
 \hline
-RDF8.3 & Il Sistema, a seguito della scelta dell'utente, deve visualizzare la rete selezionata e le sue relative impostazioni di collegamento che vanno a sostituire quelle precedentemente visualizzate & Desiderabile & UC23\\
+RDF8.3.2 & Il Sistema, nel caso in cui la rete visualizzata prima del cambio di contesto sia attualmente in monitoraggio, non deve effettuare operazioni di memorizzazione su server & Desiderabile & UC23\\
+\hline
+RDF8.4 & Il Sistema, a seguito della scelta dell'utente, deve visualizzare la rete selezionata e le sue relative impostazioni di collegamento che vanno a sostituire quelle precedentemente visualizzate & Desiderabile & UC23\\
 \hline
 ROF9 & Il Sistema deve mettere a disposizione dell'utente una sezione unicamente dedicata alla visualizzazione dei dati di monitoraggio & Obbligatorio & Decisione Interna UC24\\
 \hline
@@ -190,6 +192,18 @@ ROF9.1 & Il Sistema deve mettere a disposizione un bottone che consenta all'uten
 ROF9.1.1 & Il Sistema deve sostituire la precedente vista del pannello e sostituirla con la sezione dedicata alla visualizzazione dei monitoraggi attivi & Obbligatorio & UC24\\
 \hline
 ROF9.2 & Il Sistema deve mettere a disposizione un bottone che consenta all'utente di uscire dalla sezione di visualizzazione dei monitoraggi attivi per tornare alle impostazioni di collegamento  & Obbligatorio & UC25\\
+\hline
+RDF10 & L'Utente deve poter rimuovere una delle reti memorizzate nel sistema & Desiderabile & UC27\\
+\hline
+RDF10.1 & Il Sistema deve mettere a disposizione un pulsante per l'eliminazione della rete bayesiana selezionata attraverso il menù a tendina & Desiderabile & UC27\\
+\hline
+RDF10.2 & L'Utente deve visualizzare un messaggio di errore nel caso in cui abbia tentato di rimuovere una rete bayesiana in fase di monitoraggio attivo & Desiderabile & UC28\\
+\hline
+RDF10.2.1 & Il Sistema deve verificare che l'utente non abbia selezionato una rete bayesiana in fase di monitoraggio attivo per la rimozione, bloccando l'operazione in caso contrario & Desiderabile & UC28 UC20\\
+\hline
+RDF10.3 & Il Sistema deve rimuovere dal server la rete bayesiana, e le relative impostazioni di collegamento, selezionata dall'utente & Desiderabile & UC27\\
+\hline
+RDF10.4 & L'Utente deve visualizzare un messaggio di avvenuta rimozione della rete bayesiana nel caso in cui l'operazione sia andata a buon fine & Obbligatorio & UC29\\
 \hline
 \caption{Requisiti Funzionali}
 \end{longtable}
@@ -326,19 +340,25 @@ UC17 & \makecell{ROF7\\ROF7.1\\ROF7.1.1\\ROF7.1.2\\ROF7.1.3\\ROF7.2\\ROF7.2.1\\R
 \hline
 UC19 & \makecell{ROF2.6\\ROF2.6.1\\ROF2.6.2\\ROF2.6.3\\ROF2.6.4}\\
 \hline
-\rowcolor{grigio}UC20 & \makecell{ROF4\\ROF4.4\\ROF4.4.3\\ROF4.4.4\\ROF4.4.5\\ROF4.4.6\\RFF4.4.7.1}\\
+\rowcolor{grigio}UC20 & \makecell{ROF4\\ROF4.4\\ROF4.4.3\\ROF4.4.4\\ROF4.4.5\\ROF4.4.6\\RFF4.4.7.1\\RDF10.2.1}\\
 \hline
 UC21 & \makecell{ROF4.7}\\ 
 \hline
 UC22 & \makecell{ROF7.2\\ROF7.2.1\\ROF7.2.2}\\
 \hline
-UC23 & \makecell{RDF8\\RDF8.1\\RDF8.2\\RDF8.2.1\\RDF8.2.2\\RDF8.3}\\
+UC23 & \makecell{RDF8\\RDF8.1\\RDF8.2\\RDF8.3\\RDF8.3.1\\RDF8.3.2\\RDF8.4}\\
 \hline
 UC24 & \makecell{ROF9\\ROF9.1\\ROF9.1.1}\\
 \hline
 UC25 & \makecell{ROF9.2}\\
 \hline
 UC26 & \makecell{ROF7.3}\\
+\hline
+UC27 & \makecell{RDF10\\RDF10.1\\RDF10.3}\\
+\hline
+UC28 & \makecell{RDF10.2\\RDF10.2.1}\\
+\hline
+UC29 & \makecell{RDF10.4}\\
 \hline
 VER-2019-02-08 & \makecell{RDF4.6.1\\RDF2.5.6.3}\\
 \hline
@@ -356,7 +376,7 @@ VER-2019-02-08 & \makecell{RDF4.6.1\\RDF2.5.6.3}\\
 \rowcolor{bluelogo}\textbf{\textcolor{white}{Tipologia}} & \textbf{\textcolor{white}{Obbligatorio}} & \textbf{\textcolor{white}{Opzionale}} & \textbf{\textcolor{white}{Desiderabile}} & \textbf{\textcolor{white}{Totale}}\\
 \hline \hline
 \endhead
-Funzionale & 75 & 6 & 10 & 91\\
+Funzionale & 75 & 6 & 17 & 98\\
 \hline
 \rowcolor{grigio}Di Qualità & 5 & 0 & 10 & 15\\
 \hline
