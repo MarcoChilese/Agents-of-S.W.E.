@@ -209,7 +209,7 @@ Il primo diagramma (\hyperref[Panoramica UC Configurazione]{Panoramica UC Config
 	\item \textbf{Attore Primario:} Utente;
 	\item \textbf{Precondizioni:} l'utente ha selezionato il nodo che desidera collegare al flusso dati 					(\hyperref[UC2.1]{UC2.1 (§\ref*{UC2.1})});
 	\item \textbf{Postcondizione:} l'utente visualizza i campi dati editabili da compilare per definire una soglia per lo stato in questione;
-	\item \textbf{Scenario Principale:} l'utente aggiunge una soglia editabile per lo stato del nodo desiderato cliccando il pulsante "Aggiungi Soglia" posizionato accanto al nominativo dello stato. Se lo desidera l'utente può ripetere più volte l'operazione per lo stesso stato, aggiungendo così la possibilità di definire molteplici soglie per lo stesso stato.
+	\item \textbf{Scenario Principale:} l'utente aggiunge una soglia editabile per lo stato del nodo desiderato cliccando il pulsante "Aggiungi Soglia" posizionato accanto al nominativo dello stato. Se lo desidera l'utente può ripetere più volte l'operazione per lo stesso stato, aggiungendo così la possibilità di definire molteplici soglie per lo stesso.
 \end{itemize}
 
 \paragraph{UC2.4.2 - Definizione valore numerico della soglia}\label{UC2.4.2}
@@ -233,7 +233,7 @@ Il primo diagramma (\hyperref[Panoramica UC Configurazione]{Panoramica UC Config
 	\item \textbf{Attore Primario:} Utente
 	\item \textbf{Precondizioni:} l'utente ha aggiunto una soglia (\hyperref[UC2.4.1]{UC2.4.1 (§\ref*{UC2.4.1})});
 	\item \textbf{Postcondizioni:} l'utente ha identificato la soglia come critica o meno.
-	\item \textbf{Scenario Principale:} Per ogni stato del nodo l'utente seleziona, attraverso una checkbox, se la soglia definita sia critica o meno. Nel caso in cui si tratti di una soglia critica, qualora dovessero essere monitorati valori che la facciano scattare, si attiverebbe immediatamente l'attività di ricalcolo delle probabilità in sede di monitoraggio e visualizzazione dati (\hyperref[UC4]{UC4 (§\ref*{UC4})}).
+	\item \textbf{Scenario Principale:} per ogni stato del nodo l'utente seleziona, attraverso una checkbox, se la soglia definita sia critica o meno. Nel caso in cui si tratti di una soglia critica, qualora dovessero essere monitorati valori che la facciano scattare, si attiverebbe immediatamente l'attività di ricalcolo delle probabilità in sede di monitoraggio e visualizzazione dati (\hyperref[UC4]{UC4 (§\ref*{UC4})}).
 \end{itemize}
 
 \pagebreak
@@ -308,7 +308,7 @@ Il primo diagramma (\hyperref[Panoramica UC Configurazione]{Panoramica UC Config
 	\item \textbf{Attore Primario}: Utente;
 	\item \textbf{Precondizione}: l'utente ha acceduto al pannello di creazione della politica temporale tramite il pulsante "Configurazione Politica Temporale";
 	\item \textbf{Postcondizione}: l'utente ha impostato il numero di minuti di cui è composta la politica temporale;
-	\item \textbf{Scenario Principale:} L'Utente edita il campo dati "minuti" inserendo il numero di minuti di cui è composta la politica temporale.
+	\item \textbf{Scenario Principale:} l'utente edita il campo dati "minuti" inserendo il numero di minuti di cui è composta la politica temporale.
 \end{itemize}
 
 
@@ -318,7 +318,7 @@ Il primo diagramma (\hyperref[Panoramica UC Configurazione]{Panoramica UC Config
 	\item \textbf{Attore Primario}: Utente;
 	\item \textbf{Precondizione}: l'utente ha acceduto al pannello di creazione della politica temporale tramite il pulsante "Configurazione Politica Temporale";
 	\item \textbf{Postcondizione}: l'utente ha impostato il numero delle ore di cui è composta la politica temporale;
-	\item \textbf{Scenario Principale:} L'Utente edita il campo dati "ore" inserendo il numero di ore di cui è composta la politica temporale.
+	\item \textbf{Scenario Principale:} l'utente edita il campo dati "ore" inserendo il numero di ore di cui è composta la politica temporale.
 \end{itemize}
 
 
@@ -333,12 +333,12 @@ Il primo diagramma (\hyperref[Panoramica UC Configurazione]{Panoramica UC Config
 
 \newpage
 
-\subsection{UC4 - Visualizzazione Probabilità Associate ai Nodi di una Rete Bayesiana monitorata}\label{UC4}
+\subsection{UC4 - Visualizzazione Probabilità Associate ai Nodi di una Rete Bayesiana Monitorata}\label{UC4}
 
 \begin{figure}[H]
 	\begin{center}
 		\includegraphics[scale=0.6]{./images/UC4.png}
-		 \caption{UC4 - Visualizzazione Probabilità Associate ai Nodi di una Rete Bayesiana}
+		 \caption{UC4 - Visualizzazione Probabilità Associate ai Nodi di una Rete Bayesiana Monitorata}
 	\end{center}
 \end{figure}
 
@@ -349,7 +349,7 @@ Il primo diagramma (\hyperref[Panoramica UC Configurazione]{Panoramica UC Config
 		\item L'utente ha avviato correttamente il monitoraggio del flusso dati (\hyperref[UC20]{UC20 (§\ref*{UC20})}) di una rete bayesiana;
 		\item L'utente ha acceduto alla sezione di visualizzazione dei monitoraggi attivi (\hyperref[UC24]{UC24 (§\ref*{UC24})})
 	\end{enumerate}	 
-	\item \textbf{Postcondizione:} Il Sistema mantiene aggiornate e visualizzabili da parte dell'utente le misure di probabilità derivate dai nodi della rete bayesiana monitorata selezionata;
+	\item \textbf{Postcondizione:} il Sistema mantiene aggiornate e visualizzabili da parte dell'utente le misure di probabilità derivate dai nodi della rete bayesiana monitorata selezionata;
 	\item \textbf{Scenario Principale:} 
 	\begin{enumerate}
 		\item (\hyperref[UC4.1]{UC4.1 (§\ref*{UC4.1})}) Selezione della rete bayesiana in monitoraggio di cui visualizzare i dati;
@@ -368,8 +368,8 @@ Il primo diagramma (\hyperref[Panoramica UC Configurazione]{Panoramica UC Config
 		\item L'utente ha avviato correttamente il monitoraggio del flusso dati (\hyperref[UC20]{UC20 (§\ref*{UC20})}) di una rete bayesiana;
 		\item L'utente ha acceduto alla sezione di visualizzazione dei monitoraggi attivi (\hyperref[UC24]{UC24 (§\ref*{UC24})})
 	\end{enumerate}	 
-	\item \textbf{Postcondizione:} L'utente ha selezionato la rete bayesiana, tra quelle attualmente in fase di monitoraggio, quella di cui visualizzare i dati;
-	\item \textbf{Scenario Principale:} L'utente, attraverso un menù a tendina, seleziona la rete bayesiana di cui visualizzare i dati di monitoraggio;
+	\item \textbf{Postcondizione:} l'utente ha selezionato la rete bayesiana, tra quelle attualmente in fase di monitoraggio, quella di cui visualizzare i dati;
+	\item \textbf{Scenario Principale:} l'utente, attraverso un menù a tendina, seleziona la rete bayesiana di cui visualizzare i dati di monitoraggio;
 \end{itemize}
 
 \subsubsection{UC4.2 - Visualizzazione dei dati di monitoraggio}\label{UC4.2}
@@ -381,8 +381,8 @@ Il primo diagramma (\hyperref[Panoramica UC Configurazione]{Panoramica UC Config
  		\item L'utente ha avviato correttamente il monitoraggio del flusso dati (\hyperref[UC20]{UC20 (§\ref*{UC20})}) di una rete bayesiana;
  		\item L'utente ha selezionato la rete bayesiana di cui desidera visualizzare i dati di monitoraggio (\hyperref[UC4.1]{UC4.1 (§\ref*{UC4.1})}).
 	\end{enumerate}
-	\item \textbf{Postcondizione:} Il Sistema mantiene aggiornate e visualizzabili da parte dell'utente le misure di probabilità derivate dai nodi della rete bayesiana monitorata selezionata;
-	\item \textbf{Scenario Principale:} L'utente visualizza l'andamento delle probabilità dinamiche associate ai nodi della rete bayesiana. Il sistema aggiorna costantemente i dati forniti dalla rete bayesiana, effettuando l'operazione di ricalcolo delle probabilità associate ai nodi della rete non collegati al flusso dati. Tale operazione di ricalcolo delle probabilità viene eseguita allo scadere del timeout ciclico rappresentato dalla politica temporale stabilita in \hyperref[UC3]{UC3 (§\ref*{UC3})}, oppure, nel caso siano state definite in sede di collegamento nodi (\hyperref[UC2.4.4]{UC2.4.4 (§\ref*{UC2.4.4})}), ogni volta che una soglia critica viene attivata dai dati monitorati.
+	\item \textbf{Postcondizione:} il Sistema mantiene aggiornate e visualizzabili da parte dell'utente le misure di probabilità derivate dai nodi della rete bayesiana monitorata selezionata;
+	\item \textbf{Scenario Principale:} l'utente visualizza l'andamento delle probabilità dinamiche associate ai nodi della rete bayesiana. Il sistema aggiorna costantemente i dati forniti dalla rete bayesiana, effettuando l'operazione di ricalcolo delle probabilità associate ai nodi della rete non collegati al flusso dati. Tale operazione di ricalcolo delle probabilità viene eseguita allo scadere del timeout ciclico rappresentato dalla politica temporale stabilita in \hyperref[UC3]{UC3 (§\ref*{UC3})}, oppure, nel caso siano state definite in sede di collegamento nodi (\hyperref[UC2.4.4]{UC2.4.4 (§\ref*{UC2.4.4})}), ogni volta che una soglia critica viene attivata dai dati monitorati.
 \end{itemize}
 
 \pagebreak
@@ -479,7 +479,7 @@ Il primo diagramma (\hyperref[Panoramica UC Configurazione]{Panoramica UC Config
 		\item L'utente visualizza la lista di nodi di cui la rete bayesiana, caricata in \hyperref[UC1]{UC1 									(§\ref*{UC1})}, è costituita. Ogni elemento della lista è formato da due componenti:
 		\begin{itemize}
 			\item Il nominativo del nodo stesso;
-			\item Una checkbox\glossario la quale rappresenta lo stato di collegamento del nodo a cui è associata: verrà cisualizzata una "V" nel caso il nodo sia collegato ad un flusso dati, checkbox vuota altrimenti.
+			\item Una checkbox\glossario che rappresenta lo stato di collegamento del nodo a cui è associata: verrà cisualizzata una "V" nel caso il nodo sia collegato ad un flusso dati, checkbox vuota altrimenti.
 		\end{itemize}
 	\end{enumerate}
 \end{itemize}
@@ -722,6 +722,8 @@ Il primo diagramma (\hyperref[Panoramica UC Configurazione]{Panoramica UC Config
 	\end{enumerate}
 \end{itemize}
 
+\pagebreak
+
 \subsection{UC29 - Visualizzazione Notifica avvenuta rimozione Rete Bayesiana}\label{UC29}
 
 \begin{itemize}
@@ -750,6 +752,7 @@ Il primo diagramma (\hyperref[Panoramica UC Configurazione]{Panoramica UC Config
 	\end{enumerate}
 \end{itemize}
 
+\pagebreak
 
 \subsection{UC31 - Visualizzazione Notifica avvenuta selezione Database}\label{UC31}
 
@@ -779,6 +782,7 @@ Il primo diagramma (\hyperref[Panoramica UC Configurazione]{Panoramica UC Config
 	\end{enumerate}
 \end{itemize}
 
+\pagebreak
 
 \subsection{UC33 - Visualizzazione Notifica avvenuto collegamento Nodo}\label{UC33}
 
@@ -808,6 +812,7 @@ Il primo diagramma (\hyperref[Panoramica UC Configurazione]{Panoramica UC Config
 	\end{enumerate}
 \end{itemize}
 
+\pagebreak
 
 \subsection{UC35 - Visualizzazione Notifica Monitoraggio interrotto}\label{UC35}
 
