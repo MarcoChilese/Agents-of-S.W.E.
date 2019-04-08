@@ -1,1 +1,41 @@
 \subsection{Collegamento nodi al flusso dati}\label{Collegamento}
+
+L'operazione di collegamento dei nodi della rete bayesiana al flusso dati è probabilmente la più articolata e dispendiosa del prodotto realizzato. Al fine di fornirne una spiegazione esaustiva ma al contempo intuitiva tale operazione verrà suddivisa in svariati passaggi:
+~\\
+
+\textbf{PREAMBOLO:} L'utente, a seguito del caricamento di una rete bayesiana (§\ref{ReteB}), visualizza la lista dei nodi di cui tale rete è costituita, tale situazione è presentata in Figura \ref{NodiRete}. Oltre al nominativo del nodo stesso viene visualizzata una checkbox che indica se il nodo in questione sia o meno collegato ad un flusso dati. Nel caso di nodo collegato viene visualizzato anche un pulsante "Scollega" di cui vedremo in seguito, quando verrà descritta l'operazione di scollegamento del nodo (\textcolor{red}{TODO LinK}).\\
+Della lista di nodi visualizzata l'utente ha la possibilità di collegare ogni nodo, senza eccezioni, ad un flusso dati desiderato.
+~\\
+
+\textbf{PASSAGGIO 1:} L'utente clicca il nominativo del nodo che desidera collegare per accedere al \textbf{Pannello di Collegamento}, ove può configurare le necessarie impostazioni di collegamento per il nodo in esame.
+
+\textcolor{red}{TO DO: INSERIRE IMMAGINE Pannello di collegamento nodo}
+~\\
+
+\textbf{PASSAGGIO 2:} Le prime impostazioni che l'utente è invitato a configurare riguardano la scelta della tabella, e del conseguente flusso dati (\textcolor{red}{TODO Link img Pannello collegamento Nodo}), del database (selezionato in \ref{SelectDB}). Tali impostazioni determinano univocamente lo specifico flusso dati di monitoraggio a cui l'utente collega il nodo della rete bayesiana.
+~\\
+
+\textbf{PASSAGGIO 3:} A questo punto l'utente deve configurare le soglie associate ad ogni possibile stato del nodo in esame. Tali soglie verranno verificate in sede di monitoraggio per associare un valore di evidenza al nodo della rete bayesiana in un dato istante.Possiamo suddividere questo passaggio in ultreriori cinque passi:
+\begin{enumerate}
+	\item L'utente seleziona \textbf{Add Treshold} (pulsante presente in Figura \textcolor{red}{TODO Link img Pannello collegamento} per aggiungere una soglia allo stato del nodo associato. È possibile aggiungere più soglie associate allo stesso stato;
+	\item L'utente edita il campo dati \textbf{Valore di Soglia} indicando il valore numerico della soglia che sta definendo (Figura \textcolor{red}{TODO Link img Soglie});
+	\item L'utente seleziona, tramite la casella a scelta multipla, un valore tra i possibili: "<","<=",">" o ">=", per indicare la tipologia di soglia che sta configurando (Figura \textcolor{red}{TODO Link img Soglie});
+	\item Se lo desidera l'utente può etichettare la soglia come "critica" attraverso l'apposita checkbox (Figura \textcolor{red}{TODO Link img Soglie}). In tal caso la verifica di tale soglia verrà fatta a prescindere dalla politica temporale delezionata in §\ref{policy};
+	\item Se lo desidera l'utente può rimuovere una soglia attraverso il pulsante \textbf{-} presente in Figura \textcolor{red}{TODO Link img Soglie}.
+\end{enumerate}
+
+\textcolor{red}{TO DO: INSERIRE IMMAGINE Pannello di collegamento nodo}
+~\\
+
+\textbf{PASSAGGIO 4:} Infine l'utente deve confermate le proprie scelte di collegamento del nodo attraverso il pulsante \textbf{Conferma Collegamento} presente in Figura \textcolor{red}{TODO Link img Pannello collegamento}.
+
+~\\
+A seguito del corretto collegamento del nodo al flusso dati l'utente verrà avvisato del buon esito dell'operazione da un messaggio di notifica. L'utente visualizza inolte, accanto al nodo in esame, la spunta sulla checkbox che ne indica lo stato di "Collegato al flusso dati" e il pulsante "Scollega" per scollegare con un solo click il nodo al flusso dati (Figura \textcolor{red}{TODO Link img Pannello collegamento 2}).
+
+\textcolor{red}{TO DO: INSERIRE IMMAGINE Pannello di collegamento nodo 2}
+
+~\\
+\textbf{\textcolor{red}{ATTENZIONE}}: Nel caso in cui l'utente abbia commesso degli errori in fase di definizione delle impostazioni di collegamento l'operazione non va a buon fine e l'utente viene avvisato degli errori commessi da un messaggio di errore (\textcolor{red}{TODO Link img Errore Collegamento Nodi}).
+
+\textcolor{red}{TO DO: INSERIRE IMMAGINE Errore Collegamento Nodo}
+ 
