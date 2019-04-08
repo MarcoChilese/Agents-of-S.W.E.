@@ -98,7 +98,8 @@ Per la costruzione dei diagrammi è stato optato per l'utilizzo di script in \te
 
 \input{Chapters/Qualita.tex}
 
-\subsection{Versionamento}\label{ProcessiSupporto_Versionamento}
+\subsection{Configurazione}
+\subsubsection{Controllo di versione}\label{ProcessiSupporto_Versionamento}
 La necessità di più componenti del gruppo di cooperare su uno stesso documento, porta la necessità di utilizzare un sistema di versionamento distribuito. 
 
 %Per le parti in cui più componenti del \texttt{gruppo} devono cooperare sugli stessi file, 
@@ -107,7 +108,6 @@ La necessità di più componenti del gruppo di cooperare su uno stesso documento
 
 
 %Nella fase di RR, non in questa fase di RR
-\subsubsection{Controllo di Versione}\label{ControlloVersione}
 Il sistema di versionamento, utilizzato nella fase di RR, è \textit{Git}, con il supporto hosting di \textit{GitHub}. Per quanto riguarda la fase di codifica il gruppo ha deciso di appoggiarsi al supporto hosting di \textit{GitLab}, le motivazioni principali riguardano i servizi inclusi in materia di integrazione e pipeline di sviluppo spiegati nelle sezioni §\ref{Progettazione_Sviluppo} e §\ref{Progettazione_Integrazione}.\\
 Successivamente alla fase di RP, il team ha deciso di unire le due repository convogliando quindi documentazione e codice in un unico repository \textit{Git} supportato dalla piattaforma di hosting \textit{GitLab}, al fine di semplificare la gestione del processo.
 
@@ -241,6 +241,51 @@ Tale tipo di verifica può svolgersi in due modi:
 \subsubsection{Analisi Dinamica}
 Il processo di analisi dinamica consiste nella realizzazione ed esecuzione di una serie di test sul codice del software prodotto. Questa tecnica non è applicabile per trovare errori nella documentazione.
 
+\paragraph{Classificazione Test}\label{Class_test} \-\\
+Per garantire una corretta struttura, il gruppo ha deciso di introdurre una nomenclatura per identificare i test implementati. Si potranno quindi identificare così: 
+
+\begin{center}
+	\textbf{T[Tipo][Priorità]-[Codice]}
+\end{center}
+Dove: 
+\begin{itemize}
+	\item \textbf{Tipo}: indica il tipo di test ed è identificato da una lettera a scelta tra: 
+	
+	\begin{itemize}
+		\item \textbf{V}: validazione; 
+		\item \textbf{S}: sistema; 
+		\item \textbf{I}: integrazione; 
+		\item \textbf{U}: unità.
+	\end{itemize}
+	
+	\item \textbf{Priorità}: indica la priorità, identificato da una lettere a scelta tra: 
+	\begin{itemize}
+		\item \textbf{0}: obbligatorio; 
+		\item \textbf{1}: desiderabile; 
+		\item \textbf{2}: opzionale.
+	\end{itemize}				
+	\item \textbf{Codice}: indica il codice del test, rispettando una struttura gerarchica. 
+\end{itemize}
+
+L'esito del test, può assumere i seguenti valori: 
+\begin{itemize}
+	\item \texttt{"N.I."} (non implementato);
+	\item \texttt{"N.S."} (non superato); 
+	\item \texttt{"S."} (superato). 
+\end{itemize}
+
+\paragraph{Test di unità} \-\\
+TODO
+
+\paragraph{Test di integrazione}\-\\
+TODO
+
+\paragraph{Test di sistema}\-\\
+TODO	
+
+\paragraph{Test di validazione} \-\\
+TODO
+
 \subsubsection{Verifica Diagrammi UML}
 I verificatori devono controllare che i diagrammi UML prodotti rispettino lo standard \textit{UML 2.x} e che siano corretti semanticamente.
 
@@ -249,7 +294,8 @@ I verificatori devono controllare che i diagrammi UML prodotti rispettino lo sta
 	\item \textbf{Software}: per la verifica del codice \textit{JavaScript} è stato scelto \textit{Jest};
 	\item \textbf{Documenti}: per la verifica dei documenti si utilizzano le funzionalità di \textit{TexMaker};
 	\item \textbf{Gestione processi e feedback}: è stato scelto di utilizzare il sistema integrato di issues presente su \textit{GitLab};
-	\item \textbf{Analisi dinamica locale}: è stato scelto \textit{ESLint} come soluzione iniziale per risolvere tutte le necessit`a di analisi del codice locale.
+	\item \textbf{Analisi dinamica locale}: è stato scelto \textit{ESLint} come soluzione iniziale per risolvere tutte le necessità di analisi del codice locale.
+	\item \textbf{Analisi dinamica remota}:	è stato scelto {Codecov.io} servizio di code coverage\glossario basato su repository presenti in piattaforme di versionamento quali \textit{GitHub}\glossario e \textit{GitLab}. Ad ogni esecuzione in \textit{GitLab} della pipeline di CI/CD, vengono generati da \textit{Jest} i report di coverage da cui \textit{Codecov.io} elabora la copertura del codice;
 \end{itemize}
 
 \subsection{Validazione}\label{validazione}

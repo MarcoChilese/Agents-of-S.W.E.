@@ -54,23 +54,3 @@ MyFunction() { ... } //NO
 \paragraph{\textit{AngularJS}} \label{angularjs} \-\\
 \input{Chapters/Norme_AngularJS.tex}
 
-\paragraph{\textit{Webpack}} \label{webpack}\-\\
-\textit{Webpack} è un module bundler\glossario per applicazioni \textit{javascript}. Nella pratica lo scopo di \textit{webpack} è creare un pacchetto di assets leggibile e utilizzabile dal browser a partire da un insieme di file sorgenti strutturati su diversi file e con dipendenze complesse. \\
-Gli aspetti fondamentali sono:
-\begin{itemize}
-\item \textbf{Entry Point}: rappresenta il punto di partenza da cui iniziare la build e creare lo schema delle dipendenze, di default è './src/index.js' ma può essere modificato nei file di configurazione;
-\item \textbf{Output}: rappresenta la destinazione in cui verranno generati i file leggibili dal browser, di default è './dist' e il file principale è './dist/main.js';
-\item \textbf{Loaders}: di default \textit{webpack} esegue la build solamente di file \textit{javascript} e \textit{JSON}\glossario, tramite questa configurazione \textit{webpack} può essere adattato ad altri tipi di file, così da permettere la conversione anche di essi. I loaders possono avere due proprietà: 
-	\begin{itemize}
-	\item La proprietà test che identifica quali file dovrebbero essere trasformati;
-	\item La proprietà use che identifica quali loaders utilizzare per eseguire la trasformazione.
-	\end{itemize}
-\item \textbf{Plugins}: a differenza dei loaders, i plugins operano in aspetti più generali riguardanti l'ottimizzazione dei pacchetti e la gestione delle risorse. Per utilizzare un plugin bisogna eseguire una 'require' dalla sorgente ed aggiungerlo mediante la 'new' nell'array apposito chiamato 'plugin'.
-\item \textbf{Mode}: viene settato in base all'ambiente in cui lanciato \textit{webpack}, cosi da importare ottimizzazioni specifiche. Può assumere i seguenti valori:
-	\begin{itemize}
-	\item Development;
-	\item Production;
-	\item None.
-	\end{itemize}
-Se non viene specificato viene settato come valore di default 'production'.
-\end{itemize}
