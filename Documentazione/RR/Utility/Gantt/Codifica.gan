@@ -1,14 +1,16 @@
-<?xml version="1.0" encoding="UTF-8"?><project name="Progettazione Dettaglio e Codifica" company="" webLink="http://" view-date="2019-03-11" view-index="0" gantt-divider-location="471" resource-divider-location="300" version="2.8.10" locale="it_IT">
+<?xml version="1.0" encoding="UTF-8"?><project name="Progettazione Dettaglio e Codifica" company="" webLink="http://" view-date="2019-04-05" view-index="0" gantt-divider-location="265" resource-divider-location="300" version="2.8.10" locale="it_IT">
     <description/>
     <view zooming-state="default:0" id="gantt-chart">
-        <field id="tpd3" name="Nome" width="224" order="0"/>
-        <field id="tpd4" name="Data d'inizio" width="122" order="1"/>
-        <field id="tpd5" name="Data di fine" width="121" order="2"/>
-        <option id="color.recent"><![CDATA[#33ff00 #000000 #33ccff #66ccff #f4f4f4 #ff0033 #66ff66 #ff3333 #ff6666]]></option>
+        <field id="tpd3" name="Nome" width="114" order="0"/>
+        <field id="tpd4" name="Data d'inizio" width="65" order="1"/>
+        <field id="tpd5" name="Data di fine" width="65" order="2"/>
+        <option id="color.recent">
+            <![CDATA[#ff0033 #33ff00 #000000 #33ccff #66ccff #f4f4f4 #66ff66 #ff3333 #ff6666]]>
+        </option>
     </view>
     <view id="resource-table">
-        <field id="0" name="Nome" width="210" order="0"/>
-        <field id="1" name="Ruolo predefinito" width="86" order="1"/>
+        <field id="0" name="Nome" width="209" order="0"/>
+        <field id="1" name="Ruolo predefinito" width="85" order="1"/>
     </view>
     <!-- -->
     <calendars base-id="nessuno">
@@ -119,6 +121,7 @@
         </task>
         <task id="33" name="Consegna RQ" color="#ff0033" meeting="true" start="2019-04-12" duration="0" complete="0" thirdDate="2019-03-06" thirdDate-constraint="0" expand="true"/>
         <task id="55" name="Discussione RQ" color="#ff0033" meeting="true" start="2019-04-19" duration="0" complete="0" thirdDate="2019-04-19" thirdDate-constraint="0" expand="true"/>
+        <task id="77" name="Incontro Agile" color="#ff0033" meeting="true" start="2019-04-10" duration="0" complete="0" thirdDate="2019-03-31" thirdDate-constraint="0" expand="true"/>
     </tasks>
     <resources/>
     <allocations/>
