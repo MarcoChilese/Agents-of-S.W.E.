@@ -38,4 +38,7 @@ I ruoli all'interno del team, dopo la Revisione di Progettazione, ruotano nel se
 Il gruppo non utilizzerà più due servizi diversi di repository online, avere una repository per la documentazione su \textit{GitHub}\glossario e una per il codice sorgente su \textit{GitLab} crea dispersione e confusione. Il gruppo utilizzerà solamente \textit{GitLab} in quanto permette la gestione di pipeline di CI/CD\glossario. La documentazione verrà caricata in una nuova repository di \textit{GitLab}.
 
 \subsection{Punto 4}
+È stata valutata l'opzione di suddividere la progettazione in due parti principali, una di queste è il lato server scritto in NodeJS. Questa scelta architetturale comporta notevoli vantaggi nel calcolo delle probabilità e nella suddivsione modulare del codice, suddividendo la gestione dei database e delle reti al server, la raccolta, il caricamento dei dati e la visualizzazione delle probabilità al plug-in. Questa scelta ha agevolato l'applicazione di pattern come l'Adapter e il proxy per la parte server, consentendo lo sviluppo futuro della gestione di nuovi database.
+
+\subsection{Punto 5}
 Il gruppo si incontrerà nuovamente in data 2019-03-20.
