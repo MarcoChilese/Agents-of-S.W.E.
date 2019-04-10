@@ -61,8 +61,12 @@
 - Progettista: Marco Chilese, Diego Mazzalovo
 - Programmatore: Carlotta Segna
 - Verificatore: Matteo Slanzi
-- Analista: Luca Violato
+- Analista: Luca x
 
-#### Suddivisione gruppo documenti-codice:
-- **Documenti**: Carlotta, Marco C., Marco F., Luca, Matteo;
-- **Codice**: Bogdan, Diego.
+### Ruoli (7)
+- Amministratore: Diego Mazzalovo
+- Responsabile: Matteo Slanzi
+- Progettista: Luca Violato
+- Programmatore: Bogdan Stanciu, Marco Favaro
+- Verificatore: Marco Chilese
+- Analista: Carlotta Segna
