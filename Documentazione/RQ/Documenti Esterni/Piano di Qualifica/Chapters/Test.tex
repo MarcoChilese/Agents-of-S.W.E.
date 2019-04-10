@@ -1,18 +1,21 @@
 \section{Test di Unità}
 \label{test_u}
 
-La nomenclatura dei test viene descritta all'interno del documento \textit{Norme di Progetto v2.0.0}, nella sezione §3.2.4. Il codice identificativo dei requisiti è descritto all'interno del documento \textit{Norme di progetto v2.0.0} nella sezione §2.2.2.1.
+La nomenclatura dei test viene descritta all'interno del documento \textit{Norme di Progetto v3.0.0}, nella sezione §3.2.4. Questa sezione verrà completata nel momento in cui verranno svolti i test. La descrizione di questo tipo di test è riportata nel documento \textit{Norme di Progetto v3.0.0}, nell'appendice §D che tratta del \textit{Modello a V}.
 tta del \textit{Modello a V}.
+
+
+
 
 \newpage
 \section{Test di Integrazione}
 \label{test_i}
-Questa sezione verrà completata nel momento in cui verranno svolti i test. La descrizione di questo tipo di test è riportata nel documento \textit{Norme di Progetto v2.0.0}, nell'appendice §D che tratta del \textit{Modello a V}.
+La nomenclatura dei test viene descritta all'interno del documento \textit{Norme di Progetto v3.0.0}, nella sezione §3.2.4. Questa sezione verrà completata nel momento in cui verranno svolti i test. La descrizione di questo tipo di test è riportata nel documento \textit{Norme di Progetto v3.0.0}, nell'appendice §D che tratta del \textit{Modello a V}.
 
 \newpage
 \section{Test di Sistema}
 \label{test_s}
-Questa sezione verrà completata nel momento in cui verranno svolti i test. La descrizione di questo tipo di test è riportata nel documento \textit{Norme di Progetto v2.0.0}, nell'appendice §D che tratta del \textit{Modello a V}.
+La nomenclatura dei test viene descritta all'interno del documento \textit{Norme di Progetto v3.0.0}, nella sezione §3.2.4. Questa sezione verrà completata nel momento in cui verranno svolti i test. La descrizione di questo tipo di test è riportata nel documento \textit{Norme di Progetto v3.0.0}, nell'appendice §D che tratta del \textit{Modello a V}.
 \newpage
 
 
@@ -20,6 +23,9 @@ Questa sezione verrà completata nel momento in cui verranno svolti i test. La d
 
 
 \section{Test di Validazione}
+\label{test_v}
+
+La nomenclatura dei test viene descritta all'interno del documento \textit{Norme di Progetto v3.0.0}, nella sezione §3.2.4. La descrizione di questo tipo di test è riportata nel documento \textit{Norme di Progetto v3.0.0}, nell'appendice §D che tratta del \textit{Modello a V}.
 
 \begin{longtable}{|C{.15\textwidth}|C{.13\textwidth}|m{.52\textwidth}|C{.08\textwidth}|}
 \hline
@@ -31,16 +37,19 @@ TV0-1 & ROF1 &
 	\textbf{Obiettivo}: verificare che il Sistema permetta l'aggiunta di una rete bayesiana, tramite il caricamento di un file. \newline
 	\textbf{Procedimento}:
 	\begin{enumerate}
+		\item L'utente ha correttamente collegato il plug-in al Server;
 		\item L'utente, dal pannello di configurazione del plug-in, individua la l'area di caricamento;
 		\item L'utente seleziona il file da caricare;
 		\item L'utente conferma il file selezionato;
 		\item Il Sistema carica e inizializza il file caricato.
 	\end{enumerate} & N.I. \\
 \hline
+
 \rowcolor{grigio} TV0-1.1 & ROF1.1 &
-	\textbf{Obiettivo}: verificare che il Sistema di caricamento dell'utente metta a disposizione un pulsante per avviare il procedimento di caricamento della rete bayesiana.
+	\textbf{Obiettivo}: verificare che il Sistema di caricamento della rete metta a disposizione dell'utente un pulsante per avviare il procedimento di caricamento della rete bayesiana.
 	\textbf{Procedimento}:
 	\begin{enumerate}
+		\item L'utente ha correttamente collegato il plug-in al Server;
 		\item L'utente, dal pannello di configurazione del plug-in, individua la l'area di caricamento;
 		\item L'utente seleziona il file dal Sistema di selezione predefinito dal browser che utilizza;
 		\item L'utente clicca sul bottone di conferma fornito dal proprio browser;
@@ -49,10 +58,12 @@ TV0-1 & ROF1 &
 	\end{enumerate}
 	& N.I. \\
 \hline
+
 \makecell{ TV0-1.2}   & ROF1.2 &
 	\textbf{Obiettivo}: verificare che il Sistema permetta la selezione di un file in formato \textit{.json} dal Sistema dell'utente.\newline
 	\textbf{Procedimento}:
 	\begin{enumerate}
+		\item L'utente ha correttamente collegato il plug-in al Server;
 		\item L'utente, dal pannello di configurazione del plug-in, individua l'area di caricamento;
 		\item Il Sistema disabilita la scelta di tutti i file che non rispettano l'estensione richiesta;
 		\item L'utente a seconda della directory in cui si trova, seleziona un file abilitato al caricamento;
@@ -61,10 +72,12 @@ TV0-1 & ROF1 &
 	\end{enumerate}
 	& N.I. \\
 \hline
+
 \rowcolor{grigio} TV0-1.3 & ROF1.3 &
-	\textbf{Obiettivo}: verificare che il Sistema metta a disposizione un bottone di caricamento del file il quale avvia la Procedimento di caricamento. \newline
+	\textbf{Obiettivo}: verificare che il Sistema metta a disposizione un bottone di caricamento del file il quale avvia la procedura di caricamento. \newline
 	\textbf{Procedimento}:
 	\begin{enumerate}
+		\item L'utente ha correttamente collegato il plug-in al Server;
 		\item L'utente, dal pannello di configurazione del plug-in, individua l'area di caricamento;
 		\item L'utente una volta individuata l'area di caricamento, preme sul bottone di caricamento della rete;
 		\item L'utente una volta premuto il bottone, avvia la Procedimento di caricamento della rete;
@@ -73,25 +86,27 @@ TV0-1 & ROF1 &
 	\end{enumerate}
 	& N.I. \\
 \hline
+
 TV0-1.4 & ROF1.4 &
-	\textbf{Obiettivo}: verificare che il Sistema faccia visualizzare un messaggio di errore nel caso in cui l'operazione di caricamento del file non sia andata a buon fine. \newline
+	\textbf{Obiettivo}: verificare che il Sistema faccia apparire un messaggio di errore nel caso in cui l'operazione di caricamento del file non sia andata a buon fine. \newline
 	\textbf{Procedimento}:
 	\begin{enumerate}
+		\item L'utente ha correttamente collegato il plug-in al Server;
 		\item L'utente, dal pannello di configurazione del plug-in, preme sul bottone di caricamento della rete;
-		\item L'utente avvia il procedimento di caricamento della rete;
 		\item L'utente dal Sistema di caricamento predefinito del browser utilizzato, seleziona un file abilitato al caricamento;
 		\item L'utente conferma il file selezionato;
 		\item Il Sistema rileva un errore in fase di caricamento del file e inizializza il messaggio d'errore a seconda del tipo d'errore accaduto;
-		\item Il Sistema inizializza e mostra l'interfaccia d'errore durante la fase di caricamento del file.
+		\item Il Sistema mostra all'utente una finestra con l'errore.
 	\end{enumerate}
 	& N.I. \\
 \hline
-\rowcolor{grigio} TV0-1.4.1 & R0F1.4.1 &
+
+\rowcolor{grigio} TV0-1.4.1 & ROF1.4.1 &
 	\textbf{Obiettivo}: verificare che il Sistema si accerti che il file caricato dall'utente sia solo con estensione \textit{.json}. \newline
 	\textbf{Procedimento}:
 	\begin{enumerate}
+		\item L'utente ha correttamente collegato il plug-in al Server;
 		\item L'utente, dal pannello di configurazione del plug-in, preme sul bottone di caricamento della rete;
-		\item L'utente avvia il procedimento di caricamento della rete;
 		\item L'utente dal Sistema di caricamento predefinito del browser utilizzato, visualizza solamente i file conformi all'estensione permessa dal Sistema;
 		\item L'utente dal Sistema di caricamento predefinito del browser utilizzato, seleziona un file abilitato al caricamento;
 		\item L'utente conferma il file selezionato;
@@ -99,24 +114,26 @@ TV0-1.4 & ROF1.4 &
 	\end{enumerate}
 	& N.I. \\
 \hline
-TV0-1.4.2 & R0F1.4.2 &
+
+TV0-1.4.2 & ROF1.4.2 &
 	\textbf{Obiettivo}: verificare l'autenticità del file da parte del Sistema. \newline
 	\textbf{Procedimento}:
 	\begin{enumerate}
+		\item L'utente ha correttamente collegato il plug-in al Server;
 		\item L'utente, dal pannello di configurazione del plug-in, preme sul bottone di caricamento della rete;
-		\item L'utente avvia il procedimento di caricamento della rete;
 		\item L'utente dal Sistema di caricamento predefinito del browser utilizzato, seleziona un file abilitato al caricamento;
 		\item L'utente conferma il file selezionato;
 		\item Il Sistema, una volta caricato il file, verifica che esso sia in formato \textit{.json} corretto.
 	\end{enumerate}
 	& N.I. \\
 \hline
+
 \rowcolor{grigio} TV0-1.5 & ROF1.5 &
 	\textbf{Obiettivo}: verificare che il Sistema, una volta caricato il file, inizializzi la rete bayesiana. \newline
 	\textbf{Procedimento}:
 	\begin{enumerate}
+		\item L'utente ha correttamente collegato il plug-in al Server;
 		\item L'utente, dal pannello di configurazione del plug-in, preme sul bottone di caricamento della rete;
-		\item L'utente avvia il procedimento di caricamento della rete;
 		\item L'utente dal Sistema di caricamento predefinito del browser utilizzato, seleziona un file abilitato al caricamento;
 		\item L'utente conferma il file selezionato;
 		\item Il Sistema, una volta caricato il file, inizializza la rete bayesiana costruita dal file caricato dall'utente, aggiornando il modello;
@@ -124,36 +141,53 @@ TV0-1.4.2 & R0F1.4.2 &
 	\end{enumerate}
 	& N.I. \\
 \hline
+
 TV1-1.6 & RDF1.6 &
 	\textbf{Obiettivo}: verificare che il Sistema memorizzi la rete bayesiana precedentemente caricata. \newline
 	\textbf{Procedimento}:
 	\begin{enumerate}
+		\item L'utente ha correttamente collegato il plug-in al Server;
 		\item Il Sistema, una volta caricata la rete bayesiana, salva quest'ultima in un Sistema di memorizzazione;
 		\item Il Sistema una volta riavviato, inizializza le variabili salvate;
 		\item Il Sistema modifica l'interfaccia utente per mostrare i nodi della rete precedentemente salvata.
 	\end{enumerate}
 	 & N.I. \\
 \hline
-\rowcolor{grigio} TV0-2 & ROF2 &
+
+\rowcolor{grigio}TV0-1.7 & ROF1.7 &
+	\textbf{Obiettivo}: verificare che il sistema visualizzi un messaggio di avvenuto caricamento della rete bayesiana. \newline
+	\textbf{Procedimento}:
+	\begin{enumerate}
+		\item L'utente ha correttamente collegato il plug-in al Server;
+		\item L'utente, dal pannello di configurazione del plug-in, carica una rete nei modi che ha a disposizione;
+		\item Il Sistema mostra a schermo un messaggio di avvenuto caricamento della rete bayesiana.
+	\end{enumerate} & N.I. \\
+\hline
+
+TV0-2 & ROF2 &
 	\textbf{Obiettivo}: verificare che il Sistema permetta il collegamento di un flusso di dati a ogni nodo desiderato della rete bayesiana caricata dall'utente. \newline
 	\textbf{Procedimento}:
 	\begin{enumerate}
-		\item Il Sistema possiede una rete bayesiana precedentemente caricata e inizializzata;
+		\item L'utente ha correttamente collegato il plug-in al Server;
+		\item L'utente ha correttamente caricato una rete bayesiana;
+		\item L'utente ha precedentemente collegato un database;
 		\item Il Sistema a interfaccia utente permette la selezione di uno dei nodi desiderati;
 		\item L'utente seleziona il nodo desiderato;
-		\item Il Sistema a interfaccia utente permette la selezione di una sorgente dati;
-		\item Il Sistema a interfaccia utente permette la selezione di un flusso dati relativo alla sorgente dati precedentemente selezionata;
-		\item L'utente seleziona la sorgente dati desiderata;
+		\item Il Sistema fa apparire una finestra per la selezione del flusso;
+		\item L'utente seleziona una tabella del database;
+		\item Il Sistema a interfaccia utente permette la selezione di un flusso dati relativo alla tabella del database precedentemente selezionata;
 		\item L'utente seleziona un flusso dati a cui collegare il nodo della rete;
 		\item L'utente conferma il collegamento;
 		\item Il Sistema salva il collegamento.
 	\end{enumerate}
 	& N.I. \\
 \hline
-TV0-2.1 & ROF2.1 &
+
+\rowcolor{grigio}TV0-2.1 & ROF2.1 &
 	\textbf{Obiettivo}: verificare che il Sistema interpreti la rete bayesiana caricata da file. \newline
 	\textbf{Procedimento}:
 	\begin{enumerate}
+		\item L'utente ha correttamente collegato il plug-in al Server;
 		\item L'utente carica il file contenente la rete bayesiana;
 		\item Il Sistema controlla l'integrità del file caricato;
 		\item Il Sistema esegue il parser sul file caricato al fine di estrapolare i dati necessari alla creazione della rete bayesiana;
@@ -161,264 +195,525 @@ TV0-2.1 & ROF2.1 &
 	\end{enumerate}
 	& N.I. \\
 \hline
-\rowcolor{grigio} TV0-2.1.1 & ROF2.1.1 &
+
+TV0-2.1.1 & ROF2.1.1 &
 	\textbf{Obiettivo}: verificare che il Sistema mostri a interfaccia utente il nominativo per ogni nodo della rete. \newline
 	\textbf{Procedimento}:
 	\begin{enumerate}
-		\item Il Sistema ha salvato in memoria la rete bayesiana caricata precedentemente dall'utente;
+		\item L'utente ha correttamente collegato il plug-in al Server;
+		\item L'utente ha correttamente caricato una rete bayesiana;
+		\item L'utente ha precedentemente collegato un database;
 		\item Il Sistema modifica l'interfaccia utente creando una lista di nodi appartenenti alla rete bayesiana;
 		\item L'utente visualizza una lista con tutti i nodi appartenenti alla rete bayesiana, con il corretto nominativo.
 	\end{enumerate}
 	& N.I. \\
 \hline
-TV0-2.1.2 & ROF2.1.2&
+
+\rowcolor{grigio}TV0-2.1.2 & ROF2.1.2&
 	\textbf{Obiettivo}: verificare che il Sistema mostri, per ogni nodo della rete bayesiana, la corrispondente checkbox per identificare se un nodo è collegato ad un flusso dati o meno. \newline
 	\textbf{Procedimento}:
 	\begin{enumerate}
-		\item Il Sistema ha salvato in memoria la rete bayesiana caricata precedentemente dall'utente;
-		\item Il Sistema modifica l'interfaccia utente creando una lista di nodi appartenenti alla rete bayesiana;
-		\item L'utente seleziona un nodo desiderato;
-		\item Il Sistema, alla selezione del nodo da parte dell'utente, modifica l'interfaccia utente mostrando la checkbox di stato relativa al nodo selezionato.
+		\item L'utente ha correttamente collegato il plug-in al Server;
+		\item L'utente ha correttamente caricato una rete bayesiana;
+		\item L'utente ha precedentemente collegato un database;
+		\item Il Sistema modifica l'interfaccia utente creando una lista di nodi appartenenti alla rete bayesiana, seguiti da una checkbox ognuno la quale identifica il collegamento ad un flusso dati o meno.
 	\end{enumerate}
 	& N.I. \\
 \hline
-\rowcolor{grigio} TV0-2.5 & ROF2.5 &
+
+TV0-2.5 & ROF2.5 &
 	\textbf{Obiettivo}: verificare che il Sistema metta a disposizione le impostazioni necessarie per effettuare correttamente il collegamento desiderato. \newline
 	\textbf{Procedimento}:
 	\begin{enumerate}
-		\item Il Sistema ha salvato in memoria la rete bayesiana caricata precedentemente dall'utente;
-		\item Il Sistema inizializza il pannello di configurazione inserendo i dati relativi alla rete bayesiana presa in carico.
+		\item L'utente ha correttamente collegato il plug-in al Server;
+		\item L'utente ha correttamente caricato una rete bayesiana;
+		\item L'utente ha precedentemente collegato un database;
+		\item Il Sistema qualora l'utente clicchi su un nodo, visualizza le impostazioni necessarie al suo collegamento ad un flusso.
 	\end{enumerate}
 	& N.I. \\
 \hline
-TV0-2.5.1 & ROF2.5.1 &
- 	\textbf{Obiettivo}: verificare che il Sistema, in seguito al click sul nominativo del nodo appartenente alla rete bayesiana, apra una finestra contenente un elenco delle sorgenti di dati disponibili per il collegamento. \newline
- 	\textbf{Procedimento}:
- 	\begin{enumerate}
- 		\item Il Sistema ha salvato in memoria la rete bayesiana caricata precedentemente dall'utente;
- 		\item Il Sistema modifica l'interfaccia utente creando una lista di nodi appartenenti alla rete bayesiana;
- 		\item L'utente preme sul nominativo del nodo desiderato;
- 		\item Il Sistema modifica l'interfaccia utente inizializzando un pannello a comparsa che mostra il flusso di dati.
- 	\end{enumerate}
- 	& N.I. \\
-\hline
-\rowcolor{grigio} TV0-2.5.2 & ROF2.5.2 &
-	\textbf{Obiettivo}: verificare che il Sistema, in seguito all'apertura della finestra per la scelta delle sorgenti di dati disponibili, dia la possibilità di selezionare una tra le scelte disponibili. \newline
-	\textbf{Procedimento}:
-	\begin{enumerate}
-		\item Il Sistema mostra a interfaccia utente una schermata con un elenco di sorgenti dati;
-		\item L'utente può selezionare una delle sorgenti dati disponibili da interfaccia;
-		\item L'utente conferma la sorgente dati selezionata.
-	\end{enumerate}
-	& N.I. \\
-\hline
-TV0-2.5.3 & ROF2.5.3 &
+
+\rowcolor{grigio}TV0-2.5.3 & ROF2.5.3 &
 	\textbf{Obiettivo}: verificare che il Sistema mostri un elenco di flussi dati coerente con la sorgente dati selezionata dall'utente. \newline
 	\textbf{Procedimento}:
 	\begin{enumerate}
-		\item Il Sistema mostra a interfaccia utente una schermata con un elenco di sorgenti dati;
-		\item L'utente può selezionare una delle sorgenti dati disponibili da interfaccia;
-		\item L'utente conferma la sorgente dati selezionati;
-		\item Il Sistema interroga la sorgente dati per ricavare i flussi dati disponibili da essa;
-		\item Il Sistema modifica l'interfaccia utente e mostra i flussi dati dalla sorgente dati precedentemente selezionata dall'utente;
+		\item L'utente ha correttamente collegato il plug-in al Server;
+		\item L'utente ha correttamente caricato una rete bayesiana;
+		\item L'utente ha precedentemente collegato un database;
+		\item L'utente clicca sul nodo che desidera collegare;
+		\item Il Sistema fa apparire una finestra con le impostazioni per il collegamento del nodo;
+		\item L'utente seleziona la tabella dalla quale prendere i flussi;
+		\item L'utente cliccando sul menù a tendina relativo ai flussi, visualizza i flussi relativi alla tabella precedentemente selezionata.
 	\end{enumerate}
 	& N.I. \\
 \hline
-\rowcolor{grigio} TV0-2.5.4 & ROF2.5.4 &
-	\textbf{Obiettivo}: verificare che l'utente abbia la possibilità di selezionare un flusso dati desiderato coerente con la sorgente dati precedentemente selezionata. \newline
+
+
+TV0-2.5.3.1 & ROF2.5.3.1 &
+	\textbf{Obiettivo}: verificare che il sistema permetta all'utente di selezionare un database. \newline
 	\textbf{Procedimento}:
 	\begin{enumerate}
-		\item Il Sistema mostra a interfaccia utente un elenco di flussi dati coerente con la sorgente dati precedentemente selezionata dall'utente;
-		\item L'utente da interfaccia grafica seleziona un flusso di dati tra quelli disponibili nell'elenco;
-		\item L'utente conferma la selezione;
-		\item Il Sistema prende in carico il flusso di dati selezionato dall'utente e lo salva localmente.
+		\item L'utente ha correttamente collegato il plug-in al Server;
+		\item L'utente, dal pannello di configurazione del plug-in, individua il menù a tendina contenente i database disponibili;
+		\item L'utente seleziona il database desiderato;
+		\item L'utente clicca sul pulsante per confermare la selezione;
+		\item Il Sistema salva la selezione e ottiene i flussi disponibili dal database.
+	\end{enumerate} & N.I. \\
+\hline
+
+\rowcolor{grigio}TV0-2.5.3.2 & ROF2.5.3.2 &
+	\textbf{Obiettivo}: verificare che il sistema metta a disposizione dell'utente una lista dei database disponibili. \newline
+	\textbf{Procedimento}:
+	\begin{enumerate}
+		\item L'utente ha correttamente collegato il plug-in al Server;
+		\item L'utente dal pannello di configurazione del plug-in, individua l'area per la selezione del database;
+		\item L'utente all'interno dell'area per la selezione del database, individua il menù a tendina contenente i nomi dei database disponibili;
+		\item L'utente, cliccando sul menù a tendina precedentemente individuato, visualizza la lista dei nomi dei database disponibili.	\end{enumerate} & N.I. \\
+\hline
+
+TV0-2.5.3.3 & ROF2.5.3.3 &
+	\textbf{Obiettivo}: verificare che il sistema notifichi all'utente tramite un messaggio la conferma di collegamento al database. \newline
+	\textbf{Procedimento}:
+	\begin{enumerate}
+		\item L'utente ha correttamente collegato il plug-in al Server;
+		\item L'utente, dal pannello di configurazione del plug-in, individua l'area per la selezione del database;
+		\item L'utente all'interno dell'area per la selezione del database, individua il menù a tendina contenente i nomi dei database disponibili;
+		\item L'utente seleziona il database desiderato tra quelli disponibili;
+		\item L'utente clicca sul pulsante di conferma;
+		\item L'utente visualizza una finestra con un messaggio a schermo che notifica l'avvenuto collegamento al database.		
+			\end{enumerate} & N.I. \\
+\hline
+
+\rowcolor{grigio}TV0-2.5.3.4 & ROF2.5.3.4 &
+	\textbf{Obiettivo}: verificare che il sistema metta a disposizione dell'utente un elenco delle tabelle del database disponibili. \newline
+	\textbf{Procedimento}:
+	\begin{enumerate}
+		\item L'utente ha correttamente collegato il plug-in al Server;
+		\item L'utente ha correttamente caricato una rete bayesiana;
+		\item L'utente ha precedentemente collegato un database;
+		\item L'utente clicca su un nodo per visualizzarne le impostazioni di collegamento;
+		\item Il Sistema fa apparire una finestra con le impostazioni necessarie al collegamento;
+		\item L'utente clicca sul menù a tendina contenente le tabelle del database;
+		\item L'utente visualizza la lista delle tabelle disponibili.
+			\end{enumerate} & N.I. \\
+\hline
+
+TV0-2.5.3.5 & ROF2.5.3.5 &
+	\textbf{Obiettivo}: verificare che l'utente possa selezionare una tabella del database precedentemente selezionato. \newline
+	\textbf{Procedimento}:
+	\begin{enumerate}
+		\item L'utente ha correttamente collegato il plug-in al Server;
+		\item L'utente ha correttamente caricato una rete bayesiana;
+		\item L'utente ha precedentemente collegato un database;
+		\item L'utente clicca su un nodo per visualizzarne le impostazioni di collegamento;
+		\item Il Sistema fa apparire una finestra con le impostazioni necessarie al collegamento;
+		\item L'utente clicca sul menù a tendina contenente le tabelle del database;
+		\item L'utente visualizza la lista delle tabelle disponibili;
+		\item L'utente clicca sul nome della tabella desiderata.
+			\end{enumerate} & N.I. \\
+\hline
+
+\rowcolor{grigio}TV0-2.5.3.6 & ROF2.5.3.6 &
+	\textbf{Obiettivo}: verificare che il sistema aggiorni i flussi dati disponibili in base alla selezione della tabella del database. \newline
+	\textbf{Procedimento}:
+	\begin{enumerate}
+		\item L'utente ha correttamente collegato il plug-in al Server;
+		\item L'utente ha correttamente caricato una rete bayesiana;
+		\item L'utente ha precedentemente collegato un database;
+		\item L'utente clicca su un nodo per visualizzarne le impostazioni di collegamento;
+		\item Il Sistema fa apparire una finestra con le impostazioni necessarie al collegamento;
+		\item L'utente clicca sul menù a tendina contenente le tabelle del database;
+		\item L'utente seleziona la tabella desiderata;
+		\item Il menù a tendina identificato dalla scritta flussi aggiorna i suoi elementi sulla base della tabella selezionata.
+			\end{enumerate} & N.I. \\
+\hline
+
+TV0-2.5.4 & ROF2.5.4 &
+	\textbf{Obiettivo}: verificare che l'utente abbia la possibilità di selezionare un flusso dati desiderato coerente con la sorgente dati e  una corrispondente tabella precedentemente selezionate. \newline
+	\textbf{Procedimento}:
+	\begin{enumerate}
+		\item L'utente ha correttamente collegato il plug-in al Server;
+		\item L'utente ha correttamente caricato una rete bayesiana;
+		\item L'utente ha precedentemente collegato un database;
+		\item L'utente clicca su un nodo da collegare ad un flusso dati;
+		\item Il Sistema fa apparire una finestra con le impostazioni per il collegamento;
+		\item L'utente seleziona la tabella;
+		\item L'utente seleziona il flusso dati desiderato;
+		\item Il Sistema salva le impostazioni scelte dall'utente.
 	\end{enumerate}
 	& N.I. \\
 \hline
-TV0-2.5.5 & ROF2.5.5 &
+
+\rowcolor{grigio}TV0-2.5.5 & ROF2.5.5 &
 	\textbf{Obiettivo}: verificare che il Sistema mostri la lista dei possibili stati del nodo selezionato. \newline
 	\textbf{Procedimento}:
 	\begin{enumerate}
-		\item L'utente seleziona un nodo dalla lista di nodi appartenenti alla rete bayesiana caricata dall'utente;
-		\item Il Sistema modifica l'interfaccia utente e mostra una lista dei possibili stati del nodo selezionato dall'utente, i quali sono stati inizializzati alla creazione delle rete bayesiana precedentemente caricata dall'utente.
+		\item L'utente ha correttamente collegato il plug-in al Server;
+		\item L'utente ha correttamente caricato una rete bayesiana;
+		\item L'utente ha precedentemente collegato un database;
+		\item Il Sistema fa apparire una finestra nella quale è presente   una lista dei possibili stati del nodo selezionato dall'utente, i quali sono stati inizializzati alla creazione delle rete bayesiana precedentemente caricata dall'utente.
 	\end{enumerate}
 	& N.I. \\
 \hline
-\rowcolor{grigio} TV0-2.5.6 & ROF2.5.6 &
-	\textbf{Obiettivo}: verificare che il Sistema metta a disposizione, per ogni stato del nodo, i campi dati necessari alla definizione di un livello di soglia connesso al flusso dati selezionato. \newline
+
+TV0-2.5.6 & ROF2.5.6 &
+	\textbf{Obiettivo}: verificare che il Sistema metta a disposizione, per ogni stato del nodo, un pulsante necessario all'aggiunta di un livello di soglia connesso al flusso dati selezionato. \newline
 	\textbf{Procedimento}:
 	\begin{enumerate}
-		\item Il Sistema modifica l'interfaccia utente mostrando una lista di nodi appartenenti alla rete bayesiana precedentemente caricata;
+		\item L'utente ha correttamente collegato il plug-in al Server;
+		\item L'utente ha correttamente caricato una rete bayesiana;
+		\item L'utente ha precedentemente collegato un database;
 		\item L'utente seleziona un nodo da quelli disponibili appartenente alla rete bayesiana;
-		\item Il Sistema, una volta che l'utente ha selezionato un nodo della rete, modifica l'interfaccia utente mostrando gli appositi campi dati, per ogni stato definito nel nodo selezionato dall'utente.
+		\item Il Sistema, una volta che l'utente ha selezionato un nodo della rete, fa apparire una finestra con gli appositi pulsanti, per ogni stato definito nel nodo selezionato dall'utente;
+		\item L'utente clicca sul pulsante relativo allo stato di cui desidera aggiungere una soglia;
+		\item Il Sistema modifica l'interfaccia utente in modo da visualizzare la nuova soglia.
 	\end{enumerate}
 	& N.I. \\
 \hline
-TV0-2.5.6.1 & ROF2.5.6.1 &
+
+\rowcolor{grigio}TV0-2.5.6.1 & ROF2.5.6.1 &
 	\textbf{Obiettivo}: verificare che il Sistema metta a disposizione un campo dati numerico che permetta la definizione della soglia. \newline
 	\textbf{Procedimento}:
 	\begin{enumerate}
+		\item L'utente ha correttamente collegato il plug-in al Server;
+		\item L'utente ha correttamente caricato una rete bayesiana;
+		\item L'utente ha precedentemente collegato un database;
 		\item Il Sistema modifica l'interfaccia utente mostrando una lista di nodi appartenenti alla rete bayesiana precedentemente caricata;
 		\item L'utente seleziona un nodo da quelli disponibili appartenente alla rete bayesiana;
-		\item Il Sistema, una volta che l'utente ha selezionato un nodo della rete, modifica l'interfaccia utente mostrando gli appositi campi dati, per ogni stato definito nel nodo selezionato dall'utente;
-		\item Il Sistema mette a disposizione un campo dati numerico per definire la soglia dello stato precedentemente selezionato dall'utente;
+		\item Il Sistema, una volta che l'utente ha selezionato un nodo della rete, fa apparire una finestra contenente gli appositi pulsanti, per ogni stato definito nel nodo selezionato dall'utente;
+		\item L'utente clicca su un pulsante relativo ad uno stato;
+		\item Il Sistema fa apparire un campo dati numerico per definire la soglia dello stato precedentemente selezionato dall'utente;
 		\item L'utente imposta una soglia a valore numerico nel campo dati apposito, definendo il valore di soglia dello stato preso in considerazione, per il nodo precedentemente selezionato.
 	\end{enumerate}
 	& N.I. \\
 \hline
-\rowcolor{grigio} TV0-2.5.6.2 & ROF2.5.6.2 &
-	\textbf{Obiettivo}: verificare che il Sistema metta a disposizione un campo dati che permetta di definire se il valore numerico definito per la soglia sia un minimo oppure un massimo. \newline
+
+TV0-2.5.6.2 & ROF2.5.6.2 &
+	\textbf{Obiettivo}: verificare che il Sistema metta a disposizione un menù a tendina che permetta di definire se il valore numerico definito per la soglia sia un minimo oppure un massimo. \newline
 	\textbf{Procedimento}:
 	\begin{enumerate}
+		\item L'utente ha correttamente collegato il plug-in al Server;
+		\item L'utente ha correttamente caricato una rete bayesiana;
+		\item L'utente ha precedentemente collegato un database;
 		\item Il Sistema modifica l'interfaccia utente mostrando una lista di nodi appartenenti alla rete bayesiana precedentemente caricata;
 		\item L'utente seleziona un nodo da quelli disponibili appartenente alla rete bayesiana;
-		\item Il Sistema, una volta che l'utente ha selezionato un nodo della rete, modifica l'interfaccia utente mostrando gli appositi campi dati, per ogni stato definito nel nodo selezionato dall'utente;
+		\item Il Sistema, una volta che l'utente ha selezionato un nodo della rete, fa apparire una finestra contenente gli appositi pulsanti per l'aggiunta di una soglia relativa ad ogni stato;
+		\item L'utente clicca sul pulsante relativo allo stato desiderato;
+		\item Il sistema crea una nuova soglia e la visualizza;
 		\item Il Sistema mette a disposizione un campo dati numerico per definire la soglia dello stato precedentemente selezionato dall'utente;
-		\item Il Sistema modifica l'interfaccia utente aggiungendo un campo dati per definire se la soglia definita dall'utente è un massimo o un minimo;
+		\item Il Sistema modifica l'interfaccia utente aggiungendo un campo menù a tendina per la scelta di soglia di minimo o di massimo;
 		\item L'utente seleziona se la soglia presa in considerazione sia di massimo o di minimo.
 	\end{enumerate}
 	& N.I. \\
 \hline
-TV1-2.5.6.3 & RDF2.5.6.3  &
-	\textbf{Obiettivo}: verificare se il Sistema metta a disposizione un campo dati che permetta di definire se una soglia è critica o meno.  \newline
+
+\rowcolor{grigio}TV1-2.5.6.3 & RDF2.5.6.3  &
+	\textbf{Obiettivo}: verificare che il Sistema metta a disposizione un campo dati che permetta di definire se una soglia è critica o meno.  \newline
 	\textbf{Procedimento}:
 	\begin{enumerate}
+		\item L'utente ha correttamente collegato il plug-in al Server;
+		\item L'utente ha correttamente caricato una rete bayesiana;
+		\item L'utente ha precedentemente collegato un database;
 		\item Il Sistema modifica l'interfaccia utente mostrando una lista di nodi appartenenti alla rete bayesiana precedentemente caricata;
 		\item L'utente seleziona un nodo da quelli disponibili appartenente alla rete bayesiana;
-		\item Il Sistema, una volta che l'utente ha selezionato un nodo della rete, modifica l'interfaccia utente mostrando gli appositi campi dati, per ogni stato definito nel nodo selezionato dall'utente;
-		\item Il Sistema aggiunge a interfaccia utente una check box per definire se la soglia presa in considerazione dall'utente sia una soglia critica o meno;
+		\item Il Sistema, una volta che l'utente ha selezionato un nodo della rete, fa apparire una finestra contenente gli appositi pulsanti per l'aggiunta di una soglia relativa ad ogni stato;
+		\item L'utente clicca sul pulsante relativo allo stato desiderato;
+		\item Il sistema crea una nuova soglia e la visualizza;
+		\item Il Sistema mette a disposizione dell'utente una check box per definire se la soglia presa in considerazione dall'utente sia una soglia critica o meno;
 		\item L'utente può selezionare la check box definendo cosi una soglia critica o meno.
 	\end{enumerate}
 	& N.I. \\
 \hline
-\rowcolor{grigio} TV0-2.5.7 & ROF2.5.7 &
-	\textbf{Obiettivo}: verificare che il Sistema metta a disposizione due campi dati per definire correttamente un livello di soglia al di sotto, o al di sopra del quale la probabilità associata a quel dato stato risulti pari al 100\%, mentre le probabilità associate agli altri stati risultino pari allo 0\%. \newline
+
+TV0-2.5.6.4 & ROF2.5.6.4  &
+	\textbf{Obiettivo}: verificare che il Sistema metta a disposizione un pulsante per l'aggiunta di una soglia di un nodo.Il click di tale pulsante deve portare alla comparsa dei campi editabili per la modifica della stessa. \newline
 	\textbf{Procedimento}:
 	\begin{enumerate}
+		\item L'utente ha correttamente collegato il plug-in al Server;
+		\item L'utente ha correttamente caricato una rete bayesiana;
+		\item L'utente ha precedentemente collegato un database;
 		\item Il Sistema modifica l'interfaccia utente mostrando una lista di nodi appartenenti alla rete bayesiana precedentemente caricata;
 		\item L'utente seleziona un nodo da quelli disponibili appartenente alla rete bayesiana;
-		\item Il Sistema, una volta che l'utente ha selezionato un nodo della rete, modifica l'interfaccia utente mostrando gli appositi campi dati, per ogni stato definito nel nodo selezionato dall'utente;
-		\item Il Sistema modifica l'interfaccia utente aggiungendo un campo dati al di sopra del quale la probabilità associata a quel stato risulti 100\%;
-		\item Il Sistema modifica l'interfaccia utente aggiungendo un campo dati al di sotto del quale la probabilità associata a quello stato risulti 0\%.
+		\item Il Sistema, una volta che l'utente ha selezionato un nodo della rete, fa apparire una finestra contenente gli appositi pulsanti per l'aggiunta di una soglia relativa ad ogni stato;
+		\item L'utente clicca su un pulsante relativo allo stato di cui desidera aggiungere una soglia;
+		\item Il sistema modifica l'interfaccia utente facendo apparire i campi per la modifica della soglia in questione.
 	\end{enumerate}
 	& N.I. \\
 \hline
-TV0-2.5.8 & ROF2.5.8 &
+
+\rowcolor{grigio}TV1-2.5.6.5 & RDF2.5.6.5  &
+	\textbf{Obiettivo}: verificare che il Sistema consenta l'aggiunta di molteplici soglie relative allo stesso stato di un nodo. \newline
+	\textbf{Procedimento}:
+	\begin{enumerate}
+		\item L'utente ha correttamente collegato il plug-in al Server;
+		\item L'utente ha correttamente caricato una rete bayesiana;
+		\item L'utente ha precedentemente collegato un database;
+		\item Il Sistema modifica l'interfaccia utente mostrando una lista di nodi appartenenti alla rete bayesiana precedentemente caricata;
+		\item L'utente seleziona un nodo da quelli disponibili appartenente alla rete bayesiana;
+		\item Il Sistema, una volta che l'utente ha selezionato un nodo della rete, fa apparire una finestra contenente gli appositi pulsanti per l'aggiunta di una soglia relativa ad ogni stato;
+		\item L'utente clicca su un pulsante relativo allo stato di cui desidera aggiungere una soglia;
+		\item Il sistema modifica l'interfaccia utente facendo apparire i campi per la modifica della soglia in questione;
+		\item L'utente ha la possibilità di cliccare nuovamente sul pulsante al fine di aggiungere ulteriori soglie.
+	\end{enumerate}
+	& N.I. \\
+\hline
+
+TV0-2.5.7 & ROF2.5.7 &
+	\textbf{Obiettivo}: verificare che il Sistema metta a disposizione un campo dati per definire correttamente un livello di soglia al di sotto, o al di sopra del quale la probabilità associata a quel dato stato risulti pari al 100\%, mentre le probabilità associate agli altri stati risultino pari allo 0\%. \newline
+	\textbf{Procedimento}:
+	\begin{enumerate}
+		\item L'utente ha correttamente collegato il plug-in al Server;
+		\item L'utente ha correttamente caricato una rete bayesiana;
+		\item L'utente ha precedentemente collegato un database;
+		\item Il Sistema modifica l'interfaccia utente mostrando una lista di nodi appartenenti alla rete bayesiana precedentemente caricata;
+		\item L'utente seleziona un nodo da quelli disponibili appartenente alla rete bayesiana;
+		\item Il Sistema, una volta che l'utente ha selezionato un nodo della rete, fa apparire una finestra contenente gli appositi pulsanti per l'aggiunta di una soglia relativa ad ogni stato;
+		\item L'utente clicca sul pulsante relativo allo stato desiderato;
+		\item Il sistema crea una nuova soglia e la visualizza;
+		\item Il Sistema modifica l'interfaccia utente aggiungendo un campo dati al di sopra o al di sotto del quale la probabilità associata a quello stato risulti del 100\% e quelle degli altri stati siano dello 0\%;
+	\end{enumerate}
+	& N.I. \\
+\hline
+
+\rowcolor{grigio}TV0-2.5.8 & ROF2.5.8 &
 	\textbf{Obiettivo}: verificare che il Sistema metta a disposizione un bottone per la conferma delle soglie definite dall'utente. \newline
 	\textbf{Procedimento}:
 	\begin{enumerate}
+		\item L'utente ha correttamente collegato il plug-in al Server;
+		\item L'utente ha correttamente caricato una rete bayesiana;
+		\item L'utente ha precedentemente collegato un database;
 		\item Il Sistema modifica l'interfaccia utente mostrando una lista di nodi appartenenti alla rete bayesiana precedentemente caricata;
 		\item L'utente seleziona un nodo da quelli disponibili appartenente alla rete bayesiana;
-		\item Il Sistema, una volta che l'utente ha selezionato un nodo della rete, modifica l'interfaccia utente mostrando gli appositi campi dati, per ogni stato definito nel nodo selezionato dall'utente;
-		\item Il Sistema modifica l'interfaccia utente aggiungendo un campo dati al di sopra del quale la probabilità associata a quel stato risulta 100\%;
-		\item Il Sistema modifica l'interfaccia utente aggiungendo un campo dati al di sotto del quale la probabilità associata a quel stato risulta 0\%;
-		\item Il Sistema modifica l'interfaccia utente aggiungendo un bottone per confermare le soglie definite dall'utente.
+		\item Il Sistema, una volta che l'utente ha selezionato un nodo della rete, fa apparire una finestra contenente gli appositi pulsanti per l'aggiunta di una soglia relativa ad ogni stato;
+		\item L'utente clicca sul pulsante relativo allo stato desiderato;
+		\item Il sistema crea una nuova soglia e la visualizza;
+		\item Il Sistema fa apparire un bottone per la conferma delle soglie definite dall'utente.
 	\end{enumerate}
 	& N.I. \\
 \hline
-\rowcolor{grigio} TV0-2.5.9 & ROF2.5.9 &
+
+TV0-2.5.9 & ROF2.5.9 &
 	\textbf{Obiettivo}: verificare che il Sistema mostri un messaggio d'errore nel caso in cui l'utente abbia confermato le proprie scelte riguardanti il collegamento dei singolo nodo in esame senza aver correttamente definito i livelli di soglia. \newline
+	\textbf{Procedimento}:
+	\begin{enumerate}
+		\item L'utente ha correttamente collegato il plug-in al Server;
+		\item L'utente ha correttamente caricato una rete bayesiana;
+		\item L'utente ha precedentemente collegato un database;
+		\item Il Sistema modifica l'interfaccia utente mostrando una lista di nodi appartenenti alla rete bayesiana precedentemente caricata;
+		\item L'utente seleziona un nodo da quelli disponibili appartenente alla rete bayesiana;
+		\item Il Sistema, una volta che l'utente ha selezionato un nodo della rete, fa apparire una finestra contenente gli appositi pulsanti per l'aggiunta di una soglia relativa ad ogni stato;
+		\item L'utente clicca sul pulsante relativo allo stato desiderato;
+		\item Il sistema crea una nuova soglia e la visualizza;
+		\item Il Sistema fa apparire un bottone per la conferma delle soglie definite dall'utente.
+		\item L'utente clicca sul bottone di conferma nonostante abbia definito in maniera non corretta le soglie del nodo;
+		\item Il Sistema fa apparire un messaggio di errore specificando il motivo dell'incorretta definizione delle stesse.
+	\end{enumerate}
+	& N.I. \\
+\hline
+
+\rowcolor{grigio}TV0-2.5.9.1 & ROF2.5.9.1  &
+	\textbf{Obiettivo}: il sistema nega la conferma di avvenuto collegamento di un nodo ad un flusso dati nel caso in cui sia stata confermata la definizione delle soglie senza la scelta di un flusso dati. \newline
+	\textbf{Procedimento}:
+	\begin{enumerate}
+		\item L'utente ha correttamente collegato il plug-in al Server;
+		\item L'utente ha correttamente caricato una rete bayesiana;
+		\item L'utente ha precedentemente collegato un database;
+		\item Il Sistema modifica l'interfaccia utente mostrando una lista di nodi appartenenti alla rete bayesiana precedentemente caricata;
+		\item L'utente seleziona un nodo da quelli disponibili appartenente alla rete bayesiana;
+		\item Il Sistema, una volta che l'utente ha selezionato un nodo della rete, fa apparire una finestra contenente i menù a tendina per la scelta della tabella e del flusso dati;
+		\item L'utente clicca il pulsante di conferma senza aver selezionato un flusso dati;
+		\item Il Sistema nega il collegamento al flusso dati;
+		\item Il sistema fa apparire un messaggio contenente l'errore all'utente.
+	\end{enumerate}
+	& N.I. \\
+\hline
+
+TV0-2.5.9.2 & ROF2.5.9.2  &
+	\textbf{Obiettivo}: il sistema nega la conferma di avvenuto collegamento di un nodo ad un flusso dati nel caso in cui sia stata confermata la definizione delle soglie senza la definizione di almeno una soglia. \newline
+	\textbf{Procedimento}:
+	\begin{enumerate}
+		\item L'utente ha correttamente collegato il plug-in al Server;
+		\item L'utente ha correttamente caricato una rete bayesiana;
+		\item L'utente ha precedentemente collegato un database;
+		\item Il Sistema modifica l'interfaccia utente mostrando una lista di nodi appartenenti alla rete bayesiana precedentemente caricata;
+		\item L'utente seleziona un nodo da quelli disponibili appartenente alla rete bayesiana;
+		\item Il Sistema, una volta che l'utente ha selezionato un nodo della rete, fa apparire una finestra contenente i menù a tendina per la scelta della tabella e del flusso dati;
+		\item L'utente clicca il pulsante di conferma senza aver aggiunto almeno una soglia;
+		\item Il Sistema nega il collegamento al flusso dati;
+		\item Il sistema fa apparire un messaggio contenente l'errore all'utente.
+	\end{enumerate}
+	& N.I. \\
+\hline
+
+\rowcolor{grigio}TV0-2.5.9.3 & ROF2.5.9.3  &
+	\textbf{Obiettivo}: il sistema nega la conferma di avvenuto collegamento di un nodo ad un flusso dati nel caso in cui sia stata confermata la definizione delle soglie, avendo definito soglie tra loro in conflitto. \newline
 	\textbf{Procedimento}:
 	\begin{enumerate}
 		\item Il Sistema modifica l'interfaccia utente mostrando una lista di nodi appartenenti alla rete bayesiana precedentemente caricata;
 		\item L'utente seleziona un nodo da quelli disponibili appartenente alla rete bayesiana;
-		\item Il Sistema, una volta che l'utente ha selezionato un nodo della rete, modifica l'interfaccia utente mostrando gli appositi campi dati, per ogni stato definito nel nodo selezionato dall'utente;
-		\item Il Sistema modifica l'interfaccia utente aggiungendo un bottone per confermare le soglie definite dall'utente;
-		\item L'utente preme il bottone di conferma;
-		\item Il Sistema mostra a interfaccia utente un messaggio d'errore poiché non sono state definite le soglie dall'utente.
+		\item Il Sistema, una volta che l'utente ha selezionato un nodo della rete, fa apparire una finestra contenente i menù a tendina per la scelta della tabella e del flusso dati;
+		\item L'utente aggiunge varie soglie;
+		\item L'utente clicca il pulsante di conferma avendo definito soglie tra loro in conflitto;
+		\item Il Sistema nega il collegamento al flusso dati;
+		\item Il sistema fa apparire un messaggio contenente l'errore all'utente.
 	\end{enumerate}
 	& N.I. \\
 \hline
-TV0-2.5.10 & ROF2.5.10 &
+
+TV0-2.5.9.4 & ROF2.5.9.4  &
+	\textbf{Obiettivo}: il sistema nega la conferma di avvenuto collegamento di un nodo ad un flusso dati nel caso in cui sia stata confermata la definizione delle soglie in maniera errata, mostrando un errore coerente. \newline
+	\textbf{Procedimento}:
+	\begin{enumerate}
+		\item L'utente ha correttamente collegato il plug-in al Server;
+		\item L'utente ha correttamente caricato una rete bayesiana;
+		\item L'utente ha precedentemente collegato un database;
+		\item Il Sistema modifica l'interfaccia utente mostrando una lista di nodi appartenenti alla rete bayesiana precedentemente caricata;
+		\item L'utente seleziona un nodo da quelli disponibili appartenente alla rete bayesiana;
+		\item Il Sistema, una volta che l'utente ha selezionato un nodo della rete, fa apparire una finestra contenente i menù a tendina per la scelta della tabella e del flusso dati;
+		\item L'utente aggiunge varie soglie in conflitto tra loro, non seleziona correttamente un flusso dati o non definisce soglie;
+		\item L'utente clicca il pulsante di conferma con le impostazioni precedentemente definite;
+		\item Il Sistema nega il collegamento al flusso dati;
+		\item Il sistema fa apparire un messaggio contenente l'errore diverso in base agli errori commessi all'utente.
+	\end{enumerate}
+	& N.I. \\
+\hline
+
+\rowcolor{grigio}TV0-2.5.10 & ROF2.5.10 &
 	 \textbf{Obiettivo}: verificare che il Sistema aggiorni la lista di checkbox, registrando le modifiche apportate dall'utente. \newline
 	 \textbf{Procedimento}:
 	 \begin{enumerate}
+		\item L'utente ha correttamente collegato il plug-in al Server;
+		\item L'utente ha correttamente caricato una rete bayesiana;
+		\item L'utente ha precedentemente collegato un database;
 		\item Il Sistema modifica l'interfaccia utente mostrando una lista di nodi appartenenti alla rete bayesiana precedentemente caricata;
-		\item Il Sistema modifica l'interfaccia utente creando una lista di nodi appartenenti alla rete bayesiana;
+		\item Il Sistema modifica l'interfaccia utente creando una lista di nodi appartenenti alla rete bayesiana con le relative checkbox;
 		\item L'utente seleziona un nodo desiderato;
-		\item Il Sistema, alla selezione del nodo da parte dell'utente, modifica l'interfaccia utente mostrando la checkbox di stato relativa al nodo selezionato;
-		\item L'utente interagisce con l'interfaccia apportando modifiche;
+		\item L'utente interagisce con il collegamento del nodo; 
 		\item Il Sistema rileva le modifiche effettuate dall'utente ed aggiorna l'interfaccia utente modificando le checkbox ridefinite da quest'ultimo.
 	 \end{enumerate}
 	& N.I. \\
 \hline
+
+TV0-2.5.11 & ROF2.5.11  &
+	\textbf{Obiettivo}: verificare che il sistema metta a disposizione dell'utente un pulsante per la rimozione di una soglia qualora l'utente desideri rimuoverla. \newline
+	\textbf{Procedimento}:
+	\begin{enumerate}
+		\item L'utente ha correttamente collegato il plug-in al Server;
+		\item L'utente ha correttamente caricato una rete bayesiana;
+		\item L'utente ha precedentemente collegato un database;
+		\item Il Sistema modifica l'interfaccia utente mostrando una lista di nodi appartenenti alla rete bayesiana precedentemente caricata;
+		\item L'utente seleziona un nodo da quelli disponibili appartenente alla rete bayesiana;
+		\item Il Sistema, una volta che l'utente ha selezionato un nodo della rete, fa apparire una finestra contenente i campi per impostare le soglie;
+		\item L'utente aggiunge una soglia cliccando sull'apposito pulsante;
+		\item Il sistema modifica l'interfaccia facendo apparire un pulsante per la rimozione della soglia precedentemente creata;
+		\item L'utente clicca sul pulsante per rimuovere la soglia;
+		\item Il Sistema rimuove dalle soglie salvate la soglia in questione.
+	\end{enumerate}
+	& N.I. \\
+\hline
+
 \rowcolor{grigio} TV0-2.6 & ROF2.6 &
-	\textbf{Obiettivo}: verificare che il Sistema metta a disposizione un bottone per confermare il collegamento dei nodi ai flussi dati. \newline
+	\textbf{Obiettivo}: verificare che l'utente possa scollegare un nodo dal flusso dati. \newline
 	\textbf{Procedimento}:
 	\begin{enumerate}
+		\item L'utente ha correttamente collegato il plug-in al Server;
+		\item L'utente ha correttamente caricato una rete bayesiana;
+		\item L'utente ha precedentemente collegato un database;
 		\item Il Sistema modifica l'interfaccia utente mostrando una lista di nodi appartenenti alla rete bayesiana precedentemente caricata;
 		\item Il Sistema modifica l'interfaccia utente creando una lista di nodi appartenenti alla rete bayesiana;
-		\item Il Sistema modifica l'interfaccia utente creando un bottone per la conferma del collegamento dei nodi presi in considerazione dall'utente, ai flussi dati.
+		\item L'utente collega correttamente un nodo ad un flusso dati;
+		\item Il Sistema modifica l'interfaccia utente facendo apparire vicino al nodo collegato un pulsante per scollegarlo dal flusso;
+		\item L'utente clicca sul pulsante per scollegare il nodo;
+		\item Il sistema registra lo scollegamento dal flusso dati ed elimina le soglie impostate.
 	\end{enumerate}
 	& N.I. \\
 \hline
+
+TV0-2.6.1 & ROF2.6.1 &
+	\textbf{Obiettivo}: verificare che il Sistema metta a disposizione un bottone per eliminare il collegamento di un nodo al flusso dati. \newline
+	\textbf{Procedimento}:
+	\begin{enumerate}
+		\item L'utente ha correttamente collegato il plug-in al Server;
+		\item L'utente ha correttamente caricato una rete bayesiana;
+		\item L'utente ha precedentemente collegato un database;
+		\item Il Sistema modifica l'interfaccia utente mostrando una lista di nodi appartenenti alla rete bayesiana precedentemente caricata;
+		\item L'utente collega correttamente un nodo ad un flusso dati;
+		\item Il Sistema modifica l'interfaccia utente facendo apparire vicino al nodo collegato un pulsante per scollegarlo dal flusso;
+		\item L'utente clicca il pulsante per scollegare il nodo;
+		\item Il nodo viene scollegato dal flusso dati.
+	\end{enumerate}
+	& N.I. \\
+\hline
+
+\rowcolor{grigio}TV0-2.6.2 & ROF2.6.2 &
+	\textbf{Obiettivo}: verificare che il Sistema resetti le impostazioni qualora l'utente scolleghi un nodo dal flusso dati. \newline
+	\textbf{Procedimento}:
+	\begin{enumerate}
+		\item L'utente ha correttamente collegato il plug-in al Server;
+		\item L'utente ha correttamente caricato una rete bayesiana;
+		\item L'utente ha precedentemente collegato un database;
+		\item Il Sistema modifica l'interfaccia utente mostrando una lista di nodi appartenenti alla rete bayesiana precedentemente caricata;
+		\item L'utente collega correttamente un nodo ad un flusso dati;
+		\item Il Sistema modifica l'interfaccia utente facendo apparire vicino al nodo collegato un pulsante per scollegarlo dal flusso;
+		\item L'utente clicca sul pulsante per scollegare un nodo;
+		\item Il Sistema cancella le soglie precedentemente impostate e aggiunge nuovamente ai flussi dati disponibili il flusso precedentemente occupato, inoltre registra lo scollegamento. 
+	\end{enumerate}
+	& N.I. \\
+\hline
+
+TV0-2.6.3 & ROF2.6.3 &
+	\textbf{Obiettivo}: verificare che il Sistema aggiorni la checkbox togliendo la spunta relativa al nodo dopo il suo scollegamento dal flusso dati. \newline
+	\textbf{Procedimento}:
+	\begin{enumerate}
+		\item L'utente ha correttamente collegato il plug-in al Server;
+		\item L'utente ha correttamente caricato una rete bayesiana;
+		\item L'utente ha precedentemente collegato un database;
+		\item Il Sistema modifica l'interfaccia utente mostrando una lista di nodi appartenenti alla rete bayesiana precedentemente caricata;
+		\item L'utente collega correttamente un nodo ad un flusso dati;
+		\item Il Sistema modifica l'interfaccia utente facendo apparire vicino al nodo collegato un pulsante per scollegarlo dal flusso;
+		\item L'utente clicca sul pulsante per scollegare un nodo;
+		\item Il Sistema modifica l'interfaccia utente deselezionando la checkbox relativa al collegamento ad un flusso dati del nodo in questione. 
+	\end{enumerate}
+	& N.I. \\
+\hline
+
+\rowcolor{grigio}TV0-2.6.4 & ROF2.6.4 &
+	\textbf{Obiettivo}: verificare che il Sistema faccia sparire il pulsante per lo scollegamento di un nodo dal flusso dati dopo che esso viene scollegato. \newline
+	\textbf{Procedimento}:
+	\begin{enumerate}
+		\item L'utente ha correttamente collegato il plug-in al Server;
+		\item L'utente ha correttamente caricato una rete bayesiana;
+		\item L'utente ha precedentemente collegato un database;
+		\item Il Sistema modifica l'interfaccia utente mostrando una lista di nodi appartenenti alla rete bayesiana precedentemente caricata;
+		\item L'utente collega correttamente un nodo ad un flusso dati;
+		\item Il Sistema modifica l'interfaccia utente facendo apparire vicino al nodo collegato un pulsante per scollegarlo dal flusso;
+		\item L'utente clicca sul pulsante per scollegare un nodo;
+		\item Il Sistema modifica l'interfaccia utente facendo scomparire il pulsante per lo scollegamento del nodo dal flusso di dati. 
+	\end{enumerate}
+	& N.I. \\
+\hline
+
 TV0-2.7 & ROF2.7 &
-	\textbf{Obiettivo}: verificare che il Sistema mostri un messaggio d'errore nel caso in cui l'utente abbia confermato il collegamento dei nodi senza averne effettivamente collegati alcuno. \newline
+	\textbf{Obiettivo}: verificare che il Sistema faccia apparire un messaggio di conferma di avvenuto collegamento di un nodo al flusso di dati. \newline
 	\textbf{Procedimento}:
 	\begin{enumerate}
+		\item L'utente ha correttamente collegato il plug-in al Server;
+		\item L'utente ha correttamente caricato una rete bayesiana;
+		\item L'utente ha precedentemente collegato un database;
 		\item Il Sistema modifica l'interfaccia utente mostrando una lista di nodi appartenenti alla rete bayesiana precedentemente caricata;
-		\item Il Sistema modifica l'interfaccia utente creando una lista di nodi appartenenti alla rete bayesiana;
-		\item Il Sistema modifica l'interfaccia utente creando un bottone per la conferma del collegamento dei nodi presi in considerazione dall'utente, ai flussi dati;
-		\item L'utente preme il pulsante di conferma collegamento nodi;
-		\item Il Sistema mostra a interfaccia utente un messaggio d'errore poiché l'utente non ha effettuato effettivamente nessun collegamento.
+		\item L'utente collega correttamente un nodo al flusso dati;
+		\item Il Sistema fa apparire all'utente un messaggio di avvenuto collegamento del nodo al flusso dati selezionato.
 	\end{enumerate}
 	& N.I. \\
 \hline
-\rowcolor{grigio} TV0-2.8 & ROF2.8 &
-	\textbf{Obiettivo}: verificare che il Sistema permetta la modifica dei collegamenti dei nodi ai flussi dati, dopo aver confermato le proprie scelte. \newline
-	\textbf{Procedimento}:
-	\begin{enumerate}
-		\item Il Sistema modifica l'interfaccia utente mostrando una lista di nodi appartenenti alla rete bayesiana precedentemente caricata;
-		\item Il Sistema modifica l'interfaccia utente creando una lista di nodi appartenenti alla rete bayesiana;
-		\item Il Sistema modifica l'interfaccia utente creando un bottone per la conferma del collegamento dei nodi presi in considerazione dall'utente, ai flussi dati;
-		\item L'utente collega il nodo selezionato a un flusso di dati;
-		\item L'utente preme il pulsante di conferma collegamento nodi;
-		\item Il Sistema aggiunge al pannello di configurazione un bottone per la modifica dei collegamenti definiti dall'utente.
-	\end{enumerate}
-	& N.I. \\
-\hline
-TV0-2.8.1 & ROF2.8.1 &
-	\textbf{Obiettivo}: verificare che il Sistema blocchi l'interazione dell'utente con la lista dei nodi a interfaccia, una volta definiti i collegamenti dall'utente. \newline
-	\textbf{Procedimento}:
-	\begin{enumerate}
-		\item L'utente preme il pulsante di conferma collegamento nodi;
-		\item Il Sistema modifica l'interfaccia utente rendendo la lista dei nodi non interagibile con l'utente.
-	\end{enumerate}
-	& N.I. \\
-\hline
-\rowcolor{grigio} TV0-2.8.2 & ROF2.8.2 &
-	\textbf{Obiettivo}: verificare che il Sistema fornisca un bottone per la modifica dei collegamenti precedentemente definiti dall'utente. \newline
-	\textbf{Procedimento}:
-	\begin{enumerate}
-		\item L'utente da interfaccia accede al pannello di configurazione per sbloccare la modifica dei nodi precedentemente collegati;
-		\item Il Sistema modifica l'interfaccia utente, rendendo interagibile la lista dei nodi.
-	\end{enumerate}
-	& N.I. \\
-\hline
-TV0-2.8.3 & RFF2.8.3 &
-	\textbf{Obiettivo}: verificare che il Sistema interrompa la visualizzazione dei dati nel caso in cui l'utente modifichi o elimini un collegamento. \newline
-	\textbf{Procedimento}:
-	\begin{enumerate}
-		\item L'utente da interfaccia accede al pannello di configurazione per sbloccare la modifica dei nodi precedentemente collegati;
-		\item L'utente modifica o elimina il collegamento desiderato;
-		\item Il Sistema interrompe la visualizzazione dei dati da interfaccia utente per il precedente collegamento; 
-	\end{enumerate}
-	& N.I. \\
-\hline
-\rowcolor{grigio} TV2-2.8.4 & RFF2.8.4 & 
-	\textbf{Obiettivo}: verificare che il sistema elimini eventuali alert associati ai nodi della rete bayesiana nel caso in cui l'utente interagisca con il Sistema per modificare il collegamento dei nodi. \newline
-	\textbf{Procedimento}: 
-	\begin{enumerate}
-		\item L'utente da interfaccia accede al pannello di configurazione per sbloccare la modifica dei nodi precedentemente collegati;
-		\item L'utente modifica o elimina il collegamento desiderato;
-		\item Il Sistema aggiorna l'interfaccia eliminando eventuali alert definiti precedentemente sul collegamento preso in considerazione dall'utente.
-	\end{enumerate}
-	& N.I. \\
-\hline
-TV0-3 & ROF3 &
+
+\rowcolor{grigio}TV0-3 & ROF3 &
 	\textbf{Obiettivi}: verificare che il Sistema permetta la definizione di una politica temporale per il ricalcolo delle probabilità condizionate associate ai nodi della rete bayesiana. \newline
 	\textbf{Procedimento}:
 	\begin{enumerate}
+		\item L'utente ha correttamente collegato il plug-in al Server;
+		\item L'utente ha correttamente caricato una rete bayesiana;
+		\item L'utente ha precedentemente collegato un database;
 		\item L'utente si sposta nel pannello di configurazione delle politiche temporali del plug-in;
 		\item L'utente definisce una politica temporale;
 		\item L'utente conferma la politica temporale;
@@ -426,256 +721,888 @@ TV0-3 & ROF3 &
 	\end{enumerate}
 	& N.I. \\
 \hline
-\rowcolor{grigio}TV0-3.3 & ROF3.3 &
+
+TV0-3.3 & ROF3.3 &
 	\textbf{Obiettivi}: verificare che il Sistema offra la possibilità di definire una politica temporale. \newline
 	\textbf{Procedimento}:
 	\begin{enumerate}
+		\item L'utente ha correttamente collegato il plug-in al Server;
+		\item L'utente ha correttamente caricato una rete bayesiana;
+		\item L'utente ha precedentemente collegato un database;
 		\item L'utente dal pannello di configurazione delle politiche temporali, imposta le politiche temporali desiderate;
 		\item Il Sistema rileva la modifica effettuata dall'utente ed aggiorna la rete bayesiana.
 	\end{enumerate}
 	& N.I. \\
 \hline
- TV0-3.3.1 & ROF3.3.1 &
+
+\rowcolor{grigio}TV0-3.3.1 & ROF3.3.1 &
 	\textbf{Obiettivo}: verificare che il Sistema metta a disposizione un pulsante per accedere al pannello di configurazione di una politica temporale. \newline
 	\textbf{Procedimento}:
 	\begin{enumerate}
-		\item L'utente accede al pannello di configurazione delle politiche temporali del plug-in;
-		\item Il Sistema modifica l'interfaccia utente il pannello per definire una politica temporale.
+		\item L'utente ha correttamente collegato il plug-in al Server;
+		\item L'utente ha correttamente caricato una rete bayesiana;
+		\item L'utente ha precedentemente collegato un database;
+		\item L'utente individua il pulsante per la definizione della politica temporale;
+		\item L'utente clicca sul pulsante per la definizione della politica temporale;
+		\item Il Sistema fa apparire una finestra nella quale è presente il pannello per configurare la politica temporale.
 	\end{enumerate}
 	& N.I. \\
 \hline
-\rowcolor{grigio}TV0-3.3.2 & ROF3.3.2 &
+
+TV0-3.3.2 & ROF3.3.2 &
 	\textbf{Obiettivo}: verificare che il Sistema metta a disposizione un pannello di configurazione con i campi dati adeguati per la definizione di una politica temporale. \newline
 	\textbf{Procedimento}:
 	\begin{enumerate}
+		\item L'utente ha correttamente collegato il plug-in al Server;
+		\item L'utente ha correttamente caricato una rete bayesiana;
+		\item L'utente ha precedentemente collegato un database;
 		\item L'utente preme il pulsante per accedere al pannello di configurazione delle politiche temporali;
-		\item Il Sistema modifica l'interfaccia utente mostrando i campi dati necessari per la definizione di una politica temporale.
+		\item Il Sistema fa apparire una finestra nella quale sono presenti i campi dati per la definizione della politica temporale.
 	\end{enumerate}
 	& N.I. \\
 \hline
- TV0-3.3.2.1 & ROF3.3.2.1 &
-	\textbf{Obiettivo}: verificare che il Sistema metta a disposizione un campo dati numerico per la definizione di un timeout ciclico. \newline
+
+\rowcolor{grigio}TV0-3.3.2.4 & ROF3.3.2.4 &
+	\textbf{Obiettivo}: verificare che il Sistema metta a disposizione un campo dati per la definizione del numero di secondi della politica temporale. \newline
 	\textbf{Procedimento}:
 	\begin{enumerate}
+		\item L'utente ha correttamente collegato il plug-in al Server;
+		\item L'utente ha correttamente caricato una rete bayesiana;
+		\item L'utente ha precedentemente collegato un database;
 		\item L'utente preme il pulsante per accedere al pannello di configurazione delle politiche temporali;
-		\item Il Sistema modifica l'interfaccia utente mostrando un campo dati numerico per la definizione del timeout ciclico.
+		\item Il Sistema fa apparire una finestra nella quale è presente il campo dati relativo alla definizione dei secondi della politica temporale;
+		\item L'utente può modificare il campo dei secondi per modificare l'effettivo valore;
+		\item Il Sistema salva i cambiamenti.
 	\end{enumerate}
 	& N.I. \\
 \hline
-\rowcolor{grigio}TV0-3.3.2.2 & ROF3.3.2.2 &
-	\textbf{Obiettivo}: verificare che il Sistema fornisca un campo dati per la definizione di misura temporale associata al timeout. \newline
+
+TV0-3.3.2.5 & ROF3.3.2.5 &
+	\textbf{Obiettivo}: verificare che il Sistema metta a disposizione un campo dati per la definizione del numero di minuti della politica temporale. \newline
 	\textbf{Procedimento}:
 	\begin{enumerate}
+		\item L'utente ha correttamente collegato il plug-in al Server;
+		\item L'utente ha correttamente caricato una rete bayesiana;
+		\item L'utente ha precedentemente collegato un database;
 		\item L'utente preme il pulsante per accedere al pannello di configurazione delle politiche temporali;
-		\item Il Sistema modifica l'interfaccia utente mostrando un campo dati numerico per la definizione del timeout ciclico;
-		\item Il Sistema modifica l'interfaccia utente mostrando un campo dati per la definizione dell'unità di misura temporale associata al timeout precedentemente definito.
+		\item Il Sistema fa apparire una finestra nella quale è presente il campo dati relativo alla definizione dei minuti della politica temporale;
+		\item L'utente può modificare il campo dei minuti per modificare l'effettivo valore;
+		\item Il Sistema salva i cambiamenti.
 	\end{enumerate}
 	& N.I. \\
 \hline
+
+\rowcolor{grigio}TV0-3.3.2.6 & ROF3.3.2.6 &
+	\textbf{Obiettivo}: verificare che il Sistema metta a disposizione un campo dati per la definizione del numero di ore della politica temporale. \newline
+	\textbf{Procedimento}:
+	\begin{enumerate}
+		\item L'utente ha correttamente collegato il plug-in al Server;
+		\item L'utente ha correttamente caricato una rete bayesiana;
+		\item L'utente ha precedentemente collegato un database;
+		\item L'utente preme il pulsante per accedere al pannello di configurazione delle politiche temporali;
+		\item Il Sistema fa apparire una finestra nella quale è presente il campo dati relativo alla definizione di ore della politica temporale;
+		\item L'utente può modificare il campo delle ore per modificare l'effettivo valore;
+		\item Il Sistema salva i cambiamenti.
+	\end{enumerate}
+	& N.I. \\
+\hline
+
 TV0-3.3.3 & ROF3.3.3 &
 	\textbf{Obiettivo}: verificare che il Sistema dia la possibilità di modificare i campi dati per definire correttamente la politica temporale desiderata. \newline
 	\textbf{Procedimento}:
 	\begin{enumerate}
+		\item L'utente ha correttamente collegato il plug-in al Server;
+		\item L'utente ha correttamente caricato una rete bayesiana;
+		\item L'utente ha precedentemente collegato un database;
 		\item L'utente preme il pulsante per accedere al pannello di configurazione delle politiche temporali;
-		\item Il Sistema modifica l'interfaccia utente per fornire la possibilità di modificare le politiche temporali.
+		\item Il Sistema fa apparire una finestra con i campi dati editabili per la modifica dei dati della politica temporale;
+		\item L'utente può modificare i campi dati per impostare i valori che desidera.
 	\end{enumerate}
 	& N.I. \\
 \hline
+
 \rowcolor{grigio}TV0-3.4 & ROF3.4 &
 	\textbf{Obiettivo}: verificare che il Sistema metta a disposizione un bottone per confermare la politica temporale definita dall'utente. \newline
 	\textbf{Procedimento}:
 	\begin{enumerate}
+		\item L'utente ha correttamente collegato il plug-in al Server;
+		\item L'utente ha correttamente caricato una rete bayesiana;
+		\item L'utente ha precedentemente collegato un database;
 		\item L'utente preme il pulsante per accedere al pannello di configurazione delle politiche temporali;
-		\item Il Sistema modifica l'interfaccia utente fornendo un bottone di conferma delle politiche temporali precedentemente definite dall'utente.
+		\item Il Sistema fa apparire una finestra con i campi dati editabili per la modifica dei dati della politica temporale e un pulsante per la conferma della politica temporale;
+		\item L'utente clicca sul pulsante di conferma;
+		\item Il Sistema registra i cambiamenti.
 	\end{enumerate}
 	& N.I. \\
 \hline
- TV0-3.5 & ROF3.5 &
+
+TV0-3.5 & ROF3.5 &
 	\textbf{Obiettivo}: verificare che il Sistema visualizzi un messaggio d'errore nel caso in cui l'utente confermi una politica temporale non correttamente definita. \newline
 	\textbf{Procedimento}:
 	\begin{enumerate}
+		\item L'utente ha correttamente collegato il plug-in al Server;
+		\item L'utente ha correttamente caricato una rete bayesiana;
+		\item L'utente ha precedentemente collegato un database;
 		\item L'utente preme il pulsante per accedere al pannello di configurazione delle politiche temporali;
-		\item Il Sistema modifica l'interfaccia utente mostrando i campi dati necessari per la definizione di una politica temporale;
-		\item Il Sistema modifica l'interfaccia utente fornendo un bottone di conferma per le politiche temporali;
-		\item L'utente preme il bottone di conferma delle politiche temporali;
-		\item Il Sistema rileva l'errata definizione della politica temporale e modifica l'interfaccia utente mostrando un messaggio d'errore all'utente.
+		\item Il Sistema fa apparire una finestra con i campi dati editabili per la modifica dei dati della politica temporale e un pulsante per la conferma della politica temporale;
+		\item L'utente modifica in maniera non corretta la politica temporale;
+		\item L'utente clicca sul pulsante di conferma della politica;
+		\item Il Sistema non salva la politica temporale;
+		\item Il Sistema fa apparire un messaggio con l'errore commesso.
 	\end{enumerate}
 	& N.I. \\
 \hline
+
+\rowcolor{grigio}TV0-3.5.1 & ROF3.5.1 &
+	\textbf{Obiettivo}: verificare che il Sistema neghi la creazione della politica temporale qualora l'utente abbia confermato una politica non valida. \newline
+	\textbf{Procedimento}:
+	\begin{enumerate}
+		\item L'utente ha correttamente collegato il plug-in al Server;
+		\item L'utente ha correttamente caricato una rete bayesiana;
+		\item L'utente ha precedentemente collegato un database;
+		\item L'utente preme il pulsante per accedere al pannello di configurazione delle politiche temporali;
+		\item Il Sistema fa apparire una finestra con i campi dati editabili per la modifica dei dati della politica temporale e un pulsante per la conferma della politica temporale;
+		\item L'utente modifica in maniera non corretta la politica temporale;
+		\item L'utente clicca sul pulsante di conferma della politica;
+		\item Il Sistema non salva la politica temporale.
+	\end{enumerate}
+	& N.I. \\
+\hline
+
+TV0-3.5.2 & ROF3.5.2 &
+	\textbf{Obiettivo}: verificare che il Sistema neghi la creazione della politica temporale qualora l'utente non abbia editato almeno uno dei 3 campi. \newline
+	\textbf{Procedimento}:
+	\begin{enumerate}
+		\item L'utente ha correttamente collegato il plug-in al Server;
+		\item L'utente ha correttamente caricato una rete bayesiana;
+		\item L'utente ha precedentemente collegato un database;
+		\item L'utente preme il pulsante per accedere al pannello di configurazione delle politiche temporali;
+		\item Il Sistema fa apparire una finestra con i campi dati editabili per la modifica dei dati della politica temporale e un pulsante per la conferma della politica temporale;
+		\item L'utente clicca sul pulsante di conferma della politica;
+		\item Il Sistema non salva la politica temporale;
+		\item Il Sistema fa apparire una finestra contenente l'errore.
+	\end{enumerate}
+	& N.I. \\
+\hline
+
+\rowcolor{grigio}TV0-3.5.3 & ROF3.5.3 &
+	\textbf{Obiettivo}: verificare che il Sistema neghi la creazione della politica temporale qualora l'utente abbia impostato un numero di secondi non valido. \newline
+	\textbf{Procedimento}:
+	\begin{enumerate}
+		\item L'utente ha correttamente collegato il plug-in al Server;
+		\item L'utente ha correttamente caricato una rete bayesiana;
+		\item L'utente ha precedentemente collegato un database;
+		\item L'utente preme il pulsante per accedere al pannello di configurazione delle politiche temporali;
+		\item Il Sistema fa apparire una finestra con i campi dati editabili per la modifica dei dati della politica temporale e un pulsante per la conferma della politica temporale;
+		\item L'utente imposta secondi < 0 o > 59;
+		\item L'utente clicca sul pulsante di conferma della politica;
+		\item Il Sistema non salva la politica temporale;
+		\item Il Sistema fa apparire una finestra contenente l'errore.
+	\end{enumerate}
+	& N.I. \\
+\hline
+
+TV0-3.5.4 & ROF3.5.4 &
+	\textbf{Obiettivo}: verificare che il Sistema neghi la creazione della politica temporale qualora l'utente abbia impostato un numero di minuti non valido. \newline
+	\textbf{Procedimento}:
+	\begin{enumerate}
+		\item L'utente ha correttamente collegato il plug-in al Server;
+		\item L'utente ha correttamente caricato una rete bayesiana;
+		\item L'utente ha precedentemente collegato un database;
+		\item L'utente preme il pulsante per accedere al pannello di configurazione delle politiche temporali;
+		\item Il Sistema fa apparire una finestra con i campi dati editabili per la modifica dei dati della politica temporale e un pulsante per la conferma della politica temporale;
+		\item L'utente imposta minuti < 0 o > 59;
+		\item L'utente clicca sul pulsante di conferma della politica;
+		\item Il Sistema non salva la politica temporale;
+		\item Il Sistema fa apparire una finestra contenente l'errore.
+	\end{enumerate}
+	& N.I. \\
+\hline
+
+\rowcolor{grigio}TV0-3.5.5 & ROF3.5.5 &
+	\textbf{Obiettivo}: verificare che il Sistema neghi la creazione della politica temporale qualora l'utente abbia impostato un numero di ore non valido. \newline
+	\textbf{Procedimento}:
+	\begin{enumerate}
+		\item L'utente ha correttamente collegato il plug-in al Server;
+		\item L'utente ha correttamente caricato una rete bayesiana;
+		\item L'utente ha precedentemente collegato un database;
+		\item L'utente preme il pulsante per accedere al pannello di configurazione delle politiche temporali;
+		\item Il Sistema fa apparire una finestra con i campi dati editabili per la modifica dei dati della politica temporale e un pulsante per la conferma della politica temporale;
+		\item L'utente imposta ore < 0;
+		\item L'utente clicca sul pulsante di conferma della politica;
+		\item Il Sistema non salva la politica temporale;
+		\item Il Sistema fa apparire una finestra contenente l'errore.
+	\end{enumerate}
+	& N.I. \\
+\hline
+
+TV0-3.6 & ROF3.6	 &
+	\textbf{Obiettivo}: verificare che il Sistema visualizzi un messaggio di avvenuta selezione della politica temporale qualora l'utente abbia correttamente impostato la politica temporale. \newline
+	\textbf{Procedimento}:
+	\begin{enumerate}
+		\item L'utente ha correttamente collegato il plug-in al Server;
+		\item L'utente ha correttamente caricato una rete bayesiana;
+		\item L'utente ha precedentemente collegato un database;
+		\item L'utente preme il pulsante per accedere al pannello di configurazione delle politiche temporali;
+		\item Il Sistema fa apparire una finestra con i campi dati editabili per la modifica dei dati della politica temporale e un pulsante per la conferma della politica temporale;
+		\item L'utente modifica correttamente almeno un campo dati;
+		\item L'utente clicca sul pulsante di conferma della politica;
+		\item Il Sistema salva la politica temporale;
+		\item Il Sistema fa apparire una finestra contenente il messaggio di avvenuta conferma.
+	\end{enumerate}
+	& N.I. \\
+\hline
+
 \rowcolor{grigio}TV0-4 & ROF4 &
 	\textbf{Obiettivo}: verificare che il Sistema a interfaccia utente mostri i dati relativi ai nodi della rete bayesiana non collegati a un flusso di dati. \newline
 	\textbf{Procedimento}:
 	\begin{enumerate}
-		\item Il Sistema ha inizializzato la rete bayesiana precedentemente caricata dall'utente;
-		\item L'utente avvia il monitoraggio premendo sul bottone di avvio;
-		\item Il Sistema modifica l'interfaccia utente mostrando i dati dei nodi non collegati a un flusso di dati.
+		\item L'utente ha correttamente collegato il plug-in al Server;
+		\item L'utente ha correttamente caricato una rete bayesiana;
+		\item L'utente ha precedentemente collegato un database;
+		\item L'utente avvia correttamente il monitoraggio premendo sul bottone di avvio;
+		\item L'utente clicca sul pulsante "Visualizza monitoraggi attivi";
+		\item L'utente seleziona dal menù a tendina la rete di cui desidera visualizzare le probabilità;
+		\item Il Sistema modifica l'interfaccia utente in modo da visualizzare le probabilità dei nodi di quella rete.
 	\end{enumerate}
 	& N.I. \\
 \hline
+
 TV0-4.4 & ROF4.4 &
 	\textbf{Obiettivo}: verificare che il Sistema metta a disposizione un pulsante per avviare il monitoraggio dei dati. \newline
 	\textbf{Procedimento}:
 	\begin{enumerate}
-		\item Il Sistema ha inizializzato la rete bayesiana precedentemente caricata dall'utente;
+		\item L'utente ha correttamente collegato il plug-in al Server;
 		\item Il Sistema modifica l'interfaccia utente inserendo un bottone di avvio monitoraggio;
 	\end{enumerate}
 	& N.I. \\
 \hline
-\rowcolor{grigio}TV0-4.4.1 & ROF4.4.1 &
-	\textbf{Obiettivo}: verificare che il Sistema faccia visualizzare un messaggio d'errore nel caso in cui l'utente abbia avviato il monitoraggio senza aver preventivamente caricato una rete bayesiana. \newline
-	\textbf{Procedimento}:
-	\begin{enumerate}
-		\item Il Sistema inizializza l'interfaccia utente senza caricare nessuna rete bayesiana;
-		\item L'utente preme il bottone di avvio monitoraggio;
-		\item Il Sistema rileva l'assenza di una rete bayesiana precedentemente caricata dall'utente;
-		\item Il Sistema modifica l'interfaccia utente per mostrare un messaggio d'errore.
-	\end{enumerate}
-	& N.I. \\
-\hline
-TV0-4.4.2 & ROF4.4.2 &
-	\textbf{Obiettivo}: verificare che il Sistema faccia visualizzare un messaggio di errore nel caso in cui l'utente abbia avviato il monitoraggio senza aver preventivamente collegato alcuni dei nodi della rete ad un flusso di dati. \newline
-	\textbf{Procedimento}:
-	\begin{enumerate}
-		\item Il Sistema ha inizializzato la rete bayesiana precedentemente caricata dall'utente;
-		\item L'utente preme sul bottone di avvio monitoraggio;
-		\item Il Sistema rileva l'assenza di nodi collegati a flussi di dati;
-		\item Il Sistema modifica l'interfaccia utente per mostrare un messaggio d'errore all'utente.
-	\end{enumerate}
-	& N.I. \\
-\hline
+
 \rowcolor{grigio}TV0-4.4.3 & ROF4.4.3 &
 	\textbf{Obiettivo}: verificare che il Sistema mostri un messaggio di errore nel caso in cui l'utente abbia avviato il monitoraggio senza aver preventivamente impostato la politica temporale per il ricalcolo delle probabilità. \newline
 	\textbf{Procedimento}:
 	\begin{enumerate}
-		\item Il Sistema ha inizializzato la rete bayesiana precedentemente caricata dall'utente;
+		\item L'utente ha correttamente collegato il plug-in al Server;
+		\item L'utente ha correttamente caricato una rete bayesiana;
+		\item L'utente ha precedentemente collegato un database;
 		\item L'utente collega i nodi desiderati ai flussi di dati;
 		\item Il Sistema rileva l'assenza di politiche temporali definite;
-		\item Il Sistema modifica l'interfaccia utente per mostrare un messaggio d'errore all'utente.
+		\item Il Sistema fa apparire una finestra contenente un messaggio di errore.
 	\end{enumerate}
 	& N.I. \\
 \hline
+
+TV0-4.4.4 & ROF4.4.4 &
+	\textbf{Obiettivo}: verificare che il Sistema mostri un messaggio di errore nel caso in cui l'utente abbia avviato il monitoraggio senza aver preventivamente  collegato almeno un nodo al flusso dati. \newline
+	\textbf{Procedimento}:
+	\begin{enumerate}
+		\item L'utente ha correttamente collegato il plug-in al Server;
+		\item L'utente ha correttamente caricato una rete bayesiana;
+		\item L'utente ha precedentemente collegato un database;
+		\item L'utente definisce una politica temporale;
+		\item L'utente clicca sul pulsante di avvio monitoraggio senza aver collegato almeno un nodo;
+		\item Il Sistema non fa partire il monitoraggio;
+		\item Il Sistema fa apparire una finestra contente il messaggio di errore.
+	\end{enumerate}
+	& N.I. \\
+\hline
+
+\rowcolor{grigio}TV0-4.4.5 & ROF4.4.5 &
+	\textbf{Obiettivo}: verificare che il Sistema salvi nel Server le impostazioni di collegamento insieme alla rete. \newline
+	\textbf{Procedimento}:
+	\begin{enumerate}
+		\item L'utente ha correttamente collegato il plug-in al Server;
+		\item L'utente ha correttamente caricato una rete bayesiana;
+		\item L'utente ha precedentemente collegato un database;
+		\item L'utente definisce una politica temporale;
+		\item L'utente collega almeno un nodo al flusso dati;
+		\item L'utente clicca sul pulsante di avvio monitoraggio o cambia rete;
+		\item Il Sistema salva sul Server i dati relativi alla rete e al monitoraggio.	
+	\end{enumerate}
+	& N.I. \\
+\hline
+
+TV0-4.4.6 & ROF4.4.6 &
+	\textbf{Obiettivo}: verificare che il Sistema impedisca all'utente di modificare le impostazioni di una rete sotto monitoraggio. \newline
+	\textbf{Procedimento}:
+	\begin{enumerate}
+		\item L'utente ha correttamente collegato il plug-in al Server;
+		\item L'utente ha correttamente caricato una rete bayesiana;
+		\item L'utente ha precedentemente collegato un database;
+		\item L'utente definisce una politica temporale;
+		\item L'utente collega almeno un nodo al flusso dati;
+		\item L'utente clicca sul pulsante di avvio monitoraggio;							\item Il Sistema avvia il monitoraggio;
+		\item il Sistema salva sul Server i dati relativi alla rete e al monitoraggio;
+ 		\item L'utente prova a modificare qualche impostazione relativa alla rete sotto monitoraggio;
+ 		\item Il Sistema nega all'utente l'azione e fa apparire un messaggio di errore.
+	\end{enumerate}
+	& N.I. \\
+\hline
+
+\rowcolor{grigio}TV2-4.4.7 & RFF4.4.7 &
+	\textbf{Obiettivo}: verificare che il Sistema consenta all'utente di monitorare più reti contemporaneamente. \newline
+	\textbf{Procedimento}:
+	\begin{enumerate}
+		\item L'utente ha correttamente collegato il plug-in al Server;
+		\item L'utente ha precedentemente iniziato il monitoraggio di una rete;
+		\item L'utente carica una nuova rete;
+		\item L'utente imposta correttamente i parametri di collegamento;
+		\item L'utente preme sul tasto avvio monitoraggio;
+		\item Il Sistema fa partire il monitoraggio della nuova rete in contemporanea con tutti i precedenti monitoraggi attivi.
+	\end{enumerate}
+	& N.I. \\
+\hline
+
+TV2-4.4.7.1 & RFF4.4.7.1 &
+	\textbf{Obiettivo}: verificare che il Sistema consenta all'utente l'avvio del monitoraggio di una rete qualora ci siano già altre reti sotto monitoraggio. \newline
+	\textbf{Procedimento}:
+	\begin{enumerate}
+		\item L'utente ha correttamente collegato il plug-in al Server;
+		\item L'utente ha precedentemente iniziato il monitoraggio di una rete;
+		\item L'utente carica una nuova rete;
+		\item L'utente imposta correttamente i parametri di collegamento;
+		\item L'utente preme sul tasto avvio monitoraggio;
+		\item Il Sistema fa partire il monitoraggio della nuova rete.
+	\end{enumerate}
+	& N.I. \\
+\hline
+
+\rowcolor{grigio}TV0-4.4.8 & ROF4.4.8 &
+	\textbf{Obiettivo}: verificare che il Sistema mostri un messaggio di corretto inizio del monitoraggio della rete. \newline
+	\textbf{Procedimento}:
+	\begin{enumerate}
+		\item L'utente ha correttamente collegato il plug-in al Server;
+		\item L'utente ha correttamente caricato una rete bayesiana;
+		\item L'utente ha precedentemente collegato un database;
+		\item L'utente imposta correttamente i parametri di collegamento;
+		\item L'utente preme sul tasto avvio monitoraggio;
+		\item Il Sistema fa partire il monitoraggio della nuova rete;
+		\item Il Sistema salva sul Server i dati del collegamento;
+		\item Il Sistema fa apparire una finestra con un messaggio di corretto avvio del monitoraggio.
+	\end{enumerate}
+	& N.I. \\
+\hline
+
 TV0-4.5 & ROF4.5 &
 	\textbf{Obiettivo}: verificare che il Sistema fornisca all'utente una lista di probabilità dinamiche associate ai nodi della rete. \newline
 	\textbf{Procedimento}:
-	\begin{enumerate}
-		\item Il Sistema ha inizializzato la rete bayesiana precedentemente caricata dall'utente;
-		\item L'utente collega i nodi desiderati ai flussi dati, definisce la politica temporale e imposta le soglie;
-		\item L'utente preme sul bottone di avvio monitoraggio;
-		\item Il Sistema modifica l'interfaccia utente mostrando una lista di probabilità dinamiche associate ai nodi della rete.
+	\begin{enumerate}	
+		\item L'utente ha correttamente collegato il plug-in al Server;
+		\item L'utente ha precedentemente avviato il monitoraggio di una rete correttamente;
+		\item L'utente ha cliccato sul pulsante "Visualizza Monitoraggi Attivi";
+		\item L'utente ha individuato il menù a tendina contenente le reti sotto monitoraggio;
+		\item L'utente ha selezionato una rete sotto monitoraggio;
+		\item Il Sistema modifica l'interfaccia utente aggiornando dinamicamente le probabilità associate ai nodi della rete precedentemente selezionata.
 	\end{enumerate}
 	& N.I. \\
 \hline
+
+\rowcolor{grigio}TV2-4.5.1 & RFF4.5.1 &
+	\textbf{Obiettivo}: verificare che il Sistema consenta all'utente di selezionare una rete tra quelle al momento in monitoraggio, per la visualizzazione delle sue probabilità dinamiche. \newline
+	\textbf{Procedimento}:
+	\begin{enumerate}
+		\item L'utente ha correttamente collegato il plug-in al Server;
+		\item L'utente ha precedentemente avviato correttamente il monitoraggio di almeno una rete bayesiana;
+		\item L'utente ha cliccato il pulsante "Visualizza Monitoraggi Attivi";
+		\item Il Sistema ha modificato l'interfaccia utente per mostrare il menù a tendina contenente le reti sotto monitoraggio;
+		\item L'utente individua il menù a tendina sopra citato;
+		\item L'utente clicca sul menù a tendina;
+		\item L'utente sceglie una rete sotto monitoraggio di cui visualizzare le probabilità dinamiche.
+	\end{enumerate}
+	& N.I. \\
+\hline
+
+TV2-4.5.1.1 & RFF4.5.1.1 &
+	\textbf{Obiettivo}: verificare che il Sistema fornisca un menù a  tendina contenente le reti bayesiane sotto monitoraggio. \newline
+	\textbf{Procedimento}:
+	\begin{enumerate}
+		\item L'utente ha correttamente collegato il plug-in al Server;
+		\item L'utente ha precedentemente avviato correttamente il monitoraggio di almeno una rete bayesiana;
+		\item L'utente ha cliccato il pulsante "Visualizza Monitoraggi Attivi";
+		\item Il Sistema ha modificato l'interfaccia utente per mostrare il menù a tendina contenente le reti sotto monitoraggio;
+		\item L'utente individua il menù a tendina sopra citato.
+	\end{enumerate}
+	& N.I. \\
+\hline
+
 \rowcolor{grigio}TV0-4.6 & ROF4.6 &
-	\textbf{Obiettivo}: verificare che il Sistema aggiorni periodicamente le probabilità in base a quanto definito nella politica temporale per il ricalcolo delle probabilità. \newline
+	\textbf{Obiettivo}: verificare che il Sistema, attraverso il Server, aggiorni periodicamente le probabilità in base a quanto definito nella politica temporale per il ricalcolo delle probabilità. \newline
 	\textbf{Procedimento}:
 	\begin{enumerate}
-		\item Il Sistema ha inizializzato la rete bayesiana precedentemente caricata dall'utente;
-		\item L'utente collega i nodi desiderati ai flussi di dati, definisce la politica temporale e imposta le soglie;
-		\item L'utente preme il bottone di avvio monitoraggio;
-		\item Il Sistema aggiorna periodicamente l'interfaccia utente mostrando le probabilità in base alla politica temporale definita dall'utente.
+		\item L'utente ha correttamente collegato il plug-in al Server;
+		\item L'utente ha avviato correttamente il monitoraggio di almeno una rete bayesiana;
+		\item Il Server aggiorna periodicamente le probabilità relative a tale rete;
+		\item L'utente clicca il pulsante "Visualizza Monitoraggi Attivi";
+		\item L'utente seleziona una rete sotto monitoraggio;
+		\item L'utente può visualizzare l'aggiornamento dinamico delle probabilità calcolate dal Server, in base alla politica temporale impostata.
 	\end{enumerate}
 	& N.I. \\
 \hline
+
 TV1-4.6.1 & RDF 4.6.1 &
-	\textbf{Obiettivo}: verificare che il Sistema, indipendentemente dalla politica temporale definita dall'utente, ricalcoli le probabilità al verificarsi del superamento di una soglia critica associata ad uno stato di un nodo collegato al flusso di dati di monitoraggio. \newline
+	\textbf{Obiettivo}: verificare che il Sistema, indipendentemente dalla politica temporale definita dall'utente, ricalcoli le probabilità al verificarsi del superamento di una soglia critica associata ad uno stato di un nodo collegato al flusso di dati di monitoraggio in base al timeout di refresh impostato nella dashboard al momento dell'avvio del monitoraggio. \newline
 	\textbf{Procedimento}:
 	\begin{enumerate}
-		\item Il Sistema ha inizializzato la rete bayesiana precedentemente caricata dall'utente;
-		\item L'utente collega i nodi desiderati ai flussi di dati, definisce la politica temporale e imposta le soglie;
-		\item Il Sistema rileva il superamento di una soglia critica ed effettua il ricalcolo delle probabilità;
-		\item Il Sistema modifica l'interfaccia utente mostrando le probabilità ricalcolate.
+		\item L'utente ha correttamente collegato il plug-in al Server;
+		\item L'utente ha avviato correttamente il monitoraggio di almeno una rete;
+		\item Il Sistema, ad intervalli regolari stabiliti dal refresh della dashboard di \textit{Grafana} al momento dell'inizio del monitoraggio, rileva il superamento di una soglia critica ed effettua il ricalcolo delle probabilità;
+		\item Il Sistema salva nel database Influx le probabilità ricalcolate.
 	\end{enumerate}
 	& N.I. \\
 \hline
-\rowcolor{grigio}TV2-5 & RFF5 &
-	\textbf{Obiettivo}: verificare che il Sistema dia la possibilità di definire alertt basati sui dati relativi ai nodi della rete non collegati al flusso. \newline
+
+\rowcolor{grigio}TV0-4.7 & ROF4.7 &
+	\textbf{Obiettivo}: verificare che il Sistema dia all'utente la possibilità di interrompere il monitoraggio di una rete bayesiana. \newline
 	\textbf{Procedimento}:
 	\begin{enumerate}
-		\item Il Sistema ha inizializzato la rete bayesiana precedentemente caricata dall'utente;
-		\item Il Sistema modifica il pannello di configurazione fornendo la possibilità di definire alertt sui nodi non collegati al flusso di dati.
+		\item L'utente ha correttamente collegato il plug-in al Server;
+		\item L'utente ha precedentemente avviato correttamente il monitoraggio di almeno una rete bayesiana;
+		\item L'utente ha caricato sul pannello la rete sotto monitoraggio;
+		\item Il Sistema ha modificato l'interfaccia utente visualizzando un pulsante per interrompere il monitoraggio della rete;
+		\item L'utente clicca sul pulsante per l'interruzione del monitoraggio;
+		\item Il Sistema rileva l'interruzione, la notifica al Server, il quale interrompe il monitoraggio;
+		\item Il Server salva i cambiamenti;
+		\item La rete viene rimossa da quelle di cui si possono visualizzare le probabilità dinamiche.
 	\end{enumerate}
 	& N.I. \\
 \hline
-TV2-5.1 & RFF5.1 &
-	\textbf{Obiettivo}: verificare che il Sistema metta a disposizione di \textit{Grafana}, i dati per l'operazione di creazione di alertt ad essi associati da parte dell'utente. \newline
+
+TV0-4.7.1 & ROF4.7.1 &
+	\textbf{Obiettivo}: verificare che il Sistema metta a disposizione un pulsante per interrompere il monitoraggio di una rete bayesiana. \newline
 	\textbf{Procedimento}:
 	\begin{enumerate}
-		\item Il Sistema ha inizializzato la rete bayesiana precedentemente caricata dall'utente;
-		\item L'utente collega i nodi desiderati ai flussi di dati, definisce la politica temporale e imposta le soglie;
-		\item L'utente preme il bottone di avvio monitoraggio.
+		\item L'utente ha correttamente collegato il plug-in al Server;
+		\item L'utente ha caricato una rete bayesiana;
+		\item L'utente ha impostato correttamente tutti i parametri per iniziare il monitoraggio;
+		\item L'utente ha cliccato sul pulsante per iniziare il monitoraggio;
+		\item Il Sistema modifica l'interfaccia utente al fine di visualizzare un pulsante per l'interruzione del monitoraggio;
+		\item Il Sistema nasconde il pulsante per avviare il monitoraggio.
 	\end{enumerate}
 	& N.I. \\
 \hline
-\rowcolor{grigio}TV2-5.1.1 & RFF5.1.1 &
-	\textbf{Obiettivo}: verificare che il pannello G\&B supporti la funzione di "edit" da parte dell'utente. \newline
+
+\rowcolor{grigio}TV0-4.7.2 & ROF4.7.2 &
+	\textbf{Obiettivo}: verificare che il Sistema visualizzi un messaggio di corretta interruzione del monitoraggio di una rete. \newline
 	\textbf{Procedimento}:
 	\begin{enumerate}
-		\item Il pannello del plug-in di G\&B estende il pannello base di \textit{Grafana};
-		\item Il Sistema inizializza il pannello di editing.
+		\item L'utente ha correttamente collegato il plug-in al Server;
+		\item L'utente ha caricato una rete bayesiana;
+		\item L'utente ha impostato correttamente tutti i parametri per iniziare il monitoraggio;
+		\item L'utente ha cliccato sul pulsante per iniziare il monitoraggio;
+		\item Il Sistema modifica l'interfaccia utente al fine di visualizzare un pulsante per l'interruzione del monitoraggio;
+		\item Il Sistema nasconde il pulsante per avviare il monitoraggio.
+		\item L'utente clicca il pulsante per interrompere il monitoraggio;
+		\item Il Sistema notifica al Server l'interruzione del monitoraggio, il quale aggiorna i dati e interrompe lo stesso;
+		\item Il Sistema fa apparire una finestra contenente il messaggio di corretta interruzione del monitoraggio.
 	\end{enumerate}
 	& N.I. \\
 \hline
-TV2-5.1.2 & RFF5.1.2 &
-	\textbf{Obiettivo}: verificare che il Sistema metta a disposizione dell'utente un pulsante di aggiunta alertt, che conduca l'utente alle impostazioni di edit del pannello. \newline
+
+TV0-7 & ROF7 &
+	\textbf{Obiettivo}: verificare che il Sistema consenta all'utente di collegare il plug-in al Server. \newline
 	\textbf{Procedimento}:
 	\begin{enumerate}
-		\item Il pannello del plug-in di G\&B estende il pannello base di \textit{Grafana};
-		\item Il Sistema inizializza il pannello di editing;
-		\item Il Sistema inizializza il Sistema di alertt fornita dalle funzionalità base di \textit{Grafana}.
+		\item L'utente ha aggiunto il pannello del plug-in alla sua dashboard su \textit{Grafana};
+		\item L'utente ha cliccato sul titolo del pannello, aprendo il menù per la selezione delle impostazioni dello stesso;
+		\item L'utente ha cliccato sulla scritta "Edit" apparsa;
+		\item Il Sistema modifica l'interfaccia utente visualizzando le impostazioni del pannello;
+		\item L'utente ha cliccato su "Server Settings";
+		\item L'utente imposta correttamente i parametri di IP e port del Server;
+		\item L'utente clicca sul pulsante "Connetti";
+		\item Il Sistema collega il plug-in al Server qualora i parametri di connessione siano corretti;
+		\item Il Sistema salva i parametri di connessione.
 	\end{enumerate}
 	& N.I. \\
 \hline
-\rowcolor{grigio}TV2-6 & RFF6 &
-	\textbf{Obiettivo}: verificare che il Sistema dia la possibilità di visualizzare gli alertt creati sulla base dei dati relativi ai nodi della rete bayesiana non collegati al flusso. \newline
+
+\rowcolor{grigio}TV0-7.1 & ROF7.1 &
+	\textbf{Obiettivo}: verificare che il Sistema metta a disposizione dell'utente una sezione "Server Settings" all'interno del menù "Edit" del pannello del plug-in. \newline
 	\textbf{Procedimento}:
 	\begin{enumerate}
-		\item Il pannello del plug-in di G\&B estende il pannello base di \textit{Grafana};
-		\item Il Sistema inizializza il Sistema di alertt fornita dalle funzionalità base di \textit{Grafana};
-		\item L'utente accede al pannello di configurazione degli alertt di \textit{Grafana}.
+		\item L'utente ha aggiunto il pannello del plug-in alla sua dashboard su \textit{Grafana};
+		\item L'utente ha cliccato sul titolo del pannello, aprendo il menù per la selezione delle impostazioni dello stesso;
+		\item L'utente ha cliccato sulla scritta "Edit" apparsa;
+		\item Il Sistema modifica l'interfaccia utente visualizzando le impostazioni del pannello;
+		\item Il Sistema modifica l'interfaccia utente mostrando la sezione "Server Settings".
 	\end{enumerate}
 	& N.I. \\
 \hline
-TV2-6.1 & RFF6.1 &
-	\textbf{Obiettivo}: verificare che il Sistema metta periodicamente a disposizione della piattaforma \textit{Grafana} i dati aggiornati per il monitoraggio costante dello stato degli alertt. \newline
+
+TV0-7.1.1 & ROF7.1.1 &
+	\textbf{Obiettivo}: verificare che il Sistema metta a disposizione dell'utente una sezione "Server Settings" all'interno del menù "Edit" del pannello del plug-in, nella quale è presente un campo dati per modificare l'IP del Server per la connessione allo stesso. \newline
 	\textbf{Procedimento}:
 	\begin{enumerate}
-		\item Il Sistema ha inizializzato la rete bayesiana precedentemente caricata dall'utente;
-		\item L'utente collega i nodi desiderati ai flussi di dati, definisce la politica temporale e imposta le soglie;
-		\item L'utente preme il bottone di avvio monitoraggio;
-		\item Il Sistema salva nel database le probabilità calcolate dal plug-in G\&B;
-		\item Il Sistema preleva i dati necessari dal database e aggiorna il monitoraggio dello stato degli alertt;
+		\item L'utente ha aggiunto il pannello del plug-in alla sua dashboard su \textit{Grafana};
+		\item L'utente ha cliccato sul titolo del pannello, aprendo il menù per la selezione delle impostazioni dello stesso;
+		\item L'utente ha cliccato sulla scritta "Edit" apparsa;
+		\item Il Sistema modifica l'interfaccia utente visualizzando le impostazioni del pannello;
+		\item L'utente clicca sulla scritta "Edit" apparsa;
+		\item Il Sistema modifica l'interfaccia utente mostrando la sezione "Server Settings".
+		\item L'utente clicca sulla sezione "Server Settings";
+		\item Il Sistema modifica l'interfaccia utente mostrando i campi dati per la connessione al Server e il pulsante per il collegamento, tra cui il campo dati per la modifica dell'IP del Server;
 	\end{enumerate}
 	& N.I. \\
 \hline
-\rowcolor{grigio}TV2-6.2 & RFF6.2 &
-	\textbf{Obiettivo}: verificare che il Sistema permetta di rimuovere gli alertt associati ai nodi della rete bayesiana. \newline
+
+\rowcolor{grigio}TV0-7.1.2 & ROF7.1.2 &
+	\textbf{Obiettivo}: verificare che il Sistema metta a disposizione dell'utente una sezione "Server Settings" all'interno del menù "Edit" del pannello del plug-in, nella quale è presente un campo dati per modificare la porta del Server per la connessione allo stesso. \newline
 	\textbf{Procedimento}:
 	\begin{enumerate}
-		\item Il Sistema ha inizializzato la rete bayesiana precedentemente caricata dall'utente;
-		\item L'utente collega i nodi desiderati ai flussi di dati, definisce la politica temporale e imposta le soglie;
-		\item L'utente inizializza gli alertt desiderati;
-		\item L'utente preme il bottone di conferma per gli alertt;
-		\item L'utente elimina gli alertt desiderati;
-		\item L'utente conferma l'eliminazione degli alertt.
+		\item L'utente ha aggiunto il pannello del plug-in alla sua dashboard su \textit{Grafana};
+		\item L'utente ha cliccato sul titolo del pannello, aprendo il menù per la selezione delle impostazioni dello stesso;
+		\item L'utente ha cliccato sulla scritta "Edit" apparsa;
+		\item Il Sistema modifica l'interfaccia utente visualizzando le impostazioni del pannello;
+		\item Il Sistema modifica l'interfaccia utente mostrando la sezione "Server Settings".
+		\item L'utente clicca sulla sezione "Server Settings";
+		\item Il Sistema modifica l'interfaccia utente mostrando i campi dati per la connessione al Server e il pulsante per il collegamento, tra cui il campo dati per la modifica della porta del Server;
 	\end{enumerate}
 	& N.I. \\
 \hline
-TV2-6.2.1 & RFF6.2.1 &
-	\textbf{Obiettivo}: verificare che il Sistema permetta la selezione di alertt da eliminare attraverso il panello di visualizzazione degli alertt. \newline
+
+TV0-7.1.3 & ROF7.1.3 &
+	\textbf{Obiettivo}: verificare che il Sistema metta a disposizione dell'utente una sezione "Server Settings" all'interno del menù "Edit" del pannello del plug-in, nella quale è presente un pulsante per confermare i parametri di connessione al Server e connettervi il plug-in. \newline
 	\textbf{Procedimento}:
 	\begin{enumerate}
-		\item Il Sistema ha inizializzato la rete bayesiana precedentemente caricata dall'utente;
-		\item L'utente collega i nodi desiderati ai flussi di dati, definisce la politica temporale, imposta le soglie e definisce gli alertti desiderati;
-		\item L'utente accede al pannello di configurazione degli alertt;
-		\item L'utente seleziona l'alertt desiderato;
-		\item L'utente conferma l'eliminazione dell'alertt selezionato precedentemente premendo il bottone di conferma.
+		\item L'utente ha aggiunto il pannello del plug-in alla sua dashboard su \textit{Grafana};
+		\item L'utente ha cliccato sul titolo del pannello, aprendo il menù per la selezione delle impostazioni dello stesso;
+		\item L'utente ha cliccato sulla scritta "Edit" apparsa;
+		\item Il Sistema modifica l'interfaccia utente visualizzando le impostazioni del pannello;
+		\item Il Sistema modifica l'interfaccia utente mostrando la sezione "Server Settings".
+		\item L'utente clicca sulla sezione "Server Settings";
+		\item Il Sistema modifica l'interfaccia utente mostrando i campi dati per la connessione al Server e il pulsante per il collegamento al Server.
+		\item L'utente clicca sul pulsante "Connetti";
+		\item Il Sistema prova a connettersi al Server seguendo i parametri definiti.
 	\end{enumerate}
 	& N.I. \\
 \hline
+
+\rowcolor{grigio}TV0-7.2 & ROF7.2 &
+	\textbf{Obiettivo}: il Sistema mostra all'utente un messaggio di errore qualora il collegamento al Server non sia avvenuto correttamente. \newline
+	\textbf{Procedimento}:
+	\begin{enumerate}
+		\item L'utente ha aggiunto il pannello del plug-in alla sua dashboard su \textit{Grafana};
+		\item L'utente ha cliccato sul titolo del pannello, aprendo il menù per la selezione delle impostazioni dello stesso;
+		\item L'utente ha cliccato sulla scritta "Edit" apparsa;
+		\item Il Sistema modifica l'interfaccia utente mostrando la sezione "Server Settings".
+		\item L'utente clicca sulla sezione "Server Settings";
+		\item Il Sistema modifica l'interfaccia utente mostrando i campi dati per la connessione al Server e il pulsante per il collegamento al Server.
+		\item L'utente imposta l'IP o la porta in maniera non corretta, oppure il Server non è online;
+		\item L'utente clicca sul pulsante di collegamento;
+		\item Il Sistema fa apparire una finestra con un messaggio di errore di non avvenuto collegamento al Server..
+	\end{enumerate}
+	& N.I. \\
+\hline
+
+TV0-7.2.1 & ROF7.2.1 &
+	\textbf{Obiettivo}: il Sistema deve verificare che l'IP inserito per il collegamento al Server sia corretto. \newline
+	\textbf{Procedimento}:
+	\begin{enumerate}
+		\item L'utente ha aggiunto il pannello del plug-in alla sua dashboard su \textit{Grafana};
+		\item L'utente ha cliccato sul titolo del pannello, aprendo il menù per la selezione delle impostazioni dello stesso;
+		\item L'utente ha cliccato sulla scritta "Edit" apparsa;
+		\item Il Sistema modifica l'interfaccia utente mostrando la sezione "Server Settings".
+		\item L'utente clicca sulla sezione "Server Settings";
+		\item Il Sistema modifica l'interfaccia utente mostrando i campi dati per la connessione al Server e il pulsante per il collegamento al Server.
+		\item L'utente imposta l'IP in maniera non corretta;
+		\item L'utente clicca sul pulsante di collegamento;
+		\item Il Sistema verifica la correttezza dell'IP;
+		\item Il Sistema notifica all'utente l'incorrettezza dell'IP.
+	\end{enumerate}
+	& N.I. \\
+\hline
+
+\rowcolor{grigio}TV0-7.2.2 & ROF7.2.2 &
+	\textbf{Obiettivo}: il Sistema deve verificare che la porta inserita per il collegamento al Server sia corretta. \newline
+	\textbf{Procedimento}:
+	\begin{enumerate}
+		\item L'utente ha aggiunto il pannello del plug-in alla sua dashboard su \textit{Grafana};
+		\item L'utente ha cliccato sul titolo del pannello, aprendo il menù per la selezione delle impostazioni dello stesso;
+		\item L'utente ha cliccato sulla scritta "Edit" apparsa;
+		\item Il Sistema modifica l'interfaccia utente mostrando la sezione "Server Settings".
+		\item L'utente clicca sulla sezione "Server Settings";
+		\item Il Sistema modifica l'interfaccia utente mostrando i campi dati per la connessione al Server e il pulsante per il collegamento al Server.
+		\item L'utente imposta la porta in maniera non corretta;
+		\item L'utente clicca sul pulsante di collegamento;
+		\item Il Sistema verifica la correttezza della porta;
+		\item Il Sistema notifica all'utente l'incorrettezza della porta.
+	\end{enumerate}
+	& N.I. \\
+\hline
+
+TV0-7.3 & ROF7.3 &
+	\textbf{Obiettivo}: il Sistema deve notificare all'utente l'avvenuta connessione al Server qualora sia andata a buon fine. \newline
+	\textbf{Procedimento}:
+	\begin{enumerate}
+		\item L'utente ha aggiunto il pannello del plug-in alla sua dashboard su \textit{Grafana};
+		\item L'utente ha cliccato sul titolo del pannello, aprendo il menù per la selezione delle impostazioni dello stesso;
+		\item L'utente ha cliccato sulla scritta "Edit" apparsa;
+		\item Il Sistema modifica l'interfaccia utente mostrando la sezione "Server Settings".
+		\item L'utente clicca sulla sezione "Server Settings";
+		\item Il Sistema modifica l'interfaccia utente mostrando i campi dati per la connessione al Server e il pulsante per il collegamento al Server.
+		\item L'utente imposta la porta in maniera corretta IP e porta del Server;
+		\item L'utente clicca sul pulsante di collegamento;
+		\item Il Sistema verifica la correttezza dei dati;
+		\item Il Sistema fa apparire una finestra contenente il messaggio di avvenuta connessione al Server;
+		\item Il Sistema salva i dati relativi al Server.
+	\end{enumerate}
+	& N.I. \\
+\hline
+
+\rowcolor{grigio}TV2-8 & RDF8 &
+	\textbf{Obiettivo}: il Sistema deve dare all'utente la possibilità di caricare una rete precedentemente salvata sul Server. \newline
+	\textbf{Procedimento}:
+	\begin{enumerate}
+		\item L'utente ha correttamente collegato il plug-in al Server;
+		\item L'utente ha precedentemente salvato una rete sul Server;
+		\item L'utente individua nel pannello l'area adibita al caricamento di reti salvate in memoria;
+		\item L'utente clicca sul menù a tendina contenente i nominativi delle reti salvate;
+		\item L'utente visualizza i nomi delle reti salvate;
+		\item L'utente clicca sul nome della rete che desidera caricare;
+		\item L'utente clicca sul pulsante apri;
+		\item Il Sistema richiede al Server i dati della rete da caricare;
+		\item Il Sistema riceve i dati dal Server ed inizializza la rete con le impostazioni precedentemente definite dall'utente;
+		\item Il Sistema modifica l'interfaccia utente visualizzando le impostazione precedentemente definite.
+	\end{enumerate}
+	& N.I. \\
+\hline
+
+TV2-8.1 & RDF8.1 &
+	\textbf{Obiettivo}: il Sistema deve mettere a disposizione dell'utente un menù a tendina coi nomi delle reti salvate sul Server. \newline
+	\textbf{Procedimento}:
+	\begin{enumerate}
+		\item L'utente ha correttamente collegato il plug-in al Server;
+		\item L'utente ha precedentemente salvato una rete sul Server;
+		\item L'utente individua nel pannello l'area adibita al caricamento di reti salvate in memoria;
+		\item L'utente visualizza un menù a tendina con i nomi delle reti salvate sul Server.
+	\end{enumerate}
+	& N.I. \\
+\hline
+
+\rowcolor{grigio}TV2-8.2 & RDF8.2 &
+	\textbf{Obiettivo}: il Sistema deve mettere a disposizione dell'utente un pulsante per caricare una rete salvata sul Server. \newline
+	\textbf{Procedimento}:
+	\begin{enumerate}
+		\item L'utente ha correttamente collegato il plug-in al Server;
+		\item L'utente ha precedentemente salvato una rete sul Server;
+		\item L'utente individua nel pannello l'area adibita al caricamento delle reti salvate in memoria;
+		\item L'utente visualizza un menù a tendina con i nomi delle reti salvate sul Server;
+		\item L'utente visualizza in fianco al menù a tendina un pulsante per richiedere i dati della rete al Server;
+		\item Il Sistema carica le impostazioni della rete richiesta.
+	\end{enumerate}
+	& N.I. \\
+\hline
+
+TV2-8.3 & RDF8.3 &
+	\textbf{Obiettivo}: il Sistema, prima di caricare una nuova rete, deve salvare le impostazioni nel Server. \newline
+	\textbf{Procedimento}:
+	\begin{enumerate}
+		\item L'utente ha correttamente collegato il plug-in al Server;
+		\item L'utente ha precedentemente caricato una rete;
+		\item L'utente, con uno dei modi a sua disposizione, carica una nuova rete bayesiana;
+		\item Il Sistema, prima di caricare la nuova rete, salva le impostazioni di quella attualmente visualizzata nel Server.
+	\end{enumerate}
+	& N.I. \\
+\hline	
+
+\rowcolor{grigio}TV2-8.3.1 & RDF8.3.1 &
+	\textbf{Obiettivo}: il Sistema, prima di caricare una nuova rete, deve salvare le impostazioni nel Server e, qualora sia già presente la rete, la sovrascrive. \newline
+	\textbf{Procedimento}:
+	\begin{enumerate}
+		\item L'utente ha correttamente collegato il plug-in al Server;
+		\item L'utente ha precedentemente caricato una rete;
+		\item L'utente, con uno dei modi a sua disposizione, carica una nuova rete bayesiana;
+		\item Il Sistema, prima di caricare la nuova rete, invia al Server i dati da salvare;
+		\item Il Server controlla se la rete è già presente e, in caso, sovrascrive il file;
+		\item L'utente, qualora riapra la rete precedente, trova le sue ultime impostazioni salvate.
+	\end{enumerate}
+	& N.I. \\
+\hline	
+
+TV2-8.3.2 & RDF8.3.2 &
+	\textbf{Obiettivo}: il Sistema, prima di salvare una rete sul Server, controlla se è sotto monitoraggio e, in caso positivo, al momento del cambio di contesto, non la salva nel Server. \newline
+	\textbf{Procedimento}:
+	\begin{enumerate}
+		\item L'utente ha correttamente collegato il plug-in al Server;
+		\item L'utente ha precedentemente caricato una rete;
+		\item L'utente, con uno dei modi a sua disposizione, carica una nuova rete bayesiana;
+		\item Il Sistema, prima di caricare la nuova rete, controlla se la rete è sotto monitoraggio e, in caso positivo, non salva i cambiamenti nel Server.
+	\end{enumerate}
+	& N.I. \\
+\hline	
+
+\rowcolor{grigio}TV2-8.4 & RDF8.4 &
+	\textbf{Obiettivo}: il Sistema, in seguito alla scelta dell'utente di caricare una rete salvata nel Server, deve visualizzare le impostazioni della suddetta rete. \newline
+	\textbf{Procedimento}:
+	\begin{enumerate}
+		\item L'utente ha correttamente collegato il plug-in al Server;
+		\item L'utente seleziona una rete tra quelle salvate sul Server nell'apposito menù a tendina;
+		\item L'utente clicca sul pulsante apri;
+		\item Il Sistema richiede al Server i dati relativi alla rete in questione;
+		\item Il Server comunica al Sistema i dati;
+		\item Il Sistema salva i dati nelle sue variabili, sostituendo quelli già presenti qualora ve ne siano;
+		\item Il Sistema modifica l'interfaccia utente mostrando i nodi della rete caricata, collega il database e carica la politica temporale;
+		\item qualora l'utente clicchi su un nodo, può visualizzare le impostazioni precedentemente salvate relative a quel nodo.
+	\end{enumerate}
+	& N.I. \\
+\hline	
+
+TV0-9 & ROF9 &
+	\textbf{Obiettivo}: il Sistema deve mettere a disposizione dell'utente una sezione unicamente adibita alla visualizzazione dei dati di monitoraggio. \newline
+	\textbf{Procedimento}:
+	\begin{enumerate}
+		\item L'utente ha correttamente collegato il pannello al Server;
+		\item L'utente visualizza un pulsante denominato "Visualizza monitoraggi attivi";
+		\item L'utente clicca sul pulsante sopra citato;
+		\item Il Sistema modifica l'interfaccia utente visualizzando la sezione dedicata alla visualizzazione dei dati di monitoraggio.
+	\end{enumerate}
+	& N.I. \\
+\hline	
+
+\rowcolor{grigio}TV0-9.1 & ROF9.1 &
+	\textbf{Obiettivo}: il Sistema deve mettere a disposizione dell'utente un pulsante che consenta di passare alla sezione adibita alla visualizzazione dei monitoraggi attivi. \newline
+	\textbf{Procedimento}:
+	\begin{enumerate}
+		\item L'utente ha correttamente collegato il pannello al Server;
+		\item Il Sistema modifica l'interfaccia utente in modo da visualizzare il pulsante "Visualizza Monitoraggi Attivi", il quale ha la funzione di mostrare la sezione dei monitoraggi e nascondere quella delle impostazioni delle reti;
+		\item L'utente clicca sul pulsante sopra citato;
+		\item Il Sistema modifica l'interfaccia utente in modo da visualizzare la sezione di visualizzazione dei monitoraggi attivi.
+	\end{enumerate}
+	& N.I. \\
+\hline	
+
+TV0-9.1.1 & ROF9.1.1 &
+	\textbf{Obiettivo}: il Sistema deve mettere a disposizione dell'utente un pulsante modifichi la schermata, visualizzando la sezione dei monitoraggi attivi. \newline
+	\textbf{Procedimento}:
+	\begin{enumerate}
+		\item L'utente ha correttamente collegato il pannello al Server;
+		\item Il Sistema modifica l'interfaccia utente in modo da visualizzare il pulsante "Visualizza Monitoraggi Attivi";
+		\item L'utente clicca sul pulsante sopra citato;
+		\item Il Sistema modifica l'interfaccia utente, nascondendo la sezione delle impostazioni delle reti e visualizzando quella relativa ai monitoraggi attivi.
+	\end{enumerate}
+	& N.I. \\
+\hline	
+
+\rowcolor{grigio}TV0-9.2 & ROF9.2 &
+	\textbf{Obiettivo}: il Sistema deve mettere a disposizione dell'utente un pulsante modifichi la schermata, passando da quella dei monitoraggi attivi a quella delle impostazioni delle reti. \newline
+	\textbf{Procedimento}:
+	\begin{enumerate}
+		\item L'utente ha correttamente collegato il pannello al Server;
+		\item Il Sistema modifica l'interfaccia utente in modo da visualizzare il pulsante "Visualizza Monitoraggi Attivi";
+		\item L'utente clicca sul pulsante sopra citato;
+		\item Il Sistema modifica l'interfaccia utente, nascondendo la sezione delle impostazioni delle reti e visualizzando quella relativa ai monitoraggi attivi;
+		\item Nella sopracitata sezione, il Sistema mette a disposizione un pulsante per tornare alla visualizzazione delle impostazioni delle reti, denominato "Visualizza Impostazioni";
+		\item L'utente clicca sul pulsante sopra citato;
+		\item Il Sistema modifica l'interfaccia utente cambiando da quella dei monitoraggi attivi a quella delle impostazioni delle reti.
+	\end{enumerate}
+	& N.I. \\
+\hline
+
+TV2-10 & RDF10 &
+	\textbf{Obiettivo}: il Sistema deve dare all'utente la possibilità di eliminare una rete salvata nel Server. \newline
+	\textbf{Procedimento}:
+	\begin{enumerate}
+		\item L'utente ha correttamente collegato il pannello al Server;
+		\item L'utente ha precedentemente salvato almeno una rete nel Server;
+		\item L'utente visualizza la sezione dedicata al caricamento delle reti;
+		\item L'utente seleziona la rete che desidera eliminare;
+		\item L'utente visualizza un pulsante nella sezione adibita al caricamento delle reti, denominato "Elimina" il quale elimina la rete da quelle salvate;
+		\item L'utente clicca il pulsante;
+		\item Il Sistema inoltra al Server la richiesta di eliminazione della rete, il quale la elimina.
+	\end{enumerate}
+	& N.I. \\
+\hline
+
+
+\rowcolor{grigio}TV2-10.1 & RDF10.1 &
+	\textbf{Obiettivo}: il Sistema deve mettere a disposizione dell'utente un pulsante per eliminare una rete selezionata nell'apposito menù a tendina e salvata nel Server. \newline
+	\textbf{Procedimento}:
+	\begin{enumerate}
+		\item L'utente ha correttamente collegato il pannello al Server;
+		\item L'utente ha precedentemente salvato almeno una rete nel Server;
+		\item L'utente visualizza un pulsante nella sezione adibita al caricamento delle reti, denominato "Elimina" il quale elimina la rete da quelle salvate.
+		\item L'utente seleziona una rete tra quelle salvate nel Server;
+		\item L'utente clicca il pulsante "Elimina";
+		\item Il Sistema notifica al Server la decisione dell'utente;
+		\item Il Server elimina la rete da quelle salvate.
+	\end{enumerate}
+	& N.I. \\
+\hline
+
+\rowcolor{grigio}TV2-10.2 & RDF10.2 &
+	\textbf{Obiettivo}: il Sistema deve notificare all'utente l'impossibilità di eliminare una rete sotto monitoraggio qualora l'utente provi ad eliminarne una. \newline
+	\textbf{Procedimento}:
+	\begin{enumerate}
+		\item L'utente ha correttamente collegato il pannello al Server;
+		\item L'utente ha precedentemente salvato almeno una rete nel Server;
+		\item L'utente visualizza un pulsante nella sezione adibita al caricamento delle reti, denominato "Elimina" il quale elimina la rete da quelle salvate.
+		\item L'utente seleziona una rete tra quelle salvate nel Server;
+		\item L'utente clicca il pulsante "Elimina";
+		\item Il Sistema controlla se la rete sia sotto monitoraggio o meno;
+		\item In caso positivo, il Sistema non richiede al Server l'eliminazione della rete;
+		\item In caso positivo, il Sistema fa apparire all'utente una finestra con l'errore di non cancellazione della rete.
+	\end{enumerate}
+	& N.I. \\
+\hline
+
+TV2-10.2.1 & RDF10.2.1 &
+	\textbf{Obiettivo}: il Sistema deve verificare che l'utente, in fase di eliminazione della rete, non abbia selezionato una rete sotto monitoraggio. \newline
+	\textbf{Procedimento}:
+	\begin{enumerate}
+		\item L'utente ha correttamente collegato il pannello al Server;
+		\item L'utente ha precedentemente salvato almeno una rete nel Server;
+		\item L'utente visualizza un pulsante nella sezione adibita al caricamento delle reti, denominato "Elimina" il quale elimina la rete da quelle salvate.
+		\item L'utente seleziona una rete tra quelle salvate nel Server;
+		\item L'utente clicca il pulsante "Elimina";
+		\item Il Sistema controlla se la rete sia sotto monitoraggio o meno;
+		\item In caso positivo, il Sistema non richiede al Server l'eliminazione della rete.
+	\end{enumerate}
+	& N.I. \\
+\hline
+
+\rowcolor{grigio}TV2-10.3 & RDF10.3 &
+	\textbf{Obiettivo}: il Server deve rimuovere dalle reti salvate la rete che l'utente desidera eliminare. \newline
+	\textbf{Procedimento}:
+	\begin{enumerate}
+		\item L'utente ha correttamente collegato il pannello al Server;
+		\item L'utente ha precedentemente salvato almeno una rete nel Server;
+		\item L'utente visualizza un pulsante nella sezione adibita al caricamento delle reti, denominato "Elimina" il quale elimina la rete da quelle salvate.
+		\item L'utente seleziona una rete tra quelle salvate nel Server;
+		\item L'utente clicca il pulsante Elimina;
+		\item Il Sistema controlla se la rete sia sotto monitoraggio o meno;
+		\item In caso non lo sia, il Sistema richiede al Server l'eliminazione della rete;
+		\item Il Server elimina la rete dalla memoria con le relative impostazioni.
+	\end{enumerate}
+	& N.I. \\
+\hline
+
+TV2-10.4 & RDF10.4 &
+	\textbf{Obiettivo}: il Sistema deve mostrare all'utente un messaggio di avvenuta eliminazione della rete. \newline
+	\textbf{Procedimento}:
+	\begin{enumerate}
+		\item L'utente ha correttamente collegato il pannello al Server;
+		\item L'utente ha precedentemente salvato almeno una rete nel Server;
+		\item L'utente visualizza un pulsante nella sezione adibita al caricamento delle reti, denominato "Elimina" il quale elimina la rete da quelle salvate.
+		\item L'utente seleziona una rete tra quelle salvate nel Server;
+		\item L'utente clicca il pulsante "Elimina";
+		\item Il Sistema inoltra al Server la richiesta di eliminazione della rete;
+		\item Il Server elimina la rete;
+		\item Il Sistema riceve la conferma di avvenuta eliminazione;
+		\item Il Sistema fa apparire una finestra con il messaggio di avvenuta eliminazione della rete.
+	\end{enumerate}
+	& N.I. \\
+\hline
+
+
+
+
+
+
+
+
 \caption{Test di validazione previsti}
 \label{testvalidazioneprevisti}
 \end{longtable}
 
 
 
-% Questa sezione verrà completata nel momento in cui verranno svolti i test. La descrizione di questo tipo di test è riportata nel documento \textit{Norme di Progetto v2.0.0}, nell'appendice §D che tra
+% Questa sezione verrà completata nel momento in cui verranno svolti i test. La descrizione di questo tipo di test è riportata nel documento \textit{Norme di Progetto v3.0.0}, nell'appendice §D che tra

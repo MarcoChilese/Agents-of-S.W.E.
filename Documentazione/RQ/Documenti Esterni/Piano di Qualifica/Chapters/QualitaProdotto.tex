@@ -12,9 +12,9 @@ I documenti dovranno rispettare i pilastri della scrittura che prevedono la legg
 \subsubsection{Comprensione}
 
 \begin{itemize}
-	\item \textbf{Indice di Gulpease}: vista la natura molto tecnica dei documenti prodotti, essi verranno considerati leggibili se comprensibili da persone con licenza di istruzione superiore. Per garantire una corretta leggibilità dei documenti il gruppo ha deciso di utilizzare l'indice di riferimento Gulpease descritto nel documento \textit{Norme di Progetto v2.0.0} nella sezione §3.2.6.1;
+	\item \textbf{Indice di Gulpease}: vista la natura molto tecnica dei documenti prodotti, essi verranno considerati leggibili se comprensibili da persone con licenza di istruzione superiore. Per garantire una corretta leggibilità dei documenti il gruppo ha deciso di utilizzare l'indice di riferimento Gulpease descritto nel documento \textit{Norme di Progetto v3.0.0} nella sezione §3.2.6.1;
 	
-	\item \textbf{Correttezza Ortografica}: i documenti non conterranno errori ortografici. Per garantire tale correttezza, verranno utilizzati gli strumenti software descritti nelle \textit{Norme di Progetto v2.0.0} nella sezione §3.2.6.1;
+	\item \textbf{Correttezza Ortografica}: i documenti non conterranno errori ortografici. Per garantire tale correttezza, verranno utilizzati gli strumenti software descritti nelle \textit{Norme di Progetto v3.0.0} nella sezione §3.2.6.1;
 	
 \end{itemize}
 
@@ -34,7 +34,8 @@ MTPDD18 & Indice di Gulpease & 100 & $\geq 40$ \\
 Seguendo lo standard ISO/IEC 9126:2001, il gruppo \texttt{Agents of S.W.E.} ha deciso di perseguire i seguenti obiettivi di qualità del prodotto software finale:
 
 \subsubsection{Funzionalità}
-Le seguenti metriche e ciò che lo standard intende con \textit{Funzionalità} è descritto all'interno del documento \textit{Norme di Progetto v2.0.0} nella sezione §3.2.6.2.\\
+\label{func}
+Le seguenti metriche e ciò che lo standard intende con \textit{Funzionalità} è descritto all'interno del documento \textit{Norme di Progetto v3.0.0} nella sezione §3.2.6.2.\\
 
 \textbf{Obiettivi di Qualità} :
 \begin{itemize}
@@ -44,14 +45,16 @@ Le seguenti metriche e ciò che lo standard intende con \textit{Funzionalità} �
 	\item \textbf{Sicurezza}: i dati sensibili utilizzati dal prodotto devono essere disponibili solo agli utenti che li hanno generati o a chi da loro richiesto. 
 \end{itemize}
 Le ultime due qualità precedentemente descritte, sono già rese disponibili dal software \textit{Grafana}. \\
-Gli obiettivi metrici stabiliti per le metriche descritte nei paragrafi §3.2.6.2 delle \textit{Norme di Progetto v2.0.0} sono : 
+Gli obiettivi metrici stabiliti per le metriche descritte nei paragrafi §3.2.6.2 delle \textit{Norme di Progetto v3.0.0} sono : 
 
 \begin{longtable}{|C{.15\textwidth}|C{.24\textwidth}|C{.24\textwidth}|C{.24\textwidth}|}
 \hline
 \rowcolor{bluelogo}\textbf{\textcolor{white}{ID}} & \textbf{\textcolor{white}{Nome}} & \textbf{\textcolor{white}{Ottimalità}} & \textbf{\textcolor{white}{Accettabilità}}\\
 MTPDS20 & Soddisfacimento Requisiti Obbligatori & 100\% & 100\%\\
 \hline
-\rowcolor{grigio}MTPDS21 & Soddisfacimento Requisiti Opzionali Accettati & 100\% & 60\% \\ 
+\rowcolor{grigio}MTPDS21 & Soddisfacimento Requisiti Opzionali Accettati & 100\% & 60\% \\
+\hline
+MTPDS22 & Percentuale requisiti totali coperti & 100\% & 75\% \\ 
 \hline
 \caption{Funzionalità}
 \label{Funzionalità}
@@ -59,7 +62,7 @@ MTPDS20 & Soddisfacimento Requisiti Obbligatori & 100\% & 100\%\\
 
 \subsubsection{Affidabilità}
 
-Le seguenti metriche e ciò che lo standard intende con \textit{Affidabilità} è descritto all'interno del documento \textit{Norme di Progetto v2.0.0} nella sezione §3.2.6.3. \\
+Le seguenti metriche e ciò che lo standard intende con \textit{Affidabilità} è descritto all'interno del documento \textit{Norme di Progetto v3.0.0} nella sezione §3.2.6.3. \\
 \textbf{Obiettivi di Qualità} :
 
 \begin{itemize}
@@ -83,7 +86,7 @@ MTPDS22 & Densità di Failure & 100\% & 100\%\\
 
 \subsubsection{Efficienza}
 
-Le seguenti metriche e ciò che lo standard intende con \textit{Efficienza} è descritto all'interno del documento \textit{Norme di Progetto v2.0.0} nella sezione §3.2.6.4. \\
+Le seguenti metriche e ciò che lo standard intende con \textit{Efficienza} è descritto all'interno del documento \textit{Norme di Progetto v3.0.0} nella sezione §3.2.6.4. \\
 
 \textbf{Obiettivi di Qualità} :
 
@@ -107,7 +110,7 @@ MTPDS24 & Tempo di Risposta Medio & $\leq 1s$ & 2s<x $\leq 5s$\\
 
 \subsubsection{Usabilità}
 
-Le seguenti metriche e ciò che lo standard intende con \textit{Usabilità} è descritto all'interno del documento \textit{Norme di Progetto v2.0.0} nella sezione §3.2.6.5. \\
+Le seguenti metriche e ciò che lo standard intende con \textit{Usabilità} è descritto all'interno del documento \textit{Norme di Progetto v3.0.0} nella sezione §3.2.6.5. \\
 
 \textbf{Obiettivi di Qualità} :
 
@@ -118,7 +121,7 @@ Le seguenti metriche e ciò che lo standard intende con \textit{Usabilità} è d
 	\item \textbf{Attrattività}: il software deve essere di piacevole utilizzo da parte dell'utente.
 \end{itemize}
 
-Gli obiettivi metrici stabiliti per le metriche descritte nel paragrafo §3.2.6.5 delle \textit{Norme di Progetto v2.0.0} sono : 
+Gli obiettivi metrici stabiliti per le metriche descritte nel paragrafo §3.2.6.5 delle \textit{Norme di Progetto v3.0.0} sono : 
 
 \begin{longtable}{|C{.15\textwidth}|C{.24\textwidth}|C{.24\textwidth}|C{.24\textwidth}|}
 \hline
@@ -133,7 +136,7 @@ MTPDS26 & Tempo medio di Comprensione & $\leq 5m$ & 5m<x $\leq 10m$\\
 
 \subsubsection{Manutenibilità}
 
-Le seguenti metriche e ciò che lo standard intende con \textit{Manutenibilità} è descritto all'interno del documento \textit{Norme di Progetto v2.0.0} nella sezione §3.2.6.6. \\
+Le seguenti metriche e ciò che lo standard intende con \textit{Manutenibilità} è descritto all'interno del documento \textit{Norme di Progetto v3.0.0} nella sezione §3.2.6.6. \\
 
 \textbf{Obiettivi di Qualità} :
 
@@ -156,7 +159,7 @@ MTPDS28 & Percentuale Commenti/Codice & 20\%<x $\leq 30\%$ & $\leq 20\%$\\
 
 \subsubsection{Portabilità}
 
-Ciò che lo standard intende con \textit{Manutenibilità} è descritto all'interno del documento \textit{Norme di Progetto v2.0.0} nella sezione §3.2.6.7. \\
+Ciò che lo standard intende con \textit{Manutenibilità} è descritto all'interno del documento \textit{Norme di Progetto v3.0.0} nella sezione §3.2.6.7. \\
 
 \textbf{Obiettivi di Qualità} :
 
