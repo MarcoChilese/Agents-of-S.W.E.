@@ -24,7 +24,7 @@ Della lista di nodi visualizzata l'utente ha la possibilità di collegare ogni n
 
 \textbf{PASSAGGIO 3:} A questo punto l'utente deve configurare le soglie associate ad ogni possibile stato del nodo in esame. Tali soglie verranno verificate in sede di monitoraggio per associare un valore di evidenza al nodo della rete bayesiana in un dato istante.Possiamo suddividere questo passaggio in ultreriori cinque passi:
 \begin{enumerate}
-	\item L'utente seleziona \textbf{Add Treshold} (pulsante presente in Figura \ref{PannelloNodo}) per aggiungere una soglia allo stato del nodo associato. È possibile aggiungere più soglie associate allo stesso stato;
+	\item L'utente seleziona \textbf{Aggiungi soglia} (pulsante presente in Figura \ref{PannelloNodo}) per aggiungere una soglia allo stato del nodo associato. È possibile aggiungere più soglie allo stesso stato;
 	\item L'utente indica il valore numerico della soglia che sta definendo attraverso l'apposito campo dati visibile in Figura \ref{PannelloSoglie};
 	\item L'utente seleziona, tramite la casella a scelta multipla, un valore tra i possibili: "<","<=",">" o ">=", per indicare la tipologia di soglia che sta configurando (Figura \ref{PannelloSoglie});
 	\item Se lo desidera l'utente può etichettare la soglia come "critica" attraverso l'apposita checkbox (Figura \ref{PannelloSoglie}). In tal caso la verifica di tale soglia verrà fatta a prescindere dalla politica temporale delezionata in §\ref{policy};
@@ -33,7 +33,7 @@ Della lista di nodi visualizzata l'utente ha la possibilità di collegare ogni n
 
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[scale=0.6]{./images/PannelloSoglie.png}
+		\includegraphics[scale=0.55]{./images/PannelloSoglie.png}
 		 \caption{Pannello di Collegamento del Nodo con vista sulla definizione delle soglie}	
 		 \label{PannelloSoglie}
 	\end{center}
@@ -42,13 +42,23 @@ Della lista di nodi visualizzata l'utente ha la possibilità di collegare ogni n
 \textbf{PASSAGGIO 4:} Infine l'utente deve confermate le proprie scelte di collegamento del nodo attraverso il pulsante \textbf{Conferma Collegamento} presente in Figura \ref{PannelloSoglie}.
 
 ~\\
-A seguito del corretto collegamento del nodo al flusso dati l'utente verrà avvisato del buon esito dell'operazione da un messaggio di notifica (Figura \ref{NotificaCollegamento}). L'utente visualizza inoltre, accanto al nodo in esame, la spunta sulla checkbox che ne indica lo stato di "Collegato al flusso dati" e il pulsante "Scollega" per scollegare con un solo click il nodo al flusso dati (Figura \textcolor{red}{TODO Link img Pannello collegamento 2}).
+A seguito del corretto collegamento del nodo al flusso dati l'utente verrà avvisato del buon esito dell'operazione da un messaggio di notifica (Figura \ref{NotificaCollegamento}).
 
 \begin{figure}[H]
 	\begin{center}
 		\includegraphics[scale=0.6]{./images/NotificaCollegamento.png}
 		 \caption{Notifica di avvenuto collegamento del Nodo al flusso dati}	
 		 \label{NotificaCollegamento}
+	\end{center}
+\end{figure}
+
+L'utente visualizza inoltre, accanto al nodo in esame, la spunta sulla checkbox che ne indica lo stato di "Collegato al flusso dati" e il pulsante \textbf{Scollega Nodo} (Figura \ref{NodoCollegato}) per scollegare con un solo click il nodo al flusso dati.
+ 
+ \begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.4]{./images/NodoCollegato.png}
+		 \caption{Visualizzazione Nodo Collegato}	
+		 \label{NodoCollegato}
 	\end{center}
 \end{figure}
 
