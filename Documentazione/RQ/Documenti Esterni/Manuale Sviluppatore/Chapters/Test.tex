@@ -3,6 +3,27 @@
 \subsection{Scopo del Capitolo}\label{Test_scopo}
 Questo capitolo ha lo scopo di indicare agli sviluppatori come controllare in modo automatico il proprio codice e la sintassi.
 
-\subsection{Test sul Codice JavaScript}
+\subsection{Test sul Codice JavaScript}\label{test_JS}
+Per eseguire i test sul codice è necessario eseguire i seguenti comandi:
+\begin{center}
+	\texttt{npm run test}\\
+	o\\
+	\texttt{jest}.
+\end{center}
+Per verificare che il codice sia coerente con le linee guida adottate è necessario eseguire:
+\begin{center}
+	\texttt{npm run eslint}.
+\end{center}
+Per correggere in modo automatico alcuni dei potenziali problemi, eseguire:
+\begin{center}
+	\texttt{npm run eslint--fix}.
+\end{center}
+Questi script eseguono un controllo del codice all'interno di "\texttt{./src}", la directory dov'è contenuto il codice.\\
+Se si desidera eseguire \textit{ESLint} su di un'unico file, si rimanda il lettore alla documentazione ufficiale.
 
-\subsection{Code Coverage}
+\subsection{Code Coverage}\label{test_codecoverage}
+Per eseguire il controllo di coperta del codice JavaScript, è necessario eseguire il seguente comando:
+\begin{center}
+	\texttt{npm run codecov}.
+\end{center}
+Nel caso tale comanda fallisca la principale motivazione è data dall'assenza di report su cui generare il code coverage. Per rimediare a ciò basterà eseguire il primo comando nella sezione §\ref{test_JS} il quale provvederà a generare i report necessari.
