@@ -1,25 +1,5 @@
-\subsubsection{Gestione degli Strumenti di Versionamento}\label{ProcessiOrganizzativi_Procedure_GestioneStrumentiVersionamento}
-	Come strumento per la gestione del versionamento dei documenti si è scelto di utilizzare un \textit{Repository} su \textit{GitHub}, mentre come gestione del versionamento del codice si è scelto di utilizzare un repository su \textit{GitLab}. La gestione di tali \textit{Repository} è compito dell'\textit{Amministratore di Progetto}.
 
-\paragraph{Uso dei Branch} ~\\
-	Al fine di agevolare il più possibile il parallelismo, evitando al contempo quanto più possibile eventuali problematiche in fase di \textit{merge}\glossario, sono stati creati i seguenti branch\glossario:
-	\begin{itemize}
-	\item \textbf{master}: questo branch contiene solamente i documenti e file che si trovano in stato "Approvato", i quali formano dunque la baseline\glossario;
-	\item \textbf{develop}: questo è il branch di "sviluppo". Esso contiene tutti i documenti e file che, sebbene siano considerati ultimati per quanto riguarda la loro stesura, sono in attesa di approvazione o in fase di verifica;
-	\item \textbf{feature/"nomeDocumento"}: vi sono quattro branch distinti questo tipo, nello specifico: "feature/analisiRequisiti", "feature/normeProgetto, "feature/pianoProgetto" e "feature/pianoQualifica". Ciascuno di questi è specializzato nell'avanzamento della stesura del documento a cui si riferisce;
-	%TODO: inserire struttura repository su gitlab
-	\item \textbf{feature/revisione"nomeFile"}: questi branch vengono sfruttati qualora un documento o file presente nel branch develop, in sede di verifica, dovesse necessitare di modifiche non immediate.
-	\end{itemize}
 
-\paragraph{Norme delle Commit} ~\\
-	Ogni commit\glossario, ovvero ciascuna modifica alle repository, deve essere caratterizzata da una descrizione sensata, eventualmente accompagnata ad un riferimento esplicito ad una issue\glossario aperta, al fine di agevolare una piena, e non onerosa, comprensione da parte di ogni membro del gruppo.
 
-\paragraph{Norme dei Merge tra Branch} ~\\
-	Al fine di rispettare la caratterizzazione che si è deciso di dare al branch master, e per agevolare un lavoro sistematico ed organizzato del lavoro si sono stabilite le seguenti norme in sede di merge tra diversi branch:
-	\begin{itemize}
-	\item \textbf{Merge develop-feature/"nomeDocumento"}: questo merge avviene solo quando gli incaricati alla stesura del documento a cui si riferisce il branch: feature/"nomeDocumento" ritengono ultimata questa prima attività. Il documento in questione, dunque, si considera completo di ogni sua parte essenziale, eccezzion fatta per eventuali modifiche, anche cospicue, da apportare a seguito di un'attività di verifica e/o approvazione;
-	\item \textbf{Merge develop-feature/revisione"nomeDocumento"}: questo merge avviene qualora le modifche necessarie al documento in questione siano risolte con successo;
-	\item \textbf{Merge master-develop}: questo merge avviene solo quando ogni documento contenuto nel branch: "develop" è stato verificato ed approvato, e si considera dunque pronto per il rilascio.
-	\end{itemize}
 
 
