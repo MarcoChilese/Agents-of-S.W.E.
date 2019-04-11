@@ -1,16 +1,43 @@
-\paragraph{Scopo}
+\paragraph{Descrizione}
 \label{Progettazione_Scopo} \-\\
 L'attività di Progettazione consiste nel descrivere una soluzione che sia soddisfacente per gli stakeholder\glossario. È compito dei \textit{Progettisti} svolgere tale attività, definendo l'architettura del prodotto finale, mantenendo chiare e riusabili le componenti, restando nei costi prefissati.\\
-L'architettura definita dovrà quindi:
+La progettazione viene svolta in due periodi distinti: nel periodo di Progettazione Architetturale verranno studiati i design pattern per la realizzazione dell'archittetura. Nel periodo di  Progettazione di Dettaglio e Codifica la progettazione diventa atomica per ogni componente del sistema, in modo che i \textit{Programmatori} possano sviluppare il codice in maniera parallela e focalizzandosi su specifiche task. \\
+L’architettura definita dovrà soddisfare le seguenti qualità:
 \begin{itemize}
-	\item Soddisfare i requisiti definiti nel \textit{Analisi dei Requisiti v2.0.0};
-	\item Essere comprensibile e modulare;
-	\item Essere robusta riuscendo a gestire situazioni d'errore improvvise.
+	\item \textbf{Sufficienza}: soddisfare i requisiti definiti nel documento \textit{Analisi dei Requisiti v3.0.0};
+	\item \textbf{Modularità}: essere divisa in parti chiare e distinte, ognuna con la sua specifica funzione;
+	\item \textbf{Robustezza}: essere in grado di gestire malfunzionamenti in modo da
+	rimanere operativa di fronte a situazioni erronee improvvise;
+	\item \textbf{Flessibilità}: permettere modifiche a costo contenuto nel caso in cui i
+	requisiti dovessero evolversi o se ne dovessero aggiungere di nuovi;
+	\item \textbf{Riusabilità}: essere costruita in modo da poter permettere il riutilizzo
+	di alcune sue parti;
+	\item \textbf{Efficienza}: soddisfare i requisiti utilizzando il minor numero di risorse possibili;
+	\item \textbf{Affidabilità}: garantire che i servizi esposti siano sempre disponibili;
+	\item \textbf{Disponibilità}: la manutenzione deve essere effuttuata in tempi rapidi, evitando di rendere indisponibile il servizio;
+	\item \textbf{Sicurezza}: essere sicura rispetto ad intrusioni e malfunzionamenti;
+	\item \textbf{Semplicità}: prediligere la semplicità, contenendo solo il necessario;
+	\item \textbf{Coesione}: raggruppare le parti con un obiettivo comune, in modo da avere maggiore manutenibilità e riusabilità;
+	\item \textbf{Basso accoppiamento}: parti distinte devono essere poco dipendenti tra loro, in modo da poter essere facilmente manutenibili.
+\end{itemize}
+
+\paragraph{Obiettivi della Progettazione} \-\\
+\label{Progettazione_Obiettivi}
+La Progettazione serve per garantire che il prodotto sviluppato soddisfi le proprietà ed i requisiti delineati durante l'attività di analisi, ponendosi come obiettivi:
+\begin{itemize}
+	\item Costruire un’architettura logica del prodotto;
+	\item Garantire la qualità di prodotto sviluppato, perseguendo la correttezza per costruzione;
+	\item Rendere chiara e comprensibile l'architettura progettata per gli stakeholder;
+	\item Organizzare e ripartire compiti implementativi, riducendo la complessità del problema originale fino alle singole componenti facilitandone la codifica da parte dei
+	singoli \textit{Programmatori};
+
+	\item Mantenere bassa la dipendenza tra le varie parti del prodotto favorendo la modularità ed il riuso;
+	\item Ottimizzare l'uso delle risorse.
 \end{itemize}
 
 \paragraph{Sviluppo} \-\\
 \label{Progettazione_Sviluppo}
-Lo sviluppo di \textit{G\&B} avviene seguendo il modello incrementale, spiegato nel dettaglio nel documento \textit{Piano di Progetto v2.0.0} alla sezione §4.\\
+Lo sviluppo di \textit{G\&B} avviene seguendo il modello incrementale, spiegato nel dettaglio nel documento \textit{Piano di Progetto v3.0.0} alla sezione §4.\\
 La proponente nel capitolato d'appalto pone un singolo vincolo riguardo le tecnologie da utilizzare:
 \begin{itemize}
 	\item \textit{JavaScrip}t: in particolare nella sua declinazione nota come \textit{ECMAScript 6}\glossario.
@@ -23,9 +50,9 @@ Tuttavia, ai fini della realizzazione del prodotto finale, il team \texttt{Agent
 %	\item \textit{UnBBayes}\glossario: framework e interfaccia grafica per le reti bayesiane;
 %	\item Docker\glossario\footnote{\url{https://www.docker.com/}}: progetto open-source\glossario che automatizza il deployment\glossario di applicazioni all'interno di contenitori software. In particolare, in Docker Hub\glossario\footnote{\url{https://hub.docker.com/}} sono presenti le immagini utilizzabili mediante container di Telegraf, InfluxDB e Grafana. Pertanto, per agevolare la collaborazione e uniformare l'ambiente di sviluppo, \texttt{Agents Of S.W.E.} utilizzerà Grafana, Telegraf e InfluxDB in appositi container Docker;
 	\item \textit{GitLab}\glossario: piattaforma open-source per la gestione di repository \textit{Git}. Il team utilizzerà un repository salvato su tale piattaforma in quanto permette la gestione di una pipeline di CI/CD\glossario, evitando quindi l'uso di altri strumenti. Il processo di CI/CD si configura come rappresentato nell'immagine e viene spiegato nell'appendice \ref{CICD} ;
-	\item \textit{NPM}\glossario: manager di pacchetti per \textit{JavaScript}. Verrà analizzato nel dettaglio in §\ref{NPM};
-	\item \textit{Jest}\glossario: è un framework per il testing di \textit{JavaScript}. Verrà analizzato nel dettaglio in §\ref{jest};
-	\item \textit{Codecov.io}: servizio di code coverage\glossario basato su repository presenti in piattaforme di versionamento quali \textit{GitHub}\glossario e \textit{GitLab}. Ad ogni esecuzione in \textit{GitLab} della pipeline di CI/CD, vengono generati da \textit{Jest} i report di coverage da cui \textit{Codecov.io} elabora la copertura del codice;
+%	\item \textit{NPM}\glossario: manager di pacchetti per \textit{JavaScript}. Verrà analizzato nel dettaglio in §\ref{NPM};
+%	\item \textit{Jest}\glossario: è un framework per il testing di \textit{JavaScript}. Verrà analizzato nel dettaglio in §\ref{jest};
+%	\item \textit{Codecov.io}: servizio di code coverage\glossario basato su repository presenti in piattaforme di versionamento quali \textit{GitHub}\glossario e \textit{GitLab}. Ad ogni esecuzione in \textit{GitLab} della pipeline di CI/CD, vengono generati da \textit{Jest} i report di coverage da cui \textit{Codecov.io} elabora la copertura del codice;
 	\item \textit{jQuery}\glossario: è una libreria \textit{JavaScript} per applicazioni web. Viene utilizzato all'interno del progetto per le \textit{AJAX}\glossario request.
 \end{itemize}
 
@@ -56,14 +83,4 @@ Per rendere più chiare le scelte progettuali adottate, si farà largo uso di di
 	\item \textbf{Diagrammi dei Package}: dedicati alla descrizione delle dipendenze tra gli oggetti raggruppati in un package;
 	\item \textbf{Diagrammi di Sequenza}: dedicati alla descrizione della collaborazione nel tempo tra un gruppo di oggetti;
 	\item \textbf{Diagrammi di Attività}: dedicati ala descrizione della logica procedurale.
-\end{itemize}
-
-\paragraph{Obiettivi della Progettazione} \-\\
-\label{Progettazione_Obiettivi}
-La Progettazione serve per garantire che il prodotto sviluppato soddisfi le proprietà ed i requisiti delineati durante l'attività di analisi, ponendosi come obiettivi:
-\begin{itemize}
-	\item Garantire la qualità di prodotto sviluppato, perseguendo la correttezza per costruzione;
-	\item Rendere chiara e comprensibile l'architettura progettata per gli stakeholder;
-	\item Mantenere bassa la dipendenza tra le varie parti del prodotto favorendo la modularità ed il riuso;
-	\item Ottimizzare l'uso delle risorse.
 \end{itemize}

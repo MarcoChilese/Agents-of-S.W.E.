@@ -3,11 +3,11 @@ Ogni norma è caratterizzata da un paragrafo di appartenenza, da un titolo, una 
 Il rispetto delle seguenti norme è fondamentale per garantire uno stile di codifica uniforme all'interno del progetto, oltre che per massimizzare la leggibilità  e agevolare la manutenzione, la verifica\glossario e la validazione\glossario.
 
 \paragraph{Convenzioni per i Nomi} \label{Nomi}
-\begin{itemize}	
+\begin{itemize}
 	\item I \textit{Programmatori} devono adottare come notazione per la definizione di cartelle, file, metodi, funzioni e variabili il CamelCase\glossario.\\
 	Di seguito un esempio di corretta nomenclatura:
 	\begin{lstlisting}[language=JavaScript]
-//Cartelle 
+//Cartelle
 ./thisIsAFolder	//OK
 ./ThisIsAFolder //NO
 
@@ -23,7 +23,7 @@ MyFunction() { ... } //NO
 	\item Tutti i nomi devono essere unici ed autoesplicativi, ciò per evitare ambiguità  e limitare la complessità .
 \end{itemize}
 \paragraph{Convenzioni per la Documentazione}
-\begin{itemize}	
+\begin{itemize}
 	\item Tutti i nomi ed i commenti al codice vanno scritti in inglese;
 	\item Nel codice è possibile utilizzare un commento con denominazione TODO in cui si vanno ad indicare compiti da svolgere;
 	\item L'intestazione di ogni file deve essere la seguente:
@@ -34,7 +34,7 @@ MyFunction() { ... } //NO
 * Creation date: yyyy-mm-gg
 * Author: Name Surname
 * Author e-mail: email@example.com
-* Version: versionNumber 
+* Version: versionNumber
 *
 * Changelog:
 * #entry || Author || Date || Description
@@ -54,45 +54,5 @@ MyFunction() { ... } //NO
 \paragraph{\textit{AngularJS}} \label{angularjs} \-\\
 \input{Chapters/Norme_AngularJS.tex}
 
-
-\paragraph{\textit{WebStorm}}\-\\
-Come ambiente di sviluppo integrato comune il team ha scelto di utilizzare l'IDE \textit{WebStorm}, facente parte della famiglia di prodotti di JetBrains. \\
-\textit{WebStorm} è una cross-platform, sviluppata principalmente per lo sviluppo web, \textit{JavaScript e TypeScript}. \\
-La configurazione della piattaforma di sviluppo dovrà essere equivalente per tutti i componenti del gruppo. All'interno della piattaforma dovrà essere installato il plug-in \textit{ESLint}, la cui funzione verrà illustrata in seguito.
-
-\paragraph{\textit{NPM}}\label{NPM} \-\\
-\textit{Npm} è un gestore di pacchetti per \textit{JavaScript}, gestisce inoltre i pacchetti di default presenti nell'ambiente \textit{Node.js}\glossario.\\
-Risulta essere strutturato in due parti: un client a riga di comando ed un database, contente pacchetti sia pubblici che privati. Lo scopo di \textit{node.js} è di incoraggiare il riuso del codice tra team ed il suo utilizzo è mirato alla gestione delle dipendenze.\\ 
-Il suo utilizzo è necessario per poter eseguire e testare il codice \textit{ES6}.
-
-\paragraph{\textit{ESLint}}\-\\
-Il plug-in \textit{ESLint}, scaricabile dall'apposita sezione all'interno dell'IDE utilizzato, ha la funzione di segnalare errori che vengono effettuati durante la stesura del codice, in modo da evitare bug e rendere il codice più coerente. \\ 
-Si occupa inoltre di far aderire il codice allo standard \textit{Airbnb} che il team ha deciso di adottare, segnalando le varie difformità.\\
-Il plug-in è reperibile tra i pacchetti resi disponibili da \textit{NPM}.\\
-Le regole utilizzate all'interno del plug-in saranno quelle esplicitate nella sezione §\ref{EcmaScript6}, riguardanti lo stile e le regole da rispettare per la stesura del codice con \textit{EcmaScript6}.
-
-\paragraph{\textit{Jest}}\-\\
-\label{jest}
-\textit{Jest} è un framework per il testing di \textit{JavaScript} che il team ha deciso di adottare per la costruzione e l'esecuzione dei test di unità.\\
-Inoltre, il framework offre la possibilità di eseguire il calcolo del code coverage dei file testati.
-
-\paragraph{\textit{Webpack}} \label{webpack}\-\\
-\textit{Webpack} è un module bundler\glossario per applicazioni \textit{javascript}. Nella pratica lo scopo di \textit{webpack} è creare un pacchetto di assets leggibile e utilizzabile dal browser a partire da un insieme di file sorgenti strutturati su diversi file e con dipendenze complesse. \\
-Gli aspetti fondamentali sono:
-\begin{itemize}
-\item \textbf{Entry Point}: rappresenta il punto di partenza da cui iniziare la build e creare lo schema delle dipendenze, di default è './src/index.js' ma può essere modificato nei file di configurazione;
-\item \textbf{Output}: rappresenta la destinazione in cui verranno generati i file leggibili dal browser, di default è './dist' e il file principale è './dist/main.js';
-\item \textbf{Loaders}: di default \textit{webpack} esegue la build solamente di file \textit{javascript} e \textit{JSON}\glossario, tramite questa configurazione \textit{webpack} può essere adattato ad altri tipi di file, così da permettere la conversione anche di essi. I loaders possono avere due proprietà: 
-	\begin{itemize}
-	\item La proprietà test che identifica quali file dovrebbero essere trasformati;
-	\item La proprietà use che identifica quali loaders utilizzare per eseguire la trasformazione.
-	\end{itemize}
-\item \textbf{Plugins}: a differenza dei loaders, i plugins operano in aspetti più generali riguardanti l'ottimizzazione dei pacchetti e la gestione delle risorse. Per utilizzare un plugin bisogna eseguire una 'require' dalla sorgente ed aggiungerlo mediante la 'new' nell'array apposito chiamato 'plugin'.
-\item \textbf{Mode}: viene settato in base all'ambiente in cui lanciato \textit{webpack}, cosi da importare ottimizzazioni specifiche. Può assumere i seguenti valori:
-	\begin{itemize}
-	\item Development;
-	\item Production;
-	\item None.
-	\end{itemize}
-Se non viene specificato viene settato come valore di default 'production'.
-\end{itemize}
+\paragraph{\textit{NodeJS}} \label{nodeJS} \-\\
+\input{Chapters/Norme_NodeJS.tex}
