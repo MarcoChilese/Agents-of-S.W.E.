@@ -65,8 +65,13 @@
 \include{Chapters/Z}
 
 \pagebreak
+\fancypagestyle{plain}{
+ \cfoot{}
+ \lfoot{Glossario v3.0.0}
+ \rfoot{Pagina \thepage \hspace{1pt} di \pageref*{LastPage}}
+}
 \printindex
-\cfoot{}
+
 \addcontentsline{toc}{section}{Indice Analitico}
 
 \end{document}
