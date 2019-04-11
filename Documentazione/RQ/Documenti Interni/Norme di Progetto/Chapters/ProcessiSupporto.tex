@@ -181,10 +181,20 @@ Per quanto riguarda la prima, essa contiene le sottocartelle "RR", "RP" ed "RQ" 
 %\paragraph{Configurazione Sistema}
 
 \paragraph{Processo di Implementazione} \-\\
-L'implementazione dei documenti avviene tramite gli strumenti utilizzati nel paragrafo §\ref{ProcessiSupporto_Documentazione}\\
+L'implementazione dei documenti avviene tramite gli strumenti utilizzati nel paragrafo §\ref{ProcessiSupporto_Documentazione_Ambiente}\\
 Quest'ultimi, in fase di compilazione producono dei file di poca rilevanza con estensioni come \textit{.log, .out, .idx, .aux, .gz, .toc}, i quali verranno ignorati come da configurazione. I file con maggior rilevanza, come \textit{.pdf, .tex}, verranno versionati dal sistema di git preinstallato. \\
 Una volta creati e/o modificati i documenti, si procede con il commit di essi. Il commit riporta un cambiamento al file, con un messaggio allegato ad esso che ne 
-descrive le modifiche apportate o un comando apposito per chiudere alcune task con tale commit. Dopo di che il commit viene pushato\glossario nel branch appropriato, a seconda dei criteri descritti nel prossimo paragrafo. 
+descrive le modifiche apportate o un comando apposito per chiudere alcune task con tale commit. Dopodiché il commit viene pushato\glossario nel branch appropriato, a seconda dei criteri descritti nel prossimo paragrafo.
+
+\paragraph{Uso dei Branch} ~\\
+Al fine di agevolare il più possibile il parallelismo, evitando al contempo quanto più possibile eventuali problematiche in fase di \textit{merge}\glossario, sono stati creati i seguenti branch\glossario:
+\begin{itemize}
+	\item \textbf{master}: questo branch contiene solamente i documenti e file che si trovano in stato "Approvato", i quali formano dunque la baseline\glossario;
+	\item \textbf{develop}: questo è il branch di "sviluppo". Esso contiene tutti i documenti e file che, sebbene siano considerati ultimati per quanto riguarda la loro stesura, sono in attesa di approvazione o in fase di verifica;
+	\item \textbf{feature/"nomeDocumento"}: vi sono quattro branch distinti questo tipo, nello specifico: "feature/analisiRequisiti", "feature/normeProgetto, "feature/pianoProgetto" e "feature/pianoQualifica". Ciascuno di questi è specializzato nell'avanzamento della stesura del documento a cui si riferisce;
+	%TODO: inserire struttura repository su gitlab
+	\item \textbf{feature/revisione"nomeFile"}: questi branch vengono sfruttati qualora un documento o file presente nel branch develop, in sede di verifica, dovesse necessitare di modifiche non immediate.
+\end{itemize} 
 
 \paragraph{Ciclo di Vita dei Branch} \-\\
 \begin{enumerate}
@@ -204,6 +214,17 @@ descrive le modifiche apportate o un comando apposito per chiudere alcune task c
 	un problema sul prodotto rilasciato. 
 	
 \end{enumerate}
+
+\paragraph{Norme delle Commit} ~\\
+Ogni commit\glossario, ovvero ciascuna modifica alle repository, deve essere caratterizzata da una descrizione sensata, eventualmente accompagnata ad un riferimento esplicito ad una issue\glossario aperta, al fine di agevolare una piena, e non onerosa, comprensione da parte di ogni membro del gruppo.
+
+\paragraph{Norme dei Merge tra Branch} ~\\
+Al fine di rispettare la caratterizzazione che si è deciso di dare al branch master, e per agevolare un lavoro sistematico ed organizzato del lavoro si sono stabilite le seguenti norme in sede di merge tra diversi branch:
+\begin{itemize}
+	\item \textbf{Merge develop-feature/"nomeDocumento"}: questo merge avviene solo quando gli incaricati alla stesura del documento a cui si riferisce il branch: feature/"nomeDocumento" ritengono ultimata questa prima attività. Il documento in questione, dunque, si considera completo di ogni sua parte essenziale, eccezzion fatta per eventuali modifiche, anche cospicue, da apportare a seguito di un'attività di verifica e/o approvazione;
+	\item \textbf{Merge develop-feature/revisione"nomeDocumento"}: questo merge avviene qualora le modifche necessarie al documento in questione siano risolte con successo;
+	\item \textbf{Merge master-develop}: questo merge avviene solo quando ogni documento contenuto nel branch: "develop" è stato verificato ed approvato, e si considera dunque pronto per il rilascio.
+\end{itemize}
 
 
 \paragraph{Rilascio di Versione} \-\\
