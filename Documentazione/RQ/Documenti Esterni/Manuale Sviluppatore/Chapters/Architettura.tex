@@ -2,6 +2,23 @@
 \subsection{Scopo del Capitolo}
 Il seguente capitolo ha lo scopo di fornire le informazioni necessarie allo sviluppatore per potersi interfacciare con il prodotto, in modo tale da rendere più agevole l'ampliamento e la modifica.
 
+\subsection{Visione Generale}\label{archGenerale}
+Il prodotto si basa su 3 componenti chiave: 
+\begin{itemize}
+	\item Il cliente, ovvero il plug-in per Grafana; 
+	\item Il server, il quale agisce da controller; 
+	\item Il database che fornisce il model.
+\end{itemize}
+Queste tre componenti unite formano il prodotto finale. Esse cambiano messaggi e informazioni una con le altre seguendo un pattern meglio conosciuto come MVC\glossario 
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.5]{./images/architettura.png} 
+	\end{center}
+	\caption{Architettura dell'applicativo}
+\end{figure}
+
+
 \subsection{Pannello}\label{archPannello}
 Per rendere lo sviluppo più semplice, e garantire la manutenibilità del codice il team ha optato per un approccio modulare. In questo modo, avendo moduli separati con compiti distinti, sarà più semplice modificarne o estenderne il comportamento senza dover necessariamente modificare la base comune.\\
 In particolare i moduli separati sono:
