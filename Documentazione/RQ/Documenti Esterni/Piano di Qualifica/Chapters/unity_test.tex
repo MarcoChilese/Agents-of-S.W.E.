@@ -4,75 +4,75 @@
 \hline \hline
 \endhead
 
-TU0-0 & Viene verificato che il file di configurazione esista all'interno della directory & S.\\
+TU0-0 & Viene verificato che il file di configurazione esista all'interno della directory & N.I.\\
 \hline 
-\rowcolor{grigio} TU0-1 & Viene verificato che i parametri di configurazione obbligatori siano presenti nel file di configurazione & S. \\ 
+\rowcolor{grigio} TU0-1 & Viene verificato che i parametri di configurazione obbligatori siano presenti nel file di configurazione & N.I. \\ 
 \hline
-TU0-2 & Viene verificato che le configurazioni rispettino la sintassi & S. \\ 
+TU0-2 & Viene verificato che le configurazioni rispettino la sintassi & N.I. \\ 
 \hline
-\rowcolor{grigio} TU0-3 & Viene verificata la conformità della sintassi alle configurazioni non obbligatorie & S. \\ 
+\rowcolor{grigio} TU0-3 & Viene verificata la conformità della sintassi alle configurazioni non obbligatorie & N.I. \\ 
 \hline 
-TU0-4 & Viene verificato che siano passati i parametri obbligatori all'avvio del server & S. \\ 
+TU0-4 & Viene verificato che siano passati i parametri obbligatori all'avvio del server & N.I. \\ 
 \hline
-\rowcolor{grigio} TU0-5 & Viene verificata l'autenticità della porta obbligatoria all'avvio del server & S. \\ 
+\rowcolor{grigio} TU0-5 & Viene verificata l'autenticità della porta obbligatoria all'avvio del server & N.I. \\ 
 \hline
-TU0-6 & Viene verificato  che l'incapsulamento dei parametri sia avvenuto con successo & S. \\
+TU0-6 & Viene verificato  che l'incapsulamento dei parametri sia avvenuto con successo & N.I. \\
 \hline 
-\rowcolor{grigio} TU0-7 & Viene verificato il lancio di un'eccezione nel caso in cui la porta non sia disponibile & S. \\ 
+\rowcolor{grigio} TU0-7 & Viene verificato il lancio di un'eccezione nel caso in cui la porta non sia disponibile & N.I. \\ 
 \hline 
-TU0-8 & Viene verificato il lancio di un'eccezione nel caso in cui la porta non sia un numero intero & S. \\
+TU0-8 & Viene verificato il lancio di un'eccezione nel caso in cui la porta non sia un numero intero & N.I. \\
 \hline
-\rowcolor{grigio}  TU0-9 & Viene verificato il lancio di un'eccezione nel caso in cui manchino parametri obbligatori nel file di configurazione & S. \\ 
+\rowcolor{grigio}  TU0-9 & Viene verificato il lancio di un'eccezione nel caso in cui manchino parametri obbligatori nel file di configurazione & N.I. \\ 
 \hline
-TU0-10 & Viene verificata l'inizializzazione del proxy server & S. \\ 
+TU0-10 & Viene verificata l'inizializzazione del proxy server & N.I. \\ 
 \hline 
-\rowcolor{grigio} TU0-11 & Viene verificato che la richiesta di \texttt{root} al server del server ritorni l'ora corrente & S. \\ 
+\rowcolor{grigio} TU0-11 & Viene verificato che la richiesta di \texttt{root} al server del server ritorni l'ora corrente & N.I. \\ 
 \hline
-TU0-12 & Viene verificato che il tipo di ritorno dalla richiesta \texttt{root} al server sia di tipo json & S. \\ 
+TU0-12 & Viene verificato che il tipo di ritorno dalla richiesta \texttt{root} al server sia di tipo json & N.I. \\ 
 \hline 
-\rowcolor{grigio}TU0-13 & Viene verificato che il tipo di ritorno della richiesta \texttt{alive} al server sia di tipo json & S. \\ 
+\rowcolor{grigio}TU0-13 & Viene verificato che il tipo di ritorno della richiesta \texttt{alive} al server sia di tipo json & N.I. \\ 
 \hline
- TU0-14 & Viene verificata che la richiesta \texttt{alive} ritorni data corrente e numero della porta in ascolto del server & S. \\ 
+ TU0-14 & Viene verificata che la richiesta \texttt{alive} ritorni data corrente e numero della porta in ascolto del server & N.I. \\ 
 \hline 
-\rowcolor{grigio}TU0-15 & Viene verificata che la richiesta \texttt{networks} ritorni un json & S. \\ 
+\rowcolor{grigio}TU0-15 & Viene verificata che la richiesta \texttt{networks} ritorni un json & N.I. \\ 
 \hline 
- TU0-16 & Viene verificato che venga chiamato il metodo \texttt{getNetworks()} & S. \\
+ TU0-16 & Viene verificato che venga chiamato il metodo \texttt{getNetworks()} & N.I. \\
 \hline 
-\rowcolor{grigio}TU0-17 & Viene verificato che il metodo \texttt{getNetworks()} ritorni un array di json & S. \\ 
+\rowcolor{grigio}TU0-17 & Viene verificato che il metodo \texttt{getNetworks()} ritorni un array di json & N.I. \\ 
 \hline
-TU0-18 & Viene verificato che per ogni json appartenente all'array ritornato da \texttt{getNetworks()} abbia un campo \textit{name} di tipo \textbf{string} ed un campo \textit{monitoring} di tipo \textbf{boolean} & S. \\ 
+TU0-18 & Viene verificato che per ogni json appartenente all'array ritornato da \texttt{getNetworks()} abbia un campo \textit{name} di tipo \textbf{string} ed un campo \textit{monitoring} di tipo \textbf{boolean} & N.I. \\ 
 \hline
-\rowcolor{grigio}TU0-19 & Viene verificato il lancio di un'eccezione dal metodo \texttt{getNetworks()} nel caso in cui l'accesso al filesystem sia proibito & S. \\ 
+\rowcolor{grigio}TU0-19 & Viene verificato il lancio di un'eccezione dal metodo \texttt{getNetworks()} nel caso in cui l'accesso al filesystem sia proibito & N.I. \\ 
 \hline 
-TU0-20 & Viene verificata che la richiesta al server \texttt{uploadnetwork} chiami il metodo \texttt{saveNetworkToFile} passando un parametro di tipo json & S. \\ 
+TU0-20 & Viene verificata che la richiesta al server \texttt{uploadnetwork} chiami il metodo \texttt{saveNetworkToFile} passando un parametro di tipo json & N.I. \\ 
 \hline 
-\rowcolor{grigio}TU0-21 & Viene verificato, nel caso in cui la direcotry di salvataggio delle reti non sia presente, venga creata secondo le configurazioni & S. \\ 
+\rowcolor{grigio}TU0-21 & Viene verificato, nel caso in cui la direcotry di salvataggio delle reti non sia presente, venga creata secondo le configurazioni & N.I. \\ 
 \hline 
- TU0-22 & Viene verificato il lancio di un'eccezione nel caso in cui la creazione della cartella fallisca & S. \\ 
+ TU0-22 & Viene verificato il lancio di un'eccezione nel caso in cui la creazione della cartella fallisca & N.I. \\ 
 \hline 
-\rowcolor{grigio}TU0-23 & Viene verificato che la rete venga sovrascritta nel caso in cui l'utente cerca di caricare la stessa rete & S. \\
+\rowcolor{grigio}TU0-23 & Viene verificato che la rete venga sovrascritta nel caso in cui l'utente cerca di caricare la stessa rete & N.I. \\
 \hline
- TU0-24 & Viene verificato il lancio di un'eccezione nel caso in cui la cancellazione di una rete sia fallito & S. \\ 
+ TU0-24 & Viene verificato il lancio di un'eccezione nel caso in cui la cancellazione di una rete sia fallito & N.I. \\ 
 \hline
-\rowcolor{grigio}TU0-25 & Viene verificato che la rete caricata disponga del campo \texttt{name} di tipo \textbf{stringa} & S. \\ 
+\rowcolor{grigio}TU0-25 & Viene verificato che la rete caricata disponga del campo \texttt{name} di tipo \textbf{stringa} & N.I. \\ 
 \hline 
- TU0-26 & Viene verificato il lancio di un'eccezione nel caso in cui il campo dati \texttt{name} sia assente & S. \\ 
+ TU0-26 & Viene verificato il lancio di un'eccezione nel caso in cui il campo dati \texttt{name} sia assente & N.I. \\ 
 \hline 
-\rowcolor{grigio}TU0-27	 & Viene verificata la creazione del file con la definizione della rete & S. \\ 
+\rowcolor{grigio}TU0-27	 & Viene verificata la creazione del file con la definizione della rete & N.I. \\ 
 \hline 
- TU0-28 & Viene verificata il lancio di un'eccezione nel caso in cui la scritta su filesystem sia fallita & S. \\ 
+ TU0-28 & Viene verificata il lancio di un'eccezione nel caso in cui la scritta su filesystem sia fallita & N.I. \\ 
 \hline 
-\rowcolor{grigio}TU0-29 & Viene verificata l'invocazione del metodo \texttt{initBayesianNetwork(net)} all'interno del metodo \texttt{saveNetworkToFile()} & S. \\ 
+\rowcolor{grigio}TU0-29 & Viene verificata l'invocazione del metodo \texttt{initBayesianNetwork(net)} all'interno del metodo \texttt{saveNetworkToFile()} & N.I. \\ 
 \hline 
-TU0-30 & Viene verificata la creazione di un nuovo oggetto di tipo \texttt{Network} con la rete caricata dall'utente & S. \\ 
+TU0-30 & Viene verificata la creazione di un nuovo oggetto di tipo \texttt{Network} con la rete caricata dall'utente & N.I. \\ 
 \hline
-\rowcolor{grigio} TU0-31 & Viene verificato il lancio di un'eccezione nel caso in cui il metodo \texttt{saveNetworkToFile(net)} fallisca & S. \\
+\rowcolor{grigio} TU0-31 & Viene verificato il lancio di un'eccezione nel caso in cui il metodo \texttt{saveNetworkToFile(net)} fallisca & N.I. \\
 \hline
-TU0-31 & Viene verificato che la richiesta di \texttt{uploadnetwork} ritorni una risposta con stato \textit{404} in caso di fallimento & S. \\ 
+TU0-31 & Viene verificato che la richiesta di \texttt{uploadnetwork} ritorni una risposta con stato \textit{404} in caso di fallimento & N.I. \\ 
 \hline
-\rowcolor{grigio} TU0-32 & Viene verificato che la richiesta \texttt{uploadnetwork} ritorni un messaggio di successo nel caso in cui il metodo non ritorni errori & S. \\
+\rowcolor{grigio} TU0-32 & Viene verificato che la richiesta \texttt{uploadnetwork} ritorni un messaggio di successo nel caso in cui il metodo non ritorni errori & N.I. \\
 \hline
-TU0-33 & Viene verificata che la richiesta di \texttt{getnetwork/:net} al server, chiami il metodo \texttt{parserNetworkNameURL} & S. \\ 
+TU0-33 & Viene verificata che la richiesta di \texttt{getnetwork/:net} al server, chiami il metodo \texttt{parserNetworkNameURL} & N.I. \\ 
 \hline
 \rowcolor{grigio} TU0-34 & Viene verificato che il metodo \texttt{parserNetworkNameURL} ritorni il nome della rete parsato & N.I. \\ 
 \hline 
@@ -110,9 +110,9 @@ TU0-49 & Viene verificato che il metodo \texttt{addToPool(net)} ritorni false ne
 \hline 
 TU0-51 & Viene verificato che la richiesta \texttt{addtopool/:net} al server ritorni un messaggio di errore nel caso in cui la rete desiderata è già aggiunta al pool di monitoraggio & N.I. \\ 
 \hline 
-\rowcolor{grigio} TU0-52 & Viene verificato che la richiesta \texttt{getnetworkprob/:net} al server richiami il metodo \texttt{parserNetworknameURL(name)} &  S. \\ 
+\rowcolor{grigio} TU0-52 & Viene verificato che la richiesta \texttt{getnetworkprob/:net} al server richiami il metodo \texttt{parserNetworknameURL(name)} &  N.I. \\ 
 \hline 
-TU0-53 & Viene verificato che la richiesta \texttt{getnetworkprob/:net} al server ritorni un messaggio di errore con stato \textit{404} nel caso in cui il nome passato a parametro non sia valido & S. \\ 
+TU0-53 & Viene verificato che la richiesta \texttt{getnetworkprob/:net} al server ritorni un messaggio di errore con stato \textit{404} nel caso in cui il nome passato a parametro non sia valido & N.I. \\ 
 \hline
 \rowcolor{grigio} TU0-54 & Viene verificato che la richiesta \texttt{getnetworkprob/:net} al server ritorni un messaggio di errore nel caso in cui la rete desiderata non sia in monitoraggio & N.I. \\ 
 \hline 
@@ -120,7 +120,7 @@ TU0-55 & Viene verificato che la richiesta \texttt{getnetworkprob/:net} al serve
 \hline 
 \rowcolor{grigio} TU0-56 & Viene verificato che la richiesta \texttt{deletenetpool/:net} al server richiami il metodo \texttt{parserNetworkNameURL(name)} & N.I. \\ 
 \hline
-TU0-57 & Viene verificato che la richiesta \texttt{deletenetpool/:net} al server richiami il metodo \texttt{deleteFromPool(net)} & N.I. \\ \\
+TU0-57 & Viene verificato che la richiesta \texttt{deletenetpool/:net} al server richiami il metodo \texttt{deleteFromPool(net)} & N.I. \\ 
 \hline 
 \rowcolor{grigio} TU0-58 & Viene verificato che il metodo \texttt{deleteFromPool(net)} ritorni true nel caso in cui la rete viene tolta dal monitoraggio & N.I. \\ 
 \hline
@@ -148,15 +148,15 @@ TU0-69 & Viene verificato che il metodo di creazione di connessione al database 
 \hline 
 \rowcolor{grigio} TU0-70 & Viene verificata l'istanziazione effettiva della connessione al database nell'array di connessioni disponili sul server & N.I. \\ 
 \hline 
-TU0-71 & Viene verificato che il monitoraggio di una rete si ripeta secondo le politiche temporali definite dall'utente & S. \\ 
+TU0-71 & Viene verificato che il monitoraggio di una rete si ripeta secondo le politiche temporali definite dall'utente & N.I. \\ 
 \hline 
-\rowcolor{grigio} TU0-72 & Viene verificato che le probabilità calcolate nella rete bayesiana vengano salvate all'interno del database  & S. \\ 
+\rowcolor{grigio} TU0-72 & Viene verificato che le probabilità calcolate nella rete bayesiana vengano salvate all'interno del database  & N.I. \\ 
 \hline 
 TU0-73 & Viene verificato che il metodo \texttt{writeMesure(net)}  ritorni true nel caso in cui la scrittura delle probabilità sul database sia avvenuta con successo & N.I. \\
 \hline
 \rowcolor{grigio}TU0-74 & Viene verificato che il metodo \texttt{writeMesure(net)} ritorni false nel caso in cui la scrittura delle probabilità sul database sia fallita & N.I. \\ 
 \hline
-TU0-75 & Viene verificata la costruzione corretta di una rete & S.  \\ 
+TU0-75 & Viene verificata la costruzione corretta di una rete & N.I.  \\ 
 \hline 
 \rowcolor{grigio}TU0-76 & Viene verificata la creazione della tabella di probabilità per ogni nodo della rete bayesiana & N.I. \\ 
 \hline
