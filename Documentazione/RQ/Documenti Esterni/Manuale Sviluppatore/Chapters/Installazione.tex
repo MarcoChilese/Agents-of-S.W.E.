@@ -28,34 +28,13 @@ Per informazioni relative al funzionamento del plug-in si rimanda al \textit{Man
 
 \subsubsection{Installazione server}\label{installazione_server}
 \paragraph{Installazione NodeJS}
-	\begin{itemize}
-		\item Scaricare l'ultima versione di NodeJS LTS\glossario dal sito ufficiale; 
-		\begin{figure}[H]
-		\begin{center}
-			\includegraphics[scale=0.5]{./images/nodejs.png} 
-		\end{center}
-		\caption{Selezione versione NodeJS}
-	\end{figure}
-	\item Installare NodeJS; 
-		\begin{figure}[H]
-		\begin{center}
-			\includegraphics[scale=0.5]{./images/install_nodejs.png} 
-		\end{center}
-		\caption{Installazione NodeJS}
-	\end{figure}	
-	\end{itemize}
+Per quanto riguarda l'installazione di \textit{NodeJS} si rimanda al sito del produttore.
 
 \paragraph{Installazione pm2}
-\begin{itemize}
-	\item Aprire un terminale nel S.O. dove si intente eseguire il server; 
-	\item Installare globalmente il modulo \texttt{pm2} tramite il gestore di pacchetti \texttt{npm}, usando il seguente commando: 
-	\begin{center}
-		\texttt{npm install pm2 -g}
-	\end{center}
-\end{itemize}
-		
-
-
+Per quanto riguarda l'installazione di \textit{pm2} sarà necessario eseguire da terminale il seguente comando:
+\begin{center}
+	\texttt{npm install pm2 -g}
+\end{center}
 	
 	
 \subsection{Esecuzione}\label{run}
@@ -76,26 +55,6 @@ Per informazioni relative al funzionamento del plug-in si rimanda al \textit{Man
 	\begin{center}
 		\texttt{pm2 start ./src/index.js --- -p :porta}
 	\end{center}
-	dove \textbf{:porta} e il numero della porta su cui impostare il server in ascolto; 
+	dove \texttt{:porta} e il numero della porta su cui impostare il server in ascolto; 
 \end{itemize}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
