@@ -66,19 +66,129 @@ TU0-20 & Viene verificata che la richiesta al server \texttt{uploadnetwork} chia
 \hline 
 TU0-30 & Viene verificata la creazione di un nuovo oggetto di tipo \texttt{Network} con la rete caricata dall'utente & Superato \\ 
 \hline
-% TU0-31 & Viene verificata 
-
-
-
-
-
-
-
-
-
-
-
+\rowcolor{grigio} TU0-31 & Viene verificato il lancio di un'eccezione nel caso in cui il metodo \texttt{saveNetworkToFile(net)} fallisca & Superato \\
+\hline
+TU0-31 & Viene verificato che la richiesta di \texttt{uploadnetwork} ritorni una risposta con stato \textit{404} in caso di fallimento & Superato \\ 
+\hline
+\rowcolor{grigio} TU0-32 & Viene verificato che la richiesta \texttt{uploadnetwork} ritorni un messaggio di successo nel caso in cui il metodo non ritorni errori & Superato \\
+\hline
+TU0-33 & Viene verificata che la richiesta di \texttt{getnetwork/:net} al server, chiami il metodo \texttt{parserNetworkNameURL} & Superato \\ 
+\hline
+\rowcolor{grigio} TU0-34 & Viene verificato che il metodo \texttt{parserNetworkNameURL} ritorni il nome della rete parsato & N.I. \\ 
+\hline 
+TU0-35 & Viene verificato che il metodo \texttt{parserNetworkNameURL} ritorni \textit{false} nel caso in cui: il parametro passato sia stringa vuota, la rete non esiste oppure il parametro non è definito & N.I. \\ 
+\hline 
+\rowcolor{grigio}TU0-36 & Viene verificato che la richiesta \texttt{getnetwork/:net} ritorni un json con la definizione della rete richiesta & N.I. \\ 
+\hline 
+TU0-37 & Viene verificato il lancio di un'eccezione nel caso in cui la lettura della rete da filesystem sia fallita & N.I. \\
+\hline
+ \rowcolor{grigio} TU0-38 & Viene verificato, in caso di eccezione nella richiesta \texttt{getnetwork/:net} che quest'ultima ritorni un messaggio di errore con stato \textit{404} & N.I. \\ 
+ \hline
+ TU0-39 & Viene verificato che la richiesta \texttt{networkslive} al server, ritorni un json contenente le reti monitorate in un dato istante di tempo & N.I. \\ 
+ \hline 
+ \rowcolor{grigio}TU0-40 & Viene verificato che la richiesta \texttt{deletenetwork/:net} al server, ritorni un messaggio di successo nel caso in cui la rete sia stata eliminata & N.I. \\
+ \hline
+ TU0-41 & Viene verificato che la richiesta \texttt{deletenetwork/:net} al server, ritorni un messaggio d'errore nel caso in cui il nome della rete da eliminare sia vuoto,  non definito o non esista nel filesystem del server & N.I. \\ 
+ \hline
+\rowcolor{grigio}TU0-42 & Viene verificato il lancio di un'eccezione nel caso in cui la rete da eliminare non esista & N.I. \\ 
+\hline
+ TU0-43 & Viene verificato il lancio di un'eccezione nel caso in cui il file di salvataggio della rete non esista nel filesystem del server & N.I. \\ 
+ \hline
+ \rowcolor{grigio} TU0-44 & Viene verificato che la richiesta \texttt{addtopool/:net} al server richiami il metodo \texttt{parserNetworkNameURL} & N.I. \\ 
+ \hline
+ TU0-45 & Viene verificato che la richiesta \texttt{addtopool/:net} al server ritorni un messaggio di errore nel caso in cui il nome della rete non sia valido o che non esista la rete desiderata & N.I. \\ 
+ \hline
+ \rowcolor{grigio}TU0-46 & Viene verificata che la richiesta \texttt{addtopool/:net} al server richiami il metodo \texttt{addToPool(net)} & N.I. \\ 
+ \hline
+ TU0-47 & Viene verificato che il metodo \texttt{addToPool(net)} ritorni aggiunga nel pool di monitoraggio la rete desiderata & N.I. \\
+\hline
+\rowcolor{grigio} TU0-48 & Viene verificato che il metodo \texttt{addToPool(net)} ritorni true nel caso in cui la rete sia stata aggiunta al pool di monitoraggio con successo & N.I. \\ 
+\hline 
+TU0-49 & Viene verificato che il metodo \texttt{addToPool(net)} ritorni false nel caso in cui la rete da monitorare e già monitorata & N.I. \\ 
+\hline
+\rowcolor{grigio} TU0-50 & Viene verificato che la richiesta \texttt{addtopool/:net} ritorni un messaggio di successo nel caso in cui la rete sia stata aggiunta al pool di monitoraggio & N.I. \\ 
+\hline 
+TU0-51 & Viene verificato che la richiesta \texttt{addtopool/:net} al server ritorni un messaggio di errore nel caso in cui la rete desiderata è già aggiunta al pool di monitoraggio & N.I. \\ 
+\hline 
+\rowcolor{grigio} TU0-52 & Viene verificato che la richiesta \texttt{getnetworkprob/:net} al server richiami il metodo \texttt{parserNetworknameURL(name)} &  S. \\ 
+\hline 
+TU0-53 & Viene verificato che la richiesta \texttt{getnetworkprob/:net} al server ritorni un messaggio di errore con stato \textit{404} nel caso in cui il nome passato a parametro non sia valido & S. \\ 
+\hline
+\rowcolor{grigio} TU0-54 & Viene verificato che la richiesta \texttt{getnetworkprob/:net} al server ritorni un messaggio di errore nel caso in cui la rete desiderata non sia in monitoraggio & N.I. \\ 
+\hline 
+TU0-55 & Viene verificato che la richiesta \texttt{getnetworkprob/:net} al server ritorni un json contenente le probabilità calcolate per la rete desiderata & N.I. \\ 
+\hline 
+\rowcolor{grigio} TU0-56 & Viene verificato che la richiesta \texttt{deletenetpool/:net} al server richiami il metodo \texttt{parserNetworkNameURL(name)} & N.I. \\ 
+\hline
+TU0-57 & Viene verificato che la richiesta \texttt{deletenetpool/:net} al server richiami il metodo \texttt{deleteFromPool(net)} & N.I. \\ \\
+\hline 
+\rowcolor{grigio} TU0-58 & Viene verificato che il metodo \texttt{deleteFromPool(net)} ritorni true nel caso in cui la rete viene tolta dal monitoraggio & N.I. \\ 
+\hline
+TU0-59 & Viene verificato che il metodo \texttt{deleteFromPool(net)} ritorni false nel caso in cui l'eliminazione della rete dal monitoraggio fallisca & N.I. \\ 
+\hline 
+\rowcolor{grigio} TU0-60 & Viene verificato che la richiesta \texttt{deletenetpool/:net} ritorni un messaggio di successo nel caso in cui la rete viene tolta dal monitoraggio & N.I. \\ 
+\hline 
+TU0-61 & Viene verificato che la richiesta \texttt{deletenetpool/:net} al server, ritorni un messaggio di errore con stato \textit{404} nel caso in l'eliminazione della rete dal monitoraggio sia fallita & N.I. \\ 
+\hline 
+\rowcolor{grigio} TU0-62 & Viene verificato che all'avvio del server venga invocato il metodo \texttt{startServer()} & N.I. \\ 
+\hline
+TU0-63 & Viene verificato che all'avvio del server vengano inizializzate le reti salvate nel filessytem & N.I. \\ 
+\hline
+\rowcolor{grigio}TU0-64 & Viene verificato il lancio di un'eccezione nel caso in cui la lettura da filesystem all'inizializzazione delle reti salvata fallisca & N.I. \\ 
+\hline
+TU0-65 & Viene verificata l'inizializzazione delle connessioni necessarie al database per ogni rete & N.I. \\ 
+\hline
+\rowcolor{grigio}TU0-66 &  Viene verificata la creazione di una connessione al database al richiamo del metodo \texttt{initDatabaseConnection(connection)} & N.I.\\ 
+\hline
+TU0-67 & Viene verificato il lancio di un'eccezione nel caso in cui i parametri di connessione al database siano errati & N.I. \\
+\hline
+\rowcolor{grigio} TU0-68 & Viene verificato il lancio di un'eccezione nel caso in cui la creazione della connessione al database fallisca & N.I. \\ 
+\hline
+TU0-69 & Viene verificato che il metodo di creazione di connessione al database ritorni true se la connessione è avvenuta con successo & N.I. \\ 
+\hline 
+\rowcolor{grigio} TU0-70 & Viene verificata l'istanziazione effettiva della connessione al database nell'array di connessioni disponili sul server & N.I. \\ 
+\hline 
+TU0-71 & Viene verificato che il monitoraggio di una rete si ripeta secondo le politiche temporali definite dall'utente & S. \\ 
+\hline 
+\rowcolor{grigio} TU0-72 & Viene verificato che le probabilità calcolate nella rete bayesiana vengano salvate all'interno del database  & S. \\ 
+\hline 
+TU0-73 & Viene verificato che il metodo \texttt{writeMesure(net)}  ritorni true nel caso in cui la scrittura delle probabilità sul database sia avvenuta con successo & N.I. \\
+\hline
+\rowcolor{grigio}TU0-74 & Viene verificato che il metodo \texttt{writeMesure(net)} ritorni false nel caso in cui la scrittura delle probabilità sul database sia fallita & N.I. \\ 
+\hline
+TU0-75 & Viene verificata la costruzione corretta di una rete & S.  \\ 
+\hline 
+\rowcolor{grigio}TU0-76 & Viene verificata la creazione della tabella di probabilità per ogni nodo della rete bayesiana & N.I. \\ 
+\hline
 
 \caption{Test di unità}
 \label{testunita}
 \end{longtable}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
