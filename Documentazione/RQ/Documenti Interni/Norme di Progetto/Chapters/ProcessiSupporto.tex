@@ -8,7 +8,7 @@ Questo capitolo descrive i dettagli su come deve essere redatta e verificata la 
 Il ciclo di vita previsto della documentazione si può suddividere principalmente in tre processi:
 \begin{itemize}
 	\item \textbf{Sviluppo}: è il processo di stesura, eseguita dal redattore, dove sviluppa il task\glossario assegnato dal \textit{Responsabile}. Una volta terminata la fase di scrittura del documento, il redattore lo segnalerà al \textit{Responsabile}, il quale assegnerà ad un \textit{Verificatore} il compito di analizzare il lavoro svolto;
- 	\item \textbf{Verifica}: è il processo eseguito dai \textit{Verificatori} designati dal responsabile. Il loro compito è quello di controllare che il redattore abbia scritto il documento adottando le regole indicate nel documento \textit{Norme di Progetto v3.0.0} ed in maniera grammaticalmente e strutturalmente corretta;
+ 	\item \textbf{Verifica}: è il processo eseguito dai \textit{Verificatori} designati dal responsabile. Il loro compito consiste nel controllare che il redattore abbia scritto il documento adottando le regole indicate nel documento \textit{Norme di Progetto v3.0.0} ed in maniera grammaticalmente e strutturalmente corretta;
  	\item \textbf{Approvazione}: è il processo conclusivo, in cui il \textit{Verificatore} ha terminato il suo compito di controllo e comunica al \textit{Responsabile} il termine del lavoro. Il \textit{Responsabile} procederà a confermare il documento ed ad eseguirne il rilascio.
 \end{itemize}
 
@@ -263,7 +263,7 @@ Tale tipo di verifica può svolgersi in due modi:
 \subsubsection{Analisi Dinamica}
 Il processo di analisi dinamica consiste nella realizzazione ed esecuzione di una serie di test sul codice del software prodotto. Questa tecnica non è applicabile per trovare errori nella documentazione.
 
-\paragraph{Classificazione Test}\label{Class_test} \-\\
+\paragraph{Classificazione dei Test}\label{Class_test} \-\\
 Per garantire una corretta struttura, il gruppo ha deciso di introdurre una nomenclatura per identificare i test implementati. Si potranno quindi identificare così:
 
 \begin{center}
@@ -309,7 +309,7 @@ Categoria di test atta a verificare il soddisfacimento di tutti i requisiti, al 
 \paragraph{Test di Validazione} \-\\
 Categoria di test atta a verificare se il software sviluppato sia conforme alle attese degli stakeholder.  Prevede il collaudo del prodotto in presenza del proponente e in caso di superamento di tale collaudo, consegue il rilascio ufficiale del prodotto sviluppato.
 
-\subsubsection{Verifica Diagrammi UML}
+\subsubsection{Verifica dei Diagrammi UML}
 I verificatori devono controllare che i diagrammi UML prodotti rispettino lo standard \textit{UML 2.x} e che siano corretti semanticamente.
 
 \subsubsection{Strumenti}
@@ -317,18 +317,19 @@ I verificatori devono controllare che i diagrammi UML prodotti rispettino lo sta
 	\item \textbf{Software}: per la verifica del codice \textit{JavaScript} è stato scelto \textit{Jest};
 	\item \textbf{Documenti}: per la verifica dei documenti si utilizzano le funzionalità di \textit{TexMaker};
 	\item \textbf{Gestione processi e feedback}: è stato scelto di utilizzare il sistema integrato di issues presente su \textit{GitLab};
-	\item \textbf{Analisi dinamica locale}: è stato scelto \textit{ESLint} come soluzione iniziale per risolvere tutte le necessità di analisi del codice locale.
-	\item \textbf{Analisi dinamica remota}:	è stato scelto {Codecov.io} servizio di code coverage\glossario basato su repository presenti in piattaforme di versionamento quali \textit{GitHub}\glossario e \textit{GitLab}. Ad ogni esecuzione in \textit{GitLab} della pipeline di CI/CD, vengono generati da \textit{Jest} i report di coverage da cui \textit{Codecov.io} elabora la copertura del codice;
+	\item \textbf{Analisi dinamica locale}: è stato scelto \textit{ESLint} come soluzione iniziale per risolvere tutte le necessità di analisi del codice locale;
+	\item \textbf{Analisi dinamica remota}:	è stato scelto \textit{Codecov.io} servizio di code coverage\glossario basato su repository presenti in piattaforme di versionamento quali \textit{GitHub}\glossario e \textit{GitLab}. Ad ogni esecuzione in \textit{GitLab} della pipeline di CI/CD, vengono generati da \textit{Jest} i report di coverage da cui \textit{Codecov.io} elabora la copertura del codice.
 \end{itemize}
 
 \subsection{Validazione}\label{validazione}
 \subsubsection{Descrizione}
 La fase di validazione ha il compito di verificare che il prodotto sia conforme a quanto pianificato e sia in grado di gestire e minimizzare gli effetti dei possibili errori.
 \subsubsection{Procedure}
-\paragraph{Validazione software} \-\\
+\paragraph{Validazione Software} \-\\
 I passi da compiere per compiere l'attività di validazione del software sono i seguenti:
 \begin{figure}[H]
 	\begin{center}
 		\includegraphics[scale=0.7]{./images/Validazione.png}
 	\end{center}
+	\caption{Validazione del Software}
 \end{figure}
