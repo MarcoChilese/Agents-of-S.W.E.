@@ -1,0 +1,44 @@
+\section{Resoconto}
+
+\subsection{Punto 1}
+Il gruppo ha discusso sulle segnalazioni individuate dal committente in sede di Revisione di Progettazione e ha proceduto con l'individuazione di task da assegnare ad ogni membro del gruppo per correggerli.
+\\
+I task sono stati assegnati e suddivisi dal \textit{Responsabile} ad ogni membro del gruppo.
+
+\subsection{Punto 2}
+I ruoli all'interno del team, dopo la Revisione di Progettazione, ruotano nel seguente modo:\\
+
+\begin{center}
+	\begin{longtable}[c]{|m{.20\textwidth}|m{.20\textwidth}|m{.20\textwidth}|} 
+		\hline
+		\rowcolor{bluelogo}\textbf{\textcolor{white}{Membro}} & \textbf{\textcolor{white}{Vecchio Ruolo}} & \textbf{\textcolor{white}{Nuovo Ruolo}}\\
+		\hline
+		\hline
+		Luca Violato & Verificatore & Analista \\
+		\hline
+		\rowcolor{grigio}Bogdan Stanciu & Programmatore & Amministratore \\
+		\hline
+		Marco Chilese & Amministratore & Progettista\\
+		\hline
+		\rowcolor{grigio}Carlotta Segna & Progettista & Programmatore\\
+		\hline
+		Marco Favaro & Analista & Responsabile \\
+		\hline
+		\rowcolor{grigio} Diego Mazzalovo & Responsabile & Progettista\\
+		\hline
+		Matteo Slanzi & Programmatore & Verificatore\\
+		\hline
+		\caption{Rotazione dei Ruoli}
+	\end{longtable}
+
+\end{center}
+	
+
+\subsection{Punto 3}
+Il gruppo non utilizzerà più due servizi diversi di repository online, avere una repository per la documentazione su \textit{GitHub}\glossario e una per il codice sorgente su \textit{GitLab} crea dispersione e confusione. Il gruppo utilizzerà solamente \textit{GitLab} in quanto permette la gestione di pipeline di CI/CD\glossario. La documentazione verrà caricata in una nuova repository di \textit{GitLab}.
+
+\subsection{Punto 4}
+È stata valutata l'opzione di suddividere la progettazione in due parti principali, una di queste è il lato server scritto in NodeJS. Questa scelta architetturale comporta notevoli vantaggi nel calcolo delle probabilità e nella suddivsione modulare del codice, suddividendo la gestione dei database e delle reti al server, la raccolta, il caricamento dei dati e la visualizzazione delle probabilità al plug-in. Questa scelta ha agevolato l'applicazione di pattern come l'Adapter e il proxy per la parte server, consentendo lo sviluppo futuro della gestione di nuovi database.
+
+\subsection{Punto 5}
+Il gruppo si incontrerà nuovamente in data 2019-03-20.

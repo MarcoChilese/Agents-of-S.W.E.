@@ -1,0 +1,185 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Professional Formal Letter
+% LaTeX Template
+% Version 2.0 (12/2/17)
+%
+% This template originates from:
+% http://www.LaTeXTemplates.com
+%
+% Authors:
+% Brian Moses
+% Vel (vel@LaTeXTemplates.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%-------------------------------------da---------------------------------------------------
+
+
+\documentclass[11pt, a4paper]{letter} % Set the font size (10pt, 11pt and 12pt) and paper size (letterpaper, a4paper, etc)
+
+\input{structure.tex} % Include the file that specifies the document structure
+
+\longindentation=0pt % Un-commenting this line will push the closing "Sincerely," and date to the left of the page
+
+\setlength{\arrayrulewidth}{1.1pt} %dimensione linea righe
+
+%----------------------------------------------------------------------------------------
+%	YOUR INFORMATION
+%----------------------------------------------------------------------------------------
+
+\Who{Agents of S.W.E.} % Your name
+
+\Title{} % Your title, leave blank for no title
+
+\authordetails{
+	Dipartimento di Matematica\\ % Your department/institution
+	Via Trieste 63\\ % Your address
+	Padova (PD), 35121, Italia	\\ % Your city, zip code, country, etc
+	Email: agentsofswe@gmail.com\\ % Your email address
+}
+
+%----------------------------------------------------------------------------------------
+%	HEADER CONTENTS
+%----------------------------------------------------------------------------------------
+
+\logo{images/logo.jpg} % Logo filename, your logo should have square dimensions (i.e. roughly the same width and height), if it does not, you will need to adjust spacing within the HEADER STRUCTURE block in structure.tex (read the comments carefully!)
+
+%\headerlineone{Agents} % Top header line, leave blank if you only want the bottom line
+
+\headerlinetwo{Lettera di Presentazione} % Bottom header line
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+	
+	%----------------------------------------------------------------------------------------
+	%	TO ADDRESS
+	%----------------------------------------------------------------------------------------
+	
+	\begin{letter}{
+			\-\\\-
+			12 Aprile 2019	
+			\-\\\-\\\-\\\-\\
+			Alla cortese attenzione del Committente:	\\
+			Prof. Tullio Vardanega\\
+			Prof. Riccardo Cardin\\	
+			Dipartimento di Matematica\\ 
+			Via Trieste 63\\ 
+			Padova (PD), 35121, Italia
+		}
+		
+		%----------------------------------------------------------------------------------------
+		%	LETTER CONTENT
+		%----------------------------------------------------------------------------------------
+		
+		\opening{Egregio Prof.  Tullio Vardanega,\\
+			Egregio Prof.  Riccardo Cardin,\\}
+		
+		Con la presente, il gruppo \texttt{Agents of S.W.E.} intende comunicarVi ufficialmente la partecipazione alla Revisione di Progettazione prevista per il prossimo 15 Marzo 2019, al fine di esporVi l'avanzamento dello sviluppo del progetto da Voi commissionato, denominato:
+		\begin{center}
+			\textbf{G\&B: monitoraggio intelligente di processi DevOps}
+		\end{center}
+		proposto da Zucchetti S.p.A.\\
+		Allegati alla presente troverete i documenti di seguito elencati, in cui è riportato in dettaglio l'analisi del prodotto, la pianificazione ed i criteri a garanzia della qualità dello stesso:
+		\begin{itemize}
+			\item \textit{Analisi dei Requisiti v3.0.0};
+			\item  \textit{Piano di Progetto v3.0.0};
+			\item \textit{Piano di Qualifica v3.0.0};
+			\item \textit{Glossario v3.0.0};
+			\item \textit{Norme di Progetto v3.0.0};	
+			\item \textbf{Manuale Utente v1.0.0};
+			\item \textbf{Manuale Sviluppatore v1.0.0};
+			\item Verbali interni: 
+			\begin{itemize}
+				\item \textit{Verbale Interno 2019-03-18 v1.0.0};
+				\item \textit{Verbale Interno 2019-03-20 v1.0.0};
+				\item \textit{Verbale Interno 2019-03-25 v1.0.0};
+				\item \textit{Verbale Interno 2019-04-02 v1.0.0};
+				\item \textit{Verbale Interno 2019-04-08 v1.0.0}.
+			\end{itemize}
+		\item Diagrammi delle Classi: 
+			\begin{itemize}
+				\item \textit{server};
+				\item \textit{pannello}.
+			\end{itemize}
+		\item Diagrammi di Sequenza: 
+			\begin{itemize}
+				\item \textit{caricamentoRete};
+				\item \textit{calcoloProbabilita}.
+			\end{itemize}
+		\item Diagrammi dei Package:
+			\begin{itemize}
+				\item \textit{packageServer};
+				\item \textit{packagePannello}.
+			\end{itemize}
+		\item Diagrammi di Attività: 
+		\begin{itemize}
+			\item \textit{avvioMonitoraggio};
+			\item \textit{caricamentoReteBayesiana};
+			\item \textit{collegamentoNodi};
+			\item \textit{connessioneServer};
+			\item \textit{interruzioneMonitoraggio};
+			\item \textit{modificaCollegamentoNodi};
+			\item \textit{ricalcoloProbabilità};
+			\item \textit{rimozioneRete};
+			\item \textit{scollegaNodi};
+			\item \textit{selezioneDatabase};
+			\item \textit{selezioneFlussoDatiESoglie};
+			\item \textit{selezionePoliticaTemporale};
+			\item \textit{selezioneReteBayesianaPresente};
+			\item \textit{visualizzaMonitoraggio}.
+		\end{itemize}
+		\end{itemize}
+		Il gruppo ha stimato di consegnare il prodotto entro il giorno 10/05/2019, per il relativo collaudo, salvo diversi accordi, il giorno 17/05/2019.\\  
+		Il preventivo di costo finale è fissato pari a \textbf{14043.00}€, come descritto all'interno del documento \textit{Piano di Progetto v3.0.0}, alla sezione § 5.8.2.\\ %controllare se invariata
+		\-\\
+		Si riportano di seguito i nomi dei componenti del gruppo:
+		\begin{center}
+			\begin{longtable}[c]{|m{.22\textwidth}|m{.11\textwidth}|} 
+				\hline
+				\rowcolor{bluelogo}\textbf{\textcolor{white}{Membro}}  & \textbf{\textcolor{white}{Matricola}}\\
+				\hline
+				Marco Chilese & 1143012\\
+				\hline
+				\rowcolor{grigio}Marco Favaro & 1123187\\ 
+				\hline
+				Diego Mazzalovo & 1142519\\
+				\hline
+				\rowcolor{grigio}Carlotta Segna & 1123208\\
+				\hline
+				Matteo Slanzi & 1100866\\
+				\hline
+				\rowcolor{grigio}Bogdan Stanciu  & 1120518\\
+				\hline
+				Luca Violato & 1127437\\
+				\hline
+			\end{longtable}
+		\end{center}
+		
+		Rimaniamo a completa disposizione per qualsiasi tipo di chiarimento in merito ai documenti presentati.
+		
+		\closing{Cordiali Saluti,\\
+			Luca Violato\\
+			Responsabile di Progetto
+			\includegraphics[scale=0.2]{images/LucaViolato.png}}
+		
+		%----------------------------------------------------------------------------------------
+		%	OPTIONAL FOOTNOTE
+		%----------------------------------------------------------------------------------------
+		
+		% Uncomment the 4 lines below to print a footnote with custom text
+		%\def\thefootnote{}
+		%\def\footnoterule{\hrule}
+		%\footnotetext{\hspace*{\fill}{\footnotesize\em Footnote text}}
+		%\def\thefootnote{\arabic{footnote}}
+		
+		%----------------------------------------------------------------------------------------
+		
+	\end{letter}
+	
+\end{document}

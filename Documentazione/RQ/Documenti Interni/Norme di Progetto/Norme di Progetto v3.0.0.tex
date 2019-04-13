@@ -1,0 +1,88 @@
+\input{Config/config.tex}
+
+\begin{document}
+\begin{titlepage}
+\thispagestyle{empty}
+\pagenumbering{gobble}
+
+\begin{center}
+\includegraphics[scale=0.3]{./images/logo.png} 
+
+\large \textbf{Agents of S.W.E - Progetto "G\&B"}
+\vfill
+\Huge \textbf{Norme di Progetto}
+\vfill
+\large
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{r|l}
+
+\textbf{Versione} & 3.0.0\\
+
+\textbf{Approvazione} & Luca Violato\\
+\textbf{Redazione} & \parbox[t]{5cm}{Luca Violato\\Bogdan Stanciu\\Marco Favaro\\Marco Chilese \\ Matteo Slanzi}\\\
+\textbf{Verifica} & \parbox[t]{5cm}{Carlotta Segna \\ Diego Mazzalovo}\\
+\textbf{Stato} & Approvato\\
+\textbf{Uso} & Interno\\
+\textbf{Destinato a} & \parbox[t]{5cm}{Agents of S.W.E. \\Prof. Tullio Vardanega\\Prof. Riccardo Cardin}
+\end{tabular}
+\vfill
+\small
+\texttt{agentsofswe@gmail.com}
+\end{center}
+\end{titlepage}
+
+\pagebreak
+
+\pagenumbering{arabic}
+
+\input{Chapters/Changelog.tex}
+
+
+\pagebreak
+\tableofcontents
+
+\pagebreak
+\listoftables
+\listoffigures
+
+%\pagenumbering{arabic}
+
+\pagebreak
+
+\input{Chapters/Introduzione.tex}
+
+\pagebreak
+
+\input{Chapters/ProcessiPrimari.tex}
+
+\pagebreak
+
+\input{Chapters/ProcessiSupporto.tex}
+
+\pagebreak
+
+\input{Chapters/ProcessiOrganizzativi.tex}
+
+\pagebreak
+
+\appendix
+\input{Chapters/PDCA.tex}
+\pagebreak
+
+\input{Chapters/ISO9126.tex}
+\pagebreak
+
+\input{Chapters/CMMI.tex}
+\pagebreak
+
+\input{Chapters/ModelloV.tex}
+\pagebreak
+
+\input{Chapters/CICD.tex}
+\pagebreak
+
+\input{Chapters/metriche.tex}
+
+
+
+\end{document}

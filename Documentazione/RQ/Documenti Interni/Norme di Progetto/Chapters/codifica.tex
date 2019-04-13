@@ -1,0 +1,58 @@
+Di seguito vengono definite delle norme che devono essere adottate dai \textit{Programmatori} per garantire una buona leggibilità  e manutenibilità  del codice. Le prime norme che seguiranno sono le più generali, da adottarsi per ogni linguaggio di programmazione adottato all'interno del progetto, in seguito quelle più specifiche per il linguaggio principale \textit{ECMAScript 6}\glossario.\\
+Ogni norma è caratterizzata da un paragrafo di appartenenza, da un titolo, una breve descrizione e, se il caso lo richiede, un esempio.\\
+Il rispetto delle seguenti norme è fondamentale per garantire uno stile di codifica uniforme all'interno del progetto, oltre che per massimizzare la leggibilità  e agevolare la manutenzione, la verifica\glossario e la validazione\glossario.
+
+\paragraph{Convenzioni per i Nomi} \label{Nomi}
+\begin{itemize}
+	\item I \textit{Programmatori} devono adottare come notazione per la definizione di cartelle, file, metodi, funzioni e variabili il CamelCase\glossario.\\
+	Di seguito un esempio di corretta nomenclatura:
+	\begin{lstlisting}[language=JavaScript]
+//Cartelle
+./thisIsAFolder	//OK
+./ThisIsAFolder //NO
+
+//File
+myFile.extension //OK
+MyFile.extension //NO
+
+//Funzioni
+myFunction() { ... } //OK
+MyFunction() { ... } //NO
+	\end{lstlisting}
+
+	\item Tutti i nomi devono essere unici ed autoesplicativi, ciò per evitare ambiguità  e limitare la complessità .
+\end{itemize}
+\paragraph{Convenzioni per la Documentazione}
+\begin{itemize}
+	\item Tutti i nomi ed i commenti al codice vanno scritti in inglese;
+	\item Nel codice è possibile utilizzare un commento con denominazione TODO in cui si vanno ad indicare compiti da svolgere;
+	\item L'intestazione di ogni file deve essere la seguente:
+	\begin{lstlisting}[language=JavaScript]
+/**
+* File: nameFile
+* Type: fileType
+* Creation date: yyyy-mm-gg
+* Author: Name Surname
+* Author e-mail: email@example.com
+* Version: versionNumber
+*
+* Changelog:
+* #entry || Author || Date || Description
+*/
+	\end{lstlisting}
+	\item La versione del file nell'intestazione deve rispettare la seguente formulazione: $X.Y.Z$, dove X rappresenta la versione principale, Y la versione parziale della relativa versione principale e Z l'avanzamento rispetto ad Y.\\ I numeri di versione del tipo $X.0.0$, dalla $1.0.0$, vengono considerate versioni stabili e quindi versioni da testare per saggiarne la qualità.
+\end{itemize}
+\paragraph{\textit{ECMAScript 6}}\label{EcmaScript6} \-\\
+\input{Chapters/Norme_ECMAScript6.tex}
+
+\paragraph{\textit{CSS}}
+\input{Chapters/Norme_CSS.tex}
+
+\paragraph{\textit{HTML}}
+\input{Chapters/Norme_HTML.tex}
+
+\paragraph{\textit{AngularJS}} \label{angularjs} \-\\
+\input{Chapters/Norme_AngularJS.tex}
+
+\paragraph{\textit{NodeJS}} \label{nodeJS} \-\\
+\input{Chapters/Norme_NodeJS.tex}

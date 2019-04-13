@@ -1,0 +1,86 @@
+\documentclass[12pt]{article}
+
+\usepackage[utf8]{inputenc}	%Encoding UTF8 per accenti
+
+\usepackage[T1]{fontenc}
+
+\usepackage[italian]{babel}
+
+\usepackage[onehalfspacing]{setspace}	%Interlinea di 1.5
+
+\usepackage[hyperfootnotes=false]{hyperref}	%Pacchetto per coll. ipertestuali
+
+\usepackage{makecell}
+
+\setlength{\arrayrulewidth}{1.1pt} %dimensione linea righe
+
+\usepackage{tabularx}
+\usepackage{longtable} %Per Tabelle potenzialmente multipagina
+\usepackage{fancyhdr}  % per gli header e footer
+\usepackage{graphicx}  %per le immagini
+\usepackage{flafter}
+\usepackage{listings} %per i listati di codice
+\usepackage[font=small,labelfont=bf]{caption}
+
+\usepackage{framed}
+
+\usepackage[headheight=2cm, headsep=0.5cm, a4paper, margin=3cm]{geometry}
+\usepackage[bottom]{footmisc}
+
+\hypersetup{colorlinks=true}		%Configurazione colore link documento
+\hypersetup{linkcolor= blue}
+\renewcommand\UrlFont{\color{blue}\rmfamily\itshape} %Forzato colore blu su tutti i link ESTERNI
+
+
+
+%\lhead{\includegraphics[scale=0.08]{./images/logo.png}}
+
+\renewcommand{\footrulewidth}{0.4pt}
+\newcommand{\glossario}{\textsubscript{G} }
+
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+ 
+\pagestyle{fancy}
+
+\fancyhf{}
+
+\lhead{\includegraphics[scale=0.08]{./images/logo.png}}
+\rhead{\rightmark}
+
+\lfoot{Piano di Qualifica v3.0.0}
+\cfoot{}
+\rfoot{Pagina \thepage \hspace{1pt} di \pageref*{LastPage}}
+
+\usepackage[dvipsnames,table]{xcolor}
+\definecolor{bluelogo}{HTML}{415A66}
+\definecolor{grigio}{HTML}{D0D0D0}
+\definecolor{rosso}{HTML}{F80000}
+\definecolor{verde}{HTML}{01DF01} 
+%\definecolor{verde}{HTML}{308446}
+
+
+\makeindex
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{4}
+
+\usepackage{amssymb}
+
+\newcolumntype{C}[1]{>{\centering\arraybackslash}m{#1}}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+
+% \newcolumntype{L}[2]{\hsize\arraybackslash}X}
+
+% \lhead{\includegraphics[scale=]{}} TODO LOGO ripetuto angolo Top SX
+\usepackage{eurosym}
+
+%COMANDI COPERTURA REQUISITI
+\newcommand*\sodd{\cellcolor{verde}\textcolor{white}{Soddisfatto}}
+\newcommand*\nsodd{\cellcolor{rosso}Non Soddisfatto}
+
+\usepackage{xurl} %Force breaking url
+\usepackage{float}
+
+
+
+
