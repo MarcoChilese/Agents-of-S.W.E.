@@ -79,3 +79,4 @@
 - Programmatore: Marco Chilese
 - Verificatore: Diego Mazzalovo
 - Analista: Matteo Slanzi
+

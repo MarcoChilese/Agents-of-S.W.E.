@@ -1,6 +1,0 @@
-"quello di " found in Agents-of-S.W.E./Documentazione/RQ/Documenti Interni/Norme di Progetto/Chapters/ProcessiSupporto.tex at line 212: 	\item \textbf{Hotfix}: branch molto simili a quello di release, con l'obbiettivo di risolvere immediatamente un bug del prodotto in produzione o release. Una volta risolto il bug,
-
-
-
-
- Total Errors: 1
