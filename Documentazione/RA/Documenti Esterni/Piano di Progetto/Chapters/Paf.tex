@@ -1,0 +1,328 @@
+\section{Consuntivo di Periodo e Preventivo a Finire}
+\label{CFPPAF}
+
+In questa sezione stiliamo un rendiconto delle attività svolte fino ad ora, al fine di poter confrontare il preventivo stilato con l'effettivo numero di ore svolte da ogni membro del gruppo per ogni periodo.\\
+Incrementeremo questa sezione alla fine di ogni periodo.\\
+Inseriremo il conteggio in una tabella, così da rendere meglio visibili ore preventivate ed ore effettivamente svolte.\\
+Rappresenteremo le prime con un semplice numero, mentre le seconde tra parentesi graffe, seguendo i criteri qui sotto riportati:
+\begin{itemize}
+	\item \textbf{Positivi}: sono state necessarie più ore di quelle preventivate;
+	\item \textbf{Negativi}: sono state necessarie meno ore di quelle preventivate;
+	\item \textbf{Invariato}: qualora le ore non dovessero cambiare, verrà semplicemente inserito il numero di ore preventivato.	
+\end{itemize}
+
+Inoltre, aggiorneremo anche i dati dei preventivi andando a uniformarli con le ore effettivamente utilizzate durante la fase.\\
+Questo ricalcolo è utile solamente al fine di poter verificare la qualità delle attività svolte dal gruppo e non andrà in alcun modo a variare i costi preventivati per la committente.
+
+\newpage
+
+\subsection{Consuntivo di Periodo}
+\label{CFP}
+\subsubsection{Revisione dei Requisiti}
+
+\paragraph{Prospetto Orario} \-\\
+
+\begin{longtable}{|C{.30\textwidth}|C{.06\textwidth}|C{.06\textwidth}|C{.06\textwidth} | C{.06\textwidth}| C{.06\textwidth} | C{.06\textwidth} | C{.10\textwidth} |}
+\hline
+\rowcolor{bluelogo}	\textbf{\textcolor{white}{Nome}} & \textbf{\textcolor{white}{RE}} & \textbf{\textcolor{white}{AM}} & \textbf{\textcolor{white}{AN}} & \textbf{\textcolor{white}{PJ}} & \textbf{\textcolor{white}{PR}} & \textbf{\textcolor{white}{VE}} & \textbf{\textcolor{white}{Totale}}\\
+\hline 
+Marco Chilese & - & - & 10 \{+5\} & - & - & 15 \{-4\} & 25 \{+1\} \\
+\hline
+\rowcolor{grigio}Marco Favaro & - & - & 14 \{-3\} & - & - & 11 \{+4\} & 25 \{+1\} \\
+\hline
+Diego Mazzalovo & - & - & 18 \{-5\} & - & - & 7 \{+6\} & 25 \{+1\} \\
+\hline
+\rowcolor{grigio}Carlotta Segna & 13 \{+3\} & - & - & - & - & 12 \{-2\} & 25 \{+1\} \\
+\hline
+Matteo Slanzi & - & 10 \{-3\} & 8 \{+4\} & - & - & 7 & 25 \{+1\} \\
+\hline
+\rowcolor{grigio}Bogdan Stanciu & 15 \{-3\} & - & 10 \{+4\} & - & - & - & 25 \{+1\}\\
+\hline
+Luca Violato & - & 15 \{+3\} & 10 \{-2\} & - & - & - & 25 \{+1\} \\
+\hline
+
+
+\caption{Consuntivo di Periodo: Avvio ed Analisi dei Requisiti}
+\label{tab:cfp_aar}
+\end{longtable}
+
+\paragraph{Prospetto Economico} \-\\
+
+\begin{longtable}{| C{.30\textwidth}| C{.15\textwidth}| C{.20\textwidth}|}
+\hline
+\rowcolor{bluelogo}\textbf{\textcolor{white}{Ruolo}} & \textbf{\textcolor{white}{Ore}} & \textbf{\textcolor{white}{Costo in \euro}} \\
+\hline
+Responsabile & 28 & \EUR{840.00} \\
+\hline
+\rowcolor{grigio}Amministratore & 25 & \EUR{500.00} \\
+\hline
+Analista & 73 \{+3\} & \EUR{1825.00} \{+\EUR{75.00}\}\\
+\hline
+\rowcolor{grigio}Progettista & - & - \\
+\hline
+Programmatore & - & - \\
+\hline
+\rowcolor{grigio}Verificatore & 56 \{+4\} & \EUR{840.00} \{+\EUR{60.00}\}\\
+\hline
+\textbf{Totale} & 182 \{+7\}& \EUR{4005.00} \{+\EUR{135.00}\}\\
+\hline
+\caption{Consuntivo di Periodo dei Ruoli: Avvio ed Analisi dei Requisiti}
+\label{tab:doaar}
+\end{longtable}
+
+\paragraph{Variazioni nella Pianificazione} ~\\
+Durante lo svolgimento delle attività non sono state commessi ritardi, quindi la pianificazione è rimasta invariata.
+
+
+\paragraph{Conclusioni} \-\\
+Il numero di ore preventivato differisce da quelle realmente utilizzate in quanto, approcciandosi ad un nuovo modo di svolgere un progetto, non siamo stati in grado di preventivare correttamente il numero di ore che si sarebbero poi andate, effettivamente, ad utilizzare. Ciò è dovuto al fatto che siano state utilizzate più ore, rispetto a quanto preventivato, per la stesura del \textit{Piano di Progetto v1.0.0}, andando così ad aumentare le ore di \textit{Responsabile}. Un discorso equivalente può essere effettuato per il ruolo di \textit{Analista} , in quanto il documento \textit{Analisi dei Requisiti v1.0.0} ha richiesto un'analisi più lunga ed approfondita di quanto precedentemente preventivato. \\
+Il \textit{Verificatore} ha necessitato più ore in quanto i documenti sono stati rivisti più volte, al fine di controllare le modifiche che venivano effettuate. \\
+Alla fine di questo periodo il numero si è quindi verificato un incremento di 7 ore totali, andando ad aggiungere \EUR{135.00} al costo totale della prima fase, a carico del gruppo. 
+
+\subsubsection{Risanamento Criticità}
+\label{RA1}
+
+\paragraph{Prospetto Orario} \-\\
+
+\begin{longtable}{|C{.30\textwidth}|C{.06\textwidth}|C{.06\textwidth}|C{.06\textwidth} | C{.06\textwidth}| C{.06\textwidth} | C{.06\textwidth} | C{.10\textwidth} |}
+\hline
+\rowcolor{bluelogo}	\textbf{\textcolor{white}{Nome}} & \textbf{\textcolor{white}{RE}} & \textbf{\textcolor{white}{AM}} & \textbf{\textcolor{white}{AN}} & \textbf{\textcolor{white}{PJ}} & \textbf{\textcolor{white}{PR}} & \textbf{\textcolor{white}{VE}} & \textbf{\textcolor{white}{Totale}}\\
+\hline \hline
+
+Marco Chilese & - & - & - & - & - & 3 \{-2\} & 3 \{-2\}\\
+\hline
+\rowcolor{grigio}Marco Favaro & - & - & 4 \{-1\} & - & - & - & 4 \{-1\} \\
+\hline
+Diego Mazzalovo & - & - & 4 \{-1\} & - & - & - & 4 \{-1\} \\
+\hline
+\rowcolor{grigio}Carlotta Segna & - & - & - & - & - & 3 \{-2\} & 3 \{-2\}\\
+\hline
+Matteo Slanzi & - & - & 3 \{-2\} & - & - & - & 3 \{-2\}\\
+\hline
+\rowcolor{grigio}Bogdan Stanciu & 3 \{-2\} & - & - & - & - & - & 3 \{-2\} \\
+\hline
+Luca Violato & - & 3 \{-2\}& - & - & - & - & 3 \{-2\} \\
+\hline
+
+\caption{Consuntivo di Periodo: Risanamento Criticità 1}
+\label{Distribuzione oraria del periodo di rc1}
+\end{longtable}
+
+\paragraph{Prospetto Economico} \-\\
+
+\begin{longtable}{| C{.30\textwidth}| C{.15\textwidth}| C{.20\textwidth}|}
+\hline
+\rowcolor{bluelogo}\textbf{\textcolor{white}{Ruolo}} & \textbf{\textcolor{white}{Ore}} & \textbf{\textcolor{white}{Costo in \euro}} \\
+\hline 
+Responsabile & 3 \{-2\} & \EUR{90.00} \{-\EUR{60.00}\}\\
+\hline
+\rowcolor{grigio}Amministratore & 3 \{-2\} & \EUR{60.00} \{-\EUR{40.00}\} \\
+\hline
+Analista & 11 \{-4\} & \EUR{275.00} \{-\EUR{100.00}\} \\
+\hline
+\rowcolor{grigio}Progettista & - & - \\
+\hline
+Programmatore & - & - \\
+\hline
+\rowcolor{grigio}Verificatore & 6 \{-4\} & \EUR{90.00} \{-\EUR{60.00}\}\\
+\hline
+\textbf{Totale} & 23 \{-12\} & \EUR{515.00} \{-\EUR{260.00}\} \\
+\hline
+\caption{Consuntivo di Periodo dei ruoli: Risanamento Criticità 1}
+\label{Distribuzione oraria Ruoli del Periodo di rc1}
+\end{longtable}
+
+\paragraph{Variazioni nella Pianificazione} ~\\
+Durante lo svolgimento delle attività non sono state commessi ritardi, quindi la pianificazione è rimasta invariata. \\
+
+\paragraph{Conclusioni} ~\\
+
+Durante il periodo di \textit{Risanamento Criticità}, il monte orario preventivato si è dimostrato superiore alle reali necessità. Durante il periodo sono stati corretti gli errori segnalati alla fine del periodo precedente. Le correzioni si sono svolte sulla documentazione contenente errori. Un impegno maggiore è stato richiesto dal documento \textit{Analisi dei Requisiti v1.0.0}, corretto dagli \textit{Analisti}. \\
+
+\newpage
+
+\subsubsection{Progettazione Architetturale}
+\label{pa}
+
+\paragraph{Prospetto Orario} ~\\
+
+\begin{longtable}{|C{.30\textwidth}|C{.06\textwidth}|C{.06\textwidth}|C{.06\textwidth} | C{.06\textwidth}| C{.06\textwidth} | C{.06\textwidth} | C{.10\textwidth} |}
+\hline
+\rowcolor{bluelogo}	\textbf{\textcolor{white}{Nome}} & \textbf{\textcolor{white}{RE}} & \textbf{\textcolor{white}{AM}} & \textbf{\textcolor{white}{AN}} & \textbf{\textcolor{white}{PJ}} & \textbf{\textcolor{white}{PR}} & \textbf{\textcolor{white}{VE}} & \textbf{\textcolor{white}{Totale}}\\
+\hline 
+Marco Chilese & - & 12 \{+2\} & - & 12 & - & - & 24 \{+2\} \\
+\hline
+\rowcolor{grigio}Marco Favaro & 5 & - & 18 \{+1\}  & - & - & - & 23 \{+1\} \\
+\hline
+Diego Mazzalovo & 6 \{-2\}& - & - & 17 \{+3\} & - & - & 23 \{+1\} \\ 
+\hline
+\rowcolor{grigio}Carlotta Segna & - & - & - & 10 & 13 \{+1\} & - & 23 \{+1\} \\
+\hline
+Matteo Slanzi & - & - & - & - & 7 \{-4\} & 9 \{-2\} & 16 \{-6\} \\
+\hline
+\rowcolor{grigio}Bogdan Stanciu & - & 8 \{-2\}& - & - & 15 \{+3\} & - & 23 \{+1\} \\
+\hline
+Luca Violato & - & - & 11 \{+1\} & - & - & 14 \{+2\} & 25 \{+3\} \\
+\hline 
+
+\caption{Consuntivo di Periodo: Progettazione Architetturale}
+\label{Distribuzione oraria del periodo di pa}
+\end{longtable}
+
+
+\paragraph{Prospetto Economico} ~\\
+
+\begin{longtable}{| C{.30\textwidth}| C{.15\textwidth}| C{.20\textwidth}|}
+\hline
+\rowcolor{bluelogo}\textbf{\textcolor{white}{Ruolo}} & \textbf{\textcolor{white}{Ore}} & \textbf{\textcolor{white}{Costo in \euro}} \\
+\hline 
+Responsabile & 11 \{-2\}& \EUR{330.00} \{-\EUR{60.00}\} \\
+\hline
+\rowcolor{grigio}Amministratore & 20 & \EUR{400.00} \\
+\hline
+Analista & 29 \{+2\} & \EUR{725.00} \{+\EUR{50.00}\}\\
+\hline
+\rowcolor{grigio}Progettista & 39 \{+3\} & \EUR{858.00} \{+\EUR{66.00}\}\\
+\hline
+Programmatore & 35 & \EUR{525.00} \\
+\hline
+\rowcolor{grigio}Verificatore & 23 & \EUR{345.00}\\
+\hline
+\textbf{Totale} & 157 \{+3\} & \EUR{3183.00} \{+\EUR{56.00}\}\\ 
+\hline
+
+\caption{Consuntivo di Periodo dei Ruoli: Progettazione Architetturale}
+\label{Distribuzione oraria per ruoli del periodo di pa}
+\end{longtable}
+
+\paragraph{Variazioni nella Pianificazione} ~\\
+Durante lo svolgimento delle attività non sono state commessi ritardi, quindi la pianificazione è rimasta invariata. \\
+
+\paragraph{Conclusioni} ~\\
+L'incremento del documento \textit{Analisi dei Requisiti v2.0.0}, ha richiesto un numero di ore maggiore da parte degli \textit{Analisti} per il suo incremento. L'utilizzo di nuovo tecnologie ha portato gli \textit{Amministratori}, che avevano già una precedente conoscenza di queste. La preparazione del \textit{PoC} ha richiesto maggior tempo rispetto a quanto preventivato e, quindi, le ore di \textit{Programmatori} e \textit{Progettisti} sono aumentate. 
+
+\subsubsection{Risanamento Criticità}
+\label{RA2}
+
+\paragraph{Prospetto Orario} \-\\
+
+\begin{longtable}{|C{.30\textwidth}|C{.06\textwidth}|C{.06\textwidth}|C{.06\textwidth} | C{.06\textwidth}| C{.06\textwidth} | C{.06\textwidth} | C{.10\textwidth} |}
+\hline
+\rowcolor{bluelogo}	\textbf{\textcolor{white}{Nome}} & \textbf{\textcolor{white}{RE}} & \textbf{\textcolor{white}{AM}} & \textbf{\textcolor{white}{AN}} & \textbf{\textcolor{white}{PJ}} & \textbf{\textcolor{white}{PR}} & \textbf{\textcolor{white}{VE}} & \textbf{\textcolor{white}{Totale}}\\
+\hline \hline
+
+Marco Chilese & - & - & - & 3 & - & - & 3\\
+\hline
+\rowcolor{grigio}Marco Favaro & 3 & - & - & - & - & - & 3 \\
+\hline
+Diego Mazzalovo & - & - & - & 3 & - & - & 3 \\
+\hline
+\rowcolor{grigio}Carlotta Segna & - & - & - & - & 3 & - & 3\\
+\hline
+Matteo Slanzi & - & - & - & - & - & 3 & 3\\
+\hline
+\rowcolor{grigio}Bogdan Stanciu & - & 3 & - & - & - & - & 3 \\
+\hline
+Luca Violato & - & - & 3 & - & - & - & 3 \\
+\hline
+
+\caption{Consuntivo di Periodo: Risanamento Criticità 2}
+\label{Distribuzione oraria del periodo di rc2}
+\end{longtable}
+
+\paragraph{Prospetto Economico} \-\\
+
+\begin{longtable}{| C{.30\textwidth}| C{.15\textwidth}| C{.20\textwidth}|}
+	\hline
+	\rowcolor{bluelogo}\textbf{\textcolor{white}{Ruolo}} & \textbf{\textcolor{white}{Ore}} & \textbf{\textcolor{white}{Costo 	in \euro}} \\
+	\hline 
+	Responsabile & 3 & \EUR{90.00} \\
+	\hline
+	\rowcolor{grigio}Amministratore & 3 & \EUR{60.00} \\
+	\hline
+	Analista & 3 & \EUR{75.00} \\
+	\hline
+	\rowcolor{grigio}Progettista & 3 & \EUR{66.00}\\
+	\hline
+	Programmatore & 6 & \EUR{90.00} \\
+	\hline 
+	\rowcolor{grigio}Verificatore & 3 & \EUR{45.00} \\
+	\hline
+	\textbf{Totale} & 21 & \EUR{426.00} \\
+	\hline 
+
+\caption{Consuntivo di Periodo dei ruoli: Risanamento Criticità 2}
+\label{Distribuzione ruoli RC2}
+\end{longtable}
+
+\paragraph{Variazioni nella Pianificazione} ~\\
+Durante lo svolgimento delle attività non sono state commessi ritardi, quindi la pianificazione è rimasta invariata.
+
+\paragraph{Conclusioni} ~\\
+
+Le ore preventivate per questa fase sono state precedentemente correttamente preventivate. Le modifiche apportate sono state quelle segnalate in Revisione di Pianificazione dalla committente. 
+
+\pagebreak
+
+\subsubsection{Progettazione di Dettaglio e Codifica}
+\label{PPDC}
+\paragraph{Prospetto Orario } ~\\
+\begin{longtable}{|C{.30\textwidth}|C{.06\textwidth}|C{.06\textwidth}|C{.06\textwidth} | C{.06\textwidth}| C{.06\textwidth} | C{.06\textwidth} | C{.10\textwidth} |}
+	\hline
+	\rowcolor{bluelogo}	\textbf{\textcolor{white}{Nome}} & \textbf{\textcolor{white}{RE}} & \textbf{\textcolor{white}{AM}} & \textbf{\textcolor{white}{AN}} & \textbf{\textcolor{white}{PJ}} & \textbf{\textcolor{white}{PR}} & \textbf{\textcolor{white}{VE}} & \textbf{\textcolor{white}{Totale}}\\
+	\hline 
+	Marco Chilese & - & - & - & 20 & 13 \{-3\} & 17 \{+3\}& 50 \\
+	\hline
+	\rowcolor{grigio}Marco Favaro &  - & - & - & 14 & 19 \{+4\} & 17 \{-4\} & 50 \\
+	\hline
+	Diego Mazzalovo & - & 8 \{-3\} & - & 18 & 13 \{-8\} & 11 \{+11\} & 50 \\
+	\hline
+	\rowcolor{grigio}Carlotta Segna & - & 14 \{-4\} & 15 \{+4\} & - & 21 & - & 50 \\
+	\hline
+	Matteo Slanzi & 8 & - & - & 11 \{-10\} & 21 & 10 \{+10\} & 50 \\
+	\hline
+	\rowcolor{grigio}Bogdan Stanciu & - & - & 8 \{-12\} & 12 &  20 \{+20\} & 10 \{-8\} & 50 \\
+	\hline
+	Luca Violato & 5 & - & - & 22 \{+3\} & 23 \{-3\} & - & 50 \\   
+	\hline
+
+
+\caption{Consuntivo di Periodo dei Ruoli: Progettazione di Dettaglio e Codifica}
+\label{CP PDC}
+\end{longtable}
+
+\paragraph{Prospetto Economico} ~\\
+
+\begin{longtable}{| C{.30\textwidth}| C{.15\textwidth}| C{.20\textwidth}|}
+	\hline
+	\rowcolor{bluelogo}\textbf{\textcolor{white}{Ruolo}} & \textbf{\textcolor{white}{Ore}} & \textbf{\textcolor{white}{Costo 	in \euro}} \\
+	\hline 
+	Responsabile & 13 & \EUR{390.00} \\
+	\hline
+	\rowcolor{grigio}Amministratore & 22 \{-3\} & \EUR{440.00}  \{-\EUR{60.00}\}\\
+	\hline
+	Analista & 23 \{-12\}& \EUR{575.00} \{-\EUR{300}\} \\
+	\hline
+	\rowcolor{grigio}Progettista & 97 \{-10\} & \EUR{2134.00}  \{-\EUR{220.00}\}\\
+	\hline
+	Programmatore & 130 \{+9\} & \EUR{1950.00} \{+\EUR{135.00\}} \\
+	\hline 
+	\rowcolor{grigio}Verificatore & 65 \{+16\} & \EUR{975.00} \{+\EUR{240.00\}}\\
+	\hline
+	\textbf{Totale} & 350 & \EUR{6464.00} \{-\EUR{205.00 }\}\\
+	\hline 
+
+\caption{Consuntivo di Periodo dei ruoli: Progettazione di Dettaglio e Codifica}
+\label{Distribuzione ruoli pdc}
+\end{longtable}
+
+\paragraph{Variazioni nella Pianificazione} ~\\
+Durante lo svolgimento delle attività non sono state commessi ritardi, quindi la pianificazione è rimasta invariata.
+
+\paragraph{Conclusioni} ~\\
+Nonostante le ore assegnate a ciascuna persona siano, nel totale, rimaste invariate, il numero di ore suddiviso tra persona persona ha subito delle modifiche. Questo si è verificato in quanto persone con più esperienza sono state assegnate allo svolgimento di compiti con i quali avevano precedentemente familiarizzato. \\
+Un aumento delle ore di \textit{Verificatore} è dovuto al continuo controllo di documenti e codice che venivano scritti e sviluppati al fine di annullare gli errori che venivano commessi durante lo sviluppo di questi. L'aumento delle ore del \textit{Programmatore} è dovuto ad un lavoro maggiore rispetto a quanto preventivato. \\
+
+\pagebreak
+\input{Chapters/PreventivoaFinire.tex}
+
