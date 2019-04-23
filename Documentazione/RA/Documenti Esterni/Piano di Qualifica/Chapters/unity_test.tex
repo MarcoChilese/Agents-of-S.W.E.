@@ -160,7 +160,40 @@ TU0-75 & Viene verificata la costruzione corretta di una rete & N.I.  \\
 \hline 
 \rowcolor{grigio}TU0-76 & Viene verificata la creazione della tabella di probabilità per ogni nodo della rete bayesiana & N.I. \\ 
 \hline
-
+TU0-77 & Viene verificato che il \textit{Parser} riconosca una rete bayesiana ben formata come tale, quindi priva di errori & S. \\
+\hline
+\rowcolor{grigio}TU0-78 & Viene verificato che il metodo \texttt{checkMinimumFields} del \textit{Parser} torni \textbf{True} se il file di definizione \textit{JSON} della rete bayesiana ha il corretto numero di campi & S.\\
+\hline
+TU0-79 & Viene verificato che il metodo \texttt{checkMinimumFields} del \textit{Parser} torni \textbf{False} se il file di definizione \textit{JSON} della rete bayesiana non ha il corretto numero di campi & S.\\
+\hline
+\rowcolor{grigio}TU0-80 & Viene verificato che il \textit{Parser} riconosca e segnali se un campo dati del file di definizione ha una nomenclatura non conforme a quanto previsto & S.\\
+\hline
+TU0-81 & Viene verificato che il metodo \texttt{checkNamedNodes} del \textit{Parser} segnali con un messaggio di errore se un certo campo del file di definizione ha un numero di righe non conforme & S.\\
+\hline
+\rowcolor{grigio}TU0-82 & Viene verificato che il metodo \texttt{checkNamedNodes} del \textit{Parser} segnali con un messaggio di errore se un certo campo del file di definizione ha una definizione mancante & S.\\
+\hline
+TU0-83 & Viene verificato che il metodo \texttt{countNumberOfValue} del \textit{Parser} ritorni l'effettivo numero di probabilità definite per un dato nodo & S.\\
+\hline
+\rowcolor{grigio}TU0-84 & Viene verificato che il metodo \texttt{checkStates} del \textit{Parser} ritorni \textbf{True} nel caso in cui il file di definizione \textit{JSON} della rete bayesiana abbia correttamente definito gli stati dei nodi & S.\\
+\hline
+TU0-85 & Viene verificato che il metodo \texttt{checkStates} del \textit{Parser} segnali con un messaggio di errore se un nodo possiede meno di due stati & S.\\
+\hline
+\rowcolor{grigio}TU0-86 & Viene verificato che il metodo \texttt{checkStates} del \textit{Parser} segnali con un messaggio di errore se all'interno del file di definizione \textit{JSON} si tenti di ridefinire più volte il medesimo stato & S.\\
+\hline
+TU0-87 & Viene verificato che il metodo \texttt{checkParents} del \textit{Parser} torni \textbf{True} nel caso in cui il file di definizione \textit{JSON} della rete bayesiana abbia correttamente definito i padri dei nodi & S.\\
+\hline
+\rowcolor{grigio}TU0-88 & Viene verificato che il metodo \texttt{checkStates} del \textit{Parser} segnali con un messaggio di errore se all'interno del file di definizione \textit{JSON} si tenti di ridefinire più volte il medesimo padre di uno stesso nodo & S.\\
+\hline
+TU0-89 & Viene verificato che il metodo \texttt{checkStates} del \textit{Parser} segnali con un messaggio di errore se all'interno del file di definizione \textit{JSON} venga indicato come padre un nodo non esistente & S.\\
+\hline
+\rowcolor{grigio}TU0-90 & Viene verificato che il metodo \texttt{checkStates} del \textit{Parser} segnali con un messaggio di errore se all'interno del file di definizione \textit{JSON} venga indicato come padre di un nodo se stesso & S.\\
+\hline
+TU0-91 & Viene verificato che il metodo \texttt{checkProbabilities} del \textit{Parser} torni \textbf{True} nel caso in cui il file di definizione \textit{JSON} della rete bayesiana abbia correttamente definito le probabilità dei nodi & S.\\
+\hline
+\rowcolor{grigio}TU0-92 & Viene verificato che il metodo \texttt{checkProbabilities} del \textit{Parser} segnali con un messaggio di errore se all'interno del file di definizione \textit{JSON} venga definita una probabilità negativa & S.\\
+\hline
+TU0-93 & Viene verificato che il metodo \texttt{checkProbabilities} del \textit{Parser} segnali con un messaggio di errore se all'interno del file di definizione \textit{JSON} venga definita una probabilità maggiore al 100\% & S.\\
+\hline
 \caption{Test di unità}
 \label{testunita}
 \end{longtable}
