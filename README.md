@@ -62,7 +62,7 @@
 - Progettista: Marco Chilese, Diego Mazzalovo
 - Programmatore: Carlotta Segna
 - Verificatore: Matteo Slanzi
-- Analista: Luca x
+- Analista: Luca Violato
 
 ### Ruoli (7)
 - Amministratore: Diego Mazzalovo
@@ -81,3 +81,12 @@
 - Verificatore: Diego Mazzalovo
 - Analista: Matteo Slanzi
 
+
+
+### Ruoli (9) Risanamento
+- Amministratore: Diego Mazzalovo
+- Responsabile: Matteo Slanzi
+- Progettista: Luca Violato
+- Programmatore: Bogdan Stanciu, Marco Favaro
+- Verificatore: Marco Chilese
+- Analista: Carlotta Segna
