@@ -1,0 +1,153 @@
+{
+	"canStartComputation": true,
+	"collegatoAlDB": true,
+	"database": {
+		"id": 5,
+		"orgId": 1,
+		"name": "InfluxDB4",
+		"type": "influxdb",
+		"typeLogoUrl": "public/app/plugins/datasource/influxdb/img/influxdb_logo.svg",
+		"access": "proxy",
+		"url": "http://localhost:8086",
+		"password": "password",
+		"user": "Diego",
+		"database": "influx",
+		"basicAuth": false,
+		"isDefault": true,
+		"jsonData": {
+			"keepCookies": []
+		},
+		"readOnly": false
+	},
+	"flushesAssociations": {
+		"tre": {
+			"table": "cpu",
+			"flush": "time_system"
+		}
+	},
+	"monitoring": true,
+	"name": "esempio",
+	"nodes": [
+		"uno",
+		"due",
+		"tre"
+	],
+	"parents": {
+		"uno": [],
+		"due": [],
+		"tre": [
+			"uno",
+			"due"
+		]
+	},
+	"states": {
+		"uno": [
+			"true",
+			"false",
+			"a",
+			"b"
+		],
+		"due": [
+			"true",
+			"false",
+			"c"
+		],
+		"tre": [
+			"true",
+			"false"
+		]
+	},
+	"probabilities": {
+		"uno": [
+			[
+				0.25,
+				0.25,
+				0.25,
+				0.25
+			]
+		],
+		"due": [
+			[
+				0.05,
+				0.9,
+				0.05
+			]
+		],
+		"tre": [
+			[
+				1,
+				0
+			],
+			[
+				1,
+				0
+			],
+			[
+				1,
+				0
+			],
+			[
+				1,
+				0
+			],
+			[
+				1,
+				0
+			],
+			[
+				1,
+				0
+			],
+			[
+				1,
+				0
+			],
+			[
+				1,
+				0
+			],
+			[
+				1,
+				0
+			],
+			[
+				1,
+				0
+			],
+			[
+				1,
+				0
+			],
+			[
+				1,
+				0
+			]
+		]
+	},
+	"temporalPolitic": {
+		"seconds": 21,
+		"minutes": 0,
+		"hours": 0
+	},
+	"temporalPoliticConfirmed": true,
+	"tresholdLinked": {
+		"uno": false,
+		"due": false,
+		"tre": true
+	},
+	"tresholds": {
+		"uno": [],
+		"due": [],
+		"tre": [
+			{
+				"state": "false",
+				"sign": ">=",
+				"value": 3,
+				"critical": false,
+				"name": 0,
+				"$$hashKey": "object:709"
+			}
+		]
+	},
+	"selectedDB": "InfluxDB"
+}

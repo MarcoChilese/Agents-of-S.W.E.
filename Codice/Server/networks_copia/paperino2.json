@@ -1,0 +1,93 @@
+{
+	"canStartComputation": true,
+	"collegatoAlDB": true,
+	"database": {
+		"id": 10,
+		"orgId": 1,
+		"name": "telegraf",
+		"type": "influxdb",
+		"typeLogoUrl": "public/app/plugins/datasource/influxdb/img/influxdb_logo.svg",
+		"access": "proxy",
+		"url": "http://142.93.102.115:8086",
+		"password": "greg",
+		"user": "greg",
+		"database": "influx",
+		"basicAuth": false,
+		"isDefault": true,
+		"jsonData": {
+			"keepCookies": []
+		},
+		"readOnly": false
+	},
+	"databaseSelected": null,
+	"flushesAssociations": {
+		"a": {
+			"table": "cpu",
+			"flush": "time_guest"
+		}
+	},
+	"monitoring": true,
+	"name": "paperino2",
+	"nodes": [
+		"a",
+		"b"
+	],
+	"parents": {
+		"a": [],
+		"b": [
+			"a"
+		]
+	},
+	"states": {
+		"a": [
+			"a",
+			"b"
+		],
+		"b": [
+			"c",
+			"d"
+		]
+	},
+	"probabilities": {
+		"a": [
+			[
+				0.25,
+				0.75
+			]
+		],
+		"b": [
+			[
+				0.05,
+				0.95
+			],
+			[
+				1,
+				0
+			]
+		]
+	},
+	"temporalPolitic": {
+		"seconds": 12,
+		"minutes": 0,
+		"hours": 0
+	},
+	"temporalPoliticConfirmed": true,
+	"tresholdLinked": {
+		"a": true,
+		"b": false
+	},
+	"tresholds": {
+		"a": [
+			{
+				"state": "b",
+				"sign": ">=",
+				"value": 0,
+				"critical": false,
+				"name": 0,
+				"$$hashKey": "object:102"
+			}
+		],
+		"b": []
+	},
+	"selectedDB": "InfluxDB"
+}

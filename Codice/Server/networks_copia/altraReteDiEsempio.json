@@ -1,0 +1,124 @@
+{
+	"canStartComputation": true,
+	"collegatoAlDB": true,
+	"database": {
+		"id": 4,
+		"orgId": 1,
+		"name": "InfluxDB3",
+		"type": "influxdb",
+		"typeLogoUrl": "public/app/plugins/datasource/influxdb/img/influxdb_logo.svg",
+		"access": "proxy",
+		"url": "http://142.93.102.115:8086",
+		"password": "password",
+		"user": "Diego",
+		"database": "influx",
+		"basicAuth": false,
+		"isDefault": true,
+		"jsonData": {
+			"keepCookies": []
+		},
+		"readOnly": false
+	},
+	"databaseSelected": null,
+	"flushesAssociations": {
+		"uno": {
+			"table": "pippo",
+			"flush": "Cancro"
+		}
+	},
+	"monitoring": false,
+	"name": "altraReteDiEsempio",
+	"nodes": [
+		"uno",
+		"due",
+		"quattro"
+	],
+	"parents": {
+		"uno": [],
+		"due": [],
+		"quattro": [
+			"uno",
+			"due"
+		]
+	},
+	"states": {
+		"uno": [
+			"a",
+			"b"
+		],
+		"due": [
+			"c",
+			"d"
+		],
+		"quattro": [
+			"true",
+			"false"
+		]
+	},
+	"probabilities": {
+		"uno": [
+			[
+				0.25,
+				0.75
+			]
+		],
+		"due": [
+			[
+				0.05,
+				0.95
+			]
+		],
+		"quattro": [
+			[
+				1,
+				0
+			],
+			[
+				1,
+				0
+			],
+			[
+				1,
+				0
+			],
+			[
+				1,
+				0
+			]
+		]
+	},
+	"temporalPolicy": {
+		"seconds": 23,
+		"minutes": 0,
+		"hours": 0
+	},
+	"temporalPolicyConfirmed": true,
+	"tresholdLinked": {
+		"uno": true,
+		"due": false,
+		"quattro": false
+	},
+	"tresholds": {
+		"uno": [
+			{
+				"state": "b",
+				"sign": ">=",
+				"value": 0,
+				"critical": false,
+				"name": 1,
+				"$$hashKey": "object:163"
+			},
+			{
+				"state": "a",
+				"sign": ">=",
+				"value": 23,
+				"critical": false,
+				"name": 0,
+				"$$hashKey": "object:160"
+			}
+		],
+		"due": [],
+		"quattro": []
+	},
+	"selectedDB": "InfluxDB"
+}
