@@ -11,8 +11,8 @@
  */
 
 import { coreModule } from 'grafana/app/core/core';
-import TresholdCtrl from "../src/TresholdsCtrl";
-import ModalCreator from "../src/ModalCreator";
+import TresholdCtrl from '../src/TresholdsCtrl';
+import ModalCreator from '../src/ModalCreator';
 
 jest.mock('../src/ModalCreator');
 
@@ -25,7 +25,7 @@ jest.mock('../src/ModalCreator');
  * @param val
  */
 function setTreshold(tresh, node, state, sig, val) {
-  tresh.panel.tresholds['uno'].push(
+  tresh.panel.tresholds.uno.push(
     {
       state,
       sign: sig,
@@ -37,7 +37,7 @@ function setTreshold(tresh, node, state, sig, val) {
 }
 
 describe('TresholdsCtrl::confirmTresholdsChanges', () => {
-  let tresh = new TresholdCtrl();
+  const tresh = new TresholdCtrl();
   beforeEach(() => {
     tresh.panel.nodes = ['uno', 'due', 'tre'];
     tresh.panel.flussi = { Tabella1: ['Flusso', 'Flusso1', 'Flusso2'], Tabella2: ['f1', 'f2', 'f3'] };
@@ -50,51 +50,91 @@ describe('TresholdsCtrl::confirmTresholdsChanges', () => {
   /**
    * Check se è selezionata una tabella
    */
-  it('TresholdsCtrl::confirmTresholdsChanges::CheckTableSelect::false', () => {
+  it('TresholdsCtrl::checkIfTherIsAtLeastOneTreshold::CheckTableSelect::false', () => {
     tresh.panel.actualTable = undefined;
-    expect(tresh.confirmTresholdsChanges('uno')).toBe(false);
+    expect(tresh.checkIfTherIsAtLeastOneTreshold('uno')).toBe(false);
   });
 
   /**
    * Check se è selezionato un flusso
    */
-  it('TresholdsCtrl::confirmTresholdsChanges::CheckFluxSelect::false', () => {
+  it('TresholdsCtrl::checkIfTherIsAtLeastOneTreshold::CheckFluxSelect::false', () => {
     tresh.panel.actualTable = 'Tabella1';
     tresh.panel.actualFlush = null;
-    expect(tresh.confirmTresholdsChanges('uno')).toBe(false);
+    expect(tresh.checkIfTherIsAtLeastOneTreshold('uno')).toBe(false);
   });
 
   /**
    * Check se è settata nessuna soglia
    */
-  it('TresholdsCtrl::confirmTresholdsChanges::CheckTresholdSelect::false', () => {
+  it('TresholdsCtrl::checkIfTherIsAtLeastOneTreshold::CheckTresholdSelect::false', () => {
     tresh.panel.actualTable = 'Tabella1';
     tresh.panel.actualFlush = 'Flusso';
-    expect(tresh.confirmTresholdsChanges('uno')).toBe(false);
+    expect(tresh.checkIfTherIsAtLeastOneTreshold('uno')).toBe(false);
   });
 
   /**
-   * Check se ho settato due soglie con lo stesso segno e stesso valore sullo stesso nodo
+   * Check se ho settato due soglie uguali
    */
-  it('TresholdsCtrl::confirmTresholdsChanges::CheckMultipleTresholdSelect::false', () => {
+  it('TresholdsCtrl::checkNotRepeatedTresholds::CheckMultipleTresholdSelect::false', () => {
     tresh.panel.actualTable = 'Tabella1';
     tresh.panel.actualFlush = 'Flusso';
-    tresh.addTreshold('uno', 's1');
-    tresh.addTreshold('uno', 's1');
-    expect(tresh.confirmTresholdsChanges('uno')).toBe(false);
+    setTreshold(tresh, 'uno', 's1', '<', 2);
+    setTreshold(tresh, 'uno', 's1', '<', 2);
+
+    expect(tresh.checkNotRepeatedTresholds('uno')).toBe(false);
   });
 
   /**
-   * Check se sono settate soglie con 'value' del > maggiore del 'value' del <
+   * Check se sono settate soglie con valori contrastanti, in questo esempio s1 < 2 e s2 >= 1
    */
   it('TresholdsCtrl::confirmTresholdsChanges::CheckIncorrectTresholdSettings::false', () => {
     tresh.panel.actualTable = 'Tabella1';
     tresh.panel.actualFlush = 'Flusso';
 
-    setTreshold(tresh,'uno','s1','<',2);
-    setTreshold(tresh,'uno','s1','>=',1);
+    setTreshold(tresh, 'uno', 's1', '<', 2);
+    setTreshold(tresh, 'uno', 's2', '>=', 1);
 
-    expect(tresh.confirmTresholdsChanges('uno')).toBe(false);
+    expect(tresh.checkConflicts(tresh.splitForSign('uno'))).toBe(false);
+  });
+
+  /**
+   * Check se sono settate soglie con valori contrastanti, in questo esempio s1 <= 2 e s2 >= 1
+   */
+  it('TresholdsCtrl::confirmTresholdsChanges::CheckIncorrectTresholdSettings::false', () => {
+    tresh.panel.actualTable = 'Tabella1';
+    tresh.panel.actualFlush = 'Flusso';
+
+    setTreshold(tresh, 'uno', 's1', '<=', 2);
+    setTreshold(tresh, 'uno', 's2', '>=', 1);
+
+    expect(tresh.checkConflicts(tresh.splitForSign('uno'))).toBe(false);
+  });
+
+  /**
+   * Check se sono settate soglie con valori contrastanti, in questo esempio s1 <= 2 e s2 > 1
+   */
+  it('TresholdsCtrl::confirmTresholdsChanges::CheckIncorrectTresholdSettings::false', () => {
+    tresh.panel.actualTable = 'Tabella1';
+    tresh.panel.actualFlush = 'Flusso';
+
+    setTreshold(tresh, 'uno', 's1', '<=', 2);
+    setTreshold(tresh, 'uno', 's2', '>', 1);
+
+    expect(tresh.checkConflicts(tresh.splitForSign('uno'))).toBe(false);
+  });
+
+  /**
+   * Check se sono settate soglie con valori contrastanti, in questo esempio s1 < 2 e s2 > 1
+   */
+  it('TresholdsCtrl::confirmTresholdsChanges::CheckIncorrectTresholdSettings::false', () => {
+    tresh.panel.actualTable = 'Tabella1';
+    tresh.panel.actualFlush = 'Flusso';
+
+    setTreshold(tresh, 'uno', 's1', '<', 2);
+    setTreshold(tresh, 'uno', 's2', '>', 1);
+
+    expect(tresh.checkConflicts(tresh.splitForSign('uno'))).toBe(false);
   });
 
   /**
@@ -107,26 +147,23 @@ describe('TresholdsCtrl::confirmTresholdsChanges', () => {
     tresh.panel.tresholdLinked = {};
     tresh.panel.canStartComputation = false;
 
-    setTreshold(tresh,'uno','s1','>=',2);
-    setTreshold(tresh,'uno','s1','<',1);
+    setTreshold(tresh, 'uno', 's1', '>=', 2);
+    setTreshold(tresh, 'uno', 's1', '<', 1);
+    setTreshold(tresh, 'uno', 's2', '>=', 5);
+    setTreshold(tresh, 'uno', 's2', '<', 2);
 
     expect(tresh.confirmTresholdsChanges('uno')).toBe(true);
   });
 
   /**
    * delete treshold by node and index
-   * TODO in TresholdCtrl.js nella funzione delete non mi va dentro il primo if nonostante i name siano uguali ?!?!?!?!
+   * per verificarlo basta eseguire un console.log delle treshold prima e dopo la chiamata della delete
    */
-  /*
+
   it('TresholdsCtrl::confirmTresholdsChanges::CheckDeleteTreshold::true', () => {
     setTreshold(tresh,'uno','s1','>=',2);
     setTreshold(tresh,'uno','s1','<',1);
-    console.log(tresh.panel.tresholds);
-
-    expect(tresh.deleteTreshold('uno','1')).toBe(true);
-    console.log(tresh.panel.tresholds);
+    expect(tresh.deleteTreshold('uno',tresh.panel.tresholds['uno']['0'].name)).toBe(true);
   });
-*/
-
 
 });
