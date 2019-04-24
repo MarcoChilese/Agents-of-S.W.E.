@@ -3,15 +3,41 @@
 In questa sezione viene riportata una guida per la corretta configurazione dell'ambiente di sviluppo, in modo che sia la stessa utilizzata dal gruppo \texttt{Agents of S.W.E.}.\\
 Per contribuire al progetto non è strettamente necessario seguire questa sezione, tuttavia è consigliato al fine di ottenere un ambiente di lavoro pronto e correttamente impostato per lo sviluppo.
 
-\section{Requisiti}\label{AmbienteLavoro_requisiti}
-Per i requisiti minimi di funzionamento dell'ambiente di lavoro consigliato, si rimanda al sito del produttore di ogni singola tecnologia.
+\subsection{Tecnologie dell'Ambiente di Lavoro}
+Le tecnologie utilizzate dal gruppo \texttt{Agents of S.W.E.} sono le seguenti:
+\begin{itemize}
+	\item \textit{WebStorm};
+	\item \textit{NPM};
+	\item \textit{ESLint};
+	\item \textit{Jest};
+	\item \textit{WebPack}.
+\end{itemize}
 
-\subsection{\textit{WebStorm}}\label{webstorm}
+\subsubsection{Requisiti}\label{AmbienteLavoro_requisiti}
+Per i requisiti minimi di funzionamento dell'ambiente di lavoro consigliato, si veda di seguito:
+\begin{itemize}
+	\item \textit{WebStorm}:
+	\begin{itemize}
+		\item OS: 
+			\begin{itemize}
+				\item Apple macOS 10.8.3 o superiore;
+				\item Microsoft Windows 10/8/7/Vista/2003/XP (incl.64-bit);
+				\begin{itemize}
+					\item CPU: Intel Pentium III/800 MHz o superiore, o compatibile.
+				\end{itemize}
+				\item Linux con GNOME o KDE desktop.
+			\end{itemize}
+		\item RAM: 2GB, raccomandati 4GB;
+		\item Risoluzione schermo: 1024x768.
+	\end{itemize}
+\end{itemize}
+
+\subsubsection{\textit{WebStorm}}\label{webstorm}
 \textit{WebStorm} è l'ambiente di sviluppo integrato (IDE) di \textit{JetBrains} utilizzato dal team per lo sviluppo del progetto. Esso può essere ottenuto mediante download dal sito ufficiale nella formula di prova gratuita se non si dispone di licenza, che può essere ottenuta attraverso l'indirizzo email universitario.\\
 Tale software è disponibile per i sistemi operativi Microsoft Windows, Linux e Apple MacOS.\\
 Per ulteriori informazioni si rimanda al sito ufficiale.
 
-\subsection{\textit{NPM}}\label{npm}
+\subsubsection{\textit{NPM}}\label{npm}
 \textit{NPM} è il gestore di pachetti utilizzato per gestire il progetto dal team \texttt{Agents of S.W.E.}. Per la relativa installazione si rimanda al sito del produttore.\\
 Per l'effettivo utilizzo è necessario avere all'interno della directory del progetto un file denominato "package.json". Esso permette di esprimere le dipendenze e le caratteristiche del prodotto, oltre che alla definizione dei vari comandi da eseguire con radice "\texttt{npm run ...}".\\
 Di seguito è riportato, nei punti salienti, il file "package.json" utilizzato durante lo sviluppo del progetto:\\
@@ -44,12 +70,12 @@ Di seguito è riportato, nei punti salienti, il file "package.json" utilizzato d
 }
 \end{lstlisting}
 
-\subsection{\textit{ESLint}}\label{eslint}
+\subsubsection{\textit{ESLint}}\label{eslint}
 \textit{ESLint} verrà installato automaticamente attraverso il comando \texttt{npm install}.\\
 Per abilitarlo all'interno di \textit{WebStorm} è necessario lanciare l'IDE e recarsi in: File > Settings > \textit{ESLint} e scegliere "Enable". All'interno del campo "Node Interpreter" è necessario inserire il percorso alla directory in cui si trovano i file eseguibili di Node.\\
 Se non rilevato in automatico, specificare la posizione del file di configurazione ".eslintrc" all'interno della directory del progetto.
 
-\subsection{\textit{Jest}}\label{jest}
+\subsubsection{\textit{Jest}}\label{jest}
 \textit{Jest} è il framework di test utilizzato per testare il codice \textit{JavaScript}. È inoltre il responsabile della generazione dei report di coverage utilizzati in seguito per il calcolo del code coverage.\\
 L'installazione di tale componente consta nell'aggiunta del relativo pacchetto \textit{npm}. In particolare si dovranno eseguire i seguenti comandi:
 \begin{center}
@@ -60,7 +86,7 @@ A ciò seguirà poi l'aggiunta del relativo comando di script all'interno di "pa
 	\texttt{"test": "jest",}.
 \end{center}
 
-\subsection{\textit{Webpack}}\label{webpack}
+\subsubsection{\textit{Webpack}}\label{webpack}
 \textit{Webpack} è il model bundler utilizzato per eseguire la build del progetto.\\
 L'installazione di tale componente avviene tramite \textit{NPM}. È necessario eseguire il seguente comando:
 \begin{center}

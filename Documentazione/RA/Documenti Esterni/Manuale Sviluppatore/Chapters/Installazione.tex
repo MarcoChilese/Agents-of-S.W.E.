@@ -1,15 +1,26 @@
 \section{Installazione}\label{Installazione}
 
 \subsection{Requisiti}\label{Requisiti}
-I requisiti minimi richiesti per il funzionamento del plug-in non sono dovuti al prodotto in sè, ma sono dovuti alle tecnologie che vengono utilizzate. Pertanto si rimanda ai requisiti minimi delle seguenti tecnologie:
+I requisiti minimi richiesti per il funzionamento del plug-in non sono dovuti al prodotto in sè, ma sono dovuti alle tecnologie che vengono utilizzate. Di seguito vengono riportati i requisiti minimi richiesti dalle seguenti tecnologie:
 \begin{itemize}
-	\item \textit{InfluxDB};
-	\item \textit{Grafana};
-	\item \textit{NodeJS}; 
-	\item \textit{pm2}. 
+	\item \textit{InfluxDB}:
+	\begin{itemize}
+		\item CPU: 2-4 core;
+		\item RAM: 2-4GB;
+		\item IOPS: 500.
+	\end{itemize}
+	\item \textit{Grafana}:
+	\begin{itemize}
+		\item CPU: 1 core;
+		\item RAM: 250MB.
+	\end{itemize}
+	\item \textit{NodeJS}:
+	\begin{itemize}
+		\item Architettura: 64bit.
+	\end{itemize}
 \end{itemize}
 
-\subsubsection{Installazione del Plug-in}
+\subsection{Installazione del Plug-in}
 Viene richiesta come pre-condizione l'installazione di grafana a seconda del sistema operativo utilizzato seguendo la documentazione fornita da quest'ultima. 
 \begin{enumerate}
 	\item Arrestare l'esecuzione di \textit{Grafana}, qualora fosse in esecuzione;	
@@ -26,11 +37,11 @@ Viene richiesta come pre-condizione l'installazione di grafana a seconda del sis
 Per informazioni relative al funzionamento del plug-in si rimanda al \textit{Manuale Utente v1.0.0}.
 \end{enumerate}
 
-\subsubsection{Installazione Server}\label{installazione_server}
-\paragraph{Installazione \textit{NodeJS}}\-\\
+\subsection{Installazione del Server}\label{installazione_server}
+\subsubsection{Installazione \textit{NodeJS}}\-\\
 Per quanto riguarda l'installazione di \textit{NodeJS} si rimanda al sito del produttore.
 
-\paragraph{Installazione \textit{Pm2}}\-\\
+\subsubsection{Installazione \textit{Pm2}}\-\\
 Per quanto riguarda l'installazione di \textit{pm2} sarà necessario eseguire da terminale il seguente comando:
 \begin{center}
 	\texttt{npm install pm2 -g}
