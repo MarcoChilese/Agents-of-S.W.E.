@@ -18,14 +18,46 @@ Il prodotto finale non sarà rilasciato nella sua completezza in un solo momento
 È fondamentale decidere i requisiti con completezza prima di iniziare lo sviluppo dell'attuale incremento, mentre requisiti aggiuntivi per incrementi futuri sono adeguati. Per ogni sviluppo delle parti è necessario analizzare il suo grado di efficacia\glossario prima di integrare le parti tra di loro. Terminato l'incremento attuale si andrà avanti con l'incremento successivo scelto precedentemente, qualora il prodotto non sia completo. \\
 Il vantaggio di utilizzare questo modello racchiude, tra le varie, un rilascio delle funzionalità base nei primi incrementi, il che comporta una maggiore verifica e quindi una maggiore stabilità. Oltretutto i primi incrementi possono derivare da una prototipazione, la quale aiuta a fissare meglio i requisiti per gli elementi successivi. Un ulteriore vantaggio è la riduzione del rischio di fallimento, senza azzerarlo in quanto costi aggiuntivi posso derivare dalla caduta nell'iterazione\glossario.
 
-\subsubsection{Incremento}
-\label{inc}
-
-La durata di un incremento è di dieci giorni ed è composto dalle seguenti fasi:
+\subsubsection{Incremento}\label{inc}
+Un incremento è composto dalle seguenti fasi:
 \begin{itemize}
-	\item Assegnazione dei task ai componenti del gruppo il primo giorno;
-	\item Completamento dei task dal secondo all'ottavo giorno;
-	\item Verifica e valutazione del prodotto nei giorni rimanenti.
+	\item Assegnazione dei task ai componenti del gruppo;
+	\item Completamento dei task;
+	\item Verifica e valutazione del prodotto.
+\end{itemize}
+Gli incrementi dovranno rispettare i periodi descritti nel capitolo seguente.\\
+Il gruppo prevede di effettuare tre incrementi durante la fase di codifica, con conseguente consegna alla proponente di due prototipi del prodotto, più un ulteriore incremento finale durante la fase precedente alla consegna, a scopo di raffinare quanto già prodotto.
+Il gruppo si impegna a consegnare i due prototipi entro le seguenti date:
+\begin{itemize}
+	\item \textbf{Primo Prototipo}: 1 Marzo 2019\\
+	Questo primo prototipo fungerà da dimostrazione tangibile del buon funzionamento del prodotto, a supporto
+	delle scelte di progettazione fatte. Il prototipo dovrà, come requisiti minimi fissati dal gruppo, implementare le seguenti funzionalità:
+	\begin{enumerate}	% TODO: Inserire il riferimento ai requisiti coinvoliti
+		\item Consentire la comunicazione con le \textit{Grafana API}\glossario per poter ottenere le sorgenti dati disponibili;
+		\item Consentire il reperimento dati da \textit{InfluxDB}\glossario;
+		\item Caricamento di una rete bayesiana;
+		\item Interpretazione della rete bayesiana caricata;
+		\item Collegamento dei nodi;
+		\item Consentire che il monitoraggio sia avviabile, e che quindi siano visibili i valori di probabilità calcolati.
+	\end{enumerate}
+	\item \textbf{Secondo Prototipo}: 10 Aprile 2019\\
+	Il secondo prototipo dovrà dimostrare di essersi evoluto a partire dal prototipo precedente, riportando le correzioni suggerite dalla proponente. Oltre a ciò dovrà implementare le seguenti funzionalità, fissate dal gruppo:
+	\begin{enumerate} % TODO: Inserire il riferimento ai requisiti coinvoliti
+		\item Introdurre un server che consenta di mantenere la consistenza dei dati anche a browser\glossario chiuso;
+		\item Collegamento al server;
+		\item Consolidamento delle funzionalità precedenti, in particolare sviluppo del front-end;
+		\item Introduzione politica temporale;
+		\item Introduzione nodo con impostazione che permetta di ignorare la politica temporale al verificarsi dell'evento;
+		\item Possibilità di monitorare più reti;
+		\item Possibilità di salvare le reti caricate;
+		\item Separazione tra vista di impostazione e vista di monitoraggio.
+	\end{enumerate}
+\end{itemize}
+Oltre ai prototipi è prevista la consegna del prodotto finale, raffinato a partire dall'ultimo prototipo, durante l'ultimo incremento:
+\begin{itemize}
+	\item \textbf{Prodotto finale}: 17 Maggio 2019\\
+	...
 \end{itemize}
 
-In questo modo il numero di incrementi è superiormente limitato in decadi, e dovranno rispettare i periodi descritti nel capitolo seguente.  
+
+
