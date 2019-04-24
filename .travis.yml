@@ -1,7 +1,12 @@
 language: node_js
 node_js:
   - "7"
+
 sudo: required
+
+branches:
+  only: 
+    - feature/Prodotto
 
 notifications:
   email: false
