@@ -1,18 +1,25 @@
 {
 	"name": "node_server",
-	"jest": {
-		"verbose": true
-	},
 	"version": "1.0.0",
-	"description": "node server beta 0.1",
+	"description": "node server 1.0",
 	"main": "index.js",
 	"scripts": {
-		"test": "jest",
+		"test": "jest --coverage",
+		"codecov": "codecov",
 		"start": "node index.js"
+	},
+	"jest": {
+		"verbose": true,
+		"collectCoverage": true,
+		"coverageDirectory": "./coverage/",
+		"transformIgnorePatterns": [
+		  "<rootDir>/node_modules/"
+		]
 	},
 	"author": "",
 	"license": "ISC",
 	"devDependencies": {
+		"codecov": "^3.2.0",
 		"babel-cli": "^6.26.0",
 		"babel-preset-env": "^1.7.0",
 		"compression": "^1.7.4",
