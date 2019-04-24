@@ -1,14 +1,17 @@
 language: node_js
+node_js:
+  - "7"
 sudo: required
 
 notifications:
   email: false
 
+cache: npm
+
 before_script:
-  - cd ./Codice/
+  - cd ./Codice/GrafanaAndBayes
 
 script:
-  - cd ./GrafanaAndBayes
   - npm install
   - npm run test
   - npm run codecov
