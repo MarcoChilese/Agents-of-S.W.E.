@@ -36,6 +36,8 @@ Il numero di casi che abbiamo analizzato è limitato poiché il plug-in fornisce
 \end{itemize}
 \end{comment}
 
+%PANORAMICA UC
+\begin{comment} 
 \pagebreak
 
 \subsection{Panoramica Casi d'Uso}\label{PanoramicaUC}
@@ -61,6 +63,8 @@ Il primo diagramma (\hyperref[Panoramica UC Configurazione]{Panoramica UC Config
 \end{figure}
 
 \pagebreak
+\end{comment}
+%FINE PANORAMICA UC
 
 \pagebreak
 \subsection{UC1 - Caricamento Rete Bayesiana}\label{UC1}
@@ -199,8 +203,12 @@ Il primo diagramma (\hyperref[Panoramica UC Configurazione]{Panoramica UC Config
 	\begin{enumerate}
 	\item (\hyperref[UC2.4.1]{UC2.4.1 (§\ref*{UC2.4.1})}) Aggiunta di una soglia;
 	\item (\hyperref[UC2.4.2]{UC2.4.2 (§\ref*{UC2.4.2})}) Definizione del valore numerico della soglia;
-	\item (\hyperref[UC2.4.3]{UC2.4.3 (§\ref*{UC2.4.3})}) Selezione "Maggiore" o "Minore";
-	\item (\hyperref[UC2.4.4]{UC2.4.4 (§\ref*{UC2.4.4})}) Selezione soglia critica.
+	\item (\hyperref[UC2.4.3]{UC2.4.3 (§\ref*{UC2.4.3})}) Selezione segno della soglia;
+	\item (\hyperref[UC2.4.4]{UC2.4.4 (§\ref*{UC2.4.4})}) Selezione soglia critica;
+	\item (\hyperref[UC2.4.5]{UC2.4.5 (§\ref*{UC2.4.5})}) Selezione "<=" come verso della soglia;
+	\item (\hyperref[UC2.4.6]{UC2.4.6 (§\ref*{UC2.4.6})}) Selezione "<" come verso della soglia;
+	\item (\hyperref[UC2.4.7]{UC2.4.7 (§\ref*{UC2.4.7})}) Selezione ">=" come verso della soglia;
+	\item (\hyperref[UC2.4.8]{UC2.4.8 (§\ref*{UC2.4.8})}) Selezione ">" come verso della soglia.
 	\end{enumerate}
 \end{itemize}
 
@@ -220,12 +228,12 @@ Il primo diagramma (\hyperref[Panoramica UC Configurazione]{Panoramica UC Config
 	\item \textbf{Scenario Principale:} l'utente edita il campo dati cliccando sullo stesso e digitando il valore numerico che desidera associare alla soglia in esame.
 \end{itemize}
 
-\paragraph{UC2.4.3 - Selezione "Maggiore" o "Minore"}\label{UC2.4.3}
+\paragraph{UC2.4.3 - Selezione verso della soglia}\label{UC2.4.3}
 \begin{itemize}
 	\item \textbf{Attore Primario:} Utente;
-	\item \textbf{Precondizioni:} l'utente ha aggiunto una soglia (\hyperref[UC2.4.1]{UC2.4.1 (§\ref*{UC2.4.1})});
-	\item \textbf{Postcondizioni:} l'utente ha selezionato il senso (">",">=","<" o "<=") attraverso cui interpretare l'insieme di valori di cui il valore di soglia (definito in \hyperref[UC2.4.2]{UC2.4.2 (§\ref*{UC2.4.2})}) rappresenta quindi rispettivamente il minimo o il massimo.
-	\item \textbf{Scenario Principale:} l'utente seleziona, attraverso una casella a scelta multipla uno dei seguenti valori: ">",">=","<" o "<=".
+	\item \textbf{Precondizione:} l'utente ha aggiunto una soglia (\hyperref[UC2.4.1]{UC2.4.1 (§\ref*{UC2.4.1})});
+	\item \textbf{Postcondizione:} l'utente ha selezionato il senso (">",">=","<" o "<=") attraverso cui interpretare l'insieme di valori di cui il valore di soglia (definito in \hyperref[UC2.4.2]{UC2.4.2 (§\ref*{UC2.4.2})}) rappresenta quindi rispettivamente il minimo o il massimo.
+	\item \textbf{Scenario Principale:} l'utente seleziona, attraverso una casella a scelta multipla, il verso della soglia.
 \end{itemize}
 
 \paragraph{UC2.4.4 - Selezione Soglia Critica}\label{UC2.4.4}
@@ -235,6 +243,43 @@ Il primo diagramma (\hyperref[Panoramica UC Configurazione]{Panoramica UC Config
 	\item \textbf{Postcondizioni:} l'utente ha identificato la soglia come critica o meno.
 	\item \textbf{Scenario Principale:} per ogni stato del nodo l'utente seleziona, attraverso una checkbox\glossario, se la soglia definita sia critica o meno. Nel caso in cui si tratti di una soglia critica, qualora dovessero essere monitorati valori che la facciano scattare, si attiverebbe immediatamente l'attività di ricalcolo delle probabilità in sede di monitoraggio e visualizzazione dati (\hyperref[UC4]{UC4 (§\ref*{UC4})}).
 \end{itemize}
+
+\paragraph{UC2.4.5 - Selezione "<=" come verso della soglia}\label{UC2.4.5}
+\begin{itemize}
+	\item \textbf{Caso Padre:} (\hyperref[UC2.4.3]{UC2.4.3 (§\ref*{UC2.4.3})});
+	\item \textbf{Attore Primario:} Utente;
+	\item \textbf{Precondizione:} l'utente ha aggiunto una soglia (\hyperref[UC2.4.1]{UC2.4.1 (§\ref*{UC2.4.1})});
+	\item \textbf{Postcondizione:} l'utente ha selezionato "<=" come verso attraverso cui interpretare l'insieme di valori di cui il valore di soglia (definito in \hyperref[UC2.4.2]{UC2.4.2 (§\ref*{UC2.4.2})}) rappresenta dunque il massimo.
+	\item \textbf{Scenario Principale:} l'utente seleziona, attraverso una casella a scelta multipla, il verso "<=".
+\end{itemize}
+
+\paragraph{UC2.4.6 - Selezione "<" come verso della soglia}\label{UC2.4.6}
+\begin{itemize}
+	\item \textbf{Caso Padre:} (\hyperref[UC2.4.3]{UC2.4.3 (§\ref*{UC2.4.3})});
+	\item \textbf{Attore Primario:} Utente;
+	\item \textbf{Precondizione:} l'utente ha aggiunto una soglia (\hyperref[UC2.4.1]{UC2.4.1 (§\ref*{UC2.4.1})});
+	\item \textbf{Postcondizione:} l'utente ha selezionato "<" come verso attraverso cui interpretare l'insieme di valori di cui il valore di soglia (definito in \hyperref[UC2.4.2]{UC2.4.2 (§\ref*{UC2.4.2})}) rappresenta dunque il massimo.
+	\item \textbf{Scenario Principale:} l'utente seleziona, attraverso una casella a scelta multipla, il verso "<".
+\end{itemize}
+
+\paragraph{UC2.4.7 - Selezione ">=" come verso della soglia}\label{UC2.4.7}
+\begin{itemize}
+	\item \textbf{Caso Padre:} (\hyperref[UC2.4.3]{UC2.4.3 (§\ref*{UC2.4.3})});
+	\item \textbf{Attore Primario:} Utente;
+	\item \textbf{Precondizione:} l'utente ha aggiunto una soglia (\hyperref[UC2.4.1]{UC2.4.1 (§\ref*{UC2.4.1})});
+	\item \textbf{Postcondizione:} l'utente ha selezionato ">=" come verso attraverso cui interpretare l'insieme di valori di cui il valore di soglia (definito in \hyperref[UC2.4.2]{UC2.4.2 (§\ref*{UC2.4.2})}) rappresenta dunque il minimo.
+	\item \textbf{Scenario Principale:} l'utente seleziona, attraverso una casella a scelta multipla, il verso ">=".
+\end{itemize}
+
+\paragraph{UC2.4.8 - Selezione ">" come verso della soglia}\label{UC2.4.8}
+\begin{itemize}
+	\item \textbf{Caso Padre:} (\hyperref[UC2.4.3]{UC2.4.3 (§\ref*{UC2.4.3})});
+	\item \textbf{Attore Primario:} Utente;
+	\item \textbf{Precondizione:} l'utente ha aggiunto una soglia (\hyperref[UC2.4.1]{UC2.4.1 (§\ref*{UC2.4.1})});
+	\item \textbf{Postcondizione:} l'utente ha selezionato ">" come verso attraverso cui interpretare l'insieme di valori di cui il valore di soglia (definito in \hyperref[UC2.4.2]{UC2.4.2 (§\ref*{UC2.4.2})}) rappresenta dunque il minimo.
+	\item \textbf{Scenario Principale:} l'utente seleziona, attraverso una casella a scelta multipla, il verso ">".
+\end{itemize}
+
 
 \pagebreak
 
@@ -335,51 +380,12 @@ Il primo diagramma (\hyperref[Panoramica UC Configurazione]{Panoramica UC Config
 
 \subsection{UC4 - Visualizzazione Probabilità Associate ai Nodi di una Rete Bayesiana Monitorata}\label{UC4}
 
-\begin{figure}[H]
-	\begin{center}
-		\includegraphics[scale=0.6]{./images/UC4.png}
-		 \caption{UC4 - Visualizzazione Probabilità Associate ai Nodi di una Rete Bayesiana Monitorata}
-	\end{center}
-\end{figure}
-
-\begin{itemize}
-	\item \textbf{Attore Primario}: Utente;
-	\item \textbf{Precondizioni:}
-	\begin{enumerate}
-		\item L'utente ha avviato correttamente il monitoraggio del flusso dati (\hyperref[UC20]{UC20 (§\ref*{UC20})}) di una rete bayesiana;
-		\item L'utente ha acceduto alla sezione di visualizzazione dei monitoraggi attivi (\hyperref[UC24]{UC24 (§\ref*{UC24})})
-	\end{enumerate}	 
-	\item \textbf{Postcondizione:} il Sistema mantiene aggiornate e visualizzabili da parte dell'utente, le misure di probabilità derivate dai nodi della rete bayesiana monitorata selezionata;
-	\item \textbf{Scenario Principale:} 
-	\begin{enumerate}
-		\item (\hyperref[UC4.1]{UC4.1 (§\ref*{UC4.1})}) Selezione della rete bayesiana in monitoraggio di cui visualizzare i dati;
-		\item (\hyperref[UC4.2]{UC4.2 (§\ref*{UC4.2})}) Visualizzazione dei dati di monitoraggio.
-	\end{enumerate}
-\end{itemize}
-
-\pagebreak
-
-\subsubsection{UC4.1 - Selezione della Rete Bayesiana in Monitoraggio di cui Visualizzare i Dati}\label{UC4.1}
-
-\begin{itemize}
-	\item \textbf{Attore Primario:} Utente;
-	\item \textbf{Precondizioni:} 
-	\begin{enumerate}
-		\item L'utente ha avviato correttamente il monitoraggio del flusso dati (\hyperref[UC20]{UC20 (§\ref*{UC20})}) di una rete bayesiana;
-		\item L'utente ha acceduto alla sezione di visualizzazione dei monitoraggi attivi (\hyperref[UC24]{UC24 (§\ref*{UC24})})
-	\end{enumerate}	 
-	\item \textbf{Postcondizione:} l'utente ha selezionato la rete bayesiana, tra quelle attualmente in fase di monitoraggio, di cui visualizzare i dati;
-	\item \textbf{Scenario Principale:} l'utente, attraverso un menù a tendina, seleziona la rete bayesiana di cui visualizzare i dati di monitoraggio;
-\end{itemize}
-
-\subsubsection{UC4.2 - Visualizzazione dei Dati di Monitoraggio}\label{UC4.2}
-
 \begin{itemize}
 	\item \textbf{Attore Primario:} Utente;
 	\item \textbf{Precondizioni:}
 	\begin{enumerate}
  		\item L'utente ha avviato correttamente il monitoraggio del flusso dati (\hyperref[UC20]{UC20 (§\ref*{UC20})}) di una rete bayesiana;
- 		\item L'utente ha selezionato la rete bayesiana di cui desidera visualizzare i dati di monitoraggio (\hyperref[UC4.1]{UC4.1 (§\ref*{UC4.1})}).
+ 		\item L'utente ha selezionato la rete bayesiana di cui desidera visualizzare i dati di monitoraggio (\hyperref[UC36]{UC36 (§\ref*{UC36})}).
 	\end{enumerate}
 	\item \textbf{Postcondizione:} il Sistema mantiene aggiornate e visualizzabili da parte dell'utente, le misure di probabilità derivate dai nodi della rete bayesiana monitorata selezionata;
 	\item \textbf{Scenario Principale:} l'utente visualizza l'andamento delle probabilità dinamiche associate ai nodi della rete bayesiana. Il sistema aggiorna costantemente i dati forniti dalla rete bayesiana, effettuando l'operazione di ricalcolo delle probabilità associate ai nodi della rete non collegati al flusso dati. Tale operazione di ricalcolo delle probabilità viene eseguita allo scadere del timeout ciclico rappresentato dalla politica temporale stabilita in \hyperref[UC3]{UC3 (§\ref*{UC3})}, oppure, nel caso siano state definite in sede di collegamento nodi (\hyperref[UC2.4.4]{UC2.4.4 (§\ref*{UC2.4.4})}), ogni volta che una soglia critica viene attivata dai dati monitorati.
@@ -822,5 +828,20 @@ Il primo diagramma (\hyperref[Panoramica UC Configurazione]{Panoramica UC Config
 		\item L'utente visualizza il messaggio che notifica l'interruzione del monitoraggio della rete bayesiana attualmente visualizzata nel pannello;
 		\item L'utente clicca "OK".
 	\end{enumerate}
+\end{itemize}
+
+\pagebreak
+
+\subsection{UC36 - Selezione della Rete Bayesiana in Monitoraggio di cui Visualizzare i Dati}\label{UC36}
+
+\begin{itemize}
+	\item \textbf{Attore Primario:} Utente;
+	\item \textbf{Precondizioni:} 
+	\begin{enumerate}
+		\item L'utente ha avviato correttamente il monitoraggio del flusso dati (\hyperref[UC20]{UC20 (§\ref*{UC20})}) di una rete bayesiana;
+		\item L'utente ha acceduto alla sezione di visualizzazione dei monitoraggi attivi (\hyperref[UC24]{UC24 (§\ref*{UC24})})
+	\end{enumerate}	 
+	\item \textbf{Postcondizione:} l'utente ha selezionato la rete bayesiana, tra quelle attualmente in fase di monitoraggio, di cui visualizzare i dati;
+	\item \textbf{Scenario Principale:} l'utente, attraverso un menù a tendina, seleziona la rete bayesiana di cui visualizzare i dati di monitoraggio;
 \end{itemize}
 
