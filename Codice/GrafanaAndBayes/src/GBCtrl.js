@@ -103,7 +103,7 @@ export class GBCtrl extends PanelCtrl {
     };
     this.panel.temporalPolicyConfirmed = false;
     this.panel.collegatoAlDB = false;
-    this.panel.databaseSelected = null;
+    this.databaseSelected = null;
     this.panel.selectedDB = null;
     this.db = undefined;
     return true;

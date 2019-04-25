@@ -21,19 +21,13 @@
         .danger-text{
             color: red;
         }
-        .success-text{
-            color: green;
+
+        .yellow-text{
+            color: gold;
         }
 
         .node-prob-color{
             color: #e0643a;
-        }
-
-        .view-monitoring{
-            border-bottom: 1px solid #333;
-            padding-bottom: 1%;
-            margin-bottom: 1%;
-            height: 10%;
         }
 
         .class-width-100{
@@ -59,16 +53,8 @@
             display: inline-block;
         }
 
-        .bottom-3-margin{
-            margin-bottom: 3%;
-        }
-
         .bottom-1-margin{
             margin-bottom: 1%;
-        }
-
-        .left-5-margin{
-            margin-left: 5%;
         }
 
         .top-1-margin{
@@ -88,7 +74,15 @@
             width: 100%;
         }
 
-        #choose-net{
+        #choose-net,#selected-net{
+            height: 70%;
+        }
+
+        #choose-source,#selected-database{
+            height: 30%;
+        }
+
+        #choose-net, #choose-source{
             border-right: 1px solid #333;
         }
 
@@ -114,10 +108,6 @@
 
         .width-60-perc{
             width: 60%;
-        }
-
-        .width-15-perc{
-            width: 10%;
         }
 
         .width-80-perc{
@@ -168,6 +158,16 @@
         #btn-settings, #net-selected{
             float: left;
         }
+
+        #setting-net{
+            height: 18em;
+        }
+
+        #selected-net{
+            padding-top: 3%;
+        }
+
+
     </style>
 
 
@@ -178,10 +178,6 @@
     </div>
 
     <div ng-if=" ctrl.server.connected">
-
-        <!-- <button ng-click="ctrl.funz()">disegna</button> -->
-
-
         <div ng-if="!ctrl.panel.visualizingMonitoring">
 
             <!-- Swap between settings to monitoring -->
@@ -191,8 +187,8 @@
 
             <!-- Network and database selection-->
             <div id="network-settings" class="class-width-100 ">
-                <form class="form-class">
-                    <div id="choose-net" class="split-80-div bottom-3-margin">
+                <form class="form-class" id="setting-net">
+                    <div id="choose-net" class="split-80-div">
                         <h5 align="center" class="section-heading class-margin-1">Seleziona Rete e Sorgente Dati</h5>
                         <!-- Import network from server -->
                         <div id="upload-from-server" class="gf-form bottom-1-margin">
@@ -227,24 +223,28 @@
                         </div>
                     </div>
                     <!-- Show network selected -->
-                    <div align="center" class="split-20-div" id="selected-net">
-                        Rete attuale: <br> {{(ctrl.panel.name !== '') ? ctrl.panel.name : 'Nessuna rete selezionata.' }}
+                    <div align="center" class="split-20-div" id="selected-net" >
+                        <p class="yellow-text"> Rete attuale: </p> {{(ctrl.panel.name !== '') ? ctrl.panel.name : 'Nessuna rete selezionata.' }}
                     </div>
                     <!-- Select database-->
-                    <div id="choose-source" class="gf-form bottom-1-margin margin-top-3 width-80-perc">
-                        <div class="width-30-perc">
-                            <span class="gf-form-label">Sorgenti</span>
-                        </div>
-                        <div class="width-30-perc padding-left-3">
-                            <select ng-model="ctrl.panel.selectedDB" >
-                                <option ng-repeat="el in ctrl.panel.availableDatabases">{{el.name}}</option>
-                            </select>
-                        </div>
-                        <div class="width-40-perc padding-left-3 ">
-                            <button class="btn btn-success" ng-click="ctrl.connectToDB().then()">Conferma</button>
+                    <div id="choose-source" class="bottom-1-margin margin-top-3 split-80-div">
+                        <div id="select-source" class="gf-form bottom-1-margin">
+                            <div class="width-30-perc">
+                                <span class="gf-form-label">Sorgenti</span>
+                            </div>
+                            <div class="width-30-perc padding-left-3">
+                                <select ng-model="ctrl.panel.selectedDB" >
+                                    <option ng-repeat="el in ctrl.panel.availableDatabases">{{el.name}}</option>
+                                </select>
+                            </div>
+                            <div class="width-40-perc padding-left-3 ">
+                                <button class="btn btn-success" ng-click="ctrl.connectToDB().then()">Conferma</button>
+                            </div>
                         </div>
                     </div>
-                    <div class="split-20-div"></div>
+                    <div align="center" class="split-20-div" id="selected-database">
+                        <p class="yellow-text">Sorgente attuale:</p>{{(ctrl.databaseSelected !== null) ? ctrl.databaseSelected  : 'Nessun database selezionato.' }}
+                    </div>
                 </form>
             </div>
 
@@ -254,7 +254,7 @@
                     <div class="width-20-perc">
                         <span class="gf-form-label">Imposta politica temporale</span>
                     </div>
-                    <div class="width-20-perc left-5-margin">
+                    <div class="width-20-perc padding-left-3">
                         <button class="btn navbar-button navbar-button--primary padding-left-3 width-80-perc" ng-click="ctrl.selectTemporalPolicy()">Imposta</button>
                     </div>
                     <div class="width-60-perc">
@@ -316,11 +316,9 @@
                         <tr>
                             <td align="center" ng-repeat="p in n.prob">{{p}}</td>
                         </tr>
-
                     </table>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
