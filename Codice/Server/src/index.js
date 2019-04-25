@@ -96,9 +96,7 @@ class Server {
 			try {
 				this.saveNetworkToFile(req.body);
 			} catch (err) {
-				console.log(err);
-				res.status(404);
-				res.send("ERRORE CARICAMENTO RETE "); 
+				res.status(404).send("ERRORE CARICAMENTO RETE "); 
 			}
 			res.send("Rete caricata");
 		});
@@ -315,7 +313,7 @@ class Server {
 		}
 		
 		if(!check)
-			console.log("Connessione esistente !"); 
+			// console.log("Connessione esistente !"); 
 			
 		this.initBayesianNetwork(data);
 	}

@@ -2,6 +2,7 @@ const path = require('path')
 const request = require('supertest');
 const app = require('../src/app');
 const Server = require('../src/index');
+const Network = require('../src/Network');
 const fs = require('fs'); 
 
 let net = require('net');
@@ -259,15 +260,59 @@ describe('Testing server...', () => {
 	test("TU0-26 Viene verificato il lancio di un’eccezione nel caso in cui il campo dati name sia assente", () => {});
 	
 	// TU0-27
-	test("TU0-27 Viene verificata la creazione del file con la definizione della rete", () => {});
+	test("TU0-27 Viene verificata la creazione del file con la definizione della rete", () => {
+		let dir = process.cwd();
+		expect(fs.existsSync(`${dir}/${config['saved_network']}/Viaggio_in_asia.json`)).toBeTruthy(); 
+	});
 	
 	// TU0-28 
 	test("TU0-28 Viene verificata il lancio di un’eccezione nel caso in cui la scritta su filesystem sia fallita", () => {});
 	
+	// TU0-29
+	test("TU0-29 Viene verificata l’invocazione del metodo initBayesianNetwork(net) all’interno del metodo saveNetworkToFile()", () => {
+		expect(server.networks['Viaggio_in_asia']).not.toBeUndefined();
+	});
 
-	// 28/76 
+	// TU0-30
+	test("TU0-30 Viene verificata la creazione di un nuovo oggetto di tipo Network con la rete caricata dall’utente", () => {
+		expect(server.networks['Viaggio_in_asia'] instanceof Network).toBeTruthy();
+	});
 
+	// TU0-31 
+	test("TU0-31 Viene verificato il lancio di un’eccezione nel caso in cui il metodo saveNetworkToFile(net) fallisca", () => {});
 
+	// TU0-32
+	test("TU0-31  Viene verificato che la richiesta di uploadnetwork ritorni una risposta con stato 404 in caso di fallimento", async(done) => {
+		try{
+			let netError = {}; 
+
+			let tmp = await request(app.app).post('/uploadnetwork').send(netError);
+			expect(tmp.text.replace(/ /g, '')).toMatch('ERRORECARICAMENTORETE');
+		}catch(err){
+			console.log(err);
+		}
+		done(); 	
+	});
+
+	// TU0-32
+	test("TU0-32 Viene verificato che la richiesta uploadnetwork ritorni un messaggio di successo nel caso in cui il metodo non ritorni errori", async(done) => {
+		try{
+			let tmp = await request(app.app).post('/uploadnetwork').send(net_to_load);
+			expect(tmp.text).toMatch('Rete caricata');
+		}catch(err){
+			console.log(err);
+		}
+		done(); 	
+	});
+
+	// TU0-33 
+	test("TU0-33 Viene verificata che la richiesta di getnetwork/:net al server, chiami il metodo parserNetworkNameURL", (done) => {
+		request(app.app).get('/getnetwork/Alarm').then((response) => {
+			expect(response.body).isJSON();
+			expect()
+			done(); 
+		});
+	});
 
 });
 
