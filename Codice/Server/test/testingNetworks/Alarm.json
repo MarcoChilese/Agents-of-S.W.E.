@@ -1672,12 +1672,12 @@
 			]
 		]
 	},
-	"temporalPolitic": {
+	"temporalPolicy": {
 		"seconds": 3,
 		"minutes": 0,
 		"hours": 0
 	},
-	"temporalPoliticConfirmed": true,
+	"temporalPolicyConfirmed": true,
 	"tresholdLinked": {
 		"HISTORY": true,
 		"CVP": false,

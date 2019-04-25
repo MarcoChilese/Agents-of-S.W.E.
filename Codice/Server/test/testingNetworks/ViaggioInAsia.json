@@ -186,12 +186,12 @@
 			]
 		]
 	},
-	"temporalPolitic": {
+	"temporalPolicy": {
 		"seconds": 0,
 		"minutes": 0,
 		"hours": 0
 	},
-	"temporalPoliticConfirmed": false,
+	"temporalPolicyConfirmed": false,
 	"tresholdLinked": {
 		"Fuma": true, 
 		"Risultati sui raggi X": false

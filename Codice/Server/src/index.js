@@ -17,7 +17,6 @@ const database = require('./influxdb');
 // })
 
 const config = require('./conf.json');
-const Parser = require('./parser.js');
 
 
 class Server {
@@ -317,10 +316,8 @@ class Server {
 		
 		if(!check)
 			console.log("Connessione esistente !"); 
-
 			
 		this.initBayesianNetwork(data);
-
 	}
 	
 	/**
