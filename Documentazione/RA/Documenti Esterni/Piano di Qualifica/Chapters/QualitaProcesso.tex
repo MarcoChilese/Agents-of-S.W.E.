@@ -60,7 +60,8 @@ Vengono utilizzati i seguenti indici descritti nelle  \textit{Norme di Progetto 
 	\item Function Coverage (FC);
 	\item Statement Coverage (SC);
 	\item Branch Coverage (BC);
-	\item Condition Coverage (CC).
+	\item Condition Coverage (CC);
+	\item Code Coverage (CV).
 \end{itemize}
 
 \begin{longtable}{|C{.15\textwidth}|C{.24\textwidth}|C{.24\textwidth}|C{.24\textwidth}|}
@@ -75,6 +76,8 @@ MTPC04 & Function Coverage (FC) & 100\% & $\geqslant 95\%$ \\
 MTPC06 & Branch Coverage (BC) & 100\% & $\geqslant 95\%$ \\
 \hline
 \rowcolor{grigio}MTPC07 & Condition Coverage (CC) & 100\% & $\geqslant 95\%$ \\
+\hline
+MTPC08 & Code Coverage (CV) & 100\% & $\geqslant 85\%$ \\
 \hline
 \caption{Verifica del Software}
 \label{VerificaSoftware}
@@ -92,7 +95,7 @@ Verrà utilizzata la seguente metrica descritta nella sezione §F.1.4.
 \rowcolor{bluelogo}\textbf{\textcolor{white}{ID}} & \textbf{\textcolor{white}{Nome}} & \textbf{\textcolor{white}{Ottimalità}} & \textbf{\textcolor{white}{Accettabilità}}\\
 \hline \hline
 \endhead
-MTPC08 & Rischi non Preventivati & 0 & $ \leqslant +4$ rischi \\
+MTPC09 & Rischi non Preventivati & 0 & $ \leqslant +4$ rischi \\
 \hline
 \caption{Gestione dei Rischi}
 \label{GestioneRischi}
@@ -116,26 +119,20 @@ Questa sezione riguarda le metriche di qualità decise per la realizzazione dei 
 \rowcolor{bluelogo}\textbf{\textcolor{white}{ID}} & \textbf{\textcolor{white}{Nome}} & \textbf{\textcolor{white}{Ottimalità}} & \textbf{\textcolor{white}{Accettabilità}}\\
 \hline \hline
 \endhead
-MTTS09 & Percentuale di test passati & 100\% & $\geq 95$\%\\
+MTTS10 & Percentuale di test passati & 100\% & $\geq 95$\%\\
 \hline
-\rowcolor{grigio}MTTS10 & Percentuale di test falliti & 0\% & $\leq 95$\%\\
+\rowcolor{grigio}MTTS11 & Percentuale di test falliti & 0\% & $\leq 95$\%\\
 \hline
-MTTS11 & Percentuale di difetti sistemati & 100\% & $\geq 95$\%\\
+MTTS12 & Percentuale di difetti sistemati & 100\% & $\geq 95$\%\\
 \hline
-\rowcolor{grigio}MTTS12 & Tempo medio di risoluzione degli errori & $\leq 10$ minuti & $\leq 120$ minuti\\
+\rowcolor{grigio}MTTS13 & Tempo medio di risoluzione degli errori & $\leq 10$ minuti & $\leq 120$ minuti\\
 \hline
-MTTS13 & Numero medio di bug trovati per test & $\leq 1$ & 0.2$\leq$x$\leq 10$ \\
+MTTS14 & Numero medio di bug trovati per test & $\leq 1$ & 0.2$\leq$x$\leq 10$ \\
 \hline
-\rowcolor{grigio} MTTS14 & Copertura dei test eseguiti & 100\% & 80\% - 100\% \\
+\rowcolor{grigio} MTTS15 & Copertura dei test eseguiti & 100\% & 80\% - 100\% \\
 \hline
-MTTS15 & Copertura dei requisiti & 100\% & 100\% \\
+MTTS16 & Copertura dei requisiti & 100\% & 100\% \\
 \hline
-
-\iffalse
-\rowcolor{grigio}MTSA15 & Difetti trovati per requisito & $\leq 10$ minuti & $\leq 120$ minuti\\
-\hline
-\fi
-
 \caption{Gestione dei Test}
 \label{GestioneTest}
 \end{longtable}
@@ -154,9 +151,9 @@ Il monitoraggio di commit\glossario e build\glossario avviene in modo continuo, 
 \rowcolor{bluelogo}\textbf{\textcolor{white}{ID}} & \textbf{\textcolor{white}{Nome}} & \textbf{\textcolor{white}{Ottimalità}} & \textbf{\textcolor{white}{Accettabilità}}\\
 \hline \hline
 \endhead
-MTPC16 & Media commit per settimana & 50 & 20\\
+MTPC17 & Media commit per settimana & 50 & 20\\
 \hline
-\rowcolor{grigio}MTPC17 & Percentuale build superate & $\geq 80$\% & $\geq 65$\%\\
+\rowcolor{grigio}MTPC18 & Percentuale build superate & $\geq 80$\% & $\geq 65$\%\\
 \hline
 
 \caption{Versionamento e Build}
