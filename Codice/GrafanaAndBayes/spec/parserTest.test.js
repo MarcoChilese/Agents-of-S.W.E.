@@ -52,7 +52,7 @@ describe('parser tests', () => {
     };
   });
 
-// correct definition of network
+  // correct definition of network
   test('Test correct definition of a Network', () => {
     const parser = new Parser(network);
     expect(parser.validateNet()).toBe(true);
@@ -68,7 +68,7 @@ describe('parser tests', () => {
   test('Test check if JSON file has more or less than 5 fields', () => {
     network.plus = {};
     const parser = new Parser(network);
-    expect(() => { parser.checkMinimumFields(); }).toThrow(' Must be defined 5 fields in the network');
+    expect(() => { parser.checkMinimumFields(); }).toThrow('Devono essere definiti 5 campi nel file .json.');
   });
 
   test('Test check if JSON file has a wrong named field', () => {
@@ -79,7 +79,7 @@ describe('parser tests', () => {
       parser.checkMinimumFields();
     } catch (e) {
       expect(e.message)
-        .toBe(' Incorrect states definition');
+        .toBe('Definizione di states errata.');
     }
   });
 
@@ -92,7 +92,7 @@ describe('parser tests', () => {
       parser.checkNamedNodes(network, 'states');
     } catch (e) {
       expect(e.message)
-        .toBe(' Incorrect number of lines in states definition');
+        .toBe('Numero di campi errato in states.');
     }
   });
 
@@ -104,7 +104,7 @@ describe('parser tests', () => {
       parser.checkNamedNodes(network.states, 'states');
     } catch (e) {
       expect(e.message)
-        .toBe(' Missing node Bronchite in states\' definition.');
+        .toBe('Manca il nodo Bronchite tra i campi di states.');
     }
   });
 
@@ -114,7 +114,7 @@ describe('parser tests', () => {
       const parser = new Parser(network);
       parser.checkNamedNodes(network, 'states');
     } catch (e) {
-      expect(e.message).toBe(' Incorrect number of lines in states definition');
+      expect(e.message).toBe('Numero di campi errato in states.');
     }
   });
 
@@ -156,7 +156,7 @@ describe('parser tests', () => {
       parser.checkStates();
     } catch (e) {
       expect(e.message)
-        .toBe(' node Fuma requires at least 2 states.');
+        .toBe('Inserire almeno 2 stati per il nodo Fuma.');
     }
   });
 
@@ -167,7 +167,7 @@ describe('parser tests', () => {
       parser.checkStates();
     } catch (e) {
       expect(e.message)
-        .toBe(' trying to define multiple times same state in node Fuma.');
+        .toBe('Non è possibile inserire più volte lo stesso stato nel nodo Fuma.');
     }
   });
 
@@ -186,7 +186,7 @@ describe('parser tests', () => {
       parser.checkParents();
     } catch (e) {
       expect(e.message)
-        .toBe(' trying to define multiple times same parent in Fuma');
+        .toBe('Non è possibile definire più volte lo stesso padre per il nodo Fuma.');
     }
   });
 
@@ -197,7 +197,7 @@ describe('parser tests', () => {
       parser.checkParents();
     } catch (e) {
       expect(e.message)
-        .toBe(' parent unexisting does not exist as node in Fuma parents.');
+        .toBe('Il padre unexisting nei padri di Fuma non è un nodo esistente.');
     }
   });
 
@@ -208,7 +208,7 @@ describe('parser tests', () => {
       parser.checkParents();
     } catch (e) {
       expect(e.message)
-        .toBe(' trying to define Fuma as parent of itself.');
+        .toBe('Impossibile definire Fuma come padre di se stesso.');
     }
   });
 
@@ -226,7 +226,7 @@ describe('parser tests', () => {
       parser.checkProbabilities();
     } catch (e) {
       expect(e.message)
-        .toBe(' trying to define incorrect number of subsets in TBC o Cancro probabilities definition, expected 4, given 5');
+        .toBe('Numero errato di sotto-array in TBC o Cancro: richiesti 4, dati 5.');
     }
   });
 
@@ -237,7 +237,7 @@ describe('parser tests', () => {
       parser.checkProbabilities();
     } catch (e) {
       expect(e.message)
-        .toBe(' invalid probability in -1,0.5: -1');
+        .toBe('Probabilità non valida in [-1,0.5] nel nodo Fuma: -1.');
     }
   });
 
@@ -248,7 +248,7 @@ describe('parser tests', () => {
       parser.checkProbabilities();
     } catch (e) {
       expect(e.message)
-        .toBe(' invalid probability in 2,0.5: 2');
+        .toBe('Probabilità non valida in [2,0.5] nel nodo Fuma: 2.');
     }
   });
 
@@ -259,7 +259,7 @@ describe('parser tests', () => {
       parser.checkProbabilities();
     } catch (e) {
       expect(e.message)
-        .toBe(' invalid number of probabilities in subset number 0, expected 2, given 3');
+        .toBe('Numero errato di probabilità nel sotto-array [0.1,0.5,0.5] del nodo Fuma: richieste 2, date 3.');
     }
   });
 });
