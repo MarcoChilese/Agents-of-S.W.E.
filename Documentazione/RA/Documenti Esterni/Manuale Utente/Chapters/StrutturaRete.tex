@@ -1,6 +1,6 @@
 \section{Struttura del File JSON per la Definizione di una Rete Bayesiana}\label{strutturaRete}
 
-Questa sezione ha lo scopo di spiegare all'utente il corretto modo di definire il file \textit{.JSON} per la definizione della rete bayesiana da importare nel plug-in e successivamente utilizzala.
+Questa sezione ha lo scopo di spiegare all'utente il corretto modo di definire il file \textit{.JSON} per la definizione della rete bayesiana da importare nel plug-in e successivamente utilizzala. Tutti gli errori di seguito riportati appariranno, qualora presenti durante l'operazione di caricamento della rete bayesiana descritta in \ref{ReteB}.
 
 
 \begin{figure}[H]
@@ -21,10 +21,11 @@ Passi da seguire :
  		\item parents;
  		\item probabilities.
  	\end{itemize}
- 	I nomi dei campi devono iniziare con la lettera minuscola corrispondente. Qualora uno dei campi non abbia il nome corretto come sopra, verrà visualizzato il seguente errore (nel seguente caso mancava il campo name, sostituito da un nome non valido): 
+ 	I nomi dei campi devono iniziare con la lettera minuscola corrispondente. Qualora uno dei campi non abbia il nome corretto come sopra, verrà visualizzato il seguente errore (nel seguente caso mancava il campo name, sostituito da un nome non valido):
+ 	 
  	\begin{figure}[H]
 	\begin{center}
-		\includegraphics[scale=0.6]{./images/erroreNomeCampo.png}
+		\includegraphics[scale=0.8]{./images/erroreNomeCampo.png}
 		 \caption{Errore nel Nome di un Campo della Rete Bayesiana}	
 		 \label{ImgRete}
 	\end{center}
@@ -34,7 +35,7 @@ Passi da seguire :
 	
 	\begin{figure}[H]
 	\begin{center}
-		\includegraphics[scale=0.6]{./images/wrongNumberOfFields.png}
+		\includegraphics[scale=0.8]{./images/wrongNumberOfFields.png}
 		 \caption{Errore Numero di Campi della Rete Errato}	
 		 \label{ImgRete}
 	\end{center}
@@ -44,7 +45,7 @@ Passi da seguire :
 
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[scale=0.6]{./images/numberFields.png}
+		\includegraphics[scale=0.8]{./images/numberFields.png}
 		 \caption{Errore Numero di Campi}	
 		 \label{erNumCampi}
 	\end{center}
@@ -54,7 +55,7 @@ Se invece il numero di campi è giusto ma non viene trovato uno dei nomi in node
 
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[scale=0.6]{./images/wrongName.png}
+		\includegraphics[scale=0.8]{./images/wrongName.png}
 		 \caption{Errore Nome di un Campo Interno}	
 		 \label{erNumCampi}
 	\end{center}
@@ -67,7 +68,7 @@ Se invece il numero di campi è giusto ma non viene trovato uno dei nomi in node
 		
 		\begin{figure}[H]
 	\begin{center}
-		\includegraphics[scale=0.6]{./images/twoStates.png}
+		\includegraphics[scale=0.8]{./images/twoStates.png}
 		 \caption{Errore Nodo con Meno di 2 Stati}	
 		 \label{erTwoStates}
 	\end{center}
@@ -78,7 +79,7 @@ Se invece il numero di campi è giusto ma non viene trovato uno dei nomi in node
 	
 	\begin{figure}[H]
 	\begin{center}
-		\includegraphics[scale=0.6]{./images/multipleState.png}
+		\includegraphics[scale=0.8]{./images/multipleState.png}
 		 \caption{Errore Stato Ripetuto}	
 		 \label{erMultipleState}
 	\end{center}
@@ -93,7 +94,7 @@ Se invece il numero di campi è giusto ma non viene trovato uno dei nomi in node
 		
 	\begin{figure}[H]
 	\begin{center}
-		\includegraphics[scale=0.6]{./images/unexistingNode.png}
+		\includegraphics[scale=0.8]{./images/unexistingNode.png}
 		 \caption{Errore Padre non Esistente}	
 		 \label{erUnexistingNode}
 	\end{center}
@@ -103,7 +104,7 @@ Se invece il numero di campi è giusto ma non viene trovato uno dei nomi in node
 	
 	\begin{figure}[H]
 	\begin{center}
-		\includegraphics[scale=0.6]{./images/padreDiSeStesso.png}
+		\includegraphics[scale=0.8]{./images/padreDiSeStesso.png}
 		 \caption{Errore Padre di Sé Stesso}	
 		 \label{erUnexistingNode}
 	\end{center}
@@ -113,7 +114,7 @@ Se invece il numero di campi è giusto ma non viene trovato uno dei nomi in node
 	
 	\begin{figure}[H]
 	\begin{center}
-		\includegraphics[scale=0.6]{./images/padreRipetuto.png}
+		\includegraphics[scale=0.8]{./images/padreRipetuto.png}
 		 \caption{Errore Padre Ripetuto}	
 		 \label{erUnexistingNode}
 	\end{center}
@@ -129,7 +130,7 @@ Se invece il numero di campi è giusto ma non viene trovato uno dei nomi in node
 		
 		\begin{figure}[H]
 	\begin{center}
-		\includegraphics[scale=0.6]{./images/wrongSubsets.png}
+		\includegraphics[scale=0.8]{./images/wrongSubsets.png}
 		 \caption{Errore Numero di Subset}	
 		 \label{erWrongSubsets}
 	\end{center}
@@ -139,7 +140,7 @@ Se invece il numero di campi è giusto ma non viene trovato uno dei nomi in node
 		
 		\begin{figure}[H]
 	\begin{center}
-		\includegraphics[scale=0.6]{./images/numberProbs.png}
+		\includegraphics[scale=0.8]{./images/numberProbs.png}
 		 \caption{Errore Numero di Probabilità nel Sotto-array}	
 		 \label{erWrongSubsets}
 	\end{center}
@@ -149,7 +150,7 @@ Se invece il numero di campi è giusto ma non viene trovato uno dei nomi in node
 	
 	\begin{figure}[H]
 	\begin{center}
-		\includegraphics[scale=0.6]{./images/invalidProbability.png}
+		\includegraphics[scale=0.8]{./images/invalidProbability.png}
 		 \caption{Errore Probabilità non Valida}	
 		 \label{erWrongSubsets}
 	\end{center}
