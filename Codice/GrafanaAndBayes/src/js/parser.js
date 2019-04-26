@@ -36,11 +36,11 @@ class Parser {
      */
   checkMinimumFields() {
     // If there are not exactly 5 fields return false.
-    if (Object.keys(this.net).length !== 5) { return false; }
+    if (Object.keys(this.net).length !== 5) { throw new Error(' Must be defined 5 fields in the network'); }
 
     // Check each field to be exactly named.
     for (const val in this.fieldsNeeded) {
-      if (this.net[this.fieldsNeeded[val]] === undefined) { throw new Error(`[Error_code] - Incorrect ${this.fieldsNeeded[val]} definition`); }
+      if (this.net[this.fieldsNeeded[val]] === undefined) { throw new Error(` Incorrect ${this.fieldsNeeded[val]} definition`); }
     }
     return true;
   }
@@ -51,9 +51,9 @@ class Parser {
      * @return {boolean} true if all went ok.
      */
   checkNamedNodes(data, field) {
-    if (Object.keys(data).length !== this.net.nodes.length) { throw new Error(`[Error_code] - Incorrect number of lines in ${field} definition`); }
+    if (Object.keys(data).length !== this.net.nodes.length) { throw new Error(` Incorrect number of lines in ${field} definition`); }
     for (const key in this.net.nodes) {
-      if (data[this.net.nodes[key]] === undefined) { throw new Error(`[Error_code] - Missing node ${this.net.nodes[key]} in ${field}' definition.`); }
+      if (data[this.net.nodes[key]] === undefined) { throw new Error(` Missing node ${this.net.nodes[key]} in ${field}' definition.`); }
     }
     return true;
   }
@@ -84,8 +84,8 @@ class Parser {
     this.checkNamedNodes(this.net.states, 'states');
 
     for (const key in this.net.nodes) {
-      if (this.net.states[this.net.nodes[key]].length < 2) { throw new Error(`[Error_code] - Error in nodes ${this.net.nodes[key]} states definition, required at least 2.`); }
-      if (this.checkDuplicates(this.net.states[this.net.nodes[key]])) { throw new Error(`[Error_code] - Error in node's ${this.net.nodes[key]} states, trying to define multiple times same state.`); }
+      if (this.net.states[this.net.nodes[key]].length < 2) { throw new Error(` node ${this.net.nodes[key]} requires at least 2 states.`); }
+      if (this.checkDuplicates(this.net.states[this.net.nodes[key]])) { throw new Error(` trying to define multiple times same state in node ${this.net.nodes[key]}.`); }
     }
     return true;
   }
@@ -101,12 +101,12 @@ class Parser {
   checkParents() {
     this.checkNamedNodes(this.net.parents, 'parents');
     for (const node in this.net.parents) {
-      if (this.checkDuplicates(this.net.parents[node])) { throw new Error(`[Error_code] - Trying to define multiple times same parent in ${node}`); }
+      if (this.checkDuplicates(this.net.parents[node])) { throw new Error(` trying to define multiple times same parent in ${node}`); }
       for (const parent in this.net.parents[node]) {
         // Check if all nodes in parent exits in nodes.
-        if (!this.net.nodes.includes(this.net.parents[node][parent])) { throw new Error(`[Error_code] - Parent: ${this.net.parents[node][parent]}  does not exits as node in ${node}.`); }
+        if (!this.net.nodes.includes(this.net.parents[node][parent])) { throw new Error(` parent ${this.net.parents[node][parent]} does not exist as node in ${node} parents.`); }
         // Check if a node is parent of itself.
-        if (this.net.parents[node][parent] === node) { throw new Error(`[Error_code] - Try to define ${this.net.parents[node][parent]} as parent of itself.`); }
+        if (this.net.parents[node][parent] === node) { throw new Error(` trying to define ${this.net.parents[node][parent]} as parent of itself.`); }
       }
     }
     return true;
@@ -140,14 +140,17 @@ class Parser {
       const numberOfStates = this.countNumberOfValue(probability);
 
       if (this.net.probabilities[probability].length !== numberOfStates) {
-        throw new Error(`[Error_code] - Try to define incorrect number of subsets in ${probability} probabilities definition, expected ${numberOfStates}, given ${this.net.probabilities[probability].length}`);
+        throw new Error(` trying to define incorrect number of subsets in ${probability} probabilities definition, expected ${numberOfStates}, given ${this.net.probabilities[probability].length}`);
       }
       const prob = this.net.probabilities[probability];
       for (const subprobability in prob) {
+        if (prob[subprobability].length !== this.net.states[probability].length) {
+          throw new Error(` invalid number of probabilities in subset number ${subprobability}, expected ${this.net.states[probability].length}, given ${prob[subprobability].length}`);
+        }
         // check if there are invalid probabilities
         for (const p in prob[subprobability]) {
           if (prob[subprobability][p] < 0 || prob[subprobability][p] > 1) {
-            throw new Error(`[Error_code] - Invalid probability in ${prob[subprobability]}: ${prob[subprobability][p]}`);
+            throw new Error(` invalid probability in ${prob[subprobability]}: ${prob[subprobability][p]}`);
           }
         }
       }
