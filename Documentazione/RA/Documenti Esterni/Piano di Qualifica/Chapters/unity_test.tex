@@ -1,4 +1,4 @@
-\begin{longtable}{|C{.15\textwidth}|m{.65\textwidth}|C{.20\textwidth}|}
+\begin{longtable}{|C{.15\textwidth}|m{.66\textwidth}|C{.10\textwidth}|}
 \hline
 \rowcolor{bluelogo}\textbf{\textcolor{white}{Test}}  & \textbf{\textcolor{white}{Descrizione}} & \textbf{\textcolor{white}{Stato}}\\
 \hline \hline
@@ -192,7 +192,19 @@ TU0-91 & Viene verificato che il metodo \texttt{checkProbabilities} del \textit{
 \hline
 \rowcolor{grigio}TU0-92 & Viene verificato che il metodo \texttt{checkProbabilities} del \textit{Parser} segnali con un messaggio di errore se all'interno del file di definizione \textit{JSON} venga definita una probabilità negativa & S.\\
 \hline
-TU0-93 & Viene verificato che il metodo \texttt{checkProbabilities} del \textit{Parser} segnali con un messaggio di errore se all'interno del file di definizione \textit{JSON} venga definita una probabilità maggiore al 100\% & S.\\
+TU0-93 & Viene verificato che il metodo \texttt{checkProbabilities} del \textit{Parser} segnali con un messaggio di errore se all'interno del file di definizione \textit{JSON} viene definita una probabilità maggiore al 100\% & S.\\
+\hline
+\rowcolor{grigio}TU0-94 & Viene verificato che il metodo \texttt{setConfirmationToTrue} di \textit{TemporalPolicyCtrl} segnali con un messaggio di errore se viene impostata una politica temporale avete valore associato al campo \textbf{secondi} > 60 & S.\\
+\hline
+TU0-95 & Viene verificato che il metodo \texttt{setConfirmationToTrue} di \textit{TemporalPolicyCtrl} segnali con un messaggio di errore se viene impostata una politica temporale avete valore negativo associato al campo \textbf{secondi} & S.\\
+\hline
+\rowcolor{grigio}TU0-96 & Viene verificato che il metodo \texttt{setConfirmationToTrue} di \textit{TemporalPolicyCtrl} segnali con un messaggio di errore se viene impostata una politica temporale avete valore associato al campo \textbf{minuti} > 60 & S.\\
+\hline
+TU0-97 & Viene verificato che il metodo \texttt{setConfirmationToTrue} di \textit{TemporalPolicyCtrl} segnali con un messaggio di errore se viene impostata una politica temporale avete valore negativo associato al campo \textbf{minuti} & S.\\
+\hline
+\rowcolor{grigio}TU0-98 & Viene verificato che il metodo \texttt{setConfirmationToTrue} di \textit{TemporalPolicyCtrl} segnali con un messaggio di errore se viene impostata una politica temporale avete valore negativo associato al campo \textbf{ore} & S.\\
+\hline
+TU0-99 & Viene verificato che il metodo \texttt{setConfirmationToTrue} di \textit{TemporalPolicyCtrl} torni \textbf{true} nel caso in cui venga impostata una politica temporale valida & S.\\
 \hline
 \caption{Test di unità}
 \label{testunita}
