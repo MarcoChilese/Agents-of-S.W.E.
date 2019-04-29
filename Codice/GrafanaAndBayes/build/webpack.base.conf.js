@@ -13,11 +13,12 @@ const path = require('path');
 const webpack = require('webpack');
 const manifest = require('webpack-manifest-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin'); 
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
-const ExtractTextPluginBase = new ExtractTextPlugin('./css/panel.base.css'); 
-const ExtractTextPluginDark = new ExtractTextPlugin('./css/panel.dark.css'); 
+const ExtractTextPluginBase = new ExtractTextPlugin('./css/panel.base.css');
+const ExtractTextPluginDark = new ExtractTextPlugin('./css/panel.dark.css');
+const ExtractTextPluginCustom = new ExtractTextPlugin('./css/style');
 
 
 
@@ -26,46 +27,47 @@ function resolve(dir) {
 }
 
 module.exports = {
-	target: 'node', 
-	context: resolve('src'), 
-	entry: './module.js', 
-	// watch: true, 
-	output: {
-		filename: 'module.js', 
-		path: resolve('dist'), 
-		libraryTarget: "amd"
-	},
+  target: 'node',
+  context: resolve('src'),
+  entry: './module.js',
+  // watch: true,
+  output: {
+    filename: 'module.js',
+    path: resolve('dist'),
+    libraryTarget: "amd"
+  },
 
-	externals: [
-		lodash = {
+  externals: [
+    lodash = {
       commonjs: 'lodash',
       amd: 'lodash',
       root: '_' // indicates global variable
     },
-		function(context, request, callback) {
-			var prefix = 'grafana/';
-			if(request.indexOf(prefix) === 0){
-				return callback(null, request.substr(prefix.length)); 
-			}
-			callback(); 	
-		},
-	],
+    function(context, request, callback) {
+      var prefix = 'grafana/';
+      if(request.indexOf(prefix) === 0){
+        return callback(null, request.substr(prefix.length));
+      }
+      callback();
+    },
+  ],
 
-	plugins: [
-		new webpack.optimize.OccurrenceOrderPlugin(), 
-		new CleanWebpackPlugin('dist', {allowExternal: true}),
-		new CopyWebpackPlugin([
-			{ from: 'plugin.json' }, 
-			{ from: 'partials/*' }, 
-			{ from: 'css/*' }
-		]),
+  plugins: [
+    new webpack.optimize.OccurrenceOrderPlugin(),
+    new CleanWebpackPlugin('dist', {allowExternal: true}),
+    new CopyWebpackPlugin([
+      { from: 'plugin.json' },
+      { from: 'partials/*' },
+      { from: 'css/*' }
+    ]),
     ExtractTextPluginBase,
     ExtractTextPluginDark,
-	], 
+    ExtractTextPluginCustom,
+  ],
   resolve: {
     extensions: ['.js', '.scss', '.css'],
   },
-	module: {
+  module: {
     rules: [
       {
         test: /\.js$/,
@@ -81,18 +83,15 @@ module.exports = {
         }
       },
       {
-        test: /\.(s?)css$/,
-        use: ExtractTextPluginBase.extract({
-          fallback: 'style-loader',
-          use: ['css-loader', 'sass-loader']
-        })
-      },
+        test:/\.css$/,
+        use:['style-loader','css-loader']
+      }
     ]
   },
-	resolve: {
-		alias: {
-			'src': resolve('src')
-		}
-	}
+  resolve: {
+    alias: {
+      'src': resolve('src')
+    }
+  }
 
 }
