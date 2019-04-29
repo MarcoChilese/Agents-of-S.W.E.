@@ -206,34 +206,29 @@ TU0-97 & Viene verificato che il metodo \texttt{setConfirmationToTrue} di \texti
 \hline
 TU0-99 & Viene verificato che il metodo \texttt{setConfirmationToTrue} di \textit{TemporalPolicyCtrl} torni \textbf{true} nel caso in cui venga impostata una politica temporale valida & S.\\
 \hline
+\rowcolor{grigio}TU0-100 & Viene verificato che il metodo \texttt{checkIfTherIsAtLeastOneTreshold} di \textit{TresholdCtrl} torni \textbf{False} nel caso in cui non venga impostata una tabella per la sorgente dati all'interno del contesto del collegamento di un nodo & S.\\
+\hline
+TU0-101 & Viene verificato che il metodo \texttt{checkIfTherIsAtLeastOneTreshold} di \textit{TresholdCtrl} torni \textbf{False} nel caso in cui non venga impostata un flusso all'interno del contesto del collegamento di un nodo & S.\\
+\hline
+\rowcolor{grigio}TU0-102 & Viene verificato che il metodo \texttt{checkIfTherIsAtLeastOneTreshold} di \textit{TresholdCtrl} torni \textbf{False} nel caso in cui non venga impostata alcuna soglia all'interno del contesto del collegamento di un nodo & S.\\
+\hline
+TU0-103 & Viene verificato che il metodo \texttt{checkNotRepeatedTresholds} di \textit{TresholdCtrl} torni \textbf{False} nel caso in cui vengano impostate due soglie identiche all'interno del contesto del collegamento di un nodo & S.\\
+\hline
+\rowcolor{grigio}TU0-104 & Viene verificato che il metodo \texttt{checkConflicts} di \textit{TresholdCtrl} torni \textbf{False} nel caso in cui vengano impostate soglie tra loro non coerenti all'interno del contesto del collegamento di un nodo & S.\\
+\hline
+TU0-105 & Viene verificato che il metodo \texttt{confirmTresholdsChanges} di \textit{TresholdCtrl} torni \textbf{True} nel caso in cui vengano configurate delle impostazioni corrette per il collegamento del nodo & S.\\
+\hline
+\rowcolor{grigio}TU0-106 & Viene verificato che il metodo \texttt{deleteTreshold} di \textit{TresholdCtrl} torni \textbf{True} nel caso in cui venga eliminata una soglia precedentemente definita & S.\\
+\hline
+TU0-107 & Viene verificato che il metodo \texttt{deleteTreshold} di \textit{TresholdCtrl} torni \textbf{False} nel caso in cui venga selezionata per l'eliminazione una soglia non esistente & S.\\
+\hline
+\rowcolor{grigio}TU0-108 & Viene verificato che il metodo \texttt{checkConflictSameSign} di \textit{TresholdCtrl} torni \textbf{False} nel caso in cui vengano definite due soglie di verso opposto che condividono uno stesso estremo all'interno del contesto del collegamento di un nodo & S.\\
+\hline
+TU0-109 & Viene verificato che il metodo \texttt{setNotLinked} di \textit{TresholdCtrl} elimini il collegamento del nodo al flusso dati & S.\\
+\hline
 \caption{Test di unità}
 \label{testunita}
 \end{longtable}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
