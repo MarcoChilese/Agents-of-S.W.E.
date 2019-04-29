@@ -4,7 +4,7 @@
 	"description": "node server 1.0",
 	"main": "index.js",
 	"scripts": {
-		"test": "jest --coverage",
+		"test": "jest ./test --coverage",
 		"codecov": "codecov",
 		"start": "node index.js"
 	},
@@ -38,6 +38,7 @@
 		"supertest": "^4.0.2"
 	},
 	"dependencies": {
+		"better-jsbayes-viz": "0.0.89",
 		"body-parser": "^1.18.3",
 		"dagre": "^0.8.4",
 		"graphlib": "^2.1.7"

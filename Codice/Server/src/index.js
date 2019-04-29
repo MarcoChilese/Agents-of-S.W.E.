@@ -101,6 +101,10 @@ class Server {
 			res.send("Rete caricata");
 		});
 
+		this.app.get('/getjsbayesviz/:net', (req, res) => {
+			let name = this.parserNetworkNameURL(req.params.net);
+			return res.json(this.networks[name].graph);
+		});
 
 		this.app.get('/getpool', (req, res) => {
 			let names = []; 
@@ -138,13 +142,11 @@ class Server {
 		});
 
 		this.app.get('/networkslive', (req, res) => {
-			let tmp = []; 
+			let tmp = {}; 
 
-			for(let rete in this.networks){
-				tmp.push(this.networks[rete].net.name);
-				tmp.push(this.networks[rete].monitoring);
-			}
-				
+			for(let rete in this.networks)
+				tmp[this.networks[rete].net.name] = this.networks[rete].monitoring;
+
 			res.json(tmp);
 		});
 
@@ -179,12 +181,12 @@ class Server {
 		});
 
 		//----------TESTING-----------//
-		this.app.get('/getviz', (req, res) => {
-			var g = jsbayesviz.fromGraph(this.networks['Alarm']);
-			// console.log(this.networks['Alarm'].graph.nodes.length);
-			// let data = jsbayesviz.downloadSamples(g); 
-			res.json(JSON.stringify(g));
-		});
+		// this.app.get('/getviz', (req, res) => {
+		// 	var g = jsbayesviz.fromGraph(this.networks['Alarm']);
+		// 	// console.log(this.networks['Alarm'].graph.nodes.length);
+		// 	// let data = jsbayesviz.downloadSamples(g); 
+		// 	res.json(JSON.stringify(g));
+		// });
 
 		//---------------------------//
 
@@ -357,7 +359,6 @@ class Server {
 		} catch(err){
 			throw err; 
 		}
-
 	}
 
 	/**
@@ -478,6 +479,8 @@ class Server {
 	 * @return{array} all networks
 	 * @throws{error} if reads a not valid file
 	**/
+
+	
 	getNetworks() {
 		let tmp = [];
 		// open directory
@@ -490,11 +493,12 @@ class Server {
 			// adding each network
 			try {
 				const file = JSON.parse(fs.readFileSync(`${this.path}/${this.conf['saved_network']}/${net}`));
-				tmp.push({
-					'name': file.name,
-					'monitoring': file.monitoring
-				});
+				let dict = {}; 
+				dict['name'] = file.name; 
+				dict['monitoring'] = file.monitoring; 			
+				tmp.push(dict); 
 			} catch (e) {
+				throw e; 
 			}
 		}
 		return tmp;
@@ -514,12 +518,14 @@ class Server {
 	 * @return{Boolean} true if net is add, false if the network is already in 
 	**/
 	addToPool(net){
-		
-		for(let ob of this.pool){
-			if(ob !== undefined)
-				if(ob.name == net && this.pool[ob.name] !== undefined)
-					return false; 
-		}
+
+		if(this.pool[net] !== undefined)
+			return false; 
+		// for(let ob of this.pool){
+		// 	if(ob !== undefined)
+		// 		if(ob.name == net && this.pool[ob.name] !== undefined)
+		// 			return false; 
+		// }
 
 		this.networks[net].monitoring = true; 
 		let dict = {}; 
@@ -527,7 +533,7 @@ class Server {
 		let observer; 
 		observer = setInterval(this.observeNetworks.bind(this), this.getMilliseconds(this.networks[net].net.temporalPolicy), net, this.networks[net].dati);
 		dict.observer = observer;
-		this.pool.push(dict);
+		this.pool[net] = dict; 
 		return true; 
 	}
 
@@ -537,17 +543,13 @@ class Server {
 	**/
 	deleteFromPool(net){
 		let check = false; 
-		
-		for(let el in this.pool){
-			if(this.pool[el].name == net){
-				console.log("DENTRO IF DELETE POOL"); 
-				clearInterval(this.pool[el].observer);	
-				check = true; 
 
-				delete this.pool[el];
-			}
-		}
+		if(this.pool[net] === undefined)
+			return check; 
 
+		clearInterval(this.pool[net].observer);
+		check = true; 
+		delete this.pool[net];
 		return check; 
 	}
 

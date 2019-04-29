@@ -1,5 +1,4 @@
 const request = require('supertest');
-const app = require('../src/app');
 const Network = require('../src/Network');
 const net = require('./testingNetworks/ViaggioInAsia.json');
 

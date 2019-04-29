@@ -196,7 +196,7 @@ describe('Testing server...', () => {
 	});
 
 	// TU0-18 
-	test("TU0-18 Viene verificato che per ogni json appartenente all’ar- ray ritornato da getNetworks() abbia un campo na- me di tipo string ed un campo monitoring di tipo boolean", () => {
+	test("TU0-18 Viene verificato che per ogni json appartenente all’array ritornato da getNetworks() abbia un campo name di tipo string ed un campo monitoring di tipo boolean", () => {
 		let nets = server.getNetworks(); 
 		for(let n of nets){
 			expect(typeof n.name).toMatch('string');
@@ -246,9 +246,7 @@ describe('Testing server...', () => {
 	});
 
 	// TU0-24
-	test("TU0-24 ", () => {
-
-	});
+	test("TU0-24 ", () => {});
 
 	// TU0-25
 	test("TU0-25 Viene verificato che la rete caricata disponga del campo name di tipo stringa", () => {
@@ -309,10 +307,75 @@ describe('Testing server...', () => {
 	test("TU0-33 Viene verificata che la richiesta di getnetwork/:net al server, chiami il metodo parserNetworkNameURL", (done) => {
 		request(app.app).get('/getnetwork/Alarm').then((response) => {
 			expect(response.body).isJSON();
-			expect()
 			done(); 
 		});
 	});
+
+	test("Testing init pool of saved networks", () => {
+		for(let net in server.networks){
+			if(server.networks[net].net.monitoring)
+				expect(server.pool[net]).not.toBeUndefined();
+		}
+	});
+
+
+	test("Testing deleting observed network from pool", () => {
+		let net = "Alarm";
+		expect(server.pool[net]).not.toBeUndefined(); 
+		expect(server.deleteFromPool(net)).toBeTruthy();
+		expect(server.pool[net]).toBeUndefined(); 
+	});
+
+	test("Testing add to pool", () => {
+		let net = 'Alarm';
+		expect(server.pool[net]).toBeUndefined(); 
+		server.addToPool(net);
+		expect(server.pool[net]).not.toBeUndefined();
+	});
+
+	test("Add existing network on pool", () => {
+		let net = 'Alarm';
+		expect(server.pool[net]).not.toBeUndefined(); 
+		expect(server.addToPool(net)).toBeFalsy();
+	});
+
+	// TU0-??
+	test("networkslive", (done) => {
+		request(app.app).get('/networkslive').then((response) => {
+			expect(response.body).isJSON(); 
+			let keys = Object.keys(response.body);
+			for(let key of keys)
+				expect(response.body[key]).not.toBeUndefined(); 
+			done();
+		});
+	});
+
+	test("networks path", (done) => {
+		request(app.app).get('/networks').then((response) => {
+			expect(response.body).isJSON();
+			expect(response.statusCode).toBe(200); 
+			done();
+		});
+	});
+
+	test("getnetworkprob path", (done) => {
+		
+		request(app.app).get('/getnetworkprob/Alarm').then((response) => {
+			
+			expect(response.body).isJSON(); 
+
+			done(); 
+		});
+
+	});
+
+	// test("deletenetwork path", (done) => {
+	// 	request(app.app).get('/deletenetwork/Alarm').then((response) => {
+	// 		expect(response.body).isJSON(); 
+	// 		expect(response.statusCode).toBe(200); 
+	// 		done(); 
+	// 	});
+	// });
 
 });
 
