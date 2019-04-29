@@ -17,6 +17,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const ExtractTextPluginBase = new ExtractTextPlugin('./css/panel.base.css');
 const ExtractTextPluginLight = new ExtractTextPlugin('./css/panel.light.css');
 const ExtractTextPluginDark = ExtractTextPlugin('./css/panel.dark.css');
+const ExtractTextPluginCustom = ExtractTextPlugin('./css/style.css');
 
 function resolve(dir) {
 	return path.join(__dirname, '..', dir)
@@ -50,6 +51,7 @@ module.exports = {
 		ExtractTextPluginBase,
 		ExtractTextPluginLight,
 		ExtractTextPluginDark,
+		ExtractTextPluginCustom,
 	],
 	resolve: {
 		alias: {
@@ -57,7 +59,3 @@ module.exports = {
 		}
 	}
 }
-
-
-
-

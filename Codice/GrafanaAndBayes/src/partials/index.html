@@ -13,165 +13,6 @@
 
 <div class="section">
 
-    <style>
-        .panel-container{
-            background-color: #171819;
-        }
-
-        .danger-text{
-            color: red;
-        }
-
-        .yellow-text{
-            color: gold;
-        }
-
-        .node-prob-color{
-            color: #e0643a;
-        }
-
-        .class-width-100{
-            width: 100%;
-        }
-
-        .padding-left-3{
-            padding-left: 3%;
-        }
-
-        .class-margin-1{
-            margin:1%;
-        }
-
-        .split-80-div{
-            width: 80%;
-            float: left;
-            display: inline-block;
-        }
-
-        .split-20-div{
-            width: 20%;
-            display: inline-block;
-        }
-
-        .bottom-1-margin{
-            margin-bottom: 1%;
-        }
-
-        .top-1-margin{
-            margin-top: 1%;
-        }
-
-        #edit-nodes{
-            height: 40%;
-            padding: 0% 0% 5% 0% !important;
-        }
-
-        #network-settings{
-            border-bottom: 1px solid #333;
-        }
-
-        #choose-net select{
-            width: 100%;
-        }
-
-        #choose-net,#selected-net{
-            height: 70%;
-        }
-
-        #choose-source,#selected-database{
-            height: 30%;
-        }
-
-        #choose-net, #choose-source{
-            border-right: 1px solid #333;
-        }
-
-        #choose-source select{
-            width: 100%;
-        }
-
-        #temporal-policy{
-            display: -webkit-box !important;
-        }
-
-        .width-20-perc{
-            width: 20%;
-        }
-
-        .width-30-perc{
-            width: 30%;
-        }
-
-        .width-40-perc{
-            width: 40%;
-        }
-
-        .width-60-perc{
-            width: 60%;
-        }
-
-        .width-80-perc{
-            width:80%;
-        }
-
-        #network-nodes table{
-            border-collapse: separate;
-            width: 80%;
-        }
-
-        #network-nodes tr{
-            border-spacing: 5px 1rem;
-        }
-
-        .td-button{
-            width: 40%;
-            padding: 1%;
-        }
-
-        #network-nodes td{
-            width:30%;
-        }
-
-        #node{
-            width: 70%;
-            height: 90%;
-            color: #111111;
-        }
-
-        #show-prob{
-            height: 90%;
-        }
-
-        #show-prob table{
-            width: 98%;
-            margin: 1%;
-            color: #bbbbbb;
-            font-size: 100%;
-        }
-
-        #settings-view-prob{
-            height: 10%;
-            border-bottom: 1px solid #bbbbbb;
-            display: flex;
-        }
-
-        #btn-settings, #net-selected{
-            float: left;
-        }
-
-        #setting-net{
-            height: 18em;
-        }
-
-        #selected-net{
-            padding-top: 3%;
-        }
-
-
-    </style>
-
-
-
     <!-- Error message if not connected to server-->
     <div ng-if="!ctrl.server.connected">
         <h2 class="danger-text">È necessario connettersi al Server per usufruire del plugin. </h2>
@@ -306,15 +147,15 @@
                     <p class="danger-text">{{(ctrl.panel.calculatedProbabilities === {}) ? 'Nessuna probabilità da mostrare.' :'';}}</p>
                 </div>
                 <div class="top-1-margin">
-                    <table border="2" ng-repeat="n in ctrl.panel.calculatedProbabilities">
+                    <table border="2" ng-repeat="n in ctrl.panel.calculatedProbabilities track by $index">
                         <tr>
                             <td align="center" class="width-20-perc" rowspan="2">
                                 <h4 class="node-prob-color">{{n.node}}</h4>
                             </td>
-                            <td align="center" ng-repeat="s in n.states">{{s}}</td>
+                            <td align="center" ng-repeat="s in n.states track by $index">{{s}}</td>
                         </tr>
                         <tr>
-                            <td align="center" ng-repeat="p in n.prob">{{p}}</td>
+                            <td align="center" ng-repeat="p in n.prob track by $index">{{p}}</td>
                         </tr>
                     </table>
                 </div>
@@ -322,3 +163,4 @@
         </div>
     </div>
 </div>
+
