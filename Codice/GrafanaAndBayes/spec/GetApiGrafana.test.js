@@ -195,4 +195,11 @@ describe('GetApiGrafana test', () => {
       },
     );
   });
+
+  /**
+   * SOLO PER CODE COVERAGE DA NON AGGIUNGERE AL PDQ
+   * */
+  test('USELESS', async () => {
+    expect(api.backend.get('useless')).toBe(false);
+  });
 });

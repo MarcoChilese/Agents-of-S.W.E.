@@ -5,8 +5,6 @@ import ModalCreator from '../src/ModalCreator';
 import ConnectServer from '../src/js/ConnectServer';
 import { GBCtrl } from '../src/GBCtrl';
 
-const gb = require('../src/GBCtrl');
-
 jest.mock('../src/js/GetApiGrafana');
 jest.mock('../src/ModalCreator');
 jest.mock('../src/js/ConnectServer');
@@ -16,7 +14,7 @@ let g;
 describe('generic tests', () => {
   // constructor
   it('GBCtrl::constructor', () => {
-    g = new gb.GBCtrl();
+    g = new GBCtrl();
     expect(g).not.toBe(undefined);
   });
 
@@ -31,15 +29,14 @@ describe('generic tests', () => {
     expect(g.buildDataToSend()).not.toEqual({});
   });
 
-
   // panelpath
   it('GBCtrl::panelpath::(path = undefined)', () => {
     g._panelPath = undefined;
-    expect(g.panelPath).toBe('/public/plugins/undefined/'); // TO CHECK
+    expect(g.panelPath).toBe('/public/plugins/GrafanaAndBayes/');
   });
 
   it('GBCtrl::panelpath::(path !== undefined)', () => {
-    expect(g.panelPath).toBe('/public/plugins/undefined/'); // TO CHECK
+    expect(g.panelPath).toBe('/public/plugins/GrafanaAndBayes/');
   });
 
   // onInitEditMode
@@ -132,6 +129,10 @@ describe('server connection', () => {
 
     it('GBCtrl::requestNetworkDelete::false', async () => {
       expect(await g.requestNetworkDelete('Alarm')).toBe(false);
+    });
+
+    it('GBCtrl::requestNetworkDelete::false(exception)', async () => {
+      expect(await g.requestNetworkDelete('nope')).toBe(false);
     });
 
     // updateProbs
