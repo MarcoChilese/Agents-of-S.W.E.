@@ -1,5 +1,4 @@
 
-
 export const backendSrvMock = {
   get: (param) => {
     if (param === '/api/datasources/proxy/6/query?db=DB1&q=show%20measurements') {
@@ -101,11 +100,19 @@ export const thisMock = {
   $scope: { $new() { return {}; } },
 };
 
+export const jQ = {
+  $: {
+    empty: {
+    },
+    css: {
+    },
+  },
+};
 
 const defaultExports = {
   backendSrvMock,
   thisMock,
-
+  jQ,
 };
 
 export default defaultExports;

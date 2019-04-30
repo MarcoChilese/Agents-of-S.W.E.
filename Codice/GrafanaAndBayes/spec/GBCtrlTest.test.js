@@ -1,5 +1,6 @@
 
-import mocks from '../src/testSetup/mocks';
+import $ from 'jquery';
+import jQ from '../src/testSetup/mocks';
 import TresholdCtrl from '../src/TresholdsCtrl';
 import ModalCreator from '../src/ModalCreator';
 import ConnectServer from '../src/js/ConnectServer';
@@ -137,13 +138,9 @@ describe('server connection', () => {
 
     // updateProbs
     it('GBCtrl::updateProbs::true', async () => {
+      $.$ = jQ;
       g.panel.actuallyVisualizingMonitoring = 'Alarm';
       expect(await g.updateProbs()).toBe(true);
-      expect(g.panel.calculatedProbabilities).toEqual({
-        stato1: [0.05, 0.95],
-        stato2: [0.8, 0.2],
-        stato3: [0.7, 0.3],
-      });
       clearInterval(g.interval);
     });
 

@@ -33,8 +33,13 @@ jest.mock('grafana/app/core/core', () => ({
 }), { virtual: true });
 
 
-jest.mock('jquery', () => ({
-  $: { ajax() { return 5; } },
+// jest.mock('jquery', () => ({
+//   $: { ajax() { return 5; } },
+// }), { virtual: true });
+
+jest.mock('better-jsbayes-viz', () => ({
+  fromGraph: (p1, p2) => {},
+  draw: () => {},
 }), { virtual: true });
 
 

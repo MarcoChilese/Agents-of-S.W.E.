@@ -90,7 +90,7 @@ export default class ConnectServer {
    */
   async getnetworkprob(net) {
     return $.ajax({
-      url: `http://${this.host}:${this.port}/getnetworkprob/${net}`,
+      url: `http://${this.host}:${this.port}/getjsbayesviz/${net}`,
       type: 'GET',
       data: net,
       cache: false,

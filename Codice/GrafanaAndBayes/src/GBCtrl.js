@@ -12,12 +12,12 @@
  */
 import { PanelCtrl } from 'grafana/app/plugins/sdk';
 import _ from 'lodash';
-
+import $ from 'jquery';
+import jsbayesviz from 'better-jsbayes-viz';
 import Parser from './js/parser';
 import GetApiGrafana from './js/GetApiGrafana';
 import ModalCreator from './ModalCreator';
 import ConnectServer from './js/ConnectServer';
-// import jsbayes from './js/jsbayes/jsbayes';
 
 export class GBCtrl extends PanelCtrl {
   /** @ngInject * */
@@ -352,6 +352,7 @@ export class GBCtrl extends PanelCtrl {
    * @param {string} net to delete
    * @var{boolean} : true if is deletable
    */
+
   checkIfNetworkIsDeletable(net) {
     if (net === undefined) {
       this.modalCreator.showMessageModal('Selezionare una rete da eliminare.', 'Errore');
@@ -371,7 +372,7 @@ export class GBCtrl extends PanelCtrl {
    */
   async requestNetworkDelete(net) {
     try {
-      if (!this.checkIfNetworkIsDeletable(net)) { const e = new Error(''); e.status = 404; throw e; }
+      if (!this.checkIfNetworkIsDeletable(net)) { return false; }
       await this.testServer.deletenetwork(net);
     } catch (e) {
       if (e.status === 200) {
@@ -395,13 +396,22 @@ export class GBCtrl extends PanelCtrl {
 
   /**
    * Method that updates local calculated probabilities
-   * @param{string} network to update probabilties
+   * @param{string} network to update probabilities
    * @return{boolean}
    * */
   async updateProbs() {
     try {
-      // eslint-disable-next-line max-len
-      this.panel.calculatedProbabilities = await this.testServer.getnetworkprob(this.panel.actuallyVisualizingMonitoring);
+      const g = jsbayesviz.fromGraph(await this.testServer.getnetworkprob(this.panel.actuallyVisualizingMonitoring), 'netImage');
+      $('#netImage').empty();
+      jsbayesviz.draw({
+        id: '#netImage',
+        width: 3000,
+        height: 2000,
+        graph: g,
+        samples: 15000,
+      });
+      $('svg').css('background', 'floralwhite');
+      this.$timeout({}, 100);
     } catch (e) {
       clearInterval(this.interval);
       return false;
@@ -419,6 +429,7 @@ export class GBCtrl extends PanelCtrl {
       clearInterval(this.interval);
       this.panel.calculatedProbabilities = {};
       const n = await this.testServer.getnetwork(this.panel.actuallyVisualizingMonitoring);
+      await this.updateProbs();
       this.interval = setInterval(this.updateProbs.bind(this), this.calculateSeconds(n.temporalPolicy) * 1000);
       this.modalCreator.showMessageModal('Aggiornata visualizzazione.', 'Successo');
     } catch (e) {
@@ -586,7 +597,7 @@ export class GBCtrl extends PanelCtrl {
       this.resetTresholds();
       return true;
     } catch (e) {
-      this.modalCreator.showMessageModal(e, 'Errore');
+      this.modalCreator.showMessageModal(e.message, 'Errore');
       return false;
     }
   }
@@ -612,7 +623,7 @@ export class GBCtrl extends PanelCtrl {
     try {
       if (this.panel.selectedDB === null || this.panel.collegatoAlDB === false) { throw new Error('Nessun database collegato.'); }
       if (this.checkIfAtLeastOneTresholdDefined() === false) { throw new Error('Nessuna soglia impostata. Per iniziare il monitoraggio è necessario collegare almeno un nodo definendone almeno una soglia.'); }
-      if (this.panel.temporalPolicyConfirmed === false) { throw new Error('E\' necessario impostare la politica temporale per iniziare il montoarggio.'); }
+      if (this.panel.temporalPolicyConfirmed === false) { throw new Error('E\' necessario impostare la politica temporale per iniziare il monitoarggio.'); }
     } catch (e) {
       this.modalCreator.showMessageModal(e, 'Errore');
       return false;

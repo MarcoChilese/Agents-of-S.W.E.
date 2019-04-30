@@ -13,7 +13,7 @@ loadPluginCss({
   dark: './css/panel.dark.css',
   base: './css/panel.base.css',
   light: './css/panel.light.css',
-  custom: './css/style.css'
+  custom: './css/style.css',
 });
 
 export {

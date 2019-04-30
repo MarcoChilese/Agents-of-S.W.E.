@@ -12,7 +12,6 @@
 -->
 
 <div class="section">
-
     <!-- Error message if not connected to server-->
     <div ng-if="!ctrl.server.connected">
         <h2 class="danger-text">È necessario connettersi al Server per usufruire del plugin. </h2>
@@ -147,17 +146,7 @@
                     <p class="danger-text">{{(ctrl.panel.calculatedProbabilities === {}) ? 'Nessuna probabilità da mostrare.' :'';}}</p>
                 </div>
                 <div class="top-1-margin">
-                    <table border="2" ng-repeat="n in ctrl.panel.calculatedProbabilities track by $index">
-                        <tr>
-                            <td align="center" class="width-20-perc" rowspan="2">
-                                <h4 class="node-prob-color">{{n.node}}</h4>
-                            </td>
-                            <td align="center" ng-repeat="s in n.states track by $index">{{s}}</td>
-                        </tr>
-                        <tr>
-                            <td align="center" ng-repeat="p in n.prob track by $index">{{p}}</td>
-                        </tr>
-                    </table>
+                    <svg id="netImage"></svg>
                 </div>
             </div>
         </div>

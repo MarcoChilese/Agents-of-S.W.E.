@@ -21,7 +21,8 @@
   },
   "babel": {
     "plugins": [
-      "transform-es2015-modules-commonjs"
+      "transform-es2015-modules-commonjs",
+      "transform-remove-strict-mode"
     ]
   },
   "author": "Agents Of S.W.E.",
@@ -32,6 +33,8 @@
     "babel-loader": "7",
     "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.7.0",
+    "babel-preset-es2015-nostrict": "^6.6.2",
+    "babel-preset-es2015-without-strict": "0.0.4",
     "codecov": "^3.2.0",
     "copy-webpack-plugin": "^4.0.1",
     "css-loader": "^0.23.1",
@@ -42,8 +45,9 @@
     "eslint-plugin-import": "^2.16.0",
     "extract-text-webpack-plugin": "^3.0.2",
     "graphlib": "^2.1.7",
+    "jasmine-ajax": "^4.0.0",
     "jest": "^24.7.1",
-    "jquery": "^3.3.1",
+    "jquery": "^3.4.0",
     "jsbayes-viz": "0.0.7",
     "node-sass": "^4.11.0",
     "sass-loader": "^7.1.0",
@@ -55,6 +59,8 @@
     "angular": "^1.7.7",
     "babel-cli": "^6.26.0",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
+    "babel-plugin-transform-remove-strict-mode": "0.0.2",
+    "better-jsbayes-viz": "0.0.89",
     "clean-webpack-plugin": "^1.0.1",
     "cli": "^1.0.1",
     "grafana": "^1.0.1",
@@ -62,9 +68,9 @@
     "https": "^1.0.0",
     "influx": "^5.0.7",
     "jest-mock": "^24.7.0",
+    "jquery": "^3.4.0",
     "jsdom": "^14.1.0",
     "lodash": "^4.17.11",
-    "nock": "^10.0.6",
     "webpack-manifest-plugin": "^2.0.4"
   }
 }

@@ -14,4 +14,6 @@ export class PanelCtrl {
 
   addEditorTab(title, directiveFn, index) {
   }
+
+  $timeout() {}
 }
