@@ -226,6 +226,24 @@ TU0-107 & Viene verificato che il metodo \texttt{deleteTreshold} di \textit{Tres
 \hline
 TU0-109 & Viene verificato che il metodo \texttt{setNotLinked} di \textit{TresholdCtrl} elimini il collegamento del nodo al flusso dati & S.\\
 \hline
+\rowcolor{grigio}TU0-110 & Viene verificato che il metodo \texttt{checkMonitoring} di \textit{ModalCreator} torni \textbf{True} e faccia comparire una modal che segnali il monitoraggio in corso nel caso in cui la rete sia in monitoraggio & S. \\
+\hline
+TU0-111 & Viene verificato che la funzione \texttt{checkMonitoring} di \textit{ModalCreator} torni \textbf{False} nel caso in cui la rete non sia in monitoraggio & S. \\
+\hline
+\rowcolor{grigio}TU0-112 & Viene verificato che la funzione \texttt{checkDB} di \textit{ModalCreator} torni \textbf{False} e faccia comparire una modal che segnali il mancato collegamento nel caso in cui la rete non sia collegata ad un database & S. \\
+\hline
+TU0-113 & Viene verificato che la funzione \texttt{checkDB} di \textit{ModalCreator} torni \textbf{True} nel caso in cui la rete non sia collegata ad un Database & S. \\
+\hline
+\rowcolor{grigio}TU0-114 & Viene verificato che il metodo \texttt{showMessageModal} di \textit{ModalCreator} faccia correttamente comparire una modal nella quale compaia il messaggio da segnalare & S. \\
+\hline
+TU0-115 & Viene verificato che il metodo \texttt{showTresholdModal} di \textit{ModalCreator} ritorni come valore \textbf{True} e faccia comparire una modal per la definizione delle soglie se le condizioni per il collegamento del nodo sono verificate & S. \\
+\hline
+\rowcolor{grigio}TU0-116 & Viene verificato che il metodo \texttt{showTresholdModal} di \textit{ModalCreator} ritorni come valore \textbf{False}, e faccia comparire una modal che segnali l'errore, nel caso in cui si tenti di modificare le impostazioni di collegamento durante un monitoraggio attivo o senza aver connesione al database  & S. \\
+\hline
+TU0-117 & Viene verificato che il metodo \texttt{selectTemporalPolicy} di \textit{ModalCreator} ritorni come valore \textbf{True} e faccia comparire una modal per la definizione della politica temporale se le condizioni per la sua definizione sono tutte rispettate & S. \\
+\hline
+\rowcolor{grigio}TU0-118 & Viene verificato che il metodo \texttt{selectTemporalPolicy} di \textit{ModalCreator} ritorni come valore \textbf{False}, e faccia comparire una modal che segnali l'errore, nel caso in cui si tenti di definire una politica temporale durante un monitoraggio attivo o senza aver connesione al database & S. \\
+\hline
 \caption{Test di unità}
 \label{testunita}
 \end{longtable}
