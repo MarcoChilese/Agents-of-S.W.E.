@@ -1,4 +1,25 @@
+.btn-warning {
+    color: #fff;
+    text-shadow: 0 1px 0 rgba(0,0,0,.1);
+    background-color: #ec8427;
+    background-image: linear-gradient(180deg,#eb7b18,#ee903e);
+    background-repeat: repeat-x;
+    border-color: #eb7b18;
+}
 
+.btn-link {
+    background: #DDDDDD;
+}
+
+.navbar-button--primary {
+    display: inline-block;
+    color: #fff;
+    text-shadow: 0 1px 0 rgba(0,0,0,.1);
+    background-color: #00678b;
+    background-image: linear-gradient(180deg,#005f81,#00729b);
+    background-repeat: repeat-x;
+    border-color: #005f81;
+}
 
 .panel-container{
     background-color: #171819;
@@ -62,7 +83,7 @@
 }
 
 #choose-net,#selected-net{
-    height: 70%;
+    height: 65%;
 }
 
 #choose-source,#selected-database{
@@ -203,6 +224,10 @@
 
 .modal-body .gf-form{
     margin: 2% 0%;
+}
+
+.gf-form-label {
+    height: 100%;
 }
 
 .height-10{

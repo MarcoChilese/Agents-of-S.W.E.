@@ -402,15 +402,17 @@ export class GBCtrl extends PanelCtrl {
   async updateProbs() {
     try {
       const g = jsbayesviz.fromGraph(await this.testServer.getnetworkprob(this.panel.actuallyVisualizingMonitoring), 'netImage');
-      $('#netImage').empty();
+      const el = $('#netImage');
+      el.empty();
       jsbayesviz.draw({
         id: '#netImage',
-        width: 3000,
-        height: 2000,
         graph: g,
         samples: 15000,
       });
-      $('svg').css('background', 'floralwhite');
+      const bbox = el[0].getBBox();
+      const w = bbox.width + 100;
+      const h = bbox.height + 50;
+      $('svg').css({ background: 'floralwhite', width: w, height: h });
       this.$timeout({}, 100);
     } catch (e) {
       clearInterval(this.interval);
