@@ -21,10 +21,6 @@
     border-color: #005f81;
 }
 
-.panel-container{
-    background-color: #171819;
-    border: 1px solid #333;
-}
 
 .danger-text{
     color: red;
@@ -75,7 +71,7 @@
 }
 
 #network-settings{
-    border-bottom: 1px solid #333;
+    border-bottom: 1px solid #bbbbbb;
 }
 
 #choose-net select{
@@ -91,7 +87,7 @@
 }
 
 #choose-net, #choose-source{
-    border-right: 1px solid #333;
+    border-right: 1px solid #bbbbbb;
 }
 
 #choose-source select{

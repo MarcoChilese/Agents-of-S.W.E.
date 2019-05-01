@@ -33,7 +33,7 @@
                         <!-- Import network from server -->
                         <div id="upload-from-server" class="gf-form bottom-1-margin">
                             <div class="width-30-perc">
-                                <span class="gf-form-label">Seleziona rete già caricata</span>
+                                <span class="gf-form-label btn-inverse">Seleziona rete già caricata</span>
                             </div>
                             <div class="width-30-perc padding-left-3">
                                 <select ng-model="selectedNetworkToOpen">
@@ -48,7 +48,7 @@
                         <!-- Import network from JSON-->
                         <div id="upload-json-file" class="gf-form bottom-1-margin">
                             <div class="width-30-perc">
-                                <span class="gf-form-label">Importa rete da file JSON</span>
+                                <span class="gf-form-label btn-inverse">Importa rete da file JSON</span>
                             </div>
                             <div id="upload-json-net" class="width-30-perc padding-left-3">
                                 <dash-upload on-upload="ctrl.loadNetwork(dash)" class="class-width-100 ng-isolate-scope class-margin-1">
@@ -70,7 +70,7 @@
                     <div id="choose-source" class="bottom-1-margin margin-top-3 split-80-div">
                         <div id="select-source" class="gf-form bottom-1-margin">
                             <div class="width-30-perc">
-                                <span class="gf-form-label">Sorgenti</span>
+                                <span class="gf-form-label btn-inverse">Sorgenti</span>
                             </div>
                             <div class="width-30-perc padding-left-3">
                                 <select ng-model="ctrl.panel.selectedDB" >
@@ -92,7 +92,7 @@
             <div id="edit-nodes" class="class-width-100" ng-if="ctrl.panel.nodes !== undefined ">
                 <div id="temporal-policy" class="gf-form top-1-margin">
                     <div class="width-20-perc">
-                        <span class="gf-form-label">Imposta politica temporale</span>
+                        <span class="gf-form-label btn-inverse">Imposta politica temporale</span>
                     </div>
                     <div class="width-20-perc padding-left-3">
                         <button class="btn navbar-button navbar-button--primary padding-left-3 width-80-perc" ng-click="ctrl.selectTemporalPolicy()">Imposta</button>
