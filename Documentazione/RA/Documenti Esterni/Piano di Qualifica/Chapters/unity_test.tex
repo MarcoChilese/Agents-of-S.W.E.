@@ -244,6 +244,14 @@ TU0-117 & Viene verificato che il metodo \texttt{selectTemporalPolicy} di \texti
 \hline
 \rowcolor{grigio}TU0-118 & Viene verificato che il metodo \texttt{selectTemporalPolicy} di \textit{ModalCreator} ritorni come valore \textbf{False}, e faccia comparire una modal che segnali l'errore, nel caso in cui si tenti di definire una politica temporale durante un monitoraggio attivo o senza aver connesione al database & S. \\
 \hline
+TU0-119 & Viene verificato che il metodo \texttt{getTables} di \textit{GetApiGrafana} torni come risultato un array contenente tutte le tabelle del database, il quale è un campo dati della classe stessa & S.\\
+\hline
+\rowcolor{grigio}TU0-120 & Viene verificato che il metodo \texttt{getFields} di \textit{GetApiGrafana} torni come risultato un \textit{JSON} contenente tutti i campi di tutte le tabelle del database & S.\\
+\hline
+TU0-121 & Viene verificato che il metodo \texttt{divideFields} di \textit{GetApiGrafana} data una certa struttura dati possibilmente non ben formattata torni come risultato un \textit{JSON} contenente tabelle e corrispondenti campi correttamente strutturati & S.\\
+\hline
+\rowcolor{grigio}TU0-122 & Viene verificato che il metodo \texttt{getData} di \textit{GetApiGrafana} faccia una richiesta alle API \textit{Grafana} e torni un file \textit{JSON} contente le informazioni dei database associati & S.\\
+\hline
 \caption{Test di unità}
 \label{testunita}
 \end{longtable}
