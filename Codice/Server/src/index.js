@@ -11,10 +11,6 @@ var argv = require('minimist')(process.argv.slice(2));
 const bodyParser = require('body-parser');
 const Network = require('./Network');
 const database = require('./influxdb');
-// const readline = require('readline').createInterface({
-// 	input: process.stdin,
-// 	output: process.stdout
-// })
 
 const config = require('./conf.json');
 
@@ -427,7 +423,7 @@ class Server {
 	observeNetworks(net, data) {
 		// console.log(this.db[this.networks[net].net.database.name]);
 		this.db[this.networks[net].net.database.name].getListData(data).then(r => {		
-			this.networks[net].observeData(r);
+			let check = this.networks[net].observeData(r);
 			this.writeMesure(net);
 		});
 	}

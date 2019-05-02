@@ -82,12 +82,12 @@ class Network{
 		// Perche prima fai "unobserve" !?!?!?
 		// for(const el in net.nodes)
 		// this.graph.unobserve(net.nodes[el]);
+		let critico = false; 
 
 		// Per ogni soglia
 		this.unobserveAll();
 		for(let soglia in this.soglie){
 			
-			// TODO: da spezzare in seguito 'table.dato'
 			let dato_monitorato = dati[this.net.flushesAssociations[soglia].flush];
 			for(let parametri of this.soglie[soglia]){
 			
@@ -95,14 +95,33 @@ class Network{
 				// 2 controllo il flusso di dati con la soglia
 				// prendo il flusso associato che monitoro flushesAssociation
 				if(parametri.sign == "<="){
-					if(dato_monitorato <= parametri.value)
+					if(dato_monitorato <= parametri.value){
+						critico = (parametri.critical ? critico || true : critico || false);
 						this.observe(soglia, parametri.state);
+					}
 				}
 
 				if(parametri.sign == ">="){
-					if(dato_monitorato >= parametri.value)
+					if(dato_monitorato >= parametri.value){
+						critico = (parametri.critical ? critico || true : critico || false);
 						this.observe(soglia, parametri.state);
+					}
 				}
+
+				if(parametri.sign == "<"){
+					if(dato_monitorato < parametri.value){
+						critico = (parametri.critical ? critico || true : critico || false);
+						this.observe(soglia, parametri.state);
+					}
+				}
+
+				if(parametri.sign == ">"){
+					if(dato_monitorato > parametri.value){
+						critico = (parametri.critical ? critico || true : critico || false);
+						this.observe(soglia, parametri.state);
+					}
+				}
+
 			}
 		}
 		this.sample(1000);

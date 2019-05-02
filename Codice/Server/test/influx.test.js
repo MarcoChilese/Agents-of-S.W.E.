@@ -1,4 +1,4 @@
-const InfluxDB = require('../src/InfluxDB');
+const InfluxDB = require('../src/influxdb');
 let user = "greg"; 
 let pwd = "greg"; 
 let ip = "142.93.102.115";

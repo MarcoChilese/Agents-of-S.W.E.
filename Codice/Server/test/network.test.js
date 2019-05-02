@@ -32,6 +32,11 @@ describe('Testing Network class', () => {
 		done();
 	});
 
+	// test('Testing critical thresholds', (done) => {
+	// 	testing_data['total'] = 1.5
+	// 	let network_test = new Network(net);
+	// });
+
 }); 
 
 
