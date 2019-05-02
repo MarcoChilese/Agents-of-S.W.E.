@@ -252,6 +252,18 @@ TU0-121 & Viene verificato che il metodo \texttt{divideFields} di \textit{GetApi
 \hline
 \rowcolor{grigio}TU0-122 & Viene verificato che il metodo \texttt{getData} di \textit{GetApiGrafana} faccia una richiesta alle API \textit{Grafana} e torni un file \textit{JSON} contente le informazioni dei database associati & S.\\
 \hline
+TU0-123 & Viene verificato che il metodo \texttt{alive} di \textit{ConnectServer} torni un \textit{JSON} contenente informazioni su data, ora e porta del server in ascolto & S.\\
+\hline
+\rowcolor{grigio}TU0-124 & Viene verificato che il metodo \texttt{networks} di \textit{ConnectServer} torni un \textit{JSON} contenente le reti bayesiane salvate nel server & S.\\
+\hline
+TU0-125 & Viene verificato che il metodo \texttt{uploadnetwork(net)} di \textit{ConnectServer} carichi sul server la rete "net" e torni \textbf{True} nel caso di buona riuscita dell'operazione & S.\\
+\hline
+\rowcolor{grigio}TU0-126 & Viene verificato che il metodo \texttt{deletenetwork(net)} di \textit{ConnectServer} elimini dal server la rete "net" e torni \textbf{True} nel caso di buona riuscita dell'operazione & S.\\
+\hline
+TU0-127 & Viene verificato che il metodo \texttt{getnetworkprob(net)} di \textit{ConnectServer} torni un \textit{JSON} contenente le probabilità aggiornate relative agli stati dei nodi della rete "net" & S.\\
+\hline
+\rowcolor{grigio}TU0-128 & Viene verificato che il metodo \texttt{getnetwork(net)} di \textit{ConnectServer} torni un \textit{JSON} contenente tutte le informazioni relative alla rete "net" memorizzata nel server & S.\\
+\hline
 \caption{Test di unità}
 \label{testunita}
 \end{longtable}
