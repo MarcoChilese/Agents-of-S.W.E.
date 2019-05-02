@@ -1,3 +1,4 @@
+import { JSDOM } from 'jsdom';
 
 export const backendSrvMock = {
   get: (param) => {
@@ -100,19 +101,9 @@ export const thisMock = {
   $scope: { $new() { return {}; } },
 };
 
-export const jQ = {
-  $: {
-    empty: {
-    },
-    css: {
-    },
-  },
-};
-
 const defaultExports = {
   backendSrvMock,
   thisMock,
-  jQ,
 };
 
 export default defaultExports;

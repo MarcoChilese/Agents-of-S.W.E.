@@ -1,6 +1,5 @@
 
 import $ from 'jquery';
-import jQ from '../src/testSetup/mocks';
 import TresholdCtrl from '../src/TresholdsCtrl';
 import ModalCreator from '../src/ModalCreator';
 import ConnectServer from '../src/js/ConnectServer';
@@ -9,7 +8,6 @@ import { GBCtrl } from '../src/GBCtrl';
 jest.mock('../src/js/GetApiGrafana');
 jest.mock('../src/ModalCreator');
 jest.mock('../src/js/ConnectServer');
-
 
 let g;
 describe('generic tests', () => {
@@ -138,7 +136,10 @@ describe('server connection', () => {
 
     // updateProbs
     it('GBCtrl::updateProbs::true', async () => {
-      $.$ = jQ;
+      // jest.mock('$', () => ( 5 ), { virtual: true });
+      // $.$ = function () { return 5; };
+      $('html').append('<head></head><body><svg id="netImage"></svg></body>');
+      document.getElementsByTagName('svg')[0].getBBox = () => ({ width: 100, height: 50 });
       g.panel.actuallyVisualizingMonitoring = 'Alarm';
       expect(await g.updateProbs()).toBe(true);
       clearInterval(g.interval);
