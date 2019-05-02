@@ -1,6 +1,6 @@
 # Progetto SWE 2018/2019
 [![Build Status](https://travis-ci.com/MarcoChilese/Agents-of-S.W.E..svg?token=oQdfUE2xcjByCYsprNx7&branch=develop)](https://travis-ci.com/MarcoChilese/Agents-of-S.W.E.)
-[![codecov](https://codecov.io/gh/MarcoChilese/Agents-of-S.W.E./branch/develop/graph/badge.svg?token=D60mjJmIq6)](https://codecov.io/gh/MarcoChilese/Agents-of-S.W.E.)
+[![codecov](https://codecov.io/gh/MarcoChilese/Agents-of-S.W.E./branch/feature%2FProdotto/graph/badge.svg)](https://codecov.io/gh/MarcoChilese/Agents-of-S.W.E.)
 * __Gruppo__: Agents of S.W.E.
 * __Membri__:
   * Bogdan Stanciu
