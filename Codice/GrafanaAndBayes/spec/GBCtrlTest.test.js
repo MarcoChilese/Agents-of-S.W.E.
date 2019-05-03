@@ -207,10 +207,10 @@ describe('server connection', () => {
       expect(await g.saveActualChanges()).toBe(false);
     });
 
+    // NEWTEST se attualmente sotto monitoraggio non salvo nel server
     it('GBCtrl::saveActualChanges::true(network monitored)', async () => {
       g.panel.name = 'Sachs';
       g.panel.collegatoAlDB = true;
-      console.log(g.panel.monitoringNetworks);
       expect(await g.saveActualChanges()).toBe(true);
     });
 

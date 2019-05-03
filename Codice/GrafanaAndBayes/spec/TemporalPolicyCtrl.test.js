@@ -84,7 +84,7 @@ describe('TemporalPolicyCtrl::setConfirmationToFalse', () => {
     expect(temp.setConfirmationToTrue()).toBe(true);
   });
 
-  // temporal policy not changed
+  // NEWTEST temporal policy not changed
   it('TemporalPolicyCtrl::setConfirmationToTrue::false(no changes)', () => {
     expect(temp.setConfirmationToTrue()).toBe(false);
   });
