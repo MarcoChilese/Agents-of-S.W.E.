@@ -24,7 +24,7 @@ describe('Testing Network class', () => {
 	});
 
 	test('Testing probabilities when not pass thresholds', (done) => {
-		testing_data['total'] = 1.5; 
+		testing_data['total'] = 0.8; 
 		let network_test = new Network(net); 
 		network_test.observeData(testing_data);
 		let results = network_test.getProbabilities(); 
@@ -32,10 +32,14 @@ describe('Testing Network class', () => {
 		done();
 	});
 
-	// test('Testing critical thresholds', (done) => {
-	// 	testing_data['total'] = 1.5
-	// 	let network_test = new Network(net);
-	// });
+	test('Testing critical thresholds', () => {
+		testing_data['total'] = 1.5
+		let network_test = new Network(net);
+		let check = network_test.observeData(testing_data); 
+		let results = network_test.getProbabilities(); 
+		expect(check).toBeTruthy();
+
+	});
 
 }); 
 

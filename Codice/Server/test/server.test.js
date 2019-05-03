@@ -43,6 +43,10 @@ expect.extend({
 
 describe('Testing server...', () => {
 
+	/**
+	* Verifico che il server carichi le reti salvate 
+	* all'avvio di quest'ultimo 
+	*/
 	test('Check if server has init networks', () => {
 		server.initSavedNetworks();
 		expect(server).not.toBeUndefined();
@@ -50,21 +54,37 @@ describe('Testing server...', () => {
 		expect(Object.keys(server.networks).length).toBeGreaterThan(0);	
 	});
 
+	/**
+	* Test per verificare l'importazione corretta dal file conf.jsons
+	* nell'istanza del server 
+	*/
 	test('Testing basic config of runnign server', () => {
 		let dir = process.cwd();
 		expect(app.path).toMatch(`${dir}/src`);
 		expect(app.conf['saved_network']).toMatch('networks');
 	});
 
+	/**
+	* testing del metodo parserNetworkNameURL() 
+	*/
 	test('good param parserNetworkNameURL method', () => {
 		expect(server.parserNetworkNameURL('Alarm')).toMatch('Alarm'); 
 		expect(server.parserNetworkNameURL('Viaggio in asia')).toBeFalsy();
 	});
 
+	/**
+	* Testing del metodo parserNetworkNameURL() 
+	* per verificare parametri errati
+	*/
 	test('bad param parserNetworkNameURL method', () => {
 		expect(server.parserNetworkNameURL(null)).toBeFalsy(); 
 	});
 
+	/**
+	* testing del metodo initDatabaseConnection()
+	* Controllo che siano stati inzializzati i database delle 
+	* reti salvate e inizializzo un nuovo db
+	*/
 	test('initDatabaseConnection method', () => {
 		expect(Object.keys(server.db).length).toBeGreaterThan(0);
 		database.name = "database_prova_jest";
@@ -311,6 +331,11 @@ describe('Testing server...', () => {
 		});
 	});
 
+	/**
+	* Testing l'inizializzazione del pool delle reti
+	* per ogni rete nell'array 'networks' con monitorign = true, 
+	* mi aspetto un pool inizializzato 
+	*/
 	test("Testing init pool of saved networks", () => {
 		for(let net in server.networks){
 			if(server.networks[net].net.monitoring)
@@ -318,14 +343,21 @@ describe('Testing server...', () => {
 		}
 	});
 
-
-	test("Testing deleting observed network from pool", () => {
+	/**
+	* Testing del metodo deleteFromPool() eliminando 
+	* una rete valida.
+	*/
+	test("Testing eliminazione di una rete in pool", () => {
 		let net = "Alarm";
 		expect(server.pool[net]).not.toBeUndefined(); 
 		expect(server.deleteFromPool(net)).toBeTruthy();
 		expect(server.pool[net]).toBeUndefined(); 
 	});
 
+
+	/**
+	* Testing del metodo addToPool() con una rete valida
+	*/
 	test("Testing add to pool", () => {
 		let net = 'Alarm';
 		expect(server.pool[net]).toBeUndefined(); 
@@ -333,14 +365,21 @@ describe('Testing server...', () => {
 		expect(server.pool[net]).not.toBeUndefined();
 	});
 
+
+	/**
+	* Testing del metodo addToPool() con una rete
+	* già nel pool
+	*/
 	test("Add existing network on pool", () => {
 		let net = 'Alarm';
 		expect(server.pool[net]).not.toBeUndefined(); 
 		expect(server.addToPool(net)).toBeFalsy();
 	});
 
-	// TU0-??
-	test("networkslive", (done) => {
+	/**
+	* Testing della route /networkslive
+	*/
+	test("testing /networkslive path ", (done) => {
 		request(app.app).get('/networkslive').then((response) => {
 			expect(response.body).isJSON(); 
 			let keys = Object.keys(response.body);
@@ -350,6 +389,9 @@ describe('Testing server...', () => {
 		});
 	});
 
+	/**
+	* Testing della route /path
+	*/
 	test("networks path", (done) => {
 		request(app.app).get('/networks').then((response) => {
 			expect(response.body).isJSON();
@@ -358,24 +400,29 @@ describe('Testing server...', () => {
 		});
 	});
 
+	/**
+	* Testing della path /getnetworkprob/:net 
+	* passando una rete valida come parametro 
+	*/
 	test("getnetworkprob path", (done) => {
-		
 		request(app.app).get('/getnetworkprob/Alarm').then((response) => {
-			
 			expect(response.body).isJSON(); 
-
 			done(); 
 		});
 
 	});
 
-	// test("deletenetwork path", (done) => {
-	// 	request(app.app).get('/deletenetwork/Alarm').then((response) => {
-	// 		expect(response.body).isJSON(); 
-	// 		expect(response.statusCode).toBe(200); 
-	// 		done(); 
-	// 	});
-	// });
+	/**
+	* Testing della path /deletenetwork/:net 
+	* passando una rete valida come parametro
+	*/
+	test("deletenetwork path", (done) => {
+		request(app.app).get('/deletenetwork/Alarm').then((response) => {
+			expect(response.body).isJSON(); 
+			expect(response.statusCode).toBe(200); 
+			done(); 
+		});
+	});
 
 });
 

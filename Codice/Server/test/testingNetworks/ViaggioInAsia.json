@@ -201,16 +201,8 @@
 			{
 				"state": "true",
 				"sign": ">=",
-				"value": 2.6,
-				"critical": false,
-				"name": 1,
-				"$$hashKey": "object:155"
-			},
-			{
-				"state": "true",
-				"sign": "<=",
-				"value": 1,
-				"critical": false,
+				"value": 1.0,
+				"critical": true,
 				"name": 1,
 				"$$hashKey": "object:155"
 			}

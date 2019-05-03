@@ -4,7 +4,7 @@
 	"description": "node server 1.0",
 	"main": "index.js",
 	"scripts": {
-		"test": "jest ./test --coverage",
+		"test": "jest ./test/influx.test.js ./test/server.test.js ./test/pool.test.js ./test/network.test.js --coverage",
 		"codecov": "codecov",
 		"start": "node index.js"
 	},

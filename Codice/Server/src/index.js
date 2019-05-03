@@ -81,7 +81,7 @@ class Server {
 			res.json(status);
 		});
 
-		// return a json with all networks 
+		// Path per richiedere tutte le reti salvate in filesystem
 		this.app.get('/networks', (req, res) => {
 			const ris = this.getNetworks();
 			res.json(ris);
@@ -137,6 +137,7 @@ class Server {
 			}
 		});
 
+		// Route per ritornare le reti instanziate nell'array
 		this.app.get('/networkslive', (req, res) => {
 			let tmp = {}; 
 
@@ -207,7 +208,7 @@ class Server {
 			}
 		});
 
-		// Return the probability of the network 
+		// Return the probability of the given network 
 		this.app.get('/getnetworkprob/:net', (req, res) => {
 			let name = this.parserNetworkNameURL(req.params.net); 
 
@@ -238,14 +239,14 @@ class Server {
 	}
 
 	/**
-	 * Metodo per parsare il nome della rete passato nell'URL 
+	 * Metodo per parsare il nome della rete proveniente nell'URL 
 	 * @return{boolean} return false se il nome è errato o la rete non e inizializzata
 	 * @return{String} return il nome parsato 
 	**/
 	parserNetworkNameURL(name){
 		if(name === '' || name === undefined || this.networks[name] === undefined)
 			return false;
-
+		// replace spazio con _
 		return name = name.replace(/ /g, "_");
 	}
 
@@ -475,8 +476,6 @@ class Server {
 	 * @return{array} all networks
 	 * @throws{error} if reads a not valid file
 	**/
-
-	
 	getNetworks() {
 		let tmp = [];
 		// open directory

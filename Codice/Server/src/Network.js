@@ -86,9 +86,10 @@ class Network{
 
 		// Per ogni soglia
 		this.unobserveAll();
+
 		for(let soglia in this.soglie){
-			
 			let dato_monitorato = dati[this.net.flushesAssociations[soglia].flush];
+		
 			for(let parametri of this.soglie[soglia]){
 			
 				// 1 controllo la probabilità con la soglia
@@ -125,6 +126,7 @@ class Network{
 			}
 		}
 		this.sample(1000);
+		return critico;
 	}
 
 	/*
