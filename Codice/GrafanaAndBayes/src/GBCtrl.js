@@ -490,10 +490,13 @@ export class GBCtrl extends PanelCtrl {
    * */
   async saveActualChanges() {
     if (this.panel.name !== '' && this.panel.collegatoAlDB === true) {
-      const dataToSend = this.buildDataToSend();
-      dataToSend.monitoring = this.panel.monitoring === true;
-      if (await this.loadNetworkToServer(dataToSend) === false) {
-        return false;
+      // save changes if not monitoring
+      if (!this.panel.monitoringNetworks.includes(this.panel.name)) {
+        const dataToSend = this.buildDataToSend();
+        dataToSend.monitoring = this.panel.monitoring === true;
+        if (await this.loadNetworkToServer(dataToSend) === false) {
+          return false;
+        }
       }
     }
     return true;

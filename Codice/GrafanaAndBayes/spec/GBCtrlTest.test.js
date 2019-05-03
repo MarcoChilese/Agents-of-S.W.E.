@@ -200,11 +200,20 @@ describe('server connection', () => {
       expect(await g.saveActualChanges()).toBe(true);
     });
 
-    it('GBCtrl::saveActualChanges::true(name = "Sachs", collegatoAlDB = true)', async () => {
-      g.panel.name = 'Sachs';
+    it('GBCtrl::saveActualChanges::true(name = "Prova", collegatoAlDB = true)', async () => {
+      g.panel.name = 'Prova';
       g.panel.collegatoAlDB = true;
+      console.log(g.panel.monitoringNetworks);
       expect(await g.saveActualChanges()).toBe(false);
     });
+
+    it('GBCtrl::saveActualChanges::true(network monitored)', async () => {
+      g.panel.name = 'Sachs';
+      g.panel.collegatoAlDB = true;
+      console.log(g.panel.monitoringNetworks);
+      expect(await g.saveActualChanges()).toBe(true);
+    });
+
   });
 });
 
