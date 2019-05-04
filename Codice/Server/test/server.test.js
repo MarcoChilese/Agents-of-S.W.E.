@@ -69,7 +69,7 @@ describe('Testing server...', () => {
 	*/
 	test('good param parserNetworkNameURL method', () => {
 		expect(server.parserNetworkNameURL('Alarm')).toMatch('Alarm'); 
-		expect(server.parserNetworkNameURL('Viaggio in asia')).toBeFalsy();
+		expect(server.parserNetworkNameURL('Viaggio in asia')).toMatch('Viaggio_in_asia');
 	});
 
 	/**
@@ -416,13 +416,13 @@ describe('Testing server...', () => {
 	* Testing della path /deletenetwork/:net 
 	* passando una rete valida come parametro
 	*/
-	test("deletenetwork path", (done) => {
-		request(app.app).get('/deletenetwork/Alarm').then((response) => {
-			expect(response.body).isJSON(); 
-			expect(response.statusCode).toBe(200); 
-			done(); 
-		});
-	});
+	// test("deletenetwork path", (done) => {
+	// 	request(app.app).get('/deletenetwork/Alarm').then((response) => {
+	// 		expect(response.body).isJSON(); 
+	// 		expect(response.statusCode).toBe(200); 
+	// 		done(); 
+	// 	});
+	// });
 
 });
 

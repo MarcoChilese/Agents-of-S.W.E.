@@ -16,15 +16,15 @@ describe('Testing Network class', () => {
 	});
 
 	test('Testing probabilities when pass tresholds', (done) => {
-		testing_data['total'] = 3.5; 
+		testing_data['inodes_used'] = 3.5; 
 		network_test.observeData(testing_data);
-		let results = network_test.getProbabilities(); 
-		expect(results[2].prob[0]).toBe(1); 
+		let results = network_test.getProbabilities();
+		expect(results[0].prob[0]).toBe(1); 
 		done();
 	});
 
 	test('Testing probabilities when not pass thresholds', (done) => {
-		testing_data['total'] = 0.8; 
+		testing_data['inodes_used'] = 0.8; 
 		let network_test = new Network(net); 
 		network_test.observeData(testing_data);
 		let results = network_test.getProbabilities(); 
@@ -33,7 +33,7 @@ describe('Testing Network class', () => {
 	});
 
 	test('Testing critical thresholds', () => {
-		testing_data['total'] = 1.5
+		testing_data['inodes_used'] = 1.5
 		let network_test = new Network(net);
 		let check = network_test.observeData(testing_data); 
 		let results = network_test.getProbabilities(); 

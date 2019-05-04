@@ -244,7 +244,7 @@ class Server {
 	 * @return{String} return il nome parsato 
 	**/
 	parserNetworkNameURL(name){
-		if(name === '' || name === undefined || this.networks[name] === undefined)
+		if(name === '' || name === undefined || typeof name != 'string')
 			return false;
 		// replace spazio con _
 		return name = name.replace(/ /g, "_");
@@ -340,16 +340,18 @@ class Server {
 		try{
 			for(let n of fs.readdirSync(`${this.path}/${this.conf['saved_network']}`)){
 				if(n.includes('.json')){
-					let tmp = JSON.parse(fs.readFileSync(`${this.path}/${this.conf['saved_network']}/${n}`));
-					
-					if(tmp.monitoring === true){
-						this.initBayesianNetwork(tmp);
+					let tmp; 
+					try{
+						tmp = JSON.parse(fs.readFileSync(`${this.path}/${this.conf['saved_network']}/${n}`));
+					} catch(err){
+						throw err; 
 					}
+					
+					this.initBayesianNetwork(tmp);
 
 					if(tmp.name != undefined){
 						if(!this.initDatabaseConnection(tmp.database))
 							console.log("Database non inizializzato !"); 
-
 					}
 				}
 			}

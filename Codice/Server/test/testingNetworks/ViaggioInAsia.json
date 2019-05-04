@@ -1,17 +1,16 @@
 {
-	"canStartComputation": false,
-	"collegatoAlDB": false,
-	"databaseSelected": null,
+	"canStartComputation": true,
+	"collegatoAlDB": true,
 	"database": {
-		"id": 3,
+		"id": 1,
 		"orgId": 1,
-		"name": "testing_network",
+		"name": "InfluxDB",
 		"type": "influxdb",
 		"typeLogoUrl": "public/app/plugins/datasource/influxdb/img/influxdb_logo.svg",
 		"access": "proxy",
 		"url": "http://142.93.102.115:8086",
-		"password": "",
-		"user": "",
+		"password": "greg",
+		"user": "greg",
 		"database": "telegraf",
 		"basicAuth": false,
 		"isDefault": true,
@@ -21,13 +20,17 @@
 		"readOnly": false
 	},
 	"flushesAssociations": {
-		"Fuma": {
+		"Bronchite": {
 			"table": "cpu",
-			"flush": "total"
+			"flush": "usage_guest"
+		},
+		"Viaggio in Asia": {
+			"table": "disk",
+			"flush": "inodes_used"
 		}
 	},
-	"monitoring": false,
-	"name": "Viaggio in asia",
+	"monitoring": true,
+	"name": "Viaggio_in_asia",
 	"nodes": [
 		"Viaggio in Asia",
 		"Tubercolosi",
@@ -187,26 +190,38 @@
 		]
 	},
 	"temporalPolicy": {
-		"seconds": 0,
+		"seconds": 5,
 		"minutes": 0,
 		"hours": 0
 	},
-	"temporalPolicyConfirmed": false,
+	"temporalPolicyConfirmed": true,
 	"tresholdLinked": {
-		"Fuma": true, 
+		"Viaggio in Asia": true,
+		"Tubercolosi": false,
+		"Fuma": false,
+		"Cancro": false,
+		"Bronchite": true,
+		"TBC o Cancro": false,
+		"Dispnea": false,
 		"Risultati sui raggi X": false
 	},
 	"tresholds": {
-		"Fuma": [
+		"Viaggio in Asia": [
 			{
 				"state": "true",
 				"sign": ">=",
-				"value": 1.0,
+				"value": 1,
 				"critical": true,
-				"name": 1,
-				"$$hashKey": "object:155"
+				"name": 1
 			}
-		]
+		],
+		"Tubercolosi": [],
+		"Fuma": [],
+		"Cancro": [],
+		"Bronchite": [],
+		"TBC o Cancro": [],
+		"Dispnea": [],
+		"Risultati sui raggi X": []
 	},
-	"selectedDB": null
+	"selectedDB": "InfluxDB"
 }

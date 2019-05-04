@@ -39,7 +39,9 @@ expect.extend({
 
 
 describe('Testing server...', () => {
-
+	/**
+	* Testing del costruttore con user and password
+	*/
 	test("Constructor with user and password", async(done) => {
 		con = new InfluxDB(ip, port, db, db_write, user, pwd);
 		let tmp = await con.checkStatus(1000); 
@@ -47,6 +49,9 @@ describe('Testing server...', () => {
 		done(); 
 	});
 
+	/**
+	* Testing del costruttore senza user & password
+	*/
 	test("Constructor", async(done) => {
 		con = new InfluxDB(ip, port, db, db_write);
 		let tmp = await con.checkStatus(1000);
@@ -54,6 +59,9 @@ describe('Testing server...', () => {
 		done();
 	});
 
+	/**
+	* Testing del metodo getDatasources()
+	*/
 	test("getDatasources method", async(done) => {
 		let tmp = await con.getDatasources(); 
 		expect(tmp).not.toBeUndefined(); 
