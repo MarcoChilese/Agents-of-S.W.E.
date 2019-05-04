@@ -296,23 +296,23 @@ TU0-144 & Viene verificato che il metodo \texttt{requestNetworkDelete(net)} di \
 \hline
 \rowcolor{grigio}TU0-145 & Viene verificato che il metodo \texttt{updateProbs} di \textit{GBCtrl} aggiorni le probabilità che rappresentano i dati di monitoraggio della rete visualizzata sul pannello tornando \textbf{True} se l'operazione è andata a buon fine & S.\\
 \hline
-TU0-146 & Viene verificato che il metodo \texttt{changeNetworkToVisualizeMonitoring} di \textit{GBCtrl} \textcolor{red}{Trascrivere Test non comprensibile} & S.\\
+TU0-146 & Viene verificato che il metodo \texttt{changeNetworkToVisualizeMonitoring} di \textit{GBCtrl} imposti correttamente l'intervallo di refresh delle probabilità della rete e che ritorni correttamente \textbf{True} & S.\\
 \hline
-\rowcolor{grigio}TU0-147 & Viene verificato che il metodo \texttt{changeNetworkToVisualizeMonitoring} di \textit{GBCtrl} \textcolor{red}{Trascrivere Test non comprensibile} & S.\\
+\rowcolor{grigio}TU0-147 & Viene verificato che il metodo \texttt{changeNetworkToVisualizeMonitoring} di \textit{GBCtrl} nel caso vengano sollevate eccezioni, non imposti alcun intervallo di refresh delle probabilità e ritorni \textbf{False} & S.\\
 \hline
 TU0-148 & Viene verificato che il metodo \texttt{loadNetworkToServer(net)} di \textit{GBCtrl} carichi la rete "net" passata come parametro sul server, tornando \textbf{True}, e mostrando un corrispondente messaggio di successo, nel caso di buon esito dell'operazione & S.\\
 \hline
-\rowcolor{grigio}TU0-149 & Viene verificato che il metodo \texttt{loadNetworkToServer(net)} di \textit{GBCtrl} torni \textbf{False} nel caso in cui \textcolor{red}{Trascrivere motivazione} & S.\\
+\rowcolor{grigio}TU0-149 & Viene verificato che il metodo \texttt{loadNetworkToServer(net)} di \textit{GBCtrl} torni \textbf{False} nel caso in cui il server non sia online o per qualche motivazione non riesca a savlare la rete. & S.\\
 \hline
-TU0-150 & Viene verificato che il metodo \texttt{saveActualChanges} di \textit{GBCtrl} \textcolor{red}{Trascrivere Test non comprensibile} & S.\\
+TU0-150 & Viene verificato che il metodo \texttt{saveActualChanges} di \textit{GBCtrl}, salvi i cambiamenti nel server solo se la combinazione di valori delle variabili \textit{name} e \textit{collegatoAlDB} è corretta e la rete non è sotto monitoraggio & S.\\
 \hline
-\rowcolor{grigio}TU0-151 & Viene verificato che il metodo \texttt{saveActualChanges} di \textit{GBCtrl} \textcolor{red}{Trascrivere Test non comprensibile} & S.\\
+\rowcolor{grigio}TU0-151 & Viene verificato che il metodo \texttt{saveActualChanges} di \textit{GBCtrl}, salvi i cambiamenti nel server solo se la combinazione di valori delle variabili \textit{name} e \textit{collegatoAlDB} è corretta e la rete non è sotto monitoraggio  & S.\\
 \hline
-TU0-152 & Viene verificato che il metodo \texttt{saveActualChanges} di \textit{GBCtrl} \textcolor{red}{Trascrivere Test non comprensibile} & S.\\
+TU0-152 & Viene verificato che il metodo \texttt{saveActualChanges} di \textit{GBCtrl}, salvi i cambiamenti nel server solo se la combinazione di valori delle variabili \textit{name} e \textit{collegatoAlDB} è corretta e la rete non è sotto monitoraggio  & S.\\
 \hline
-\rowcolor{grigio}TU0-153 & Viene verificato che il metodo \texttt{saveActualChanges} di \textit{GBCtrl} \textcolor{red}{Trascrivere Test non comprensibile} & S.\\
+\rowcolor{grigio}TU0-153 & Viene verificato che il metodo \texttt{saveActualChanges} di \textit{GBCtrl}, salvi i cambiamenti nel server solo se la combinazione di valori delle variabili \textit{name} e \textit{collegatoAlDB} è corretta e la rete non è sotto monitoraggio  & S.\\
 \hline
-TU0-154 & Viene verificato che il metodo \texttt{saveActualChanges} di \textit{GBCtrl} \textcolor{red}{Trascrivere Test non comprensibile} & S.\\
+TU0-154 & Viene verificato che il metodo \texttt{saveActualChanges} di \textit{GBCtrl}, salvi i cambiamenti nel server solo se la combinazione di valori delle variabili \textit{name} e \textit{collegatoAlDB} è corretta e la rete non è sotto monitoraggio  & S.\\
 \hline
 \rowcolor{grigio}TU0-155 & Viene verificato che il metodo \texttt{resetData} di \textit{GBCtrl} resetti tutte le impostazioni del pannello al valore di default, tornando \textbf{True} nel caso di buon esito dell'operazione & S.\\
 \hline
@@ -324,9 +324,9 @@ TU0-158 & Viene verificato che il metodo \texttt{checkIfConnectableToDB} di \tex
 \hline
 \rowcolor{grigio}TU0-159 & Viene verificato che il metodo \texttt{checkIfConnectableToDB} di \textit{GBCtrl} lanci un'eccezione nel caso in cui sia indicato un database non influx & S.\\
 \hline
-TU0-160 & Viene verificato che il metodo \texttt{getConnectionToDB} di \textit{GBCtrl} \textcolor{red}{Trascrivere Test non comprensibile} & S.\\
+TU0-160 & Viene verificato che il metodo \texttt{getConnectionToDB} di \textit{GBCtrl}, crei correttamente l'oggetto di \textit{GetApiGrafana} al fine di poter ottenere i dati dei database disponibili e ritorni \textbf{True} & S.\\
 \hline
-\rowcolor{grigio}TU0-161 & Viene verificato che il metodo \texttt{getConnectionToDB} di \textit{GBCtrl} \textcolor{red}{Trascrivere Test non comprensibile} & S.\\
+\rowcolor{grigio}TU0-161 & Viene verificato che il metodo \texttt{getConnectionToDB} di \textit{GBCtrl}, lanci un'eccezione nel caso si stia cercando di collegarsi ad un database non esistente in \textit{Grafana} & S.\\
 \hline
 TU0-162 & Viene verificato che il metodo \texttt{getFlushes} di \textit{GBCtrl} recuperi dal database tutti i possibili flussi dati salvandoli in un'apposita variabile, tornando \textbf{True} nel caso l'operazione sia andata a buon fine & S.\\
 \hline
@@ -354,7 +354,7 @@ TU0-172 & Viene verificato che il metodo \texttt{requestNetworkToServer(string)}
 \hline
 TU0-174 & Viene verificato che il metodo \texttt{loadNetwork(data)} di \textit{GBCtrl} carichi sul pannello la rete bayesiana "data", passata come parametro (\textit{JSON}) al metodo, tornando \textbf{True} nel caso di buon esito dell'operazione & S.\\
 \hline
-\rowcolor{grigio}TU0-175 & Viene verificato che il metodo \texttt{loadNetwork(data)} di \textit{GBCtrl} torni \textbf{False} nel caso in cui \textcolor{red}{Trascrivere Condizione non comprensibile} & S.\\
+\rowcolor{grigio}TU0-175 & Viene verificato che il metodo \texttt{loadNetwork(data)} di \textit{GBCtrl} torni \textbf{False} nel caso in cui all'interno del metodo ci sia un altro dei metodi richiamati che lancia un'eccezione, o per l'impossibilità di collegarsi al server o per problemi nella struttura della rete  & S.\\
 \hline
 TU0-176 & Viene verificato che il metodo \texttt{resetTresholds} di \textit{GBCtrl} elimini tutte le soglie, ripristinando le impostazioni di default del pannello & S.\\
 \hline
