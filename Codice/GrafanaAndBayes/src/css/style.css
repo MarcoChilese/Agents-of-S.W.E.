@@ -1,4 +1,4 @@
-.btn-warning {
+#view-monitoring .btn-warning, #settings-view-prob .btn-warning {
     color: #fff;
     text-shadow: 0 1px 0 rgba(0,0,0,.1);
     background-color: #ec8427;
@@ -7,18 +7,8 @@
     border-color: #eb7b18;
 }
 
-.btn-link {
+.td-button .btn-link {
     background: #DDDDDD;
-}
-
-.navbar-button--primary {
-    display: inline-block;
-    color: #fff;
-    text-shadow: 0 1px 0 rgba(0,0,0,.1);
-    background-color: #00678b;
-    background-image: linear-gradient(180deg,#005f81,#00729b);
-    background-repeat: repeat-x;
-    border-color: #005f81;
 }
 
 
