@@ -93,3 +93,11 @@
 - Programmatore: Bogdan Stanciu, Marco Favaro
 - Verificatore: Marco Chilese
 - Analista: Carlotta Segna
+
+### Ruoli (10) 
+- Amministratore: Marco Favaro
+- Responsabile: Marco Chilese
+- Progettista: -
+- Programmatore: Carlotta Segna, Diego Mazzalovo
+- Verificatore: Matteo Slanzi, Luca Violato, Bogdan Stanciu
+- Analista: -
