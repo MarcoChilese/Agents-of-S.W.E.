@@ -1,7 +1,22 @@
 \subsection{Configurazione Collegamento al Server}\label{CCS}
 
 Una volta aggiunto alla dashboard di \textit{Grafana} il pannello \textit{G\&B} (§\ref{AddPanel}) per poter interagire in modo efficace con il pannello è necessaria, come prima operazione, configurare il collegamento al server, che è il componente che si occupa delle operazioni di ricalcolo delle probabilità. Tale operazione funge da precondizione per ogni altra funzionalità del prodotto.\\
-Per poter effettuare l'operazione in esame l'utente deve innanzittuto accedere alla sezione \textbf{Server Settings} del menù di Edit del pannello, attraverso il percorso \textbf{Edit > Server Settings}.
+Per poter effettuare l'operazione in esame l'utente deve innanzittuto accedere all'apposita sezione del menù di Edit del pannello, attraverso il percorso \textbf{Edit > Visualization} (Figura \ref{EditMenu}). Si ricorda che il menù di edit può essere acceduto cliccando il nome del pannello e selezionando "Edit", oppure semplicemente attraverso il click del tasto "e".
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.31]{./images/VisualizServerSettings.png}
+		 \caption{Menù di Edit del Pannello \textit{G\&B}}	
+		 \label{EditMenu}
+	\end{center}
+\end{figure}
+
+Una volta selezionata la "tab" \textbf{Visualization} all'utente verrà dunque chiesto di inserire, negli appositi campi dati indicati in Figura \ref{ServerSettings}:
+\begin{enumerate}
+	\item Indirizzo IP del Server;
+	\item Porta del Server in ascolto.
+\end{enumerate}
+Una volta editati i campi dati indicati l'utente deve confermare le proprie scelte premendo il pulsante \textbf{Connetti}.\\
 
 \begin{figure}[H]
 	\begin{center}
@@ -11,12 +26,6 @@ Per poter effettuare l'operazione in esame l'utente deve innanzittuto accedere a
 	\end{center}
 \end{figure}
 
-All'utente verrà dunque chiesto di inserire, negli appositi campi dati indicati in Figura \ref{ServerSettings}:
-\begin{enumerate}
-	\item Indirizzo IP del Server;
-	\item Porta del Server in ascolto.
-\end{enumerate}
-Una volta editati i campi dati indicati l'utente deve confermare le proprie scelte premendo il pulsante \textbf{Connetti}.\\
 Nel caso in cui il cui la configurazione del server sia andata a buon fine l'utente viene avvisato dell'avvenuto collegamento attraverso un messaggio di notifica (Figura \ref{NotificaServer}).
 
 \begin{figure}[H]
