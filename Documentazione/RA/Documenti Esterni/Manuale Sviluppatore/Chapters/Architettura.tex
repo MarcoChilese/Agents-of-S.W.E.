@@ -31,25 +31,13 @@ In particolare i moduli separati sono:
 	\item \textbf{ModalCreator}: è il modulo che si occupa di visualizzare le finestre che permettono l'interazione con l'utente;
 	\item \textbf{GetAPIGrafana}: è il modulo che si occupa di interagire con le API di \textit{Grafana} per ottenere i dati relativi alle sorgenti dati.
 \end{itemize}
-
-\subsubsection{UML - Diagramma dei Package}
+Di seguito, attraverso un diagramma dei package, viene rappresentato come i vari moduli dipendono dagli altri e la relativa organizzazione.
 \begin{figure}[H]
 \begin{center}
 	\includegraphics[scale=0.6]{./images/panelPackage.png} 
 \end{center}
 \caption{Diagramma dei Package del Pannello}
 \end{figure}
-
-\begin{landscape}
-\subsubsection{UML - Diagramma delle Classi}
-\begin{figure}[H]
-	\begin{center}
-		\includegraphics[scale=0.27]{./images/panelClassi.png} 
-	\end{center}
-	\caption{Diagramma delle Classi del Pannello}
-\end{figure}
-\end{landscape}
-
 
 \subsection{Server}\label{archServer}
 Per rendere lo sviluppo più semplice, e garantire la manutenibilità del codice il team ha optato per un approccio modulare. In questo modo, avendo moduli separati con compiti distinti, sarà più semplice modificarne o estenderne il comportamento senza dover necessariamente modificare la base comune.\\
@@ -60,23 +48,10 @@ In particolare i moduli presenti per quanto riguarda lo sviluppo del server sono
 	\item \textbf{Network}: è il modulo che si occupa di adattare la libreria \textit{jsbayes} e costruisce la rete bayesiana da utlizzare;
 	\item \textbf{ProxyServer}: è il modulo che si occupa di filtrare, autenticare le richieste verso il server e  protegge lo stesso.
 \end{itemize}
-
-
-\subsubsection{UML - Diagramma dei Package}
+Di seguito, attraverso un diagramma dei package, viene rappresentato come i vari moduli dipendono dagli altri e la relativa organizzazione.
 \begin{figure}[H]
 	\begin{center}
 		\includegraphics[scale=0.6]{./images/serverPackage.png} 
 	\end{center}
 	\caption{Diagramma dei Package del Server}
 \end{figure}
-
-\begin{landscape}
-\subsubsection{UML - Diagramma delle Classi}
-\begin{figure}[H]
-	\begin{center}
-		\includegraphics[scale=0.35]{./images/serverClassi.png} 
-	\end{center}
-	\caption{Diagramma delle Classi del Server}
-\end{figure}
-\end{landscape}
-
