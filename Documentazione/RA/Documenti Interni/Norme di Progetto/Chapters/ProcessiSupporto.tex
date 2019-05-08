@@ -8,7 +8,7 @@ Questo capitolo descrive i dettagli su come deve essere redatta e verificata la 
 Il ciclo di vita previsto della documentazione si può suddividere principalmente in tre processi:
 \begin{itemize}
 	\item \textbf{Sviluppo}: è il processo di stesura, eseguita dal redattore, dove sviluppa il task\glossario assegnato dal \textit{Responsabile}. Una volta terminata la fase di scrittura del documento, il redattore lo segnalerà al \textit{Responsabile}, il quale assegnerà ad un \textit{Verificatore} il compito di analizzare il lavoro svolto;
- 	\item \textbf{Verifica}: è il processo eseguito dai \textit{Verificatori} designati dal responsabile. Il loro compito consiste nel controllare che il redattore abbia scritto il documento adottando le regole indicate nel documento \textit{Norme di Progetto v3.0.0} ed in maniera grammaticalmente e strutturalmente corretta;
+ 	\item \textbf{Verifica}: è il processo eseguito dai \textit{Verificatori} designati dal responsabile. Il loro compito consiste nel controllare che il redattore abbia scritto il documento adottando le regole indicate nel documento \textit{Norme di Progetto v4.0.0} ed in maniera grammaticalmente e strutturalmente corretta;
  	\item \textbf{Approvazione}: è il processo conclusivo, in cui il \textit{Verificatore} ha terminato il suo compito di controllo e comunica al \textit{Responsabile} il termine del lavoro. Il \textit{Responsabile} procederà a confermare il documento ed ad eseguirne il rilascio.
 \end{itemize}
 
@@ -83,13 +83,13 @@ Ogni documento, eccezion fatta per verbali e lettera di presentazione, presenta 
 \label{ProcessiSupporto_Documentazione_DocumentiCorrenti}
 Sono descritti brevemente i documenti formali da consegnare:
 \begin{itemize}
-	\item \textbf{\textit{Analisi dei Requisiti v3.0.0}}: ha un utilizzo prettamente esterno, inoltre ha l'obiettivo di esporre e scomporre i requisiti\glossario del progetto. Contiene i casi d'uso ed i diagrammi di interazione con l'utente. Viene redatto dagli \textit{Analisti} dopo una profonda analisi del capitolato ed eventuali colloqui con la proponente;
-	\item \textbf{\textit{Glossario v3.0.0}}: ha un utilizzo prettamente esterno ed ha lo scopo di dare una definizione ai termini più specifici usati nei documenti formali;
-	\item \textbf{\textit{Norme di Progetto v3.0.0}}: è utilizzato internamente, ed espone gli standard e le direttive utilizzate dal gruppo per sviluppare il progetto in tutta la sua interezza;
-	\item \textbf{\textit{Piano di Progetto v3.0.0}}: ha un utilizzo esterno, ed espone come il gruppo ha deciso di impiegare le risorse di tempo ed umane;
-	\item \textbf{\textit{Piano di Qualifica v3.0.0}}: ha un utilizzo esterno, descrive gli standard e gli obiettivi che il gruppo dovrà raggiungere per garantire la qualità di prodotto e processo;
-	\item \textbf{\textit{Manuale Utente v1.0.0}}: ha un utilizzo esterno, descrive le funzionalità del prodotto e spiega, in modo intuitivo e preciso, le modalità di utilizzo del plug-in \textit{G\&B};
-	\item \textbf{\textit{Manuale Sviluppatore v1.0.0}}: ha un utilizzo esterno, descrive tutte le informazioni necessarie agli sviluppatori che intenderanno estendere o migliorare il plug-in \textit{G\&B}.
+	\item \textbf{\textit{Analisi dei Requisiti v4.0.0}}: ha un utilizzo prettamente esterno, inoltre ha l'obiettivo di esporre e scomporre i requisiti\glossario del progetto. Contiene i casi d'uso ed i diagrammi di interazione con l'utente. Viene redatto dagli \textit{Analisti} dopo una profonda analisi del capitolato ed eventuali colloqui con la proponente;
+	\item \textbf{\textit{Glossario v4.0.0}}: ha un utilizzo prettamente esterno ed ha lo scopo di dare una definizione ai termini più specifici usati nei documenti formali;
+	\item \textbf{\textit{Norme di Progetto v4.0.0}}: è utilizzato internamente, ed espone gli standard e le direttive utilizzate dal gruppo per sviluppare il progetto in tutta la sua interezza;
+	\item \textbf{\textit{Piano di Progetto v4.0.0}}: ha un utilizzo esterno, ed espone come il gruppo ha deciso di impiegare le risorse di tempo ed umane;
+	\item \textbf{\textit{Piano di Qualifica v4.0.0}}: ha un utilizzo esterno, descrive gli standard e gli obiettivi che il gruppo dovrà raggiungere per garantire la qualità di prodotto e processo;
+	\item \textbf{\textit{Manuale Utente v2.0.0}}: ha un utilizzo esterno, descrive le funzionalità del prodotto e spiega, in modo intuitivo e preciso, le modalità di utilizzo del plug-in \textit{G\&B};
+	\item \textbf{\textit{Manuale Sviluppatore v2.0.0}}: ha un utilizzo esterno, descrive tutte le informazioni necessarie agli sviluppatori che intenderanno estendere o migliorare il plug-in \textit{G\&B}.
 \end{itemize}
 
 \subsubsection{Ambiente}\label{ProcessiSupporto_Documentazione_Ambiente}
@@ -117,7 +117,7 @@ La struttura del repository segue il workflow \textit{gitflow} di \textit{Driess
 Il master viene considerato il branch main, dove il codice sorgente della testa riflette sempre lo stato di \textit{"production-ready"},
 mentre il ramo di develop è considerato il branch principale dove vengono effettuate le ultime modifiche per il prossimo incremento del prodotto.\\
 Più precisamente, per quanto riguarda i documenti, il repository utilizzato è "Agents-of-S.W.E." ed è caratterizzata da due cartelle principali: "Documentazione" e "Codice".\\
-Per quanto riguarda la prima, essa contiene le sottocartelle "RR", "RP" ed "RQ" che rappresentano la principale struttura in cui sono organizzati i file su cui il gruppo \texttt{Agents of S.W.E.} ha lavorato in vista dell'ultima consegna prestabilita.\\
+Per quanto riguarda la prima, essa contiene le sottocartelle "RR", "RP", "RQ" ed "RA" che rappresentano la principale struttura in cui sono organizzati i file su cui il gruppo \texttt{Agents of S.W.E.} ha lavorato in vista dell'ultima consegna prestabilita.\\
 	Nello specifico la sottocartella "RR" è caratterizzata dalla seguente struttura di folder:
 	\begin{itemize}
 	\item \textbf{Documenti Esterni}:
@@ -169,6 +169,25 @@ Per quanto riguarda la prima, essa contiene le sottocartelle "RR", "RP" ed "RQ" 
 		\item \textbf{Documenti Interni}:
 		\begin{itemize}
 			\item \textit{Norme di Progetto v3.0.0};
+			\item \textit{Verbali Interni}.
+		\end{itemize}
+		\item \textbf{Corrispondenza};
+		\item \textbf{Utility}.
+	\end{itemize}
+	Nello specifico la sottocartella "RA" è caratterizzata dalla seguente struttura di folder:
+	\begin{itemize}
+		\item \textbf{Documenti Esterni}:
+		\begin{itemize}
+			\item \textit{Analisi dei Requisiti v4.0.0};
+			\item \textit{Glossario v4.0.0};
+			\item \textit{Piano di Progetto v4.0.0};
+			\item \textit{Piano di Qualifica v4.0.0};
+			\item \textit{Manuale Utente v2.0.0};
+			\item \textit{Manuale Sviluppatore v2.0.0};
+		\end{itemize}
+		\item \textbf{Documenti Interni}:
+		\begin{itemize}
+			\item \textit{Norme di Progetto v4.0.0};
 			\item \textit{Verbali Interni}.
 		\end{itemize}
 		\item \textbf{Corrispondenza};
@@ -325,7 +344,7 @@ Categoria di test atta a verificare se il software sviluppato sia conforme alle 
 \subsubsection{Verifica dei Diagrammi UML}
 I verificatori devono controllare che i diagrammi UML prodotti rispettino lo standard \textit{UML 2.x} e che siano corretti semanticamente.
 
-\subsubsection{Strumenti}
+\subsubsection{Strumenti}\label{StrumentiVerifica}
 \begin{itemize}
 	\item \textbf{Software}: per la verifica del codice \textit{JavaScript} è stato scelto \textit{Jest};
 	\item \textbf{Documenti}: per la verifica dei documenti si utilizzano le funzionalità di \textit{TexMaker};
