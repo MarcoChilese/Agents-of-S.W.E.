@@ -16,7 +16,7 @@ const config = require('./conf.json');
 
 
 class Server {
-	
+
 	constructor() {
 		// Init Express
 		this.app = express();
@@ -26,7 +26,7 @@ class Server {
 
 		this.app.use(compression());
 		this.app.use(cors({origin: '*'}));
-		
+
 		// Get the absolute path where the script run
 		this.path = `${__dirname}/..`;
 		this.conf = config;
@@ -34,7 +34,7 @@ class Server {
 		// Array of InfluxDB object
 		this.db = [];
 
-		// pool of networks 
+		// pool of networks
 		this.pool = [];
 
 		// list of network jsbayse.graph
@@ -53,7 +53,7 @@ class Server {
 			this.host = ((argv['h'] === undefined) ? 'localhost' : argv['h']);
 		}
 		else{
-			this.port = 8600; 
+			this.port = 8600;
 			this.host = ((argv['h'] === undefined) ? 'localhost' : argv['h']);
 			// throw new Error("[code_error] - Parametri passati mancanti");
 		}
@@ -61,17 +61,17 @@ class Server {
 
 
 	/**
-	* Method to configure express
-	* @throws {Error}
-	*/
+	 * Method to configure express
+	 * @throws {Error}
+	 */
 	configExpressApp() {
 
-		// Return the current time 
+		// Return the current time
 		this.app.get('/', (req, res) => {
 			res.json({time: new Date()});
 		});
 
-		// Return a json with the current date and the port where the server is listening 
+		// Return a json with the current date and the port where the server is listening
 		this.app.get('/alive', (req, res) => {
 			var status = {
 				date: new Date().toString(),
@@ -91,8 +91,8 @@ class Server {
 		this.app.post('/uploadnetwork', (req, res) => {
 			try {
 				this.saveNetworkToFile(req.body);
-			} catch (err) {
-				res.status(404).send("ERRORE CARICAMENTO RETE "); 
+			}catch (err) {
+				res.status(404).send("ERRORE CARICAMENTO RETE ");
 			}
 			res.send("Rete caricata");
 		});
@@ -103,33 +103,33 @@ class Server {
 		});
 
 		this.app.get('/getpool', (req, res) => {
-			let names = []; 
+			let names = [];
 			for(let t in this.pool){
-				names.push(this.pool[t].name); 
+				names.push(this.pool[t].name);
 			}
 
-			res.json(names); 
+			res.json(names);
 		});
 
 		// Method for getting a definitoin of a network in json
 		this.app.get('/getnetwork/:net', (req, res) => {
 			let name = req.params.net;
 			if(name === '' || name === undefined)
-				name = false; 
+				name = false;
 			else
-				name = name.replace(/ /g, ''); 
-			
+				name = name.replace(/ /g, '');
+
 			if(name === false)
 				res.status(404).send("Network not found");
 
 			else{
 				let dirs = fs.readdirSync(`${this.path}/${this.conf['saved_network']}`);
-			
+
 				if(dirs.includes(`${name}.json`)){
 					fs.readFile(`${this.path}/${this.conf['saved_network']}/${name}.json`, (err, data) => {
 						if(err)
-							throw err; 
-						res.json(JSON.parse(data)); 
+							throw err;
+						res.json(JSON.parse(data));
 					});
 				}
 				else
@@ -139,49 +139,47 @@ class Server {
 
 		// Route per ritornare le reti instanziate nell'array
 		this.app.get('/networkslive', (req, res) => {
-			let tmp = {}; 
+			let tmp = {};
 
 			for(let rete in this.networks)
 				tmp[this.networks[rete].net.name] = this.networks[rete].monitoring;
 
-			res.json(tmp);
-		});
+				res.json(tmp);
+			});
 
 		this.app.get('/deletenetwork/:net', (req, res) => {
-			let name = req.params.net;
+				let name = req.params.net;
 
 			if(name === '' || name === undefined){
-				res.status(404); 
-				res.send("Network name empty !"); 
+				res.status(404);
+				res.send("Network name empty !");
 			}
 
 			name = name.replace(/ /g, '_');
 			fs.readdir(`${this.path}/${this.conf['saved_network']}`, (err, files) => {
 				if(err)
-					throw err; 
+					throw err;
 
 				if(files.includes(`${name}.json`)){
 					fs.unlink(`${this.path}/${this.conf['saved_network']}/${name}.json`, (err) => {
 						if(err)
-							throw err; 
+						throw err;
 					});
-
-					res.send("Network deleted!"); 
-					
+					res.send("Network deleted!");
 				}
 				else{
-					res.status(404); 
-					res.send("Network not found !"); 
+					res.status(404);
+					res.send("Network not found !");
 				}
 			});
-			
+
 		});
 
 		//----------TESTING-----------//
 		// this.app.get('/getviz', (req, res) => {
 		// 	var g = jsbayesviz.fromGraph(this.networks['Alarm']);
 		// 	// console.log(this.networks['Alarm'].graph.nodes.length);
-		// 	// let data = jsbayesviz.downloadSamples(g); 
+		// 	// let data = jsbayesviz.downloadSamples(g);
 		// 	res.json(JSON.stringify(g));
 		// });
 
@@ -190,27 +188,27 @@ class Server {
 		// Add to monitoring pool
 		this.app.get('/addtopool/:net', (req, res) => {
 			let name = this.parserNetworkNameURL(req.params.net);
-			
+
 			if(name === false){
-				res.status(404); 
-				res.send("Network not valid !"); 
+				res.status(404);
+				res.send("Network not valid !");
 			}
 
 			if(this.networks[name].monitoring == false){
 				if(this.addToPool(name)){
-					this.networks[name].monitoring = true; 
-					res.send("Network on monitoring !"); 
+					this.networks[name].monitoring = true;
+					res.send("Network on monitoring !");
 				}
 				else{
 					res.status(404);
-					res.send("Error network add to pool !"); 
+					res.send("Error network add to pool !");
 				}
 			}
 		});
 
-		// Return the probability of the given network 
+		// Return the probability of the given network
 		this.app.get('/getnetworkprob/:net', (req, res) => {
-			let name = this.parserNetworkNameURL(req.params.net); 
+			let name = this.parserNetworkNameURL(req.params.net);
 
 			if(name === false){
 				res.status(404).send("Network not found");
@@ -226,23 +224,23 @@ class Server {
 		});
 
 		this.app.get('/deletenetpool/:net', (req, res) => {
-			let name = this.parserNetworkNameURL(req.params.net); 
-			
+			let name = this.parserNetworkNameURL(req.params.net);
+
 			if(name === false)
 				res.status(404).send('Network not found');
 
 			if(this.deleteFromPool(name))
 				res.send('Network delete');
 			else
-				res.status(404).send('Network not found');			
+				res.status(404).send('Network not found');
 		});
 	}
 
 	/**
-	 * Metodo per parsare il nome della rete proveniente nell'URL 
+	 * Metodo per parsare il nome della rete proveniente nell'URL
 	 * @return{boolean} return false se il nome è errato o la rete non e inizializzata
-	 * @return{String} return il nome parsato 
-	**/
+	 * @return{String} return il nome parsato
+	 **/
 	parserNetworkNameURL(name){
 		if(name === '' || name === undefined || typeof name != 'string')
 			return false;
@@ -252,15 +250,15 @@ class Server {
 
 
 	/**
-	* La funzione salva la rete in un file, con nome preso dal campo data.name
-	* all'interno della definizione della rete. Controlla se esiste la folder altrimenti la crea seguendo le 'confi.json'
-	* @param {JSON} data: la rete rappresentate in json
-	* @throws {Error}
-	* @returns {boolean}
-	*/
+	 * La funzione salva la rete in un file, con nome preso dal campo data.name
+	 * all'interno della definizione della rete. Controlla se esiste la folder altrimenti la crea seguendo le 'confi.json'
+	 * @param {JSON} data: la rete rappresentate in json
+	 * @throws {Error}
+	 * @returns {boolean}
+	 */
 	saveNetworkToFile(data) {
 		let dirs = fs.readdirSync(`${this.path}`);
-		
+
 		if(!dirs.includes(this.conf['saved_network'])){
 			try{
 				fs.mkdirSync(`${this.path}/${this.conf['saved_network']}`);
@@ -268,29 +266,29 @@ class Server {
 				throw err;
 			}
 		}
-		
-		
+
+
 		let files = fs.readdirSync(`${this.path}/${this.conf['saved_network']}`);
 		data.name = data.name.replace(/ /g, '_');
 		// Se esiste già la rete caricata
 		if(files.includes(`${data.name}.json`)){
-			
+
 			if(this.networks[data.name] !== undefined)
 				if(this.networks[data.name].monitoring === true){
 					this.deleteFromPool(data.name);
 				}
 
 			this.networks[data.name] = undefined;
-			
+
 			try{
-				fs.unlinkSync(`${this.path}/${this.conf['saved_network']}/${data.name}.json`);	
+				fs.unlinkSync(`${this.path}/${this.conf['saved_network']}/${data.name}.json`);
 			}catch(err){
 				console.log(err);
-			}			
+			}
 		}
 
 		if(data.name === undefined)
-			throw new Error("[code_error] - Nome della rete non presente !"); 
+			throw new Error("[code_error] - Nome della rete non presente !");
 
 
 		let name = data.name.replace(/ /g, '_').replace(/'/g, '').replace(/"/g, "");
@@ -304,79 +302,79 @@ class Server {
 			}
 		});
 
-		let check = true; 
+		let check = true;
 		try{
 			check = this.initDatabaseConnection(data.database)
 		}catch(err){
-			throw err; 
+			throw err;
 		}
-		
+
 		if(!check)
-			// console.log("Connessione esistente !"); 
-			
+			// console.log("Connessione esistente !");
+
 		this.initBayesianNetwork(data);
-	}
-	
-	/**
-    * Metodo che fa partire il server e rimane in ascolto
-    * per request varie.
-    * @return {}
-    */
-	startServer() {
-		this.server = this.app.listen(this.port);
-		console.log(`Listening at http://${this.host}:${this.port}`);
-		this.initSavedNetworks(); 
 	}
 
 	/**
-    * Inizializza le reti da monitorare salvate.
-    * per request varie.
-    * @return {}
-    */
+	 * Metodo che fa partire il server e rimane in ascolto
+	 * per request varie.
+	 * @return {}
+	 */
+	startServer() {
+		this.server = this.app.listen(this.port);
+		console.log(`Listening at http://${this.host}:${this.port}`);
+		this.initSavedNetworks();
+	}
+
+	/**
+	 * Inizializza le reti da monitorare salvate.
+	 * per request varie.
+	 * @return {}
+	 */
 	initSavedNetworks(){
 		let path = this.conf['saved_network'];
-		let nets = []; 
+		let nets = [];
 
 		try{
 			for(let n of fs.readdirSync(`${this.path}/${this.conf['saved_network']}`)){
 				if(n.includes('.json')){
-					let tmp; 
+					let tmp;
 					try{
 						tmp = JSON.parse(fs.readFileSync(`${this.path}/${this.conf['saved_network']}/${n}`));
 					} catch(err){
-						throw err; 
+						throw err;
 					}
-					
+
 					this.initBayesianNetwork(tmp);
 
 					if(tmp.name != undefined){
 						if(!this.initDatabaseConnection(tmp.database))
-							console.log("Database non inizializzato !"); 
+							console.log("Database non inizializzato !");
 					}
 				}
 			}
 		} catch(err){
-			throw err; 
+			throw err;
 		}
 	}
 
 	/**
-	* TODO: Da rifare con pool di connesioni ?!
-	* Costruisco la rete bayesiana con la libreria jsbayes e la aggiunge alla lista
-	* @throws {Error}
-	* @return {booelan} true if all it's ok
-	*/
+	 * TODO: Da rifare con pool di connesioni ?!
+	 * Costruisco la rete bayesiana con la libreria jsbayes e la aggiunge alla lista
+	 * @throws {Error}
+	 * @return {booelan} true if all it's ok
+	 */
 	initDatabaseConnection(connection){
 		if(this.db[connection.name] != undefined)
-			return false; 
+			return false;
 		else{
 			// this.db = new database('142.93.102.115', '8086', 'telegraf');
 			let url = connection.url.replace('http://', '');
 			url = url.split(":");
-			
+
 			if(url.length != 2)
 				throw new Error("[Error_code] - url non corretto !");
-			
+
 			let db_write = 'networks_probabilites';
 
 			if(this.conf.db_write != undefined && this.conf.db_write != '')
@@ -386,23 +384,23 @@ class Server {
 				if(connection.user !== '' && connection.password !== '')
 					this.db[connection.name] = new database(url[0], url[1], connection.database, db_write, connection.user, connection.password);
 				else
-					this.db[connection.name] = new database(url[0], url[1], connection.database, db_write);				
+					this.db[connection.name] = new database(url[0], url[1], connection.database, db_write);
 			} catch(err){
 				console.log(err);
-				throw err; 
+				throw err;
 			}
-			
-			return true; 
+
+			return true;
 		}
 
 
 	}
 
 	/**
-    * Costruisco la rete bayesiana con la libreria jsbayes e la aggiunge alla lista
-    * @throws {Error}
-    * @return {booelan} true if all it's ok
-    */
+	 * Costruisco la rete bayesiana con la libreria jsbayes e la aggiunge alla lista
+	 * @throws {Error}
+	 * @return {booelan} true if all it's ok
+	 */
 	initBayesianNetwork(net) {
 		this.networks[net.name] = new Network(net);
 		if(this.networks[net.name].monitoring === true)
@@ -410,33 +408,50 @@ class Server {
 	}
 
 	/**
-    * Ritorna il numero di reti bayesiane inizializzate
-    * @return {Number} Number of bayesian networks
-    */
+	 * Ritorna il numero di reti bayesiane inizializzate
+	 * @return {Number} Number of bayesian networks
+	 */
 	countNetworks() {
 		return Object.keys(this.networks).length;
 	}
 
 
 	/**
-    * Gestisce il il flusso di dati in output dal db 
-    * e lo fornisce come input alla rete bayesiana
-    * @return {Number} Number of bayesian networks
-    */
+	 * Gestisce il il flusso di dati in output dal db
+	 * e lo fornisce come input alla rete bayesiana
+	 * @return {Number} Number of bayesian networks
+	 */
 	observeNetworks(net, data) {
-		// console.log(this.db[this.networks[net].net.database.name]);
-		this.db[this.networks[net].net.database.name].getListData(data).then(r => {		
+		console.log("------------fetch------------")
+		this.db[this.networks[net].net.database.name].getListData(data).then(r => {
 			let check = this.networks[net].observeData(r);
+
+			if(check === true && this.networks[net].critica === false) {
+				//primo accesso in soglia critica --> pool ogni 5s
+
+				//stop ricalcolo
+				clearInterval(this.pool[net].observer)
+
+				//start ricalcolo con politica 5s
+				this.pool[net].observer = setInterval(this.observeNetworks.bind(this), 5000, net, this.networks[net].dati);
+				this.networks[net].critica = true;
+			}
+			else if(check === false && this.networks[net].critica === true){
+				//uscita soglia critica --> torno alla politica temporale precedentemente settata
+				clearInterval(this.pool[net].observer);
+				this.networks[net].critica = false;
+				this.pool[net].observer = setInterval(this.observeNetworks.bind(this), this.getMilliseconds(this.networks[net].net.temporalPolicy), net, this.networks[net].dati);
+			}
 			this.writeMesure(net);
 		});
 	}
 
 
 	/**
-    * Controlla che nel file di configurazione
-    * ci siano gli attributi obbligatori
-    * @return {booelan} true if all it's ok, false altrimenti
-    */
+	 * Controlla che nel file di configurazione
+	 * ci siano gli attributi obbligatori
+	 * @return {booelan} true if all it's ok, false altrimenti
+	 */
 	static configParser(config) {
 		let lista = Object.keys(config);
 		let keys = ['saved_network', 'path'];
@@ -450,9 +465,9 @@ class Server {
 	}
 
 	/**
-    * Controlla i parametri obbligatori passati a terminale
-    * @return {booelan} true if all it's ok, false altrimenti
-    */
+	 * Controlla i parametri obbligatori passati a terminale
+	 * @return {booelan} true if all it's ok, false altrimenti
+	 */
 	static checkParam(argv) {
 		let lista = ['p'];
 		for (let key of lista) {
@@ -465,19 +480,19 @@ class Server {
 	/**
 	 * Metodo per "distruzione" e spegnimento server express
 	 * @throws{error}
-	**/
+	 **/
 	shutDown() {
 		console.log("Closed kill signal, shutting down gracefully");
 		this.app.close(() => {
 			process.exit(0);
-		});
+	});
 	}
 
 	/**
 	 * Method used to retrieve all available networks saved with monitoring status.
 	 * @return{array} all networks
 	 * @throws{error} if reads a not valid file
-	**/
+	 **/
 	getNetworks() {
 		let tmp = [];
 		// open directory
@@ -490,12 +505,12 @@ class Server {
 			// adding each network
 			try {
 				const file = JSON.parse(fs.readFileSync(`${this.path}/${this.conf['saved_network']}/${net}`));
-				let dict = {}; 
-				dict['name'] = file.name; 
-				dict['monitoring'] = file.monitoring; 			
-				tmp.push(dict); 
+				let dict = {};
+				dict['name'] = file.name;
+				dict['monitoring'] = file.monitoring;
+				tmp.push(dict);
 			} catch (e) {
-				throw e; 
+				throw e;
 			}
 		}
 		return tmp;
@@ -505,71 +520,70 @@ class Server {
 	/**
 	 * Return the total amount of ms from temporal policy
 	 * @return{int} the number of ms
-	**/	
+	 **/
 	getMilliseconds(temporal){
-		return (temporal.seconds + temporal.minutes*60 + temporal.hours*3600)*1000; 
+		return (temporal.seconds + temporal.minutes*60 + temporal.hours*3600)*1000;
 	}
 
 	/**
-	 * Add a network in pool 
-	 * @return{Boolean} true if net is add, false if the network is already in 
-	**/
+	 * Add a network in pool
+	 * @return{Boolean} true if net is add, false if the network is already in
+	 **/
 	addToPool(net){
 
 		if(this.pool[net] !== undefined)
-			return false; 
+			return false;
 		// for(let ob of this.pool){
 		// 	if(ob !== undefined)
 		// 		if(ob.name == net && this.pool[ob.name] !== undefined)
-		// 			return false; 
+		// 			return false;
 		// }
 
-		this.networks[net].monitoring = true; 
-		let dict = {}; 
+		this.networks[net].monitoring = true;
+		let dict = {};
 		dict.name = net;
-		let observer; 
-		observer = setInterval(this.observeNetworks.bind(this), this.getMilliseconds(this.networks[net].net.temporalPolicy), net, this.networks[net].dati);
-		dict.observer = observer;
-		this.pool[net] = dict; 
-		return true; 
+		this.networks[net].interval = setInterval(this.observeNetworks.bind(this), this.getMilliseconds(this.networks[net].net.temporalPolicy), net, this.networks[net].dati);
+		dict.observer = this.networks[net].interval ;
+		this.pool[net] = dict;
+		return true;
 	}
 
 	/**
-	 * Delete a network from the pool 
+	 * Delete a network from the pool
 	 * @return{Boolean} true if net exits and is delete, false otherwise
-	**/
+	 **/
 	deleteFromPool(net){
-		let check = false; 
+		let check = false;
 
 		if(this.pool[net] === undefined)
-			return check; 
+			return check;
 
 		clearInterval(this.pool[net].observer);
-		check = true; 
+		check = true;
 		delete this.pool[net];
-		return check; 
+		return check;
 	}
 
 	/**
 	 * Salva le probabilità delle rete nel database salvato all'interno della rete
-	 * @return{Boolean}: true se i dati sono stati scritti, false se non ci sono probabilità da salvare 
+	 * @return{Boolean}: true se i dati sono stati scritti, false se non ci sono probabilità da salvare
 	 * @throws{Error}
-	**/
+	 **/
 	writeMesure(net){
 		let data = this.networks[net].getProbabilities();
-		
+
 		// Se non ci sono probabilità da inserire ritorno
 		if(data[0].prob.length == 0)
 			return false;
 		try{
-			this.db[this.networks[net].net.database.name].writeOnDB(net, data); 	
+			this.db[this.networks[net].net.database.name].writeOnDB(net, data);
 		} catch(err){
 			if(err)
-				throw err; 
+				throw err;
 		}
-		return true; 
+		return true;
 	}
-	
+
 }
 
 

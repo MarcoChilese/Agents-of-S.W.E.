@@ -6,7 +6,7 @@ class Network{
 		this.net = net;
 		// g is the bayesian graph
 		this.graph = jsbayes.newGraph();
-		
+
 		// boolean to start the monitoring
 		this.monitoring = net.monitoring;
 
@@ -16,10 +16,13 @@ class Network{
 		// Tutti i dati dal db necessari
 		this.dati = [];
 
-		this.temporalPolicy = -1; 		
+		//true se viene superata una soglia critica
+		this.critica = false;
+
+		this.temporalPolicy = net.temporalPolicy;
 		// Creazione dei nodi (nodo = 0,1,2,3,4, ecc..)
-		
-		
+
+
 		for(const nodo of net.nodes)
 			this.graph.addNode(nodo, net.states[nodo]);
 
@@ -41,7 +44,7 @@ class Network{
 
 			if(net.flushesAssociations[node] != undefined)
 				this.dati.push(net.flushesAssociations[node]);
-	
+
 		}
 	}
 
@@ -82,50 +85,53 @@ class Network{
 		// Perche prima fai "unobserve" !?!?!?
 		// for(const el in net.nodes)
 		// this.graph.unobserve(net.nodes[el]);
-		let critico = false; 
+		let critico = false;
 
 		// Per ogni soglia
 		this.unobserveAll();
 
 		for(let soglia in this.soglie){
 			let dato_monitorato = dati[this.net.flushesAssociations[soglia].flush];
-		
+
 			for(let parametri of this.soglie[soglia]){
-			
+
 				// 1 controllo la probabilità con la soglia
 				// 2 controllo il flusso di dati con la soglia
 				// prendo il flusso associato che monitoro flushesAssociation
+				// console.log(dato_monitorato + ' ' + parametri.sign + ' ' +  parametri.value );
 				if(parametri.sign == "<="){
 					if(dato_monitorato <= parametri.value){
-						critico = (parametri.critical ? critico || true : critico || false);
+						critico = (parametri.critical ? critico || true : critico);
 						this.observe(soglia, parametri.state);
 					}
 				}
 
 				if(parametri.sign == ">="){
 					if(dato_monitorato >= parametri.value){
-						critico = (parametri.critical ? critico || true : critico || false);
+						critico = (parametri.critical ? critico || true : critico);
 						this.observe(soglia, parametri.state);
 					}
 				}
 
 				if(parametri.sign == "<"){
 					if(dato_monitorato < parametri.value){
-						critico = (parametri.critical ? critico || true : critico || false);
+						critico = (parametri.critical ? critico || true : critico);
 						this.observe(soglia, parametri.state);
 					}
 				}
 
 				if(parametri.sign == ">"){
 					if(dato_monitorato > parametri.value){
-						critico = (parametri.critical ? critico || true : critico || false);
+						critico = (parametri.critical ? critico || true : critico);
 						this.observe(soglia, parametri.state);
 					}
 				}
 
 			}
 		}
+
 		this.sample(1000);
+
 		return critico;
 	}
 
@@ -137,10 +143,10 @@ class Network{
 		let data = [];
 
 		for(const el of this.net.nodes){
-			let tmp = {}; 
-			tmp.node = el; 
+			let tmp = {};
+			tmp.node = el;
 			tmp.states = this.net.states[el];
-			tmp.prob = this.graph.node(el).probs();  
+			tmp.prob = this.graph.node(el).probs();
 			data.push(tmp);
 		}
 		return data;
