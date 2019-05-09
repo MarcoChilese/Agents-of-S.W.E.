@@ -23,7 +23,6 @@ class Server {
 		this.app.use(express.json());
 		this.app.use(bodyParser.json({limit: '50mb'}));
 		this.app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
-
 		this.app.use(compression());
 		this.app.use(cors({origin: '*'}));
 
@@ -40,6 +39,8 @@ class Server {
 		// list of network jsbayse.graph
 		this.networks = [];
 
+
+		this.server = null; 
 
 		// Simple parser
 		if (Server.configParser(config) === true)
@@ -103,12 +104,7 @@ class Server {
 		});
 
 		this.app.get('/getpool', (req, res) => {
-			let names = [];
-			for(let t in this.pool){
-				names.push(this.pool[t].name);
-			}
-
-			res.json(names);
+			res.json(Object.keys(this.pool));
 		});
 
 		// Method for getting a definitoin of a network in json
@@ -148,61 +144,44 @@ class Server {
 			});
 
 		this.app.get('/deletenetwork/:net', (req, res) => {
-				let name = req.params.net;
-
-			if(name === '' || name === undefined){
-				res.status(404);
-				res.send("Network name empty !");
-			}
-
-			name = name.replace(/ /g, '_');
-			fs.readdir(`${this.path}/${this.conf['saved_network']}`, (err, files) => {
+			let name = req.params.net;
+			// var format = /[ !@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/;
+			if(name === '' || name === undefined )
+				res.status(404).send("Network name empty !");
+			else{
+				name = name.replace(/ /g, '_');
+				fs.readdir(`${this.path}/${this.conf['saved_network']}`, (err, files) => {
 				if(err)
 					throw err;
 
 				if(files.includes(`${name}.json`)){
 					fs.unlink(`${this.path}/${this.conf['saved_network']}/${name}.json`, (err) => {
 						if(err)
-						throw err;
+							throw err;
 					});
-					res.send("Network deleted!");
+					res.status(200).send("Network deleted!");
 				}
-				else{
-					res.status(404);
-					res.send("Network not found !");
-				}
-			});
-
+				else
+					res.status(404).send("Network not found !");
+				});
+			}
 		});
-
-		//----------TESTING-----------//
-		// this.app.get('/getviz', (req, res) => {
-		// 	var g = jsbayesviz.fromGraph(this.networks['Alarm']);
-		// 	// console.log(this.networks['Alarm'].graph.nodes.length);
-		// 	// let data = jsbayesviz.downloadSamples(g);
-		// 	res.json(JSON.stringify(g));
-		// });
-
-		//---------------------------//
 
 		// Add to monitoring pool
 		this.app.get('/addtopool/:net', (req, res) => {
 			let name = this.parserNetworkNameURL(req.params.net);
+			console.log(name); 
 
-			if(name === false){
-				res.status(404);
-				res.send("Network not valid !");
-			}
+			if(name === false)
+				res.status(404).send("Network not valid !");
 
 			if(this.networks[name].monitoring == false){
 				if(this.addToPool(name)){
 					this.networks[name].monitoring = true;
 					res.send("Network on monitoring !");
 				}
-				else{
-					res.status(404);
-					res.send("Error network add to pool !");
-				}
+				else
+					res.status(404).send("Error network add to pool !");
 			}
 		});
 
@@ -322,9 +301,20 @@ class Server {
 	 */
 	startServer() {
 		this.server = this.app.listen(this.port);
-		console.log(`Listening at http://${this.host}:${this.port}`);
+		// console.log(`Listening at http://${this.host}:${this.port}`);
 		this.initSavedNetworks();
 	}
+
+
+	/**
+	 * Metodo per "distruzione" e spegnimento server express
+	 * @throws{error}
+	 **/
+	shutDown() {
+		// console.log("Closed kill signal, shutting down gracefully");
+		this.server.close(); 
+	}
+
 
 	/**
 	 * Inizializza le reti da monitorare salvate.
@@ -421,29 +411,25 @@ class Server {
 	 * e lo fornisce come input alla rete bayesiana
 	 * @return {Number} Number of bayesian networks
 	 */
-	observeNetworks(net, data) {
-		console.log("------------fetch------------")
-		this.db[this.networks[net].net.database.name].getListData(data).then(r => {
-			let check = this.networks[net].observeData(r);
+	async observeNetworks(net, data) {
+		let r = await this.db[this.networks[net].net.database.name].getListData(data);
+		let check = this.networks[net].observeData(r);
 
-			if(check === true && this.networks[net].critica === false) {
-				//primo accesso in soglia critica --> pool ogni 5s
+		if(check === true && this.networks[net].critica === false) {
+			//stop ricalcolo
+			clearInterval(this.pool[net].observer)
+			//re-start ricalcolo con politica 5s
+			this.pool[net].observer = setInterval(this.observeNetworks.bind(this), 5000, net, this.networks[net].dati);
+			this.networks[net].critica = true;	
+		}
+		if(check === false && this.networks[net].critica === true) {
+			//uscita soglia critica --> torno alla politica temporale precedentemente settata
+			clearInterval(this.pool[net].observer);
+			this.networks[net].critica = false;
+			this.pool[net].observer = setInterval(this.observeNetworks.bind(this), this.getMilliseconds(this.networks[net].net.temporalPolicy), net, this.networks[net].dati);
+		}
+		this.writeMesure(net);
 
-				//stop ricalcolo
-				clearInterval(this.pool[net].observer)
-
-				//start ricalcolo con politica 5s
-				this.pool[net].observer = setInterval(this.observeNetworks.bind(this), 5000, net, this.networks[net].dati);
-				this.networks[net].critica = true;
-			}
-			else if(check === false && this.networks[net].critica === true){
-				//uscita soglia critica --> torno alla politica temporale precedentemente settata
-				clearInterval(this.pool[net].observer);
-				this.networks[net].critica = false;
-				this.pool[net].observer = setInterval(this.observeNetworks.bind(this), this.getMilliseconds(this.networks[net].net.temporalPolicy), net, this.networks[net].dati);
-			}
-			this.writeMesure(net);
-		});
 	}
 
 
@@ -475,17 +461,6 @@ class Server {
 				return false;
 		}
 		return true;
-	}
-
-	/**
-	 * Metodo per "distruzione" e spegnimento server express
-	 * @throws{error}
-	 **/
-	shutDown() {
-		console.log("Closed kill signal, shutting down gracefully");
-		this.app.close(() => {
-			process.exit(0);
-	});
 	}
 
 	/**
@@ -561,6 +536,7 @@ class Server {
 		clearInterval(this.pool[net].observer);
 		check = true;
 		delete this.pool[net];
+		this.networks[net].monitoring = false; 
 		return check;
 	}
 

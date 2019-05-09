@@ -38,7 +38,6 @@ describe('Testing Network class', () => {
 		let check = network_test.observeData(testing_data); 
 		let results = network_test.getProbabilities(); 
 		expect(check).toBeTruthy();
-
 	});
 
 }); 

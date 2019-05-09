@@ -42,7 +42,7 @@ expect.extend({
 
 
 describe('Testing server...', () => {
-
+	
 	/**
 	* Verifico che il server carichi le reti salvate 
 	* all'avvio di quest'ultimo 
@@ -182,7 +182,7 @@ describe('Testing server...', () => {
 	});
 
 	// TU0-13
-	test('TU0-13 Testing the /alive path', (done) => {
+	test('TU0-13 Testing the /alive route', (done) => {
 		request(app.app).get('/alive').then((response) => {
 			expect(response.body).isJSON(); 
 			done(); 
@@ -348,10 +348,12 @@ describe('Testing server...', () => {
 	* una rete valida.
 	*/
 	test("Testing eliminazione di una rete in pool", () => {
-		let net = "Alarm";
-		expect(server.pool[net]).not.toBeUndefined(); 
-		expect(server.deleteFromPool(net)).toBeTruthy();
-		expect(server.pool[net]).toBeUndefined(); 
+		let networks = Object.keys(server.networks);
+		for(let net of networks){
+			expect(server.pool[net]).not.toBeUndefined(); 	
+			expect(server.deleteFromPool(net)).toBeTruthy();
+			expect(server.pool[net]).toBeUndefined(); 
+		}
 	});
 
 
@@ -359,10 +361,13 @@ describe('Testing server...', () => {
 	* Testing del metodo addToPool() con una rete valida
 	*/
 	test("Testing add to pool", () => {
-		let net = 'Alarm';
-		expect(server.pool[net]).toBeUndefined(); 
-		server.addToPool(net);
-		expect(server.pool[net]).not.toBeUndefined();
+		let networks = Object.keys(server.networks);
+		for(let net of networks){
+			expect(server.pool[net]).toBeUndefined(); 
+			server.addToPool(net);
+			expect(server.pool[net]).not.toBeUndefined();	
+		}
+		
 	});
 
 
@@ -379,7 +384,7 @@ describe('Testing server...', () => {
 	/**
 	* Testing della route /networkslive
 	*/
-	test("testing /networkslive path ", (done) => {
+	test("testing /networkslive route ", (done) => {
 		request(app.app).get('/networkslive').then((response) => {
 			expect(response.body).isJSON(); 
 			let keys = Object.keys(response.body);
@@ -392,7 +397,7 @@ describe('Testing server...', () => {
 	/**
 	* Testing della route /path
 	*/
-	test("networks path", (done) => {
+	test("networks route", (done) => {
 		request(app.app).get('/networks').then((response) => {
 			expect(response.body).isJSON();
 			expect(response.statusCode).toBe(200); 
@@ -412,17 +417,143 @@ describe('Testing server...', () => {
 
 	});
 
+
+	
+	/**
+	* Testing unita/integrazione 
+	* del metodo observeNetworks()
+	* passando una rete valida come parametro
+	*/
+	test("Testing soglie critiche", async(done) => {
+		await server.observeNetworks('Viaggio_in_asia', server.networks['Viaggio_in_asia'].dati);
+		expect(server.networks['Viaggio_in_asia'].critica).toBeTruthy();
+		done();
+	});
+
+	/**
+	* Test 
+	* del metodo observeNetworks()
+	* passando una rete valida come parametro
+	*/
+	test("Testing getMilliseconds() method", (done) => {
+		let dict = {
+			"seconds": 5,
+			"minutes": 5,
+			"hours": 5
+		}
+		expect(server.getMilliseconds(dict)).toEqual((dict.seconds + dict.minutes*60 + dict.hours*3600)*1000); 
+		done() ;
+	});
+
 	/**
 	* Testing della path /deletenetwork/:net 
 	* passando una rete valida come parametro
 	*/
-	// test("deletenetwork path", (done) => {
-	// 	request(app.app).get('/deletenetwork/Alarm').then((response) => {
-	// 		expect(response.body).isJSON(); 
-	// 		expect(response.statusCode).toBe(200); 
-	// 		done(); 
-	// 	});
-	// });
+	test("deletenetwork route", (done) => {
+		request(app.app).get('/deletenetwork/Alarm').then((response) => {
+			expect(response.body).isJSON(); 
+			expect(response.statusCode).toBe(200); 
+			let net = require('./testingNetworks/Alarm.json');
+			net.database.name = "Alarm_db";
+			server.saveNetworkToFile(net); 
+			done(); 
+		});
+	});
+
+
+	/**
+	* Testing della path /deletenetwork/:net 
+	* passando il nome di una rete non valida come parametro
+	*/
+	test("deletenetwork path with no route", (done) => {
+		request(app.app).get('/deletenetwork/ciao').then((response) => {
+			expect(response.text).toMatch('Network not found !');
+			expect(response.statusCode).toBe(404); 
+			done(); 
+		});
+	});
+	
+	/**
+	* Testing della route /getjsbayesviz/:net 
+	* passando il nome di una rete valida come parametro
+	* Ritorna un json che rappresenta l'oggetto jsbayesviz in formato json
+	**/
+	test("Testing /getjsbayesviz route with good route", (done) => {
+		request(app.app).get('/getjsbayesviz/Viaggio_in_asia').then((response) => {
+			expect(response.statusCode).toBe(200);
+			expect(String(response.body)).toMatch(String(server.networks['Viaggio_in_asia'].graph));
+			done(); 
+		});
+	}); 
+
+	/**
+	* Testing della route /getpool
+	* la route ritrna un'array di reti attualemente monitorate 
+	* Testo che l'array sia effettivamente quello che ho nell'array di pool
+	* nell'istanza del server. 
+	**/
+	test("Testing /getpool route", (done) => {
+		request(app.app).get('/getpool').then((response) => {
+			expect(response.statusCode).toBe(200); 
+			expect(Object.keys(app.pool)).toEqual(response.body); 
+			done(); 
+		}); 
+	});
+
+	/**
+	* Testing della route /deletenetpool/:net
+	* la route ritorna Network delete nel caso in cui la rete sia in monitoraggio 
+	* e sia stata elminata con successo . 
+	* altrimenti torna un messaggio di errore con codice HTTP 404
+	**/
+	test("Testing /deletenetpool with good param", (done) => {
+		let rete = 'Viaggio in asia'; 
+
+		request(app.app).get(`/deletenetpool/${rete}`).then((response) => {
+			expect(response.statusCode).toBe(200); 
+			expect(response.text).toMatch('Network delete');
+			done(); 
+		});
+	});
+
+	/**
+	* Testing della route /addtopool/:net
+	* con parametri giusti 
+	* expect response to be "Network on monitoring !"
+	**/
+	test("Testing /addtopool/:net route", (done) => {
+		// server.deleteFromPool('Viaggio_in_asia');
+		request(app.app).get('/addtopool/Viaggio_in_asia').then((response) => {
+			expect(response.statusCode).toBe(200); 
+			expect(response.text).toMatch('Network on monitoring !');
+			done(); 
+		});
+	});
+		
+	/**
+	* Testing metodo di avvio server con parametri statici
+	**/
+	test("Testing starting server", (done) => {		
+		app.startServer(); 
+		expect(app.server.address().port).toBe(8600); 
+		app.shutDown(); 
+		done();
+	});
+
+	/**
+	* Testing /getnetworkprob/:net route 
+	* expect reponse to be a json with all probabilities
+	**/
+	test("Testing /getnetworkprob/:net route", (done) => {
+		request(app.app).get("/getnetworkprob/Viaggio_in_asia").then((response) => {
+			expect(response.statusCode).toBe(200); 
+			expect(response.body).isJSON(); 
+			expect(response.body).toEqual(app.networks['Viaggio_in_asia'].getProbabilities()); 
+			done(); 
+		});
+	});
+
+	
 
 });
 

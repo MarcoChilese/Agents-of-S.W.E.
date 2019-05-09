@@ -108,6 +108,7 @@ class Network{
 
 				if(parametri.sign == ">="){
 					if(dato_monitorato >= parametri.value){
+						// console.log(`${dato_monitorato} >= ${parametri.value}`); 
 						critico = (parametri.critical ? critico || true : critico);
 						this.observe(soglia, parametri.state);
 					}
@@ -131,7 +132,6 @@ class Network{
 		}
 
 		this.sample(1000);
-
 		return critico;
 	}
 

@@ -60,6 +60,15 @@ describe('Testing server...', () => {
 	});
 
 	/**
+	* Testing del costruttuore con parametri sbagliati
+	*/
+	test("Bad Constructor", async(done) => {
+		expect(() => {
+			let tmp = new InfluxDB(ip, '', '', ''); 
+		}).toThrow();
+		done(); 
+	});
+	/**
 	* Testing del metodo getDatasources()
 	*/
 	test("getDatasources method", async(done) => {

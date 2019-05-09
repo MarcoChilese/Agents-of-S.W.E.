@@ -20,10 +20,6 @@
 		"readOnly": false
 	},
 	"flushesAssociations": {
-		"Bronchite": {
-			"table": "cpu",
-			"flush": "usage_guest"
-		},
 		"Viaggio in Asia": {
 			"table": "disk",
 			"flush": "inodes_used"
