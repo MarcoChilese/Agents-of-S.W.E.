@@ -2,17 +2,17 @@
 
 
 \subsection*{1 Non vedo il pannello G\&B. Dov'è?}
-Una volta eseguito l'accesso a \textit{Grafana} è necessario aggiungere il pannello \textit{G\&B} alla propria dashboard per poter usufruire delle sue funzionalità. In tal senso l'operazione necessaria è descitta nel dettaglio in questa sezione: §\ref{AddPanel}.
+Una volta eseguito l'accesso a \textit{Grafana}, è necessario aggiungere il pannello \textit{G\&B} alla propria dashboard per poter usufruire delle sue funzionalità. In tal senso l'operazione necessaria è descitta nel dettaglio in questa sezione: §\ref{AddPanel}.
 
 \subsection*{2 Non riesco a collegare il Server. Perchè?}
-Il server è una componente necessaria al corretto funzionamento del plug-in \textit{G\&B}, senza di esso il pannello non può funzionare correttamente. Per poter effettuare con successo il collegamento è necessario avere un server attivo, con una porta aperta in ascolto. Per tutti i dettagli necessari vi invitiamo a consultare l'apposita sezione: \ref{Server}.
+Il server è una componente necessaria al corretto funzionamento del plug-in \textit{G\&B}, senza di esso il pannello non può funzionare correttamente. Per poter effettuare con successo il collegamento è necessario avere un server attivo, con una porta aperta in ascolto. Per tutti i dettagli necessari vi invitiamo a consultare l'apposita sezione: §\ref{Server}.
 
 \subsection*{3 Non riesco a caricare la rete bayesiana e non capisco gli errori che mi vengono segnalati. Cosa devo fare?}
 L'operazione di caricamento di una rete bayesiana attraverso il file di definizione in formato \textit{JSON}, descritta in §\ref{ReteB}, può fallire solamente nel caso in cui il file caricato non contenga una rete ben formata.\\
-Per garantire il corretto funzionamento del prodotto è infatti necessario che la rete bayesiana definita nel file \textit{JSON} abbia una struttura specifica, conforme alle specifiche definite in \ref{strutturaRete}. Nel caso in cui gli errori segnalati dal sistema in fase di caricamento non fossero adeguatamente autoesplicativi per la comprensione del problema vi invitiamo a consultare la sezione §\ref{strutturaRete}, in cui viene spiegato nel dettaglio come deve essere strutturata la rete bayesiana.
+Per garantire il corretto funzionamento del prodotto è infatti necessario che la rete bayesiana, definita nel file \textit{JSON}, abbia una struttura specifica, conforme alle specifiche definite in §\ref{strutturaRete}. Nel caso in cui gli errori segnalati dal sistema in fase di caricamento non fossero adeguatamente autoesplicativi per la comprensione del problema, vi invitiamo a consultare la sezione §\ref{strutturaRete}, in cui viene spiegato nel dettaglio come deve essere strutturata la rete bayesiana.
 
-\subsection*{4 Durante il collegamento di un nodo i menù a tendina per la selezione della tabella e del flusso dati sono vuote. Cosa devo fare?}
-Prima di procedere con l'operazione di collegamento dei nodi (§\ref{Collegamento}) assicuratevi sempre di aver prima selezionato un Database da usare come sorgente dei dati. Tale operazione è descritta nella sezione §\ref{SelectDB} ed influenza la possibile scelta di tabella e flusso dati durante il collegamento dei nodi. Nel caso in cui non sia selezionato alcun database non vi sarà alcuna possibile scelta di tabella e flussi durante il collegamento dei nodi.
+\subsection*{4 Durante il collegamento di un nodo, i menù a tendina per la selezione della tabella e del flusso dati sono vuote. Cosa devo fare?}
+Prima di procedere con l'operazione di collegamento dei nodi (§\ref{Collegamento}), assicuratevi sempre di aver prima selezionato un database da usare come sorgente dei dati. Tale operazione è descritta nella sezione §\ref{SelectDB} ed influenza la possibile scelta di tabella e flusso dati durante il collegamento dei nodi. Nel caso in cui non sia selezionato alcun database, non vi sarà alcuna possibile scelta di tabella e flussi durante il collegamento dei nodi.
 
 \subsection*{5 Quanti/Quali nodi devo collegare per avviare il monitoraggio della rete?}
 La risposta a questa domanda non è univoca, dipende quasi totalemente dalla struttura della rete bayesiana in questione. Nel caso la rete sia stata fornita da un esperto vi consigliamo in ogni caso di chiedere all'ideatore della rete. In caso contrario sappiate che non esiste un numero "corretto" di nodi da collegare, possiamo però fornirvi alcune \textbf{raccomandazioni} di carattere generale in merito a quanti e/o quali nodi andrebbero collegati:
@@ -23,7 +23,7 @@ La risposta a questa domanda non è univoca, dipende quasi totalemente dalla str
 \end{itemize}
 
 \subsection*{6 Devo definire una soglia per ogni stato del nodo durante il collegamento?}
-No, non è necessario. Affinchè il collegamento di un nodo possa essere confermato con successo è sufficiente che venga definita una sola soglia. Nel caso in cui i valori monitorati non comportino il superamento di alcuna soglia per un dato nodo le probabilità associate ai suoi stati verranno infatti valutate sulla base delle informazioni della rete bayesiana in questione.\\
+No, non è necessario. Affinchè il collegamento di un nodo possa essere confermato con successo è sufficiente che venga definita una sola soglia. Nel caso in cui i valori monitorati non comportino il superamento di alcuna soglia per un dato nodo, le probabilità associate ai suoi stati verranno infatti valutate sulla base delle informazioni della rete bayesiana in questione.\\
 Tuttavia, per modellare con maggior precisione ogni possibile situazione, \textbf{consigliamo} di associare almeno una soglia per ogni stato di ogni nodo collegato al flusso dati.
 
 \subsection*{7 Quando devo etichettare una soglia come critica? Qaunte ne devo definire?}
@@ -35,10 +35,10 @@ Di conseguenza non vi è un numero corretto di soglie critiche da definire, tutt
 \subsection*{8 Che politica temporale devo impostare?}
 Nuovamente, nel caso in cui sia stato un esperto a fornirvi la rete bayesiana, consigliamo sempre di domandare a lui. In caso contrario dipende dalla rete in questione e dalla tipologia di dati che desiderate monitorare.\\
 Politiche temporali troppo brevi potrebbero portarvi ad un sovraccarico nel caso in cui la vostra rete fosse particolarmente ricca di nodi. D'altro canto politiche temporali troppo lunghe potrebbero essere scarsamente utili, soprattutto nel caso in cui non aveste definito correttamente soglie critiche durante l'operazione di collegamento dei nodi (§\ref{Collegamento}).\\
-Di conseguenza consigliamo una politica temporale moderata, in base alla tipologia di dati in questione. Nel caso in cui temeste di non aver sufficiente tempestività nel ricalcolo delle probabilità vi invitiamo a mantenere comunque una politica moderata, definendo correttamente alcune soglie critiche durante il collegamento dei nodi.
+Di conseguenza consigliamo una politica temporale moderata, in base alla tipologia di dati in questione. Nel caso in cui temeste di non aver sufficiente tempestività nel ricalcolo delle probabilità, vi invitiamo a mantenere comunque una politica moderata, definendo correttamente alcune soglie critiche durante il collegamento dei nodi.
 
 \subsection*{9 Come faccio a definire alert basati sui dati di monitoraggio?}
 La definizione di alert è un'operazione propria della piattaforma \textit{Grafana}, non è dunque collegata direttamente al pannello \textit{G\&B}. Tuttavia l'utente può ovviamente definire alert sui dati di monitoraggio rilevati dal sistema.\\
 Nello specifico, attraverso le funzionalità messe a disposizione da \textit{Grafana}, l'utente deve creare un pannello grafico basato sui dati di monitoraggio e definirvi sopra gli alert desiderati.\\
-Ricordiamo che il monitoraggio dei dati è costante e indipendente dal pannello, grazie all'uso del server per il ricalcolo delle probabilità. Non è dunque necessario che il pannello \textit{G\&B} sia presente nella dashboard dell'utente affinchè gli alert definiti su monitoraggi attivi vengano costantemente aggiornati.
+Ricordiamo che il monitoraggio dei dati è costante e indipendente dal pannello, grazie all'uso del server per il ricalcolo delle probabilità. Non è dunque necessario che il pannello \textit{G\&B} sia presente nella dashboard dell'utente, affinchè gli alert definiti su monitoraggi attivi vengano costantemente aggiornati.
 

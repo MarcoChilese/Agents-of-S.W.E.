@@ -1,6 +1,6 @@
 \section{Struttura del File JSON per la Definizione di una Rete Bayesiana}\label{strutturaRete}
 
-Questa sezione ha lo scopo di spiegare all'utente il corretto modo di definire il file \textit{.json} per la definizione della rete bayesiana da importare nel plug-in e successivamente utilizzala. Tutti gli errori di seguito riportati appariranno, qualora presenti durante l'operazione di caricamento della rete bayesiana descritta in \ref{ReteB}.
+Questa sezione ha lo scopo di spiegare all'utente il corretto modo di definire il file \textit{.json} per la definizione della rete bayesiana da importare nel plug-in e successivamente utilizzarla. Tutti gli errori di seguito riportati appariranno, qualora presenti, durante l'operazione di caricamento della rete bayesiana descritta in §\ref{ReteB}.
 
 
 \begin{figure}[H]
@@ -27,7 +27,7 @@ Passi da seguire :
 	\begin{center}
 		\includegraphics[scale=0.8]{./images/erroreNomeCampo.png}
 		 \caption{Errore nel Nome di un Campo della Rete Bayesiana}	
-		 \label{ImgRete}
+		 \label{ErrNomeRete}
 	\end{center}
 \end{figure}
 
@@ -37,11 +37,12 @@ Passi da seguire :
 	\begin{center}
 		\includegraphics[scale=0.8]{./images/wrongNumberOfFields.png}
 		 \caption{Errore Numero di Campi della Rete Errato}	
-		 \label{ImgRete}
+		 \label{ErrNumRete}
 	\end{center}
 \end{figure}
 
-	\item Il campo successivo dovrà chiamarsi nodes e dovrà contenere un array, nel quale sono definiti i nomi dei nodi della rete bayesiana.\label{nomi} I campi states, parents e probabilities, dovranno ognuno contenere al proprio interno un numero di campi pari al numero di nomi definiti nel campo nodes e con lo stesso nome. Qualora sia definito all'interno di uno di essi un numero errato di campi, verrà visualizzato il seguente errore (ad esempio se manca un nome in states): 
+	\label{nomi} 
+	\item Il campo successivo dovrà chiamarsi nodes e dovrà contenere un array, nel quale sono definiti i nomi dei nodi della rete bayesiana.I campi states, parents e probabilities, dovranno ognuno contenere al proprio interno un numero di campi pari al numero di nomi definiti nel campo nodes e con lo stesso nome. Qualora sia definito all'interno di uno di essi un numero errato di campi, verrà visualizzato il seguente errore (ad esempio se manca un nome in states): 
 
 \begin{figure}[H]
 	\begin{center}
@@ -57,13 +58,13 @@ Se invece il numero di campi è giusto ma non viene trovato uno dei nomi in node
 	\begin{center}
 		\includegraphics[scale=0.8]{./images/wrongName.png}
 		 \caption{Errore Nome di un Campo Interno}	
-		 \label{erNumCampi}
+		 \label{erNumCampiInterno}
 	\end{center}
 \end{figure}
 
 	\item Il campo successivo dovrà chiamarsi states e dovrà essere composto nel seguente modo:
 	\begin{itemize}
-		\item Deve rispettare quanto detto  in \ref{nomi};
+		\item Deve rispettare quanto descritto precedentemente;
 		\item Ogni campo dovrà contenere un array con almeno 2 valori al suo interno, altrimenti verrà visualizzato il seguente errore :
 		
 		\begin{figure}[H]
@@ -88,8 +89,8 @@ Se invece il numero di campi è giusto ma non viene trovato uno dei nomi in node
 	\item Il campo successivo dovrà chiamarsi parents e dovrà essere composto nel seguente modo:
 	
 	\begin{itemize}
-		\item Deve rispettare quanto detto  in \ref{nomi};
-		\item Ogni campo dovrà contenere un array, nel quale si possono inserire i padri del nodo qualora ne abbia;
+		\item Deve rispettare quanto descritto precedentemente;
+		\item Ogni campo dovrà contenere un array, nel quale si possono inserire i padri del nodo, qualora ne abbia;
 		\item I padri devono essere nomi contenuti nel campo nodes, altrimenti verrà visualizzato il seguente errore ( inserito un padre chiamato notValid ):
 		
 	\begin{figure}[H]
@@ -106,7 +107,7 @@ Se invece il numero di campi è giusto ma non viene trovato uno dei nomi in node
 	\begin{center}
 		\includegraphics[scale=0.8]{./images/padreDiSeStesso.png}
 		 \caption{Errore Padre di Sé Stesso}	
-		 \label{erUnexistingNode}
+		 \label{erUnexistingNodeS}
 	\end{center}
 	\end{figure}	
 	
@@ -116,7 +117,7 @@ Se invece il numero di campi è giusto ma non viene trovato uno dei nomi in node
 	\begin{center}
 		\includegraphics[scale=0.8]{./images/padreRipetuto.png}
 		 \caption{Errore Padre Ripetuto}	
-		 \label{erUnexistingNode}
+		 \label{erUnexistingNodeR}
 	\end{center}
 	\end{figure}	
 		
@@ -125,7 +126,7 @@ Se invece il numero di campi è giusto ma non viene trovato uno dei nomi in node
 	\item Il campo successivo dovrà chiamarsi probabilities e dovrà essere composto nel seguente modo:
 	
 	\begin{itemize}
-		\item Deve rispettare quanto detto  in \ref{nomi};
+		\item Deve rispettare quanto descritto precedentemente;
 		\item Ogni campo deve contenere un array, contenente a sua volta tanti sotto-array pari alla produttoria del numero di stati di ogni padre del nodo, in caso contrario verrà visualizzato il seguente errore(3 al posto di 4):
 		
 		\begin{figure}[H]
@@ -142,7 +143,7 @@ Se invece il numero di campi è giusto ma non viene trovato uno dei nomi in node
 	\begin{center}
 		\includegraphics[scale=0.8]{./images/numberProbs.png}
 		 \caption{Errore Numero di Probabilità nel Sotto-array}	
-		 \label{erWrongSubsets}
+		 \label{erWrongSubsetsSottoArray}
 	\end{center}
 	\end{figure}	
 	
@@ -152,7 +153,7 @@ Se invece il numero di campi è giusto ma non viene trovato uno dei nomi in node
 	\begin{center}
 		\includegraphics[scale=0.8]{./images/invalidProbability.png}
 		 \caption{Errore Probabilità non Valida}	
-		 \label{erWrongSubsets}
+		 \label{erWrongSubsetsPro}
 	\end{center}
 	\end{figure}
 		
@@ -161,7 +162,7 @@ Se invece il numero di campi è giusto ma non viene trovato uno dei nomi in node
 	\item Le probabilità vanno inserite nel seguente modo:
 	 \begin{itemize}
 	 		\item in ogni sotto-array le probabilità vanno inserite in ordine in base a come sono stati definiti gli stati del nodo, quindi come in figura \ref{ImgRete} la probabilità 0.01 verrà associata allo stato true e la probabilità 0.99 verrà associata allo stato false;
-	 		\item I sotto-array vanno a definire le probabilità condizionate dai padri, e vanno messi in ordine, quindi ad esempio in figura \ref{ImgRete} per il nodo TBC o Cancro, il primo sotto-array andrà a definire le probabilità per p("TBC o Cancro" | Tubercolosi = true, Cancro = true), il secondo p("TBC o Cancro" | Tubercolosi = true, Cancro = false), il terzo p("TBC o Cancro" | Tubercolosi = false, Cancro = true) e l'ultimo p("TBC o Cancro" | Tubercolosi = false, Cancro = false), quindi in ordine secondo come sono stati definiti gli stati dei padri. Nel caso in cui si sbagli a definire i sotto-array, rispettando però i punti precedenti, non verrà visualizzato un errore ma i calcoli non rispetteranno quanto atteso.
+	 		\item I sotto-array vanno a definire le probabilità condizionate dai padri, e vanno messi in ordine, quindi ad esempio in figura \ref{ImgRete} per il nodo TBC o Cancro, il primo sotto-array andrà a definire le probabilità per p("TBC o Cancro" | Tubercolosi = true, Cancro = true), il secondo p("TBC o Cancro" | Tubercolosi = true, Cancro = false), il terzo p("TBC o Cancro" | Tubercolosi = false, Cancro = true) e l'ultimo p("TBC o Cancro" | Tubercolosi = false, Cancro = false), quindi in ordine secondo come sono stati definiti gli stati dei padri. Nel caso in cui si sbagli a definire i sotto-array, rispettando però i punti precedenti, non verrà visualizzato un errore, ma i calcoli non rispetteranno quanto atteso.
 	 \end{itemize}
 	
 	
