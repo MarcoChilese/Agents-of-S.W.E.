@@ -412,7 +412,6 @@ export class GBCtrl extends PanelCtrl {
   async updateProbs() {
     try {
       const g = jsbayesviz.fromGraph(await this.testServer.getnetworkprob(this.panel.actuallyVisualizingMonitoring), 'netImage');
-      console.log('ok')
       const el = $('#netImage');
       el.empty();
       jsbayesviz.draw({
@@ -425,7 +424,6 @@ export class GBCtrl extends PanelCtrl {
       const h = bbox.height + 50;
       $('svg').css({ background: 'floralwhite', width: w, height: h });
       this.$timeout({}, 100);
-      console.log('ok1')
     } catch (e) {
       this.deleteProbRefresh();
       return false;
