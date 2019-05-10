@@ -53,7 +53,6 @@ export class GBCtrl extends PanelCtrl {
       selectedNetworkToOpen: undefined,
       availableNetworksToLoad: undefined,
       monitoringNetworks: undefined,
-      calculatedProbabilities: {},
     };
 
     this.server = {
@@ -373,6 +372,7 @@ export class GBCtrl extends PanelCtrl {
   async requestNetworkDelete(net) {
     try {
       if (!this.checkIfNetworkIsDeletable(net)) { return false; }
+      if (this.panel.name == net.replace(' ', '_')) this.resetData();
       await this.testServer.deletenetwork(net);
     } catch (e) {
       if (e.status === 200) {
@@ -395,13 +395,24 @@ export class GBCtrl extends PanelCtrl {
   }
 
   /**
-   * Method that updates local calculated probabilities
+   * Stops the plugin to refresh the probabilities
+   * @return{boolean} true if ok
+   * */
+  deleteProbRefresh() {
+    clearInterval(this.interval);
+    this.panel.actuallyVisualizingMonitoring = null;
+    return true;
+  }
+
+  /**
+   * Method that updates probabilities visualization
    * @param{string} network to update probabilities
    * @return{boolean}
    * */
   async updateProbs() {
     try {
       const g = jsbayesviz.fromGraph(await this.testServer.getnetworkprob(this.panel.actuallyVisualizingMonitoring), 'netImage');
+      console.log('ok')
       const el = $('#netImage');
       el.empty();
       jsbayesviz.draw({
@@ -414,8 +425,9 @@ export class GBCtrl extends PanelCtrl {
       const h = bbox.height + 50;
       $('svg').css({ background: 'floralwhite', width: w, height: h });
       this.$timeout({}, 100);
+      console.log('ok1')
     } catch (e) {
-      clearInterval(this.interval);
+      this.deleteProbRefresh();
       return false;
     }
     return true;
@@ -429,9 +441,9 @@ export class GBCtrl extends PanelCtrl {
   async changeNetworkToVisualizeMonitoring() {
     try {
       clearInterval(this.interval);
-      this.panel.calculatedProbabilities = {};
       const n = await this.testServer.getnetwork(this.panel.actuallyVisualizingMonitoring);
       await this.updateProbs();
+      this.$timeout({}, 100);
       this.interval = setInterval(this.updateProbs.bind(this), this.calculateSeconds(n.temporalPolicy) * 1000);
       this.modalCreator.showMessageModal('Aggiornata visualizzazione.', 'Successo');
     } catch (e) {

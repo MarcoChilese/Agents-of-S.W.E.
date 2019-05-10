@@ -54,7 +54,7 @@
                                 <dash-upload on-upload="ctrl.loadNetwork(dash)" class="class-width-100 ng-isolate-scope class-margin-1">
                                     <input type="file" id="dashupload" name="dashupload" class="hide" ng-change="ctrl.loadNetwork(dash).then()">
                                     <label class="btn btn-success ng-binding" for="dashupload">
-                                        <i class="fa fa-upload"></i>
+                                        <i  class="fa fa-upload"></i>
                                         Upload .json File
                                     </label>
                                 </dash-upload>
@@ -133,7 +133,7 @@
         <div ng-if="ctrl.panel.visualizingMonitoring">
             <div id="settings-view-prob" class="class-width-100 bottom-1-margin">
                 <div id="btn-settings" class="class-margin-1">
-                    <button ng-click="ctrl.visualizeSettings()" class="btn btn-warning">Visualizza Impostazioni</button>
+                    <button ng-click="ctrl.visualizeSettings();ctrl.deleteProbRefresh();" class="btn btn-warning">Visualizza Impostazioni</button>
                 </div>
                 <div id="net-selected" class="class-margin-1">
                     <select ng-change="ctrl.changeNetworkToVisualizeMonitoring()" ng-model="ctrl.panel.actuallyVisualizingMonitoring">
@@ -142,9 +142,6 @@
                 </div>
             </div>
             <div id="show-prob" class="class-width-100">
-                <div id="empty-prob">
-                    <p class="danger-text">{{(ctrl.panel.calculatedProbabilities === {}) ? 'Nessuna probabilità da mostrare.' :'';}}</p>
-                </div>
                 <div class="top-1-margin">
                     <svg id="netImage"></svg>
                 </div>

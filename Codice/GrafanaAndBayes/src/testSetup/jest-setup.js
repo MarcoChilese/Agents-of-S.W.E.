@@ -32,11 +32,6 @@ jest.mock('grafana/app/core/core', () => ({
   appEvents: { emit() {} },
 }), { virtual: true });
 
-
-// jest.mock('jquery', () => ({
-//   $: { ajax() { return 5; } },
-// }), { virtual: true });
-
 jest.mock('better-jsbayes-viz', () => ({
   fromGraph: (p1, p2) => {},
   draw: () => {},
@@ -44,8 +39,9 @@ jest.mock('better-jsbayes-viz', () => ({
 
 
 // Required for loading angularjs
-const dom = new JSDOM('<html><head><script></script></head><body></body></html>');
+const dom = new JSDOM('<html><head><script></script></head><body><svg id="netImage"></svg></body></html>');
 // Setup jsdom
 global.window = dom.window;
 global.document = global.window.document;
 global.Node = window.Node;
+

@@ -114,7 +114,6 @@ describe('server connection', () => {
 
   describe('need splitMonitoringNetworks and tryConnectServer', () => {
     beforeEach(() => {
-      g.panel.calculatedProbabilities = {};
       g.tryConnectServer();
       g.panel.monitoringNetworks = g.splitMonitoringNetworks();
     });
@@ -134,6 +133,13 @@ describe('server connection', () => {
       expect(await g.requestNetworkDelete('nope')).toBe(false);
     });
 
+    // NEWTEST
+    it('GBCtrl::requestNetworkDelete::true(delete network in plugin)', async () => {
+      g.panel.name = 'Mia_rete';
+      expect(await g.requestNetworkDelete('Mia rete')).toBe(true);
+    });
+
+
     // updateProbs
     it('GBCtrl::updateProbs::true', async () => {
       // jest.mock('$', () => ( 5 ), { virtual: true });
@@ -148,7 +154,6 @@ describe('server connection', () => {
     it('GBCtrl::updateProbs::false', async () => {
       g.panel.actuallyVisualizingMonitoring = 'notValid';
       expect(await g.updateProbs()).toBe(false);
-      expect(g.panel.calculatedProbabilities).toEqual({});
       expect(g.interval).toBe(undefined);
     });
 
@@ -203,14 +208,13 @@ describe('server connection', () => {
     it('GBCtrl::saveActualChanges::true(name = "Prova", collegatoAlDB = true)', async () => {
       g.panel.name = 'Prova';
       g.panel.collegatoAlDB = true;
-      console.log(g.panel.monitoringNetworks);
       expect(await g.saveActualChanges()).toBe(false);
     });
 
-    // NEWTEST se attualmente sotto monitoraggio non salvo nel server
     it('GBCtrl::saveActualChanges::true(network monitored)', async () => {
       g.panel.name = 'Sachs';
       g.panel.collegatoAlDB = true;
+      console.log(g.panel.monitoringNetworks);
       expect(await g.saveActualChanges()).toBe(true);
     });
 
