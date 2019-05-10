@@ -4,7 +4,7 @@ L'attività di Progettazione consiste nel descrivere una soluzione che sia soddi
 La progettazione viene svolta in due periodi distinti: nel periodo di Progettazione Architetturale verranno studiati i design pattern per la realizzazione dell'archittetura. Nel periodo di  Progettazione di Dettaglio e Codifica la progettazione diventa atomica per ogni componente del sistema, in modo che i \textit{Programmatori} possano sviluppare il codice in maniera parallela e focalizzandosi su specifiche task. \\
 L’architettura definita dovrà soddisfare le seguenti qualità:
 \begin{itemize}
-	\item \textbf{Sufficienza}: soddisfare i requisiti definiti nel documento \textit{Analisi dei Requisiti v3.0.0};
+	\item \textbf{Sufficienza}: soddisfare i requisiti definiti nel documento \textit{Analisi dei Requisiti v4.0.0};
 	\item \textbf{Modularità}: essere divisa in parti chiare e distinte, ognuna con la sua specifica funzione;
 	\item \textbf{Robustezza}: essere in grado di gestire malfunzionamenti in modo da
 	rimanere operativa di fronte a situazioni erronee improvvise;
@@ -37,8 +37,8 @@ La Progettazione serve per garantire che il prodotto sviluppato soddisfi le prop
 
 \paragraph{Sviluppo} \-\\
 \label{Progettazione_Sviluppo}
-Lo sviluppo di \textit{G\&B} avviene seguendo il modello incrementale, spiegato nel dettaglio nel documento \textit{Piano di Progetto v3.0.0} alla sezione §4.\\
-La proponente nel capitolato d'appalto pone un singolo vincolo riguardo le tecnologie da utilizzare:
+Lo sviluppo di \textit{G\&B} avviene seguendo il modello incrementale, spiegato nel dettaglio nel documento \textit{Piano di Progetto v4.0.0} alla sezione §3.\\
+La proponente, nel capitolato d'appalto, pone un singolo vincolo riguardo le tecnologie da utilizzare:
 \begin{itemize}
 	\item \textit{JavaScrip}t: in particolare nella sua declinazione nota come \textit{ECMAScript 6}\glossario.
 \end{itemize}
@@ -47,6 +47,7 @@ Tuttavia, ai fini della realizzazione del prodotto finale, il team \texttt{Agent
 	\item \textit{Telegraf}\glossario: è un agente per la raccolta e la rilevazione periodica di metriche\footnote{Metriche d'uso di un elaboratore. Per esempio: percentuale d'uso della CPU, pressione di memoria, etc.} e dati. Si connette ad un database\glossario e vi salva tali dati;
 	\item \textit{InfluxDB}\glossario: è un database\glossario per le serie temporali. Verrà utilizzato per il salvataggio dei dati raccolti da \textit{Telegraf};
 	\item \textit{JSBayes}\glossario: libreria suggerita dal proponente per la semplice definizione di reti bayesiane ed il relativo calcolo probabilistico di eventi; 
+	\item \textit{JSBayes-Viz}\glossario: libreria la quale utilizza la libreria precedentemente citata \textit{JSBayes}, al fine di creare una mappa grafica della rete bayesiana creata contenente i relativi nodi con ognuno le proprie probabilità indicate; 
 %	\item \textit{UnBBayes}\glossario: framework e interfaccia grafica per le reti bayesiane;
 %	\item Docker\glossario\footnote{\url{https://www.docker.com/}}: progetto open-source\glossario che automatizza il deployment\glossario di applicazioni all'interno di contenitori software. In particolare, in Docker Hub\glossario\footnote{\url{https://hub.docker.com/}} sono presenti le immagini utilizzabili mediante container di Telegraf, InfluxDB e Grafana. Pertanto, per agevolare la collaborazione e uniformare l'ambiente di sviluppo, \texttt{Agents Of S.W.E.} utilizzerà Grafana, Telegraf e InfluxDB in appositi container Docker;
 	\item \textit{GitLab}\glossario: piattaforma open-source per la gestione di repository \textit{Git}. Il team utilizzerà un repository salvato su tale piattaforma in quanto permette la gestione di una pipeline di CI/CD\glossario, evitando quindi l'uso di altri strumenti. Il processo di CI/CD si configura come rappresentato nell'immagine e viene spiegato nell'appendice \ref{CICD} ;

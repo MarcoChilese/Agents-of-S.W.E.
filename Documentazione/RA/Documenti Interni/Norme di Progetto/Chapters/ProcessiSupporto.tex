@@ -8,7 +8,7 @@ Questo capitolo descrive i dettagli su come deve essere redatta e verificata la 
 Il ciclo di vita previsto della documentazione si può suddividere principalmente in tre processi:
 \begin{itemize}
 	\item \textbf{Sviluppo}: è il processo di stesura, eseguita dal redattore, dove sviluppa il task\glossario assegnato dal \textit{Responsabile}. Una volta terminata la fase di scrittura del documento, il redattore lo segnalerà al \textit{Responsabile}, il quale assegnerà ad un \textit{Verificatore} il compito di analizzare il lavoro svolto;
- 	\item \textbf{Verifica}: è il processo eseguito dai \textit{Verificatori} designati dal responsabile. Il loro compito consiste nel controllare che il redattore abbia scritto il documento adottando le regole indicate nel documento \textit{Norme di Progetto v3.0.0} ed in maniera grammaticalmente e strutturalmente corretta;
+ 	\item \textbf{Verifica}: è il processo eseguito dai \textit{Verificatori} designati dal responsabile. Il loro compito consiste nel controllare che il redattore abbia scritto il documento adottando le regole indicate nel documento \textit{Norme di Progetto v4.0.0} ed in maniera grammaticalmente e strutturalmente corretta;
  	\item \textbf{Approvazione}: è il processo conclusivo, in cui il \textit{Verificatore} ha terminato il suo compito di controllo e comunica al \textit{Responsabile} il termine del lavoro. Il \textit{Responsabile} procederà a confermare il documento ed ad eseguirne il rilascio.
 \end{itemize}
 
@@ -83,13 +83,13 @@ Ogni documento, eccezion fatta per verbali e lettera di presentazione, presenta 
 \label{ProcessiSupporto_Documentazione_DocumentiCorrenti}
 Sono descritti brevemente i documenti formali da consegnare:
 \begin{itemize}
-	\item \textbf{\textit{Analisi dei Requisiti v3.0.0}}: ha un utilizzo prettamente esterno, inoltre ha l'obiettivo di esporre e scomporre i requisiti\glossario del progetto. Contiene i casi d'uso ed i diagrammi di interazione con l'utente. Viene redatto dagli \textit{Analisti} dopo una profonda analisi del capitolato ed eventuali colloqui con la proponente;
-	\item \textbf{\textit{Glossario v3.0.0}}: ha un utilizzo prettamente esterno ed ha lo scopo di dare una definizione ai termini più specifici usati nei documenti formali;
-	\item \textbf{\textit{Norme di Progetto v3.0.0}}: è utilizzato internamente, ed espone gli standard e le direttive utilizzate dal gruppo per sviluppare il progetto in tutta la sua interezza;
-	\item \textbf{\textit{Piano di Progetto v3.0.0}}: ha un utilizzo esterno, ed espone come il gruppo ha deciso di impiegare le risorse di tempo ed umane;
-	\item \textbf{\textit{Piano di Qualifica v3.0.0}}: ha un utilizzo esterno, descrive gli standard e gli obiettivi che il gruppo dovrà raggiungere per garantire la qualità di prodotto e processo;
-	\item \textbf{\textit{Manuale Utente v1.0.0}}: ha un utilizzo esterno, descrive le funzionalità del prodotto e spiega, in modo intuitivo e preciso, le modalità di utilizzo del plug-in \textit{G\&B};
-	\item \textbf{\textit{Manuale Sviluppatore v1.0.0}}: ha un utilizzo esterno, descrive tutte le informazioni necessarie agli sviluppatori che intenderanno estendere o migliorare il plug-in \textit{G\&B}.
+	\item \textbf{\textit{Analisi dei Requisiti v4.0.0}}: ha un utilizzo prettamente esterno, inoltre ha l'obiettivo di esporre e scomporre i requisiti\glossario del progetto. Contiene i casi d'uso ed i diagrammi di interazione con l'utente. Viene redatto dagli \textit{Analisti} dopo una profonda analisi del capitolato ed eventuali colloqui con la proponente;
+	\item \textbf{\textit{Glossario v4.0.0}}: ha un utilizzo prettamente esterno ed ha lo scopo di dare una definizione ai termini più specifici usati nei documenti formali;
+	\item \textbf{\textit{Norme di Progetto v4.0.0}}: è utilizzato internamente, ed espone gli standard e le direttive utilizzate dal gruppo per sviluppare il progetto in tutta la sua interezza;
+	\item \textbf{\textit{Piano di Progetto v4.0.0}}: ha un utilizzo esterno, ed espone come il gruppo ha deciso di impiegare le risorse di tempo ed umane;
+	\item \textbf{\textit{Piano di Qualifica v4.0.0}}: ha un utilizzo esterno, descrive gli standard e gli obiettivi che il gruppo dovrà raggiungere per garantire la qualità di prodotto e processo;
+	\item \textbf{\textit{Manuale Utente v2.0.0}}: ha un utilizzo esterno, descrive le funzionalità del prodotto e spiega, in modo intuitivo e preciso, le modalità di utilizzo del plug-in \textit{G\&B};
+	\item \textbf{\textit{Manuale Sviluppatore v2.0.0}}: ha un utilizzo esterno, descrive tutte le informazioni necessarie agli sviluppatori che intenderanno estendere o migliorare il plug-in \textit{G\&B}.
 \end{itemize}
 
 \subsubsection{Ambiente}\label{ProcessiSupporto_Documentazione_Ambiente}
@@ -99,7 +99,8 @@ Per la costruzione dei diagrammi è stato optato per l'utilizzo di script in \te
 
 \input{Chapters/Qualita.tex}
 
-\subsection{Configurazione}
+\subsection{Gestione di Configurazione}
+
 \subsubsection{Controllo di Versione}\label{ProcessiSupporto_Versionamento}
 La necessità di più componenti del gruppo di cooperare su uno stesso documento, porta la necessità di utilizzare un sistema di versionamento distribuito.
 
@@ -117,7 +118,7 @@ La struttura del repository segue il workflow \textit{gitflow} di \textit{Driess
 Il master viene considerato il branch main, dove il codice sorgente della testa riflette sempre lo stato di \textit{"production-ready"},
 mentre il ramo di develop è considerato il branch principale dove vengono effettuate le ultime modifiche per il prossimo incremento del prodotto.\\
 Più precisamente, per quanto riguarda i documenti, il repository utilizzato è "Agents-of-S.W.E." ed è caratterizzata da due cartelle principali: "Documentazione" e "Codice".\\
-Per quanto riguarda la prima, essa contiene le sottocartelle "RR", "RP" ed "RQ" che rappresentano la principale struttura in cui sono organizzati i file su cui il gruppo \texttt{Agents of S.W.E.} ha lavorato in vista dell'ultima consegna prestabilita.\\
+Per quanto riguarda la prima, essa contiene le sottocartelle "RR", "RP", "RQ" ed "RA" che rappresentano la principale struttura in cui sono organizzati i file su cui il gruppo \texttt{Agents of S.W.E.} ha lavorato in vista dell'ultima consegna prestabilita.\\
 	Nello specifico la sottocartella "RR" è caratterizzata dalla seguente struttura di folder:
 	\begin{itemize}
 	\item \textbf{Documenti Esterni}:
@@ -169,6 +170,25 @@ Per quanto riguarda la prima, essa contiene le sottocartelle "RR", "RP" ed "RQ" 
 		\item \textbf{Documenti Interni}:
 		\begin{itemize}
 			\item \textit{Norme di Progetto v3.0.0};
+			\item \textit{Verbali Interni}.
+		\end{itemize}
+		\item \textbf{Corrispondenza};
+		\item \textbf{Utility}.
+	\end{itemize}
+	Nello specifico la sottocartella "RA" è caratterizzata dalla seguente struttura di folder:
+	\begin{itemize}
+		\item \textbf{Documenti Esterni}:
+		\begin{itemize}
+			\item \textit{Analisi dei Requisiti v4.0.0};
+			\item \textit{Glossario v4.0.0};
+			\item \textit{Piano di Progetto v4.0.0};
+			\item \textit{Piano di Qualifica v4.0.0};
+			\item \textit{Manuale Utente v2.0.0};
+			\item \textit{Manuale Sviluppatore v2.0.0};
+		\end{itemize}
+		\item \textbf{Documenti Interni}:
+		\begin{itemize}
+			\item \textit{Norme di Progetto v4.0.0};
 			\item \textit{Verbali Interni}.
 		\end{itemize}
 		\item \textbf{Corrispondenza};
@@ -246,6 +266,19 @@ Dal branch "develop" si avvia un processo di verifica, che sfocia in una nuovo b
 		\item \textbf{\textit{GitHub Desktop}}: gestore di versionamento a interfaccia grafica per sistemi Windows \& MacOS;
 		\item \textbf{Terminale(Bash)}: gestore di versionamento a riga di comando per i sistemi MacOS \& Linux.
 	\end{itemize}
+	
+	
+\subsubsection{Strumenti a Supporto della Configurazione}\label{StrumentiVersioning}
+	
+\paragraph{\textit{Git}} ~\\
+	\textit{Git} è il sistema di versionamento\glossario scelto dal gruppo. E' un sistema open source creato da Linus 	Torvalds 2005. Presenta un'interfaccia a riga di comando, tuttavia esistono svariati tools\glossario 	che 	ne forniscono una GUI.
+
+\paragraph{\textit{GitHub}} ~\\
+	\textit{Github} è un Respository Manager\glossario che usa \textit{Git} come sistema di versioning, offre inoltre 	servizi di issue tracking\glossario. Il seguente sistema è stato rimosso dopo la fase di RP.
+	
+\paragraph{\textit{GitLab}} \-\\
+	\textit{Gitlab} è un Respository Manager che usa \textit{Git} come sistema di versioning, a differenza di \textit{GitHub} offre servizi di integrazione test e pipeline di sviluppo. 
+
 
 \subsection{Verifica}\label{verifica}
 \subsubsection{Descrizione}
@@ -312,13 +345,29 @@ Categoria di test atta a verificare se il software sviluppato sia conforme alle 
 \subsubsection{Verifica dei Diagrammi UML}
 I verificatori devono controllare che i diagrammi UML prodotti rispettino lo standard \textit{UML 2.x} e che siano corretti semanticamente.
 
-\subsubsection{Strumenti}
+\subsubsection{Strumenti}\label{StrumentiVerifica}
 \begin{itemize}
 	\item \textbf{Software}: per la verifica del codice \textit{JavaScript} è stato scelto \textit{Jest};
 	\item \textbf{Documenti}: per la verifica dei documenti si utilizzano le funzionalità di \textit{TexMaker};
 	\item \textbf{Gestione processi e feedback}: è stato scelto di utilizzare il sistema integrato di issues presente su \textit{GitLab};
 	\item \textbf{Analisi dinamica locale}: è stato scelto \textit{ESLint} come soluzione iniziale per risolvere tutte le necessità di analisi del codice locale;
 	\item \textbf{Analisi dinamica remota}:	è stato scelto \textit{Codecov.io} servizio di code coverage\glossario basato su repository presenti in piattaforme di versionamento quali \textit{GitHub}\glossario e \textit{GitLab}. Ad ogni esecuzione in \textit{GitLab} della pipeline di CI/CD, vengono generati da \textit{Jest} i report di coverage da cui \textit{Codecov.io} elabora la copertura del codice.
+\end{itemize}
+
+Il team \texttt{Agents Of S.W.E.} ha inoltre deciso, per avere un ambiente comune su cui testare il prodotto in via di sviluppo, di dotarsi di un server noleggiato online attraverso la nota piattaforma di hosting DigitalOcean\glossario.\\
+Il server in oggetto è raggiungibile all'indirizzo IP \texttt{142.93.102.115} ha le seguenti caratteristiche:
+\begin{itemize}
+	\item \textbf{SO}: Ubuntu 18.04 LTS;
+	\item \textbf{CPU}: 1x Intel(R) Xeon(R) CPU E5-2650 v4 @ 2.20GHz;
+	\item \textbf{RAM}: 2GiB ECC DIMM;
+	\item \textbf{SSD}: 24GiB.
+\end{itemize}
+Il team ha provveduto ad installare all'interno del server i seguenti pacchetti:
+\begin{itemize}
+	\item \textit{Grafana};
+	\item \textit{InfluxDB};
+	\item \textit{Telegraf};
+	\item \textit{Apache}\glossario.
 \end{itemize}
 
 \subsection{Validazione}\label{validazione}

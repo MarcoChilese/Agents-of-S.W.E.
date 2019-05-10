@@ -3,7 +3,7 @@
 
 \subsection{Metriche per la Qualità di Processo}
 
-\subsubsection{ Gestione dei Task}
+\subsubsection{PR01: Gestione dei Task}
 È rilevante l'adempimento dei task assegnati entro i tempi prestabiliti. Per far ciò, nella fase di pianificazione, si sono scelte delle date entro le quali è preferibile e consigliabile completare i task assegnati. Tuttavia è comunque accettabile l'adempimento di un task a priorità minore oltre i limiti prefissati, se e solo se il ritardo è dovuto al completamento di un task a priorità maggiore.
 
 \begin{itemize}
@@ -70,22 +70,23 @@ dove:
 Se CV > 0 significa che il progetto produce con maggior efficienza e minor costo.
 \fi
 
-\subsubsection{PR03: Verifica del Software}
+\subsubsection{PR03: Verifica del Software}\label{MetricheVerifica}
 Questo processo ha lo scopo di verificare che i requisiti software precedentemente stabiliti vengano rispettati. È inoltre suo compito verificare che vengano soddisfatti
-tutti i requisiti precedentemente fissati nel documento Analisi dei Requisiti v3.0.0. \-\\ Verranno utilizzati i seguenti indici:
+tutti i requisiti precedentemente fissati nel documento \textit{Analisi dei Requisiti v4.0.0}. \-\\ Verranno utilizzati i seguenti indici:
 
 \begin{itemize}
 	\item \textbf{MTPC04 Function Coverage}: verificare che una funzione sia chiamata;
 	\item \textbf{MTPC05 Statement Coverage}: verificare che ogni statement del codice sia eseguito, e non ci sia quindi codice che non verrà mai preso in considerazione;
 	\item \textbf{MTPC06 Branch Coverage}: verificare che tutti i possibili percorsi delle strutture di controllo (del tipo \texttt{if, case}, ecc.) siano stati eseguiti.
-	\item \textbf{MTPC07 Condition Coverage}: verificare che ogni condizione booleana sia considerata sia vera che falsa.
+	\item \textbf{MTPC07 Condition Coverage}: verificare che ogni condizione booleana sia considerata sia vera che falsa;
+	\item \textbf{MTPC08 Code Coverage}: verifica la percentuale di codice coperto da test rispetto al totale delle righe di codice.
 \end{itemize}
 
 \subsubsection{PR04: Gestione dei Rischi}
 Il suo scopo è quello del continuo monitoraggio, della continua identificazione, scoperta dei rischi che incorrono o che posso incorrere durante lo svolgimento del progetto e la loro risoluzione qualora si verifichino.
 \begin{itemize}
 
-\item \textbf{MTPC08 Rischi non Preventivati}\-\\
+\item \textbf{MTPC09 Rischi non Preventivati}\-\\
 Indice numerico incrementale a partire da 0. Indica il numero di rischi non preventivati che si verificano e vengono considerati durante la corrente fase del progetto. La misurazione avviene incrementando il valore per ogni rischio (non individuato precedentemente) che viene rilevato, il valore viene azzerato per ogni fase del progetto.
 
 \end{itemize}
@@ -93,47 +94,47 @@ Indice numerico incrementale a partire da 0. Indica il numero di rischi non prev
 \subsubsection{PR05: Gestione dei Test}
 \begin{itemize}
 
-	\item \textbf{MTTS9 Percentuale di Test Passati}\-\\
+	\item \textbf{MTTS10 Percentuale di Test Passati}\-\\
 Indica la percentuale di test passati, utile per misurare l'avanzamento qualitativo. La misurazione avviene:
 \begin{center}
 	\item $PTP = \frac{TP}{TT}*100$
 \end{center}
 dove PTP è la percentuale finale di test passati, TP sono i test passati e TT i test totali eseguiti.
 
-	\item \textbf{MTTS10 Percentuale di Test Falliti}\-\\
+	\item \textbf{MTTS11 Percentuale di Test Falliti}\-\\
 Indica la percentuale di test falliti. La misurazione avviene:
 \begin{center}
 	\item $PTF = \frac{TF}{TT}*100$
 \end{center}
 dove PTF è la percentuale finale di test falliti, TF sono i test passati e TT i test totali eseguiti.
 
-	\item \textbf{MTTS11 Percentuale di Difetti Sistemati}\-\\
+	\item \textbf{MTTS12 Percentuale di Difetti Sistemati}\-\\
 Indica la percentuale di bug/difetti sistemati, indice utile per misurare l'avanzamento. La misurazione avviene:
 \begin{center}
 	\item $PDS = \frac{DS}{DT}*100$
 \end{center}
 dove PDS è la percentuale calcolata, DS i difetti sistemati e DT i difetti totali.
 
-	\item \textbf{MTTS12 Tempo Medio di Risoluzione degli Errori}\-\\
+	\item \textbf{MTTS13 Tempo Medio di Risoluzione degli Errori}\-\\
 Indice calcolato sul tempo medio della risoluzione di bug creati dal team durante lo sviluppo. Utile per considerare abilità e tempo di assorbimento di un bug nel sistema. La misurazione avviene:
 \begin{center}
 	\item $TMRE = \frac{TRE}{NE}$
 \end{center}
 dove TMRE è il tempo medio calcolato, TRE il tempo totale per la risoluzione degli errori e NE il numero degli errori.
 
-	\item \textbf{MTTS13 Numero Medio di Bug Trovati per Test}\-\\
+	\item \textbf{MTTS14 Numero Medio di Bug Trovati per Test}\-\\
 Indica il numero medio di bug trovati eseguendo i test. È  un indice utile per verificare la qualità dei test e del sistema in generale. La misurazione avviene:
 \begin{center}
 	\item $MBT = \frac{NB}{NT}$
 \end{center}
 dove MBT è la media calcolata, NB il numero di bug rilevati e NT il numero dei test.
-	\item \textbf{MTTS14 Copertura dei Test Eseguiti}\-\\
+	\item \textbf{MTTS15 Copertura dei Test Eseguiti}\-\\
 Valore che rappresenta la percentuale di test che sono stati eseguiti rapportato al numero di test da eseguire. La misurazione avviene:
 \begin{center}
 	\item $PTE = \frac{TE}{TT}*100$
 \end{center}
 Dove TE indica i test eseguiti i test eseguiti, mentre TT i test totali.
-	\item \textbf{MTTS15 Copertura dei Requisiti}\-\\
+	\item \textbf{MTTS16 Copertura dei Requisiti}\-\\
 Valore che rappresenta la percentuale dei requisiti coperti rispetto al totale. La misurazione avviene:
 \begin{center}
 	\item $CR = \frac{RC}{RT}*100$
@@ -144,36 +145,24 @@ Dove RC indica i requisiti coperti, mentre RT i requisiti totali.
 \end{itemize}
 
 
-\iffalse 
-\paragraph{MTTS15 Difetti Trovati per Requisito}\-\\
-Indice numerico che rappresenta il numero medio di test eseguiti per requisito. Utile per verificare che il sistema soddisfi i requisiti a pieno. La misurazione avviene:
-\begin{center}
-	\item $MDR = \frac{TDR}{TR}$
-\end{center}
-dove MDR è la media calcolata, TDR il numero totale di difetti trovati e TR il numero totale di requisiti.
-\fi
-
 \subsubsection{PR06: Versionamento e Build}
 \begin{itemize}
-	\item \textbf{MTPC16 Media Commit per Settimana} ~\\
+	\item \textbf{MTPC17 Media Commit per Settimana} ~\\
 	Calcolo della media dei commit effettuati settimanalmente. Essendo le repository presenti su due sistemi di versionamento differenti, verrà calcolata la media per ognuna di essi. Per il calcolo della media verrà utilizzato un bot.
-	\item \textbf{MTPC17 Percentuali Build Superate} ~\\
+	\item \textbf{MTPC18 Percentuali Build Superate} ~\\
 	Calcolo della media delle build effettuate sulla repository contente il codice per lo sviluppo del prodotto. Il calcolo avviene tramite un bot connesso al sistema di versionamento \textit{GitLab}. 
 \end{itemize}
 
 \subsection{Metriche per la Qualità di Prodotto}
 Le seguenti metriche sono utilizzate per misurare qualitativamente il prodotto.
 
-\iffalse
-\paragraph{MTTS15 Numero di Test Eseguiti per Requisito}\-\\
-\fi
 
 \subsubsection{Leggibilità}
 \begin{itemize}
-	\item \textbf{MTPDD18 Indice di Gulpease}\-\\
+	\item \textbf{MTPDD19 Indice di Gulpease}\-\\
 Il gruppo ha deciso di utilizzare l'\textit{indice di Gulpease}\glossario per misurare la leggibilità di un testo. È stato sviluppato appositamente uno script in \textit{Python} per automatizzare la procedura e allo stesso modo velocizzarla. La procedura verrà utilizzata a documento terminato e completo così da valutare il lavoro svolto dai redattori.
 
-	\item \textbf{MTPDD19 Correttezza Ortografica}\-\\
+	\item \textbf{MTPDD20 Correttezza Ortografica}\-\\
 La correttezza ortografica è un aspetto importante che non accetta errori, i documenti al momento della pubblicazione sono corretti. Verranno utilizzati appositi strumenti che supporteranno la correzione, ovvero il software \textit{TexMaker} il quale integra un segnalatore automatico degli errori grammaticali. 
 
 	\item \textbf{Correttezza Logica e Semantica} \-\\
@@ -183,14 +172,14 @@ Non essendo disponibili sistemi automatici al fine di controllare la correttezza
 \subsubsection{Funzionalità}\-\\
 Con \textit{Funzionalità} si intendono le qualità riguardanti le funzioni offerte dal software.
 \begin{itemize}
-	\item \textbf{MTPDS20 Soddisfacimento Requisiti Obbligatori}\-\\
+	\item \textbf{MTPDS21 Soddisfacimento Requisiti Obbligatori}\-\\
 Indicatore percentuale che verifica che tutti i requisiti obbligatori siano soddisfatti. Condizione necessaria al fine di rispettare il contratto. La misurazione avviene:
 \begin{center}
 	\item $PRO = \frac{ROS}{ROT}*100$
 \end{center}
 dove PRO è la percentuale di requisiti obbligatori soddisfatti, ROS i requisiti obbligatori soddisfatti e ROT i requisiti obbligatori totali.
 
-	\item \textbf{MTPDS21 Soddisfacimento Requisiti Opzionali Accettati}\-\\
+	\item \textbf{MTPDS22 Soddisfacimento Requisiti Opzionali Accettati}\-\\
 Indicatore percentuale che verifica se tutti i requisiti opzionali scelti siano soddisfatti. Condizione necessaria al fine di rispettare il contratto. La misurazione avviene:
 \begin{center}
 	\item $PRP = \frac{RPS}{RPT}*100$
@@ -201,13 +190,13 @@ dove PRP è la percentuale di requisiti opzionali accettati, RPS i requisiti opz
 \subsubsection{Affidabilità}\-\\
 Con \textit{Affidabilità} si intende la garanzia di funzionamento del software sotto determinate condizioni d'uso.
 \begin{itemize}
-	\item \textbf{MTPDS22 Densità di Failure} \-\\
+	\item \textbf{MTPDS23 Densità di Failure} \-\\
 	Indicatore percentuale utilizzato per calcolare la percentuale di testing che si è conclusa in failure. La misurazione avviene: 
 	\begin{center}
 		\item $ DF = \frac{FR}{TE}*100 $
 	\end{center}
 	in cui DF è la percentuale della densità di failure, FR sono il numero di test falliti durante il testing e TE il numero di test totali. 
-	\item \textbf{MTPDS23 Tolleranza agli Errori} \-\\
+	\item \textbf{MTPDS24 Tolleranza agli Errori} \-\\
 	Indicatore percentuale delle funzionalità che sono in grado di gestire correttamente ed efficientemente gli errori. La misurazione avviene: 
 	\begin{center}
 		\item $ TE = \frac{FE}{ON}*100 $
@@ -218,14 +207,14 @@ Con \textit{Affidabilità} si intende la garanzia di funzionamento del software 
 \subsubsection{Efficienza}\-\\
 Con \textit{Efficienza} si intendono le prestazioni raggiungibili sotto specifiche condizioni di utilizzo.
 \begin{itemize}
-	\item \textbf{MTDS24 Tempo di Risposta Medio}\\
+	\item \textbf{MTDS25 Tempo di Risposta Medio}\\
 		Il tempo di risposta medio è dovuto a varie componenti: 
 		\begin{itemize}
 			\item Carico medio del server in un range di tempo;
 			\item Complessità rete bayesiana presa in carico; 
 			\item Complessità media della libreria JSBayes; 
 		\end{itemize} 
-	\item \textbf{MTDS25 Tempo di Risposta di Picco}\\
+	\item \textbf{MTDS26 Tempo di Risposta di Picco}\\
 		Il tempo di risposta di Picco massimo, è inteso il tempo massimo di risposta in situazioni limite.
 		% $ TMEDIO = \frac{reteBays * JSBayes }{Server_s\Delta}$
 \end{itemize}
@@ -234,10 +223,10 @@ Con \textit{Efficienza} si intendono le prestazioni raggiungibili sotto specific
 \subsubsection{Usabilità}\-\\
 Con \textit{Usabilità} si intende il livello di comprensione del prodotto da parte dell'utilizzatore.
 \begin{itemize}
-	\item\textbf{MTPDS26 Tempo Medio di Comprensione}\-\\
+	\item\textbf{MTPDS27 Tempo Medio di Comprensione}\-\\
 Indica il tempo medio che l'utente impiega per comprendere cosa può svolgere il sistema. È misurato in minuti ed è rilevato attraverso test a persone esterne al team di sviluppo.
 
-	\item\textbf{MTPDS27 Tempo Medio di Apprendimento}\-\\
+	\item\textbf{MTPDS28 Tempo Medio di Apprendimento}\-\\
 Indica il tempo medio che l'utente impiega per riuscire a utilizzare a pieno il software e tutte le sue funzionalità. È  misurato in minuti ed è rilevato tramite test a persone esterne al team di sviluppo. 
 
 \end{itemize}
@@ -245,7 +234,7 @@ Indica il tempo medio che l'utente impiega per riuscire a utilizzare a pieno il 
 \subsubsection{Manutenibilità}\-\\
 Con \textit{Manutenibilità} si intende il livello di semplicità richiesto al fine di eseguire interventi di modifica, correzione o adattamento.
 \begin{itemize}
-	\item \textbf{MTPDS28 Percentuale Commenti/Codice}\-\\
+	\item \textbf{MTPDS29 Percentuale Commenti/Codice}\-\\
 	Indica le righe di commenti presente rispetto al codice. È  calcolato per ogni procedura e non per l'intera codebase. La misurazione avviene:
 	\begin{center}
 		\item $PC = \frac{RC}{RT}*100$
