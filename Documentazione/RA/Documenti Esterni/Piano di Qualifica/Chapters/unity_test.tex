@@ -34,7 +34,7 @@ TU0-12 & Viene verificato che il tipo di ritorno dalla richiesta \texttt{root} a
 \hline
 TU0-14 & Viene verificata che la richiesta \texttt{alive} ritorni data corrente e numero della porta in ascolto del server & S. \\ 
 \hline 
-\rowcolor{grigio}TU0-15 & Viene verificata che la richiesta \texttt{networks} ritorni un json & S. \\ 
+\rowcolor{grigio}TU0-15 & Viene verificata che la richiesta \texttt{/networks} ritorni un json con tutte le reti & S. \\ 
 \hline 
 TU0-16 & Viene verificato che venga chiamato il metodo \texttt{getNetworks()} & S. \\
 \hline 
@@ -53,6 +53,8 @@ TU0-22 & Viene verificato che la rete venga sovrascritta nel caso in cui l'utent
 \rowcolor{grigio}TU0-23 & Viene verificato il lancio di un'eccezione nel caso in cui la cancellazione di una rete sia fallito & S. \\ 
 \hline
 TU0-24 & Viene verificato che la rete caricata disponga del campo \texttt{name} di tipo \textbf{stringa} & S. \\ 
+\hline
+\rowcolor{grigio}TU0-25 & Viene verificato che il metodo \textit{getMilliseconds} ritorni il valore della politica temporale in millisecondi & S.\\
 \hline 
  TU0-26 & Viene verificato il lancio di un'eccezione nel caso in cui il campo dati \texttt{name} sia assente & N.I. \\ 
 \hline 
@@ -64,63 +66,46 @@ TU0-24 & Viene verificato che la rete caricata disponga del campo \texttt{name} 
 \hline 
 TU0-30 & Viene verificata la creazione di un nuovo oggetto di tipo \texttt{Network} con la rete caricata dall'utente & S. \\ 
 \hline
-\rowcolor{grigio} TU0-31 & Viene verificato il lancio di un'eccezione nel caso in cui il metodo \texttt{saveNetworkToFile(net)} fallisca & N.I. \\
+\rowcolor{grigio} TU0-31 & Viene verificato il lancio di un'eccezione nel caso in cui il metodo \texttt{saveNetworkToFile(net)} fallisca & S. \\
 \hline
-TU0-32 & Viene verificato che la richiesta di \texttt{uploadnetwork} ritorni una risposta con stato \textit{404} in caso di fallimento & S. \\ 
+TU0-32 & Viene verificato che la richiesta di \texttt{/uploadnetwork} ritorni una risposta con stato \textit{404} in caso di fallimento & S. \\ 
 \hline
-\rowcolor{grigio} TU0-33 & Viene verificato che la richiesta \texttt{uploadnetwork} ritorni un messaggio di successo nel caso in cui il metodo non ritorni errori & S. \\
+\rowcolor{grigio} TU0-33 & Viene verificato che la richiesta \texttt{/uploadnetwork} ritorni un messaggio di successo nel caso in cui il metodo non ritorni errori & S. \\
 \hline
-TU0-34 & Viene verificata che la richiesta di \texttt{getnetwork/:net} al server, chiami il metodo \texttt{parserNetworkNameURL} & S. \\ 
-\hline
-\rowcolor{grigio} TU0-35 & Viene verificato che il metodo \texttt{parserNetworkNameURL} ritorni il nome della rete parsato & S. \\ 
+TU0-34 & Viene verificato che il metodo \texttt{parserNetworkNameURL} ritorni il nome della rete parsato & S. \\ 
 \hline 
-TU0-36 & Viene verificato che il metodo \texttt{parserNetworkNameURL} ritorni \textit{false} nel caso in cui: il parametro passato sia stringa vuota, la rete non esiste oppure il parametro non è definito & S. \\ 
+\rowcolor{grigio}TU0-35 & Viene verificato che il metodo \texttt{parserNetworkNameURL} ritorni \textit{false} nel caso in cui: il parametro passato sia stringa vuota, la rete non esiste oppure il parametro non è definito & S. \\ 
 \hline 
-\rowcolor{grigio}TU0-37 & Viene verificato che la richiesta \texttt{getnetwork/:net} ritorni un json con la definizione della rete richiesta & N.I. \\ 
-\hline 
-TU0-38 & Viene verificato il lancio di un'eccezione nel caso in cui la lettura della rete da filesystem sia fallita & N.I. \\
-\hline
- \rowcolor{grigio} TU0-39 & Viene verificato, in caso di eccezione nella richiesta \texttt{getnetwork/:net} che quest'ultima ritorni un messaggio di errore con stato \textit{404} & N.I. \\ 
+TU0-36 & Viene verificato che la richiesta \texttt{getnetwork/:net} ritorni un json con la definizione della rete richiesta & S. \\ 
  \hline
-TU0-40 & Viene verificato che la richiesta \texttt{networkslive} al server, ritorni un json contenente le reti monitorate in un dato istante di tempo & S. \\ 
+\rowcolor{grigio}TU0-37 & Viene verificato che la richiesta \texttt{networkslive} al server, ritorni un json contenente le reti monitorate in un dato istante di tempo & S. \\ 
  \hline 
- \rowcolor{grigio}TU0-41 & Viene verificato che la richiesta \texttt{deletenetwork/:net} al server, ritorni un messaggio di successo nel caso in cui la rete sia stata eliminata & N.I. \\
+ TU0-38 & Viene verificato che la richiesta \texttt{deletenetwork/:net} al server, ritorni un messaggio di successo nel caso in cui la rete sia stata eliminata & S. \\
  \hline
- TU0-42 & Viene verificato che la richiesta \texttt{deletenetwork/:net} al server, ritorni un messaggio d'errore nel caso in cui il nome della rete da eliminare sia vuoto,  non definito o non esista nel filesystem del server & N.I. \\ 
- \hline
-\rowcolor{grigio}TU0-43 & Viene verificato il lancio di un'eccezione nel caso in cui la rete da eliminare non esista & N.I. \\ 
+ \rowcolor{grigio}TU0-39 & Viene verificato che la richiesta \texttt{deletenetwork/:net} al server, ritorni un messaggio d'errore nel caso in cui il nome della rete da eliminare sia vuoto,  non definito o non esista nel filesystem del server & S. \\ 
 \hline
- TU0-44 & Viene verificato il lancio di un'eccezione nel caso in cui il file di salvataggio della rete non esista nel filesystem del server & N.I. \\ 
+TU0-40 & Viene verificato che la richiesta \textit{/getjsbayesviz/:net} ritorni un json che rappresenta l'oggetto jsbayesviz in formato json & S.\\
  \hline
- \rowcolor{grigio} TU0-45 & Viene verificato che la richiesta \texttt{addtopool/:net} al server richiami il metodo \texttt{parserNetworkNameURL} & N.I. \\ 
+\rowcolor{grigio}TU0-41 & Viene verificato che la richiesta \textit{/getpool} ritorni un array che contiene il nome delle reti attualmente monitorate & S.\\
+\hline 
+ TU0-42 & Viene verificato che il metodo \texttt{deleteFromPool(net)} ritorni true nel caso in cui la rete viene tolta dal monitoraggio & S. \\ 
  \hline
- TU0-46 & Viene verificato che la richiesta \texttt{addtopool/:net} al server ritorni un messaggio di errore nel caso in cui il nome della rete non sia valido o che non esista la rete desiderata & N.I. \\ 
- \hline
- \rowcolor{grigio}TU0-47 & Viene verificata che la richiesta \texttt{addtopool/:net} al server richiami il metodo \texttt{addToPool(net)} & N.I. \\ 
- \hline
- TU0-48 & Viene verificato che il metodo \texttt{addToPool(net)} ritorni aggiunga nel pool di monitoraggio la rete desiderata & S. \\
+\rowcolor{grigio} TU0-43 & Viene verificato che il metodo \texttt{addToPool(net)} ritorni true nel caso in cui la rete sia stata aggiunta al pool di monitoraggio con successo & S. \\ 
 \hline
-\rowcolor{grigio} TU0-49 & Viene verificato che il metodo \texttt{addToPool(net)} ritorni true nel caso in cui la rete sia stata aggiunta al pool di monitoraggio con successo & N.I. \\ 
+TU0-44 & Viene verificato che il server venga avviato con parametri statici & S. \\ 
+\hline
+\rowcolor{grigio}TU0-45 & Viene verificato che la richiesta \texttt{getnetworkprob/:net} al server ritorni un json contenente le probabilità calcolate per la rete desiderata & S. \\ 
+\hline 
+TU0-46 & Viene verificato che il metodo \texttt{countNetwork()} ritorni il numero di reti caricate sul server & S. \\ 
 \hline 
 TU0-50 & Viene verificato che il metodo \texttt{addToPool(net)} ritorni false nel caso in cui la rete da monitorare e già monitorata & S. \\ 
 \hline
 \rowcolor{grigio} TU0-51 & Viene verificato che la richiesta \texttt{addtopool/:net} ritorni un messaggio di successo nel caso in cui la rete sia stata aggiunta al pool di monitoraggio & N.I. \\ 
 \hline 
 TU0-52 & Viene verificato che la richiesta \texttt{addtopool/:net} al server ritorni un messaggio di errore nel caso in cui la rete desiderata è già aggiunta al pool di monitoraggio & N.I. \\ 
-\hline 
-\rowcolor{grigio} TU0-53 & Viene verificato che la richiesta \texttt{getnetworkprob/:net} al server richiami il metodo \texttt{parserNetworknameURL(name)} &  N.I. \\ 
-\hline 
-TU0-54 & Viene verificato che la richiesta \texttt{getnetworkprob/:net} al server ritorni un messaggio di errore con stato \textit{404} nel caso in cui il nome passato a parametro non sia valido & N.I. \\ 
 \hline
-\rowcolor{grigio} TU0-55 & Viene verificato che la richiesta \texttt{getnetworkprob/:net} al server ritorni un messaggio di errore nel caso in cui la rete desiderata non sia in monitoraggio & N.I. \\ 
-\hline 
-TU0-56 & Viene verificato che la richiesta \texttt{getnetworkprob/:net} al server ritorni un json contenente le probabilità calcolate per la rete desiderata & S. \\ 
-\hline 
-\rowcolor{grigio} TU0-57 & Viene verificato che la richiesta \texttt{deletenetpool/:net} al server richiami il metodo \texttt{parserNetworkNameURL(name)} & N.I. \\ 
-\hline
-TU0-58 & Viene verificato che la richiesta \texttt{deletenetpool/:net} al server richiami il metodo \texttt{deleteFromPool(net)} & N.I. \\ 
-\hline 
-\rowcolor{grigio} TU0-59 & Viene verificato che il metodo \texttt{deleteFromPool(net)} ritorni true nel caso in cui la rete viene tolta dal monitoraggio & S. \\ 
+
+ 
 \hline
 TU0-60 & Viene verificato che il metodo \texttt{deleteFromPool(net)} ritorni false nel caso in cui l'eliminazione della rete dal monitoraggio fallisca & N.I. \\ 
 \hline 
@@ -342,10 +327,7 @@ TU0-168 & Viene verificato che il metodo \texttt{requestNetworkToServer(string)}
 \hline
 \rowcolor{grigio}TU0-169 & Viene verificato che il metodo \texttt{requestNetworkToServer(string)} di \textit{GBCtrl} torni \textbf{False} nel caso non sia possibile reperire la rete, avente come nome la stringa passata come parametro, dal server & S.\\
 \hline
-TU0-170 & Viene verificato che il metodo \texttt{loadNetwork(data)} di \textit{GBCtrl} carichi sul pannello la rete bayesiana "data", passata come parametro (\textit{JSON}) al metodo, tornando \textbf{True} nel caso di buon esito dell'operazione & S.\\
-\hline
-\rowcolor{grigio}TU0-171 & Viene verificato che il metodo \texttt{loadNetwork(data)} di \textit{GBCtrl} torni \textbf{False} nel caso in cui all'interno del metodo ci sia un altro dei metodi richiamati che lancia un'eccezione, o per l'impossibilità di collegarsi al server o per problemi nella struttura della rete  & S.\\
-\hline
+
 TU0-172 & Viene verificato che il metodo \texttt{resetTresholds} di \textit{GBCtrl} elimini tutte le soglie, ripristinando le impostazioni di default del pannello & S.\\
 \hline
 \rowcolor{grigio}TU0-173 & Viene verificato che il metodo \texttt{checkIfAtLeastOneTresholdDefined} di \textit{GBCtrl} torni \textbf{True} nel caso sia definita almeno una soglia per il collegamento di un qualche nodo & S.\\
@@ -408,9 +390,7 @@ TU0-200 & Viene verificato che il metodo \textit{observeData} ritorni \textbf{Tr
 \hline
 TU0-178 & Viene verificato che il metodo \textit{observeNetworks} imposti a \textbf{True} la variabile \textit{networks.critica} se viene superata una soglia critica & S.\\
 \hline
-\rowcolor{grigio}TU0-179 & Viene verificato che la richiesta \textit{/getjsbayesviz/:net} ritorni un json che rappresenta l'oggetto jsbayesviz in formato json & S.\\
-\hline
-TU0-180 & Viene verificato che la richiesta \textit{/getpool} ritorni un array che contiene il nome delle reti attualmente monitorate & S.\\
+
 \hline
 \caption{Test di unità}
 
