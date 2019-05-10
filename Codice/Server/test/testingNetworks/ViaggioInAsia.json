@@ -23,6 +23,10 @@
 		"Viaggio in Asia": {
 			"table": "disk",
 			"flush": "inodes_used"
+		},
+		"Bronchite": {
+			"table": "cpu",
+			"flush": "usage_system"
 		}
 	},
 	"monitoring": true,
@@ -209,12 +213,34 @@
 				"value": 1,
 				"critical": true,
 				"name": 1
+			}, 
+			{
+				"state": "false",
+				"sign": "<=",
+				"value": 1,
+				"critical": true,
+				"name": 4
 			}
 		],
 		"Tubercolosi": [],
 		"Fuma": [],
 		"Cancro": [],
-		"Bronchite": [],
+		"Bronchite": [
+			{
+				"state": "true",
+				"sign": "<",
+				"value": 20,
+				"critical": true,
+				"name": 3
+			},
+			{
+				"state": "true",
+				"sign": ">",
+				"value": 1,
+				"critical": true,
+				"name": 2
+			}
+		],
 		"TBC o Cancro": [],
 		"Dispnea": [],
 		"Risultati sui raggi X": []

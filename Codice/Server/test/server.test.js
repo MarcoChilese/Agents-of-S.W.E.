@@ -323,8 +323,8 @@ describe('Testing server...', () => {
 		done(); 	
 	});
 
-	// TU0-33 
-	test("TU0-33 Viene verificata che la richiesta di getnetwork/:net al server, chiami il metodo parserNetworkNameURL", (done) => {
+	// TU0-37 
+	test("TU0-37 Viene verificata che la richiesta di getnetwork/:net al server, ritorni la definzione della rete in formato JSON", (done) => {
 		request(app.app).get('/getnetwork/Alarm').then((response) => {
 			expect(response.body).isJSON();
 			done(); 
