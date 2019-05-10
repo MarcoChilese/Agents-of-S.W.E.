@@ -152,71 +152,73 @@ RFF4.4.7.1 & Il Sistema deve consentire l'avvio del monitoraggio di una rete anc
 \hline
 ROF4.5 & Il Sistema deve fornire all'utente una lista di probabilità dinamiche associate ai nodi della rete in monitoraggio & Obbligatorio & UC4\\
 \hline
-\rowcolor{grigio}RFF4.5.1 & L'Utente deve aver la possibilità di scegliere la rete bayesiana, tra quelle al momento in monitoraggio, di cui visualizzare i dati di monitoraggio sotto forma di probabilità dinamiche & Opzionale & UC4\\
+\rowcolor{grigio}RFF4.5.1 & L'Utente deve aver la possibilità di scegliere la rete bayesiana, tra quelle al momento in monitoraggio, di cui visualizzare i dati di monitoraggio sotto forma di probabilità dinamiche & Opzionale & UC36\\
 \hline
-RFF4.5.1.1 & Il Sistema deve fornire all'utente un menù a tendina contente la lista delle reti bayesiane in monitoraggio tra cui scegliere & Opzionale & UC4\\
+RFF4.5.1.1 & Il Sistema deve fornire all'utente un menù a tendina contente la lista delle reti bayesiane in monitoraggio tra cui scegliere & Opzionale & UC36\\
 \hline
-\rowcolor{grigio}ROF4.6 & Il Sistema, attraverso l'uso del server per l'elaborazione dei dati, deve aggiornare periodicamente le probabilità in base a quanto definito come politica temporale per il ricalcolo delle probabilità & Obbligatorio & UC4\\
+\rowcolor{grigio}RDF4.5.2 & L'Utente deve visualizzare i dati di monitoraggio sotto forma grafica, ovvero come probabilità dinamiche associate alla rappresentazione visiva dei nodi della rete monitorata & Desiderabile & UC4\\
 \hline
-RDF4.6.1 & Il Sistema, indipendentemente dalla politica temporale stabilita dall'utente, deve ricalcolare le probabilità al verificarsi del superamento di una soglia critica associata ad uno stato di un nodo collegato al flusso di monitoraggio & Desiderabile & UC4 VER-2019-02-08\\
+ROF4.6 & Il Sistema, attraverso l'uso del server per l'elaborazione dei dati, deve aggiornare periodicamente le probabilità in base a quanto definito come politica temporale per il ricalcolo delle probabilità & Obbligatorio & UC4\\
 \hline
-\rowcolor{grigio}ROF4.7 & L'Utente deve poter interrompere monitoraggio relativo alla rete correntemente visualizzata nel pannello & Obbligatorio & UC21\\
+\rowcolor{grigio}RDF4.6.1 & Il Sistema, indipendentemente dalla politica temporale stabilita dall'utente, deve ricalcolare le probabilità al verificarsi del superamento di una soglia critica associata ad uno stato di un nodo collegato al flusso di monitoraggio & Desiderabile & UC4 VER-2019-02-08\\
 \hline
-ROF4.7.1 & Il Sistema deve mettere a disposizione un pulsante per interrompere il monitoraggio della rete bayesiana & Obbligatorio & UC21\\
+ROF4.7 & L'Utente deve poter interrompere monitoraggio relativo alla rete correntemente visualizzata nel pannello & Obbligatorio & UC21\\
 \hline
-\rowcolor{grigio}ROF4.7.2 & L'Utente deve visualizzare un messaggio di notifica di interruzione del monitoraggio della rete bayesiana attualemnte visualizzata nel pannello & Obbligatorio & UC35\\
+\rowcolor{grigio}ROF4.7.1 & Il Sistema deve mettere a disposizione un pulsante per interrompere il monitoraggio della rete bayesiana & Obbligatorio & UC21\\
 \hline
-ROF7 & L'Utente deve poter collegare il plug-in al server per l'elaborazione dati e il salvataggio delle impostazioni di collegamento & Obbligatorio & UC17\\
+ROF4.7.2 & L'Utente deve visualizzare un messaggio di notifica di interruzione del monitoraggio della rete bayesiana attualemnte visualizzata nel pannello & Obbligatorio & UC35\\
 \hline
-\rowcolor{grigio}ROF7.1 & Il Sistema deve disporre di una sezione adibita alle "Server Settings" all'interno del menù "Edit" del pannello & Obbligatorio & UC17\\
+\rowcolor{grigio}ROF7 & L'Utente deve poter collegare il plug-in al server per l'elaborazione dati e il salvataggio delle impostazioni di collegamento & Obbligatorio & UC17\\
 \hline
-ROF7.1.1 & Il Sistema deve disporre di, nella sezione "Server Settings" del menù "Edit" del pannello, un campo di testo in cui inserire l'indirizzo IP del server al quale ci si desidera connettere & Obbligatorio & UC17\\
+ROF7.1 & Il Sistema deve disporre di una sezione adibita alle "Server Settings" all'interno del menù "Edit" del pannello & Obbligatorio & UC17\\
 \hline
-\rowcolor{grigio}ROF7.1.2 & Il Sistema deve disporre di, nella sezione "Server Settings" del menù "Edit" del pannello, un campo di testo in cui inserire la porta del server alla quale ci si desidera connettere & Obbligatorio & UC17\\
+\rowcolor{grigio}ROF7.1.1 & Il Sistema deve disporre di, nella sezione "Server Settings" del menù "Edit" del pannello, un campo di testo in cui inserire l'indirizzo IP del server al quale ci si desidera connettere & Obbligatorio & UC17\\
 \hline
-ROF7.1.3 & Il Sistema deve disporre di, nella sezione "Server Settings" del menù "Edit" del pannello, un pulsante che permette di confermare i dati inseriti & Obbligatorio & UC17\\
+ROF7.1.2 & Il Sistema deve disporre di, nella sezione "Server Settings" del menù "Edit" del pannello, un campo di testo in cui inserire la porta del server alla quale ci si desidera connettere & Obbligatorio & UC17\\
 \hline
-\rowcolor{grigio}ROF7.2 & L'Utente deve visualizzare un messaggio di errore nel caso in cui il collegamento al server non sia giunto a buon fine& Obbligatorio & UC22\\
+\rowcolor{grigio}ROF7.1.3 & Il Sistema deve disporre di, nella sezione "Server Settings" del menù "Edit" del pannello, un pulsante che permette di confermare i dati inseriti & Obbligatorio & UC17\\
 \hline
-ROF7.2.1 & Il Sistema deve verificare che l'indirizzo IP inserito dall'utente sia valido & Obbligatorio & UC17 UC22\\
+ROF7.2 & L'Utente deve visualizzare un messaggio di errore nel caso in cui il collegamento al server non sia giunto a buon fine& Obbligatorio & UC22\\
 \hline
-\rowcolor{grigio}ROF7.2.2 & Il Sistema deve verificare che la porta del server indicata dall'utente sia in ascolto & Obbligatorio & UC17 UC22\\
+\rowcolor{grigio}ROF7.2.1 & Il Sistema deve verificare che l'indirizzo IP inserito dall'utente sia valido & Obbligatorio & UC17 UC22\\
 \hline
-ROF7.3 & L'Utente deve visualizzare un messaggio di avvenuto collegamento al server, nel caso in cui sia giunto a buon fine & Obbligatorio & UC26\\
+ROF7.2.2 & Il Sistema deve verificare che la porta del server indicata dall'utente sia in ascolto & Obbligatorio & UC17 UC22\\
 \hline
-\rowcolor{grigio}RDF8 & L'Utente deve poter selezionare una rete bayesiana, con eventuali relative impostazioni di collegamento, tra quelle precedentemente caricate & Desiderabile & UC23\\
+\rowcolor{grigio}ROF7.3 & L'Utente deve visualizzare un messaggio di avvenuto collegamento al server, nel caso in cui sia giunto a buon fine & Obbligatorio & UC26\\
 \hline
-RDF8.1 & Il Sistema deve mettere a disposizione dell'utente la lista delle reti bayesiane, visualizzate sotto forma di un menù a tendina, salvate nel server & Desiderabile & UC23\\
+RDF8 & L'Utente deve poter selezionare una rete bayesiana, con eventuali relative impostazioni di collegamento, tra quelle precedentemente caricate & Desiderabile & UC23\\
 \hline
-\rowcolor{grigio}RDF8.2 & Il Sistema deve mettere a disposizione dell'utente un pulsante per la selezione della rete bayesiana selezionata attraverso il menù a tendina & Desiderabile & UC23\\
+\rowcolor{grigio}RDF8.1 & Il Sistema deve mettere a disposizione dell'utente la lista delle reti bayesiane, visualizzate sotto forma di un menù a tendina, salvate nel server & Desiderabile & UC23\\
 \hline
-RDF8.3 & Il Sistema, prima di cambiare il contesto di visualizzazione sostituendo le vecchie impostazioni con le nuove, deve salvare nel server la rete precedentemente visualizzata e le sue eventuali impostazioni di collegamento & Desiderabile & UC23\\
+RDF8.2 & Il Sistema deve mettere a disposizione dell'utente un pulsante per la selezione della rete bayesiana selezionata attraverso il menù a tendina & Desiderabile & UC23\\
 \hline
-\rowcolor{grigio}RDF8.3.1 & Il Sistema, nel caso in cui la rete da memorizzare sia già presente nel server, deve sovrascrivere le impostazioni di collegamento memorizzate & Desiderabile & UC23\\
+\rowcolor{grigio}RDF8.3 & Il Sistema, prima di cambiare il contesto di visualizzazione sostituendo le vecchie impostazioni con le nuove, deve salvare nel server la rete precedentemente visualizzata e le sue eventuali impostazioni di collegamento & Desiderabile & UC23\\
 \hline
-RDF8.3.2 & Il Sistema, nel caso in cui la rete visualizzata prima del cambio di contesto sia attualmente in monitoraggio, non deve effettuare operazioni di memorizzazione su server & Desiderabile & UC23\\
+RDF8.3.1 & Il Sistema, nel caso in cui la rete da memorizzare sia già presente nel server, deve sovrascrivere le impostazioni di collegamento memorizzate & Desiderabile & UC23\\
 \hline
-\rowcolor{grigio}RDF8.4 & Il Sistema, a seguito della scelta dell'utente, deve visualizzare la rete selezionata e le sue relative impostazioni di collegamento che vanno a sostituire quelle precedentemente visualizzate & Desiderabile & UC23\\
+\rowcolor{grigio}RDF8.3.2 & Il Sistema, nel caso in cui la rete visualizzata prima del cambio di contesto sia attualmente in monitoraggio, non deve effettuare operazioni di memorizzazione su server & Desiderabile & UC23\\
 \hline
-ROF9 & Il Sistema deve mettere a disposizione dell'utente una sezione unicamente dedicata alla visualizzazione dei dati di monitoraggio & Obbligatorio & Decisione Interna UC24\\
+RDF8.4 & Il Sistema, a seguito della scelta dell'utente, deve visualizzare la rete selezionata e le sue relative impostazioni di collegamento che vanno a sostituire quelle precedentemente visualizzate & Desiderabile & UC23\\
 \hline
-\rowcolor{grigio}ROF9.1 & Il Sistema deve mettere a disposizione un bottone che consenta all'utente di passare alla sezione per la visualizzazione dei monitoraggi attivi & Obbligatorio & UC24\\
+\rowcolor{grigio}ROF9 & Il Sistema deve mettere a disposizione dell'utente una sezione unicamente dedicata alla visualizzazione dei dati di monitoraggio & Obbligatorio & Decisione Interna UC24\\
 \hline
-ROF9.1.1 & Il Sistema deve sostituire la precedente vista del pannello e sostituirla con la sezione dedicata alla visualizzazione dei monitoraggi attivi & Obbligatorio & UC24\\
+ROF9.1 & Il Sistema deve mettere a disposizione un bottone che consenta all'utente di passare alla sezione per la visualizzazione dei monitoraggi attivi & Obbligatorio & UC24\\
 \hline
-\rowcolor{grigio}ROF9.2 & Il Sistema deve mettere a disposizione un bottone che consenta all'utente di uscire dalla sezione di visualizzazione dei monitoraggi attivi per tornare alle impostazioni di collegamento  & Obbligatorio & UC25\\
+\rowcolor{grigio}ROF9.1.1 & Il Sistema deve sostituire la precedente vista del pannello e sostituirla con la sezione dedicata alla visualizzazione dei monitoraggi attivi & Obbligatorio & UC24\\
 \hline
-RDF10 & L'Utente deve poter rimuovere una delle reti memorizzate nel sistema & Desiderabile & UC27\\
+ROF9.2 & Il Sistema deve mettere a disposizione un bottone che consenta all'utente di uscire dalla sezione di visualizzazione dei monitoraggi attivi per tornare alle impostazioni di collegamento  & Obbligatorio & UC25\\
 \hline
-\rowcolor{grigio}RDF10.1 & Il Sistema deve mettere a disposizione un pulsante per l'eliminazione della rete bayesiana selezionata attraverso il menù a tendina & Desiderabile & UC27\\
+\rowcolor{grigio}RDF10 & L'Utente deve poter rimuovere una delle reti memorizzate nel sistema & Desiderabile & UC27\\
 \hline
-RDF10.2 & L'Utente deve visualizzare un messaggio di errore nel caso in cui abbia tentato di rimuovere una rete bayesiana in fase di monitoraggio attivo & Desiderabile & UC28\\
+RDF10.1 & Il Sistema deve mettere a disposizione un pulsante per l'eliminazione della rete bayesiana selezionata attraverso il menù a tendina & Desiderabile & UC27\\
 \hline
-\rowcolor{grigio}RDF10.2.1 & Il Sistema deve verificare che l'utente non abbia selezionato una rete bayesiana in fase di monitoraggio attivo per la rimozione, bloccando l'operazione in caso contrario & Desiderabile & UC28 UC20\\
+\rowcolor{grigio}RDF10.2 & L'Utente deve visualizzare un messaggio di errore nel caso in cui abbia tentato di rimuovere una rete bayesiana in fase di monitoraggio attivo & Desiderabile & UC28\\
 \hline
-RDF10.3 & Il Sistema deve rimuovere dal server la rete bayesiana, e le relative impostazioni di collegamento, selezionata dall'utente & Desiderabile & UC27\\
+RDF10.2.1 & Il Sistema deve verificare che l'utente non abbia selezionato una rete bayesiana in fase di monitoraggio attivo per la rimozione, bloccando l'operazione in caso contrario & Desiderabile & UC28 UC20\\
 \hline
-\rowcolor{grigio}RDF10.4 & L'Utente deve visualizzare un messaggio di avvenuta rimozione della rete bayesiana nel caso in cui l'operazione sia andata a buon fine & Desiderabile & UC29\\
+\rowcolor{grigio}RDF10.3 & Il Sistema deve rimuovere dal server la rete bayesiana, e le relative impostazioni di collegamento, selezionata dall'utente & Desiderabile & UC27\\
+\hline
+RDF10.4 & L'Utente deve visualizzare un messaggio di avvenuta rimozione della rete bayesiana nel caso in cui l'operazione sia andata a buon fine & Desiderabile & UC29\\
 \hline
 \caption{Requisiti Funzionali}
 \end{longtable}
@@ -334,7 +336,7 @@ UC2 & \makecell{ROF2\\ROF2.1.2\\ROF2.5\\ROF2.5.3\\ROF2.5.3.4\\ROF2.5.3.5\\ROF2.5
 \hline
 UC3 & \makecell{ROF3\\ROF3.3\\ROF3.3.1\\ROF3.3.2\\ROF3.3.2.4\\ROF3.3.2.5\\ROF3.3.2.6\\ROF3.3.3\\ROF3.4\\ ROF3.5.1\\ROF3.5.2\\ROF3.5.3\\ROF3.5.4\\ROF3.5.5}\\
 \hline
-\rowcolor{grigio}UC4 & \makecell{ROF4\\ROF4.5\\RFF4.5.1\\RFF4.5.1.1\\ROF4.6\\RDF4.6.1}\\
+\rowcolor{grigio}UC4 & \makecell{ROF4\\ROF4.5\\RDF4.5.2\\ROF4.6\\RDF4.6.1}\\
 \hline
 UC8 & \makecell{ROF1.4\\RFF1.4.1\\RFF1.4.2}\\
 \hline
@@ -386,16 +388,15 @@ UC33 & \makecell{ROF2.7}\\
 \hline
 UC35 & \makecell{ROF4.7.2}\\
 \hline
-\rowcolor{grigio}VER-2019-02-08 & \makecell{RDF4.6.1\\RDF2.5.6.3}\\
+\rowcolor{grigio}UC36 & \makecell{RFF4.5.1\\RFF4.5.1.1}\\
 \hline
-Supporto a \textit{ECMAScript6} & \makecell{ROV8\\ROV9\\ROV10\\ROV11}\\
+VER-2019-02-08 & \makecell{RDF4.6.1\\RDF2.5.6.3}\\
+\hline
+\rowcolor{grigio}Supporto a \textit{ECMAScript6} & \makecell{ROV8\\ROV9\\ROV10\\ROV11}\\
 \hline
 \caption{Tracciamento Fonti-Requisiti}
 \end{longtable}
 \end{center}
-
-
-
 
 \subsection{Tracciamento Requisiti-Fonti}\label{TracciamentoRF}
 \begin{center}
@@ -544,130 +545,129 @@ ROF 4.4.8 & UC34 \\
 \hline
 \rowcolor{grigio}ROF 4.5 & UC4 \\
 \hline
-RFF 4.5.1 & UC4 \\
+RFF 4.5.1 & UC36 \\
 \hline
-\rowcolor{grigio}RFF 4.5.1.1 & UC4 \\
+\rowcolor{grigio}RFF 4.5.1.1 & UC36 \\
 \hline
-ROF 4.6 & UC4 \\
+RDF4.5.2 & UC4\\
 \hline
-\rowcolor{grigio}RDF 4.6.1 & UC4,VER-2019-02-08 \\
+\rowcolor{grigio}ROF 4.6 & UC4 \\
 \hline
-ROF 4.7 & UC21 \\
+RDF 4.6.1 & UC4,VER-2019-02-08 \\
 \hline
-\rowcolor{grigio}ROF 4.7.1 & UC21 \\
+\rowcolor{grigio}ROF 4.7 & UC21 \\
 \hline
-ROF 4.7.2 & UC35 \\
+ROF 4.7.1 & UC21 \\
 \hline
-\rowcolor{grigio}ROF 7 & UC17 \\
+\rowcolor{grigio}ROF 4.7.2 & UC35 \\
 \hline
-ROF 7.1 & UC17 \\
+ROF 7 & UC17 \\
 \hline
-\rowcolor{grigio}ROF 7.1.1 & UC17 \\
+\rowcolor{grigio}ROF 7.1 & UC17 \\
 \hline
-ROF 7.1.2 & UC17 \\
+ROF 7.1.1 & UC17 \\
 \hline
-\rowcolor{grigio}ROF 7.1.3 & UC17 \\
+\rowcolor{grigio}ROF 7.1.2 & UC17 \\
 \hline
-ROF 7.2 & UC22 \\
+ROF 7.1.3 & UC17 \\
 \hline
-\rowcolor{grigio}ROF 7.2.1 & UC17,UC22 \\
+\rowcolor{grigio}ROF 7.2 & UC22 \\
 \hline
-ROF 7.2.2 & UC17,UC22 \\
+ROF 7.2.1 & UC17,UC22 \\
 \hline
-\rowcolor{grigio}ROF 7.3 & UC26 \\
+\rowcolor{grigio}ROF 7.2.2 & UC17,UC22 \\
 \hline
-RDF 8 & UC23 \\
+ROF 7.3 & UC26 \\
 \hline
-\rowcolor{grigio}RDF 8.1 & UC23 \\
+\rowcolor{grigio}RDF 8 & UC23 \\
 \hline
-RDF 8.2 & UC23 \\
+RDF 8.1 & UC23 \\
 \hline
-\rowcolor{grigio}RDF 8.3 & UC23 \\
+\rowcolor{grigio}RDF 8.2 & UC23 \\
 \hline
-RDF 8.3.1 & UC23 \\
+RDF 8.3 & UC23 \\
 \hline
-\rowcolor{grigio}RDF 8.3.2 & UC23 \\
+\rowcolor{grigio}RDF 8.3.1 & UC23 \\
 \hline
-RDF 8.4 & UC23 \\
+RDF 8.3.2 & UC23 \\
 \hline
-\rowcolor{grigio}ROF 9 & UC24,Decisione Interna \\
+\rowcolor{grigio}RDF 8.4 & UC23 \\
 \hline
-ROF 9.1 & UC24 \\
+ROF 9 & UC24,Decisione Interna \\
 \hline
-\rowcolor{grigio}ROF 9.1.1 & UC24 \\
+\rowcolor{grigio}ROF 9.1 & UC24 \\
 \hline
-ROF 9.2 & UC25 \\
+ROF 9.1.1 & UC24 \\
 \hline
-\rowcolor{grigio}RDF 10 & UC27 \\
+\rowcolor{grigio}ROF 9.2 & UC25 \\
 \hline
-RDF 10.1 & UC27 \\
+RDF 10 & UC27 \\
 \hline
-\rowcolor{grigio}RDF 10.2 & UC28 \\
+\rowcolor{grigio}RDF 10.1 & UC27 \\
 \hline
-RDF 10.2.1 & UC20,UC28 \\
+RDF 10.2 & UC28 \\
 \hline
-\rowcolor{grigio}RDF 10.3 & UC27 \\
+\rowcolor{grigio}RDF 10.2.1 & UC20,UC28 \\
 \hline
-RDF 10.4 & UC29 \\
+RDF 10.3 & UC27 \\
 \hline
-\rowcolor{grigio}ROQ 1 & Capitolato \\ 
+\rowcolor{grigio}RDF 10.4 & UC29 \\
 \hline
-ROQ 1.1 & Decisione Interna \\ 
+ROQ 1 & Capitolato \\ 
 \hline
-\rowcolor{grigio}RDQ 1.2 & Decisione Interna \\ 
+\rowcolor{grigio}ROQ 1.1 & Decisione Interna \\ 
 \hline
-RDQ 1.3 & Decisione Interna \\ 
+RDQ 1.2 & Decisione Interna \\ 
 \hline
-\rowcolor{grigio}ROQ 2 & Capitolato \\ 
+\rowcolor{grigio}RDQ 1.3 & Decisione Interna \\ 
 \hline
-ROQ 2.1 & Decisione Interna \\ 
+ROQ 2 & Capitolato \\ 
 \hline
-\rowcolor{grigio}ROQ 2.2 & Decisione Interna \\ 
+\rowcolor{grigio}ROQ 2.1 & Decisione Interna \\ 
 \hline
-ROQ 3 & Decisione Interna \\ 
+ROQ 2.2 & Decisione Interna \\ 
 \hline
-\rowcolor{grigio}RDQ 5 & Capitolato \\ 
+\rowcolor{grigio}ROQ 3 & Decisione Interna \\ 
 \hline
-RDQ 6 & Decisione Interna \\ 
+RDQ 5 & Capitolato \\ 
 \hline
-\rowcolor{grigio}RDQ 7 & Decisione Interna \\ 
+\rowcolor{grigio}RDQ 6 & Decisione Interna \\ 
 \hline
-RDQ 8 & Decisione Interna \\ 
+RDQ 7 & Decisione Interna \\ 
 \hline
-\rowcolor{grigio}RDQ 9 & Decisione Interna \\ 
+\rowcolor{grigio}RDQ 8 & Decisione Interna \\ 
 \hline
-RDQ 10 & Decisione Interna \\ 
+RDQ 9 & Decisione Interna \\ 
 \hline
-\rowcolor{grigio}RDQ 11 & Decisione Interna \\ 
+\rowcolor{grigio}RDQ 10 & Decisione Interna \\ 
 \hline
-ROV 1 & Piattaforma \textit{Grafana} \\
+RDQ 11 & Decisione Interna \\ 
 \hline
-\rowcolor{grigio}ROV 2 & Piattaforma \textit{Grafana} \\
+\rowcolor{grigio}ROV 1 & Piattaforma \textit{Grafana} \\
 \hline
-ROV 3 & Piattaforma \textit{Grafana} \\
+ROV 2 & Piattaforma \textit{Grafana} \\
 \hline
-\rowcolor{grigio}ROV 4 & Capitolato \\ 
+\rowcolor{grigio}ROV 3 & Piattaforma \textit{Grafana} \\
 \hline
-ROV 5 & Capitolato \\ 
+ROV 4 & Capitolato \\ 
 \hline
-\rowcolor{grigio}ROV 6 & Piattaforma \textit{Grafana} \\
+\rowcolor{grigio}ROV 5 & Capitolato \\ 
 \hline
-ROV 8 & Supporto \textit{ECMAScript6} \\
+ROV 6 & Piattaforma \textit{Grafana} \\
 \hline
-\rowcolor{grigio}ROV 9 & Supporto \textit{ECMAScript6} \\
+\rowcolor{grigio}ROV 8 & Supporto \textit{ECMAScript6} \\
 \hline
-ROV 10 & Supporto \textit{ECMAScript6} \\
+ROV 9 & Supporto \textit{ECMAScript6} \\
 \hline
-\rowcolor{grigio}ROV 11 & Supporto \textit{ECMAScript6} \\
+\rowcolor{grigio}ROV 10 & Supporto \textit{ECMAScript6} \\
 \hline
-ROV 12 & Decisione Interna \\ 
+ROV 11 & Supporto \textit{ECMAScript6} \\
+\hline
+\rowcolor{grigio}ROV 12 & Decisione Interna \\ 
 \hline
 \caption{Tracciamento Requisiti-Fonti}
 \end{longtable}
 \end{center}
-
-
-
 
 
 \subsection{Riepilogo Requisiti}\label{Riepilogo}
@@ -677,7 +677,7 @@ ROV 12 & Decisione Interna \\
 \rowcolor{bluelogo}\textbf{\textcolor{white}{Tipologia}} & \textbf{\textcolor{white}{Obbligatorio}} & \textbf{\textcolor{white}{Opzionale}} & \textbf{\textcolor{white}{Desiderabile}} & \textbf{\textcolor{white}{Totale}}\\
 \hline \hline
 \endhead
-Funzionale & 80 & 6 & 18 & 104\\
+Funzionale & 80 & 6 & 19 & 105\\
 \hline
 \rowcolor{grigio}Di Qualità & 5 & 0 & 10 & 15\\
 \hline
