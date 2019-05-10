@@ -553,6 +553,14 @@ describe('Testing server...', () => {
 		});
 	});
 
+	/**
+	* Testing countNetworks() method
+	* expect to return the number of networks in networks[]
+	**/
+	test("Testing countNetworks methotd to return the number of networks", (done) => {
+		expect(app.countNetworks()).toBe(Object.keys(app.networks).length);
+		done(); 
+	});
 	
 
 });

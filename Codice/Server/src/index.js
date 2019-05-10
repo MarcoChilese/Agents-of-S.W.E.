@@ -170,8 +170,7 @@ class Server {
 		// Add to monitoring pool
 		this.app.get('/addtopool/:net', (req, res) => {
 			let name = this.parserNetworkNameURL(req.params.net);
-			console.log(name); 
-
+			
 			if(name === false)
 				res.status(404).send("Network not valid !");
 
