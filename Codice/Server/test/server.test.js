@@ -42,60 +42,6 @@ expect.extend({
 
 
 describe('Testing server...', () => {
-	
-	/**
-	* Verifico che il server carichi le reti salvate 
-	* all'avvio di quest'ultimo 
-	* TU0-64
-	*/
-	test('TU0-64 Check if server has init networks', () => {
-		server.initSavedNetworks();
-		expect(server).not.toBeUndefined();
-		expect(server.networks.length).not.toBeUndefined();
-		expect(Object.keys(server.networks).length).toBeGreaterThan(0);	
-	});
-
-	/**
-	* Test per verificare l'importazione corretta dal file conf.jsons
-	* nell'istanza del server 
-	* TU0-187
-	*/
-	test('Testing basic config of runnign server', () => {
-		let dir = process.cwd();
-		expect(app.path).toMatch(`${dir}/src`);
-		expect(app.conf['saved_network']).toMatch('networks');
-	});
-
-	/**
-	* testing del metodo parserNetworkNameURL() 
-	* TU0-34
-	*/
-	test('good param parserNetworkNameURL method', () => {
-		expect(server.parserNetworkNameURL('Alarm')).toMatch('Alarm'); 
-		expect(server.parserNetworkNameURL('Viaggio in asia')).toMatch('Viaggio_in_asia');
-	});
-
-	/**
-	* Testing del metodo parserNetworkNameURL() 
-	* per verificare parametri errati
-	* TU0-35
-	*/
-	test('bad param parserNetworkNameURL method', () => {
-		expect(server.parserNetworkNameURL(null)).toBeFalsy(); 
-	});
-
-	/**
-	* testing del metodo initDatabaseConnection()
-	* Controllo che siano stati inzializzati i database delle 
-	* reti salvate e inizializzo un nuovo db
-	* TU0-67
-	*/
-	test('initDatabaseConnection method', () => {
-		expect(Object.keys(server.db).length).toBeGreaterThan(0);
-		database.name = "database_prova_jest";
-		expect(server.initDatabaseConnection(database)).toBeTruthy();
-	});
-
 	// TU0-0
 	test("Viene verificato che il file di configurazione esista all' interno della directory", () =>{
 		let dir = process.cwd();
@@ -271,12 +217,25 @@ describe('Testing server...', () => {
 	});
 
 	// TU0-24
-	test("TU0-24 ", () => {});
-
-	// TU0-25
-	test("TU0-25 Viene verificato che la rete caricata disponga del campo name di tipo stringa", () => {
+	test("TU0-24 Viene verificato che la rete caricata disponga del campo name di tipo stringa", () => {
 		expect(server.networks['Viaggio_in_asia'].net.name).not.toBeUndefined(); 
 		expect(typeof server.networks['Viaggio_in_asia'].net.name).toMatch('string');
+	});
+
+	/**
+	* Test 
+	* del metodo observeNetworks()
+	* passando una rete valida come parametro
+	* TU0-25
+	*/
+	test("Testing getMilliseconds() method", (done) => {
+		let dict = {
+			"seconds": 5,
+			"minutes": 5,
+			"hours": 5
+		}
+		expect(server.getMilliseconds(dict)).toEqual((dict.seconds + dict.minutes*60 + dict.hours*3600)*1000); 
+		done() ;
 	});
 
 	// TU0-26 
@@ -328,6 +287,24 @@ describe('Testing server...', () => {
 		done(); 	
 	});
 
+	/**
+	* testing del metodo parserNetworkNameURL() 
+	* TU0-34
+	*/
+	test('TU0-34 good param parserNetworkNameURL method', () => {
+		expect(server.parserNetworkNameURL('Alarm')).toMatch('Alarm'); 
+		expect(server.parserNetworkNameURL('Viaggio in asia')).toMatch('Viaggio_in_asia');
+	});
+
+	/**
+	* Testing del metodo parserNetworkNameURL() 
+	* per verificare parametri errati
+	* TU0-35
+	*/
+	test('TU0-35 bad param parserNetworkNameURL method', () => {
+		expect(server.parserNetworkNameURL(null)).toBeFalsy(); 
+	});
+
 	// TU0-36
 	test("TU0-36 Viene verificata che la richiesta di getnetwork/:net al server, ritorni la definzione della rete in formato JSON", (done) => {
 		request(app.app).get('/getnetwork/Alarm').then((response) => {
@@ -337,64 +314,10 @@ describe('Testing server...', () => {
 	});
 
 	/**
-	* Testing l'inizializzazione del pool delle reti
-	* per ogni rete nell'array 'networks' con monitoring = true, 
-	* mi aspetto un pool inizializzato 
-	* TU0-188
-	*/
-	test("Testing init pool of saved networks", () => {
-		for(let net in server.networks){
-			if(server.networks[net].net.monitoring)
-				expect(server.pool[net]).not.toBeUndefined();
-		}
-	});
-
-	/**
-	* Testing del metodo deleteFromPool() eliminando 
-	* una rete valida.
-	* TU0-59
-	*/
-	test("Testing eliminazione di una rete in pool", () => {
-		let networks = Object.keys(server.networks);
-		for(let net of networks){
-			expect(server.pool[net]).not.toBeUndefined(); 	
-			expect(server.deleteFromPool(net)).toBeTruthy();
-			expect(server.pool[net]).toBeUndefined(); 
-		}
-	});
-
-
-	/**
-	* Testing del metodo addToPool() con una rete valida
-	* TU0-49
-	*/
-	test("Testing add to pool", () => {
-		let networks = Object.keys(server.networks);
-		for(let net of networks){
-			expect(server.pool[net]).toBeUndefined(); 
-			server.addToPool(net);
-			expect(server.pool[net]).not.toBeUndefined();	
-		}
-		
-	});
-
-
-	/**
-	* Testing del metodo addToPool() con una rete
-	* già nel pool
-	* TU0-50
-	*/
-	test("Add existing network on pool", () => {
-		let net = 'Alarm';
-		expect(server.pool[net]).not.toBeUndefined(); 
-		expect(server.addToPool(net)).toBeFalsy();
-	});
-
-	/**
 	* Testing della route /networkslive
 	* TU0-37	
 	*/
-	test("testing /networkslive route ", (done) => {
+	test("TU0-37 testing /networkslive route ", (done) => {
 		request(app.app).get('/networkslive').then((response) => {
 			expect(response.body).isJSON(); 
 			let keys = Object.keys(response.body);
@@ -404,54 +327,12 @@ describe('Testing server...', () => {
 		});
 	});
 
-	/**
-	* Testing della path /getnetworkprob/:net 
-	* passando una rete valida come parametro 
-	* TU0-56
-	*/
-	test("getnetworkprob path", (done) => {
-		request(app.app).get('/getnetworkprob/Alarm').then((response) => {
-			expect(response.body).isJSON(); 
-			done(); 
-		});
-
-	});
-
-
-	
-	/**
-	* Testing unita/integrazione 
-	* del metodo observeNetworks()
-	* passando una rete valida come parametro
-	*/
-	test("Testing soglie critiche", async(done) => {
-		await server.observeNetworks('Viaggio_in_asia', server.networks['Viaggio_in_asia'].dati);
-		expect(server.networks['Viaggio_in_asia'].critica).toBeTruthy();
-		done();
-	});
-
-	/**
-	* Test 
-	* del metodo observeNetworks()
-	* passando una rete valida come parametro
-	* TU0-25
-	*/
-	test("Testing getMilliseconds() method", (done) => {
-		let dict = {
-			"seconds": 5,
-			"minutes": 5,
-			"hours": 5
-		}
-		expect(server.getMilliseconds(dict)).toEqual((dict.seconds + dict.minutes*60 + dict.hours*3600)*1000); 
-		done() ;
-	});
-
-	/**
+		/**
 	* Testing della path /deletenetwork/:net 
 	* passando una rete valida come parametro
 	* TU0-38
 	*/
-	test("deletenetwork route", (done) => {
+	test("TU0-38 deletenetwork route", (done) => {
 		request(app.app).get('/deletenetwork/Alarm').then((response) => {
 			expect(response.body).isJSON(); 
 			expect(response.statusCode).toBe(200); 
@@ -468,7 +349,7 @@ describe('Testing server...', () => {
 	* passando il nome di una rete non valida come parametro
 	* TU0-39
 	*/
-	test("deletenetwork path with no route", (done) => {
+	test("TU0-39 deletenetwork path with no route", (done) => {
 		request(app.app).get('/deletenetwork/ciao').then((response) => {
 			expect(response.text).toMatch('Network not found !');
 			expect(response.statusCode).toBe(404); 
@@ -482,7 +363,7 @@ describe('Testing server...', () => {
 	* Ritorna un json che rappresenta l'oggetto jsbayesviz in formato json
 	* TU0-40
 	**/
-	test("Testing /getjsbayesviz route with good route", (done) => {
+	test("TU0-40 Testing /getjsbayesviz route with good route", (done) => {
 		request(app.app).get('/getjsbayesviz/Viaggio_in_asia').then((response) => {
 			expect(response.statusCode).toBe(200);
 			expect(String(response.body)).toMatch(String(server.networks['Viaggio_in_asia'].graph));
@@ -497,7 +378,7 @@ describe('Testing server...', () => {
 	* nell'istanza del server.
 	* TU0-41 
 	**/
-	test("Testing /getpool route", (done) => {
+	test("TU0-41 Testing /getpool route", (done) => {
 		request(app.app).get('/getpool').then((response) => {
 			expect(response.statusCode).toBe(200); 
 			expect(Object.keys(app.pool)).toEqual(response.body); 
@@ -512,7 +393,7 @@ describe('Testing server...', () => {
 	* altrimenti torna un messaggio di errore con codice HTTP 404
 	* TU0-42
 	**/
-	test("Testing /deletenetpool with good param", (done) => {
+	test("TU0-42 Testing /deletenetpool with good param", (done) => {
 		let rete = 'Viaggio in asia'; 
 
 		request(app.app).get(`/deletenetpool/${rete}`).then((response) => {
@@ -528,7 +409,7 @@ describe('Testing server...', () => {
 	* expect response to be "Network on monitoring !"
 	* TU0-43
 	**/
-	test("Testing /addtopool/:net route", (done) => {
+	test("TU0-43 Testing /addtopool/:net route", (done) => {
 		// server.deleteFromPool('Viaggio_in_asia');
 		request(app.app).get('/addtopool/Viaggio_in_asia').then((response) => {
 			expect(response.statusCode).toBe(200); 
@@ -541,7 +422,7 @@ describe('Testing server...', () => {
 	* Testing metodo di avvio server con parametri statici
 	* TU0-44
 	**/
-	test("Testing starting server", (done) => {		
+	test("TU0-44 Testing starting server", (done) => {		
 		app.startServer(); 
 		expect(app.server.address().port).toBe(8600); 
 		app.shutDown(); 
@@ -553,7 +434,7 @@ describe('Testing server...', () => {
 	* expect reponse to be a json with all probabilities
 	* TU0-45
 	**/
-	test("Testing /getnetworkprob/:net route", (done) => {
+	test("TU0-45 Testing /getnetworkprob/:net route", (done) => {
 		request(app.app).get("/getnetworkprob/Viaggio_in_asia").then((response) => {
 			expect(response.statusCode).toBe(200); 
 			expect(response.body).isJSON(); 
@@ -567,11 +448,135 @@ describe('Testing server...', () => {
 	* expect to return the number of networks in networks[]
 	* TU0-46
 	**/
-	test("Testing countNetworks methotd to return the number of networks", (done) => {
+	test("TU0-46 Testing countNetworks methotd to return the number of networks", (done) => {
 		expect(app.countNetworks()).toBe(Object.keys(app.networks).length);
 		done(); 
 	});
 	
+
+	/**
+	* Verifico che il server carichi le reti salvate 
+	* all'avvio di quest'ultimo 
+	* TU0-47
+	*/
+	test('TU0-47 Check if server has init networks', () => {
+		server.initSavedNetworks();
+		expect(server).not.toBeUndefined();
+		expect(server.networks.length).not.toBeUndefined();
+		expect(Object.keys(server.networks).length).toBeGreaterThan(0);	
+	});
+
+	/**
+	* Test per verificare l'importazione corretta dal file conf.jsons
+	* nell'istanza del server 
+	* TU0-48
+	*/
+	test('TU0-48 Testing basic config of runnign server', () => {
+		let dir = process.cwd();
+		expect(app.path).toMatch(`${dir}/src`);
+		expect(app.conf['saved_network']).toMatch('networks');
+	});
+
+
+
+	/**
+	* testing del metodo initDatabaseConnection()
+	* Controllo che siano stati inzializzati i database delle 
+	* reti salvate e inizializzo un nuovo db
+	* TU0-49
+	*/
+	test('TU0-49 initDatabaseConnection method', () => {
+		expect(Object.keys(server.db).length).toBeGreaterThan(0);
+		database.name = "database_prova_jest";
+		expect(server.initDatabaseConnection(database)).toBeTruthy();
+	});
+	
+	/**
+	* Testing l'inizializzazione del pool delle reti
+	* per ogni rete nell'array 'networks' con monitoring = true, 
+	* mi aspetto un pool inizializzato 
+	* TU0-50
+	*/
+	test("TU0-50 Testing init pool of saved networks", () => {
+		for(let net in server.networks){
+			if(server.networks[net].net.monitoring)
+				expect(server.pool[net]).not.toBeUndefined();
+		}
+	});
+
+	/**
+	* Testing del metodo deleteFromPool() eliminando 
+	* una rete valida.
+	* TU0-51
+	*/
+	test("TU0-51 Testing eliminazione di una rete in pool", () => {
+		let networks = Object.keys(server.networks);
+		for(let net of networks){
+			expect(server.pool[net]).not.toBeUndefined(); 	
+			expect(server.deleteFromPool(net)).toBeTruthy();
+			expect(server.pool[net]).toBeUndefined(); 
+		}
+	});
+
+
+	/**
+	* Testing del metodo addToPool() con una rete valida
+	* TU0-52
+	*/
+	test("TU0-52 Testing add to pool", () => {
+		let networks = Object.keys(server.networks);
+		for(let net of networks){
+			expect(server.pool[net]).toBeUndefined(); 
+			server.addToPool(net);
+			expect(server.pool[net]).not.toBeUndefined();	
+		}
+		
+	});
+
+
+	/**
+	* Testing del metodo addToPool() con una rete
+	* già nel pool
+	* TU0-53
+	*/
+	test("TU0-53 Add existing network on pool", () => {
+		let net = 'Alarm';
+		expect(server.pool[net]).not.toBeUndefined(); 
+		expect(server.addToPool(net)).toBeFalsy();
+	});
+
+	
+
+	/**
+	* Testing della path /getnetworkprob/:net 
+	* passando una rete valida come parametro 
+	* TU0-54
+	*/
+	test("TU0-54 getnetworkprob path", (done) => {
+		request(app.app).get('/getnetworkprob/Alarm').then((response) => {
+			expect(response.body).isJSON(); 
+			done(); 
+		});
+
+	});
+
+
+
+	
+	/**
+	* Testing unita/integrazione 
+	* del metodo observeNetworks()
+	* passando una rete valida come parametro
+	*/
+	test("Testing soglie critiche", async(done) => {
+		await server.observeNetworks('Viaggio_in_asia', server.networks['Viaggio_in_asia'].dati);
+		expect(server.networks['Viaggio_in_asia'].critica).toBeTruthy();
+		done();
+	});
+
+	
+
+
 
 });
 
