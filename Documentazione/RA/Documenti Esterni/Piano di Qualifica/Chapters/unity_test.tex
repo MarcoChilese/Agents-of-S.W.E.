@@ -56,11 +56,11 @@ TU0-24 & Viene verificato che la rete caricata disponga del campo \texttt{name} 
 \hline
 \rowcolor{grigio}TU0-25 & Viene verificato che il metodo \textit{getMilliseconds} ritorni il valore della politica temporale in millisecondi & S.\\
 \hline 
- TU0-26 & Viene verificato il lancio di un'eccezione nel caso in cui il campo dati \texttt{name} sia assente & N.I. \\ 
+ TU0-26 & Viene verificato il lancio di un'eccezione nel caso in cui il campo dati \texttt{name} sia assente & s. \\ 
 \hline 
 \rowcolor{grigio}TU0-27	 & Viene verificata la creazione del file con la definizione della rete & S. \\ 
 \hline 
- TU0-28 & Viene verificata il lancio di un'eccezione nel caso in cui la scritta su filesystem sia fallita & N.I. \\ 
+ TU0-28 & Viene verificata il lancio di un'eccezione nel caso in cui la scritta su filesystem sia fallita & S. \\ 
 \hline 
 \rowcolor{grigio}TU0-29 & Viene verificata l'invocazione del metodo \texttt{initBayesianNetwork(net)} all'interno del metodo \texttt{saveNetworkToFile()} & S. \\ 
 \hline 
@@ -88,9 +88,9 @@ TU0-40 & Viene verificato che la richiesta \textit{/getjsbayesviz/:net} ritorni 
  \hline
 \rowcolor{grigio}TU0-41 & Viene verificato che la richiesta \textit{/getpool} ritorni un array che contiene il nome delle reti attualmente monitorate & S.\\
 \hline 
- TU0-42 & Viene verificato che il metodo \texttt{deleteFromPool(net)} ritorni true nel caso in cui la rete viene tolta dal monitoraggio & S. \\ 
+ TU0-42 & Viene verificato che la richiesta \texttt{/deletenetpool/:net} elimini correttamente una rete dal pool di monitoraggio & S. \\ 
  \hline
-\rowcolor{grigio} TU0-43 & Viene verificato che il metodo \texttt{addToPool(net)} ritorni true nel caso in cui la rete sia stata aggiunta al pool di monitoraggio con successo & S. \\ 
+\rowcolor{grigio} TU0-43 & Viene verificato che la richiesta \texttt{/addToPool:net} aggiunga la rete al pool di monitoraggio in maniera corretta & S. \\ 
 \hline
 TU0-44 & Viene verificato che il server venga avviato con parametri statici & S. \\ 
 \hline
@@ -98,51 +98,55 @@ TU0-44 & Viene verificato che il server venga avviato con parametri statici & S.
 \hline 
 TU0-46 & Viene verificato che il metodo \texttt{countNetwork()} ritorni il numero di reti caricate sul server & S. \\ 
 \hline 
-TU0-50 & Viene verificato che il metodo \texttt{addToPool(net)} ritorni false nel caso in cui la rete da monitorare e già monitorata & S. \\ 
+\rowcolor{grigio}TU0-47 & Viene verificato che all'avvio del server vengano inizializzate le reti salvate nel filesytem & S. \\ 
 \hline
-\rowcolor{grigio} TU0-51 & Viene verificato che la richiesta \texttt{addtopool/:net} ritorni un messaggio di successo nel caso in cui la rete sia stata aggiunta al pool di monitoraggio & N.I. \\ 
-\hline 
-TU0-52 & Viene verificato che la richiesta \texttt{addtopool/:net} al server ritorni un messaggio di errore nel caso in cui la rete desiderata è già aggiunta al pool di monitoraggio & N.I. \\ 
+TU0-48 & Viene verificato l'importazione corretta del file conf.json nell'istanza del Server, ritorna \textbf{True} nel caso di buon esito dell'operazione & S.\\
+\hline
+\rowcolor{grigio}TU0-49 &  Viene verificata la creazione di una connessione al database al richiamo del metodo \texttt{initDatabaseConnection(connection)}, ritorni \textbf{True} nel caso di esito operazione positivo & S.\\ 
+\hline
+TU0-50 & Viene verificato l'inizializzazione corretta del pool delle reti, mi aspetto che ogni rete con campo \textit{monitoring} settato a \textbf{True} sia inizializzato un pool & S.\\
+\hline
+\rowcolor{grigio}TU0-51 & Viene verificato che il metodo \texttt{deleteFromPool(net)} ritorni true nel caso in cui l'eliminazione della rete dal monitoraggio sia avvenuta con successo & S. \\
+\hline
+TU0-52 & Viene verificato che il metodo \texttt{addToPool(net)} ritorni true nel caso in cui la rete sia stata aggiunta al pool di monitoraggio con successo & S. \\ 
+\hline
+\rowcolor{grigio}TU0-53 & Viene verificato che il metodo \texttt{addToPool(net)} ritorni false nel caso in cui la rete da monitorare e già monitorata & S. \\ 
+\hline
+TU0-54 & Viene verificato che la richiesta \texttt{/getnetworkprob/:net} ritorni i valori delle probabilità calcolate in formato json & S. \\ 
+\hline
+\rowcolor{grigio}TU0-55 & Viene verificato che la connessione al database con i parametri esatti avvenga in maniera corretta & S. \\ 
+\hline
+TU0-56 & Viene verificato che la connessione al database senza parametri avvenga in maniera corretta & S. \\ 
+\hline
+\rowcolor{grigio}TU0-57 & Viene verificato che la costruzione di una connessione al database con parametri errati sollevi una eccezione & S. \\ 
+\hline
+TU0-58 & Viene verificato che il metodo \texttt{getDatasources()} ritorni le tabelle del database selezionato & S. \\ 
+\hline
+\rowcolor{grigio}TU0-59 & Viene verificato che il metodo \texttt{getDatasourcesFields(tabella)} ritorni un array di valori in formato json & S. \\ 
+\hline
+TU0-60 & Viene verificato che il metodo \texttt{getLastValue(tabella,flusso)} ritorni l'ultimo valore della tabella e del flusso dati selezionato & S. \\ 
+\hline
+\rowcolor{grigio}TU0-61 & Viene verificato che il metodo \texttt{getLastValueasync(tabella,flusso)} ritorni l'ultimo valore della tabella e del flusso dati selezionato & S. \\ 
+\hline
+TU0-62 & Viene verificato che il metodo \texttt{getListData(data)} ritorni i valori della tabella e del flusso selezionato & S. \\ 
+\hline
+\rowcolor{grigio}TU0-63 & Viene verificata la costruzione di una connessione con un database influx per la scrittura di dati & S. \\ 
+\hline
+TU0-64 & Viene verificato che il metodo \texttt{writeOnDB(tabella,valori)} scriva correttamente nel database & S. \\ 
+\hline
+\rowcolor{grigio}TU0-65 & Viene verificato che la connessione al database con parametri errati, non avvenga correttamente & S. \\ 
+\hline
+TU0-66 & Viene verificato che una rete venga costruita in maniera corretta & S. \\ 
+\hline
+\rowcolor{grigio}TU0-67 & Viene verificato che il superamento di una soglia venga segnalato in maniera corretta nel campo dati designato & S. \\ 
+\hline
+TU0-68 & Viene verificato che il non superamento di una soglia venga segnalato in maniera corretta nel campo dati designato & S. \\ 
+\hline
+\rowcolor{grigio}TU0-69 & Viene verificato che il metodo \texttt{observeData()} restituisca true quando viene superata una soglia critica & S. \\ 
+\hline
+TU0-70 & Viene verificato che il metodo \texttt{orderTresholds()} prenda solo le soglie che sono definite in \texttt{tresholdLinked} all'interno della network & S. \\ 
 \hline
 
- 
-\hline
-TU0-60 & Viene verificato che il metodo \texttt{deleteFromPool(net)} ritorni false nel caso in cui l'eliminazione della rete dal monitoraggio fallisca & N.I. \\ 
-\hline 
-\rowcolor{grigio} TU0-61 & Viene verificato che la richiesta \texttt{deletenetpool/:net} ritorni un messaggio di successo nel caso in cui la rete viene tolta dal monitoraggio & N.I. \\ 
-\hline 
-TU0-62 & Viene verificato che la richiesta \texttt{deletenetpool/:net} al server, ritorni un messaggio di errore con stato \textit{404} nel caso in l'eliminazione della rete dal monitoraggio sia fallita & N.I. \\ 
-\hline 
-\rowcolor{grigio} TU0-63 & Viene verificato che all'avvio del server venga invocato il metodo \texttt{startServer()} & N.I. \\ 
-\hline
-TU0-64 & Viene verificato che all'avvio del server vengano inizializzate le reti salvate nel filesytem & S. \\ 
-\hline
-\rowcolor{grigio}TU0-65 & Viene verificato il lancio di un'eccezione nel caso in cui la lettura da filesystem all'inizializzazione delle reti salvata fallisca & N.I. \\ 
-\hline
-TU0-66 & Viene verificata l'inizializzazione delle connessioni necessarie al database per ogni rete & N.I. \\ 
-\hline
-\rowcolor{grigio}TU0-67 &  Viene verificata la creazione di una connessione al database al richiamo del metodo \texttt{initDatabaseConnection(connection)}, ritorni \textbf{True} nel caso di esito operazione positivo & S.\\ 
-\hline
-TU0-68 & Viene verificato il lancio di un'eccezione nel caso in cui i parametri di connessione al database siano errati & S. \\
-\hline
-\rowcolor{grigio} TU0-69 & Viene verificato il lancio di un'eccezione nel caso in cui la creazione della connessione al database fallisca & N.I. \\ 
-\hline
-TU0-70 & Viene verificato che il metodo di creazione di connessione al database ritorni true se la connessione è avvenuta con successo & S. \\ 
-\hline 
-\rowcolor{grigio} TU0-71 & Viene verificata l'istanziazione effettiva della connessione al database nell'array di connessioni disponili sul server & N.I. \\ 
-\hline 
-TU0-72 & Viene verificato che il monitoraggio di una rete si ripeta secondo le politiche temporali definite dall'utente & N.I. \\ 
-\hline 
-\rowcolor{grigio} TU0-73 & Viene verificato che le probabilità calcolate nella rete bayesiana vengano salvate all'interno del database  & S. \\ 
-\hline 
-TU0-74 & Viene verificato che il metodo \texttt{writeMesure(net)}  ritorni true nel caso in cui la scrittura delle probabilità sul database sia avvenuta con successo & N.I. \\
-\hline
-\rowcolor{grigio}TU0-75 & Viene verificato che il metodo \texttt{writeMesure(net)} ritorni false nel caso in cui la scrittura delle probabilità sul database sia fallita & N.I. \\ 
-\hline
-TU0-76 & Viene verificata la costruzione corretta di una rete & N.I.  \\ 
-\hline 
-\rowcolor{grigio}TU0-77 & Viene verificata la creazione della tabella di probabilità per ogni nodo della rete bayesiana & N.I. \\ 
-\hline
 TU0-78 & Viene verificato che il \textit{Parser} riconosca una rete bayesiana ben formata come tale, quindi priva di errori & S. \\
 \hline
 \rowcolor{grigio}TU0-79 & Viene verificato che il metodo \texttt{checkMinimumFields} del \textit{Parser} torni \textbf{True} se il file di definizione \textit{JSON} della rete bayesiana ha il corretto numero di campi & S.\\
@@ -358,38 +362,7 @@ TU0-184 & Viene verificato che il metodo \texttt{startComputation} di \textit{GB
 \hline
 TU0-186 & Viene verificato che il metodo \texttt{closeComputation} di \textit{GBCtrl} torni \textbf{False} nel caso non sia possibile interrompere il monitoraggio per la rete impostata nel pannello a causa di un'anomalia nella connessione con il server & S.\\
 \hline
-\rowcolor{grigio}TU0-187 & Viene verificato l'importazione corretta del file conf.json nell'istanza del Server, ritorna \textbf{True} nel caso di buon esito dell'operazione & S.\\
-\hline
-TU0-188 & Viene verificato l'inizializzazione corretta del pool delle reti, mi aspetto che ogni rete con campo \textit{monitoring} settato a \textbf{True} sia inizializzato un pool & S.\\
-\hline
-\rowcolor{grigio}TU0-189 & Viene verificato che la connessione al server influx avvenga in maniera corretta utilizzando le credenziali di acceso, ritorni \textbf{True} se ha esito positivo & S.\\
-\hline
-TU0-190 & Viene verificato che la connessione al server influx avvenga in maniera corretta non utilizzando le credenziali di acceso, ritorni \textbf{True} se ha esito positivo & S.\\
-\hline
-\rowcolor{grigio}TU0-191 & Viene verificato il corretto funzionamento del metodo \textit{getDatasources}, ritorni un valore \textbf{Not Undefined} se ha esito positivo & S.\\
-\hline
-TU0-192 & Viene verificato che il metodo \textit{getDatasourcesFields} ritorni un array di tipo json, contenente valori di tipo \textit{float} del campo desiderato & S.\\
-\hline
-\rowcolor{grigio}TU0-193 & Viene verificato che il metodo \textit{getLastValueAsync} ritorni l'ultimo valore del campo desiderato & S.\\
-\hline
-TU0-194 & Viene verificato che il metodo \textit{getDatasourcesFields} ritorni un array di tipo json, contenente valori di tipo \textit{float} del campo desiderato & S.\\
-\hline
-\rowcolor{grigio}TU0-195 & Viene verificato che il metodo \textit{getListData} ritorni i valori del campo desiderato & S.\\
-\hline
-TU0-196 & Viene verificato che venga costruita una connessione con il database su cui si andrà a scrivere dati & S.\\
-\hline
-\rowcolor{grigio}TU0-197 & Viene verificato nel \textit{Server} che la rete da salvare sia un JSON valido & S.\\
-\hline
-TU0-198 & Viene verificato che la probabilità di uno stato venga assegnata a uno nel momento in cui venga superata la relativa soglia & S.\\
-\hline
-\rowcolor{grigio}TU0-199 & Viene verificato che la probabilità di uno stato non venga assegnata a uno nel momento in cui non venga superata la relativa soglia & S.\\
-\hline
-TU0-200 & Viene verificato che il metodo \textit{observeData} ritorni \textbf{True} se viene superata una soglia critica & S.\\
-\hline
-\rowcolor{grigio}TU0-177 & Viene verificato che il metodo \textit{observeNetworks} imposti a \textbf{True} la variabile \textit{networks.critica} se viene superata una soglia critica & S.\\
-\hline
-TU0-178 & Viene verificato che il metodo \textit{observeNetworks} imposti a \textbf{True} la variabile \textit{networks.critica} se viene superata una soglia critica & S.\\
-\hline
+
 
 \hline
 \caption{Test di unità}
