@@ -20,7 +20,11 @@ TI0-07 & Verificare che, una volta selezionata una rete nel pannello, il server 
 \hline 
 \rowcolor{grigio}TI0-08 & Verificare che, una volta fatto partire il monitoraggio dal pannello, il server esegua correttamente il ricalcolo delle probabilità & N.I. \\  
 \hline
-
+TI0-09 & Viene verificato che il metodo \texttt{loadNetwork(data)} di \textit{GBCtrl} carichi sul pannello la rete bayesiana "data", passata come parametro (\textit{JSON}) al metodo, tornando \textbf{True} nel caso di buon esito dell'operazione, e che invochi correttamente il parser per verificare la rete & S.\\
+\hline
+\rowcolor{grigio}TI0-10 & Viene verificato che il metodo \texttt{loadNetwork(data)} di \textit{GBCtrl} torni \textbf{False} nel caso in cui all'interno del metodo ci sia un altro dei metodi richiamati che lancia un'eccezione, o per l'impossibilità di collegarsi al server o per problemi nella struttura della rete  & S.\\
+\hline
+	
 \caption{Test di Integrazione}
 \label{testintegrazione}
 \end{longtable}
