@@ -26,7 +26,7 @@ TU0-8 & Viene verificato il lancio di un'eccezione nel caso in cui la porta non 
 \hline
 TU0-10 & Viene verificata l'inizializzazione del proxy server & S. \\ 
 \hline 
-\rowcolor{grigio} TU0-11 & Viene verificato che la richiesta di \texttt{root} al server del server ritorni l'ora corrente & S. \\ 
+\rowcolor{grigio}TU0-11 & Viene verificato che la richiesta di \texttt{root} al server del server ritorni l'ora corrente & S. \\ 
 \hline
 TU0-12 & Viene verificato che il tipo di ritorno dalla richiesta \texttt{root} al server sia di tipo json & S. \\ 
 \hline 
@@ -48,318 +48,297 @@ TU0-20 & Viene verificata che la richiesta al server \texttt{uploadnetwork} chia
 \hline 
 \rowcolor{grigio}TU0-21 & Viene verificato, nel caso in cui la directory di salvataggio delle reti non sia presente, venga creata secondo le configurazioni & S. \\ 
 \hline 
-TU0-22 & Viene verificato che la rete venga sovrascritta nel caso in cui l'utente cerca di caricare la stessa rete, ritorna \textbf{Undefined} se il server prova a richiedere la rete sovrascritta & S. \\
-\hline
-\rowcolor{grigio}TU0-23 & Viene verificato il lancio di un'eccezione nel caso in cui la cancellazione di una rete sia fallito & S. \\ 
-\hline
-TU0-24 & Viene verificato che la rete caricata disponga del campo \texttt{name} di tipo \textbf{stringa} & S. \\ 
+TU0-22 & Viene verificato il lancio di un'eccezione nel caso in cui la cancellazione di una rete sia fallito & S. \\ 
 \hline
 \rowcolor{grigio}TU0-25 & Viene verificato che il metodo \textit{getMilliseconds} ritorni il valore della politica temporale in millisecondi & S.\\
 \hline 
- TU0-26 & Viene verificato il lancio di un'eccezione nel caso in cui il campo dati \texttt{name} sia assente & s. \\ 
+ TU0-24 & Viene verificato il lancio di un'eccezione nel caso in cui il campo dati \texttt{name} sia assente & s. \\ 
 \hline 
-\rowcolor{grigio}TU0-27	 & Viene verificata la creazione del file con la definizione della rete & S. \\ 
+\rowcolor{grigio}TU0-25 & Viene verificata la creazione del file con la definizione della rete & S. \\ 
 \hline 
- TU0-28 & Viene verificata il lancio di un'eccezione nel caso in cui la scritta su filesystem sia fallita & S. \\ 
+ TU0-26 & Viene verificata il lancio di un'eccezione nel caso in cui la scritta su filesystem sia fallita & S. \\ 
 \hline 
-\rowcolor{grigio}TU0-29 & Viene verificata l'invocazione del metodo \texttt{initBayesianNetwork(net)} all'interno del metodo \texttt{saveNetworkToFile()} & S. \\ 
-\hline 
-TU0-30 & Viene verificata la creazione di un nuovo oggetto di tipo \texttt{Network} con la rete caricata dall'utente & S. \\ 
+\rowcolor{grigio} TU0-27 & Viene verificato il lancio di un'eccezione nel caso in cui il metodo \texttt{saveNetworkToFile(net)} fallisca & S. \\
 \hline
-\rowcolor{grigio} TU0-31 & Viene verificato il lancio di un'eccezione nel caso in cui il metodo \texttt{saveNetworkToFile(net)} fallisca & S. \\
+TU0-28 & Viene verificato che la richiesta di \texttt{/uploadnetwork} ritorni una risposta con stato \textit{404} in caso di fallimento & S. \\ 
 \hline
-TU0-32 & Viene verificato che la richiesta di \texttt{/uploadnetwork} ritorni una risposta con stato \textit{404} in caso di fallimento & S. \\ 
+\rowcolor{grigio} TU0-29 & Viene verificato che la richiesta \texttt{/uploadnetwork} ritorni un messaggio di successo nel caso in cui il metodo non ritorni errori & S. \\
 \hline
-\rowcolor{grigio} TU0-33 & Viene verificato che la richiesta \texttt{/uploadnetwork} ritorni un messaggio di successo nel caso in cui il metodo non ritorni errori & S. \\
-\hline
-TU0-34 & Viene verificato che il metodo \texttt{parserNetworkNameURL} ritorni il nome della rete parsato & S. \\ 
+TU0-30 & Viene verificato che il metodo \texttt{parserNetworkNameURL} ritorni il nome della rete parsato & S. \\ 
 \hline 
-\rowcolor{grigio}TU0-35 & Viene verificato che il metodo \texttt{parserNetworkNameURL} ritorni \textit{false} nel caso in cui: il parametro passato sia stringa vuota, la rete non esiste oppure il parametro non è definito & S. \\ 
+\rowcolor{grigio}TU0-31 & Viene verificato che il metodo \texttt{parserNetworkNameURL} ritorni \textit{false} nel caso in cui: il parametro passato sia stringa vuota, la rete non esiste oppure il parametro non è definito & S. \\ 
 \hline 
-TU0-36 & Viene verificato che la richiesta \texttt{getnetwork/:net} ritorni un json con la definizione della rete richiesta & S. \\ 
+TU0-32 & Viene verificato che la richiesta \texttt{getnetwork/:net} ritorni un json con la definizione della rete richiesta & S. \\ 
  \hline
-\rowcolor{grigio}TU0-37 & Viene verificato che la richiesta \texttt{networkslive} al server, ritorni un json contenente le reti monitorate in un dato istante di tempo & S. \\ 
+\rowcolor{grigio}TU0-33 & Viene verificato che la richiesta \texttt{networkslive} al server, ritorni un json contenente le reti monitorate in un dato istante di tempo & S. \\ 
  \hline 
- TU0-38 & Viene verificato che la richiesta \texttt{deletenetwork/:net} al server, ritorni un messaggio di successo nel caso in cui la rete sia stata eliminata & S. \\
- \hline
- \rowcolor{grigio}TU0-39 & Viene verificato che la richiesta \texttt{deletenetwork/:net} al server, ritorni un messaggio d'errore nel caso in cui il nome della rete da eliminare sia vuoto,  non definito o non esista nel filesystem del server & S. \\ 
+TU0-34 & Viene verificato che la richiesta \texttt{deletenetwork/:net} al server, ritorni un messaggio d'errore nel caso in cui il nome della rete da eliminare sia vuoto,  non definito o non esista nel filesystem del server & S. \\ 
 \hline
-TU0-40 & Viene verificato che la richiesta \textit{/getjsbayesviz/:net} ritorni un json che rappresenta l'oggetto jsbayesviz in formato json & S.\\
- \hline
-\rowcolor{grigio}TU0-41 & Viene verificato che la richiesta \textit{/getpool} ritorni un array che contiene il nome delle reti attualmente monitorate & S.\\
+\rowcolor{grigio}TU0-35 & Viene verificato che la richiesta \textit{/getpool} ritorni un array che contiene il nome delle reti attualmente monitorate & S.\\
 \hline 
- TU0-42 & Viene verificato che la richiesta \texttt{/deletenetpool/:net} elimini correttamente una rete dal pool di monitoraggio & S. \\ 
+ TU0-36 & Viene verificato che la richiesta \texttt{/deletenetpool/:net} elimini correttamente una rete dal pool di monitoraggio & S. \\ 
  \hline
-\rowcolor{grigio} TU0-43 & Viene verificato che la richiesta \texttt{/addToPool:net} aggiunga la rete al pool di monitoraggio in maniera corretta & S. \\ 
+\rowcolor{grigio} TU0-37 & Viene verificato che la richiesta \texttt{/addToPool:net} aggiunga la rete al pool di monitoraggio in maniera corretta & S. \\ 
 \hline
-TU0-44 & Viene verificato che il server venga avviato con parametri statici & S. \\ 
+TU0-38 & Viene verificato che il server venga avviato con parametri statici & S. \\ 
 \hline
-\rowcolor{grigio}TU0-45 & Viene verificato che la richiesta \texttt{getnetworkprob/:net} al server ritorni un json contenente le probabilità calcolate per la rete desiderata & S. \\ 
+\rowcolor{grigio}TU0-39 & Viene verificato che il metodo \texttt{countNetwork()} ritorni il numero di reti caricate sul server & S. \\ 
 \hline 
-TU0-46 & Viene verificato che il metodo \texttt{countNetwork()} ritorni il numero di reti caricate sul server & S. \\ 
-\hline 
-\rowcolor{grigio}TU0-47 & Viene verificato che all'avvio del server vengano inizializzate le reti salvate nel filesytem & S. \\ 
+TU0-40 & Viene verificato l'importazione corretta del file conf.json nell'istanza del Server, ritorna \textbf{True} nel caso di buon esito dell'operazione & S.\\
 \hline
-TU0-48 & Viene verificato l'importazione corretta del file conf.json nell'istanza del Server, ritorna \textbf{True} nel caso di buon esito dell'operazione & S.\\
+\rowcolor{grigio}TU0-41 & Viene verificato l'inizializzazione corretta del pool delle reti, mi aspetto che ogni rete con campo \textit{monitoring} settato a \textbf{True} sia inizializzato un pool & S.\\
 \hline
-\rowcolor{grigio}TU0-49 &  Viene verificata la creazione di una connessione al database al richiamo del metodo \texttt{initDatabaseConnection(connection)}, ritorni \textbf{True} nel caso di esito operazione positivo & S.\\ 
+TU0-42 & Viene verificato che il metodo \texttt{deleteFromPool(net)} ritorni true nel caso in cui l'eliminazione della rete dal monitoraggio sia avvenuta con successo & S. \\
 \hline
-TU0-50 & Viene verificato l'inizializzazione corretta del pool delle reti, mi aspetto che ogni rete con campo \textit{monitoring} settato a \textbf{True} sia inizializzato un pool & S.\\
+\rowcolor{grigio}TU0-43 & Viene verificato che il metodo \texttt{addToPool(net)} ritorni true nel caso in cui la rete sia stata aggiunta al pool di monitoraggio con successo & S. \\ 
 \hline
-\rowcolor{grigio}TU0-51 & Viene verificato che il metodo \texttt{deleteFromPool(net)} ritorni true nel caso in cui l'eliminazione della rete dal monitoraggio sia avvenuta con successo & S. \\
+TU0-44 & Viene verificato che il metodo \texttt{addToPool(net)} ritorni false nel caso in cui la rete da monitorare e già monitorata & S. \\ 
 \hline
-TU0-52 & Viene verificato che il metodo \texttt{addToPool(net)} ritorni true nel caso in cui la rete sia stata aggiunta al pool di monitoraggio con successo & S. \\ 
+\rowcolor{grigio}TU0-45 & Viene verificato che la connessione al database con i parametri esatti avvenga in maniera corretta & S. \\ 
 \hline
-\rowcolor{grigio}TU0-53 & Viene verificato che il metodo \texttt{addToPool(net)} ritorni false nel caso in cui la rete da monitorare e già monitorata & S. \\ 
+TU0-46 & Viene verificato che la connessione al database senza parametri avvenga in maniera corretta & S. \\ 
 \hline
-TU0-54 & Viene verificato che la richiesta \texttt{/getnetworkprob/:net} ritorni i valori delle probabilità calcolate in formato json & S. \\ 
+\rowcolor{grigio}TU0-47 & Viene verificato che la costruzione di una connessione al database con parametri errati sollevi una eccezione & S. \\ 
 \hline
-\rowcolor{grigio}TU0-55 & Viene verificato che la connessione al database con i parametri esatti avvenga in maniera corretta & S. \\ 
+TU0-48 & Viene verificato che il metodo \texttt{getDatasources()} ritorni le tabelle del database selezionato & S. \\ 
 \hline
-TU0-56 & Viene verificato che la connessione al database senza parametri avvenga in maniera corretta & S. \\ 
+\rowcolor{grigio}TU0-49 & Viene verificato che il metodo \texttt{getDatasourcesFields(tabella)} ritorni un array di valori in formato json & S. \\ 
 \hline
-\rowcolor{grigio}TU0-57 & Viene verificato che la costruzione di una connessione al database con parametri errati sollevi una eccezione & S. \\ 
+TU0-50 & Viene verificato che il metodo \texttt{getLastValue(tabella,flusso)} ritorni l'ultimo valore della tabella e del flusso dati selezionato & S. \\ 
 \hline
-TU0-58 & Viene verificato che il metodo \texttt{getDatasources()} ritorni le tabelle del database selezionato & S. \\ 
+\rowcolor{grigio}TU0-51 & Viene verificato che il metodo \texttt{getLastValueasync(tabella,flusso)} ritorni l'ultimo valore della tabella e del flusso dati selezionato & S. \\ 
 \hline
-\rowcolor{grigio}TU0-59 & Viene verificato che il metodo \texttt{getDatasourcesFields(tabella)} ritorni un array di valori in formato json & S. \\ 
+TU0-52 & Viene verificato che il metodo \texttt{getListData(data)} ritorni i valori della tabella e del flusso selezionato & S. \\ 
 \hline
-TU0-60 & Viene verificato che il metodo \texttt{getLastValue(tabella,flusso)} ritorni l'ultimo valore della tabella e del flusso dati selezionato & S. \\ 
+\rowcolor{grigio}TU0-53 & Viene verificata la costruzione di una connessione con un database influx per la scrittura di dati & S. \\ 
 \hline
-\rowcolor{grigio}TU0-61 & Viene verificato che il metodo \texttt{getLastValueasync(tabella,flusso)} ritorni l'ultimo valore della tabella e del flusso dati selezionato & S. \\ 
+TU0-54 & Viene verificato che il metodo \texttt{writeOnDB(tabella,valori)} scriva correttamente nel database & S. \\ 
 \hline
-TU0-62 & Viene verificato che il metodo \texttt{getListData(data)} ritorni i valori della tabella e del flusso selezionato & S. \\ 
+\rowcolor{grigio}TU0-55 & Viene verificato che la connessione al database con parametri errati, non avvenga correttamente & S. \\ 
 \hline
-\rowcolor{grigio}TU0-63 & Viene verificata la costruzione di una connessione con un database influx per la scrittura di dati & S. \\ 
+TU0-56 & Viene verificato che una rete venga costruita in maniera corretta & S. \\ 
 \hline
-TU0-64 & Viene verificato che il metodo \texttt{writeOnDB(tabella,valori)} scriva correttamente nel database & S. \\ 
+\rowcolor{grigio}TU0-57 & Viene verificato che il superamento di una soglia venga segnalato in maniera corretta nel campo dati designato & S. \\ 
 \hline
-\rowcolor{grigio}TU0-65 & Viene verificato che la connessione al database con parametri errati, non avvenga correttamente & S. \\ 
+TU0-58 & Viene verificato che il non superamento di una soglia venga segnalato in maniera corretta nel campo dati designato & S. \\ 
 \hline
-TU0-66 & Viene verificato che una rete venga costruita in maniera corretta & S. \\ 
+\rowcolor{grigio}TU0-59 & Viene verificato che il metodo \texttt{observeData()} restituisca true quando viene superata una soglia critica & S. \\ 
 \hline
-\rowcolor{grigio}TU0-67 & Viene verificato che il superamento di una soglia venga segnalato in maniera corretta nel campo dati designato & S. \\ 
+TU0-60 & Viene verificato che il metodo \texttt{orderTresholds()} prenda solo le soglie che sono definite in \texttt{tresholdLinked} all'interno della network & S. \\ 
 \hline
-TU0-68 & Viene verificato che il non superamento di una soglia venga segnalato in maniera corretta nel campo dati designato & S. \\ 
+\rowcolor{grigio}TU0-61 & Viene verificato che il \textit{Parser} riconosca una rete bayesiana ben formata come tale, quindi priva di errori & S. \\
 \hline
-\rowcolor{grigio}TU0-69 & Viene verificato che il metodo \texttt{observeData()} restituisca true quando viene superata una soglia critica & S. \\ 
+TU0-62 & Viene verificato che il metodo \texttt{checkMinimumFields} del \textit{Parser} torni \textbf{True} se il file di definizione \textit{JSON} della rete bayesiana ha il corretto numero di campi & S.\\
 \hline
-TU0-70 & Viene verificato che il metodo \texttt{orderTresholds()} prenda solo le soglie che sono definite in \texttt{tresholdLinked} all'interno della network & S. \\ 
+\rowcolor{grigio}TU0-63 & Viene verificato che il metodo \texttt{checkMinimumFields} del \textit{Parser} torni \textbf{False} se il file di definizione \textit{JSON} della rete bayesiana non ha il corretto numero di campi & S.\\
 \hline
-
-TU0-78 & Viene verificato che il \textit{Parser} riconosca una rete bayesiana ben formata come tale, quindi priva di errori & S. \\
+TU0-64 & Viene verificato che il \textit{Parser} riconosca e segnali se un campo dati del file di definizione ha una nomenclatura non conforme a quanto previsto & S.\\
 \hline
-\rowcolor{grigio}TU0-79 & Viene verificato che il metodo \texttt{checkMinimumFields} del \textit{Parser} torni \textbf{True} se il file di definizione \textit{JSON} della rete bayesiana ha il corretto numero di campi & S.\\
+\rowcolor{grigio}TU0-65 & Viene verificato che il metodo \texttt{checkNamedNodes} del \textit{Parser} segnali con un messaggio di errore se un certo campo del file di definizione ha un numero di righe non conforme & S.\\
 \hline
-TU0-80 & Viene verificato che il metodo \texttt{checkMinimumFields} del \textit{Parser} torni \textbf{False} se il file di definizione \textit{JSON} della rete bayesiana non ha il corretto numero di campi & S.\\
+TU0-66 & Viene verificato che il metodo \texttt{checkNamedNodes} del \textit{Parser} segnali con un messaggio di errore se un certo campo del file di definizione ha una definizione mancante & S.\\
 \hline
-\rowcolor{grigio}TU0-81 & Viene verificato che il \textit{Parser} riconosca e segnali se un campo dati del file di definizione ha una nomenclatura non conforme a quanto previsto & S.\\
+\rowcolor{grigio}TU0-67 & Viene verificato che il metodo \texttt{countNumberOfValue} del \textit{Parser} ritorni l'effettivo numero di probabilità definite per un dato nodo & S.\\
 \hline
-TU0-82 & Viene verificato che il metodo \texttt{checkNamedNodes} del \textit{Parser} segnali con un messaggio di errore se un certo campo del file di definizione ha un numero di righe non conforme & S.\\
+TU0-68 & Viene verificato che il metodo \texttt{checkStates} del \textit{Parser} ritorni \textbf{True} nel caso in cui il file di definizione \textit{JSON} della rete bayesiana abbia correttamente definito gli stati dei nodi & S.\\
 \hline
-\rowcolor{grigio}TU0-83 & Viene verificato che il metodo \texttt{checkNamedNodes} del \textit{Parser} segnali con un messaggio di errore se un certo campo del file di definizione ha una definizione mancante & S.\\
+\rowcolor{grigio}TU0-69 & Viene verificato che il metodo \texttt{checkStates} del \textit{Parser} segnali con un messaggio di errore se un nodo possiede meno di due stati & S.\\
 \hline
-TU0-84 & Viene verificato che il metodo \texttt{countNumberOfValue} del \textit{Parser} ritorni l'effettivo numero di probabilità definite per un dato nodo & S.\\
+TU0-70 & Viene verificato che il metodo \texttt{checkStates} del \textit{Parser} segnali con un messaggio di errore se all'interno del file di definizione \textit{JSON} si tenti di ridefinire più volte il medesimo stato & S.\\
 \hline
-\rowcolor{grigio}TU0-85 & Viene verificato che il metodo \texttt{checkStates} del \textit{Parser} ritorni \textbf{True} nel caso in cui il file di definizione \textit{JSON} della rete bayesiana abbia correttamente definito gli stati dei nodi & S.\\
+\rowcolor{grigio}TU0-71 & Viene verificato che il metodo \texttt{checkParents} del \textit{Parser} torni \textbf{True} nel caso in cui il file di definizione \textit{JSON} della rete bayesiana abbia correttamente definito i padri dei nodi & S.\\
 \hline
-TU0-86 & Viene verificato che il metodo \texttt{checkStates} del \textit{Parser} segnali con un messaggio di errore se un nodo possiede meno di due stati & S.\\
+TU0-72 & Viene verificato che il metodo \texttt{checkStates} del \textit{Parser} segnali con un messaggio di errore se all'interno del file di definizione \textit{JSON} si tenti di ridefinire più volte il medesimo padre di uno stesso nodo & S.\\
 \hline
-\rowcolor{grigio}TU0-87 & Viene verificato che il metodo \texttt{checkStates} del \textit{Parser} segnali con un messaggio di errore se all'interno del file di definizione \textit{JSON} si tenti di ridefinire più volte il medesimo stato & S.\\
+\rowcolor{grigio}TU0-73 & Viene verificato che il metodo \texttt{checkStates} del \textit{Parser} segnali con un messaggio di errore se all'interno del file di definizione \textit{JSON} venga indicato come padre un nodo non esistente & S.\\
 \hline
-TU0-88 & Viene verificato che il metodo \texttt{checkParents} del \textit{Parser} torni \textbf{True} nel caso in cui il file di definizione \textit{JSON} della rete bayesiana abbia correttamente definito i padri dei nodi & S.\\
+TU0-74 & Viene verificato che il metodo \texttt{checkStates} del \textit{Parser} segnali con un messaggio di errore se all'interno del file di definizione \textit{JSON} venga indicato come padre di un nodo se stesso & S.\\
 \hline
-\rowcolor{grigio}TU0-89 & Viene verificato che il metodo \texttt{checkStates} del \textit{Parser} segnali con un messaggio di errore se all'interno del file di definizione \textit{JSON} si tenti di ridefinire più volte il medesimo padre di uno stesso nodo & S.\\
+\rowcolor{grigio}TU0-75 & Viene verificato che il metodo \texttt{checkProbabilities} del \textit{Parser} torni \textbf{True} nel caso in cui il file di definizione \textit{JSON} della rete bayesiana abbia correttamente definito le probabilità dei nodi & S.\\
 \hline
-TU0-90 & Viene verificato che il metodo \texttt{checkStates} del \textit{Parser} segnali con un messaggio di errore se all'interno del file di definizione \textit{JSON} venga indicato come padre un nodo non esistente & S.\\
+TU0-76 & Viene verificato che il metodo \texttt{checkProbabilities} del \textit{Parser} segnali con un messaggio di errore se all'interno del file di definizione \textit{JSON} venga definita una probabilità negativa & S.\\
 \hline
-\rowcolor{grigio}TU0-91 & Viene verificato che il metodo \texttt{checkStates} del \textit{Parser} segnali con un messaggio di errore se all'interno del file di definizione \textit{JSON} venga indicato come padre di un nodo se stesso & S.\\
+\rowcolor{grigio}TU0-77 & Viene verificato che il metodo \texttt{checkProbabilities} del \textit{Parser} segnali con un messaggio di errore se all'interno del file di definizione \textit{JSON} viene definita una probabilità maggiore al 100\% & S.\\
 \hline
-TU0-92 & Viene verificato che il metodo \texttt{checkProbabilities} del \textit{Parser} torni \textbf{True} nel caso in cui il file di definizione \textit{JSON} della rete bayesiana abbia correttamente definito le probabilità dei nodi & S.\\
+TU0-78 & Viene verificato che il metodo \texttt{setConfirmationToTrue} di \textit{TemporalPolicyCtrl} segnali con un messaggio di errore se viene impostata una politica temporale avente valore associato al campo \textbf{secondi} > 60 & S.\\
 \hline
-\rowcolor{grigio}TU0-93 & Viene verificato che il metodo \texttt{checkProbabilities} del \textit{Parser} segnali con un messaggio di errore se all'interno del file di definizione \textit{JSON} venga definita una probabilità negativa & S.\\
+\rowcolor{grigio}TU0-79 & Viene verificato che il metodo \texttt{setConfirmationToTrue} di \textit{TemporalPolicyCtrl} segnali con un messaggio di errore se viene impostata una politica temporale avente valore negativo associato al campo \textbf{secondi} & S.\\
 \hline
-TU0-94 & Viene verificato che il metodo \texttt{checkProbabilities} del \textit{Parser} segnali con un messaggio di errore se all'interno del file di definizione \textit{JSON} viene definita una probabilità maggiore al 100\% & S.\\
+TU0-80 & Viene verificato che il metodo \texttt{setConfirmationToTrue} di \textit{TemporalPolicyCtrl} segnali con un messaggio di errore se viene impostata una politica temporale avente valore associato al campo \textbf{minuti} > 60 & S.\\
 \hline
-\rowcolor{grigio}TU0-95 & Viene verificato che il metodo \texttt{setConfirmationToTrue} di \textit{TemporalPolicyCtrl} segnali con un messaggio di errore se viene impostata una politica temporale avente valore associato al campo \textbf{secondi} > 60 & S.\\
+\rowcolor{grigio}TU0-81 & Viene verificato che il metodo \texttt{setConfirmationToTrue} di \textit{TemporalPolicyCtrl} segnali con un messaggio di errore se viene impostata una politica temporale avente valore negativo associato al campo \textbf{minuti} & S.\\
 \hline
-TU0-96 & Viene verificato che il metodo \texttt{setConfirmationToTrue} di \textit{TemporalPolicyCtrl} segnali con un messaggio di errore se viene impostata una politica temporale avente valore negativo associato al campo \textbf{secondi} & S.\\
+TU0-82 & Viene verificato che il metodo \texttt{setConfirmationToTrue} di \textit{TemporalPolicyCtrl} segnali con un messaggio di errore se viene impostata una politica temporale avente valore negativo associato al campo \textbf{ore} & S.\\
 \hline
-\rowcolor{grigio}TU0-97 & Viene verificato che il metodo \texttt{setConfirmationToTrue} di \textit{TemporalPolicyCtrl} segnali con un messaggio di errore se viene impostata una politica temporale avente valore associato al campo \textbf{minuti} > 60 & S.\\
+\rowcolor{grigio}TU0-83 & Viene verificato che il metodo \texttt{setConfirmationToTrue} di \textit{TemporalPolicyCtrl} torni \textbf{true} nel caso in cui venga impostata una politica temporale valida & S.\\
 \hline
-TU0-98 & Viene verificato che il metodo \texttt{setConfirmationToTrue} di \textit{TemporalPolicyCtrl} segnali con un messaggio di errore se viene impostata una politica temporale avente valore negativo associato al campo \textbf{minuti} & S.\\
+TU0-84 & Viene verificato che il metodo \texttt{checkIfTherIsAtLeastOneTreshold} di \textit{TresholdCtrl} torni \textbf{False} nel caso in cui non venga impostata una tabella per la sorgente dati all'interno del contesto del collegamento di un nodo & S.\\
 \hline
-\rowcolor{grigio}TU0-99 & Viene verificato che il metodo \texttt{setConfirmationToTrue} di \textit{TemporalPolicyCtrl} segnali con un messaggio di errore se viene impostata una politica temporale avente valore negativo associato al campo \textbf{ore} & S.\\
+\rowcolor{grigio}TU0-85 & Viene verificato che il metodo \texttt{checkIfTherIsAtLeastOneTreshold} di \textit{TresholdCtrl} torni \textbf{False} nel caso in cui non venga impostata un flusso all'interno del contesto del collegamento di un nodo & S.\\
 \hline
-TU0-100 & Viene verificato che il metodo \texttt{setConfirmationToTrue} di \textit{TemporalPolicyCtrl} torni \textbf{true} nel caso in cui venga impostata una politica temporale valida & S.\\
+TU0-86 & Viene verificato che il metodo \texttt{checkIfTherIsAtLeastOneTreshold} di \textit{TresholdCtrl} torni \textbf{False} nel caso in cui non venga impostata alcuna soglia all'interno del contesto del collegamento di un nodo & S.\\
 \hline
-\rowcolor{grigio}TU0-101 & Viene verificato che il metodo \texttt{checkIfTherIsAtLeastOneTreshold} di \textit{TresholdCtrl} torni \textbf{False} nel caso in cui non venga impostata una tabella per la sorgente dati all'interno del contesto del collegamento di un nodo & S.\\
+\rowcolor{grigio}TU0-87 & Viene verificato che il metodo \texttt{checkNotRepeatedTresholds} di \textit{TresholdCtrl} torni \textbf{False} nel caso in cui vengano impostate due soglie identiche all'interno del contesto del collegamento di un nodo & S.\\
 \hline
-TU0-102 & Viene verificato che il metodo \texttt{checkIfTherIsAtLeastOneTreshold} di \textit{TresholdCtrl} torni \textbf{False} nel caso in cui non venga impostata un flusso all'interno del contesto del collegamento di un nodo & S.\\
+TU0-88 & Viene verificato che il metodo \texttt{checkConflicts} di \textit{TresholdCtrl} torni \textbf{False} nel caso in cui vengano impostate soglie tra loro non coerenti all'interno del contesto del collegamento di un nodo & S.\\
 \hline
-\rowcolor{grigio}TU0-103 & Viene verificato che il metodo \texttt{checkIfTherIsAtLeastOneTreshold} di \textit{TresholdCtrl} torni \textbf{False} nel caso in cui non venga impostata alcuna soglia all'interno del contesto del collegamento di un nodo & S.\\
+\rowcolor{grigio}TU0-89 & Viene verificato che il metodo \texttt{confirmTresholdsChanges} di \textit{TresholdCtrl} torni \textbf{True} nel caso in cui vengano configurate delle impostazioni corrette per il collegamento del nodo & S.\\
 \hline
-TU0-104 & Viene verificato che il metodo \texttt{checkNotRepeatedTresholds} di \textit{TresholdCtrl} torni \textbf{False} nel caso in cui vengano impostate due soglie identiche all'interno del contesto del collegamento di un nodo & S.\\
+TU0-90 & Viene verificato che il metodo \texttt{deleteTreshold} di \textit{TresholdCtrl} torni \textbf{True} nel caso in cui venga eliminata una soglia precedentemente definita & S.\\
 \hline
-\rowcolor{grigio}TU0-105 & Viene verificato che il metodo \texttt{checkConflicts} di \textit{TresholdCtrl} torni \textbf{False} nel caso in cui vengano impostate soglie tra loro non coerenti all'interno del contesto del collegamento di un nodo & S.\\
+\rowcolor{grigio}TU0-91 & Viene verificato che il metodo \texttt{deleteTreshold} di \textit{TresholdCtrl} torni \textbf{False} nel caso in cui venga selezionata per l'eliminazione una soglia non esistente & S.\\
 \hline
-TU0-106 & Viene verificato che il metodo \texttt{confirmTresholdsChanges} di \textit{TresholdCtrl} torni \textbf{True} nel caso in cui vengano configurate delle impostazioni corrette per il collegamento del nodo & S.\\
+TU0-92 & Viene verificato che il metodo \texttt{checkConflictSameSign} di \textit{TresholdCtrl} torni \textbf{False} nel caso in cui vengano definite due soglie di verso opposto che condividono uno stesso estremo all'interno del contesto del collegamento di un nodo & S.\\
 \hline
-\rowcolor{grigio}TU0-107 & Viene verificato che il metodo \texttt{deleteTreshold} di \textit{TresholdCtrl} torni \textbf{True} nel caso in cui venga eliminata una soglia precedentemente definita & S.\\
+\rowcolor{grigio}TU0-93 & Viene verificato che il metodo \texttt{setNotLinked} di \textit{TresholdCtrl} elimini il collegamento del nodo al flusso dati & S.\\
 \hline
-TU0-108 & Viene verificato che il metodo \texttt{deleteTreshold} di \textit{TresholdCtrl} torni \textbf{False} nel caso in cui venga selezionata per l'eliminazione una soglia non esistente & S.\\
+TU0-94 & Viene verificato che il metodo \texttt{checkMonitoring} di \textit{ModalCreator} torni \textbf{True} e faccia comparire una modal che segnali il monitoraggio in corso nel caso in cui la rete sia in monitoraggio & S. \\
 \hline
-\rowcolor{grigio}TU0-109 & Viene verificato che il metodo \texttt{checkConflictSameSign} di \textit{TresholdCtrl} torni \textbf{False} nel caso in cui vengano definite due soglie di verso opposto che condividono uno stesso estremo all'interno del contesto del collegamento di un nodo & S.\\
+\rowcolor{grigio}TU0-95 & Viene verificato che la funzione \texttt{checkMonitoring} di \textit{ModalCreator} torni \textbf{False} nel caso in cui la rete non sia in monitoraggio & S. \\
 \hline
-TU0-110 & Viene verificato che il metodo \texttt{setNotLinked} di \textit{TresholdCtrl} elimini il collegamento del nodo al flusso dati & S.\\
+TU0-96 & Viene verificato che la funzione \texttt{checkDB} di \textit{ModalCreator} torni \textbf{False} e faccia comparire una modal che segnali il mancato collegamento nel caso in cui la rete non sia collegata ad un database & S. \\
 \hline
-\rowcolor{grigio}TU0-111 & Viene verificato che il metodo \texttt{checkMonitoring} di \textit{ModalCreator} torni \textbf{True} e faccia comparire una modal che segnali il monitoraggio in corso nel caso in cui la rete sia in monitoraggio & S. \\
+\rowcolor{grigio}TU0-97 & Viene verificato che la funzione \texttt{checkDB} di \textit{ModalCreator} torni \textbf{True} nel caso in cui la rete non sia collegata ad un Database & S. \\
 \hline
-TU0-112 & Viene verificato che la funzione \texttt{checkMonitoring} di \textit{ModalCreator} torni \textbf{False} nel caso in cui la rete non sia in monitoraggio & S. \\
+TU0-98 & Viene verificato che il metodo \texttt{showMessageModal} di \textit{ModalCreator} faccia correttamente comparire una modal nella quale compaia il messaggio da segnalare & S. \\
 \hline
-\rowcolor{grigio}TU0-113 & Viene verificato che la funzione \texttt{checkDB} di \textit{ModalCreator} torni \textbf{False} e faccia comparire una modal che segnali il mancato collegamento nel caso in cui la rete non sia collegata ad un database & S. \\
+\rowcolor{grigio}TU0-99 & Viene verificato che il metodo \texttt{showTresholdModal} di \textit{ModalCreator} ritorni come valore \textbf{True} e faccia comparire una modal per la definizione delle soglie se le condizioni per il collegamento del nodo sono verificate & S. \\
 \hline
-TU0-114 & Viene verificato che la funzione \texttt{checkDB} di \textit{ModalCreator} torni \textbf{True} nel caso in cui la rete non sia collegata ad un Database & S. \\
+TU0-100 & Viene verificato che il metodo \texttt{showTresholdModal} di \textit{ModalCreator} ritorni come valore \textbf{False}, e faccia comparire una modal che segnali l'errore, nel caso in cui si tenti di modificare le impostazioni di collegamento durante un monitoraggio attivo o senza aver connesione al database  & S. \\
 \hline
-\rowcolor{grigio}TU0-115 & Viene verificato che il metodo \texttt{showMessageModal} di \textit{ModalCreator} faccia correttamente comparire una modal nella quale compaia il messaggio da segnalare & S. \\
+\rowcolor{grigio}TU0-101 & Viene verificato che il metodo \texttt{selectTemporalPolicy} di \textit{ModalCreator} ritorni come valore \textbf{True} e faccia comparire una modal per la definizione della politica temporale se le condizioni per la sua definizione sono tutte rispettate & S. \\
 \hline
-TU0-116 & Viene verificato che il metodo \texttt{showTresholdModal} di \textit{ModalCreator} ritorni come valore \textbf{True} e faccia comparire una modal per la definizione delle soglie se le condizioni per il collegamento del nodo sono verificate & S. \\
+TU0-102 & Viene verificato che il metodo \texttt{selectTemporalPolicy} di \textit{ModalCreator} ritorni come valore \textbf{False}, e faccia comparire una modal che segnali l'errore, nel caso in cui si tenti di definire una politica temporale durante un monitoraggio attivo o senza aver connesione al database & S. \\
 \hline
-\rowcolor{grigio}TU0-117 & Viene verificato che il metodo \texttt{showTresholdModal} di \textit{ModalCreator} ritorni come valore \textbf{False}, e faccia comparire una modal che segnali l'errore, nel caso in cui si tenti di modificare le impostazioni di collegamento durante un monitoraggio attivo o senza aver connesione al database  & S. \\
+\rowcolor{grigio}TU0-103 & Viene verificato che il metodo \texttt{getTables} di \textit{GetApiGrafana} torni come risultato un array contenente tutte le tabelle del database, il quale è un campo dati della classe stessa & S.\\
 \hline
-TU0-118 & Viene verificato che il metodo \texttt{selectTemporalPolicy} di \textit{ModalCreator} ritorni come valore \textbf{True} e faccia comparire una modal per la definizione della politica temporale se le condizioni per la sua definizione sono tutte rispettate & S. \\
+TU0-104 & Viene verificato che il metodo \texttt{getFields} di \textit{GetApiGrafana} torni come risultato un \textit{JSON} contenente tutti i campi di tutte le tabelle del database & S.\\
 \hline
-\rowcolor{grigio}TU0-119 & Viene verificato che il metodo \texttt{selectTemporalPolicy} di \textit{ModalCreator} ritorni come valore \textbf{False}, e faccia comparire una modal che segnali l'errore, nel caso in cui si tenti di definire una politica temporale durante un monitoraggio attivo o senza aver connesione al database & S. \\
+\rowcolor{grigio}TU0-105 & Viene verificato che il metodo \texttt{divideFields} di \textit{GetApiGrafana} data una certa struttura dati possibilmente non ben formattata torni come risultato un \textit{JSON} contenente tabelle e corrispondenti campi correttamente strutturati & S.\\
 \hline
-TU0-120 & Viene verificato che il metodo \texttt{getTables} di \textit{GetApiGrafana} torni come risultato un array contenente tutte le tabelle del database, il quale è un campo dati della classe stessa & S.\\
+TU0-106 & Viene verificato che il metodo \texttt{getData} di \textit{GetApiGrafana} faccia una richiesta alle API \textit{Grafana} e torni un file \textit{JSON} contente le informazioni dei database associati & S.\\
 \hline
-\rowcolor{grigio}TU0-121 & Viene verificato che il metodo \texttt{getFields} di \textit{GetApiGrafana} torni come risultato un \textit{JSON} contenente tutti i campi di tutte le tabelle del database & S.\\
+\rowcolor{grigio}TU0-107 & Viene verificato che il metodo \texttt{alive} di \textit{ConnectServer} torni un \textit{JSON} contenente informazioni su data, ora e porta del server in ascolto & S.\\
 \hline
-TU0-122 & Viene verificato che il metodo \texttt{divideFields} di \textit{GetApiGrafana} data una certa struttura dati possibilmente non ben formattata torni come risultato un \textit{JSON} contenente tabelle e corrispondenti campi correttamente strutturati & S.\\
+TU0-108 & Viene verificato che il metodo \texttt{networks} di \textit{ConnectServer} torni un \textit{JSON} contenente le reti bayesiane salvate nel server & S.\\
 \hline
-\rowcolor{grigio}TU0-123 & Viene verificato che il metodo \texttt{getData} di \textit{GetApiGrafana} faccia una richiesta alle API \textit{Grafana} e torni un file \textit{JSON} contente le informazioni dei database associati & S.\\
+\rowcolor{grigio}TU0-109 & Viene verificato che il metodo \texttt{uploadnetwork(net)} di \textit{ConnectServer} carichi sul server la rete "net" passata come parametro e torni \textbf{True} nel caso di buona riuscita dell'operazione & S.\\
 \hline
-TU0-124 & Viene verificato che il metodo \texttt{alive} di \textit{ConnectServer} torni un \textit{JSON} contenente informazioni su data, ora e porta del server in ascolto & S.\\
+TU0-110 & Viene verificato che il metodo \texttt{deletenetwork(net)} di \textit{ConnectServer} elimini dal server la rete "net" passata come parametro e torni \textbf{True} nel caso di buona riuscita dell'operazione & S.\\
 \hline
-\rowcolor{grigio}TU0-125 & Viene verificato che il metodo \texttt{networks} di \textit{ConnectServer} torni un \textit{JSON} contenente le reti bayesiane salvate nel server & S.\\
+\rowcolor{grigio}TU0-111 & Viene verificato che il metodo \texttt{getnetworkprob(net)} di \textit{ConnectServer} torni un \textit{JSON} contenente le probabilità aggiornate relative agli stati dei nodi della rete "net" passata come parametro & S.\\
 \hline
-TU0-126 & Viene verificato che il metodo \texttt{uploadnetwork(net)} di \textit{ConnectServer} carichi sul server la rete "net" passata come parametro e torni \textbf{True} nel caso di buona riuscita dell'operazione & S.\\
+TU0-112 & Viene verificato che il metodo \texttt{getnetwork(net)} di \textit{ConnectServer} torni un \textit{JSON} contenente tutte le informazioni relative alla rete "net" memorizzata nel server & S.\\
 \hline
-\rowcolor{grigio}TU0-127 & Viene verificato che il metodo \texttt{deletenetwork(net)} di \textit{ConnectServer} elimini dal server la rete "net" passata come parametro e torni \textbf{True} nel caso di buona riuscita dell'operazione & S.\\
+\rowcolor{grigio}TU0-113 & Viene verificato che il metodo \texttt{calculateSeconds(policy)} di \textit{GBCtrl} torni un \textbf{int} che rappresenta il numero di secondi di cui è composta la politica temporale "policy" passata come parametro & S.\\
 \hline
-TU0-128 & Viene verificato che il metodo \texttt{getnetworkprob(net)} di \textit{ConnectServer} torni un \textit{JSON} contenente le probabilità aggiornate relative agli stati dei nodi della rete "net" passata come parametro & S.\\
+TU0-114 & Viene verificato che il metodo \texttt{panelPath} di \textit{GBCtrl}, nel caso in cui il pannello abbia un path definito, torni il path del pannello & S.\\
 \hline
-\rowcolor{grigio}TU0-129 & Viene verificato che il metodo \texttt{getnetwork(net)} di \textit{ConnectServer} torni un \textit{JSON} contenente tutte le informazioni relative alla rete "net" memorizzata nel server & S.\\
+\rowcolor{grigio}TU0-115 & Viene verificato che il metodo \texttt{panelPath} di \textit{GBCtrl}, nel caso in cui il pannello non abbia un path definito, assegni un path di default al pannello e lo ritorni & S.\\
 \hline
-TU0-130 & Viene verificato che il metodo \texttt{calculateSeconds(policy)} di \textit{GBCtrl} torni un \textbf{int} che rappresenta il numero di secondi di cui è composta la politica temporale "policy" passata come parametro & S.\\
+TU0-116 & Viene verificato che il metodo \texttt{onInitEditMode} di \textit{GBCtrl}, aggiunga la tab "server settings" all'editor tab del pannello e torni \textbf{True} & S.\\
 \hline
-\rowcolor{grigio}TU0-131 & Viene verificato che il metodo \texttt{panelPath} di \textit{GBCtrl}, nel caso in cui il pannello abbia un path definito, torni il path del pannello & S.\\
+\rowcolor{grigio}TU0-117 & Viene verificato che il metodo \texttt{splitMonitoringNetworks} di \textit{GBCtrl} ritorni un array di reti bayesiane attualmente sotto monitoraggio & S.\\
 \hline
-TU0-132 & Viene verificato che il metodo \texttt{panelPath} di \textit{GBCtrl}, nel caso in cui il pannello non abbia un path definito, assegni un path di default al pannello e lo ritorni & S.\\
+TU0-118 & Viene verificato che il metodo \texttt{requestNetworks} di \textit{GBCtrl} ricavi dal server le reti bayesiane caricate e le imposti nel pannello, tornando \textbf{True} nel caso l'operazione sia andata  a buon fine & S.\\
 \hline
-\rowcolor{grigio}TU0-133 & Viene verificato che il metodo \texttt{onInitEditMode} di \textit{GBCtrl}, aggiunga la tab "server settings" all'editor tab del pannello e torni \textbf{True} & S.\\
+\rowcolor{grigio}TU0-119 & Viene verificato che il metodo \texttt{requestNetworks} di \textit{GBCtrl} visualizzi un messaggio di errore e torni \textbf{False} nel caso in cui la connessione al server fallisca & S.\\
 \hline
-TU0-134 & Viene verificato che il metodo \texttt{splitMonitoringNetworks} di \textit{GBCtrl} ritorni un array di reti bayesiane attualmente sotto monitoraggio & S.\\
+TU0-120 & Viene verificato che il metodo \texttt{tryConnectServer} di \textit{GBCtrl} controlli lo stato della connessione al server e visualizzi un messaggio contestuale tornando \textbf{True} nel caso in cui la connessione al server sia attiva & S.\\
 \hline
-\rowcolor{grigio}TU0-135 & Viene verificato che il metodo \texttt{requestNetworks} di \textit{GBCtrl} ricavi dal server le reti bayesiane caricate e le imposti nel pannello, tornando \textbf{True} nel caso l'operazione sia andata  a buon fine & S.\\
+\rowcolor{grigio}TU0-121 & Viene verificato che il metodo \texttt{tryConnectServer} di \textit{GBCtrl} controlli lo stato della connessione al server e visualizzi un messaggio di errore tornando \textbf{False} nel caso in cui la connessione al server non sia attiva & S.\\
 \hline
-TU0-136 & Viene verificato che il metodo \texttt{requestNetworks} di \textit{GBCtrl} visualizzi un messaggio di errore e torni \textbf{False} nel caso in cui la connessione al server fallisca & S.\\
+TU0-122 & Viene verificato che il metodo \texttt{checkIfNetworkIsDeletable(net)} di \textit{GBCtrl} controlli che la rete "net" passata come parametro sia eliminabile dal server, tornando \textbf{True} in caso affermativo & S.\\
 \hline
-\rowcolor{grigio}TU0-137 & Viene verificato che il metodo \texttt{tryConnectServer} di \textit{GBCtrl} controlli lo stato della connessione al server e visualizzi un messaggio contestuale tornando \textbf{True} nel caso in cui la connessione al server sia attiva & S.\\
+\rowcolor{grigio}TU0-123 & Viene verificato che il metodo \texttt{checkIfNetworkIsDeletable(net)} di \textit{GBCtrl} controlli che la rete "net" passata come parametro sia eliminabile dal server, tornando \textbf{False}, e visualizzando anche un contestuale messaggio di errore, nel caso in cui la rete sia in stato di monitoraggio & S.\\
 \hline
-TU0-138 & Viene verificato che il metodo \texttt{tryConnectServer} di \textit{GBCtrl} controlli lo stato della connessione al server e visualizzi un messaggio di errore tornando \textbf{False} nel caso in cui la connessione al server non sia attiva & S.\\
+TU0-124 & Viene verificato che il metodo \texttt{checkIfNetworkIsDeletable(net)} di \textit{GBCtrl} controlli che la rete "net" passata come parametro sia eliminabile dal server, tornando \textbf{False}, e visualizzando anche un contestuale messaggio di errore, nel caso in cui la rete non sia specificata & S.\\
 \hline
-\rowcolor{grigio}TU0-139 & Viene verificato che il metodo \texttt{checkIfNetworkIsDeletable(net)} di \textit{GBCtrl} controlli che la rete "net" passata come parametro sia eliminabile dal server, tornando \textbf{True} in caso affermativo & S.\\
+\rowcolor{grigio}TU0-125 & Viene verificato che il metodo \texttt{requestNetworkDelete(net)} di \textit{GBCtrl} elimini dal server la rete "net" passata come parametro, tornando \textbf{True} nel caso l'operazione sia andata a buon fine & S.\\
 \hline
-TU0-140 & Viene verificato che il metodo \texttt{checkIfNetworkIsDeletable(net)} di \textit{GBCtrl} controlli che la rete "net" passata come parametro sia eliminabile dal server, tornando \textbf{False}, e visualizzando anche un contestuale messaggio di errore, nel caso in cui la rete sia in stato di monitoraggio & S.\\
+TU0-126 & Viene verificato che il metodo \texttt{requestNetworkDelete(net)} di \textit{GBCtrl} torni \textbf{False}, e mostri un corrispondente messaggio di errore, nel caso l'operazione non sia andata a buon fine a causa del fatto che la rete "net", passata come parametro, non sia eliminabile & S.\\
 \hline
-\rowcolor{grigio}TU0-141 & Viene verificato che il metodo \texttt{checkIfNetworkIsDeletable(net)} di \textit{GBCtrl} controlli che la rete "net" passata come parametro sia eliminabile dal server, tornando \textbf{False}, e visualizzando anche un contestuale messaggio di errore, nel caso in cui la rete non sia specificata & S.\\
+\rowcolor{grigio}TU0-127 & Viene verificato che il metodo \texttt{requestNetworkDelete(net)} di \textit{GBCtrl} torni \textbf{False}, e mostri un corrispondente messaggio di errore, nel caso l'operazione non sia andata a buon fine a causa di un problema con la connesione al server & S.\\
 \hline
-TU0-142 & Viene verificato che il metodo \texttt{requestNetworkDelete(net)} di \textit{GBCtrl} elimini dal server la rete "net" passata come parametro, tornando \textbf{True} nel caso l'operazione sia andata a buon fine & S.\\
+TU0-128 & Viene verificato che il metodo \texttt{updateProbs} di \textit{GBCtrl} aggiorni le probabilità che rappresentano i dati di monitoraggio della rete visualizzata sul pannello tornando \textbf{True} se l'operazione è andata a buon fine & S.\\
 \hline
-\rowcolor{grigio}TU0-143 & Viene verificato che il metodo \texttt{requestNetworkDelete(net)} di \textit{GBCtrl} torni \textbf{False}, e mostri un corrispondente messaggio di errore, nel caso l'operazione non sia andata a buon fine a causa del fatto che la rete "net", passata come parametro, non sia eliminabile & S.\\
+\rowcolor{grigio}TU0-129 & Viene verificato che il metodo \texttt{changeNetworkToVisualizeMonitoring} di \textit{GBCtrl} imposti correttamente l'intervallo di refresh delle probabilità della rete e che ritorni correttamente \textbf{True} & S.\\
 \hline
-TU0-144 & Viene verificato che il metodo \texttt{requestNetworkDelete(net)} di \textit{GBCtrl} torni \textbf{False}, e mostri un corrispondente messaggio di errore, nel caso l'operazione non sia andata a buon fine a causa di un problema con la connesione al server & S.\\
+TU0-130 & Viene verificato che il metodo \texttt{changeNetworkToVisualizeMonitoring} di \textit{GBCtrl} non imposti alcun intervallo di refresh delle probabilità, nel caso vengano sollevate eccezioni, e ritorni \textbf{False} & S.\\
 \hline
-\rowcolor{grigio}TU0-145 & Viene verificato che il metodo \texttt{updateProbs} di \textit{GBCtrl} aggiorni le probabilità che rappresentano i dati di monitoraggio della rete visualizzata sul pannello tornando \textbf{True} se l'operazione è andata a buon fine & S.\\
+\rowcolor{grigio}TU0-131 & Viene verificato che il metodo \texttt{loadNetworkToServer(net)} di \textit{GBCtrl} carichi la rete "net" passata come parametro sul server, tornando \textbf{True}, e mostrando un corrispondente messaggio di successo, nel caso di buon esito dell'operazione & S.\\
 \hline
-TU0-146 & Viene verificato che il metodo \texttt{changeNetworkToVisualizeMonitoring} di \textit{GBCtrl} imposti correttamente l'intervallo di refresh delle probabilità della rete e che ritorni correttamente \textbf{True} & S.\\
+TU0-132 & Viene verificato che il metodo \texttt{loadNetworkToServer(net)} di \textit{GBCtrl} torni \textbf{False} nel caso in cui il server non sia online oppure l'operazione non vada a buon fine & S.\\
 \hline
-\rowcolor{grigio}TU0-147 & Viene verificato che il metodo \texttt{changeNetworkToVisualizeMonitoring} di \textit{GBCtrl} non imposti alcun intervallo di refresh delle probabilità, nel caso vengano sollevate eccezioni, e ritorni \textbf{False} & S.\\
+\rowcolor{grigio}TU0-133 & Viene verificato che il metodo \texttt{saveActualChanges} di \textit{GBCtrl}, salvi i cambiamenti nel server solo se la combinazione di valori delle variabili \textit{name} e \textit{collegatoAlDB} è corretta e la rete non è sotto monitoraggio & S.\\
 \hline
-TU0-148 & Viene verificato che il metodo \texttt{loadNetworkToServer(net)} di \textit{GBCtrl} carichi la rete "net" passata come parametro sul server, tornando \textbf{True}, e mostrando un corrispondente messaggio di successo, nel caso di buon esito dell'operazione & S.\\
+TU0-134 & Viene verificato che il metodo \texttt{resetData} di \textit{GBCtrl} resetti tutte le impostazioni del pannello al valore di default, tornando \textbf{True} nel caso di buon esito dell'operazione & S.\\
 \hline
-\rowcolor{grigio}TU0-149 & Viene verificato che il metodo \texttt{loadNetworkToServer(net)} di \textit{GBCtrl} torni \textbf{False} nel caso in cui il server non sia online oppure l'operazione non vada a buon fine & S.\\
+\rowcolor{grigio}TU0-135 & Viene verificato che il metodo \texttt{checkIfConnectableToDB} di \textit{GBCtrl} torni \textbf{True} nel caso sia possibile selezionare un databse come sorgente dati per la rete visualizzata nel pannello & S.\\
 \hline
-TU0-150 & Viene verificato che il metodo \texttt{saveActualChanges} di \textit{GBCtrl}, salvi i cambiamenti nel server solo se la combinazione di valori delle variabili \textit{name} e \textit{collegatoAlDB} è corretta e la rete non è sotto monitoraggio & S.\\
+TU0-136 & Viene verificato che il metodo \texttt{checkIfConnectableToDB} di \textit{GBCtrl} lanci un'eccezione nel caso in cui la rete visualizzata nel pannello sia sotto monitoraggio & S.\\
 \hline
-\rowcolor{grigio}TU0-151 & Viene verificato che il metodo \texttt{resetData} di \textit{GBCtrl} resetti tutte le impostazioni del pannello al valore di default, tornando \textbf{True} nel caso di buon esito dell'operazione & S.\\
+\rowcolor{grigio}TU0-137 & Viene verificato che il metodo \texttt{checkIfConnectableToDB} di \textit{GBCtrl} lanci un'eccezione nel caso in cui non sia specificato alcun database & S.\\
 \hline
-TU0-152 & Viene verificato che il metodo \texttt{checkIfConnectableToDB} di \textit{GBCtrl} torni \textbf{True} nel caso sia possibile selezionare un databse come sorgente dati per la rete visualizzata nel pannello & S.\\
+TU0-138 & Viene verificato che il metodo \texttt{checkIfConnectableToDB} di \textit{GBCtrl} lanci un'eccezione nel caso in cui sia indicato un database non influx & S.\\
 \hline
-\rowcolor{grigio}TU0-153 & Viene verificato che il metodo \texttt{checkIfConnectableToDB} di \textit{GBCtrl} lanci un'eccezione nel caso in cui la rete visualizzata nel pannello sia sotto monitoraggio & S.\\
+\rowcolor{grigio}TU0-139 & Viene verificato che il metodo \texttt{getConnectionToDB} di \textit{GBCtrl}, crei correttamente l'oggetto di \textit{GetApiGrafana} al fine di poter ottenere i dati dei database disponibili e ritorni \textbf{True} & S.\\
 \hline
-TU0-154 & Viene verificato che il metodo \texttt{checkIfConnectableToDB} di \textit{GBCtrl} lanci un'eccezione nel caso in cui non sia specificato alcun database & S.\\
+TU0-140 & Viene verificato che il metodo \texttt{getConnectionToDB} di \textit{GBCtrl}, lanci un'eccezione nel caso si stia cercando di collegarsi ad un database non esistente in \textit{Grafana} & S.\\
 \hline
-\rowcolor{grigio}TU0-155 & Viene verificato che il metodo \texttt{checkIfConnectableToDB} di \textit{GBCtrl} lanci un'eccezione nel caso in cui sia indicato un database non influx & S.\\
+\rowcolor{grigio}TU0-141 & Viene verificato che il metodo \texttt{getFlushes} di \textit{GBCtrl} recuperi dal database tutti i possibili flussi dati salvandoli in un'apposita variabile, tornando \textbf{True} nel caso l'operazione sia andata a buon fine & S.\\
 \hline
-TU0-156 & Viene verificato che il metodo \texttt{getConnectionToDB} di \textit{GBCtrl}, crei correttamente l'oggetto di \textit{GetApiGrafana} al fine di poter ottenere i dati dei database disponibili e ritorni \textbf{True} & S.\\
+TU0-142 & Viene verificato che il metodo \texttt{getFlushes} di \textit{GBCtrl} torni \textbf{False} nel caso in cui non sia possibile la connessione al database & S.\\
 \hline
-\rowcolor{grigio}TU0-157 & Viene verificato che il metodo \texttt{getConnectionToDB} di \textit{GBCtrl}, lanci un'eccezione nel caso si stia cercando di collegarsi ad un database non esistente in \textit{Grafana} & S.\\
+\rowcolor{grigio}TU0-143 & Viene verificato che il metodo \texttt{connectToDB} di \textit{GBCtrl} effettui il collegamento della rete al database, eseguendo gli opportuni controlli e tornando \textbf{True} nel caso l'operazione sia andata a buon fine & S.\\
 \hline
-TU0-158 & Viene verificato che il metodo \texttt{getFlushes} di \textit{GBCtrl} recuperi dal database tutti i possibili flussi dati salvandoli in un'apposita variabile, tornando \textbf{True} nel caso l'operazione sia andata a buon fine & S.\\
+TU0-144 & Viene verificato che il metodo \texttt{connectToDB} di \textit{GBCtrl} torni \textbf{False}, mostrando un corrispondente messaggio di errore, nel caso in cui non riesca a ricavare i flussi dati disponibili dal database selezionato & S.\\
 \hline
-\rowcolor{grigio}TU0-159 & Viene verificato che il metodo \texttt{getFlushes} di \textit{GBCtrl} torni \textbf{False} nel caso in cui non sia possibile la connessione al database & S.\\
+\rowcolor{grigio}TU0-145 & Viene verificato che il metodo \texttt{connectToDB} di \textit{GBCtrl} lanci un'eccezione nel caso in cui sia impossibile stabilire una connessione con il database & S.\\
 \hline
-TU0-160 & Viene verificato che il metodo \texttt{connectToDB} di \textit{GBCtrl} effettui il collegamento della rete al database, eseguendo gli opportuni controlli e tornando \textbf{True} nel caso l'operazione sia andata a buon fine & S.\\
+TU0-146 & Viene verificato che il metodo \texttt{showTresholdModal(node)} di \textit{GBCtrl} faccia comparire una modal per la definizione delle impostazioni di collegamento del nodo "node" passato come parametro, tornando \textbf{True} nel caso di buon esito dell'operazione & S.\\
 \hline
-\rowcolor{grigio}TU0-161 & Viene verificato che il metodo \texttt{connectToDB} di \textit{GBCtrl} torni \textbf{False}, mostrando un corrispondente messaggio di errore, nel caso in cui non riesca a ricavare i flussi dati disponibili dal database selezionato & S.\\
+\rowcolor{grigio}TU0-147 & Viene verificato che il metodo \texttt{selectTemporalPolicy} di \textit{GBCtrl} faccia comparire una modal per la configurazione della politica temporale di ricalcolo delle probabilità, tornando \textbf{True} nel caso di buon esito dell'operazione & S.\\
 \hline
-TU0-162 & Viene verificato che il metodo \texttt{connectToDB} di \textit{GBCtrl} lanci un'eccezione nel caso in cui sia impossibile stabilire una connessione con il database & S.\\
+TU0-148 & Viene verificato che il metodo \texttt{visualizeMonitoring} di \textit{GBCtrl} cambi la visualizzazione del pannello, passando alla visualizzazione dei monitoraggi attivi & S.\\
 \hline
-\rowcolor{grigio}TU0-163 & Viene verificato che il metodo \texttt{showTresholdModal(node)} di \textit{GBCtrl} faccia comparire una modal per la definizione delle impostazioni di collegamento del nodo "node" passato come parametro, tornando \textbf{True} nel caso di buon esito dell'operazione & S.\\
+\rowcolor{grigio}TU0-149 & Viene verificato che il metodo \texttt{visualizeSettings} di \textit{GBCtrl} cambi la visualizzazione del pannello, passando alla visualizzazione delle impostazioni di monitoraggio & S.\\
 \hline
-TU0-164 & Viene verificato che il metodo \texttt{selectTemporalPolicy} di \textit{GBCtrl} faccia comparire una modal per la configurazione della politica temporale di ricalcolo delle probabilità, tornando \textbf{True} nel caso di buon esito dell'operazione & S.\\
+TU0-150 & Viene verificato che il metodo \texttt{loadNetworkFromSaved(net)} di \textit{GBCtrl} carichi nel pannello la rete "net",passata come parametro, insieme alle sue impostazioni di collegamento, tornando \textbf{True} nel caso di buon esito dell'operazione & S.\\
 \hline
-\rowcolor{grigio}TU0-165 & Viene verificato che il metodo \texttt{visualizeMonitoring} di \textit{GBCtrl} cambi la visualizzazione del pannello, passando alla visualizzazione dei monitoraggi attivi & S.\\
+\rowcolor{grigio}TU0-151 & Viene verificato che il metodo \texttt{requestNetworkToServer(string)} di \textit{GBCtrl} carichi nel pannello la rete memorizzata nel server, avente come nome la stringa passata come parametro, insieme alle sue impostazioni di collegamento, tornando \textbf{True} nel caso di buon esito dell'operazione & S.\\
 \hline
-TU0-166 & Viene verificato che il metodo \texttt{visualizeSettings} di \textit{GBCtrl} cambi la visualizzazione del pannello, passando alla visualizzazione delle impostazioni di monitoraggio & S.\\
+TU0-152 & Viene verificato che il metodo \texttt{requestNetworkToServer(string)} di \textit{GBCtrl} torni \textbf{False} nel caso non sia possibile reperire la rete, avente come nome la stringa passata come parametro, dal server & S.\\
 \hline
-\rowcolor{grigio}TU0-167 & Viene verificato che il metodo \texttt{loadNetworkFromSaved(net)} di \textit{GBCtrl} carichi nel pannello la rete "net",passata come parametro, insieme alle sue impostazioni di collegamento, tornando \textbf{True} nel caso di buon esito dell'operazione & S.\\
+\rowcolor{grigio}TU0-153 & Viene verificato che il metodo \texttt{resetTresholds} di \textit{GBCtrl} elimini tutte le soglie, ripristinando le impostazioni di default del pannello & S.\\
 \hline
-TU0-168 & Viene verificato che il metodo \texttt{requestNetworkToServer(string)} di \textit{GBCtrl} carichi nel pannello la rete memorizzata nel server, avente come nome la stringa passata come parametro, insieme alle sue impostazioni di collegamento, tornando \textbf{True} nel caso di buon esito dell'operazione & S.\\
+TU0-154 & Viene verificato che il metodo \texttt{checkIfAtLeastOneTresholdDefined} di \textit{GBCtrl} torni \textbf{True} nel caso sia definita almeno una soglia per il collegamento di un qualche nodo & S.\\
 \hline
-\rowcolor{grigio}TU0-169 & Viene verificato che il metodo \texttt{requestNetworkToServer(string)} di \textit{GBCtrl} torni \textbf{False} nel caso non sia possibile reperire la rete, avente come nome la stringa passata come parametro, dal server & S.\\
+\rowcolor{grigio}TU0-155 & Viene verificato che il metodo \texttt{checkIfAtLeastOneTresholdDefined} di \textit{GBCtrl} torni \textbf{False} nel caso non sia definita alcuna soglia per il collegamento di un qualche nodo & S.\\
 \hline
-TU0-172 & Viene verificato che il metodo \texttt{resetTresholds} di \textit{GBCtrl} elimini tutte le soglie, ripristinando le impostazioni di default del pannello & S.\\
+TU0-156 & Viene verificato che il metodo \texttt{deleteLinkToFlush(node)} di \textit{GBCtrl} scolleghi dal flusso di monitoraggio il nodo "node", passato come parametro al metodo, tornando \textbf{True} in caso di buon esito dell'operazione & S.\\
 \hline
-\rowcolor{grigio}TU0-173 & Viene verificato che il metodo \texttt{checkIfAtLeastOneTresholdDefined} di \textit{GBCtrl} torni \textbf{True} nel caso sia definita almeno una soglia per il collegamento di un qualche nodo & S.\\
+\rowcolor{grigio}TU0-157 & Viene verificato che il metodo \texttt{deleteLinkToFlush(node)} di \textit{GBCtrl} torni \textbf{False} nel caso in cui il nodo "node", passato come parametro al metodo, appartenga ad una rete bayesiana sotto monitoraggio & S.\\
 \hline
-TU0-174 & Viene verificato che il metodo \texttt{checkIfAtLeastOneTresholdDefined} di \textit{GBCtrl} torni \textbf{False} nel caso non sia definita alcuna soglia per il collegamento di un qualche nodo & S.\\
+TU0-158 & Viene verificato che il metodo \texttt{freeAllFlushes} di \textit{GBCtrl} riassegni ai flussi dati disponibili per il collegamento tutti i flussi dati occupati da nodi collegati & S.\\
 \hline
-\rowcolor{grigio}TU0-175 & Viene verificato che il metodo \texttt{deleteLinkToFlush(node)} di \textit{GBCtrl} scolleghi dal flusso di monitoraggio il nodo "node", passato come parametro al metodo, tornando \textbf{True} in caso di buon esito dell'operazione & S.\\
+\rowcolor{grigio}TU0-159 & Viene verificato che il metodo \texttt{checkIfCanStartComputation} di \textit{GBCtrl} torni \textbf{True} nel caso in cui possa essere avviato il monitoraggio per la rete bayesiana visualizzata nel pannello & S.\\
 \hline
-TU0-176 & Viene verificato che il metodo \texttt{deleteLinkToFlush(node)} di \textit{GBCtrl} torni \textbf{False} nel caso in cui il nodo "node", passato come parametro al metodo, appartenga ad una rete bayesiana sotto monitoraggio & S.\\
+TU0-160 & Viene verificato che il metodo \texttt{checkIfCanStartComputation} di \textit{GBCtrl} lanci un'eccezione nel caso in cui non sia selezionato alcun database da usare come sorgente dati e dunque, di conseguenza, non possa essere avviato il monitoraggio della rete visualizzata nel pannello & S.\\
 \hline
-\rowcolor{grigio}TU0-177 & Viene verificato che il metodo \texttt{freeAllFlushes} di \textit{GBCtrl} riassegni ai flussi dati disponibili per il collegamento tutti i flussi dati occupati da nodi collegati & S.\\
+\rowcolor{grigio}TU0-161 & Viene verificato che il metodo \texttt{checkIfCanStartComputation} di \textit{GBCtrl} lanci un'eccezione nel caso in cui non sia impostata alcuna politica temporale e dunque, di conseguenza, non possa essere avviato il monitoraggio della rete visualizzata nel pannello & S.\\
 \hline
-TU0-178 & Viene verificato che il metodo \texttt{checkIfCanStartComputation} di \textit{GBCtrl} torni \textbf{True} nel caso in cui possa essere avviato il monitoraggio per la rete bayesiana visualizzata nel pannello & S.\\
+TU0-162 & Viene verificato che il metodo \texttt{checkIfCanStartComputation} di \textit{GBCtrl} lanci un'eccezione nel caso in cui non sia collegato alcun nodo al flusso dati e dunque, di conseguenza, non possa essere avviato il monitoraggio della rete visualizzata nel pannello & S.\\
 \hline
-\rowcolor{grigio}TU0-179 & Viene verificato che il metodo \texttt{checkIfCanStartComputation} di \textit{GBCtrl} lanci un'eccezione nel caso in cui non sia selezionato alcun database da usare come sorgente dati e dunque, di conseguenza, non possa essere avviato il monitoraggio della rete visualizzata nel pannello & S.\\
+\rowcolor{grigio}TU0-163 & Viene verificato che il metodo \texttt{startComputation} di \textit{GBCtrl} faccia partire il monitoraggio per la rete impostata nel pannello, tornando \textbf{True} nel caso di buon esito dell'operazione & S.\\
 \hline
-TU0-180 & Viene verificato che il metodo \texttt{checkIfCanStartComputation} di \textit{GBCtrl} lanci un'eccezione nel caso in cui non sia impostata alcuna politica temporale e dunque, di conseguenza, non possa essere avviato il monitoraggio della rete visualizzata nel pannello & S.\\
+TU0-164 & Viene verificato che il metodo \texttt{startComputation} di \textit{GBCtrl} torni \textbf{False} nel caso non sia possibile avviare il monitoraggio della rete impostata nel pannello & S.\\
 \hline
-\rowcolor{grigio}TU0-181 & Viene verificato che il metodo \texttt{checkIfCanStartComputation} di \textit{GBCtrl} lanci un'eccezione nel caso in cui non sia collegato alcun nodo al flusso dati e dunque, di conseguenza, non possa essere avviato il monitoraggio della rete visualizzata nel pannello & S.\\
+\rowcolor{grigio}TU0-165 & Viene verificato che il metodo \texttt{startComputation} di \textit{GBCtrl} laci un'eccezione nel caso in cui sia impossibile stabilire una connessione con il server & S.\\
 \hline
-TU0-182 & Viene verificato che il metodo \texttt{startComputation} di \textit{GBCtrl} faccia partire il monitoraggio per la rete impostata nel pannello, tornando \textbf{True} nel caso di buon esito dell'operazione & S.\\
+TU0-166 & Viene verificato che il metodo \texttt{closeComputation} di \textit{GBCtrl} interrompa il monitoraggio per la rete impostata nel pannello, tornando \textbf{True} nel caso di buon esito dell'operazione & S.\\
 \hline
-\rowcolor{grigio}TU0-183 & Viene verificato che il metodo \texttt{startComputation} di \textit{GBCtrl} torni \textbf{False} nel caso non sia possibile avviare il monitoraggio della rete impostata nel pannello & S.\\
-\hline
-TU0-184 & Viene verificato che il metodo \texttt{startComputation} di \textit{GBCtrl} laci un'eccezione nel caso in cui sia impossibile stabilire una connessione con il server & S.\\
-\hline
-\rowcolor{grigio}TU0-185 & Viene verificato che il metodo \texttt{closeComputation} di \textit{GBCtrl} interrompa il monitoraggio per la rete impostata nel pannello, tornando \textbf{True} nel caso di buon esito dell'operazione & S.\\
-\hline
-TU0-186 & Viene verificato che il metodo \texttt{closeComputation} di \textit{GBCtrl} torni \textbf{False} nel caso non sia possibile interrompere il monitoraggio per la rete impostata nel pannello a causa di un'anomalia nella connessione con il server & S.\\
+\rowcolor{grigio}TU0-167 & Viene verificato che il metodo \texttt{closeComputation} di \textit{GBCtrl} torni \textbf{False} nel caso non sia possibile interrompere il monitoraggio per la rete impostata nel pannello a causa di un'anomalia nella connessione con il server & S.\\
 \hline
 
 
