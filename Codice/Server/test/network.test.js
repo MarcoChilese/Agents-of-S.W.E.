@@ -13,7 +13,7 @@ describe('Testing Network class', () => {
 	/**
 	* TU0-66  Creo nuova rete
 	*/
-	test('TU0-66 Creating new Network', (done) => {
+	test('TU0-56 Creating new Network', (done) => {
 		expect(network_test).not.toBeUndefined();
 		expect(network_test.net).not.toBeUndefined(); 
 		expect(JSON.stringify(network_test.net)).toMatch(JSON.stringify(net));
@@ -23,7 +23,7 @@ describe('Testing Network class', () => {
 	/**
 	* TU0-67  restituisce true quando passa soglia
 	*/
-	test('TU0-67 Testing probabilities when pass tresholds', (done) => {
+	test('TU0-57 Testing probabilities when pass tresholds', (done) => {
 		testing_data['inodes_used'] = 100; 
 		testing_data['usage_system'] = 100; 
 		network_test.observeData(testing_data);
@@ -35,7 +35,7 @@ describe('Testing Network class', () => {
     /**
 	* TU0-68 results[2].prob[0] != true quando non passa soglia
 	*/
-	test('TU0-68 Testing probabilities when not pass thresholds', (done) => {
+	test('TU0-58 Testing probabilities when not pass thresholds', (done) => {
 		testing_data['inodes_used'] = 0.8; 
 		testing_data['usage_system'] = 0.5; 
 		let network_test = new Network(net); 
@@ -48,7 +48,7 @@ describe('Testing Network class', () => {
 	/**
 	* TU0-69  restituisce true quando passa soglia critica
 	*/
-	test('TU0-69 Testing critical thresholds', () => {
+	test('TU0-59 Testing critical thresholds', () => {
 		testing_data['inodes_used'] = 1.5
 		testing_data['usage_system'] = 0.5; 		
 		let network_test = new Network(net);
@@ -62,7 +62,7 @@ describe('Testing Network class', () => {
 	* definite in tresholdLinked all'interno della network
 	* TU0-70
 	**/
-	test("TU0-70 Testing orderTresholds method to gather the right tresholds", (done) => {
+	test("TU0-60 Testing orderTresholds method to gather the right tresholds", (done) => {
 		sachs.orderTresholds(); 
 		expect(Object.keys(sachs.soglie).length).toBe(1); 
 		expect(sachs.soglie['Akt']).not.toBeUndefined(); 
