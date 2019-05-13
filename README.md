@@ -85,7 +85,6 @@
 - Analista: Matteo Slanzi
 
 
-
 ### Ruoli (9) Risanamento
 - Amministratore: Carlotta Segna
 - Responsabile: Luca Violato
@@ -94,10 +93,18 @@
 - Verificatore: Marco Favaro
 - Analista: Marco Chilese
 
-### Ruoli (10) 
+### Ruoli (10)
+- Amministratore: Luca Violato
+- Responsabile: Bogdan Stanciu
+- Progettista: Matteo Slanzi
+- Programmatore:  Carlotta Segna
+- Verificatore: Marco Chilese, Marco Favaro, Diego Mazzalovo
+- Analista: -
+
+### Ruoli (11) 
 - Amministratore: Marco Favaro
 - Responsabile: Marco Chilese
 - Progettista: -
-- Programmatore: Carlotta Segna, Diego Mazzalovo
-- Verificatore: Matteo Slanzi, Luca Violato, Bogdan Stanciu
+- Programmatore: Diego Mazzalovo
+- Verificatore: Matteo Slanzi, Luca Violato, Bogdan Stanciu, Carlotta Segna
 - Analista: -
