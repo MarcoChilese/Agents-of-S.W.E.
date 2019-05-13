@@ -1,1 +1,68 @@
 \section{Estensione delle Funzionalità}\label{Estensione}
+Questa sezione ha come obbiettivo di fornire tutte le indicazioni necessarie all'evoluzione del prodotto. 
+Questa sezione ha l'obbiettivo di fornire tutte le indicazioni necessarie all'evoluzione del prodotto. 
+Essa si suddivide a sua volta in due sezioni principali: \textit{Backend} e \textit{Plug-in}
+
+\subsection{Backend}
+\subsubsection{Aggiunta di una route nel server}
+Per aggiungere una route al server bisogna dichiararla nel metodo \texttt{configExpressApp()}. 
+A seconda che la chiamata sia una \textit{POST} o una \textit{GET}, esistono due diverse sintassi per scrivere la route.
+\begin{itemize}
+
+
+ \item \textit{GET}: le chiamate get ritornano trasmettono dati attraverso l'url e possono ritornare dati in return in formato html o come semplice text.
+\begin{lstlisting}[language=JavaScript]
+this.app.get('/route', (req, res) => {
+ // do something
+ res.send(response);
+});
+\end{lstlisting} 
+Una chiamata get parametrizzata attraverso url viene definita usando un placeholder\glossario  con la sintassi \texttt{:placeholder} nella definizione della route. Quest'ultima è accessibile al metodo tramite: \texttt{req.params.param}
+\begin{lstlisting}[language=JavaScript]
+this.app.get('/route/:param', (req, res) => {
+ // do something
+ console.log(req.params.param);
+ res.send(response);
+});
+\end{lstlisting}
+\item \textit{POST}: le chiamate post al server vengono utilizzate per l'invio di dati da elaborare al server. Esse come le chiamate get hanno bisogno di un url che le identifica. Possono inoltre ritornare un json di risposta o un semplice text. 
+\begin{lstlisting}[language=JavaScript]
+this.app.post('/route', (req, res) => {
+ // do something
+ res.send(response);
+});
+\end{lstlisting} 
+Inoltre è possibile definire delle route in post parametrizzate con la stessa sintassi definita per le chiamate get. 
+\begin{lstlisting}[language=JavaScript]
+this.app.post('/route/:param', (req, res) => {
+ // do something
+ console.log(req.params.param);
+ res.send(response);
+});
+\end{lstlisting}
+
+\subsubsection{Aggiunta database}
+Per modellare l'utilizzo di un database diverso da quello inizialmente fornito dal prodotto, bisognerà creare una nuova classe che metta a disposizione i seguenti metodi: 
+\begin{itemize}
+ \item \texttt{queryDB(query)}: preleva i dati dal database. In input riceva la query da eseguire sul database;
+ Ritorna una \textit{Promise} che verrà risolta in seguito;
+ \item \texttt{getLastValue(source, field)}: preleva l'ultimo dato dalla sorgente desiderata in ordine temporale dal database. In input riceve la \textit{source} da cui prelevare il \textit{field} interessato. Ritorna una \textit{Promise} che verrà risolta in seguito;
+ \item \texttt{getListData(field)}: riceve in input un'array associativo \texttt{["source" => "field"]} da prelevare. 
+ Ritorna un'array di tutti i field richiesti;
+ \item \texttt{writeOnDB(net, probs)}: scrive nel database una entry con il nome della rete e le varie probabilità calcolate passate come parametri al metodo.
+\end{itemize}
+In fine bisogna rendere la classe esportabile definendo l'esportazione a fine definizione di quest'ultima come segue: 
+\begin{center}
+ \texttt{module.exports = nomeClasse;}
+\end{center}
+Definendo i seguenti metodi si fornisce la possibilità di prelevare dati gestiti in serie temporali, i quali verranno forniti come dipendenze alla rete bayesiana per il calcolo delle probabilità. 
+
+\end{itemize}
+
+\subsubsection{Estensione funzionalità Network}
+La gestione delle reti bayesiane viene  demandata alla classe \texttt{Network}, con il supporto dalla libreria \textit{jsbayes}. L'estensibilità della classe e rimandata in gran parte alla libreria utilizzata, cosa per cui ogni possibile estensione o modifica risulta difficile. Ogni altra estensione o modifica della classe riguarderebbe l'utilizzo di un'ulteriore libreria per la gestione delle reti bayesiane e il calcolo delle probabilità, la quale porterebbe alla riscrittura totale della classe. 
+
+
+\subsection{Plug-in}
+
+...
