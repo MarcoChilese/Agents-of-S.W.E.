@@ -34,7 +34,7 @@ Viene richiesta come pre-condizione l'installazione di grafana a seconda del sis
 	\item Copiare la directory del progetto all'interno della cartella predestinata da \textit{Grafana} per ospitare i plug-in aggiuntivi da installare.
 	\item Per poter utilizzare il prodotto all'interno di \textit{Grafana}, e poiché quest'ultimo sia riconosciuto come plug-in, è necessario per prima cosa eseguire la build del prodotto.
 	La build del prodotto avviene attraverso due fasi: la prima che va a risolvere le dipendenze, la seconda che esegue la build.\\
-	Il processo di build avviene attraverso l'intervento del module bundler \textit{WebPack}.
+	Il processo di build avviene attraverso l'intervento del module bundler \textit{WebPack}\glossario.
 	È necessario quindi eseguire i seguenti comandi dalla directory che ospita il plug-in:
 \begin{center}
 	\texttt{npm install}\\
@@ -69,7 +69,7 @@ Per quanto riguarda l'installazione di \textit{pm2} sarà necessario eseguire da
 \subsubsection{Esecuzione del Server}
 \begin{itemize}
 	\item Aprire un terminale e spostarsi nella directory contenente il server; 
-	\item Da terminale, eseguire il seguente commando il quale avvia il server attraverso il manager dei processi pm2
+	\item Da terminale, eseguire il seguente comando il quale avvia il server attraverso il manager dei processi pm2
 	\begin{center}
 		\texttt{pm2 start ./src/index.js --- -p :porta}
 	\end{center}

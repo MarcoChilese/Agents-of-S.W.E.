@@ -19,16 +19,16 @@ Queste tre componenti unite formano il prodotto finale. Esse cambiano messaggi e
 	\caption{Architettura dell'applicativo}
 \end{figure}
 
-Il client comunica con il server attraverso il plug-in fornito dal sistema. Quest'ultimo, una volta connesso al server NodeJS il quale agirà da controller, ha a disposizione un set di funzionalità fornitoli tramite \textit{REST}\glossario \textit{API}\glossario . Le principali mansioni del clienti sono le seguenti: 
+Il client comunica con il server attraverso il plug-in fornito dal sistema. Quest'ultimo, una volta connesso al server NodeJS il quale agirà da controller, ha a disposizione un set di funzionalità fornitoli tramite \textit{REST}\glossario \textit{API}\glossario . Le principali mansioni del client sono le seguenti: 
 \begin{itemize}
-	\item Verifica dei dati: il plug-in  ha il compito di effettuare una prima verifica dei dati inseriti dall'utente, rendendo disponibile una selezione ristretta alla quale l'utente è costretto a scegliere oppure ad una verifica dei dati inseriti liberamente da quest'ultimo;
-	\item Visualizzazione dei dati: il plug-in fornisce la funzionalità incorporata di visualizzazione della rete in monitoraggio, mostrando a	panello una rappresentazione grafica della rete selezionata attualmente in monitoraggio sul server;
-	\item Gestione rete bayesiana: il plug-in prende in carico la rete bayesiana, in formato \textit{.json}, caricata dall'utente, effettuando un'iniziale verifica statica dei campi. Successivamente viene incaricato della aggiunta di informazioni inserite e o modificate dall'utente; 
+	\item Verifica dei dati: il plug-in ha il compito di effettuare una prima verifica dei dati inseriti dall'utente, rendendo disponibile una selezione ristretta alla quale l'utente è costretto a scegliere oppure ad una verifica dei dati inseriti liberamente da quest'ultimo;
+	\item Visualizzazione dei dati: il plug-in fornisce la funzionalità incorporata di visualizzazione della rete in monitoraggio, mostrando a pannello una rappresentazione grafica della rete selezionata attualmente in monitoraggio sul server;
+	\item Gestione rete bayesiana: il plug-in prende in carico la rete bayesiana, in formato \textit{.json}, caricata dall'utente, effettuando un'iniziale verifica statica dei campi. Successivamente viene incaricato dell'aggiunta di informazioni inserite e o modificate dall'utente; 
 	\item Eliminazione di reti: il plug-in richiede al server l'eliminazione di una rete scelta dall'utente. 
 \end{itemize}
-La parte del controller e demandata al server, il quale ha il compito di filtrare le richieste ricevute dai vai plug-in connessi ad esso, salvare le reti bayesiane caricate verificandone la sintassi, calcolare le probabilità delle reti a seconda delle politiche temporali inserite ed  scrivere sul modello i dati calcolati. 
+La parte del controller e demandata al server, il quale ha il compito di filtrare le richieste ricevute dai vari plug-in connessi ad esso, salvare le reti bayesiane caricate verificandone la sintassi, calcolare le probabilità delle reti a seconda delle politiche temporali inserite e scrivere sul modello i dati calcolati. 
 Fornisce delle api con le quali i vari plug-in possono interfacciarsi al server e modella la connessione al modello nel quale salvare i dati. \\ 
-L'ultimo componente e il modello rappresentato dal database. Di default il prodotto arriva con la possibilità di interfacciarsi a un database
+L'ultimo componente é il modello rappresentato dal database. Di default il prodotto arriva con la possibilità di interfacciarsi a un database
 di tipo InfluxDB. L'estensibilità o l'aggiunta del modello viene rimandata al paragrafo §\ref{Estensione_Server}
 
 
