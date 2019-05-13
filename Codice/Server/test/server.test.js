@@ -207,6 +207,7 @@ describe('Testing server...', () => {
 	test("TU0-22 Viene verificato il lancio di un’eccezione nel caso in cui la creazione della cartella fallisca", () => {});
 
 	// TU0-23 
+	// Integrazione
 	test("TU0-23 Viene verificato che la rete venga sovrascritta nel caso in cui l'utente cerca di caricare la stessa rete", () => {
 		try{
 			server.saveNetworkToFile(net_to_load);
@@ -217,6 +218,7 @@ describe('Testing server...', () => {
 	});
 
 	// TU0-24
+	// Integrazione
 	test("TU0-24 Viene verificato che la rete caricata disponga del campo name di tipo stringa", () => {
 		expect(server.networks['Viaggio_in_asia'].net.name).not.toBeUndefined(); 
 		expect(typeof server.networks['Viaggio_in_asia'].net.name).toMatch('string');
@@ -251,11 +253,13 @@ describe('Testing server...', () => {
 	test("TU0-28 Viene verificata il lancio di un’eccezione nel caso in cui la scritta su filesystem sia fallita", () => {});
 	
 	// TU0-29
+	// Integrazione
 	test("TU0-29 Viene verificata l’invocazione del metodo initBayesianNetwork(net) all’interno del metodo saveNetworkToFile()", () => {
 		expect(server.networks['Viaggio_in_asia']).not.toBeUndefined();
 	});
 
 	// TU0-30
+	// Integrazione
 	test("TU0-30 Viene verificata la creazione di un nuovo oggetto di tipo Network con la rete caricata dall’utente", () => {
 		expect(server.networks['Viaggio_in_asia'] instanceof Network).toBeTruthy();
 	});
@@ -327,11 +331,12 @@ describe('Testing server...', () => {
 		});
 	});
 
-		/**
+	/**
 	* Testing della path /deletenetwork/:net 
 	* passando una rete valida come parametro
 	* TU0-38
 	*/
+	// Integrazione
 	test("TU0-38 deletenetwork route", (done) => {
 		request(app.app).get('/deletenetwork/Alarm').then((response) => {
 			expect(response.body).isJSON(); 
@@ -363,6 +368,7 @@ describe('Testing server...', () => {
 	* Ritorna un json che rappresenta l'oggetto jsbayesviz in formato json
 	* TU0-40
 	**/
+	// Integrazione
 	test("TU0-40 Testing /getjsbayesviz route with good route", (done) => {
 		request(app.app).get('/getjsbayesviz/Viaggio_in_asia').then((response) => {
 			expect(response.statusCode).toBe(200);
@@ -395,7 +401,6 @@ describe('Testing server...', () => {
 	**/
 	test("TU0-42 Testing /deletenetpool with good param", (done) => {
 		let rete = 'Viaggio in asia'; 
-
 		request(app.app).get(`/deletenetpool/${rete}`).then((response) => {
 			expect(response.statusCode).toBe(200); 
 			expect(response.text).toMatch('Network delete');
@@ -434,6 +439,7 @@ describe('Testing server...', () => {
 	* expect reponse to be a json with all probabilities
 	* TU0-45
 	**/
+	// Integrazione
 	test("TU0-45 Testing /getnetworkprob/:net route", (done) => {
 		request(app.app).get("/getnetworkprob/Viaggio_in_asia").then((response) => {
 			expect(response.statusCode).toBe(200); 
@@ -459,6 +465,7 @@ describe('Testing server...', () => {
 	* all'avvio di quest'ultimo 
 	* TU0-47
 	*/
+	// Integrazione
 	test('TU0-47 Check if server has init networks', () => {
 		server.initSavedNetworks();
 		expect(server).not.toBeUndefined();
@@ -485,6 +492,7 @@ describe('Testing server...', () => {
 	* reti salvate e inizializzo un nuovo db
 	* TU0-49
 	*/
+	// Integrazione
 	test('TU0-49 initDatabaseConnection method', () => {
 		expect(Object.keys(server.db).length).toBeGreaterThan(0);
 		database.name = "database_prova_jest";
@@ -552,6 +560,7 @@ describe('Testing server...', () => {
 	* passando una rete valida come parametro 
 	* TU0-54
 	*/
+	// Integrazione
 	test("TU0-54 getnetworkprob path", (done) => {
 		request(app.app).get('/getnetworkprob/Alarm').then((response) => {
 			expect(response.body).isJSON(); 
@@ -560,14 +569,13 @@ describe('Testing server...', () => {
 
 	});
 
-
-
 	
 	/**
 	* Testing unita/integrazione 
 	* del metodo observeNetworks()
 	* passando una rete valida come parametro
 	*/
+	// Integrazione
 	test("Testing soglie critiche", async(done) => {
 		await server.observeNetworks('Viaggio_in_asia', server.networks['Viaggio_in_asia'].dati);
 		expect(server.networks['Viaggio_in_asia'].critica).toBeTruthy();
