@@ -440,8 +440,6 @@ export class GBCtrl extends PanelCtrl {
     try {
       clearInterval(this.interval);
       const n = await this.testServer.getnetwork(this.panel.actuallyVisualizingMonitoring);
-      await this.updateProbs();
-      this.$timeout({}, 100);
       this.interval = setInterval(this.updateProbs.bind(this), this.calculateSeconds(n.temporalPolicy) * 1000);
       this.modalCreator.showMessageModal('Aggiornata visualizzazione.', 'Successo');
     } catch (e) {
