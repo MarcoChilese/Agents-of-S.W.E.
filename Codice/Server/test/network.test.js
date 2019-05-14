@@ -24,11 +24,11 @@ describe('Testing Network class', () => {
 	* TU0-67  restituisce true quando passa soglia
 	*/
 	test('TU0-57 Testing probabilities when pass tresholds', (done) => {
-		testing_data['inodes_used'] = 100; 
-		testing_data['usage_system'] = 100; 
+		testing_data['system_usage'] = 100; 
+		testing_data['usage_guest_nice'] = 100; 
 		network_test.observeData(testing_data);
 		let results = network_test.getProbabilities();
-		expect(results[0].prob[0]).toBe(1); 
+		expect(results[2].prob[0]).toBe(1); 
 		done();
 	});
 
@@ -36,12 +36,13 @@ describe('Testing Network class', () => {
 	* TU0-68 results[2].prob[0] != true quando non passa soglia
 	*/
 	test('TU0-58 Testing probabilities when not pass thresholds', (done) => {
-		testing_data['inodes_used'] = 0.8; 
-		testing_data['usage_system'] = 0.5; 
+		testing_data['system_usage'] = 0.8; 
+		testing_data['usage_guest_nice'] = 0.5; 
 		let network_test = new Network(net); 
 		network_test.observeData(testing_data);
 		let results = network_test.getProbabilities(); 
 		expect(results[2].prob[0]).not.toBe(1); 
+		
 		done();
 	});
 
@@ -49,8 +50,8 @@ describe('Testing Network class', () => {
 	* TU0-69  restituisce true quando passa soglia critica
 	*/
 	test('TU0-59 Testing critical thresholds', () => {
-		testing_data['inodes_used'] = 1.5
-		testing_data['usage_system'] = 0.5; 		
+		testing_data['system_usage'] = 1.5
+		testing_data['usage_guest_nice'] = 100; 		
 		let network_test = new Network(net);
 		let check = network_test.observeData(testing_data); 
 		let results = network_test.getProbabilities(); 

@@ -21,12 +21,12 @@
 	},
 	"flushesAssociations": {
 		"Viaggio in Asia": {
-			"table": "disk",
-			"flush": "inodes_used"
-		},
-		"Bronchite": {
 			"table": "cpu",
-			"flush": "usage_system"
+			"flush": "system_usage"
+		},
+		"Fuma": {
+			"table": "cpu",
+			"flush": "usage_guest_nice"
 		}
 	},
 	"monitoring": true,
@@ -190,7 +190,7 @@
 		]
 	},
 	"temporalPolicy": {
-		"seconds": 5,
+		"seconds": 3,
 		"minutes": 0,
 		"hours": 0
 	},
@@ -198,9 +198,9 @@
 	"tresholdLinked": {
 		"Viaggio in Asia": true,
 		"Tubercolosi": false,
-		"Fuma": false,
+		"Fuma": true,
 		"Cancro": false,
-		"Bronchite": true,
+		"Bronchite": false,
 		"TBC o Cancro": false,
 		"Dispnea": false,
 		"Risultati sui raggi X": false
@@ -209,38 +209,26 @@
 		"Viaggio in Asia": [
 			{
 				"state": "true",
-				"sign": ">=",
-				"value": 1,
-				"critical": true,
-				"name": 1
-			},
-			{
-				"state": "false",
 				"sign": "<=",
-				"value": 1,
+				"value": 20,
 				"critical": true,
-				"name": 4
+				"name": 0,
+				"$$hashKey": "object:420"
 			}
 		],
 		"Tubercolosi": [],
-		"Fuma": [],
-		"Cancro": [],
-		"Bronchite": [
+		"Fuma": [
 			{
 				"state": "true",
-				"sign": "<",
-				"value": 20,
-				"critical": true,
-				"name": 3
-			},
-			{
-				"state": "true",
-				"sign": ">",
+				"sign": ">=",
 				"value": 1,
 				"critical": true,
-				"name": 2
+				"name": 0,
+				"$$hashKey": "object:420"
 			}
 		],
+		"Cancro": [],
+		"Bronchite": [],
 		"TBC o Cancro": [],
 		"Dispnea": [],
 		"Risultati sui raggi X": []

@@ -206,7 +206,7 @@ class Server {
 
 			if(name === false)
 				res.status(404).send('Network not found');
-
+		
 			if(this.deleteFromPool(name))
 				res.send('Network delete');
 			else
@@ -237,6 +237,7 @@ class Server {
 	saveNetworkToFile(data) {
 		let dirs = fs.readdirSync(`${this.path}`);
 
+		// Controllo se esiste la cartella di salvataggio 
 		if(!dirs.includes(this.conf['saved_network'])){
 			try{
 				fs.mkdirSync(`${this.path}/${this.conf['saved_network']}`);
@@ -245,17 +246,18 @@ class Server {
 			}
 		}
 
-
+		// Leggo tutti i file in quella path
 		let files = fs.readdirSync(`${this.path}/${this.conf['saved_network']}`);
 		data.name = data.name.replace(/ /g, '_');
+		
 		// Se esiste già la rete caricata
 		if(files.includes(`${data.name}.json`)){
 
 			if(this.networks[data.name] !== undefined)
-				if(this.networks[data.name].monitoring === true){
+				if(this.networks[data.name].monitoring === true)
 					this.deleteFromPool(data.name);
-				}
 
+			
 			this.networks[data.name] = undefined;
 
 			try{
@@ -288,8 +290,9 @@ class Server {
 		}
 
 		if(!check)
-			// console.log("Connessione esistente !");
+			console.log("Connessione esistente !");
 
+		
 		this.initBayesianNetwork(data);
 	}
 
@@ -328,8 +331,9 @@ class Server {
 			for(let n of fs.readdirSync(`${this.path}/${this.conf['saved_network']}`)){
 				if(n.includes('.json')){
 					let tmp;
-					try{
-						tmp = JSON.parse(fs.readFileSync(`${this.path}/${this.conf['saved_network']}/${n}`));
+					try{				
+						tmp = require(`${this.path}/${this.conf['saved_network']}/${n}`);
+						// tmp = JSON.parse(fs.readFileSync(`${this.path}/${this.conf['saved_network']}/${n}`));
 					} catch(err){
 						throw err;
 					}
