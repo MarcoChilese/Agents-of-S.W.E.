@@ -1,4 +1,4 @@
-\subsection{Pannello}\label{archPannello}
+ \subsection{Pannello}\label{archPannello}
 Per rendere lo sviluppo più semplice, e garantire la manutenibilità del codice il team ha optato per un approccio modulare. In questo modo, avendo moduli separati con compiti distinti, sarà più semplice modificarne o estenderne il comportamento senza dover necessariamente modificare la base comune.\\
 %  Il seguente diagramma delle classi mostra le relazioni tra i vari moduli. 
 
@@ -10,12 +10,13 @@ Per rendere lo sviluppo più semplice, e garantire la manutenibilità del codice
 \end{figure}
 
 \begin{itemize}
-	\item \textbf{GBCtrl}: è il modulo principale che utilizza gli altri e svolge le operazioni fondamentali;
+	\item \textbf{GBCtrl}: è il modulo principale del plug-in, considerato come \textit{"main"} dall'ecosistema grafana, viene utilizzato per inizializzare l'intero panello; 
 	\item \textbf{TemporalPolicyCtrl}: è il modulo che si occupa di gestire ed impostare le politiche temporali all'interno del pannello;
 	\item \textbf{ThresholdsCtrl}: è il modulo che si occupa di gestire ed impostare le soglie per il monitoraggio;
 	\item \textbf{Parser}: è il modulo che si occupa di controllare e interpretare la rete bayesiana in input, in formato \textit{JSON};
 	\item \textbf{ConnectServer}: è il modulo che si occupa di inoltrare le richieste al Server;
 	\item \textbf{ModalCreator}: è il modulo che si occupa di visualizzare le finestre che permettono l'interazione con l'utente;
+	\item \textbf{ModalCreator}: è il modulo che si occupa della creazione e visualizzazione dinamica di finestre, le quali permettono l'interazione con l'utente: 
 	\item \textbf{GetAPIGrafana}: è il modulo che si occupa di interagire con le API di \textit{Grafana} per ottenere i dati relativi alle sorgenti dati.
 \end{itemize}
 

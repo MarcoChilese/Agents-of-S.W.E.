@@ -1,5 +1,4 @@
 \section{Estensione delle Funzionalità}\label{Estensione}
-Questa sezione ha come obbiettivo di fornire tutte le indicazioni necessarie all'evoluzione del prodotto. 
 Questa sezione ha l'obbiettivo di fornire tutte le indicazioni necessarie all'evoluzione del prodotto. 
 Essa si suddivide a sua volta in due sezioni principali: \textit{Backend} e \textit{Plug-in}
 
@@ -8,7 +7,7 @@ Essa si suddivide a sua volta in due sezioni principali: \textit{Backend} e \tex
 Per aggiungere una route al server bisogna dichiararla nel metodo \texttt{configExpressApp()}. 
 A seconda che la chiamata sia una \textit{POST} o una \textit{GET}, esistono due diverse sintassi per scrivere la route.
 \begin{itemize}
- \item \textit{GET}: le chiamate get ritornano/trasmettono dati attraverso l'url e possono ritornare dati in return in formato html o come semplice text.
+ \item \textit{GET}: le chiamate get trasmettono dati attraverso l'url e possono ritornare dati in return in formato html o come semplice text.
 \begin{lstlisting}[language=JavaScript]
 this.app.get('/route', (req, res) => {
  // do something
