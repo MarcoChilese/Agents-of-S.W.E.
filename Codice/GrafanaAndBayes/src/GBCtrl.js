@@ -316,6 +316,7 @@ export class GBCtrl extends PanelCtrl {
       this.panel.availableNetworksToLoad = await this.testServer.networks();
       // check which network is monitoring
       this.panel.monitoringNetworks = this.splitMonitoringNetworks();
+      this.$timeout({}, 100);
       return true;
     } catch (e) {
       this.modalCreator.showMessageModal('Impossibile collegarsi al server per aggiornare la lista delle reti salvate.', 'Errore');
@@ -337,6 +338,7 @@ export class GBCtrl extends PanelCtrl {
       // ask server list of all stored networks
       await this.requestNetworks();
       this.modalCreator.showMessageModal('Connesso al server.', 'Successo');
+      setInterval(this.requestNetworks.bind(this), 5000);
       // }
     } catch (e) {
       this.modalCreator.showMessageModal('Il server non è online su questa porta. Prova a cambiare porta e/o IP.', 'Errore');
@@ -426,6 +428,8 @@ export class GBCtrl extends PanelCtrl {
       this.$timeout({}, 100);
     } catch (e) {
       this.deleteProbRefresh();
+      const el = $('#netImage');
+      el.empty();
       return false;
     }
     return true;

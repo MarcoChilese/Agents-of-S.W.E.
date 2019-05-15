@@ -216,7 +216,6 @@ describe('server connection', () => {
       g.panel.collegatoAlDB = true;
       expect(await g.saveActualChanges()).toBe(true);
     });
-
   });
 });
 
