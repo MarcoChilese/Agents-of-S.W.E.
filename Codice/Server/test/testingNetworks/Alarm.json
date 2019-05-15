@@ -4,13 +4,13 @@
 	"database": {
 		"id": 3,
 		"orgId": 1,
-		"name": "testing_network",
+		"name": "Alarm_db",
 		"type": "influxdb",
 		"typeLogoUrl": "public/app/plugins/datasource/influxdb/img/influxdb_logo.svg",
 		"access": "proxy",
 		"url": "http://142.93.102.115:8086",
-		"password": "",
-		"user": "",
+		"password": "greg",
+		"user": "greg",
 		"database": "telegraf",
 		"basicAuth": false,
 		"isDefault": true,
@@ -1672,12 +1672,12 @@
 			]
 		]
 	},
-	"temporalPolitic": {
+	"temporalPolicy": {
 		"seconds": 3,
 		"minutes": 0,
 		"hours": 0
 	},
-	"temporalPoliticConfirmed": true,
+	"temporalPolicyConfirmed": true,
 	"tresholdLinked": {
 		"HISTORY": true,
 		"CVP": false,

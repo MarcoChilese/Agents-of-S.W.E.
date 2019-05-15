@@ -267,3 +267,13 @@ TSWLatexianTemp*
 #MacOS
 *.DS_Store
 
+#Node_module
+node_modules/
+
+#coverage 
+coverage/
+lcov.info
+lcov-report/
+coverage-final.json
+clover.xml
+package-lock.json

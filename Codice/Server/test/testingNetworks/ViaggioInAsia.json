@@ -1,17 +1,16 @@
 {
-	"canStartComputation": false,
-	"collegatoAlDB": false,
-	"databaseSelected": null,
+	"canStartComputation": true,
+	"collegatoAlDB": true,
 	"database": {
-		"id": 3,
+		"id": 1,
 		"orgId": 1,
-		"name": "testing_network",
+		"name": "InfluxDB",
 		"type": "influxdb",
 		"typeLogoUrl": "public/app/plugins/datasource/influxdb/img/influxdb_logo.svg",
 		"access": "proxy",
 		"url": "http://142.93.102.115:8086",
-		"password": "",
-		"user": "",
+		"password": "greg",
+		"user": "greg",
 		"database": "telegraf",
 		"basicAuth": false,
 		"isDefault": true,
@@ -21,13 +20,18 @@
 		"readOnly": false
 	},
 	"flushesAssociations": {
+		"Viaggio in Asia": {
+			"table": "cpu", 
+			"flush": "system_usage"
+		},
+
 		"Fuma": {
 			"table": "cpu",
-			"flush": "total"
+			"flush": "usage_guest_nice"
 		}
 	},
-	"monitoring": false,
-	"name": "Viaggio in asia",
+	"monitoring": true,
+	"name": "Viaggio_in_asia",
 	"nodes": [
 		"Viaggio in Asia",
 		"Tubercolosi",
@@ -186,27 +190,49 @@
 			]
 		]
 	},
-	"temporalPolitic": {
-		"seconds": 0,
+	"temporalPolicy": {
+		"seconds": 3,
 		"minutes": 0,
 		"hours": 0
 	},
-	"temporalPoliticConfirmed": false,
+	"temporalPolicyConfirmed": true,
 	"tresholdLinked": {
-		"Fuma": true, 
+		"Viaggio in Asia": true,
+		"Tubercolosi": false,
+		"Fuma": true,
+		"Cancro": false,
+		"Bronchite": false,
+		"TBC o Cancro": false,
+		"Dispnea": false,
 		"Risultati sui raggi X": false
 	},
 	"tresholds": {
+		"Viaggio in Asia": [
+			{
+				"state": "true",
+				"sign": "<=",
+				"value": 20,
+				"critical": true,
+				"name": 0,
+				"$$hashKey": "object:420"
+			}
+		],
+		"Tubercolosi": [],
 		"Fuma": [
 			{
 				"state": "true",
 				"sign": ">=",
-				"value": 2.6,
-				"critical": false,
-				"name": 1,
-				"$$hashKey": "object:155"
+				"value": 1,
+				"critical": true,
+				"name": 0,
+				"$$hashKey": "object:420"
 			}
-		]
+		],
+		"Cancro": [],
+		"Bronchite": [],
+		"TBC o Cancro": [],
+		"Dispnea": [],
+		"Risultati sui raggi X": []
 	},
-	"selectedDB": null
+	"selectedDB": "InfluxDB"
 }

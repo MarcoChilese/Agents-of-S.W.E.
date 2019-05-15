@@ -4,7 +4,7 @@
 	"description": "node server 1.0",
 	"main": "index.js",
 	"scripts": {
-		"test": "jest --coverage",
+		"test": "jest ./test/influx.test.js ./test/server.test.js ./test/pool.test.js ./test/network.test.js --coverage",
 		"codecov": "codecov",
 		"start": "node index.js"
 	},
@@ -13,15 +13,15 @@
 		"collectCoverage": true,
 		"coverageDirectory": "./coverage/",
 		"transformIgnorePatterns": [
-		  "<rootDir>/node_modules/"
+			"<rootDir>/node_modules/"
 		]
 	},
 	"author": "",
 	"license": "ISC",
 	"devDependencies": {
-		"codecov": "^3.2.0",
 		"babel-cli": "^6.26.0",
 		"babel-preset-env": "^1.7.0",
+		"codecov": "^3.2.0",
 		"compression": "^1.7.4",
 		"cors": "^2.8.5",
 		"express": "^4.16.4",
@@ -33,10 +33,12 @@
 		"jsbayes-viz": "0.0.7",
 		"minimist": "^1.2.0",
 		"moxios": "^0.4.0",
+		"net": "^1.0.2",
 		"superagent": "^5.0.2",
 		"supertest": "^4.0.2"
 	},
 	"dependencies": {
+		"better-jsbayes-viz": "0.0.89",
 		"body-parser": "^1.18.3",
 		"dagre": "^0.8.4",
 		"graphlib": "^2.1.7"

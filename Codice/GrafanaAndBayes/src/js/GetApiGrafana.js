@@ -27,50 +27,77 @@ class GetApiGrafana {
     this.db = db;
   }
 
+  /**
+   * splits data received to have correct variables
+   * */
+  initialize() {
+    // divide data
+    const s = this.db.url.split(':');
+    s[1] = s[1].substring(2, s[1].length);
+    this.host = s[1];
+    this.port = s[s.length - 1];
+  }
+
+  /**
+   * gets all fields from all tables
+   * @param{json} tables
+   * @return{array} an array with all fields of all tables in order
+   * */
+  async getFields(tables) {
+    const ris = [];
+    // fetch all fields of tables
+    for (const table in tables) {
+      ris.push(this.backend.get(`api/datasources/proxy/${this.db.id}/query?db=${this.db.database}&q=show%20field%20keys%20on%20${this.db.database}%20from%20${tables[table]}`));
+    }
+    // wait until all tables are fetched
+    await Promise.all(ris);
+    return ris;
+  }
+
+  /**
+   * gets all tables from database
+   * @return{json} all tables fetched from database
+   * */
+  async getTables() {
+    // fetch all tables from database
+    const tables = await this.backend.get(`/api/datasources/proxy/${this.db.id}/query?db=${this.db.database}&q=show%20measurements`);
+    return tables.results[0].series[0].values;
+  }
+
+  /**
+   * splits tables' fields
+   * @param{json} json with tables and fields bad formatted
+   * @return{json} json with tables and fields well formatted
+   * */
+  divideFields(elements) {
+    const ris = {};
+    // divide fields
+    for (const el in elements) {
+      const { name } = elements[el].$$state.value.results[0].series[0];
+      ris[name] = [];
+      for (const field in elements[el].$$state.value.results[0].series[0].values)
+        ris[name].push(elements[el].$$state.value.results[0].series[0].values[field][0]);
+    }
+    return ris;
+  }
 
   /**
    * The function return a JSON with all the available tables in the current database
    * @return {JSON} contains JSON with all the available tables and fields
    */
   async getDatasources() {
-    // divide data
-    const s = this.db.url.split(':');
-    s[1] = s[1].substring(2, s[1].length);
-    this.host = s[1];
-    this.port = s[s.length - 1];
-
-    const ris = {};
-    // fetch all tables from database
-    const tables = await this.backend.get(`/api/datasources/proxy/${this.db.id}/query?db=${this.db.database}&q=show%20measurements`);
-    const t = tables.results[0].series[0].values;
-    const r = [];
-    // fetch all fields of tables
-    for (const el in t) {
-      r.push(
-        this.backend.get(`api/datasources/proxy/${this.db.id}/query?db=${this.db.database}&q=show%20field%20keys%20on%20${this.db.database}%20from%20${t[el]}`),
-      );
-    }
-    // wait until all tables are fetched
-    await Promise.all(r);
-    // divide fields
-    for (const e in r) {
-      const { name } = r[e].$$state.value.results[0].series[0];
-      ris[name] = [];
-      for (const field in r[e].$$state.value.results[0].series[0].values) ris[name].push(r[e].$$state.value.results[0].series[0].values[field][0]);
-    }
-    return ris;
+    this.initialize();
+    return this.divideFields(await this.getFields(await this.getTables()));
   }
 
   /**
    * The function returns a json file containing information related to grafana by API
-   *  @async
    *  @returns {JSON} json file with response
    */
   async getData() {
     const data = await this.queryAPI();
     const map = {};
-    for (let i = 0; i < data.length; i++) { map[data[i].name] = data[i]; }
-
+    for (const el in data) { map[data[el].name] = data[el]; }
     return map;
   }
 
@@ -78,20 +105,9 @@ class GetApiGrafana {
    * The function send a request to Grafana API and return a Promise
    * @returns {Promise} Promise object represents the API response in JSON format
    */
-  queryAPI() {
-    return this.backend.get('/api/datasources').then(data => data);
+  async queryAPI() {
+    return this.backend.get('/api/datasources');
   }
 }
-/**      TEST USAGE: */
-/*
-
- const GrafanaConnection = new GetApiGrafana('localhost', '/api/datasources', '8080') ;
- GrafanaConnection.getData();
- /*.then( (x) => {
-   x = JSON.parse(x);
-   console.log(x[0]);
- }) ;
- */
-
 
 module.exports = GetApiGrafana;

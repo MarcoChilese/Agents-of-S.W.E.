@@ -1,22 +1,19 @@
 
-import mocks from '../src/testSetup/mocks';
+import $ from 'jquery';
 import TresholdCtrl from '../src/TresholdsCtrl';
 import ModalCreator from '../src/ModalCreator';
 import ConnectServer from '../src/js/ConnectServer';
 import { GBCtrl } from '../src/GBCtrl';
 
-const gb = require('../src/GBCtrl');
-
 jest.mock('../src/js/GetApiGrafana');
 jest.mock('../src/ModalCreator');
 jest.mock('../src/js/ConnectServer');
-
 
 let g;
 describe('generic tests', () => {
   // constructor
   it('GBCtrl::constructor', () => {
-    g = new gb.GBCtrl();
+    g = new GBCtrl();
     expect(g).not.toBe(undefined);
   });
 
@@ -31,15 +28,14 @@ describe('generic tests', () => {
     expect(g.buildDataToSend()).not.toEqual({});
   });
 
-
   // panelpath
   it('GBCtrl::panelpath::(path = undefined)', () => {
     g._panelPath = undefined;
-    expect(g.panelPath).toBe('/public/plugins/undefined/'); // TO CHECK
+    expect(g.panelPath).toBe('/public/plugins/GrafanaAndBayes/');
   });
 
   it('GBCtrl::panelpath::(path !== undefined)', () => {
-    expect(g.panelPath).toBe('/public/plugins/undefined/'); // TO CHECK
+    expect(g.panelPath).toBe('/public/plugins/GrafanaAndBayes/');
   });
 
   // onInitEditMode
@@ -118,7 +114,6 @@ describe('server connection', () => {
 
   describe('need splitMonitoringNetworks and tryConnectServer', () => {
     beforeEach(() => {
-      g.panel.calculatedProbabilities = {};
       g.tryConnectServer();
       g.panel.monitoringNetworks = g.splitMonitoringNetworks();
     });
@@ -134,22 +129,31 @@ describe('server connection', () => {
       expect(await g.requestNetworkDelete('Alarm')).toBe(false);
     });
 
+    it('GBCtrl::requestNetworkDelete::false(exception)', async () => {
+      expect(await g.requestNetworkDelete('nope')).toBe(false);
+    });
+
+    // NEWTEST
+    it('GBCtrl::requestNetworkDelete::true(delete network in plugin)', async () => {
+      g.panel.name = 'Mia_rete';
+      expect(await g.requestNetworkDelete('Mia rete')).toBe(true);
+    });
+
+
     // updateProbs
     it('GBCtrl::updateProbs::true', async () => {
+      // jest.mock('$', () => ( 5 ), { virtual: true });
+      // $.$ = function () { return 5; };
+      $('html').append('<head></head><body><svg id="netImage"></svg></body>');
+      document.getElementsByTagName('svg')[0].getBBox = () => ({ width: 100, height: 50 });
       g.panel.actuallyVisualizingMonitoring = 'Alarm';
       expect(await g.updateProbs()).toBe(true);
-      expect(g.panel.calculatedProbabilities).toEqual({
-        stato1: [0.05, 0.95],
-        stato2: [0.8, 0.2],
-        stato3: [0.7, 0.3],
-      });
       clearInterval(g.interval);
     });
 
     it('GBCtrl::updateProbs::false', async () => {
       g.panel.actuallyVisualizingMonitoring = 'notValid';
       expect(await g.updateProbs()).toBe(false);
-      expect(g.panel.calculatedProbabilities).toEqual({});
       expect(g.interval).toBe(undefined);
     });
 
@@ -201,10 +205,16 @@ describe('server connection', () => {
       expect(await g.saveActualChanges()).toBe(true);
     });
 
-    it('GBCtrl::saveActualChanges::true(name = "Sachs", collegatoAlDB = true)', async () => {
-      g.panel.name = 'Sachs';
+    it('GBCtrl::saveActualChanges::true(name = "Prova", collegatoAlDB = true)', async () => {
+      g.panel.name = 'Prova';
       g.panel.collegatoAlDB = true;
       expect(await g.saveActualChanges()).toBe(false);
+    });
+
+    it('GBCtrl::saveActualChanges::true(network monitored)', async () => {
+      g.panel.name = 'Sachs';
+      g.panel.collegatoAlDB = true;
+      expect(await g.saveActualChanges()).toBe(true);
     });
   });
 });

@@ -12,12 +12,12 @@
  */
 import { PanelCtrl } from 'grafana/app/plugins/sdk';
 import _ from 'lodash';
-
+import $ from 'jquery';
+import jsbayesviz from 'better-jsbayes-viz';
 import Parser from './js/parser';
 import GetApiGrafana from './js/GetApiGrafana';
 import ModalCreator from './ModalCreator';
 import ConnectServer from './js/ConnectServer';
-// import jsbayes from './js/jsbayes/jsbayes';
 
 export class GBCtrl extends PanelCtrl {
   /** @ngInject * */
@@ -53,7 +53,6 @@ export class GBCtrl extends PanelCtrl {
       selectedNetworkToOpen: undefined,
       availableNetworksToLoad: undefined,
       monitoringNetworks: undefined,
-      calculatedProbabilities: {},
     };
 
     this.server = {
@@ -103,7 +102,7 @@ export class GBCtrl extends PanelCtrl {
     };
     this.panel.temporalPolicyConfirmed = false;
     this.panel.collegatoAlDB = false;
-    this.panel.databaseSelected = null;
+    this.databaseSelected = null;
     this.panel.selectedDB = null;
     this.db = undefined;
     return true;
@@ -317,6 +316,7 @@ export class GBCtrl extends PanelCtrl {
       this.panel.availableNetworksToLoad = await this.testServer.networks();
       // check which network is monitoring
       this.panel.monitoringNetworks = this.splitMonitoringNetworks();
+      this.$timeout({}, 100);
       return true;
     } catch (e) {
       this.modalCreator.showMessageModal('Impossibile collegarsi al server per aggiornare la lista delle reti salvate.', 'Errore');
@@ -338,6 +338,7 @@ export class GBCtrl extends PanelCtrl {
       // ask server list of all stored networks
       await this.requestNetworks();
       this.modalCreator.showMessageModal('Connesso al server.', 'Successo');
+      setInterval(this.requestNetworks.bind(this), 5000);
       // }
     } catch (e) {
       this.modalCreator.showMessageModal('Il server non è online su questa porta. Prova a cambiare porta e/o IP.', 'Errore');
@@ -352,6 +353,7 @@ export class GBCtrl extends PanelCtrl {
    * @param {string} net to delete
    * @var{boolean} : true if is deletable
    */
+
   checkIfNetworkIsDeletable(net) {
     if (net === undefined) {
       this.modalCreator.showMessageModal('Selezionare una rete da eliminare.', 'Errore');
@@ -371,7 +373,8 @@ export class GBCtrl extends PanelCtrl {
    */
   async requestNetworkDelete(net) {
     try {
-      if (!this.checkIfNetworkIsDeletable(net)) { const e = new Error(''); e.status = 404; throw e; }
+      if (!this.checkIfNetworkIsDeletable(net)) { return false; }
+      if (this.panel.name == net.replace(' ', '_')) this.resetData();
       await this.testServer.deletenetwork(net);
     } catch (e) {
       if (e.status === 200) {
@@ -394,16 +397,39 @@ export class GBCtrl extends PanelCtrl {
   }
 
   /**
-   * Method that updates local calculated probabilities
-   * @param{string} network to update probabilties
+   * Stops the plugin to refresh the probabilities
+   * @return{boolean} true if ok
+   * */
+  deleteProbRefresh() {
+    clearInterval(this.interval);
+    this.panel.actuallyVisualizingMonitoring = null;
+    return true;
+  }
+
+  /**
+   * Method that updates probabilities visualization
+   * @param{string} network to update probabilities
    * @return{boolean}
    * */
   async updateProbs() {
     try {
-      // eslint-disable-next-line max-len
-      this.panel.calculatedProbabilities = await this.testServer.getnetworkprob(this.panel.actuallyVisualizingMonitoring);
+      const g = jsbayesviz.fromGraph(await this.testServer.getnetworkprob(this.panel.actuallyVisualizingMonitoring), 'netImage');
+      const el = $('#netImage');
+      el.empty();
+      jsbayesviz.draw({
+        id: '#netImage',
+        graph: g,
+        samples: 15000,
+      });
+      const bbox = el[0].getBBox();
+      const w = bbox.width + 100;
+      const h = bbox.height + 50;
+      $('svg').css({ background: 'floralwhite', width: w, height: h });
+      this.$timeout({}, 100);
     } catch (e) {
-      clearInterval(this.interval);
+      this.deleteProbRefresh();
+      const el = $('#netImage');
+      el.empty();
       return false;
     }
     return true;
@@ -417,7 +443,6 @@ export class GBCtrl extends PanelCtrl {
   async changeNetworkToVisualizeMonitoring() {
     try {
       clearInterval(this.interval);
-      this.panel.calculatedProbabilities = {};
       const n = await this.testServer.getnetwork(this.panel.actuallyVisualizingMonitoring);
       this.interval = setInterval(this.updateProbs.bind(this), this.calculateSeconds(n.temporalPolicy) * 1000);
       this.modalCreator.showMessageModal('Aggiornata visualizzazione.', 'Successo');
@@ -477,10 +502,13 @@ export class GBCtrl extends PanelCtrl {
    * */
   async saveActualChanges() {
     if (this.panel.name !== '' && this.panel.collegatoAlDB === true) {
-      const dataToSend = this.buildDataToSend();
-      dataToSend.monitoring = this.panel.monitoring === true;
-      if (await this.loadNetworkToServer(dataToSend) === false) {
-        return false;
+      // save changes if not monitoring
+      if (!this.panel.monitoringNetworks.includes(this.panel.name)) {
+        const dataToSend = this.buildDataToSend();
+        dataToSend.monitoring = this.panel.monitoring === true;
+        if (await this.loadNetworkToServer(dataToSend) === false) {
+          return false;
+        }
       }
     }
     return true;
@@ -586,7 +614,7 @@ export class GBCtrl extends PanelCtrl {
       this.resetTresholds();
       return true;
     } catch (e) {
-      this.modalCreator.showMessageModal(e, 'Errore');
+      this.modalCreator.showMessageModal(e.message, 'Errore');
       return false;
     }
   }
@@ -612,7 +640,7 @@ export class GBCtrl extends PanelCtrl {
     try {
       if (this.panel.selectedDB === null || this.panel.collegatoAlDB === false) { throw new Error('Nessun database collegato.'); }
       if (this.checkIfAtLeastOneTresholdDefined() === false) { throw new Error('Nessuna soglia impostata. Per iniziare il monitoraggio è necessario collegare almeno un nodo definendone almeno una soglia.'); }
-      if (this.panel.temporalPolicyConfirmed === false) { throw new Error('E\' necessario impostare la politica temporale per iniziare il montoarggio.'); }
+      if (this.panel.temporalPolicyConfirmed === false) { throw new Error('E\' necessario impostare la politica temporale per iniziare il monitoarggio.'); }
     } catch (e) {
       this.modalCreator.showMessageModal(e, 'Errore');
       return false;

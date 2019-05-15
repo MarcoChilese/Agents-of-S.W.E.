@@ -9,16 +9,16 @@
  */
 
 import $ from 'jquery';
-import ServerResource from './ServerResource';
 
-export default class ConnectServer extends ServerResource{
+export default class ConnectServer {
   constructor(host, port) {
-    super(host, port);
+    this.host = host;
+    this.port = port;
   }
 
   /**
    *  Function testing if server  is alive
-   * @returns boolean: true if server is alive, else false
+   * @returns{boolean} true if server is alive, else false
    */
   async alive() {
     return $.ajax({
@@ -34,7 +34,7 @@ export default class ConnectServer extends ServerResource{
   /**
    * Function return a list of all networks if this.query value is '/networks'
    * else this.port value is '/getnetwork/:name' return a json of network passing
-   * @returns json : networks or one network selected
+   * @returns{json} networks or one network selected
    */
   async networks() {
     return $.ajax({
@@ -44,19 +44,13 @@ export default class ConnectServer extends ServerResource{
       cache: false,
       contentType: 'application/json; charset=utf-8',
       headers: { 'Access-Control-Allow-Origin': '*' },
-      success(response) {
-        return response;
-      },
-      error(xhr, status) {
-        return false;
-      },
     });
   }
 
   /**
    * This function upload a network
-   * @param net
-   * @returns return true if operation is done else false
+   * @param{json} network to save
+   * @returns{boolean} true if operation is done else false
    */
   async uploadnetwork(net) {
     return $.ajax({
@@ -68,19 +62,13 @@ export default class ConnectServer extends ServerResource{
       contentType: 'application/json; charset=utf-8',
       crossDomain: true,
       headers: { 'Access-Control-Allow-Origin': '*' },
-      success(response) {
-        return true;
-      },
-      error(xhr, status) {
-        return false;
-      },
     });
   }
 
   /**
    * This function delete a network
-   * @param net
-   * @returns return true if operation is done else false
+   * @param{string} network to delete
+   * @returns{boolean} true if operation is done else false
    */
   async deletenetwork(net) {
     return $.ajax({
@@ -92,20 +80,17 @@ export default class ConnectServer extends ServerResource{
       contentType: 'application/json; charset=utf-8',
       crossDomain: true,
       headers: { 'Access-Control-Allow-Origin': '*' },
-      success(response) {
-        return response;
-      },
     });
   }
 
   /**
    * Function to request calculated probabilities to server
-   * @param{net} name of the net
-   * @returns{json}
+   * @param{string} name of the net
+   * @returns{json} probabilities
    */
   async getnetworkprob(net) {
     return $.ajax({
-      url: `http://${this.host}:${this.port}/getnetworkprob/${net}`,
+      url: `http://${this.host}:${this.port}/getjsbayesviz/${net}`,
       type: 'GET',
       data: net,
       cache: false,
@@ -113,12 +98,14 @@ export default class ConnectServer extends ServerResource{
       contentType: 'application/json; charset=utf-8',
       crossDomain: true,
       headers: { 'Access-Control-Allow-Origin': '*' },
-      success(response) {
-        return response;
-      },
     });
   }
 
+  /**
+   * get a network from server
+   * @param{string} network's name
+   * @return{json} the network
+   * */
   async getnetwork(net) {
     return $.ajax({
       url: `http://${this.host}:${this.port}/getnetwork/${net}`,
@@ -128,9 +115,6 @@ export default class ConnectServer extends ServerResource{
       contentType: 'application/json; charset=utf-8',
       crossDomain: true,
       headers: { 'Access-Control-Allow-Origin': '*' },
-      success(response) {
-        return response;
-      },
     });
   }
 }

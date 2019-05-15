@@ -230,19 +230,9 @@ export class TresholdsCtrl {
 	 * */
   deleteTreshold(node, name) {
     for (const tresh in this.panel.tresholds[node]) {
+      // check which treshold is the one to delete
       if (this.panel.tresholds[node][tresh].name === name) {
-        if (this.panel.tresholds[node].length === 1 && this.panel.flushesAssociations[node] !== undefined) {
-          // add flush to available flushes
-
-          this.panel.flussi[this.panel.flushesAssociations[node].table].push(this.panel.flushesAssociations[node].flush);
-          // order flushes
-          this.panel.flussi[this.panel.flushesAssociations[node].table].sort();
-          // delete link
-          delete this.panel.flushesAssociations[node];
-          this.panel.tresholdLinked[node] = false;
-          // reset tresholds
-          this.panel.tresholds[node] = [];
-        } else { this.panel.tresholds[node].splice(tresh, 1); }
+        this.panel.tresholds[node].splice(tresh, 1);
         return true;
       }
     }
@@ -257,6 +247,8 @@ export class TresholdsCtrl {
     this.panel.tresholdLinked[node] = false;
     if (this.panel.flushesAssociations[node] !== undefined) {
       this.panel.flussi[this.panel.flushesAssociations[node].table].push(this.panel.flushesAssociations[node].flush);
+      // order flushes
+      this.panel.flussi[this.panel.flushesAssociations[node].table].sort();
     }
     delete this.panel.flushesAssociations[node];
   }

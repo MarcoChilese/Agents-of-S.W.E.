@@ -29,6 +29,12 @@ export class TemporalPolicyCtrl {
    * @return{boolean} true if ok
    * */
   checkCorrectData() {
+    if (this.panel.temporalPolicy.seconds === 0
+          && this.panel.temporalPolicy.minutes === 0
+            && this.panel.temporalPolicy.hours === 0) {
+      this.modalCreator.showMessageModal('Impossibile una politica temporale vuota.', 'Errore');
+      return false;
+    }
     if (this.panel.temporalPolicy.seconds < 0) {
       this.modalCreator.showMessageModal('Impossibile impostare secondi < 0.', 'Errore');
       return false;

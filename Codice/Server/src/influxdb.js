@@ -4,7 +4,12 @@ class InfluxDB{
 	
 	constructor(host, port, database, db_write, user, pwd){
 
-		if(host === undefined || port === undefined || database === undefined)
+		if(	host === undefined || 
+			port === undefined || 
+			database === undefined ||
+			isNaN(port) ||
+			database === '' ||
+			host === '' )
 			throw new Error("[Error_code] - Check params");
 		
 		this.host = host; 
@@ -27,7 +32,7 @@ class InfluxDB{
 	*/
 	getDatasources(){
 		const query = `show measurements`;
-		return this.queryDB(query); 
+		return this.queryDB(query);
 	}
 
 
@@ -63,13 +68,8 @@ class InfluxDB{
 	*/
 	getLastValue(source, field){
 		const query = `select ${field} from ${source} order by time desc limit 1`;
-		try{
-			// Adatto il metodo nativo della libreria alla classe
-			return this.queryDB(query); 
-		} catch(err){
-			console.log(err);
-			throw err;
-		}
+		// Adatto il metodo nativo della libreria alla classe
+		return this.queryDB(query); 
 	}
 
 	/**
@@ -80,19 +80,9 @@ class InfluxDB{
 	 * @returns {Promise<*>} contains value of the last fetched value from the selected datasource
 	*/
 	async getLastValueAsync(source, field){
-		// console.log(source); 
-		// console.log(field); 
 		const query = `select ${field} from ${source} order by time desc limit 1`;
-		
-		let data;    
-		// process.exit(); 
-
-		try{
-			data = await this.queryDB(query);    
-		} catch(err){
-			console.log(err); 
-			// throw err; 
-		}
+		let data;
+		data = await this.queryDB(query);
 		return data; 
 	}
 
@@ -112,7 +102,6 @@ class InfluxDB{
 			}catch(err){
 				console.log(err);
 			}
-
 			ris[field.flush] = tmp[0][field.flush];
 		}
 		return ris;
@@ -127,7 +116,6 @@ class InfluxDB{
 	 * @param {String} value: the value to insert into the field
 	*/
 	writeOnDB(net, probs){
-
 		// Array di dict 
 		let data = []; 
 		for(let prob of probs){
@@ -150,22 +138,13 @@ class InfluxDB{
 			data.push(dict); 
 			
 		}
-		
-		this.db.writePoints(data, {database: this.dbwrite}).catch(err => {
-			console.log(err); 
-		});
+		try{
+			this.db.writePoints(data, {database: this.dbwrite});
+		}catch(err){
+			throw err; 
+		}
 	}
 
-	/**
-	 * Ping the db to check status
-	 * @throws {Error}
-	 * @returns {Boolean}: true if host is online false other
-	*/		
-	alive(){
-		this.checkStatus(5000).then(host => {
-			return host[0].online;
-		});
-	}
 
 	/**
 	 * Pings the hosts, collecting online status and version info.
@@ -175,7 +154,6 @@ class InfluxDB{
 	*/
 	checkStatus(timeout){       
 		return this.db.ping(timeout); 
-
 		// Example of use
 		// this.db.ping(timeout).then(host => {
 		//  if(host[0].online)

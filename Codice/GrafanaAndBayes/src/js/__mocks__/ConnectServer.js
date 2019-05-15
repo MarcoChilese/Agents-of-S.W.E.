@@ -60,6 +60,7 @@ export default class ConnectServer {
   async deletenetwork(net) {
     const e = new Error('');
     e.status = 200;
+    if (net === 'nope') { e.status = 404; }
     throw e;
   }
 

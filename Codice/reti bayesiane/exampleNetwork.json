@@ -1,0 +1,19 @@
+{
+	"name": "esempio",
+	"nodes": ["uno", "due", "tre"],
+	"states": {
+		"uno": ["true", "false", "a", "b"],
+		"due": ["true", "false", "c"],
+		"tre": ["true", "false"]
+	},
+	"parents": {
+		"uno": [],
+		"due": [],
+		"tre": ["uno", "due"]
+	},
+	"probabilities": {
+		"uno": [[0.25,0.25,0.25,0.25]],
+		"due": [[0.05, 0.9, 0.05]],
+		"tre": [[1,0],[1,0],[1,0],[1,0],[1,0],[1,0],[1,0],[1,0],[1,0],[1,0],[1,0],[1,0]]
+	}
+}
