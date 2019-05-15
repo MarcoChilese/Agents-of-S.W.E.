@@ -519,6 +519,8 @@ TV0-2.5.9.2 & ROF2.5.9.2  &
 	& N.I. \\
 \hline
 
+\iffalse
+
 \rowcolor{grigio}TV0-2.5.9.3 & ROF2.5.9.3  &
 	\textbf{Obiettivo}: il sistema nega la conferma di avvenuto collegamento di un nodo ad un flusso dati nel caso in cui sia stata confermata la definizione delle soglie, avendo definito soglie tra loro in conflitto. \newline
 	\textbf{Procedimento}:
@@ -534,6 +536,8 @@ TV0-2.5.9.2 & ROF2.5.9.2  &
 	& N.I. \\
 \hline
 
+\fi
+
 TV0-2.5.9.4 & ROF2.5.9.4  &
 	\textbf{Obiettivo}: il sistema nega la conferma di avvenuto collegamento di un nodo ad un flusso dati nel caso in cui sia stata confermata la definizione delle soglie in maniera errata, mostrando un errore coerente. \newline
 	\textbf{Procedimento}:
@@ -546,6 +550,23 @@ TV0-2.5.9.4 & ROF2.5.9.4  &
 		\item Il Sistema, una volta che l'utente ha selezionato un nodo della rete, fa apparire una finestra contenente i menù a tendina per la scelta della tabella e del flusso dati;
 		\item L'utente aggiunge varie soglie in conflitto tra loro, non seleziona correttamente un flusso dati o non definisce soglie;
 		\item L'utente clicca il pulsante di conferma con le impostazioni precedentemente definite;
+		\item Il Sistema nega il collegamento al flusso dati;
+		\item Il sistema fa apparire un messaggio contenente l'errore diverso in base agli errori commessi all'utente.
+	\end{enumerate}
+	& N.I. \\
+\hline
+
+TV0-2.5.9.5 & ROF2.5.9.5  &
+	\textbf{Obiettivo}: l'utente visualizza differenti messaggi di errore al momento dell'errato collegamento di un nodo ad un flusso dati, in base all'errore commesso. \newline
+	\textbf{Procedimento}:
+	\begin{enumerate}
+		\item L'utente ha correttamente collegato il plug-in al Server;
+		\item L'utente ha correttamente caricato una rete bayesiana;
+		\item L'utente ha precedentemente collegato un database;
+		\item Il Sistema modifica l'interfaccia utente mostrando una lista di nodi appartenenti alla rete bayesiana precedentemente caricata;
+		\item L'utente seleziona un nodo da quelli disponibili appartenente alla rete bayesiana;
+		\item Il Sistema, una volta che l'utente ha selezionato un nodo della rete, fa apparire una finestra contenente i menù a tendina per la scelta della tabella e del flusso dati;
+		\item L'utente prova a collegare in maniera errata un nodo ad un flusso dati;
 		\item Il Sistema nega il collegamento al flusso dati;
 		\item Il sistema fa apparire un messaggio contenente l'errore diverso in base agli errori commessi all'utente.
 	\end{enumerate}
@@ -1114,12 +1135,12 @@ TV2-4.5.1.1 & RFF4.5.1.1 &
 \hline
 
 TV1-4.6.1 & RDF 4.6.1 &
-	\textbf{Obiettivo}: verificare che il Sistema, indipendentemente dalla politica temporale definita dall'utente, ricalcoli le probabilità al verificarsi del superamento di una soglia critica associata ad uno stato di un nodo collegato al flusso di dati di monitoraggio in base al timeout di refresh impostato nella dashboard al momento dell'avvio del monitoraggio. \newline
+	\textbf{Obiettivo}: verificare che il Sistema, indipendentemente dalla politica temporale definita dall'utente, ricalcoli le probabilità al verificarsi del superamento di una soglia critica associata ad uno stato di un nodo collegato al flusso di dati di monitoraggio. \newline
 	\textbf{Procedimento}:
 	\begin{enumerate}
 		\item L'utente ha correttamente collegato il plug-in al Server;
 		\item L'utente ha avviato correttamente il monitoraggio di almeno una rete;
-		\item Il Sistema, ad intervalli regolari stabiliti dal refresh della dashboard di \textit{Grafana} al momento dell'inizio del monitoraggio, rileva il superamento di una soglia critica ed effettua il ricalcolo delle probabilità;
+		\item Il Sistema rileva il superamento di una soglia critica ed effettua il ricalcolo delle probabilità;
 		\item Il Sistema salva nel database Influx le probabilità ricalcolate.
 	\end{enumerate}
 	& N.I. \\

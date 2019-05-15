@@ -1,4 +1,4 @@
-\begin{longtable}{|C{.15\textwidth}|m{.52\textwidth}|m{.08\textwidth}|}
+\begin{longtable}{|C{.15\textwidth}|m{.66\textwidth}|m{.10\textwidth}|}
 \hline
 \rowcolor{bluelogo}\textbf{\textcolor{white}{Test}} & \textbf{\textcolor{white}{Descrizione}} & \textbf{\textcolor{white}{Esito}}\\
 \hline \hline
@@ -19,6 +19,30 @@ TI0-05 & Verificare che dato un database, vengano visualizzate le relative tabel
 TI0-07 & Verificare che, una volta selezionata una rete nel pannello, il server la elimini correttamente & N.I. \\
 \hline 
 \rowcolor{grigio}TI0-08 & Verificare che, una volta fatto partire il monitoraggio dal pannello, il server esegua correttamente il ricalcolo delle probabilità & N.I. \\  
+\hline
+TI0-09 & Viene verificato che il metodo \texttt{loadNetwork(data)} di \textit{GBCtrl} carichi sul pannello la rete bayesiana "data", passata come parametro (\textit{JSON}) al metodo, tornando \textbf{True} nel caso di buon esito dell'operazione, e che invochi correttamente il parser per verificare la rete & S.\\
+\hline
+\rowcolor{grigio}TI0-10 & Viene verificato che il metodo \texttt{loadNetwork(data)} di \textit{GBCtrl} torni \textbf{False} nel caso in cui all'interno del metodo ci sia un altro dei metodi richiamati che lancia un'eccezione, o per l'impossibilità di collegarsi al server o per problemi nella struttura della rete  & S.\\
+\hline
+TI0-11 & Viene verificato che la rete venga sovrascritta nel caso in cui l'utente cerca di caricare la stessa rete, ritorna \textbf{Undefined} se il server prova a richiedere la rete sovrascritta & S. \\
+\hline
+\rowcolor{grigio}TI0-12 & Viene verificato che la rete caricata disponga del campo \texttt{name} di tipo \textbf{stringa} & S. \\ 
+\hline
+TI0-13 & Viene verificata l'invocazione del metodo \texttt{initBayesianNetwork(net)} all'interno del metodo \texttt{saveNetworkToFile()} & S. \\ 
+\hline
+\rowcolor{grigio}TI0-14 & Viene verificata la creazione di un nuovo oggetto di tipo \texttt{Network} con la rete caricata dall'utente & S. \\ 
+\hline
+TI0-15 & Viene verificato che la richiesta \texttt{deletenetwork/:net} al server, ritorni un messaggio di successo nel caso in cui la rete sia stata eliminata & S. \\
+\hline
+\rowcolor{grigio}TI0-16 & Viene verificato che la richiesta \textit{/getjsbayesviz/:net} ritorni un json che rappresenta l'oggetto jsbayesviz in formato json & S.\\
+\hline
+TI0-17 & Viene verificato che la richiesta \texttt{getnetworkprob/:net} al server ritorni un json contenente le probabilità calcolate per la rete desiderata & S. \\ 
+\hline 
+\rowcolor{grigio}TI0-18 & Viene verificato che all'avvio del server vengano inizializzate le reti salvate nel filesytem & S. \\ 
+\hline
+TI0-19 &  Viene verificata la creazione di una connessione al database al richiamo del metodo \texttt{initDatabaseConnection(connection)}, ritorni \textbf{True} nel caso di esito operazione positivo & S.\\ 
+\hline
+\rowcolor{grigio}TI0-20 & Viene verificato che la richiesta \texttt{/getnetworkprob/:net} ritorni i valori delle probabilità calcolate in formato json & S. \\ 
 \hline
 
 \caption{Test di Integrazione}
