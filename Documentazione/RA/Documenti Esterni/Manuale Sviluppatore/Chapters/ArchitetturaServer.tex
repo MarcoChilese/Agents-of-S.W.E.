@@ -16,7 +16,7 @@ Per rendere lo sviluppo più semplice, e garantire la manutenibilità del codice
  \item \textbf{Network}: è il modulo che si occupa di adattare la libreria \textit{jsbayes} e costruisce la rete bayesiana da utlizzare;
 \end{itemize}
 
-\subsubsection{Descrizione delle Classi e dei Metodi del Pannello}\label{descrizionearchServer}
+\subsubsection{Descrizione delle Classi e dei Metodi del Server}\label{descrizionearchServer}
 
 \paragraph{Server}
 
@@ -104,7 +104,7 @@ Per rendere lo sviluppo più semplice, e garantire la manutenibilità del codice
 	tipo stringa; 
 
 	\item \textbf{sample(n)}: wrapper del metodo \textit{sample(n)}, della classe \textbf{jsbayes}. 
-	Esegue il calcolo delle probabilità dei vari nodi con il metodo \textit{Monte Carlo}. Riceve in input un 
+	Esegue il calcolo delle probabilità dei vari nodi con il metodo \textit{Monte Carlo}\glossario. Riceve in input un 
 	numero intero il quale indica il numero di iterazioni da eseguire; 
 	
 	\item \textbf{unobserveAll()}: metodo utilizzato per togliere dall'osservazione i vari nodi precedentemente 
@@ -114,9 +114,9 @@ Per rendere lo sviluppo più semplice, e garantire la manutenibilità del codice
 	decrescente, definite nella rete; 
 	
 	\item \textbf{observeData(dati)}: metodo utilizzato per l'osservazione dei dati. Riceve in input un'array 
-	associativo dei dati necessari da monitorare, tramite i quali verranno effettuate a seconda delle 
-	soglie, i confronti tra dati - soglie, per poi successivamente fare scattare la probabilità con li metodo 
-	\textit{observe}. In finte una volta eseguiti tutti i confronti verrà richiamato il metodo \textit{sample} per 
+	associativo dei dati necessari da monitorare tramite i quali verranno effettuate, a seconda delle 
+	soglie, i confronti tra dati - soglie, per poi successivamente fare scattare la probabilità con il metodo 
+	\textit{observe}. In fine una volta eseguiti tutti i confronti verrà richiamato il metodo \textit{sample} per 
 	calcolare le probabilità. Ritorna true se una soglia critica è stata superata, false altrimenti; 
 	
 	\item \textbf{getProbabilities()}: metodo utilizzato per estrarre le probabilità di ogni stato, per ogni 
