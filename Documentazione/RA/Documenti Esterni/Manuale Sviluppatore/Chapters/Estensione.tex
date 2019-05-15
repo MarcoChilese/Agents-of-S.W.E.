@@ -61,5 +61,18 @@ Definendo i seguenti metodi si fornisce la possibilità di prelevare dati gestit
 La gestione delle reti bayesiane viene  demandata alla classe \texttt{Network}, con il supporto dalla libreria \textit{jsbayes}. L'estensibilità della classe é rimandata in gran parte alla libreria utilizzata, cosa per cui ogni possibile estensione o modifica risulta difficile. Ogni altra estensione o modifica della classe riguarderebbe l'utilizzo di un'ulteriore libreria per la gestione delle reti bayesiane e il calcolo delle probabilità, la quale porterebbe alla riscrittura totale della classe. 
 
 
-\subsection{Plug-in}
-TODO
+\subsection{Plug-in}\label{estensionePlugin}
+
+
+La parte del plug-in, deve essere modificata in conseguenza alla modifica del Server, per adeguarsi alle relative modifiche.\\
+Una parte estensibile a parte, può essere la visualizzazione delle probabilità. Per far ciò bisogna  aggiungere un metodo alla classe \textit{GBCtrl} ed aggiungere una parte alla sezione di visualizzazione delle reti, nella quale l'utente possa scegliere il metodo di visualizzazione.\\
+Nel momento in cui si desideri aggiungere il supporto a nuovi database, bisogna modificare :
+\begin{itemize}
+	\item Il metodo \textit{connectToDB()}, in modo che distingua tra database di tipo \textit{inluxdb} e nuovi;
+	\item Modificare il metodo \textit{checkIfConnectableToDB()} in modo che gestisca i nuovi database;
+	\item Aggiungere metodi alla classe \textit{GetApiGrafana}, in modo che riesca a gestire i flussi derivanti da tali database.
+\end{itemize}
+
+Qualora nel Server vengano aggiunte nuove root, bisogna aggiungere nuovi metodi alla classe \textit{ConnectServer}, in modo che gestiscano le nuove chiamate.\\
+Per modificare la struttura della rete bayesiana accettata, bisogna modificare la classe Parser, aggiungendo nuovi metodi che facciano i controlli desiderati ed estendere il metodo \textit{validateNet()} in modo che richiami anche tali metodi.
+
