@@ -1,9 +1,9 @@
 \section{Estensione delle Funzionalità}\label{Estensione}
 Questa sezione ha l'obbiettivo di fornire tutte le indicazioni necessarie all'evoluzione del prodotto. 
-Essa si suddivide a sua volta in due sezioni principali: \textit{Backend} e \textit{Plug-in}
+Essa si suddivide a sua volta in due sezioni principali: \textit{Backend} e \textit{Pannello}
 
 \subsection{Backend}\label{Estensione_Server}
-\subsubsection{Aggiunta di una route nel server}
+\subsubsection{Aggiunta di una route nel server}\label{ExtAddRoute}
 Per aggiungere una route al server bisogna dichiararla nel metodo \texttt{configExpressApp()}. 
 A seconda che la chiamata sia una \textit{POST} o una \textit{GET}, esistono due diverse sintassi per scrivere la route.
 \begin{itemize}
@@ -39,8 +39,7 @@ this.app.post('/route/:param', (req, res) => {
 \end{lstlisting}
 \end{itemize}
 
-
-\subsubsection{Aggiunta database}
+\subsubsection{Aggiunta database}\label{ExtAddDB}
 Per modellare l'utilizzo di un database diverso da quello inizialmente fornito dal prodotto, bisognerà creare una nuova classe che metta a disposizione i seguenti metodi: 
 \begin{itemize}
  \item \texttt{queryDB(query)}: preleva i dati dal database. In input riceva la query da eseguire sul database;
@@ -60,18 +59,26 @@ Definendo i seguenti metodi si fornisce la possibilità di prelevare dati gestit
 La gestione delle reti bayesiane viene  demandata alla classe \texttt{Network}, con il supporto dalla libreria \textit{jsbayes}. L'estensibilità della classe é rimandata in gran parte alla libreria utilizzata, cosa per cui ogni possibile estensione o modifica risulta difficile. Ogni altra estensione o modifica della classe riguarderebbe l'utilizzo di un'ulteriore libreria per la gestione delle reti bayesiane e il calcolo delle probabilità, la quale porterebbe alla riscrittura totale della classe. 
 
 
-\subsection{Plug-in}\label{estensionePlugin}
+\subsection{Pannello}\label{estensionePlugin}
 
-
-La parte del plug-in, deve essere modificata in conseguenza alla modifica del Server, per adeguarsi alle relative modifiche.\\
-Una parte estensibile a parte, può essere la visualizzazione delle probabilità. Per far ciò bisogna  aggiungere un metodo alla classe \textit{GBCtrl} ed aggiungere una parte alla sezione di visualizzazione delle reti, nella quale l'utente possa scegliere il metodo di visualizzazione.\\
-Nel momento in cui si desideri aggiungere il supporto a nuovi database, bisogna modificare :
+\subsubsection{Modifica conseguente ad estensioni lato Server}
+La parte del pannello deve essere modificata in conseguenza ad un'eventuale modifica del Server, per adeguarsi ai relativi cambiamenti.\\
+~\\
+\textbf{Aggiunta nuovi Database:}\\
+Nel momento in cui si desideri aggiungere il supporto a nuovi database (sezione §\ref{ExtAddDB}), bisogna modificare :
 \begin{itemize}
 	\item Il metodo \textit{connectToDB()}, in modo che distingua tra database di tipo \textit{inluxdb} e nuovi;
 	\item Modificare il metodo \textit{checkIfConnectableToDB()} in modo che gestisca i nuovi database;
 	\item Aggiungere metodi alla classe \textit{GetApiGrafana}, in modo che riesca a gestire i flussi derivanti da tali database.
 \end{itemize}
+~\\
+\textbf{Aggiunta route nel server:}\\
+Qualora nel Server vengano aggiunte nuove route (Sezione §\ref{ExtAddRoute}), bisogna aggiungere nuovi metodi alla classe \textit{ConnectServer}, in modo che gestiscano le nuove chiamate.\\
 
-Qualora nel Server vengano aggiunte nuove root, bisogna aggiungere nuovi metodi alla classe \textit{ConnectServer}, in modo che gestiscano le nuove chiamate.\\
+
+\subsubsection{Estensione funzionalità indipendenti dal Server}
+\textbf{Visualizzazione dei dati di monitoraggio}\\
+Una sezione del pannello estendibile indipendentemente dal Server può essere la visualizzazione delle probabilità. Per far ciò bisogna  aggiungere un metodo alla classe \textit{GBCtrl} ed aggiungere una parte alla sezione di visualizzazione delle reti, nella quale l'utente possa scegliere il metodo di visualizzazione.\\
+~\\
+\textbf{Modifica della struttura delle Reti Bayesiane accettate}\\
 Per modificare la struttura della rete bayesiana accettata, bisogna modificare la classe Parser, aggiungendo nuovi metodi che facciano i controlli desiderati ed estendere il metodo \textit{validateNet()} in modo che richiami anche tali metodi.
-
