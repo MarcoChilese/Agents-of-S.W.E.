@@ -99,12 +99,9 @@
 - Progettista: Matteo Slanzi
 - Programmatore:  Carlotta Segna
 - Verificatore: Marco Chilese, Marco Favaro, Diego Mazzalovo
-- Analista: -
 
 ### Ruoli (11) 
 - Amministratore: Marco Favaro
 - Responsabile: Marco Chilese
-- Progettista: -
 - Programmatore: Diego Mazzalovo
 - Verificatore: Matteo Slanzi, Luca Violato, Bogdan Stanciu, Carlotta Segna
-- Analista: -
