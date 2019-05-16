@@ -1,0 +1,238 @@
+{
+	"canStartComputation": true,
+	"collegatoAlDB": true,
+	"database": {
+		"id": 1,
+		"orgId": 1,
+		"name": "InfluxDB",
+		"type": "influxdb",
+		"typeLogoUrl": "public/app/plugins/datasource/influxdb/img/influxdb_logo.svg",
+		"access": "proxy",
+		"url": "http://142.93.102.115:8086",
+		"password": "greg",
+		"user": "greg",
+		"database": "telegraf",
+		"basicAuth": false,
+		"isDefault": true,
+		"jsonData": {
+			"keepCookies": []
+		},
+		"readOnly": false
+	},
+	"flushesAssociations": {
+		"Viaggio in Asia": {
+			"table": "cpu", 
+			"flush": "system_usage"
+		},
+
+		"Fuma": {
+			"table": "cpu",
+			"flush": "usage_guest_nice"
+		}
+	},
+	"monitoring": true,
+	"name": "Viaggio_in_asia",
+	"nodes": [
+		"Viaggio in Asia",
+		"Tubercolosi",
+		"Fuma",
+		"Cancro",
+		"Bronchite",
+		"TBC o Cancro",
+		"Dispnea",
+		"Risultati sui raggi X"
+	],
+	"parents": {
+		"Viaggio in Asia": [],
+		"Tubercolosi": [
+			"Viaggio in Asia"
+		],
+		"Fuma": [],
+		"Cancro": [
+			"Fuma"
+		],
+		"Bronchite": [
+			"Fuma"
+		],
+		"TBC o Cancro": [
+			"Tubercolosi",
+			"Cancro"
+		],
+		"Dispnea": [
+			"TBC o Cancro",
+			"Bronchite"
+		],
+		"Risultati sui raggi X": [
+			"TBC o Cancro"
+		]
+	},
+	"states": {
+		"Viaggio in Asia": [
+			"true",
+			"false"
+		],
+		"Tubercolosi": [
+			"true",
+			"false"
+		],
+		"Fuma": [
+			"true",
+			"false"
+		],
+		"Cancro": [
+			"true",
+			"false"
+		],
+		"Bronchite": [
+			"true",
+			"false"
+		],
+		"TBC o Cancro": [
+			"true",
+			"false"
+		],
+		"Dispnea": [
+			"true",
+			"false"
+		],
+		"Risultati sui raggi X": [
+			"true",
+			"false"
+		]
+	},
+	"probabilities": {
+		"Viaggio in Asia": [
+			[
+				0.01,
+				0.99
+			]
+		],
+		"Tubercolosi": [
+			[
+				0.05,
+				0.95
+			],
+			[
+				0.01,
+				0.99
+			]
+		],
+		"Fuma": [
+			[
+				0.5,
+				0.5
+			]
+		],
+		"Cancro": [
+			[
+				0.1,
+				0.9
+			],
+			[
+				0.01,
+				0.99
+			]
+		],
+		"Bronchite": [
+			[
+				0.6,
+				0.4
+			],
+			[
+				0.3,
+				0.7
+			]
+		],
+		"TBC o Cancro": [
+			[
+				1,
+				0
+			],
+			[
+				1,
+				0
+			],
+			[
+				1,
+				0
+			],
+			[
+				0,
+				1
+			]
+		],
+		"Dispnea": [
+			[
+				0.9,
+				0.1
+			],
+			[
+				0.8,
+				0.2
+			],
+			[
+				0.7,
+				0.3
+			],
+			[
+				0.1,
+				0.9
+			]
+		],
+		"Risultati sui raggi X": [
+			[
+				0.98,
+				0.02
+			],
+			[
+				0.05,
+				0.95
+			]
+		]
+	},
+	"temporalPolicy": {
+		"seconds": 3,
+		"minutes": 0,
+		"hours": 0
+	},
+	"temporalPolicyConfirmed": true,
+	"tresholdLinked": {
+		"Viaggio in Asia": true,
+		"Tubercolosi": false,
+		"Fuma": true,
+		"Cancro": false,
+		"Bronchite": false,
+		"TBC o Cancro": false,
+		"Dispnea": false,
+		"Risultati sui raggi X": false
+	},
+	"tresholds": {
+		"Viaggio in Asia": [
+			{
+				"state": "true",
+				"sign": "<=",
+				"value": 20,
+				"critical": true,
+				"name": 0,
+				"$$hashKey": "object:420"
+			}
+		],
+		"Tubercolosi": [],
+		"Fuma": [
+			{
+				"state": "true",
+				"sign": ">=",
+				"value": 1,
+				"critical": true,
+				"name": 0,
+				"$$hashKey": "object:420"
+			}
+		],
+		"Cancro": [],
+		"Bronchite": [],
+		"TBC o Cancro": [],
+		"Dispnea": [],
+		"Risultati sui raggi X": []
+	},
+	"selectedDB": "InfluxDB"
+}

@@ -1,0 +1,42 @@
+\section{Descrizione del Prodotto}\label{DescrizioneProdotto}
+
+\subsection{Caratteristiche del Prodotto}\label{CaratteristicheProdotto}
+Lo scopo del progetto è realizzare un plug-in\glossario per \textit{Grafana}\glossario, in grado di utilizzare una rete bayesiana\glossario, definita ad hoc in formato \textit{.JSON}\glossario, per stimare la probabilità che alcuni eventi si possano verificare o meno.\\
+In particolare, deve essere possibile registrare i dati di un particolare ambiente, ad esempio tutti i dati di PC quali percentuale d'uso della CPU, disponibilità di memoria libera, utilizzo del disco ecc., che verranno poi visualizzati in pannelli di una dashboard\glossario. Tra tali pannelli dovrà esserne presente uno in cui visualizzare la probabilità di determinati eventi.\\
+La probabilità di eventi definiti in sede di progettazione, viene stimata dalla rete bayesiana che, utilizzando i dati di ambiente, potrà avanzare delle ipotesi sugli eventi in atto. Un esempio: in un contesto di un calcolatore a cui è affidata la gestione di un complesso database\glossario, se si rilevasse un elevato uso della CPU, un'alta percentuale di memoria RAM occupata, ma un basso tasso di scrittura su disco, mediante parametri prefissati, la rete potrà ipotizzare con una probabilità $x$ che si stanno eseguendo delle "query\glossario lente"\footnote{Si intende query malformate che richiedono un eccessivo dispendio di risorse.}, permettendo quindi l'intervento da parte dei gestori del database in modo da non sprecare risorse preziose.\\
+La stima delle probabilità deve essere eseguita secondo regole temporali prefissate. Ciò significa che il plug-in continuerà a registrare dati provenienti dall'ambiente e che ad ogni intervallo di tempo $t$ eseguirà un ricalcolo delle probabilità, fornendo di conseguenza appropriati alert, ove necessario.\\
+La rete bayesiana in formato \textit{.JSON}, menzionata sopra, può essere sviluppata tramite la libreria \textit{JSBayes}\glossario, indicata dalla proponente.\\
+Inoltre, deve essere possibile caricare diverse tipologie di reti (che si differenziano per topologia, dati osservati e fenomeni monitorati) all'interno del plug-in, a seconda degli eventi che si intende intercettare. Deve essere poi possibile fornire alla rete nuovi dati provenienti da nodi non collegati al flusso di dati che si stanno captando ad intervalli regolari.
+
+\subsection{Obiettivi del Prodotto}\label{ObiettiviProdotto}
+L'obiettivo del progetto è la realizzazione di un plug-in, avente le caratteristiche descritte in §\ref{CaratteristicheProdotto}, che consenta agli utenti interessati di monitorare un flusso dati con maggiore efficienza ed efficacia rispetto al normale utilizzo della piattaforma \textit{Grafana}. Più nel dettaglio lo scopo finale del prodotto è fornire all'utente dati aggiuntivi, ed eventualmente alert ad essi collegati, attraverso l'uso di un'apposita rete bayesiana.\\
+Un esempio più concreto del beneficio derivato da un corretto utilizzo del prodotto è stato discusso in riunione esterna con l'azienda proponente: monitorando un determinato flusso dati con il plug-in \textit{G\&B} è possibile ottenere assunzioni probabilistiche sulle cause che stanno a monte di determinate problematiche, le quali possono essere riscontrate attraverso il normale utilizzo di \textit{Grafana}, come ad esempio un'elevata pressione di memoria oppure un utilizzo della CPU anormale.
+
+\subsection{Caratteristiche degli Utenti}\label{CaratteristicheUtenti}
+Il plug-in di \textit{Grafana} \textit{G\&B} è caratterizzato da un ambito di utilizzo, ed un relativo bacino di utenza, singolarmente ristretto. Il prodotto finale è rivolto ai soli utenti già registrati presso la piattaforma \textit{Grafana} che desiderano monitorare un determinato flusso dati attraverso l'uso di una qualche rete bayesiana in loro possesso.
+
+\subsection{Vincoli Progettuali}
+\label{VincoliProgettuali}
+
+Il prodotto finale, così come descritto all'interno dei capitoli precedenti, è soggetto a vincoli progettuali obbligatori ed opzionali. Questi sono stati descritti all'interno della documentazione, il cui link è reperibile nella sezione §\ref{RN}. \\
+
+I vincoli obbligatori, richiesti dall'azienda proponente, sono:
+\begin{itemize}
+	\item Il linguaggio da utilizzare per lo sviluppo del plug-in è \textit{JavaScript};
+	\item La versione di \textit{Grafana} da utilizzare per lo sviluppo del plug-in deve essere la v5.4.3;
+	\item La lettura della rete bayesiana dovrà avvenire da un file in formato \textit{.JSON};
+	\item I nodi della rete dovranno essere collegati ad un flusso di dati presente in \textit{Grafana};
+	\item Definire regole temporali per il ricalcolo delle probabilità;
+	\item In base alle politiche temporali stabilite il sistema deve fornire dati relativi alle probabilità condizionate dei nodi non collegati al flusso dati;
+	\item I dati vengono forniti dal sistema sotto forma di misura di probabilità associata al corrispondente nodo; 
+	\item I dati dovranno poter essere visualizzati all'interno della dashboard di \textit{Grafana}.
+\end{itemize}
+
+I vincoli opzionali, che possono essere realizzati parzialmente o nella loro totalità, a discrezione del fornitore, sono i seguenti: 
+\begin{itemize}
+\item L'utente avrà la possibilità di definire alert basati su livelli di soglia relativi ai dati forniti dai nodi non collegati al flusso di monitoraggio;
+\item Disegnare la rete bayesiana tramite un editor; 
+\item Applicazione di oggetti di monitoraggio diversi a reti bayesiane diverse;
+\item Creazione di una rete bayesiana basata sui dati raccolti, piuttosto che lo sviluppo di questa da parte di esperti; 
+\item Ricerca di altri metodi di Intelligenza Artificiale diversi dalla rete bayesiana, utilizzabili per l'analisi del flusso dati. 
+\end{itemize}

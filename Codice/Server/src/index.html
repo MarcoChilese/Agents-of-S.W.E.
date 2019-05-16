@@ -1,0 +1,120 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <script src="https://d3js.org/d3.v5.js"></script>
+
+<script src="../node_modules/lodash/lodash.js"></script>
+<script src="../node_modules/graphlib/dist/graphlib.core.js"></script>
+<script src="../node_modules/dagre/dist/dagre.core.js"></script>
+<script src="../node_modules/jsbayes/jsbayes.js"></script>
+<script src="../node_modules/better-jsbayes-viz/jsbayes-viz.js"></script>
+<style type="text/css">
+  svg g rect.node-shape { border-radius: 5px !important; fill:#ffecb3 !important; cursor: move; }
+svg g text.node-name { font-weight: 800 !important }
+svg g rect.node-bar { fill: green !important }
+svg g text.node-value { fill:rgb(0,0,0) !important; font-size: 15px; cursor: pointer; }
+svg line.edge-line { stroke:rgb(0,0,0) !important }
+svg path.edge-head { fill:rgb(0,0,0) !important }
+</style>
+</head>
+<body>
+  <svg id="bbn"></svg>
+
+  <script>
+      var graph = jsbayes.newGraph();
+var n1 = graph.addNode('n1', ['t', 'f']);
+var n2 = graph.addNode('n2', ['t', 'f']);
+var n3 = graph.addNode('n3', ['t', 'f']);
+var n4 = graph.addNode('n4', ['t', 'f']);
+var n5 = graph.addNode('n5', ['0', '1', '2']);
+
+n2.addParent(n1);
+n3.addParent(n2);
+n3.addParent(n4);
+n5.addParent(n4);
+
+graph.reinit();
+graph.sample(10000);
+var g = jsbayesviz.fromGraph(graph);
+jsbayesviz.draw({
+  id: '#bbn',
+  width: 800,
+  height: 800,
+  graph: g,
+  samples: 15000
+})
+  </script>
+
+</body>
+</html>
+ -->
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>jsbayes discrete bayesian belief network visualization and interaction example</title>
+    <link href="../jsbayes-viz.css" type="text/css" rel="stylesheet">
+    <script src="https://d3js.org/d3.v5.js"></script>
+    <script src="../node_modules/lodash/lodash.js"></script>
+    <script src="../node_modules/graphlib/dist/graphlib.core.js"></script>
+    <script src="../node_modules/dagre/dist/dagre.core.js"></script>
+
+    <script src="../node_modules/jsbayes/jsbayes.js"></script>
+    <script src="../node_modules/better-jsbayes-viz/jsbayes-viz.js"></script>
+    <script>
+      function getGraph() {
+        var graph = jsbayes.newGraph();
+        graph.saveSamples = true;
+
+        var n1 = graph.addNode('n1', ['true', 'false']);
+        var n2 = graph.addNode('n2', ['true', 'false']);
+        var n3 = graph.addNode('n3', ['true', 'false']);
+        var n4 = graph.addNode('n4', ['true', 'false']);
+        var n5 = graph.addNode('n5', ['yes', 'maybe', 'no']);
+
+        n2.addParent(n1);
+        n3.addParent(n2);
+        n3.addParent(n4);
+        n5.addParent(n4);
+
+        n1.setCpt([0.25, 0.75]);
+        n2.setCpt([
+          [0.8, 0.2],
+          [0.2, 0.8]
+        ]);
+        n3.setCpt([
+          [0.99, 0.01],
+          [0.6, 0.4],
+          [0.6, 0.4],
+          [0.01, 0.99]
+        ]);
+        n4.setCpt([0.6, 0.4]);
+        n5.setCpt([
+          [0.6, 0.3, 0.1],
+          [0.1, 0.3, 0.6]
+        ]);
+
+        graph.sample(20000);
+
+        return jsbayesviz.fromGraph(graph, "bbn");
+      }
+    </script>
+</head>
+<body>
+    <svg id="bbn">
+    </svg>
+    <script>
+        var graph = getGraph();
+            jsbayesviz.draw({
+            id: '#bbn',
+            width: 800,
+            height: 800,
+            graph: graph,
+            samples: 15000
+        });
+    </script>
+</body>
+</html>

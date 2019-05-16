@@ -1,0 +1,77 @@
+\input{Config/config.tex}
+
+\begin{document}
+\begin{titlepage}
+\thispagestyle{empty}
+\pagenumbering{gobble}
+
+\begin{center}
+
+\includegraphics[scale=0.3]{./images/logo.png} 
+
+\large \textbf{Agents of S.W.E. - Progetto "G\&B"}
+\vfill
+\Huge \textbf{Glossario}
+\vfill
+\large
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{r|l}
+\textbf{Versione} & 4.0.0 \\
+\textbf{Approvazione} & Marco Chilese\\
+\textbf{Redazione} & \parbox[t]{5cm}{Luca Violato\\Marco Chilese\\Matteo Slanzi\\Carlotta Segna\\ Marco Favaro}\\
+\textbf{Verifica} & \parbox[t]{5cm}{Diego Mazzalovo}\\
+\textbf{Stato} & Approvato \\
+\textbf{Uso} & Esterno\\
+\textbf{Destinato a} & \parbox[t]{5cm}{Agents of S.W.E. \\Prof. Tullio Vardanega\\Prof. Riccardo Cardin\\ Zucchetti S.p.A.}
+\end{tabular}
+\vfill
+\small
+\texttt{agentsofswe@gmail.com}
+\end{center}
+\end{titlepage}
+
+\pagebreak
+
+\pagenumbering{arabic}
+\tableofcontents
+\pagebreak
+
+\include{Chapters/Changelog}
+\include{Chapters/A}
+\include{Chapters/B}
+\include{Chapters/C}
+\include{Chapters/D}
+\include{Chapters/E}
+\include{Chapters/F}
+\include{Chapters/G}
+\include{Chapters/H}
+\include{Chapters/I}
+\include{Chapters/J}
+\include{Chapters/K}
+\include{Chapters/L}
+\include{Chapters/M}
+\include{Chapters/N}
+\include{Chapters/O}
+\include{Chapters/P}
+\include{Chapters/Q}
+\include{Chapters/R}
+\include{Chapters/S}
+\include{Chapters/T}
+\include{Chapters/U}
+\include{Chapters/V}
+\include{Chapters/W}
+\include{Chapters/X}
+\include{Chapters/Y}
+\include{Chapters/Z}
+
+\pagebreak
+\fancypagestyle{plain}{
+ \cfoot{}
+ \lfoot{Glossario v3.0.0}
+ \rfoot{Pagina \thepage \hspace{1pt} di \pageref*{LastPage}}
+}
+\printindex
+
+\addcontentsline{toc}{section}{Indice Analitico}
+
+\end{document}

@@ -1,0 +1,50 @@
+\section{Requisiti di Sistema}\label{Requisiti}
+
+\subsection{Requisiti Software}\label{RS}
+Per poter installare il plug-in \textit{G\&B} è necessario che il sitema in cui si lavora disponga di:
+\begin{itemize}
+	\item \textit{Grafana v6};
+	\item \textit{InfluxDB}\glossario;
+	\item \textit{NodeJS}\glossario;
+	\item \textit{Browser Web} per l'accesso a \textit{Grafana}.
+\end{itemize}
+
+\subsection{Requisiti Hardware}\label{RH}
+I requisiti minimi richiesti per il funzionamento del plug-in non sono dovuti al prodotto in sè, ma sono dovuti alle tecnologie che vengono utilizzate. Di seguito vengono riportati i requisiti minimi richiesti dalle seguenti tecnologie:
+\begin{itemize}
+	\item \textit{InfluxDB}:
+	\begin{itemize}
+		\item CPU: 2-4 core;
+		\item RAM: 2-4GB;
+		\item IOPS: 500.
+	\end{itemize}
+	\item \textit{Grafana}:
+	\begin{itemize}
+		\item CPU: 1 core;
+		\item RAM: 250MB.
+	\end{itemize}
+	\item \textit{NodeJS}:
+	\begin{itemize}
+		\item Architettura: 64bit.
+	\end{itemize}
+	\item Browser web:
+	\begin{itemize}
+		\item \textit{Google Chrome} versione 58, o superiore;
+		\item \textit{Microsoft Edge} versione 14, o superiore;
+		\item \textit{Mozilla Firefox} versione 54, o superiore;
+		\item \textit{Apple Safari} versione 10, o superiore.
+	\end{itemize}
+	\item \textit{pm2\glossario}: richiede \textit{NodeJS}.
+\end{itemize}
+
+\subsection{Uso del Server Locale}\label{Server}
+Per poter usufruire delle funzionalità offerte dal prodotto è necessario utilizzare un server. Il prodotto fornito include la possibilità di avviarne uno locale. Per poterlo utilizzare è necessario eseguire i seguenti comandi dalla directory in cui è presente il codice sorgente del prodotto:
+\begin{center}
+	\texttt{pm2 start Server/index.js}
+\end{center}
+alla cui esecuzione verrà mostrato l'ID del server avviato.\\
+Per visualizzare quindi lo stato del server appena avviato basterà eseguire:
+\begin{center}
+	\texttt{pm2 show \$ID}
+\end{center}
+dove \texttt{\$ID} è l'ID visualizzato al passo precedente.

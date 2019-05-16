@@ -1,0 +1,38 @@
+\textit{NodeJS} è una runtime di \textit{JavaScript} Open source multipiattaforma orientato agli eventi per l'esecuzione di codice \textit{JavaScript} Server-side, costruita sul motore \textit{JavaScript V8} di \textit{Google Chrome}. Molti dei suoi moduli base sono scritti in \textit{JavaScript}, e gli sviluppatori possono scrivere nuovi moduli in \textit{JavaScript}.\\
+In particolare, tale tecnologia viene utilizzata dal team \texttt{Agents of S.W.E.} per l'implementazione del server che permette il funzionamento del \textit{plug-in}. \\
+Le norme di codifica da seguire per \textit{NodeJS} sono le stesse di \textit{ECMAScript 6} con ulteriori norme specifiche riportate di seguito:
+
+\textbf{Norma 1} \\
+Iniziare un nuovo progetto usando il comando \texttt{NPM init} come riportato di seguito:
+\begin{lstlisting}[language=JavaScript]
+	$ mkdir my-project
+	$ cd my-project
+	$ npm init
+\end{lstlisting}
+
+\-\\
+
+\textbf{Norma 2} \\
+Il codice deve essere partizionato in componenti ognuno nella propria cartella, garantendo così che ogni unità sia piccola e semplice. 
+\-\\
+
+\textbf{Norma 3} \\
+Per i moduli più complessi e composti da più file, è possibile includere l’intero set di file con un unica chiamata alla funzione \textit{require}\glossario. In questo caso è però necessario definire un file descrittore all’interno del modulo che permette al motore V8\glossario di conoscere quali sono i file da includere.
+\-\\
+
+\textbf{Norma 4} \\
+Richiedere i moduli all'inizio di ogni file, evitando di richiederli all'interno di funzioni, permettendo così di individuare facilmente le dipendenze all'inizio del file.
+\-\\
+
+\textbf{Norma 5} \\
+Usare \textit{async-await}\glossario o \textit{promise}\glossario per la gestione di errori asincroni, che consente di avere un codice più compatto e familiare.
+\-\\
+
+\textbf{Norma 6} \\
+Evitare l'uso di funzioni anonime, nominare ogni funzione permetterà una più facile comprensione in fase di lettura.
+\-\\
+
+  
+
+
+

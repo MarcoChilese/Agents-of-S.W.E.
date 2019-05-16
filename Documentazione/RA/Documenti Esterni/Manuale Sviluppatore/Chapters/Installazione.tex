@@ -1,0 +1,80 @@
+\section{Installazione}\label{Installazione}
+
+\subsection{Requisiti}\label{Requisiti}
+I requisiti minimi richiesti per il funzionamento del plug-in non sono dovuti al prodotto in sè, ma sono dovuti alle tecnologie che vengono utilizzate. Di seguito vengono riportati i requisiti minimi richiesti dalle seguenti tecnologie:
+\begin{itemize}
+	\item \textit{InfluxDB}:
+	\begin{itemize}
+		\item CPU: 2-4 core;
+		\item RAM: 2-4GB;
+		\item IOPS: 500.
+	\end{itemize}
+	\item \textit{Grafana}:
+	\begin{itemize}
+		\item CPU: 1 core;
+		\item RAM: 250MB.
+	\end{itemize}
+	\item \textit{NodeJS}:
+	\begin{itemize}
+		\item Architettura: 64bit.
+	\end{itemize}
+	\item Browser web:
+	\begin{itemize}
+		\item \textit{Google Chrome} versione 58 o superiore, per il supporto al linguaggio \textit{EcmaScript6};
+		\item \textit{Microsoft Edge} versione 14 o superiore, per il supporto al linguaggio \textit{EcmaScript6};
+		\item \textit{Mozilla Firefox} versione 54 o superiore, per il supporto al linguaggio \textit{EcmaScript6};
+		\item \textit{Apple Safari} versione 10 o superiore, per il supporto al linguaggio \textit{EcmaScript6}.
+	\end{itemize}
+\end{itemize}
+\pagebreak
+
+\subsection{Installazione del Plug-in}
+Viene richiesta come pre-condizione l'installazione della piattaforma \textit{Grafana}, a seconda del sistema operativo utilizzato, seguendo la documentazione fornita da quest'ultima.\\
+\textbf{Per l'installazione del Plug-in seguire i seguenti passaggi:}
+\begin{enumerate}
+	\item Arrestare l'esecuzione di \textit{Grafana}, qualora fosse in esecuzione;	
+	\item Copiare la directory del plug-in all'interno della cartella predestinata da \textit{Grafana} per ospitare i plug-in aggiuntivi da installare.
+	\item Per poter utilizzare il prodotto all'interno di \textit{Grafana}, e poiché quest'ultimo sia riconosciuto come plug-in, è necessario per prima cosa eseguire la build del prodotto.
+	La build del prodotto avviene attraverso due fasi: la prima che va a risolvere le dipendenze, la seconda che esegue la build.\\
+	Il processo di build avviene attraverso l'intervento del module bundler \textit{WebPack}\glossario.
+	È necessario quindi eseguire i seguenti comandi dalla directory che ospita il plug-in:
+\begin{center}
+	\texttt{npm install}\\
+	\texttt{npm run build}
+\end{center}
+\item Avviare \textit{Grafana} e procedere all'aggiunta del plug-in.
+Per informazioni relative al funzionamento del plug-in si rimanda al \textit{Manuale Utente v2.0.0}.
+\end{enumerate}
+
+\subsection{Installazione del Server}\label{installazione_server}
+\subsubsection{Installazione \textit{NodeJS}}\-\\
+Per quanto riguarda l'installazione di \textit{NodeJS} si rimanda al sito del produttore.
+
+\subsubsection{Installazione \textit{Pm2}}\-\\
+Per quanto riguarda l'installazione di \textit{pm2} sarà necessario eseguire da terminale il seguente comando:
+\begin{center}
+	\texttt{npm install pm2 -g}
+\end{center}
+	
+	
+\subsection{Esecuzione}\label{run}
+\subsubsection{Esecuzione del Plug-in}
+\begin{itemize}
+	\item Aprire il browser consigliato; 
+	\item Collegarsi all'indirizzo ip di \textit{Grafana} sulla porta 3000 (le configurazione di default suggeriscono \texttt{http://localhost:3000}); 
+	\item Accedere al sistema con le credenziali pre-impostate; 
+	\item Nella dashboard selezionata, aggiungere il pannello \textit{"GrafanaAndBayes"}; 
+	\item Accedere alle impostazioni del plug-in inserendo l'indirizzo ip e la porta del server in ascolto. 
+\end{itemize}
+
+
+\subsubsection{Esecuzione del Server}
+\begin{itemize}
+	\item Aprire un terminale e spostarsi nella directory contenente il server; 
+	\item Da terminale, eseguire il seguente comando il quale avvia il server attraverso il manager dei processi pm2
+	\begin{center}
+		\texttt{pm2 start ./src/index.js --- -p :porta}
+	\end{center}
+	dove \texttt{:porta} è il numero della porta su cui impostare il server in ascolto; 
+\end{itemize}
+	

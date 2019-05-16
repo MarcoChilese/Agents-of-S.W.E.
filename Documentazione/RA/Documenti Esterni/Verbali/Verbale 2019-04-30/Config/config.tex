@@ -1,0 +1,87 @@
+\documentclass[12pt]{article}
+
+\usepackage[utf8]{inputenc}	%Encoding UTF8 per accenti
+
+\usepackage[T1]{fontenc}
+
+\usepackage[italian]{babel}
+
+\usepackage[onehalfspacing]{setspace}	%Interlinea di 1.5
+
+\usepackage[hyperfootnotes=false]{hyperref}	%Pacchetto per coll. ipertestuali
+
+\usepackage{tabularx}
+\usepackage{longtable} %Per Tabelle potenzialmente multipagina
+\usepackage{fancyhdr}  % per gli header e footer
+\usepackage{graphicx}  %per le immagini
+\usepackage{flafter}
+\usepackage[font=small,labelfont=bf]{caption}
+\usepackage[dvipsnames, table]{xcolor}
+
+\usepackage{framed}
+
+\usepackage[headheight=2cm, headsep=0.5cm, a4paper, margin=3cm]{geometry}
+\usepackage[bottom]{footmisc}
+
+\usepackage{tcolorbox} %Per riquadrare il testo in un box
+\usepackage{tabularx} 
+
+\usepackage{listings} %per i listati di codice
+%define Javascript language
+\lstdefinelanguage{JavaScript}{
+	keywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break},
+	keywordstyle=\color{blue}\bfseries,
+	ndkeywords={class, export, boolean, throw, implements, import, this},
+	ndkeywordstyle=\color{darkgray}\bfseries,
+	identifierstyle=\color{black},
+	sensitive=false,
+	comment=[l]{//},
+	morecomment=[s]{/*}{*/},
+	commentstyle=\color{purple}\ttfamily,
+	stringstyle=\color{red}\ttfamily,
+	morestring=[b]',
+	morestring=[b]"
+}
+
+\lstset{
+	basicstyle=\footnotesize,
+	numbers=left, 
+	numberstyle=\small, 
+	numbersep=8pt, 
+	frame = single, 
+	language=JavaScript, 
+	framexleftmargin=15pt}
+
+\definecolor{bluelogo}{HTML}{415A66}
+\definecolor{grigio}{HTML}{D0D0D0}
+\usepackage{makecell}
+
+
+\hypersetup{colorlinks=true}		%Configurazione colore link INTERNI documento
+\hypersetup{linkcolor= blue}
+\renewcommand\UrlFont{\color{blue}\rmfamily\itshape} %Forzato colore blu su tutti i link ESTERNI
+
+%\lhead{\includegraphics[scale=0.08]{./images/logo.png}}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+ 
+\pagestyle{fancy}
+
+\fancyhf{}
+
+\lhead{\includegraphics[scale=0.08]{./images/logo.png}}
+\rhead{\rightmark}
+
+\lfoot{Verbale riunione esterna del 2019-04-30}
+\cfoot{}
+\rfoot{Pagina \thepage \hspace{1pt} di \pageref*{LastPage}}
+
+\newcolumntype{C}[1]{>{\centering\arraybackslash}m{#1}}
+
+
+\renewcommand{\footrulewidth}{0.4pt}
+\newcommand{\glossario}{\textsubscript{G} }
+
+%\pagestyle{fancy}
+
+\setlength{\arrayrulewidth}{1.1pt} %dimensione linea righe

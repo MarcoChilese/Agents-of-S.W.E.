@@ -1,0 +1,8 @@
+{
+  "name": "server_node", 
+  "path": "./",
+  "saved_network": "networks", 
+  "db_write": "networks_probabilites"
+}
+
+

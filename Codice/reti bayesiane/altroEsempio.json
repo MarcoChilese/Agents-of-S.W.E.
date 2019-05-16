@@ -1,0 +1,19 @@
+{
+	"name": "altraReteDiEsempio",
+	"nodes": ["uno", "due", "quattro"],
+	"states": {
+		"uno": ["a", "b"],
+		"due": ["c","d"],
+		"quattro": ["true", "false"]
+	},
+	"parents": {
+		"uno": [],
+		"due": [],
+		"quattro": ["uno", "due"]
+	},
+	"probabilities": {
+		"uno": [[0.25,0.75]],
+		"due": [[0.05, 0.95]],
+		"quattro": [[1,0],[1,0],[1,0],[1,0]]
+	}
+}
